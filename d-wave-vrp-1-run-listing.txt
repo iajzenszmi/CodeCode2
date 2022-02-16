@@ -1,0 +1,47 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ mkdir d-wave-vrp
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd d-wave-vrp
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp$ git clone https://github.com/dwave-examples/D-Wave-VRP.git
+Cloning into 'D-Wave-VRP'...
+remote: Enumerating objects: 409, done.
+remote: Counting objects: 100% (409/409), done.
+remote: Compressing objects: 100% (295/295), done.
+remote: Total 409 (delta 213), reused 240 (delta 88), pack-reused 0
+Receiving objects: 100% (409/409), 11.42 MiB | 10.36 MiB/s, done.
+Resolving deltas: 100% (213/213), done.
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp$ cd D-Wave-VRP
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP$ ls
+examples  formats  graphs  README.md  requirements.txt  src  tests
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP$ cat requirements.txt
+dwave-ocean-sdk>=3.3.0
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP$ cd tests
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP/tests$ ls
+cvrp  __init__.py  test_integration.py  vrp
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP/tests$ python3 test_integration.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 661.674s
+
+OK
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP/tests$ cd ~/d-wave-vrp/D-Wave-VRP/examples
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP/examples$ ls
+AveragePartitionSolver.py  SolutionPartitioningSolver2.py
+DBScanSolver.py            SolutionPartitioningSolver3.py
+FullQuboSolver.py          SolutionPartitioningSolver.py
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP/examples$ python3 AveragePartitionSolver.py
+Test :  small_graph1
+Solution :  [[0, 5, 6, 7, 8, 9, 10, 11, 12, 0], [0, 13, 14, 15, 16, 17, 18, 19, 20, 0], [4, 21, 22, 23, 24, 3]]
+Total cost :  1117
+
+
+Test :  small_graph2
+Solution :  [[2, 3, 4, 5, 6, 7, 8, 9, 2], [1, 10, 11, 12, 13, 14, 15, 16, 1], [1, 17, 18, 19, 20, 21, 22, 23, 2], [0, 24, 25, 26, 27, 1], []]
+Total cost :  1304
+
+
+Test :  small_graph3
+Solution :  [[0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 1], [2, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 2], [1, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 1], [1, 50, 51, 52, 53, 54, 1], []]
+Total cost :  2482
+
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~/d-wave-vrp/D-Wave-VRP/examples$ 
+
