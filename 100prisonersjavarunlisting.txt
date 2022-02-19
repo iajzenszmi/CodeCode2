@@ -1,0 +1,106 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~/100prisoners$ javac Main.java
+ian@ian-HP-Stream-Laptop-11-y0XX:~/100prisoners$ java Main
+# of executions: 100000
+Optimal play success rate: 30.962000%
+Random play success rate: 0.000000%
+ian@ian-HP-Stream-Laptop-11-y0XX:~/100prisoners$ cat Main.java
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Main {
+    private static boolean playOptimal(int n) {
+        List<Integer> secretList = IntStream.range(0, n).boxed().collect(Collectors.toList());
+        Collections.shuffle(secretList);
+
+        prisoner:
+        for (int i = 0; i < secretList.size(); ++i) {
+            int prev = i;
+            for (int j = 0; j < secretList.size() / 2; ++j) {
+                if (secretList.get(prev) == i) {
+                    continue prisoner;
+                }
+                prev = secretList.get(prev);
+            }
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean playRandom(int n) {
+        List<Integer> secretList = IntStream.range(0, n).boxed().collect(Collectors.toList());
+        Collections.shuffle(secretList);
+
+        prisoner:
+        for (Integer i : secretList) {
+            List<Integer> trialList = IntStream.range(0, n).boxed().collect(Collectors.toList());
+            Collections.shuffle(trialList);
+
+            for (int j = 0; j < trialList.size() / 2; ++j) {
+                if (Objects.equals(trialList.get(j), i)) {
+                    continue prisoner;
+                }
+            }
+
+            return false;
+        }
+        return true;
+    }
+
+    private static double exec(int n, int p, Function<Integer, Boolean> play) {
+        int succ = 0;
+        for (int i = 0; i < n; ++i) {
+            if (play.apply(p)) {
+                succ++;
+            }
+        }
+        return (succ * 100.0) / n;
+    }
+
+    public static void main(String[] args) {
+        final int n = 100_000;
+        final int p = 100;
+        System.out.printf("# of executions: %d\n", n);
+        System.out.printf("Optimal play success rate: %f%%\n", exec(n, p, Main::playOptimal));
+        System.out.printf("Random play success rate: %f%%\n", exec(n, p, Main::playRandom));
+    }
+}
+ian@ian-HP-Stream-Laptop-11-y0XX:~/100prisoners$ sloccount Main.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/100prisoners/Main.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+57      top_dir         java=57
+
+
+Totals grouped by language (dominant language first):
+java:            57 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 57
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.12)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.09 (1.11)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.11
+Total Estimated Cost to Develop                           = $ 1,334
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~/100prisoners$ 
+
