@@ -1,0 +1,113 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cobc fibonacci-cobol.cbl -x
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ls fib*
+fibonacci-cobol  fibonacci-cobol.cbl
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./fibonacci-cobol
+     2
+     3
+     5
+    13
+    89
+   233
+  1597
+ 28657
+514229
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sloccount fibonacci-cobol.cbl
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/fibonacci-cobol.cbl to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+58      top_dir         cobol=58
+
+
+Totals grouped by language (dominant language first):
+cobol:           58 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 58
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.12)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.09 (1.12)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.11
+Total Estimated Cost to Develop                           = $ 1,359
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat fibonacci-cobol.cbl
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRIME-FIBONACCI.
+       
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 FIBONACCI-VARS.
+          03 FIB                PIC 9(6).
+          03 FIB-B              PIC 9(6).
+          03 FIB-C              PIC 9(6).
+          03 FIB-OUT            PIC Z(5)9.
+       01 PRIME-VARS.   
+          03 PRIME-FLAG         PIC X.
+             88 PRIME           VALUE 'X'.
+          03 DSOR               PIC 9(4).
+          03 DSOR-SQ            PIC 9(6).
+          03 DIV-RSLT           PIC 9(6)V9(3).
+          03 FILLER             REDEFINES DIV-RSLT.
+             05 FILLER          PIC 9(6).
+             05 FILLER          PIC 9(3).
+                88 DIVISIBLE    VALUE ZERO.
+          
+       PROCEDURE DIVISION.
+       BEGIN.
+           MOVE 1 TO FIB, FIB-B.
+           PERFORM FIND-PRIME-FIBONACCI 9 TIMES.
+           STOP RUN.
+       
+       FIND-PRIME-FIBONACCI.
+           ADD FIB, FIB-B GIVING FIB-C.
+           MOVE FIB-B TO FIB.
+           MOVE FIB-C TO FIB-B.
+           PERFORM CHECK-PRIME.
+           IF NOT PRIME, GO TO FIND-PRIME-FIBONACCI.
+           MOVE FIB TO FIB-OUT.
+           DISPLAY FIB-OUT.
+       
+       CHECK-PRIME SECTION.
+       BEGIN.
+           MOVE SPACE TO PRIME-FLAG.
+           IF FIB IS LESS THAN 5, GO TO TRIVIAL-PRIME.
+           DIVIDE FIB BY 2 GIVING DIV-RSLT.
+           IF DIVISIBLE, GO TO DONE.
+           DIVIDE FIB BY 3 GIVING DIV-RSLT.
+           IF DIVISIBLE, GO TO DONE.
+           MOVE 5 TO DSOR.
+           MOVE 25 TO DSOR-SQ.
+           MOVE 'X' TO PRIME-FLAG.
+           PERFORM TEST-DIVISOR 
+           UNTIL NOT PRIME OR DSOR-SQ IS GREATER THAN FIB.
+           GO TO DONE.
+           
+       TEST-DIVISOR.
+           DIVIDE FIB BY DSOR GIVING DIV-RSLT.
+           IF DIVISIBLE, MOVE SPACE TO PRIME-FLAG.
+           ADD 2 TO DSOR.
+           DIVIDE FIB BY DSOR GIVING DIV-RSLT.
+           IF DIVISIBLE, MOVE SPACE TO PRIME-FLAG.
+           ADD 4 TO DSOR.
+           MULTIPLY DSOR BY DSOR GIVING DSOR-SQ.
+       
+       TRIVIAL-PRIME.
+           IF FIB IS EQUAL TO 2 OR 3, MOVE 'X' TO PRIME-FLAG.
+       DONE.
+           EXIT.
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
