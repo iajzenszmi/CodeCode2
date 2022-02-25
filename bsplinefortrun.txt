@@ -1,0 +1,899 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~/pyplot-fortran/pyplot-fortran/src$ cd
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ls
+ 100prisoners
+ 100prisoners.java
+ 616.gz
+ access.py
+ acm616runlisting.txt
+ addtolist.f08
+ addtolist.o
+ algorithms-java
+'Alte Kameraden-PNRmWBr2fQg.mkv'
+ anpaschool
+ a.out
+ arry1.f90
+ arry4.f08
+ arry4.o
+ arry5.f08
+ arry5.o
+ arry6.f08
+ arry6.o
+ bcast_part1.inc
+ bcast_part2.inc
+ bcast_part3.inc
+'Beethoven - Symphony No. 9 _ Vasily Petrenko & the European Union Youth Orchestra (complete symphony)-E_Sb8oS_mks.f137.mp4.part'
+'Blaenwern - Corau Unedig _ Massed Choirs-Y6UZF8_BQLg.mkv'
+ bspline
+ ccsm.py
+ celsiustofahrenheit
+ celsiustofahrenheit.f
+ celsiustofahrenheit.o
+ celsiustofahrenheitrunlisting.txt
+ centigradetfahrenheit
+ centigradetfahrenheit.f
+ centigradetfahrenheit.o
+ chebpy
+ click
+ CodeCode
+ Collatz
+ Collatz.f
+ Collatzfrunlisting.txt
+ Collatz.o
+ Collatzrunlisting.txt
+ conv
+ conv,f
+ conv.f
+ conv.o
+ counto10runlisting.txt
+ countto10
+ countto10.f
+ countto10.o
+'CSIRAC – The first computer to play music-yxDQSluWaMs.mkv'
+'Daily Diary.txt'
+ Desktop
+ dirr
+ Documents
+ Downloads
+ dwave-sudoku
+ dwave-sudoku-run-and-sudoku.txt
+'dwave token'
+ dwave-tsp
+ d-wave-vrp
+ d-wave-vrp-1-run-listing.txt
+ dynamicalarrays.mod
+ dynarr.f08
+ dynarr.o
+ factorialjava
+'fahrenheit tocelsius.f'
+ fgoals.py
+ fibonacci-cobol
+ fibonacci-cobol.cbl
+ fibonacci-cobolrunlist.txt
+ fpm
+ functest
+ functest.f
+ functest.o
+ functr1
+ functr1.f
+ functr1.o
+ gfdl.py
+ go
+ graphjava
+ HEAD
+ heat.m
+ hugetest
+ hugetest.f
+ hugetest.o
+ icar
+ icar_constants-checkpoint.f90
+'Immunisation history statement.pdf'
+ __init__.py
+ INV00059037.pdf
+ ipsl.py
+ jav1.sh
+ javasin
+'Kronungsmesse Kv 317 - Credo-XQQtjDCLLxA.mkv'
+ lm
+ lm.c
+ lm.o
+ longmultiplicationcrunlisting.txt
+ loopa.java
+ loopb
+ looptest
+ looptest1a
+ looptest1a.f
+ looptest1a.o
+ looptest.f
+ looptest.o
+ __MACOSX
+ main
+ Main.class
+ Main.java
+ mazeq
+ mazeq2
+ mazeq3
+ mazerun.txt
+ meto.c
+ midpoint.c
+ mlrose
+ Music
+ nurse-scheduling
+'Oklahoma!-ZbrnXl2gO_k.mkv'
+ oldman
+ oldman.f
+ oldman.txt
+ pack-279baead34d0d6507ce0da0bde06b2e4649e5f7f.idx
+ pack-279baead34d0d6507ce0da0bde06b2e4649e5f7f.pack
+ parray
+ Pictures
+ printa
+'Print Invoice N184549.pdf'
+ problemab.txt
+ problemevil1.txt
+ project
+ Public
+ pyplot-fortran
+ qmasm
+ qwt
+ release
+ rerefajz0001bk00680524.zip
+ sdl.cpp
+ sdltest.cpp
+ se
+ sevdfm
+ sevdim88test.f
+ sevdim88test.f08
+ sevds
+ sint
+ sintc
+ sintc.c
+ sint.f
+ snap
+ sor.f08
+ sor.o
+ sort.f08
+ sort.o
+ sudoku2.c
+ sudoku.c
+ sudokuneuralnetworks
+ sudokuproblemevil1runlisting.txt
+ sudokuproblemexpert1.txt
+ swish-prolog-ide
+ symphonyno9europeanyouthorchestra.txt
+ syslog.txt
+ tarray.dat
+ Templates
+ test
+ test.cpp
+ testgles.c
+ testojava
+ testtojava
+ testtojava.c
+ testtojava.java
+ testtojava.o
+ TOMS358RUN.txt
+ toms543
+ TOMS614.gz
+ ts
+ tsp
+ tsp1
+ tsp1.c
+ tsp3.c
+ tsp4.txt
+ tsp-solver
+'Update test_fitness.py to allow for changes to 6 Peaks · gkhayes_mlrose@ae33d2b_files'
+'Update test_fitness.py to allow for changes to 6 Peaks · gkhayes_mlrose@ae33d2b.html'
+ Videos
+ xchartjava
+ xshell
+ xshell.f08
+ xshell.o
+ xshellrunlisting.txt
+ xsor
+ xsor.f
+ xsor.f08
+ xsor.o
+ XSORRUNLISTING.txt
+ youtube-dl
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd bspline
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ ls
+bspline-fortran  CMakeCache.txt  CMakeFiles
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ cmake bspline-fortran
+-- Configuring done
+CMake Error at CMakeLists.txt:113 (add_library):
+  Cannot find source file:
+
+    src/tests/pyplot-fortran/src/pyplot_module.f90
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:113 (add_library):
+  No SOURCES given to target: pyplot-fortran
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ cd bspline-fortran
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ cd src
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/src$ cd tests
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/src/tests$ cd pyplot-fortran
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/src/tests/pyplot-fortran$ ls
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/src/tests/pyplot-fortran$ cd
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd bspline
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ ls
+bspline-fortran  CMakeCache.txt  CMakeFiles
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ cmake bspline-fortran
+-- Configuring done
+CMake Error at CMakeLists.txt:113 (add_library):
+  Cannot find source file:
+
+    src/tests/pyplot-fortran/src/pyplot_module.f90
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:113 (add_library):
+  No SOURCES given to target: pyplot-fortran
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ vim CMakeLists.txt
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ cmake bspline-fortran
+-- Configuring done
+CMake Error at CMakeLists.txt:113 (add_library):
+  Cannot find source file:
+
+    src/tests/pyplot-fortran/src/pyplot_module.f90
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:113 (add_library):
+  No SOURCES given to target: pyplot-fortran
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ ls
+bspline-fortran  CMakeCache.txt  CMakeFiles
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ ls
+bspline-fortran  CMakeCache.txt  CMakeFiles
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ ^C
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline$ cd CMakeFiles
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/CMakeFiles$ ls
+3.16.3  cmake.check_cache  CMakeOutput.log  CMakeTmp
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/CMakeFiles$ cd
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd bspline/bspline-fortran
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ ls
+bin                             bspline-fortran.md  doc       LICENSE    src
+bspline-fortran.code-workspace  build.sh            fpm.toml  media
+bspline-fortran.fobis           CMakeLists.txt      lib       README.md
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ ./build-sh
+bash: ./build-sh: No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ ./build.sh
+Building library...
+Builder options
+  Directories
+    Building directory: "lib"
+    Compiled-objects .o   directory: "lib"
+    Compiled-objects .mod directory: "lib"
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/bspline_module.f90
+Nothing to compile, all objects are up-to-date
+Linking lib/libbspline.a
+Target src/bspline_module.f90 has been successfully built
+Building test programs...
+Attention: the file 'src/tests/dbint4_test.f90' depends on 'pyplot_module' that is unreachable
+Attention: the file 'src/tests/knot_tests.f90' depends on 'pyplot_module' that is unreachable
+Attention: the file 'src/tests/bspline_extrap_test.f90' depends on 'pyplot_module' that is unreachable
+Attention: the file 'src/tests/speed_test_oo.f90' depends on 'pyplot_module' that is unreachable
+Attention: the file 'src/tests/speed_test.f90' depends on 'pyplot_module' that is unreachable
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/dbint4_test.f90
+Compiling src/tests/dbint4_test.f90 serially
+src/tests/dbint4_test.f90:9:8:
+
+    9 |     use pyplot_module
+      |        1
+Fatal Error: Cannot open module file ‘pyplot_module.mod’ for reading at (1): No such file or directory
+compilation terminated.
+
+src/tests/dbint4_test.f90:9:8:
+
+    9 |     use pyplot_module
+      |        1
+Fatal Error: Cannot open module file ‘pyplot_module.mod’ for reading at (1): No such file or directory
+compilation terminated.
+Building documentation...
+Reading file src/bspline_sub_module.f90
+Reading file src/bspline_module.f90
+Reading file src/bspline_oo_module.f90
+Reading file src/bspline_kinds_module.F90
+Reading file src/pyplot_module.F90
+
+Processing documentation comments...
+Correlating information from different parts of your project...
+
+Creating HTML documentation...
+Generating graphs...
+100%|████████████████████████████████████████████| 144/144 [00:39<00:00,  3.62/s]
+Creating search index...
+100%|████████████████████████████████████████████| 147/147 [00:56<00:00,  2.60/s]
+
+Writing resulting documentation.
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ ./build.sh
+Building library...
+Builder options
+  Directories
+    Building directory: "lib"
+    Compiled-objects .o   directory: "lib"
+    Compiled-objects .mod directory: "lib"
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/bspline_module.f90
+Nothing to compile, all objects are up-to-date
+Linking lib/libbspline.a
+Target src/bspline_module.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "lib"
+    Compiled-objects .o   directory: "lib"
+    Compiled-objects .mod directory: "lib"
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/bspline_module.f90
+Nothing to compile, all objects are up-to-date
+Linking lib/libbspline.a
+Target src/tests/bspline_module.f90 has been successfully built
+Building test programs...
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/dbint4_test.f90
+Compiling src/tests/bspline_kinds_module.F90 serially
+Compiling src/tests/bspline_sub_module.f90 serially
+Compiling src/tests/bspline_oo_module.f90 serially
+Compiling src/tests/bspline_module.f90 src/tests/pyplot_module.F90 serially
+Compiling src/tests/dbint4_test.f90 serially
+Linking bin/dbint4_test
+Target src/tests/dbint4_test.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/stack_size_test_oo.f90
+Compiling src/tests/stack_size_test_oo.f90 serially
+Linking bin/stack_size_test_oo
+Target src/tests/stack_size_test_oo.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/test_integrate.f90
+Compiling src/tests/test_integrate.f90 serially
+Linking bin/test_integrate
+Target src/tests/test_integrate.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/test_regrid.f90
+Compiling src/tests/test_regrid.f90 serially
+Linking bin/test_regrid
+Target src/tests/test_regrid.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/knot_tests.f90
+Compiling src/tests/knot_tests.f90 serially
+Linking bin/knot_tests
+Target src/tests/knot_tests.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/bspline_extrap_test.f90
+Compiling src/tests/bspline_extrap_test.f90 serially
+Linking bin/bspline_extrap_test
+Target src/tests/bspline_extrap_test.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/bspline_test_2.f90
+Compiling src/tests/bspline_test_2.f90 serially
+Linking bin/bspline_test_2
+Target src/tests/bspline_test_2.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/bspline_test.f90
+Compiling src/tests/bspline_test.f90 serially
+Linking bin/bspline_test
+Target src/tests/bspline_test.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/speed_test_oo.f90
+Compiling src/tests/speed_test_oo.f90 serially
+Linking bin/speed_test_oo
+Target src/tests/speed_test_oo.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/test_oo.f90
+Compiling src/tests/test_oo.f90 serially
+Linking bin/test_oo
+Target src/tests/test_oo.f90 has been successfully built
+Builder options
+  Directories
+    Building directory: "bin"
+    Compiled-objects .o   directory: "bin"
+    Compiled-objects .mod directory: "bin"
+  Included paths: lib 
+  Linked libraries with full path: ./lib/libbspline.a 
+  Compiler options
+    Vendor: "gnu"
+    Compiler command: "gfortran"
+    Module directory switch: "-J"
+    Compiling flags: "-c -O2 -std=f2008"
+    Linking flags: ""
+    Preprocessing flags: ""
+    Coverage: False
+    Profile: False
+  Preprocessor used: None
+  Preprocessor output directory: None
+  Preprocessor extensions processed: []
+
+Building src/tests/speed_test.f90
+Compiling src/tests/speed_test.f90 serially
+Linking bin/speed_test
+Target src/tests/speed_test.f90 has been successfully built
+Building documentation...
+Reading file src/bspline_sub_module.f90
+Reading file src/bspline_module.f90
+Reading file src/bspline_oo_module.f90
+Reading file src/bspline_kinds_module.F90
+Reading file src/pyplot_module.F90
+
+Processing documentation comments...
+Correlating information from different parts of your project...
+
+Creating HTML documentation...
+Generating graphs...
+100%|████████████████████████████████████████████| 144/144 [00:39<00:00,  3.65/s]
+Creating search index...
+100%|████████████████████████████████████████████| 147/147 [00:54<00:00,  2.69/s]
+
+Writing resulting documentation.
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ ls
+bin                             bspline-fortran.md  doc       LICENSE    src
+bspline-fortran.code-workspace  build.sh            fpm.toml  media
+bspline-fortran.fobis           CMakeLists.txt      lib       README.md
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran$ cd bin
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ls
+bspline_extrap_test       bspline_test_2     speed_test_oo
+bspline_extrap_test.o     bspline_test_2.o   speed_test_oo.o
+bspline_kinds_module.mod  bspline_test.o     stack_size_test_oo
+bspline_kinds_module.o    dbint4_test        stack_size_test_oo.o
+bspline_module.mod        dbint4_test.o      test_integrate
+bspline_module.o          knot_tests         test_integrate.o
+bspline_oo_module.mod     knot_tests.o       test_oo
+bspline_oo_module.o       pyplot_module.mod  test_oo.o
+bspline_sub_module.mod    pyplot_module.o    test_regrid
+bspline_sub_module.o      speed_test         test_regrid.o
+bspline_test              speed_test.o
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ./bspline_extrap_test
+ 
+ 1D: max error:  0.99999968293183461     
+ 
+ 
+ 1D: max error:  0.62358861191754178     
+ 
+Traceback (most recent call last):
+  File "pyplot_module_temp_1234567890.py", line 3, in <module>
+    import matplotlib
+ImportError: No module named matplotlib
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ sudo pip3 install matplotlib
+[sudo] password for ian: 
+Requirement already satisfied: matplotlib in /usr/lib/python3/dist-packages (3.1.2)
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ./knot_tests
+Traceback (most recent call last):
+  File "pyplot_module_temp_1234567890.py", line 3, in <module>
+    import matplotlib
+ImportError: No module named matplotlib
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ apt-cache search matplotlib
+python-cartopy-data - cartographic library for Python (package data)
+python-cycler-doc - composable kwarg iterator (documentation)
+python-matplotlib-data - Python based plotting system (data package)
+python-matplotlib-doc - Python based plotting system (documentation package)
+python-mpltoolkits.basemap-data - matplotlib toolkit to plot on map projections (data package)
+python-mpltoolkits.basemap-doc - matplotlib toolkit to plot on map projections (documentation)
+python-mpmath-doc - library for arbitrary-precision floating-point arithmetic - Documentation
+python-silx-doc - Toolbox for X-Ray data analysis - Documentation
+python3-aplpy - Astronomical Plotting Library in Python
+python3-astroml - Python 3 Machine Learning library for astronomy
+python3-cartopy - Cartographic library for Python 3
+python3-colormap - ease manipulation of matplotlib colormaps and color codecs (Python 3)
+python3-csound - Python bindings for Csound
+python3-cycler - composable kwarg iterator (Python 3)
+python3-descartes - Matplotlib extension to work with geometric objects (Python3)
+python3-gmplot - matplotlib-like interface to plotting data with Google Maps (python3)
+python3-matplotlib - Python based plotting system in a style similar to Matlab (Python 3)
+python3-matplotlib-dbg - Python based plotting system (debug extension, Python 3)
+python3-matplotlib-venn - Python 3 plotting area-proportional two- and three-way Venn diagrams
+python3-mpl-scatter-density - Fast scatter density plots for Matplotlib
+python3-mplexporter - general matplotlib exporter
+python3-mpltoolkits.basemap - matplotlib toolkit to plot on map projections (Python 3)
+python3-mpltoolkits.basemap-dbg - matplotlib toolkit to plot on map projections (Python 3 debug)
+python3-mpmath - library for arbitrary-precision floating-point arithmetic (Python3)
+python3-pytest-mpl - pytest plugin for Matplotlib image comparison in Python 3
+python3-qutip - python package for simulating the dynamics of open quantum systems
+python3-seaborn - statistical visualization library for Python3
+python3-silx - Toolbox for X-Ray data analysis - Python3
+python3-silx-dbg - Toolbox for X-Ray data analysis - Python3 debug
+r-cran-viridis - GNU R package for color maps from matplotlib
+r-cran-viridislite - GNU R package for color maps from matplotlib (Lite Version)
+sagemath - Open Source Mathematical Software
+sagemath-common - Open Source Mathematical Software - architecture-independent files
+sagemath-doc - Open Source Mathematical Software - documentation
+sagemath-jupyter - Open Source Mathematical Software - Jupyter kernel
+silx - Toolbox for X-Ray data analysis - Executables
+sockperf - Network benchmarking utility for testing latency and throughput
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ sudo apt install python3-matplotlib
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-matplotlib is already the newest version (3.1.2-1ubuntu4).
+0 to upgrade, 0 to newly install, 0 to remove and 4 not to upgrade.
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ls
+bspline_extrap_test       bspline_test_2     speed_test_oo
+bspline_extrap_test.o     bspline_test_2.o   speed_test_oo.o
+bspline_kinds_module.mod  bspline_test.o     stack_size_test_oo
+bspline_kinds_module.o    dbint4_test        stack_size_test_oo.o
+bspline_module.mod        dbint4_test.o      test_integrate
+bspline_module.o          knot_tests         test_integrate.o
+bspline_oo_module.mod     knot_tests.o       test_oo
+bspline_oo_module.o       pyplot_module.mod  test_oo.o
+bspline_sub_module.mod    pyplot_module.o    test_regrid
+bspline_sub_module.o      speed_test         test_regrid.o
+bspline_test              speed_test.o
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ./bspline_test
+           1 D: max error:   3.3306690738754696E-016
+  ** test passed ** 
+ 
+           2 D: max error:   3.3306690738754696E-016
+  ** test passed ** 
+ 
+           3 D: max error:   6.6613381477509392E-016
+  ** test passed ** 
+ 
+           4 D: max error:   1.1102230246251565E-015
+  ** test passed ** 
+ 
+           5 D: max error:   1.7763568394002505E-015
+  ** test passed ** 
+ 
+           6 D: max error:   3.1086244689504383E-015
+  ** test passed ** 
+ 
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ls
+bspline_extrap_test       bspline_test_2     speed_test_oo
+bspline_extrap_test.o     bspline_test_2.o   speed_test_oo.o
+bspline_kinds_module.mod  bspline_test.o     stack_size_test_oo
+bspline_kinds_module.o    dbint4_test        stack_size_test_oo.o
+bspline_module.mod        dbint4_test.o      test_integrate
+bspline_module.o          knot_tests         test_integrate.o
+bspline_oo_module.mod     knot_tests.o       test_oo
+bspline_oo_module.o       pyplot_module.mod  test_oo.o
+bspline_sub_module.mod    pyplot_module.o    test_regrid
+bspline_sub_module.o      speed_test         test_regrid.o
+bspline_test              speed_test.o
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ./bspline_extrap_test
+ 
+ 1D: max error:  0.99999968293183461     
+ 
+ 
+ 1D: max error:  0.62358861191754178     
+ 
+Traceback (most recent call last):
+  File "pyplot_module_temp_1234567890.py", line 3, in <module>
+    import matplotlib
+ImportError: No module named matplotlib
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ./bspline_test_2
+           1 D: max error:   1.9895101248392777E-003
+  ** test passed ** 
+ 
+           2 D: max error:   8.8794439144557202E-004
+  ** test passed ** 
+ 
+           3 D: max error:   1.0801848072954368E-003
+  ** test passed ** 
+ 
+           4 D: max error:   1.2776689960070087E-003
+  ** test passed ** 
+ 
+           5 D: max error:   1.5384058203267159E-003
+  ** test passed ** 
+ 
+           6 D: max error:   1.8742769421535854E-003
+  ** test passed ** 
+ 
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ls
+bspline_extrap_test       bspline_test_2     speed_test_oo
+bspline_extrap_test.o     bspline_test_2.o   speed_test_oo.o
+bspline_kinds_module.mod  bspline_test.o     stack_size_test_oo
+bspline_kinds_module.o    dbint4_test        stack_size_test_oo.o
+bspline_module.mod        dbint4_test.o      test_integrate
+bspline_module.o          knot_tests         test_integrate.o
+bspline_oo_module.mod     knot_tests.o       test_oo
+bspline_oo_module.o       pyplot_module.mod  test_oo.o
+bspline_sub_module.mod    pyplot_module.o    test_regrid
+bspline_sub_module.o      speed_test         test_regrid.o
+bspline_test              speed_test.o
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ ./test_regrid
+ -----------------
+   INITIAL DATA:
+ -----------------
+x:
+    0.000000     2.000000     4.000000     6.000000     8.000000    10.000000
+ 
+y:
+    0.000000     2.000000     4.000000     6.000000     8.000000
+ 
+fcn(x,y):
+    0.000000    0.034899    0.069756    0.104528    0.139173
+    0.034899    0.069756    0.104528    0.139173    0.173648
+    0.069756    0.104528    0.139173    0.173648    0.207912
+    0.104528    0.139173    0.173648    0.207912    0.241922
+    0.139173    0.173648    0.207912    0.241922    0.275637
+    0.173648    0.207912    0.241922    0.275637    0.309017
+ 
+ -----------------
+   NEW GRID:
+ -----------------
+x:
+    0.000000     1.000000     2.000000     3.000000     4.000000     5.000000     6.000000     7.000000     8.000000     9.000000    10.000000
+ 
+y:
+    0.000000     1.000000     2.000000     3.000000     4.000000     5.000000     6.000000     7.000000     8.000000
+ 
+fcn(x,y):
+    0.000000    0.017452    0.034899    0.052336    0.069756    0.087156    0.104528    0.121869    0.139173
+    0.017452    0.034900    0.052336    0.069756    0.087156    0.104528    0.121869    0.139173    0.156434
+    0.034899    0.052336    0.069756    0.087156    0.104528    0.121869    0.139173    0.156434    0.173648
+    0.052336    0.069756    0.087156    0.104528    0.121869    0.139173    0.156434    0.173648    0.190809
+    0.069756    0.087156    0.104528    0.121869    0.139173    0.156434    0.173648    0.190809    0.207912
+    0.087156    0.104528    0.121869    0.139173    0.156434    0.173648    0.190809    0.207912    0.224951
+    0.104528    0.121869    0.139173    0.156434    0.173648    0.190809    0.207912    0.224951    0.241922
+    0.121869    0.139173    0.156434    0.173648    0.190809    0.207912    0.224951    0.241922    0.258819
+    0.139173    0.156434    0.173648    0.190809    0.207912    0.224951    0.241922    0.258819    0.275637
+    0.156434    0.173648    0.190809    0.207912    0.224951    0.241922    0.258819    0.275637    0.292372
+    0.173648    0.190809    0.207912    0.224951    0.241922    0.258819    0.275637    0.292372    0.309017
+ 
+  max error:   1.9239711546159555E-008
+ 
+ian@ian-HP-Stream-Laptop-11-y0XX:~/bspline/bspline-fortran/bin$ 
+
