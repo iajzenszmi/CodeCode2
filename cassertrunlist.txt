@@ -1,0 +1,28 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~/cassert$ gcc cassertprt.c -o cassertprt
+ian@ian-HP-Stream-Laptop-11-y0XX:~/cassert$ gcc cassert.c -o cassert
+ian@ian-HP-Stream-Laptop-11-y0XX:~/cassert$ ./cassertprt && ./cassert
+
+Programmed and run by Ian Martin Ajzenszmidt, Melbourne, Australia. 
+cassert: cassert.c:10: main: Assertion `IsSane == False' failed.
+Aborted (core dumped)
+ian@ian-HP-Stream-Laptop-11-y0XX:~/cassert$ cat cassert.c
+ // Programmed and run by Ian Martin Ajzenszmidt, Melbourne Australia.  
+    #include <assert.h>
+    
+      int main()
+       {
+               int    True = 1;
+               int    False = 0;
+	       int    IsSane;
+	       IsSane = True;
+               assert (IsSane == False);
+               	      
+       }
+      
+ian@ian-HP-Stream-Laptop-11-y0XX:~/cassert$ cat cassertprt.c
+#include <stdio.h>
+int main(){
+printf("\n%s\n","Programmed and run by Ian Martin Ajzenszmidt, Melbourne, Australia. ");
+}
+ian@ian-HP-Stream-Laptop-11-y0XX:~/cassert$ 
+
