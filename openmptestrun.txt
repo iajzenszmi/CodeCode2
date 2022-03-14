@@ -1,0 +1,331 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cp openmptest.f openmptest.f90
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ mpif90 openmptest.f90 -o openmptest
+/usr/bin/ld: /tmp/ccO1LtSd.o: in function `MAIN__':
+openmptest.f90:(.text+0xc): undefined reference to `omp_get_thread_num_'
+/usr/bin/ld: openmptest.f90:(.text+0xaf): undefined reference to `omp_get_num_threads_'
+collect2: error: ld returned 1 exit status
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ mpirun -np 2 ./openmptest
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: ./openmptest
+Node: ian-HP-Stream-Laptop-11-y0XX
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+2 total processes failed to start
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran openmptest.f90 -o openmptest
+/usr/bin/ld: /tmp/ccKfBbQP.o: in function `MAIN__':
+openmptest.f90:(.text+0xc): undefined reference to `omp_get_thread_num_'
+/usr/bin/ld: openmptest.f90:(.text+0xaf): undefined reference to `omp_get_num_threads_'
+collect2: error: ld returned 1 exit status
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ apt-cache search openmp
+lib32gomp1 - GCC OpenMP (GOMP) support library (32bit)
+libgomp1 - GCC OpenMP (GOMP) support library
+libgomp1-arm64-cross - GCC OpenMP (GOMP) support library
+libgomp1-armhf-cross - GCC OpenMP (GOMP) support library
+libgomp1-ppc64el-cross - GCC OpenMP (GOMP) support library
+libgomp1-s390x-cross - GCC OpenMP (GOMP) support library
+libx32gomp1 - GCC OpenMP (GOMP) support library (x32)
+lib64gomp1 - GCC OpenMP (GOMP) support library (64bit)
+dimbl - Distributed Memory Based Learner
+elk-lapw - All-Electron Density-Functional Electronic Structure Code
+fasttree - phylogenetic trees from alignments of nucleotide or protein sequences
+gcc-10-offload-amdgcn - GCC offloading compiler to GCN
+gcc-10-offload-nvptx - GCC offloading compiler to NVPTX
+gcc-7-offload-nvptx - GCC offloading compiler to NVPTX
+gcc-8-offload-nvptx - GCC offloading compiler to NVPTX
+gcc-9-offload-nvptx - GCC offloading compiler to NVPTX
+gromacs-openmpi - Molecular dynamics sim, binaries for OpenMPI parallelization
+lib32gomp1-amd64-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-mips64-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-mips64el-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-mips64r6-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-mips64r6el-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-ppc64-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-s390x-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-sparc64-cross - GCC OpenMP (GOMP) support library (32bit)
+lib32gomp1-x32-cross - GCC OpenMP (GOMP) support library (32bit)
+lib64gomp1-i386-cross - GCC OpenMP (GOMP) support library (64bit)
+lib64gomp1-mips-cross - GCC OpenMP (GOMP) support library (64bit)
+lib64gomp1-mipsel-cross - GCC OpenMP (GOMP) support library (64bit)
+lib64gomp1-mipsr6-cross - GCC OpenMP (GOMP) support library (64bit)
+lib64gomp1-mipsr6el-cross - GCC OpenMP (GOMP) support library (64bit)
+lib64gomp1-powerpc-cross - GCC OpenMP (GOMP) support library (64bit)
+lib64gomp1-x32-cross - GCC OpenMP (GOMP) support library (64bit)
+libadios-openmpi-dev - ADIOS Adaptable IO system (OpenMPI development files)
+libblis-openmp-dev - BLAS-like Library Instantiation Software Framework (dev,32bit,openmp)
+libblis3-openmp - BLAS-like Library Instantiation Software Framework (32bit,openmp)
+libblis64-3-openmp - BLAS-like Library Instantiation Software Framework (64bit,openmp)
+libblis64-openmp-dev - BLAS-like Library Instantiation Software Framework (dev,64bit,openmp)
+libcaf-openmpi-3 - Co-Array Fortran libraries  (OpenMPI)
+libcoarrays-openmpi-dev - Co-Array Fortran libraries  - development files (OpenMPI)
+libgomp-plugin-amdgcn1 - GCC OpenMP v4.5 plugin for offloading to GCN
+libgomp-plugin-hsa1 - GCC OpenMP v4.5 plugin for offloading to HSA
+libgomp-plugin-nvptx1 - GCC OpenMP v4.5 plugin for offloading to NVPTX
+libgomp1-alpha-cross - GCC OpenMP (GOMP) support library
+libgomp1-amd64-cross - GCC OpenMP (GOMP) support library
+libgomp1-armel-cross - GCC OpenMP (GOMP) support library
+libgomp1-hppa-cross - GCC OpenMP (GOMP) support library
+libgomp1-i386-cross - GCC OpenMP (GOMP) support library
+libgomp1-m68k-cross - GCC OpenMP (GOMP) support library
+libgomp1-mips-cross - GCC OpenMP (GOMP) support library
+libgomp1-mips64-cross - GCC OpenMP (GOMP) support library
+libgomp1-mips64el-cross - GCC OpenMP (GOMP) support library
+libgomp1-mips64r6-cross - GCC OpenMP (GOMP) support library
+libgomp1-mips64r6el-cross - GCC OpenMP (GOMP) support library
+libgomp1-mipsel-cross - GCC OpenMP (GOMP) support library
+libgomp1-mipsr6-cross - GCC OpenMP (GOMP) support library
+libgomp1-mipsr6el-cross - GCC OpenMP (GOMP) support library
+libgomp1-powerpc-cross - GCC OpenMP (GOMP) support library
+libgomp1-ppc64-cross - GCC OpenMP (GOMP) support library
+libgomp1-riscv64-cross - GCC OpenMP (GOMP) support library
+libgomp1-sh4-cross - GCC OpenMP (GOMP) support library
+libgomp1-sparc64-cross - GCC OpenMP (GOMP) support library
+libgomp1-x32-cross - GCC OpenMP (GOMP) support library
+libhdf5-openmpi-103 - Hierarchical Data Format 5 (HDF5) - runtime files - OpenMPI version
+libhdf5-openmpi-dev - Hierarchical Data Format 5 (HDF5) - development files - OpenMPI version
+libhfgomp1-armel-cross - GCC OpenMP (GOMP) support library (hard float ABI)
+libmeep-mpi-default-dev - development library for using parallel (OpenMPI) version of meep
+libmeep-mpi-default17 - library for using parallel (OpenMPI) version of meep
+libmeep-openmpi-dev - development library for using parallel (OpenMPI) version of meep
+libmeep-openmpi17 - library for using parallel (OpenMPI) version of meep
+libn32gomp1-mips-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mips64-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mips64el-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mips64r6-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mips64r6el-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mipsel-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mipsr6-cross - GCC OpenMP (GOMP) support library (n32)
+libn32gomp1-mipsr6el-cross - GCC OpenMP (GOMP) support library (n32)
+libomp-10-dev - LLVM OpenMP runtime - dev package
+libomp-10-doc - LLVM OpenMP runtime - Documentation
+libomp-7-dev - LLVM OpenMP runtime - dev package
+libomp-8-dev - LLVM OpenMP runtime - dev package
+libomp-8-doc - LLVM OpenMP runtime - Documentation
+libomp-9-dev - LLVM OpenMP runtime - dev package
+libomp-9-doc - LLVM OpenMP runtime - Documentation
+libomp-dev - LLVM OpenMP runtime - dev package
+libomp5 - LLVM OpenMP runtime
+libomp5-10 - LLVM OpenMP runtime
+libomp5-7 - LLVM OpenMP runtime
+libomp5-8 - LLVM OpenMP runtime
+libomp5-9 - LLVM OpenMP runtime
+libopenblas-openmp-dev - Optimized BLAS (linear algebra) library (dev, openmp)
+libopenblas-pthread-dev - Optimized BLAS (linear algebra) library (dev, pthread)
+libopenblas-serial-dev - Optimized BLAS (linear algebra) library (dev, serial)
+libopenblas0-openmp - Optimized BLAS (linear algebra) library (shared lib, openmp)
+libopenblas0-pthread - Optimized BLAS (linear algebra) library (shared lib, pthread)
+libopenblas0-serial - Optimized BLAS (linear algebra) library (shared lib, serial)
+libopenblas64-0-openmp - Optimized BLAS (linear algebra) library (shared lib, 64bit, openmp)
+libopenblas64-0-pthread - Optimized BLAS (linear algebra) library (shared lib, 64bit, pthread)
+libopenblas64-0-serial - Optimized BLAS (linear algebra) library (shared lib, 64bit, serial)
+libopenblas64-openmp-dev - Optimized BLAS (linear algebra) library (dev, 64bit, openmp)
+libopenblas64-pthread-dev - Optimized BLAS (linear algebra) library (dev, 64bit, pthread)
+libopenblas64-serial-dev - Optimized BLAS (linear algebra) library (dev, 64bit, serial)
+libopenmpi-dev - high performance message passing library -- header files
+libopenmpi3 - high performance message passing library -- shared library
+libopenmpt-dev - module music library based on OpenMPT -- development files
+libopenmpt-doc - module music library based on OpenMPT -- documentation
+libopenmpt-modplug-dev - module music library based on OpenMPT -- modplug compat development files
+libopenmpt-modplug1 - module music library based on OpenMPT -- modplug compat library
+libopenmpt0 - module music library based on OpenMPT -- shared library
+libpmi-pmix-dev - Development files for the PMI library (OpenMPI )
+libpmi1-pmix - OpenMPI implementation of the PMI v1 library
+libpmi2-pmix - OpenMPI implementation of the PMI v2 library
+libpmix-dev - Development files for the PMI Exascale library
+libpmix2 - Process Management Interface (Exascale) library
+libpomp-dev - OpenMP Pragma And Region Instrumentor - development files
+libpomp0 - OpenMP Pragma And Region Instrumentor - shared library
+libpomp2-dev - OpenMP Pragma And Region Instrumentor - development files
+libpomp2-doc - OpenMP Pragma And Region Instrumentor - documentation
+libscalapack-openmpi-dev - Scalable Linear Algebra Package - Dev files for OpenMPI
+libscalapack-openmpi2.1 - Scalable Linear Algebra Package - Shared libs for OpenMPI
+libsfgomp1-armhf-cross - GCC OpenMP (GOMP) support library (soft float ABI)
+libspfft-dev - Sparse 3D FFT library with MPI, OpenMP, CUDA / ROCm support (development files)
+libspfft0 - Sparse 3D FFT library with MPI, OpenMP, CUDA / ROCm support
+libsundials-nvecparallel-openmp3 - OpenMP vector operations library (SUNDIALS library)
+libsuperlu-dist-dev - Highly distributed solution of sparse linear equations
+libsuperlu-dist6 - Highly distributed solution of sparse linear equations
+libtachyon-openmpi-0 - Parallel/Multiprocessor Ray Tracing Library - runtime - OpenMPI flavour
+libtachyon-openmpi-0-dev - Parallel/Multiprocessor Ray Tracing Library - development - OpenMPI flavour
+libtrilinos-kokkos-dev - Trilinos Kokkos programming model - development files
+libtrilinos-kokkos12 - Trilinos Kokkos programming model - runtime files
+libx32gomp1-amd64-cross - GCC OpenMP (GOMP) support library (x32)
+libx32gomp1-i386-cross - GCC OpenMP (GOMP) support library (x32)
+likwid - toolsuite for performance oriented programmers
+meep-mpi-default - software package for FDTD simulation, parallel (OpenMPI) version
+meep-openmpi - software package for FDTD simulation, parallel (OpenMPI) version
+netpipe-openmpi - Network performance tool using OpenMPI
+opari - OpenMP Pragma And Region Instrumentor - translation tool
+opari2 - OpenMP Pragma And Region Instrumentor - translation tool
+openmpi-bin - high performance message passing library -- binaries
+openmpi-common - high performance message passing library -- common files
+openmpi-doc - high performance message passing library -- man pages
+openmpt123 - module music library based on OpenMPT -- music player
+parafly - parallel command processing using OpenMP
+python3-astroscrappy - Optimized Cosmic Ray Annihilation in Python
+python3-compyle - Execute a subset of Python on HPC platforms
+python3-escript - Escript/Finley finite elements Python3 system (with OpenMP)
+python3-escript-mpi - Escript/Finley finite elements Python3 system (OpenMP + MPI)
+python3-meep-openmpi - software package for FDTD simulation with Python
+python3-pykdtree - Fast kd-tree implementation with OpenMP-enabled queries (Python 3 version)
+r-cran-gower - GNU R Gower's Distance
+r-cran-mvnfast - GNU R fast multivariate normal and student's t methods
+r-cran-rcppprogress - interruptible progress bar for C++ in GNU R packages
+r-cran-sitmo - GNU R parallel pseudo random number generator 'sitmo' header files
+rawtherapee - raw image converter and digital photo processor
+rawtherapee-data - raw image converter and digital photo processor (data files)
+relion-bin+mpi - parallel toolkit for 3D reconstructions in cryo-electron microscopy
+yorick-full - full installation of the Yorick interpreter and add-ons
+yorick-mpy-openmpi - Message Passing Yorick (OpenMPI build)
+zalign - parallel local alignment of biological sequences
+abyss - de novo, parallel, sequence assembler for short reads
+libmkl-blacs-openmpi-ilp64 - Intel® MKL : ILP64 version of BLACS routines for Open MPI
+libmkl-blacs-openmpi-lp64 - Intel® MKL : LP64 version of BLACS routines for Open MPI
+libmkl-gnu-thread - Intel® MKL: OpenMP threading library for GNU Fortran/C compilers
+libmkl-intel-thread - Intel® MKL: OpenMP threading library for the Intel compilers
+libmkl-pgi-thread - Intel® MKL: OpenMP threading library for the PGI compiler
+libthrust-dev - Thrust - Parallel Algorithms Library
+libomp-11-dev - LLVM OpenMP runtime - dev package
+libomp-11-doc - LLVM OpenMP runtime - Documentation
+libomp-12-dev - LLVM OpenMP runtime - dev package
+libomp-12-doc - LLVM OpenMP runtime - Documentation
+libomp5-11 - LLVM OpenMP runtime
+libomp5-12 - LLVM OpenMP runtime
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo apt install libomp-12-dev
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libfwupdplugin1
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  libomp5-12
+Suggested packages:
+  libomp-12-doc
+The following NEW packages will be installed:
+  libomp-12-dev libomp5-12
+0 to upgrade, 2 to newly install, 0 to remove and 0 not to upgrade.
+Need to get 382 kB of archives.
+After this operation, 2,560 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://au.archive.ubuntu.com/ubuntu focal-updates/universe amd64 libomp5-12 amd64 1:12.0.0-3ubuntu1~20.04.5 [347 kB]
+Get:2 http://au.archive.ubuntu.com/ubuntu focal-updates/universe amd64 libomp-12-dev amd64 1:12.0.0-3ubuntu1~20.04.5 [34.6 kB]
+Fetched 382 kB in 0s (1,460 kB/s)   
+Selecting previously unselected package libomp5-12:amd64.
+(Reading database ... 188063 files and directories currently installed
+.)
+Preparing to unpack .../libomp5-12_1%3a12.0.0-3ubuntu1~20.04.5_amd64.d
+eb ...
+Unpacking libomp5-12:amd64 (1:12.0.0-3ubuntu1~20.04.5) ...
+Selecting previously unselected package libomp-12-dev.
+Preparing to unpack .../libomp-12-dev_1%3a12.0.0-3ubuntu1~20.04.5_amd6
+4.deb ...
+Unpacking libomp-12-dev (1:12.0.0-3ubuntu1~20.04.5) ...
+Setting up libomp5-12:amd64 (1:12.0.0-3ubuntu1~20.04.5) ...
+Setting up libomp-12-dev (1:12.0.0-3ubuntu1~20.04.5) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran openmptest.f90 -o openmptest
+/usr/bin/ld: /tmp/ccKlDkXe.o: in function `MAIN__':
+openmptest.f90:(.text+0xc): undefined reference to `omp_get_thread_num_'
+/usr/bin/ld: openmptest.f90:(.text+0xaf): undefined reference to `omp_get_num_threads_'
+collect2: error: ld returned 1 exit status
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran openmptest.f90 -llomp -o openmptest
+/usr/bin/ld: cannot find -llomp
+collect2: error: ld returned 1 exit status
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ info libomp
+info: No menu item 'libomp' in node '(dir)Top'
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd /usr/bin
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/bin$ ls op*
+opalc++  opalcc  opal_wrapper  openssl  openvt  opldecode
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/bin$ ls *omp
+ckbcomp  grub-kbdcomp  mcomp  x11perfcomp  xkbcomp
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/bin$ gfortran -o openmptest -fopenmp openmptest.f90
+gfortran: error: openmptest.f90: No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/bin$ gfortran -o openmptest -fopenmp openmptest.f
+gfortran: error: openmptest.f: No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/bin$ gfortran openmptest.f90 -fopenmp -o openmptest
+gfortran: error: openmptest.f90: No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/bin$ cd
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran openmptest.f90 -fopenmp -o openmptest
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ export OMP_NUM_THREADS=2
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./openmptest
+ ID:            0 hello world
+ There are            2  for this program
+ ID:            1 hello world
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat openmptest.f90
+        program hello_parallel  
+        use OMP_LIB  ! Fortran library for parallel OpenMP execution   
+        implicit none
+        integer   :: nprocs,myproc    
+  
+        !$OMP PARALLEL   PRIVATE(myproc)   
+         myproc = OMP_GET_THREAD_NUM()
+         write(*,*)'ID: ', myproc, 'hello world'
+
+         nprocs = OMP_GET_NUM_THREADS()
+         if (myproc == 0) write(*,*) 'There are ', nprocs, ' for this program'
+         !$OMP END PARALLEL      
+         end program hello_parallel
+
+   
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo apt install sloccount
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libfwupdplugin1
+Use 'sudo apt autoremove' to remove it.
+Suggested packages:
+  doc-base
+The following NEW packages will be installed:
+  sloccount
+0 to upgrade, 1 to newly install, 0 to remove and 0 not to upgrade.
+Need to get 84.8 kB of archives.
+After this operation, 442 kB of additional disk space will be used.
+Get:1 http://au.archive.ubuntu.com/ubuntu focal/universe amd64 sloccount amd64 2.26-5.2 [84.8 kB]
+Fetched 84.8 kB in 0s (438 kB/s)
+Selecting previously unselected package sloccount.
+(Reading database ... 188094 files and directories currently installed.)
+Preparing to unpack .../sloccount_2.26-5.2_amd64.deb ...
+Unpacking sloccount (2.26-5.2) ...
+Setting up sloccount (2.26-5.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sloccount openmptest.f90
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/openmptest.f90 to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+9       top_dir         f90=9
+
+
+Totals grouped by language (dominant language first):
+f90:              9 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 9
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.02)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.04 (0.53)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.03
+Total Estimated Cost to Develop                           = $ 192
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
