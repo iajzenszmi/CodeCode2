@@ -1,0 +1,185 @@
+ian@ian-Aspire-One-753:~/Downloads/arb_master/examples/maxima_functions$ cd
+ian@ian-Aspire-One-753:~$ cd Download/arb_master
+bash: cd: Download/arb_master: No such file or directory
+ian@ian-Aspire-One-753:~$ cd ~/Downloads/arb_master
+ian@ian-Aspire-One-753:~/Downloads/arb_master$ ls
+bin  doc  examples  install  licence  misc  src  templates
+ian@ian-Aspire-One-753:~/Downloads/arb_master$ cd bin
+ian@ian-Aspire-One-753:~/Downloads/arb_master/bin$ ls
+arb          arb_convert_msh_file  arb_dir      arb_jobs       latest_output
+arb_batcher  arb_create_msh        arb_doc      arb_plot       output
+arb_clone    arb_diff              arb_gnuplot  arb_reactions
+ian@ian-Aspire-One-753:~/Downloads/arb_master/bin$ ./arb
+arb finite volume solver (see http://people.eng.unimelb.edu.au/daltonh/downloads/arb/)
+
+INFO: for usage options, try arb --help
+INFO: for licence see /home/ian/Downloads/arb_master/licence
+INFO: script run with options: clean=0, clean-setup=0, clean-compile=0, setup=1, compile=1, run=1, quiet=0, continue=0, debug=0, compiler=default, debugger=none, omp=0, opt=1, process-logging=0
+INFO: arb_dir = /home/ian/Downloads/arb_master
+INFO: working_dir = /home/ian/Downloads/arb_master/bin
+INFO: output_dir = /home/ian/Downloads/arb_master/bin/output
+INFO: environment variable DYLD_LIBRARY_PATH = :/home/ian/Downloads/arb_master/src/contributed/pardiso
+INFO: environment variable OMP_NUM_THREADS = 
+INFO: pardiso licence not found
+INFO: arb input files to be used: 
+INFO: the file /home/ian/Downloads/arb_master/bin/output/build/root_input.arb has been created
+INFO: moving to build directory
+INFO: compiling or setting up the arb executable
+INFO: intel compiler is not available
+INFO: found gfortran compiler at /usr/bin/gfortran
+INFO: found maxima at /usr/bin/maxima
+INFO: running make using commands: make opt=1 ilp=off pardiso_from_arb="present" suitesparse_from_arb="present" mgmres_from_arb="not present" sparse_from_arb="not present" arb_dir="/home/ian/Downloads/arb_master" working_dir="/home/ian/Downloads/arb_master/bin" output_dir="/home/ian/Downloads/arb_master/bin/output" compiler=gnu
+
+Compiling arb with options:
+ os_type is: Linux
+ compiler is: gnu
+ mach_type is: intel64
+ intel mkl is: not available as the intel compiler is not in use
+ lapack is: present
+ numerical recipes routines are: not present
+ intel pardiso linear solver is: not present
+ pardiso (native) linear solver is: not present
+ pardisolicencedir is: /home/ian/Downloads/arb_master/bin
+ hsl_ma28d linear solver is: not present
+ suitesparse linear solver is: present
+ mgmres linear solver is: not present
+ sparse linear solver is: not present
+ higham88 one norm estimator (donest) is: not present
+ mklpath is: not relevant as the intel compiler is not in use
+ openmp is: off
+ optimisation level is: 1
+ intel version is: not relevant as gnu compiler in use
+ intel link line version is: 
+ intel long integer (ilp64) support is: off
+rm -f make.log pardiso_module.o intel_pardiso_module.o lapack_dummy_module.o numerical_recipes_module.o dludcmp.o dlubksb.o dsvdcmp.o dpythag.o dsimp1.o dsimp2.o dsimp3.o dsimplx.o mgmres_solver.o mgmres_module.o sparse_module.o hsl_ma28d_ddeps.o hsl_ma28d.o hsl_ma28d_module.o suitesparse_dummy_module.o donest.o donest_module.o
+/home/ian/Downloads/arb_master/src/setup_equations/setup_equations.pl "/home/ian/Downloads/arb_master" "/home/ian/Downloads/arb_master/bin" "/home/ian/Downloads/arb_master/bin/output"
+
+perl setup_equations script to create f90 subroutines for arb
+dalton harvie, v0.60
+
+INFO: external file /home/ian/Downloads/arb_master/src/free_surface_functions.f90 contains the following operators: cellvofd facevofphi cellvofphishape cellvofphiadjust
+SIMULATION INFO: FILENAME = 
+SIMULATION INFO: TITLE = 
+SIMULATION INFO: ABSFILENAME = 
+SIMULATION INFO: RUNDATE = Thu Apr  7 06:16:33 2022
+SIMULATION INFO: VERSION = 
+SIMULATION INFO: AUTHOR = 
+SIMULATION INFO: DATE = 
+SIMULATION INFO: RUNHOST = ian-Aspire-One-753
+SIMULATION INFO: RUNVERSION = 0.60
+INFO: setup_equations data has not changed since the last run: skipping fortran creation (use arb option --clean-setup to force fortran recreation)
+SUCCESS: equation_module.f90 was already up-to-date
+INFO: arb make/setup successful
+
+INFO: moving back to working directory
+INFO: running arb executable
+
+program arb, version 0.60 (roaming romesh), written by dalton harvie
+INFO: serial version running
+INFO: output_dir = /home/ian/Downloads/arb_master/bin/output/
+INFO: reading simulation information from arb input file
+SIMULATION INFO: FILENAME = 
+SIMULATION INFO: TITLE = 
+SIMULATION INFO: ABSFILENAME = 
+SIMULATION INFO: RUNDATE = Thu Apr  7 06:16:33 2022
+SIMULATION INFO: VERSION = 
+SIMULATION INFO: AUTHOR = 
+SIMULATION INFO: DATE = 
+SIMULATION INFO: RUNHOST = ian-Aspire-One-753
+SIMULATION INFO: RUNVERSION = 0.60
+WARNING: no meshes have been read in
+INFO: number of mesh elements::
+ NODES: ktotal =        0: kdomain =        0: kboundary =        0
+ FACES: jtotal =        0: jdomain =        0: jboundary =        0
+ CELLS: itotal =        0: idomain =        0: iboundary =        0
+WARNING: the cell system region <allcells> contains no elements (none allocated)
+WARNING: the cell system region <domain> contains no elements (none allocated)
+WARNING: the cell system region <boundarycells> contains no elements (none allocated)
+WARNING: the face system region <allfaces> contains no elements (none allocated)
+WARNING: the face system region <domainfaces> contains no elements (none allocated)
+WARNING: the face system region <boundaries> contains no elements (none allocated)
+WARNING: the node system region <allnodes> contains no elements (none allocated)
+WARNING: the node system region <domainnodes> contains no elements (none allocated)
+WARNING: the node system region <boundarynodes> contains no elements (none allocated)
+INFO: the maximum number of dimensions of any region is 0
+INFO: regions:
+ region_number = 1: name = <allcells>: static: type = system: centring = cell: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 2: name = <domain>: static: type = system: centring = cell: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 3: name = <boundarycells>: static: type = system: centring = cell: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 4: name = <allfaces>: static: type = system: centring = face: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 5: name = <domainfaces>: static: type = system: centring = face: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 6: name = <boundaries>: static: type = system: centring = face: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 7: name = <allnodes>: static: type = system: centring = node: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 8: name = <domainnodes>: static: type = system: centring = node: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+ region_number = 9: name = <boundarynodes>: static: type = system: centring = node: dimensions = 0: (right prioritised) options =: location = system: contains no elements
+WARNING: static region <allcells> contains no elements
+WARNING: static region <domain> contains no elements
+WARNING: static region <boundarycells> contains no elements
+WARNING: static region <allfaces> contains no elements
+WARNING: static region <domainfaces> contains no elements
+WARNING: static region <boundaries> contains no elements
+WARNING: static region <allnodes> contains no elements
+WARNING: static region <domainnodes> contains no elements
+WARNING: static region <boundarynodes> contains no elements
+INFO: choosing suitesparse linear solver
+INFO: skipping constructing face kernels as none have any kernel_availability
+INFO: constructing cell kernels using optimisation method
+INFO: skipping constructing node kernels as none have any calculated kernel_availability
+INFO: checking kernel consistencies and printing statistics: kernel advection parameters
+INFO: overall_cross_kernel =   0.000    
+INFO: overall_central_kernel =   0.000    
+INFO: overall_kernel_sum =   0.000    
+INFO: removing small kernel elements
+INFO: checking kernel consistencies and printing statistics: kernel element signs
+INFO: checking kernel consistencies and printing statistics: completeness
+INFO: checking kernel consistencies and printing statistics: consistency
+INFO: checking kernel consistencies and printing statistics: reflection bookkeeping
+INFO: checking kernel consistencies and printing statistics: calculating statistics
+INFO: total number of kernel elements =          0
+INFO: check minw resulted in an average separation increase across all kernel masks of   0.0000    
+INFO: the proportion of kernel masks that need more elements to satisfy the minimum_minw is   0.0000    
+INFO: the average separation across all kernel masks is   0.0000    
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+subroutine setup_vars
+INFO: reading numerical constant values from arb input file
+---------------------------------------------------------------
+INFO: compound variables:
+------------------------------------
+constant
+------------------------------------
+transient
+------------------------------------
+newtient
+------------------------------------
+unknown
+------------------------------------
+derived
+------------------------------------
+equation
+------------------------------------
+output
+------------------------------------
+condition
+------------------------------------
+local
+---------------------------------------------------------------
+WARNING: no equations/unknowns are being solved for
+subroutine setup_vars
+--------------------------------------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+subroutine finalise_gmesh
+INFO: gmeshes:
+ gmesh_number = 0: basename = output: ngnodes = 0: ngelements = 0: ngelements_cell = 0: ngelements_face = 0: ngelements_node = 0: ngregions = 0: options (right prioritised) = noinput output novtkoutput nodatoutput
+subroutine finalise_gmesh
+--------------------------------------------------------------------------------
+++ newtstep 1 starting ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO: initial newton loop newtres =   0.00     after updating variable magnitudes
+INFO: skipping newtsolver as no equations are being solved
+INFO: during newton loop: newtstep = 1: newtres =   0.00    : newtres/newtrestol =   0.00    
+-- newtstep 1 ending --------------------------------------------------------------------------------
+INFO: newton iterations have converged based on newtres (<= newtrestol)
+INFO: writing msh gmesh file with basename = output: output.msh
+TIMING: total wall time =  0.117E-01: total cpu time =  0.600E-02
+SUCCESS: the simulation finished gracefully
+INFO: finishing running arb
+ian@ian-Aspire-One-753:~/Downloads/arb_master/bin$ 
