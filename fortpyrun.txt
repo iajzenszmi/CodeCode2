@@ -1,0 +1,117 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~/add$ python -m f2py -c fib1.f -m fib1
+/usr/bin/python: No module named f2py
+ian@ian-HP-Stream-Laptop-11-y0XX:~/add$ python -m numpy.f2py -c fib1.f -m fib1
+running build
+running config_cc
+unifing config_cc, config, build_clib, build_ext, build commands --compiler options
+running config_fc
+unifing config_fc, config, build_clib, build_ext, build commands --fcompiler options
+running build_src
+build_src
+building extension "fib1" sources
+f2py options: []
+f2py:> /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fib1module.c
+creating /tmp/tmpLRoQbm/src.linux-x86_64-2.7
+Reading fortran codes...
+	Reading file 'fib1.f' (format:fix,strict)
+Post-processing...
+	Block: fib1
+			Block: fib
+Post-processing (stage 2)...
+Building modules...
+	Building module "fib1"...
+		Constructing wrapper function "fib"...
+		  fib(a,[n])
+	Wrote C/API module "fib1" to file "/tmp/tmpLRoQbm/src.linux-x86_64-2.7/fib1module.c"
+  adding '/tmp/tmpLRoQbm/src.linux-x86_64-2.7/fortranobject.c' to sources.
+  adding '/tmp/tmpLRoQbm/src.linux-x86_64-2.7' to include_dirs.
+copying /usr/lib/python2.7/dist-packages/numpy/f2py/src/fortranobject.c -> /tmp/tmpLRoQbm/src.linux-x86_64-2.7
+copying /usr/lib/python2.7/dist-packages/numpy/f2py/src/fortranobject.h -> /tmp/tmpLRoQbm/src.linux-x86_64-2.7
+build_src: building npy-pkg config files
+running build_ext
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+get_default_fcompiler: matching types: '['gnu95', 'intel', 'lahey', 'pg', 'absoft', 'nag', 'vast', 'compaq', 'intele', 'intelem', 'gnu', 'g95', 'pathf95', 'nagfor']'
+customize Gnu95FCompiler
+Found executable /usr/bin/gfortran
+customize Gnu95FCompiler
+customize Gnu95FCompiler using build_ext
+building 'fib1' extension
+compiling C sources
+C compiler: x86_64-linux-gnu-gcc -pthread -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-QDqKfA/python2.7-2.7.18=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC
+
+creating /tmp/tmpLRoQbm/tmp
+creating /tmp/tmpLRoQbm/tmp/tmpLRoQbm
+creating /tmp/tmpLRoQbm/tmp/tmpLRoQbm/src.linux-x86_64-2.7
+compile options: '-I/tmp/tmpLRoQbm/src.linux-x86_64-2.7 -I/usr/lib/python2.7/dist-packages/numpy/core/include -I/usr/include/python2.7 -c'
+x86_64-linux-gnu-gcc: /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fib1module.c
+x86_64-linux-gnu-gcc: /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fortranobject.c
+In file included from /usr/lib/python2.7/dist-packages/numpy/core/include/numpy/ndarraytypes.h:1822,
+                 from /usr/lib/python2.7/dist-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /usr/lib/python2.7/dist-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fortranobject.h:13,
+                 from /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fib1module.c:16:
+/usr/lib/python2.7/dist-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+   17 | #warning "Using deprecated NumPy API, disable it with " \
+      |  ^~~~~~~
+In file included from /usr/lib/python2.7/dist-packages/numpy/core/include/numpy/ndarraytypes.h:1822,
+                 from /usr/lib/python2.7/dist-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /usr/lib/python2.7/dist-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fortranobject.h:13,
+                 from /tmp/tmpLRoQbm/src.linux-x86_64-2.7/fortranobject.c:2:
+/usr/lib/python2.7/dist-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+   17 | #warning "Using deprecated NumPy API, disable it with " \
+      |  ^~~~~~~
+compiling Fortran sources
+Fortran f77 compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -fPIC -O3 -funroll-loops
+Fortran f90 compiler: /usr/bin/gfortran -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
+Fortran fix compiler: /usr/bin/gfortran -Wall -g -ffixed-form -fno-second-underscore -Wall -g -fno-second-underscore -fPIC -O3 -funroll-loops
+compile options: '-I/tmp/tmpLRoQbm/src.linux-x86_64-2.7 -I/usr/lib/python2.7/dist-packages/numpy/core/include -I/usr/include/python2.7 -c'
+gfortran:f77: fib1.f
+/usr/bin/gfortran -Wall -g -Wall -g -shared /tmp/tmpLRoQbm/tmp/tmpLRoQbm/src.linux-x86_64-2.7/fib1module.o /tmp/tmpLRoQbm/tmp/tmpLRoQbm/src.linux-x86_64-2.7/fortranobject.o /tmp/tmpLRoQbm/fib1.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9 -lgfortran -o ./fib1.so
+Removing build directory /tmp/tmpLRoQbm
+
+[200~an@ian-HP-Stream-Laptop-11-y0XX:~/add$ cat fib1.f
+C FILE: FIB1.F
+      SUBROUTINE FIB(A,N)
+C
+C     CALCULATE FIRST N FIBONACCI NUMBERS
+C
+      INTEGER N
+      REAL*8 A(N)
+      DO I=1,N
+         IF (I.EQ.1) THEN
+            A(I) = 0.0D0
+         ELSEIF (I.EQ.2) THEN
+            A(I) = 1.0D0
+         ELSE 
+            A(I) = A(I-1) + A(I-2)
+         ENDIF
+      ENDDO
+      END
+C END FILE FIB1.F
+ian@ian-HP-Stream-Laptop-11-y0XX:~/add
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~/add$ python
+Python 2.7.18 (default, Mar  8 2021, 13:02:45)
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy as np
+>>> import fib1
+>>> print (fib1.fib.__doc__)
+fib(a,[n])
+
+Wrapper for ``fib``.
+
+Parameters
+----------
+a : input rank-1 array('d') with bounds (n)
+
+Other Parameters
+----------------
+n : input int, optional
+    Default: len(a)
+
+>>> 
+
+
