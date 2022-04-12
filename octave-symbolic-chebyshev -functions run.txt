@@ -1,0 +1,31 @@
+chebsnake.m
+import chebfun
+# Octave 5.2.0, Mon Sep 06 06:01:44 2021 AEST <ian@ian-HP-Notebook>
+# Octave 5.2.0, Mon Sep 06 06:02:34 2021 AEST <ian@ian-HP-Notebook>
+# Octave 5.2.0, Mon Sep 06 06:03:33 2021 AEST <ian@ian-HP-Notebook>
+# Octave 5.2.0, Mon Sep 06 06:04:32 2021 AEST <ian@ian-HP-Notebook>
+# Octave 5.2.0, Mon Sep 06 06:06:26 2021 AEST <ian@ian-HP-Notebook>
+# Octave 5.2.0, Mon Sep 06 06:08:00 2021 AEST <ian@ian-HP-Notebook>
+% Create a chebfun on the interval [-3,3]
+x = chebfun('x', [-3 3]);
+% Define a potential function
+V = abs(x);
+% Plot the first 8 eigenstates of
+% the Schrodinger operator
+quantumstates(V, 8)
+F = TRIGPOLY(N)
+F = TRIGPOLY(10)
+# Octave 5.2.0, Mon Sep 06 06:28:42 2021 AEST <ian@ian-HP-Notebook>
+syms x
+pkg load symbolic
+syms x
+chebyshevT(1, x)
+chebyshevT(2, x)
+syms n
+chebyshevT(n, x)
+ (sym) chebyshevt(n, x)
+syms x
+chebyshevT([0 1 2], x)
+  ⇒ (sym 1×3 matrix)
+      ⎡         2    ⎤
+      ⎣1  x  2⋅x  - 1⎦
