@@ -1,0 +1,121 @@
+GNU Octave, version 5.2.0
+Copyright (C) 2020 John W. Eaton and others.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-pc-linux-gnu".
+
+Additional information about Octave is available at https://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit https://www.octave.org/get-involved.html
+
+Read https://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+>> power(2, 2)
+ans =  4
+>> plus(800, 150)
+ans =  950
+>> x=(1,2,3,4)
+parse error:
+
+  syntax error
+
+>>> x=(1,2,3,4)
+        ^
+
+>> x(4) - 1, 2, 3, 4
+error: 'x' undefined near line 1 column 1
+>> x(4) = 1, 2, 3, 4
+x =
+
+   0   0   0   1
+
+ans =  2
+ans =  3
+ans =  4
+>> x(1) = 1
+x =
+
+   1   0   0   1
+
+>> x(2) = 2
+x =
+
+   1   2   0   1
+
+>> x(3) = 3
+x =
+
+   1   2   3   1
+
+>> x(4) = x(4)
+x =
+
+   1   2   3   1
+
+>> x(4) = 4
+x =
+
+   1   2   3   4
+
+>> y(1) =1
+y =  1
+>> y(2) = 2
+y =
+
+   1   2
+
+>> y(3) = 3
+y =
+
+   1   2   3
+
+>> y(4)=4
+y =
+
+   1   2   3   4
+
+>> power(x,y)
+ans =
+
+     1     4    27   256
+
+>> z = power(x,y)
+z =
+
+     1     4    27   256
+
+>> z(1) =
+parse error:
+
+  syntax error
+
+>>> z(1) =
+         ^
+
+>> z(1)
+ans =  1
+>> z(2)
+ans =  4
+>> h = rdivide(x,y)
+h =
+
+   1   1   1   1
+
+>> h = rdivide(x.,y.)
+parse error:
+
+  syntax error
+
+>>> h = rdivide(x.,y.)
+                  ^
+
+>> h
+h =
+
+   1   1   1   1
+
+>> power(2, 2)
