@@ -1,0 +1,36 @@
+ian@ian-Aspire-One-753:~$ gcc besselerror.c -lgsl -o besselerror 
+gcc: error: besselerror.c: No such file or directory
+ian@ian-Aspire-One-753:~$ ls *.c
+bessselerror.c  roots.c
+ian@ian-Aspire-One-753:~$ gcc bessselerror.c -lgsl -o be.c
+ian@ian-Aspire-One-753:~$ ./be.c
+status = success
+J0(5.0) = -0.177596771314338264 
+ +/-  0.000000000000000193 
+exact = -0.177596771314338292 
+ian@ian-Aspire-One-753:~$ gcc bessselerror.c -lgsl -o be
+ian@ian-Aspire-One-753:~$ ./be
+status = success
+J0(5.0) = -0.177596771314338264 
+ +/-  0.000000000000000193 
+exact = -0.177596771314338292 
+ian@ian-Aspire-One-753:~$ cat bessselerror.c
+#include <stdio.h>
+#include <gsl/gsl_errno.h>
+#include <gsl/gsl_sf_bessel.h>
+int
+main (void)
+{
+double x = 5.0;
+gsl_sf_result result;
+double expected = -0.17759677131433830434739701;
+int status = gsl_sf_bessel_J0_e (x, &result);
+printf ("status = %s\n", gsl_strerror(status));
+printf ("J0(5.0) = %.18f \n"
+" +/- % .18f \n",
+result.val, result.err);
+printf ("exact = %.18f \n", expected);
+return status;
+}
+ian@ian-Aspire-One-753:~$ 
+
