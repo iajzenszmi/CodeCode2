@@ -1,0 +1,21 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran runcount.f -o runcount
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./runcount
+  rcount =          1
+  rcount =          2
+  rcount =          3
+  rcount =          4
+  rcount =          5
+  rcount =          6
+  rcount =          7
+  rcount =          8
+  rcount =          9
+  rcount =         10
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat runcount.f
+            integer rcount
+            do rcount = 1, 10, 1
+              write(6,9000) rcount
+ 9000       format(" "," rcount = ", i10)
+            end do
+            end program            
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
