@@ -1,0 +1,10 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat a11.f
+       integer icount2(10) /1,2,3,4,5,6,7,8,9,0/,icount
+       write(6,9000) (icount2(icount),icount=1,10)
+ 9000  format(" ",10(I2,X))
+       end program
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran a11.f -o a11
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./a11
+  1  2  3  4  5  6  7  8  9  0
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
