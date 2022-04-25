@@ -1,0 +1,6 @@
+gfortran callnews.f08 -o callnews
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./callnews
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat callnews.f08
+       call system("firefox 'https://www.abc.net.au/news/newschannel/news-in-90-seconds/'")
+
+       end program
