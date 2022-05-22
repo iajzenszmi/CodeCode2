@@ -1,0 +1,583 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo fallocate -l 2G /swapfile
+[sudo] password for ian: 
+fallocate: fallocate failed: Text file busy
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo swapoff /swapfile
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo fallocate -l 3G /swapfile
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo chmod 600 /swapfile
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo mkswap /swapfile
+mkswap: /swapfile: warning: wiping old swap signature.
+Setting up swapspace version 1, size = 3 GiB (3221221376 bytes)
+no label, UUID=7b584b75-c34b-4c17-8810-ddacf9c3a628
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo swapon /swapfile
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo nano /fstab
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo nano /etc/fstab
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo swapon --show
+NAME      TYPE SIZE USED PRIO
+/swapfile file   3G   0B   -2
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo free -h
+              total        used        free      shared  buff/cache   available
+Mem:          1.8Gi       1.2Gi       163Mi       261Mi       533Mi       290Mi
+Swap:         3.0Gi        72Mi       2.9Gi
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.0.4 (2019-05-16)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+(v1.0) pkg> help
+  Welcome to the Pkg REPL-mode. To return to the julia> prompt, either press
+  backspace when the input line is empty or press Ctrl+C.
+
+  Synopsis
+
+  pkg> cmd [opts] [args]
+
+  Multiple commands can be given on the same line by interleaving a ; between
+  the commands.
+
+  Commands
+
+  activate: set the primary environment the package manager manipulates
+
+  add: add packages to project
+
+  build: run the build script for packages
+
+  develop: clone the full package repo locally for development
+
+  free: undoes a pin, develop, or stops tracking a repo
+
+  gc: garbage collect packages not used for a significant time
+
+  generate: generate files for a new project
+
+  help: show this message
+
+  instantiate: downloads all the dependencies for the project
+
+  pin: pins the version of packages
+
+  precompile: precompile all the project dependencies
+
+  preview: previews a subsequent command without affecting the current state
+
+  remove: remove packages from project or manifest
+
+  resolve: resolves to update the manifest from changes in dependencies of
+  developed packages
+
+  status: summarize contents of and changes to environment
+
+  test: run tests for packages
+
+  update: update packages in manifest
+
+(v1.0) pkg> add DistributionsAD.jl
+  Updating registry at `~/.julia/registries/General`
+  Updating git-repo `https://github.com/JuliaRegistries/General.git`
+ Resolving package versions...
+  Updating `~/.julia/environments/v1.0/Project.toml`
+ [no changes]
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+ [no changes]
+
+(v1.0) pkg> test DistributionsAD.jl
+   Testing DistributionsAD
+ Resolving package versions...
+    Status `/tmp/tmpB1wlUT/Manifest.toml`
+  [621f4979] AbstractFFTs v0.5.0
+  [79e6a3ab] Adapt v1.1.0
+  [4c555306] ArrayLayouts v0.2.6
+  [9e28174c] BinDeps v1.0.2
+  [b99e7846] BinaryProvider v0.5.10
+  [082447d4] ChainRules v0.7.70
+  [d360d2e6] ChainRulesCore v0.9.45
+  [861a8166] Combinatorics v1.0.2
+  [bbf7d656] CommonSubexpressions v0.3.0
+  [34da2185] Compat v3.43.0
+  [9a962f9c] DataAPI v1.10.0
+  [864edb3b] DataStructures v0.18.12
+  [163ba53b] DiffResults v1.0.3
+  [b552c78f] DiffRules v1.5.0
+  [31c24e10] Distributions v0.23.8
+  [ced4e74d] DistributionsAD v0.6.3
+  [ffbed154] DocStringExtensions v0.8.6
+  [1a297f60] FillArrays v0.8.14
+  [26cc04aa] FiniteDifferences v0.12.12
+  [f6369f11] ForwardDiff v0.10.30
+  [069b7b12] FunctionWrappers v1.1.2
+  [7869d1d1] IRTools v0.3.3
+  [92d709cd] IrrationalConstants v0.1.1
+  [2ab3a3ac] LogExpFunctions v0.3.0
+  [1914dd2f] MacroTools v0.5.9
+  [e1d29d7a] Missings v1.0.2
+  [872c559c] NNlib v0.6.6
+  [77ba4419] NaNMath v0.3.7
+  [bac558e1] OrderedCollections v1.4.1
+  [90014a1f] PDMats v0.10.1
+  [21216c6a] Preferences v1.3.0
+  [1fd47b50] QuadGK v2.4.2
+  [189a3867] Reexport v1.2.2
+  [ae029012] Requires v1.3.0
+  [37e2e3b7] ReverseDiff v1.9.0
+  [708f8203] Richardson v1.4.0
+  [79098fc4] Rmath v0.6.0
+  [a2af1166] SortingAlgorithms v1.0.1
+  [276daf66] SpecialFunctions v0.8.0
+  [90137ffa] StaticArrays v0.12.5
+  [82ae8749] StatsAPI v1.3.0
+  [2913bbd2] StatsBase v0.33.16
+  [4c63d2b9] StatsFuns v0.9.9
+  [fa267f1f] TOML v1.0.3
+  [9f7883ad] Tracker v0.2.6
+  [30578b45] URIParser v0.4.1
+  [e88e6eb3] Zygote v0.4.20
+  [700de1a5] ZygoteRules v0.2.2
+  [2a0f44e3] Base64  [`@stdlib/Base64`]
+  [ade2ca70] Dates  [`@stdlib/Dates`]
+  [8bb1440f] DelimitedFiles  [`@stdlib/DelimitedFiles`]
+  [8ba89e20] Distributed  [`@stdlib/Distributed`]
+  [9fa8497b] Future  [`@stdlib/Future`]
+  [b77e0a4c] InteractiveUtils  [`@stdlib/InteractiveUtils`]
+  [76f85450] LibGit2  [`@stdlib/LibGit2`]
+  [8f399da3] Libdl  [`@stdlib/Libdl`]
+  [37e2e46d] LinearAlgebra  [`@stdlib/LinearAlgebra`]
+  [56ddb016] Logging  [`@stdlib/Logging`]
+  [d6f4376e] Markdown  [`@stdlib/Markdown`]
+  [a63ad114] Mmap  [`@stdlib/Mmap`]
+  [44cfe95a] Pkg  [`@stdlib/Pkg`]
+  [de0858da] Printf  [`@stdlib/Printf`]
+  [3fa0cd96] REPL  [`@stdlib/REPL`]
+  [9a3f8284] Random  [`@stdlib/Random`]
+  [ea8e919c] SHA  [`@stdlib/SHA`]
+  [9e88b42a] Serialization  [`@stdlib/Serialization`]
+  [1a1011a3] SharedArrays  [`@stdlib/SharedArrays`]
+  [6462fe0b] Sockets  [`@stdlib/Sockets`]
+  [2f01184e] SparseArrays  [`@stdlib/SparseArrays`]
+  [10745b16] Statistics  [`@stdlib/Statistics`]
+  [4607b0f0] SuiteSparse  [`@stdlib/SuiteSparse`]
+  [8dfed614] Test  [`@stdlib/Test`]
+  [cf7118a7] UUIDs  [`@stdlib/UUIDs`]
+  [4ec0a83e] Unicode  [`@stdlib/Unicode`]
+┌ Warning: the implicit keyword argument `filter_modules=(:Base, :SpecialFunctions, :NaNMath)` in `diffrules()` is deprecated and will be changed to `filter_modules=nothing` in an upcoming breaking release of DiffRules (i.e., `diffrules()` will return all rules defined in DiffRules)
+│   caller = top-level scope at none:0
+└ @ Core none:0
+┌ Warning: the implicit keyword argument `filter_modules=(:Base, :SpecialFunctions, :NaNMath)` in `diffrules()` is deprecated and will be changed to `filter_modules=nothing` in an upcoming breaking release of DiffRules (i.e., `diffrules()` will return all rules defined in DiffRules)
+│   caller = top-level scope at none:0
+└ @ Core none:0
+logsumexp: Error During Test at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:189
+  Got exception outside of a @test
+  ArgumentError: Converting an instance of ReverseDiff.TrackedReal{Float64,Float64,Nothing} to Float64 is not defined. Please use `ReverseDiff.value` instead.
+  Stacktrace:
+   [1] convert(::Type{Float64}, ::ReverseDiff.TrackedReal{Float64,Float64,Nothing}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/tracked.jl:261
+   [2] setindex!(::Array{Float64,1}, ::ReverseDiff.TrackedReal{Float64,Float64,Nothing}, ::Int32) at ./array.jl:769
+   [3] increment_deriv! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/derivatives/propagation.jl:33 [inlined]
+   [4] increment_deriv! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/derivatives/propagation.jl:40 [inlined]
+   [5] _add_to_deriv! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/macros.jl:242 [inlined]
+   [6] _broadcast_getindex_evalf at ./broadcast.jl:582 [inlined]
+   [7] _broadcast_getindex at ./broadcast.jl:555 [inlined]
+   [8] #17 at ./broadcast.jl:954 [inlined]
+   [9] ntuple at ./tuple.jl:156 [inlined]
+   [10] tuplebroadcast at ./broadcast.jl:954 [inlined]
+   [11] copy at ./broadcast.jl:952 [inlined]
+   [12] materialize(::Base.Broadcast.Broadcasted{Base.Broadcast.Style{Tuple},Nothing,typeof(ReverseDiff._add_to_deriv!),Tuple{Tuple{ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}}},Tuple{ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}}}}}) at ./broadcast.jl:756
+   [13] special_reverse_exec!(::ReverseDiff.SpecialInstruction{typeof(logsumexp),Tuple{ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}}},ReverseDiff.TrackedReal{Float64,Float64,Nothing},Tuple{getfield(DistributionsAD.ReverseDiffX, Symbol("##4#6")){ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}},Float64},getfield(DistributionsAD.ReverseDiffX, Symbol("###logsumexp#479#7")){getfield(DistributionsAD.ReverseDiffX, Symbol("####logsumexp#479#3#5"))},NamedTuple{(:dims,),Tuple{Colon}}}}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/macros.jl:218
+   [14] reverse_exec!(::ReverseDiff.SpecialInstruction{typeof(logsumexp),Tuple{ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}}},ReverseDiff.TrackedReal{Float64,Float64,Nothing},Tuple{getfield(DistributionsAD.ReverseDiffX, Symbol("##4#6")){ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}},Float64},getfield(DistributionsAD.ReverseDiffX, Symbol("###logsumexp#479#7")){getfield(DistributionsAD.ReverseDiffX, Symbol("####logsumexp#479#3#5"))},NamedTuple{(:dims,),Tuple{Colon}}}}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/tape.jl:93
+   [15] reverse_pass!(::Array{ReverseDiff.AbstractInstruction,1}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/tape.jl:87
+   [16] reverse_pass! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/tape.jl:36 [inlined]
+   [17] seeded_reverse_pass!(::Array{Float64,1}, ::ReverseDiff.TrackedReal{Float64,Float64,Nothing}, ::ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}}, ::ReverseDiff.GradientTape{getfield(Main, Symbol("##12#26")){typeof(logsumexp)},ReverseDiff.TrackedArray{Float64,Float64,1,Array{Float64,1},Array{Float64,1}},ReverseDiff.TrackedReal{Float64,Float64,Nothing}}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/utils.jl:31
+   [18] seeded_reverse_pass! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/tape.jl:47 [inlined]
+   [19] gradient! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/gradients.jl:80 [inlined]
+   [20] (::getfield(Main, Symbol("##test_reverse_mode_ad#10#24")))(::Float64, ::Float64, ::Function, ::typeof(logsumexp), ::Float64, ::Array{Float64,1}) at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:152
+   [21] (::getfield(Main, Symbol("#kw##test_reverse_mode_ad#29")))(::NamedTuple{(:rtol, :atol),Tuple{Float64,Float64}}, ::getfield(Main, Symbol("#test_reverse_mode_ad#29")){getfield(Main, Symbol("##test_reverse_mode_ad#10#24"))}, ::Function, ::Float64, ::Array{Float64,1}) at ./none:0
+   [22] macro expansion at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:191 [inlined]
+   [23] macro expansion at /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Test/src/Test.jl:1083 [inlined]
+   [24] macro expansion at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:190 [inlined]
+   [25] macro expansion at /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Test/src/Test.jl:1083 [inlined]
+   [26] top-level scope at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:2
+   [27] include at ./boot.jl:317 [inlined]
+   [28] include_relative(::Module, ::String) at ./loading.jl:1044
+   [29] include(::Module, ::String) at ./sysimg.jl:29
+   [30] include(::String) at ./client.jl:392
+   [31] top-level scope at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/runtests.jl:53
+   [32] include at ./boot.jl:317 [inlined]
+   [33] include_relative(::Module, ::String) at ./loading.jl:1044
+   [34] include(::Module, ::String) at ./sysimg.jl:29
+   [35] include(::String) at ./client.jl:392
+   [36] top-level scope at none:0
+   [37] eval(::Module, ::Any) at ./boot.jl:319
+   [38] exec_options(::Base.JLOptions) at ./client.jl:243
+   [39] _start() at ./client.jl:425
+WARNING: importing deprecated binding ChainRulesCore.DoesNotExist into ChainRules.
+WARNING: ChainRulesCore.DoesNotExist is deprecated, use NoTangent instead.
+  likely near /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:1
+logdet: Error During Test at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:202
+  Got exception outside of a @test
+  UndefVarError: chol_blocked_rev not defined
+  Stacktrace:
+   [1] getproperty at ./sysimg.jl:13 [inlined]
+   [2] (::getfield(DistributionsAD, Symbol("#turing_chol_pullback#1")){Array{Float64,2}})(::NamedTuple{(:factors,),Tuple{Array{Float64,2}}}) at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/common.jl:11
+   [3] back at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/common.jl:19 [inlined]
+   [4] special_reverse_exec!(::ReverseDiff.SpecialInstruction{typeof(DistributionsAD.turing_chol),Tuple{ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}},Bool},ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}},Tuple{getfield(DistributionsAD, Symbol("#back#2")){getfield(DistributionsAD, Symbol("#turing_chol_pullback#1")){Array{Float64,2}}},Bool}}) at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/reversediffx.jl:58
+   [5] reverse_exec!(::ReverseDiff.SpecialInstruction{typeof(DistributionsAD.turing_chol),Tuple{ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}},Bool},ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}},Tuple{getfield(DistributionsAD, Symbol("#back#2")){getfield(DistributionsAD, Symbol("#turing_chol_pullback#1")){Array{Float64,2}}},Bool}}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/tape.jl:93
+   [6] reverse_pass!(::Array{ReverseDiff.AbstractInstruction,1}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/tape.jl:87
+   [7] reverse_pass! at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/tape.jl:36 [inlined]
+   [8] seeded_reverse_pass!(::Array{Float64,2}, ::ReverseDiff.TrackedReal{Float64,Float64,Nothing}, ::ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}}, ::ReverseDiff.GradientTape{getfield(Main, Symbol("##12#26")){getfield(Main, Symbol("##16#32"))},ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}},ReverseDiff.TrackedReal{Float64,Float64,Nothing}}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/utils.jl:31
+   [9] gradient!(::Array{Float64,2}, ::ReverseDiff.GradientTape{getfield(Main, Symbol("##12#26")){getfield(Main, Symbol("##16#32"))},ReverseDiff.TrackedArray{Float64,Float64,2,Array{Float64,2},Array{Float64,2}},ReverseDiff.TrackedReal{Float64,Float64,Nothing}}, ::Array{Float64,2}) at /home/ian/.julia/packages/ReverseDiff/E4Tzn/src/api/tape.jl:47
+   [10] (::getfield(Main, Symbol("##test_reverse_mode_ad#10#24")))(::Float64, ::Float64, ::Function, ::getfield(Main, Symbol("##16#32")), ::Float64, ::Array{Float64,2}) at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:152
+   [11] (::getfield(Main, Symbol("#kw##test_reverse_mode_ad#29")))(::NamedTuple{(:rtol, :atol),Tuple{Float64,Float64}}, ::getfield(Main, Symbol("#test_reverse_mode_ad#29")){getfield(Main, Symbol("##test_reverse_mode_ad#10#24"))}, ::Function, ::Float64, ::Array{Float64,2}) at ./none:0
+   [12] macro expansion at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:205 [inlined]
+   [13] macro expansion at /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Test/src/Test.jl:1083 [inlined]
+   [14] macro expansion at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:203 [inlined]
+   [15] macro expansion at /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Test/src/Test.jl:1083 [inlined]
+   [16] top-level scope at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:2
+   [17] include at ./boot.jl:317 [inlined]
+   [18] include_relative(::Module, ::String) at ./loading.jl:1044
+   [19] include(::Module, ::String) at ./sysimg.jl:29
+   [20] include(::String) at ./client.jl:392
+   [21] top-level scope at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/runtests.jl:53
+   [22] include at ./boot.jl:317 [inlined]
+   [23] include_relative(::Module, ::String) at ./loading.jl:1044
+   [24] include(::Module, ::String) at ./sysimg.jl:29
+   [25] include(::String) at ./client.jl:392
+   [26] top-level scope at none:0
+   [27] eval(::Module, ::Any) at ./boot.jl:319
+   [28] exec_options(::Base.JLOptions) at ./client.jl:243
+   [29] _start() at ./client.jl:425
+WARNING: ChainRulesCore.DoesNotExist is deprecated, use NoTangent instead.
+  likely near /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:1
+Tracker, Zygote and ReverseDiff + MvNormal: Error During Test at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:218
+  Got exception outside of a @test
+  UndefVarError: chol_blocked_rev not defined
+  Stacktrace:
+   [1] getproperty at ./sysimg.jl:13 [inlined]
+   [2] (::getfield(DistributionsAD, Symbol("#turing_chol_pullback#1")){Array{Float64,2}})(::Tuple{UpperTriangular{Float64,Array{Float64,2}},Int32}) at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/common.jl:11
+   [3] back at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/common.jl:19 [inlined]
+   [4] #355 at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/tracker.jl:131 [inlined]
+   [5] back_(::Tracker.Grads, ::Tracker.Call{getfield(DistributionsAD, Symbol("##355#356")){getfield(DistributionsAD, Symbol("#back#2")){getfield(DistributionsAD, Symbol("#turing_chol_pullback#1")){Array{Float64,2}}}},Tuple{Tracker.Tracked{Array{Float64,2}},Nothing}}, ::Tuple{TrackedArray{…,UpperTriangular{Float64,Array{Float64,2}}},Int32}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:110
+   [6] back(::Tracker.Grads, ::Tracker.Tracked{Tuple{Array{Float64,2},Int32}}, ::Tuple{TrackedArray{…,UpperTriangular{Float64,Array{Float64,2}}},Int32}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:125
+   [7] (::getfield(Tracker, Symbol("##16#17")){Tracker.Grads})(::Tracker.Tracked{Tuple{Array{Float64,2},Int32}}, ::Tuple{TrackedArray{…,UpperTriangular{Float64,Array{Float64,2}}},Int32}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113
+   [8] foreach(::Function, ::Tuple{Tracker.Tracked{Tuple{Array{Float64,2},Int32}},Nothing}, ::Tuple{Tuple{TrackedArray{…,UpperTriangular{Float64,Array{Float64,2}}},Int32},Nothing}) at ./abstractarray.jl:1836
+   [9] back_(::Tracker.Grads, ::Tracker.Call{getfield(Tracker, Symbol("##369#371")){Tracker.TrackedTuple{Tuple{Array{Float64,2},Int32}},Int32},Tuple{Tracker.Tracked{Tuple{Array{Float64,2},Int32}},Nothing}}, ::TrackedArray{…,UpperTriangular{Float64,Array{Float64,2}}}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113
+   [10] back(::Tracker.Grads, ::Tracker.Tracked{Array{Float64,2}}, ::UpperTriangular{Float64,Base.ReshapedArray{Float64,2,Adjoint{Float64,Array{Float64,2}},Tuple{Base.MultiplicativeInverses.SignedMultiplicativeInverse{Int32}}}}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:123
+   [11] #16 at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113 [inlined]
+   [12] foreach at ./abstractarray.jl:1836 [inlined]
+   [13] back_(::Tracker.Grads, ::Tracker.Call{getfield(DistributionsAD, Symbol("##351#352")),Tuple{Tracker.Tracked{Array{Float64,2}}}}, ::Base.ReshapedArray{Float64,2,Adjoint{Float64,Array{Float64,2}},Tuple{Base.MultiplicativeInverses.SignedMultiplicativeInverse{Int32}}}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113
+   [14] back(::Tracker.Grads, ::Tracker.Tracked{UpperTriangular{Float64,Array{Float64,2}}}, ::Base.ReshapedArray{Float64,2,Adjoint{Float64,Array{Float64,2}},Tuple{Base.MultiplicativeInverses.SignedMultiplicativeInverse{Int32}}}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:125
+   ... (the last 4 lines are repeated 1 more time)
+   [19] (::getfield(Tracker, Symbol("##16#17")){Tracker.Grads})(::Tracker.Tracked{Adjoint{Float64,UpperTriangular{Float64,Array{Float64,2}}}}, ::Array{Float64,2}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113
+   [20] foreach(::Function, ::Tuple{Tracker.Tracked{Adjoint{Float64,UpperTriangular{Float64,Array{Float64,2}}}},Tracker.Tracked{Array{Float64,1}}}, ::Tuple{Array{Float64,2},Array{Float64,1}}) at ./abstractarray.jl:1836
+   [21] back_(::Tracker.Grads, ::Tracker.Call{getfield(DistributionsAD, Symbol("#back#361")){getfield(ChainRules, Symbol("#backslash_pullback#1593")){Adjoint{Float64,UpperTriangular{Float64,Array{Float64,2}}},Array{Float64,1},Array{Float64,1}}},Tuple{Tracker.Tracked{Adjoint{Float64,UpperTriangular{Float64,Array{Float64,2}}}},Tracker.Tracked{Array{Float64,1}}}}, ::TrackedArray{…,Array{Float64,1}}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113
+   [22] back(::Tracker.Grads, ::Tracker.Tracked{Array{Float64,1}}, ::TrackedArray{…,Array{Float64,1}}) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:125
+   [23] #16 at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113 [inlined]
+   [24] foreach at ./abstractarray.jl:1836 [inlined]
+   ... (the last 4 lines are repeated 4 more times)
+   [41] back_(::Tracker.Grads, ::Tracker.Call{getfield(Tracker, Symbol("##226#229")){Tracker.TrackedReal{Float64},Int32},Tuple{Tracker.Tracked{Float64},Nothing}}, ::Float64) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:113
+   [42] back(::Tracker.Grads, ::Tracker.Tracked{Float64}, ::Float64) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:125
+   [43] #18 at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:140 [inlined]
+   [44] (::getfield(Tracker, Symbol("##21#23")){getfield(Tracker, Symbol("##18#19")){Tracker.Params,Tracker.TrackedReal{Float64}}})(::Float64) at /home/ian/.julia/packages/Tracker/cpxco/src/back.jl:149
+   [45] (::getfield(Main, Symbol("##test_reverse_mode_ad#10#24")))(::Float64, ::Float64, ::Function, ::getfield(Main, Symbol("##21#37")), ::Float64, ::Array{Float64,1}, ::Vararg{Any,N} where N) at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:176
+   [46] (::getfield(Main, Symbol("#test_reverse_mode_ad#29")){getfield(Main, Symbol("##test_reverse_mode_ad#10#24"))})(::Function, ::Float64, ::Array{Float64,1}, ::Vararg{Any,N} where N) at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:126
+   [47] macro expansion at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:231 [inlined]
+   [48] macro expansion at /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Test/src/Test.jl:1083 [inlined]
+   [49] macro expansion at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:219 [inlined]
+   [50] macro expansion at /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Test/src/Test.jl:1083 [inlined]
+   [51] top-level scope at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:2
+   [52] include at ./boot.jl:317 [inlined]
+   [53] include_relative(::Module, ::String) at ./loading.jl:1044
+   [54] include(::Module, ::String) at ./sysimg.jl:29
+   [55] include(::String) at ./client.jl:392
+   [56] top-level scope at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/runtests.jl:53
+   [57] include at ./boot.jl:317 [inlined]
+   [58] include_relative(::Module, ::String) at ./loading.jl:1044
+   [59] include(::Module, ::String) at ./sysimg.jl:29
+   [60] include(::String) at ./client.jl:392
+   [61] top-level scope at none:0
+   [62] eval(::Module, ::Any) at ./boot.jl:319
+   [63] exec_options(::Base.JLOptions) at ./client.jl:243
+Test Summary:                                | Pass  Error  Total
+others                                       |   85      3     88
+  TuringWishart                              |   12            12
+  TuringInverseWishart                       |   10            10
+  TuringMvNormal                             |   12            12
+  TuringMvLogNormal                          |   15            15
+  TuringUniform                              |    2             2
+  Semicircle                                 |    1             1
+  TuringPoissonBinomial                      |    2             2
+  Inverse of pi                              |    1             1
+  Cholesky                                   |    2             2
+  logsumexp                                  |    2      1      3
+  zygote_ldiv                                |    5             5
+  logdet                                     |    2      1      3
+  fill                                       |   13            13
+  Tracker, Zygote and ReverseDiff + MvNormal |    3      1      4
+  Entropy                                    |    1             1
+  Params                                     |    2             2
+ERROR: LoadError: LoadError: Some tests did not pass: 85 passed, 0 failed, 3 errored, 0 broken.
+in expression starting at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/others.jl:1
+in expression starting at /home/ian/.julia/packages/DistributionsAD/dKKOw/test/runtests.jl:52
+ERROR: Package DistributionsAD errored during testing
+
+(v1.0) pkg> ^C
+
+julia> 
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ julia DistributionsAD.jl
+ERROR: could not open file /home/ian/DistributionsAD.jl
+Stacktrace:
+ [1] include at ./boot.jl:317 [inlined]
+ [2] include_relative(::Module, ::String) at ./loading.jl:1044
+ [3] include(::Module, ::String) at ./sysimg.jl:29
+ [4] exec_options(::Base.JLOptions) at ./client.jl:266
+ [5] _start() at ./client.jl:425
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ locate DistributionsAD.jl
+
+Command 'locate' not found, but can be installed with:
+
+sudo apt install mlocate
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sudo apt install mlocate
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libfwupdplugin1
+Use 'sudo apt autoremove' to remove it.
+Suggested packages:
+  nocache
+The following NEW packages will be installed:
+  mlocate
+0 to upgrade, 1 to newly install, 0 to remove and 0 not to upgrade.
+Need to get 50.1 kB of archives.
+After this operation, 258 kB of additional disk space will be used.
+Get:1 http://au.archive.ubuntu.com/ubuntu focal/main amd64 mlocate amd64 0.26-3ubuntu3 [50.1 kB]
+Fetched 50.1 kB in 0s (270 kB/s)   
+Selecting previously unselected package mlocate.
+(Reading database ... 186743 files and directories currently installed.)
+Preparing to unpack .../mlocate_0.26-3ubuntu3_amd64.deb ...
+Unpacking mlocate (0.26-3ubuntu3) ...
+Setting up mlocate (0.26-3ubuntu3) ...
+update-alternatives: using /usr/bin/mlocate to provide /usr/bin/locate (locate) 
+in auto mode
+Adding group `mlocate' (GID 134) ...
+Done.
+Initializing mlocate database; this may take some time... done
+Processing triggers for man-db (2.9.1-1) ...
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ locate DistributionsAD.jl
+/home/ian/.julia/packages/DistributionsAD/dKKOw/src/DistributionsAD.jl
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ julia .julia/packages/DistributionsAD/dKKOw/src/DistributionsAD.jl
+
+ERROR: LoadError: ArgumentError: Package PDMats not found in current path:
+- Run `import Pkg; Pkg.add("PDMats")` to install the PDMats package.
+
+Stacktrace:
+ [1] require(::Module, ::Symbol) at ./loading.jl:823
+ [2] include at ./boot.jl:317 [inlined]
+ [3] include_relative(::Module, ::String) at ./loading.jl:1044
+ [4] include(::Module, ::String) at ./sysimg.jl:29
+ [5] exec_options(::Base.JLOptions) at ./client.jl:266
+ [6] _start() at ./client.jl:425
+in expression starting at /home/ian/.julia/packages/DistributionsAD/dKKOw/src/DistributionsAD.jl:3
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ import Pkg; Pkg.add("PDMats")
+bash: syntax error near unexpected token `"PDMats"'
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.0.4 (2019-05-16)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> import Pkg; Pkg.add("PDMats")
+  Updating registry at `~/.julia/registries/General`
+  Updating git-repo `https://github.com/JuliaRegistries/General.git`
+ Resolving package versions...
+  Updating `~/.julia/environments/v1.0/Project.toml`
+  [90014a1f] + PDMats v0.10.1
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+ [no changes]
+
+julia> instantiate DistributionsAD.jl
+ERROR: syntax: extra token "DistributionsAD" after end of expression
+
+julia> instantiate
+ERROR: UndefVarError: instantiate not defined
+
+(v1.0) pkg> add DistributionsAD
+ Resolving package versions...
+  Updating `~/.julia/environments/v1.0/Project.toml`
+ [no changes]
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+ [no changes]
+
+(v1.0) pkg> add DistributionsAD.jl
+ Resolving package versions...
+  Updating `~/.julia/environments/v1.0/Project.toml`
+ [no changes]
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+ [no changes]
+
+(v1.0) pkg> instantiate
+  Updating registry at `~/.julia/registries/General`
+  Updating git-repo `https://github.com/JuliaRegistries/General.git`
+
+(v1.0) pkg> instantiate DistributionsAD.jl
+ERROR: Wrong number of arguments
+
+(v1.0) pkg> instantiate DistributionsAD
+ERROR: Wrong number of arguments
+
+(v1.0) pkg> help
+  Welcome to the Pkg REPL-mode. To return to the julia> prompt, either press
+  backspace when the input line is empty or press Ctrl+C.
+
+  Synopsis
+
+  pkg> cmd [opts] [args]
+
+  Multiple commands can be given on the same line by interleaving a ; between
+  the commands.
+
+  Commands
+
+  activate: set the primary environment the package manager manipulates
+
+  add: add packages to project
+
+  build: run the build script for packages
+
+  develop: clone the full package repo locally for development
+
+  free: undoes a pin, develop, or stops tracking a repo
+
+  gc: garbage collect packages not used for a significant time
+
+  generate: generate files for a new project
+
+  help: show this message
+
+  instantiate: downloads all the dependencies for the project
+
+  pin: pins the version of packages
+
+  precompile: precompile all the project dependencies
+
+  preview: previews a subsequent command without affecting the current state
+
+  remove: remove packages from project or manifest
+
+  resolve: resolves to update the manifest from changes in dependencies of
+  developed packages
+
+  status: summarize contents of and changes to environment
+
+  test: run tests for packages
+
+  update: update packages in manifest
+
+(v1.0) pkg> precompile
+Precompiling project...
+
+(v1.0) pkg> build
+  Building SpecialFunctions → `~/.julia/packages/SpecialFunctions/ne2iw/deps/build.log`
+  Building Rmath ───────────→ `~/.julia/packages/Rmath/BoBag/deps/build.log`
+
+(v1.0) pkg> resolve
+ Resolving package versions...
+  Updating `~/.julia/environments/v1.0/Project.toml`
+ [no changes]
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+ [no changes]
+
+(v1.0) pkg> develop
+ERROR: Wrong number of arguments
+
+(v1.0) pkg> develop DistributionsAD.jl
+   Cloning git-repo `https://github.com/TuringLang/DistributionsAD.jl.git`
+  Updating git-repo `https://github.com/TuringLang/DistributionsAD.jl.git`
+ Resolving package versions...
+┌ Warning: julia version requirement for package DistributionsAD not satisfied
+└ @ Pkg.Operations /buildworker/worker/package_linux32/build/usr/share/julia/stdlib/v1.0/Pkg/src/Operations.jl:153
+ Installed RealDot ──────────── v0.1.0
+ Installed DensityInterface ─── v0.4.0
+ Installed DiffRules ────────── v1.6.0
+ Installed Adapt ────────────── v3.0.0
+ Installed ChangesOfVariables ─ v0.1.3
+ Installed StatsFuns ────────── v0.9.18
+ Installed InverseFunctions ─── v0.1.4
+ Installed Distributions ────── v0.25.45
+ Installed LogExpFunctions ──── v0.3.15
+ Installed FillArrays ───────── v0.12.8
+ Installed ChainRules ───────── v1.21.1
+ Installed StaticArrays ─────── v1.3.6
+ Installed ChainRulesCore ───── v1.12.2
+  Updating `~/.julia/environments/v1.0/Project.toml`
+  [ced4e74d] ↑ DistributionsAD v0.6.3 ⇒ v0.6.39 [`~/.julia/dev/DistributionsAD`]
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+  [79e6a3ab] + Adapt v3.0.0
+  [082447d4] ↑ ChainRules v0.7.70 ⇒ v1.21.1
+  [d360d2e6] ↑ ChainRulesCore v0.9.45 ⇒ v1.12.2
+  [9e997f8a] + ChangesOfVariables v0.1.3
+  [bbf7d656] - CommonSubexpressions v0.3.0
+  [b429d917] + DensityInterface v0.4.0
+  [163ba53b] - DiffResults v1.0.3
+  [b552c78f] ↑ DiffRules v1.5.0 ⇒ v1.6.0
+  [31c24e10] ↑ Distributions v0.23.8 ⇒ v0.25.45
+  [ced4e74d] ↑ DistributionsAD v0.6.3 ⇒ v0.6.39 [`~/.julia/dev/DistributionsAD`]
+  [1a297f60] ↑ FillArrays v0.8.14 ⇒ v0.12.8
+  [f6369f11] - ForwardDiff v0.10.30
+  [3587e190] + InverseFunctions v0.1.4
+  [2ab3a3ac] ↑ LogExpFunctions v0.3.0 ⇒ v0.3.15
+  [21216c6a] - Preferences v1.3.0
+  [c1ae055f] + RealDot v0.1.0
+  [90137ffa] ↑ StaticArrays v0.12.5 ⇒ v1.3.6
+  [4c63d2b9] ↑ StatsFuns v0.9.9 ⇒ v0.9.18
+  [fa267f1f] - TOML v1.0.3
+
+(v1.0) pkg> precompile DistributionsAD.jl
+ERROR: Wrong number of arguments
+
+(v1.0) pkg> precompile
+Precompiling project...
+Precompiling DistributionsAD
+[ Info: Recompiling stale cache file /home/ian/.julia/compiled/v1.0/DistributionsAD/mhHYG.ji for DistributionsAD [ced4e74d-a319-5a8a-b0ac-84af2272839c]
+
+(v1.0) pkg> build
+  Building SpecialFunctions → `~/.julia/packages/SpecialFunctions/ne2iw/deps/build.log`
+  Building Rmath ───────────→ `~/.julia/packages/Rmath/BoBag/deps/build.log`
+
+(v1.0) pkg> test
+ERROR: trying to test unnamed project
+
+(v1.0) pkg> test Rmath
+   Testing Rmath
+ Resolving package versions...
+    Status `/tmp/tmpSbFJgE/Manifest.toml`
+  [b99e7846] BinaryProvider v0.5.10
+  [79098fc4] Rmath v0.6.0
+  [2a0f44e3] Base64  [`@stdlib/Base64`]
+  [8ba89e20] Distributed  [`@stdlib/Distributed`]
+  [b77e0a4c] InteractiveUtils  [`@stdlib/InteractiveUtils`]
+  [8f399da3] Libdl  [`@stdlib/Libdl`]
+  [37e2e46d] LinearAlgebra  [`@stdlib/LinearAlgebra`]
+  [56ddb016] Logging  [`@stdlib/Logging`]
+  [d6f4376e] Markdown  [`@stdlib/Markdown`]
+  [9a3f8284] Random  [`@stdlib/Random`]
+  [ea8e919c] SHA  [`@stdlib/SHA`]
+  [9e88b42a] Serialization  [`@stdlib/Serialization`]
+  [6462fe0b] Sockets  [`@stdlib/Sockets`]
+  [2f01184e] SparseArrays  [`@stdlib/SparseArrays`]
+  [10745b16] Statistics  [`@stdlib/Statistics`]
+  [8dfed614] Test  [`@stdlib/Test`]
+   Testing Rmath tests passed 
+
+(v1.0) pkg> 
+
+
