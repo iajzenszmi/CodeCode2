@@ -1,0 +1,992 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd /usr/src/
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src$ ls
+bspline-fortran          linux-headers-5.15.0-25-generic  pyplot-fortran
+build                    linux-headers-5.15.0-30
+linux-headers-5.15.0-25  linux-headers-5.15.0-30-generic
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src$ cd bspline-fortran
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/bspline-fortran$ ls
+bspline_extrap_test.png         dbint4_test.png  speed_test_oo.png
+bspline-fortran.code-workspace  fpm.toml         speed_test.png
+bspline-fortran.md              knot_tests.png   src
+build                           LICENSE          test
+CMakeLists.txt                  media
+codecov.yml                     README.md
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/bspline-fortran$ cd
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ /usr/src/
+bash: /usr/src/: Is a directory
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cd /usr/src/
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src$ sudo mkdir 2018ex
+[sudo] password for ian: 
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src$ cd 2018ex
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex$ git clone https://github.com/scivision/fortran2018-examples.git
+fatal: could not create work tree dir 'fortran2018-examples': Permission denied
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex$ sudo git clone https://github.com/scivision/fortran2018-examples.git
+Cloning into 'fortran2018-examples'...
+remote: Enumerating objects: 4613, done.
+remote: Counting objects: 100% (917/917), done.
+remote: Compressing objects: 100% (354/354), done.
+remote: Total 4613 (delta 538), reused 912 (delta 536), pack-reused 3696
+Receiving objects: 100% (4613/4613), 1.68 MiB | 9.09 MiB/s, done.
+Resolving deltas: 100% (3043/3043), done.
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex$ cd fortran2018-examples
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo /root/.local/bin/fpm build
+<ERROR>*cmd_build*:package error:'fpm.toml' could not be found, check if the file exists
+STOP 1
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ ls
+array           CMakePresets.json  LICENSE            openmp       submodule
+assembly        compile            maximum            overloading  subprojects
+benchmarks      contiguous         meson              pointer      system
+block           debug              meson.build        random       tests
+character       ford.md            meson_options.txt  README.md    VERSION
+cmake           git                namelist           real
+CMakeLists.txt  io                 openacc            standard
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo apt install meson
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi
+  libgstreamer-plugins-bad1.0-0 libva-wayland2 python-pkg-resources
+  python-setuptools
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  ninja-build
+The following NEW packages will be installed:
+  meson ninja-build
+0 to upgrade, 2 to newly install, 0 to remove and 0 not to upgrade.
+Need to get 630 kB of archives.
+After this operation, 3,692 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 ninja-build amd64 1.10.1-1 [111 kB]
+Get:2 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 meson all 0.61.2-1 [519 kB]
+Fetched 630 kB in 0s (4,492 kB/s)
+Selecting previously unselected package ninja-build.
+(Reading database ... 233341 files and directories currently installed.)
+Preparing to unpack .../ninja-build_1.10.1-1_amd64.deb ...
+Unpacking ninja-build (1.10.1-1) ...
+Selecting previously unselected package meson.
+Preparing to unpack .../meson_0.61.2-1_all.deb ...
+Unpacking meson (0.61.2-1) ...
+Setting up ninja-build (1.10.1-1) ...
+Setting up meson (0.61.2-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ meson
+
+ERROR: Must specify at least one directory name.
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo meson /usr/src/2018ex/fortran2018-examples
+
+ERROR: Source and build directories must not be the same. Create a pristine build directory.
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ mkdir build
+mkdir: cannot create directory ‘build’: Permission denied
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo mkdir build
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo meson /usr/src/2018ex/fortran2018-examples/build
+The Meson build system
+Version: 0.61.2
+Source dir: /usr/src/2018ex/fortran2018-examples
+Build dir: /usr/src/2018ex/fortran2018-examples/build
+Build type: native build
+Project name: Fortran2018examples
+Project version: 1.4.0
+Fortran compiler for the host machine: gfortran (gcc 11.2.0 "GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0")
+Fortran linker for the host machine: gfortran ld.bfd 2.38
+C compiler for the host machine: cc (gcc 11.2.0 "cc (Ubuntu 11.2.0-19ubuntu1) 11.2.0")
+C linker for the host machine: cc ld.bfd 2.38
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Compiler for Fortran supports arguments -w: YES 
+Compiler for Fortran supports arguments -nowarn: NO 
+Compiler for Fortran supports arguments /nowarn: NO 
+Compiler for Fortran supports arguments -std=legacy: YES 
+Checking if "F2018 error stop" : links: YES 
+Checking if "F2003 UTF8" : links: YES 
+Checking if "F2008 contiguous" : links: YES 
+Checking if "F2008 execute_command_line" : links: YES 
+Checking if "F2018 random_init" : links: YES 
+Checking if "F2008 ieee kinds" : links: YES 
+Checking if "F2018 properties" : links: YES 
+Checking if "F2018 assumed rank" : links: YES 
+Run-time dependency OpenMP for fortran found: YES 4.5
+Checking if "OpenMP" with dependency openmp: links: YES 
+Checking if "module 63 char" compiles: YES 
+Checking if "variable 63 char" compiles: YES 
+Checking if "submodule 63 char" compiles: NO 
+Configuring polymorphic.f90 using configuration
+Cloning into 'submodule'...
+remote: Enumerating objects: 427, done.
+remote: Counting objects: 100% (65/65), done.
+remote: Compressing objects: 100% (42/42), done.
+remote: Total 427 (delta 27), reused 47 (delta 17), pack-reused 362
+Receiving objects: 100% (427/427), 84.03 KiB | 1.75 MiB/s, done.
+Resolving deltas: 100% (233/233), done.
+HEAD is now at c9d2e2d disable test for repeated with make
+
+Executing subproject submodule 
+
+submodule| Project name: Fortran Submodule
+submodule| Project version: 1.3.1
+submodule| Fortran compiler for the host machine: gfortran (gcc 11.2.0 "GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0")
+submodule| Fortran linker for the host machine: gfortran ld.bfd 2.38
+submodule| Build targets in project: 65
+submodule| Subproject submodule finished.
+
+Program ffplay found: NO
+Build targets in project: 70
+
+Fortran2018examples 1.4.0
+
+  Subprojects
+    submodule: YES
+
+Found ninja-1.10.1 at /usr/bin/ninja
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo apt install ffmpeg
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi
+  libgstreamer-plugins-bad1.0-0 libva-wayland2 python-pkg-resources
+  python-setuptools
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libavdevice58 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-cairo
+  libopenal-data libopenal1 libsdl2-2.0-0 libsndio7.0
+Suggested packages:
+  ffmpeg-doc libportaudio2 sndiod
+The following NEW packages will be installed:
+  ffmpeg libavdevice58 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-cairo
+  libopenal-data libopenal1 libsdl2-2.0-0 libsndio7.0
+0 to upgrade, 9 to newly install, 0 to remove and 0 not to upgrade.
+Need to get 3,217 kB of archives.
+After this operation, 6,006 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libdc1394-25 amd64 2.2.6-4 [88.8 kB]
+Get:2 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libopenal-data all 1:1.19.1-2build3 [164 kB]
+Get:3 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libsndio7.0 amd64 1.8.1-1.1 [29.3 kB]
+Get:4 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libopenal1 amd64 1:1.19.1-2build3 [535 kB]
+Get:5 http://au.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-0 amd64 0.1.0-3build1 [15.1 kB]
+Get:6 http://au.archive.ubuntu.com/ubuntu jammy/main amd64 libsdl2-2.0-0 amd64 2.0.20+dfsg-2build1 [582 kB]
+Get:7 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libavdevice58 amd64 7:4.4.1-3ubuntu5 [87.4 kB]
+Get:8 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 ffmpeg amd64 7:4.4.1-3ubuntu5 [1,696 kB]
+Get:9 http://au.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]
+Fetched 3,217 kB in 0s (6,969 kB/s)             
+Selecting previously unselected package libdc1394-25:amd64.
+(Reading database ... 233590 files and directories currently installed.)
+Preparing to unpack .../0-libdc1394-25_2.2.6-4_amd64.deb ...
+Unpacking libdc1394-25:amd64 (2.2.6-4) ...
+Selecting previously unselected package libopenal-data.
+Preparing to unpack .../1-libopenal-data_1%3a1.19.1-2build3_all.deb ...
+Unpacking libopenal-data (1:1.19.1-2build3) ...
+Selecting previously unselected package libsndio7.0:amd64.
+Preparing to unpack .../2-libsndio7.0_1.8.1-1.1_amd64.deb ...
+Unpacking libsndio7.0:amd64 (1.8.1-1.1) ...
+Selecting previously unselected package libopenal1:amd64.
+Preparing to unpack .../3-libopenal1_1%3a1.19.1-2build3_amd64.deb ...
+Unpacking libopenal1:amd64 (1:1.19.1-2build3) ...
+Selecting previously unselected package libdecor-0-0:amd64.
+Preparing to unpack .../4-libdecor-0-0_0.1.0-3build1_amd64.deb ...
+Unpacking libdecor-0-0:amd64 (0.1.0-3build1) ...
+Selecting previously unselected package libsdl2-2.0-0:amd64.
+Preparing to unpack .../5-libsdl2-2.0-0_2.0.20+dfsg-2build1_amd64.deb ...
+Unpacking libsdl2-2.0-0:amd64 (2.0.20+dfsg-2build1) ...
+Selecting previously unselected package libavdevice58:amd64.
+Preparing to unpack .../6-libavdevice58_7%3a4.4.1-3ubuntu5_amd64.deb ...
+Unpacking libavdevice58:amd64 (7:4.4.1-3ubuntu5) ...
+Selecting previously unselected package ffmpeg.
+Preparing to unpack .../7-ffmpeg_7%3a4.4.1-3ubuntu5_amd64.deb ...
+Unpacking ffmpeg (7:4.4.1-3ubuntu5) ...
+Selecting previously unselected package libdecor-0-plugin-1-cairo:amd64.
+Preparing to unpack .../8-libdecor-0-plugin-1-cairo_0.1.0-3build1_amd64.deb ...
+Unpacking libdecor-0-plugin-1-cairo:amd64 (0.1.0-3build1) ...
+Setting up libdc1394-25:amd64 (2.2.6-4) ...
+Setting up libsndio7.0:amd64 (1.8.1-1.1) ...
+Setting up libdecor-0-0:amd64 (0.1.0-3build1) ...
+Setting up libopenal-data (1:1.19.1-2build3) ...
+Setting up libsdl2-2.0-0:amd64 (2.0.20+dfsg-2build1) ...
+Setting up libopenal1:amd64 (1:1.19.1-2build3) ...
+Setting up libdecor-0-plugin-1-cairo:amd64 (0.1.0-3build1) ...
+Setting up libavdevice58:amd64 (7:4.4.1-3ubuntu5) ...
+Setting up ffmpeg (7:4.4.1-3ubuntu5) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3) ...
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo meson /usr/src/2018ex/fortran2018-examples/build
+Directory already configured.
+
+Just run your build command (e.g. ninja) and Meson will regenerate as necessary.
+If ninja fails, run "ninja reconfigure" or "meson --reconfigure"
+to force Meson to regenerate.
+
+If build failures persist, run "meson setup --wipe" to rebuild from scratch
+using the same options as passed when configuring the build.
+To change option values, run "meson configure" instead.
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo meson setup --wipe
+
+ERROR: Must specify at least one directory name.
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo meson setup --wipe /usr/src/2018ex/fortran2018-examples/build
+The Meson build system
+Version: 0.61.2
+Source dir: /usr/src/2018ex/fortran2018-examples
+Build dir: /usr/src/2018ex/fortran2018-examples/build
+Build type: native build
+Project name: Fortran2018examples
+Project version: 1.4.0
+Fortran compiler for the host machine: gfortran (gcc 11.2.0 "GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0")
+Fortran linker for the host machine: gfortran ld.bfd 2.38
+C compiler for the host machine: cc (gcc 11.2.0 "cc (Ubuntu 11.2.0-19ubuntu1) 11.2.0")
+C linker for the host machine: cc ld.bfd 2.38
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Compiler for Fortran supports arguments -w: YES 
+Compiler for Fortran supports arguments -nowarn: NO 
+Compiler for Fortran supports arguments /nowarn: NO 
+Compiler for Fortran supports arguments -std=legacy: YES 
+Checking if "F2018 error stop" : links: YES 
+Checking if "F2003 UTF8" : links: YES 
+Checking if "F2008 contiguous" : links: YES 
+Checking if "F2008 execute_command_line" : links: YES 
+Checking if "F2018 random_init" : links: YES 
+Checking if "F2008 ieee kinds" : links: YES 
+Checking if "F2018 properties" : links: YES 
+Checking if "F2018 assumed rank" : links: YES 
+Run-time dependency OpenMP for fortran found: YES 4.5
+Checking if "OpenMP" with dependency openmp: links: YES 
+Checking if "module 63 char" compiles: YES 
+Checking if "variable 63 char" compiles: YES 
+Checking if "submodule 63 char" compiles: NO 
+Configuring polymorphic.f90 using configuration
+
+Executing subproject submodule 
+
+submodule| Project name: Fortran Submodule
+submodule| Project version: 1.3.1
+submodule| Fortran compiler for the host machine: gfortran (gcc 11.2.0 "GNU Fortran (Ubuntu 11.2.0-19ubuntu1) 11.2.0")
+submodule| Fortran linker for the host machine: gfortran ld.bfd 2.38
+submodule| Build targets in project: 65
+submodule| Subproject submodule finished.
+
+Program ffplay found: YES (/usr/bin/ffplay)
+Build targets in project: 71
+
+Fortran2018examples 1.4.0
+
+  Subprojects
+    submodule: YES
+
+Found ninja-1.10.1 at /usr/bin/ninja
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ ninja
+ninja: error: loading 'build.ninja': No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ sudo ninja /usr/src/2018ex/fortran2018-examples/build
+ninja: error: loading 'build.ninja': No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ ls
+array       CMakeLists.txt     io                 openacc      standard
+assembly    CMakePresets.json  LICENSE            openmp       submodule
+benchmarks  compile            maximum            overloading  subprojects
+block       contiguous         meson              pointer      system
+build       debug              meson.build        random       tests
+character   ford.md            meson_options.txt  README.md    VERSION
+cmake       git                namelist           real
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples$ cd tests
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples/tests$ ls
+test_compilers.sh
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples/tests$ sudo chmod u+x test_compilers.sh
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples/tests$ ./test_compilers.sh
+bash: ./test_compilers.sh: Permission denied
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples/tests$ sudo ./test_compilers.sh
+
+
+*** skipping gfortran-4.8 gcc-4.8 g++-4.8 *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  gcc-4.8.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping gfortran-5 gcc-5 g++-5 *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  gcc-5.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping gfortran-6 gcc-6 g++-6 *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  gcc-6.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping gfortran-7 gcc-7 g++-7 *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  gcc-7.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping gfortran-8 gcc-8 g++-8 *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  gcc-8.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+./test_compilers.sh: line 21: /root/intel.sh: No such file or directory
+
+
+*** skipping ifort icc icpc *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  icc.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping pgf95 pgcc pgc++ *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  pgcc.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping flang clang clang++ *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake:49 (message):
+  Could not find compiler set in environment variable CC:
+
+  clang.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping nagfor gcc g++ *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+-- The C compiler identification is GNU 11.2.0
+CMake Error at /usr/share/cmake-3.22/Modules/CMakeDetermineFortranCompiler.cmake:33 (message):
+  Could not find compiler set in environment variable FC:
+
+  nagfor.
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error: CMAKE_Fortran_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
+See also "/usr/src/2018ex/fortran2018-examples/tests/CMakeFiles/CMakeOutput.log".
+gmake: Makefile: No such file or directory
+gmake: *** No rule to make target 'Makefile'.  Stop.
+
+
+*** skipping    *** 
+./test_compilers.sh: line 41: continue: only meaningful in a `for', `while', or `until' loop
+touch: cannot touch '../bin/junk': No such file or directory
+rm: cannot remove '../bin/*': No such file or directory
+./test_compilers.sh: line 46: cd: ../bin: No such file or directory
+-- The Fortran compiler identification is GNU 11.2.0
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /usr/bin/gfortran - skipped
+-- checking that C and Fortran compilers can link
+-- checking that C and Fortran compilers can link - OK
+-- Performing Test f18abstract
+-- Performing Test f18abstract - Success
+-- Performing Test f08contig
+-- Performing Test f08contig - Success
+-- Performing Test f18random
+-- Performing Test f18random - Success
+-- Performing Test f18assumed_rank
+-- Performing Test f18assumed_rank - Success
+-- Performing Test f08kind
+-- Performing Test f08kind - Success
+-- Performing Test f18prop
+-- Performing Test f18prop - Success
+-- Performing Test f03utf8
+-- Performing Test f03utf8 - Success
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- Fortran2018Examples  git revision: 6db4a4a  git_branch: main  git_porcelain: .false.
+-- Performing Test module_63char
+-- Performing Test module_63char - Failed
+-- Performing Test variable_63char
+-- Performing Test variable_63char - Success
+-- Performing Test submodule_63char
+-- Performing Test submodule_63char - Failed
+-- Found OpenMP_Fortran: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5") found components: Fortran 
+-- Performing Test hasOMP
+-- Performing Test hasOMP - Success
+-- Please use Ninja for the 'repeated' example
+    cmake -G Ninja -B build
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.4") found components: Interpreter 
+-- 
+ * Openmp, tests using OpenMP
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /usr/src/2018ex/fortran2018-examples/tests
+Scanning dependencies of target utf8
+[  1%] Building Fortran object character/CMakeFiles/utf8.dir/utf8.f90.o
+[  2%] Linking Fortran executable utf8
+[  2%] Built target utf8
+Scanning dependencies of target contig
+[  3%] Building Fortran object contiguous/CMakeFiles/contig.dir/contiguous.f90.o
+[  3%] Linking Fortran executable contig
+[  3%] Built target contig
+Scanning dependencies of target rotflip
+[  3%] Building Fortran object array/CMakeFiles/rotflip.dir/rot90.f90.o
+[  4%] Building Fortran object array/CMakeFiles/rotflip.dir/test_rot90.f90.o
+[  5%] Linking Fortran executable rotflip
+[  5%] Built target rotflip
+Scanning dependencies of target auto_allocate_array
+[  5%] Building Fortran object array/CMakeFiles/auto_allocate_array.dir/auto_allocate.f90.o
+[  6%] Linking Fortran executable auto_allocate_array
+[  6%] Built target auto_allocate_array
+Scanning dependencies of target assumed_rank
+[  7%] Building Fortran object array/CMakeFiles/assumed_rank.dir/assumed-rank.f90.o
+[  8%] Linking Fortran executable assumed_rank
+[  8%] Built target assumed_rank
+Scanning dependencies of target ackermann
+[  8%] Building Fortran object benchmarks/CMakeFiles/ackermann.dir/ackermann.f90.o
+[  9%] Linking Fortran executable ackermann
+[  9%] Built target ackermann
+Scanning dependencies of target block
+[  9%] Building Fortran object block/CMakeFiles/block.dir/block.f90.o
+[ 10%] Linking Fortran executable block
+[ 10%] Built target block
+Scanning dependencies of target ascii
+[ 10%] Building Fortran object character/CMakeFiles/ascii.dir/ascii.f90.o
+[ 11%] Linking Fortran executable ascii
+[ 11%] Built target ascii
+Scanning dependencies of target character_array
+[ 12%] Building Fortran object character/CMakeFiles/character_array.dir/character_array.f90.o
+[ 12%] Linking Fortran executable character_array
+[ 12%] Built target character_array
+Scanning dependencies of target character_allocatable
+[ 12%] Building Fortran object character/CMakeFiles/character_allocatable.dir/character_allocatable.f90.o
+[ 13%] Linking Fortran executable character_allocatable
+[ 13%] Built target character_allocatable
+Scanning dependencies of target split
+[ 14%] Building Fortran object character/CMakeFiles/split.dir/split_string.f90.o
+[ 15%] Linking Fortran executable split
+[ 15%] Built target split
+Scanning dependencies of target str2int
+[ 15%] Building Fortran object character/CMakeFiles/str2int.dir/str2int.f90.o
+[ 16%] Linking Fortran executable str2int
+[ 16%] Built target str2int
+Scanning dependencies of target printorwrite
+[ 16%] Building Fortran object character/CMakeFiles/printorwrite.dir/print_vs_write.f90.o
+[ 17%] Linking Fortran executable printorwrite
+[ 17%] Built target printorwrite
+Scanning dependencies of target special_char
+[ 18%] Building Fortran object character/CMakeFiles/special_char.dir/special_characters.f90.o
+[ 18%] Linking Fortran executable special_char
+[ 18%] Built target special_char
+Scanning dependencies of target charlen
+[ 19%] Building Fortran object character/CMakeFiles/charlen.dir/charlen.f90.o
+[ 19%] Linking Fortran executable charlen
+[ 19%] Built target charlen
+Scanning dependencies of target sleep_std
+[ 20%] Building Fortran object standard/CMakeFiles/sleep_std.dir/sleep_unix.f90.o
+[ 20%] Built target sleep_std
+Scanning dependencies of target overwrite_stdout
+[ 20%] Building Fortran object character/CMakeFiles/overwrite_stdout.dir/overwrite_stdout.f90.o
+[ 21%] Linking Fortran executable overwrite_stdout
+[ 21%] Built target overwrite_stdout
+Scanning dependencies of target string_utils
+[ 22%] Building Fortran object character/CMakeFiles/string_utils.dir/string_utils.f90.o
+[ 22%] Building Fortran object character/CMakeFiles/string_utils.dir/test_string.f90.o
+[ 23%] Linking Fortran executable string_utils
+[ 23%] Built target string_utils
+Scanning dependencies of target add_dummy
+[ 24%] Building Fortran object compile/CMakeFiles/add_dummy.dir/addone.f90.o
+[ 24%] Built target add_dummy
+Scanning dependencies of target one_plus_one
+[ 25%] Building Fortran object compile/CMakeFiles/one_plus_one.dir/one_plus_one.f90.o
+[ 26%] Linking Fortran executable one_plus_one
+[ 26%] Built target one_plus_one
+Scanning dependencies of target two_plus_one
+[ 26%] Building Fortran object compile/CMakeFiles/two_plus_one.dir/two_plus_one.f90.o
+[ 27%] Linking Fortran executable two_plus_one
+[ 27%] Built target two_plus_one
+Scanning dependencies of target git_rev
+[ 28%] Building Fortran object git/CMakeFiles/git_rev.dir/main.f90.o
+[ 28%] Linking Fortran executable git_rev
+[ 28%] Built target git_rev
+Scanning dependencies of target logging
+[ 29%] Building Fortran object io/CMakeFiles/logging.dir/logging.f90.o
+[ 29%] Built target logging
+Scanning dependencies of target append_file
+[ 29%] Building Fortran object io/CMakeFiles/append_file.dir/append_file.f90.o
+[ 30%] Building Fortran object io/CMakeFiles/append_file.dir/unlink.f90.o
+[ 31%] Linking Fortran executable append_file
+[ 31%] Built target append_file
+Scanning dependencies of target termio
+[ 32%] Building Fortran object io/CMakeFiles/termio.dir/terminal_io.f90.o
+[ 32%] Linking Fortran executable termio
+[ 32%] Built target termio
+Scanning dependencies of target leading_zeros
+[ 33%] Building Fortran object io/CMakeFiles/leading_zeros.dir/leading_zeros.f90.o
+[ 33%] Linking Fortran executable leading_zeros
+[ 33%] Built target leading_zeros
+Scanning dependencies of target notermsize
+[ 34%] Building Fortran object io/CMakeFiles/notermsize.dir/noenv.f90.o
+[ 35%] Linking Fortran executable notermsize
+[ 35%] Built target notermsize
+Scanning dependencies of target readonly
+[ 35%] Building Fortran object io/CMakeFiles/readonly.dir/fileopen-readonly.f90.o
+[ 36%] Building Fortran object io/CMakeFiles/readonly.dir/unlink.f90.o
+[ 37%] Linking Fortran executable readonly
+[ 37%] Built target readonly
+Scanning dependencies of target null
+[ 37%] Building Fortran object io/CMakeFiles/null.dir/devnull.f90.o
+[ 38%] Linking Fortran executable null
+[ 38%] Built target null
+Scanning dependencies of target bad_alloc
+[ 39%] Building Fortran object debug/CMakeFiles/bad_alloc.dir/badalloc.f90.o
+[ 39%] Linking Fortran executable bad_alloc
+[ 39%] Built target bad_alloc
+Scanning dependencies of target badbounds
+[ 40%] Building Fortran object debug/CMakeFiles/badbounds.dir/badbounds.f90.o
+[ 40%] Linking Fortran executable badbounds
+[ 40%] Built target badbounds
+Scanning dependencies of target namelist
+[ 40%] Building Fortran object namelist/CMakeFiles/namelist.dir/namelist_main.f90.o
+[ 41%] Linking Fortran executable namelist
+[ 41%] Built target namelist
+Scanning dependencies of target timeprec
+[ 42%] Building Fortran object openmp/CMakeFiles/timeprec.dir/timeprec.f90.o
+[ 43%] Linking Fortran executable timeprec
+[ 43%] Built target timeprec
+Scanning dependencies of target proc
+[ 43%] Building Fortran object overloading/CMakeFiles/proc.dir/pragma.f90.o
+[ 44%] Linking Fortran executable proc
+[ 44%] Built target proc
+Scanning dependencies of target f18es
+[ 45%] Building Fortran object overloading/CMakeFiles/f18es.dir/f2018errorstop.f90.o
+[ 46%] Linking Fortran executable f18es
+[ 46%] Built target f18es
+Scanning dependencies of target null_pointer
+[ 47%] Building Fortran object pointer/CMakeFiles/null_pointer.dir/null.f90.o
+[ 47%] Linking Fortran executable null_pointer
+[ 47%] Built target null_pointer
+Scanning dependencies of target derived_type
+[ 48%] Building Fortran object pointer/CMakeFiles/derived_type.dir/derived_type.f90.o
+[ 49%] Linking Fortran executable derived_type
+[ 49%] Built target derived_type
+Scanning dependencies of target random
+[ 50%] Building Fortran object random/CMakeFiles/random.dir/random.f90.o
+[ 50%] Building Fortran object random/CMakeFiles/random.dir/random_init_f2018.f90.o
+[ 51%] Building Fortran object random/CMakeFiles/random.dir/random_demo.f90.o
+[ 52%] Linking Fortran executable random
+[ 52%] Built target random
+Scanning dependencies of target assert
+[ 52%] Building Fortran object real/CMakeFiles/assert.dir/assert.f90.o
+[ 52%] Built target assert
+Scanning dependencies of target test_assert
+[ 53%] Building Fortran object real/CMakeFiles/test_assert.dir/finite.f90.o
+[ 53%] Linking Fortran executable test_assert
+[ 53%] Built target test_assert
+Scanning dependencies of target cast_int2real
+[ 54%] Building Fortran object real/CMakeFiles/cast_int2real.dir/cast_int2real.f90.o
+[ 55%] Linking Fortran executable cast_int2real
+[ 55%] Built target cast_int2real
+Scanning dependencies of target polymorph
+[ 56%] Building Fortran object real/CMakeFiles/polymorph.dir/polymorphic.f90.o
+[ 56%] Linking Fortran executable polymorph
+[ 56%] Built target polymorph
+Scanning dependencies of target epsilon
+[ 57%] Building Fortran object real/CMakeFiles/epsilon.dir/epsilon.f90.o
+[ 57%] Linking Fortran executable epsilon
+[ 57%] Built target epsilon
+Scanning dependencies of target coerce
+[ 58%] Building Fortran object real/CMakeFiles/coerce.dir/coerce.F90.o
+[ 59%] Linking Fortran executable coerce
+[ 59%] Built target coerce
+Scanning dependencies of target divprec
+[ 59%] Building Fortran object real/CMakeFiles/divprec.dir/div_precision.F90.o
+[ 60%] Linking Fortran executable divprec
+[ 60%] Built target divprec
+Scanning dependencies of target floatprec
+[ 60%] Building Fortran object real/CMakeFiles/floatprec.dir/floating_precision.F90.o
+[ 61%] Linking Fortran executable floatprec
+[ 61%] Built target floatprec
+Scanning dependencies of target hugeprec
+[ 62%] Building Fortran object real/CMakeFiles/hugeprec.dir/huge_precision.F90.o
+[ 63%] Linking Fortran executable hugeprec
+[ 63%] Built target hugeprec
+Scanning dependencies of target precprob
+[ 64%] Building Fortran object real/CMakeFiles/precprob.dir/precision_problems.f90.o
+[ 65%] Linking Fortran executable precprob
+[ 65%] Built target precprob
+Scanning dependencies of target nan
+[ 66%] Building Fortran object real/CMakeFiles/nan.dir/nans.F90.o
+[ 66%] Linking Fortran executable nan
+[ 66%] Built target nan
+Scanning dependencies of target properties
+[ 67%] Building Fortran object real/CMakeFiles/properties.dir/properties.f90.o
+[ 67%] Linking Fortran executable properties
+[ 67%] Built target properties
+Scanning dependencies of target abstract_interface
+[ 67%] Building Fortran object standard/CMakeFiles/abstract_interface.dir/abstract.f90.o
+[ 68%] Linking Fortran executable abstract_interface
+[ 68%] Built target abstract_interface
+Scanning dependencies of target shortcircuit
+[ 69%] Building Fortran object standard/CMakeFiles/shortcircuit.dir/short_circuit.f90.o
+[ 69%] Linking Fortran executable shortcircuit
+[ 69%] Built target shortcircuit
+Scanning dependencies of target bitpat
+[ 69%] Building Fortran object standard/CMakeFiles/bitpat.dir/bitpat.f90.o
+[ 70%] Linking Fortran executable bitpat
+[ 70%] Built target bitpat
+Scanning dependencies of target do_cycle
+[ 71%] Building Fortran object standard/CMakeFiles/do_cycle.dir/do_cycle.f90.o
+[ 71%] Linking Fortran executable do_cycle
+[ 71%] Built target do_cycle
+Scanning dependencies of target big_integer
+[ 72%] Building Fortran object standard/CMakeFiles/big_integer.dir/big_integer.f90.o
+[ 73%] Linking Fortran executable big_integer
+[ 73%] Built target big_integer
+Scanning dependencies of target justwait
+[ 73%] Building Fortran object standard/CMakeFiles/justwait.dir/pause.f90.o
+[ 74%] Linking Fortran executable justwait
+[ 74%] Built target justwait
+Scanning dependencies of target sleep_demo
+[ 75%] Building Fortran object standard/CMakeFiles/sleep_demo.dir/sleep_demo.f90.o
+[ 75%] Linking Fortran executable sleep_demo
+[ 75%] Built target sleep_demo
+Scanning dependencies of target statement
+[ 75%] Building Fortran object standard/CMakeFiles/statement.dir/statement_function.f90.o
+[ 76%] Linking Fortran executable statement
+[ 76%] Built target statement
+Scanning dependencies of target nan_max_min
+[ 77%] Building Fortran object standard/CMakeFiles/nan_max_min.dir/maxmin_nan.f90.o
+[ 78%] Linking Fortran executable nan_max_min
+[ 78%] Built target nan_max_min
+Scanning dependencies of target minloc_maxloc_mask
+[ 79%] Building Fortran object standard/CMakeFiles/minloc_maxloc_mask.dir/minloc_maxloc_mask.f90.o
+[ 80%] Linking Fortran executable minloc_maxloc_mask
+[ 80%] Built target minloc_maxloc_mask
+Scanning dependencies of target minval_maxval_mask
+[ 80%] Building Fortran object standard/CMakeFiles/minval_maxval_mask.dir/minval_maxval_mask.f90.o
+[ 81%] Linking Fortran executable minval_maxval_mask
+[ 81%] Built target minval_maxval_mask
+Scanning dependencies of target math_const
+[ 81%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/math_const.dir/math_const.f90.o
+[ 82%] Linking Fortran static library libmath_const.a
+[ 82%] Built target math_const
+Scanning dependencies of target useext
+[ 83%] Building Fortran object submodule/CMakeFiles/useext.dir/use_ext.f90.o
+[ 83%] Linking Fortran executable useext
+[ 83%] Built target useext
+Scanning dependencies of target hier
+[ 84%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/hier.dir/parent.f90.o
+[ 84%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/hier.dir/child.f90.o
+[ 85%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/hier.dir/grandchild.f90.o
+[ 86%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/hier.dir/greatgrandchild.f90.o
+[ 86%] Linking Fortran executable hier
+[ 86%] Built target hier
+Scanning dependencies of target new
+[ 86%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/new.dir/points.f90.o
+[ 87%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/new.dir/geo.f90.o
+[ 87%] Linking Fortran executable new
+[ 87%] Built target new
+Scanning dependencies of target minimal
+[ 88%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/minimal.dir/minimal.f90.o
+[ 88%] Linking Fortran executable minimal
+[ 88%] Built target minimal
+Scanning dependencies of target basic
+[ 89%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/basic.dir/basic.f90.o
+[ 90%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/basic.dir/basic_sub.f90.o
+[ 90%] Linking Fortran executable basic
+[ 90%] Built target basic
+Scanning dependencies of target points_basic
+[ 91%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/points_basic.dir/points_basic.f90.o
+[ 91%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/points_basic.dir/geo_basic.f90.o
+[ 92%] Linking Fortran executable points_basic
+[ 92%] Built target points_basic
+Scanning dependencies of target overspec
+[ 92%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/overspec.dir/parent1.f90.o
+[ 93%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/overspec.dir/child1.f90.o
+[ 94%] Building Fortran object _deps/submodules_proj-build/src/CMakeFiles/overspec.dir/main1.f90.o
+[ 95%] Linking Fortran executable overspec
+[ 95%] Built target overspec
+Scanning dependencies of target color
+[ 95%] Building Fortran object system/CMakeFiles/color.dir/color_text.f90.o
+[ 96%] Linking Fortran executable color
+[ 96%] Built target color
+Scanning dependencies of target osdet
+[ 96%] Building Fortran object system/CMakeFiles/osdet.dir/os_detect.f90.o
+[ 96%] Built target osdet
+Scanning dependencies of target complog
+[ 97%] Building Fortran object system/CMakeFiles/complog.dir/compiler_log.f90.o
+[ 97%] Linking Fortran executable complog
+[ 97%] Built target complog
+Scanning dependencies of target callpython
+[ 98%] Building Fortran object system/CMakeFiles/callpython.dir/call_python_script.f90.o
+[ 98%] Linking Fortran executable callpython
+[ 98%] Built target callpython
+Scanning dependencies of target playsound
+[100%] Building Fortran object system/CMakeFiles/playsound.dir/play_sound.f90.o
+[100%] Linking Fortran executable playsound
+[100%] Built target playsound
+Test project /usr/src/2018ex/fortran2018-examples/tests
+      Start  1: RotFlip
+      Start  2: AutoAllocate
+      Start  3: AssumedRank
+      Start  4: Ackermann
+ 1/64 Test  #1: RotFlip ..........................   Passed    0.02 sec
+      Start  5: block:Block
+ 2/64 Test  #2: AutoAllocate .....................   Passed    0.02 sec
+      Start  6: char:AsciiSpecial
+ 3/64 Test  #3: AssumedRank ......................   Passed    0.02 sec
+      Start  7: char:array
+ 4/64 Test  #4: Ackermann ........................   Passed    0.02 sec
+      Start  8: char:allocatable
+ 5/64 Test  #5: block:Block ......................   Passed    0.02 sec
+      Start  9: char:SplitString
+ 6/64 Test  #6: char:AsciiSpecial ................   Passed    0.02 sec
+      Start 10: char:Str2Int
+ 7/64 Test  #7: char:array .......................   Passed    0.02 sec
+      Start 11: char:utf8
+ 8/64 Test  #8: char:allocatable .................   Passed    0.02 sec
+      Start 12: char:print_utf8
+ 9/64 Test  #9: char:SplitString .................   Passed    0.02 sec
+      Start 13: char:Special
+10/64 Test #10: char:Str2Int .....................   Passed    0.02 sec
+      Start 14: char:Len
+11/64 Test #11: char:utf8 ........................   Passed    0.02 sec
+      Start 15: char:OverwriteStdout
+12/64 Test #12: char:print_utf8 ..................   Passed    0.02 sec
+      Start 16: char:utils
+13/64 Test #13: char:Special .....................   Passed    0.02 sec
+      Start 17: 1+1
+14/64 Test #14: char:Len .........................   Passed    0.02 sec
+      Start 18: 2+1
+15/64 Test #16: char:utils .......................   Passed    0.02 sec
+      Start 19: contiguous
+16/64 Test #17: 1+1 ..............................   Passed    0.02 sec
+      Start 20: revision
+17/64 Test #18: 2+1 ..............................   Passed    0.02 sec
+      Start 21: appendFile
+18/64 Test #20: revision .........................   Passed    0.01 sec
+      Start 22: terminal
+19/64 Test #21: appendFile .......................   Passed    0.02 sec
+      Start 23: leading_zeros
+20/64 Test #23: leading_zeros ....................   Passed    0.01 sec
+      Start 24: NoTermSize
+21/64 Test #22: terminal .........................   Passed    0.03 sec
+      Start 25: ReadOnly
+22/64 Test #24: NoTermSize .......................   Passed    0.02 sec
+      Start 26: nullfile
+23/64 Test #25: ReadOnly .........................   Passed    0.01 sec
+      Start 27: NamelistRead
+24/64 Test #19: contiguous .......................   Passed    0.07 sec
+      Start 28: OpenMP:TimeMeasure
+25/64 Test #27: NamelistRead .....................   Passed    0.01 sec
+      Start 29: Pragma
+26/64 Test #29: Pragma ...........................   Passed    0.02 sec
+      Start 30: F18errorstop
+27/64 Test #28: OpenMP:TimeMeasure ...............   Passed    0.05 sec
+      Start 31: Null
+28/64 Test #31: Null .............................   Passed    0.01 sec
+      Start 32: DerivedType
+29/64 Test #32: DerivedType ......................   Passed    0.01 sec
+      Start 33: RandomInit
+30/64 Test #33: RandomInit .......................   Passed    0.01 sec
+      Start 34: assert
+31/64 Test #34: assert ...........................   Passed    0.01 sec
+      Start 35: cast_int2real
+32/64 Test #35: cast_int2real ....................   Passed    0.02 sec
+      Start 36: polymorphic
+33/64 Test #36: polymorphic ......................   Passed    0.01 sec
+      Start 37: epsilon
+34/64 Test #37: epsilon ..........................   Passed    0.01 sec
+      Start 38: coerce
+35/64 Test #38: coerce ...........................   Passed    0.01 sec
+      Start 39: divisionPrecision
+36/64 Test #39: divisionPrecision ................   Passed    0.01 sec
+      Start 40: floatPrecision
+37/64 Test #40: floatPrecision ...................   Passed    0.01 sec
+      Start 41: hugePrecision
+38/64 Test #41: hugePrecision ....................   Passed    0.01 sec
+      Start 42: precisionProblems
+39/64 Test #42: precisionProblems ................   Passed    0.02 sec
+      Start 43: NaN
+40/64 Test #43: NaN ..............................   Passed    0.01 sec
+      Start 44: properties
+41/64 Test #44: properties .......................   Passed    0.01 sec
+      Start 45: bit_pattern
+42/64 Test #45: bit_pattern ......................   Passed    0.02 sec
+      Start 46: doCycle
+43/64 Test #46: doCycle ..........................   Passed    0.01 sec
+      Start 47: big_integer
+44/64 Test #47: big_integer ......................   Passed    0.01 sec
+      Start 48: sleep
+45/64 Test #30: F18errorstop .....................   Passed    0.38 sec
+      Start 49: statement_function
+46/64 Test #49: statement_function ...............   Passed    0.01 sec
+      Start 50: NaNminmax
+47/64 Test #50: NaNminmax ........................   Passed    0.01 sec
+      Start 51: MinlocMaxlocMask
+48/64 Test #51: MinlocMaxlocMask .................   Passed    0.00 sec
+      Start 52: MinvalMaxvalMask
+49/64 Test #52: MinvalMaxvalMask .................   Passed    0.01 sec
+      Start 53: submodule:external
+50/64 Test #53: submodule:external ...............   Passed    0.01 sec
+      Start 54: Hierarchal
+51/64 Test #54: Hierarchal .......................   Passed    0.01 sec
+      Start 55: PointsNew
+52/64 Test #55: PointsNew ........................   Passed    0.00 sec
+      Start 56: SameFileMinimal
+53/64 Test #56: SameFileMinimal ..................   Passed    0.00 sec
+      Start 57: TwoFiles
+54/64 Test #57: TwoFiles .........................   Passed    0.01 sec
+      Start 58: BasicPoints
+55/64 Test #58: BasicPoints ......................   Passed    0.01 sec
+      Start 59: OverSpecified
+56/64 Test #48: sleep ............................   Passed    0.17 sec
+      Start 60: Repeated
+57/64 Test #60: Repeated .........................***Not Run (Disabled)   0.00 sec
+      Start 61: Color
+58/64 Test #59: OverSpecified ....................   Passed    0.01 sec
+      Start 62: Compiler
+59/64 Test #61: Color ............................   Passed    0.01 sec
+      Start 63: CallPython
+60/64 Test #62: Compiler .........................   Passed    0.01 sec
+      Start 64: PlaySound
+61/64 Test #63: CallPython .......................   Passed    0.14 sec
+62/64 Test #26: nullfile .........................   Passed    1.06 sec
+63/64 Test #15: char:OverwriteStdout .............   Passed    2.51 sec
+64/64 Test #64: PlaySound ........................   Passed    4.49 sec
+
+100% tests passed, 0 tests failed out of 63
+
+Label Time Summary:
+array          =   0.06 sec*proc (3 tests)
+block          =   0.02 sec*proc (1 test)
+character      =   2.70 sec*proc (11 tests)
+contiguous     =   0.07 sec*proc (1 test)
+git            =   0.01 sec*proc (1 test)
+io             =   1.15 sec*proc (6 tests)
+openmp         =   0.05 sec*proc (1 test)
+overloading    =   0.40 sec*proc (2 tests)
+pointer        =   0.03 sec*proc (2 tests)
+random         =   0.01 sec*proc (1 test)
+real           =   0.16 sec*proc (11 tests)
+standard       =   0.24 sec*proc (8 tests)
+submodule      =   0.01 sec*proc (1 test)
+system         =   4.65 sec*proc (4 tests)
+
+Total Test time (real) =   5.22 sec
+
+The following tests did not run:
+	 60 - Repeated (Disabled)
+rm: cannot remove '../bin/*': No such file or directory
+ian@ian-HP-Stream-Laptop-11-y0XX:/usr/src/2018ex/fortran2018-examples/tests$ 
+
+
