@@ -1,0 +1,199 @@
+  _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.7.3 (2022-05-06)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+(@v1.7) pkg> add GraphPlot.jl
+    Updating registry at `~/.julia/registries/General.toml`
+   Resolving package versions...
+   Installed Compose ─── v0.9.3
+   Installed GraphPlot ─ v0.5.2
+    Updating `~/.julia/environments/v1.7/Project.toml`
+  [a2cc645c] + GraphPlot v0.5.2
+    Updating `~/.julia/environments/v1.7/Manifest.toml`
+  [a81c6b42] + Compose v0.9.3
+  [a2cc645c] + GraphPlot v0.5.2
+Precompiling project...
+  2 dependencies successfully precompiled in 20 seconds (253 already precompiled)
+
+(@v1.7) pkg> test GraphPlot.jl
+     Testing GraphPlot
+┌ Warning: Could not use exact versions of packages in manifest, re-resolving
+└ @ Pkg.Operations /buildworker/worker/package_linux64/build/usr/share/julia/stdlib/v1.7/Pkg/src/Operations.jl:1488
+      Status `/tmp/jl_D3i3MV/Project.toml`
+  [159f3aea] Cairo v1.0.5
+  [a2cc645c] GraphPlot v0.5.2
+  [6218d12a] ImageMagick v1.2.2
+  [34922c18] VisualRegressionTests v1.0.0
+  [9a3f8284] Random `@stdlib/Random`
+  [8dfed614] Test `@stdlib/Test`
+      Status `/tmp/jl_D3i3MV/Manifest.toml`
+  [621f4979] AbstractFFTs v1.1.0
+  [79e6a3ab] Adapt v3.3.3
+  [ec485272] ArnoldiMethod v0.2.0
+  [159f3aea] Cairo v1.0.5
+  [aafaddc9] CatIndices v0.2.2
+  [d360d2e6] ChainRulesCore v1.15.0
+  [9e997f8a] ChangesOfVariables v0.1.3
+  [3da002f7] ColorTypes v0.10.12
+  [c3611d14] ColorVectorSpace v0.8.7
+  [5ae59095] Colors v0.12.8
+  [34da2185] Compat v3.44.0
+  [a81c6b42] Compose v0.9.3
+  [ed09eef8] ComputationalResources v0.3.2
+  [dc8bdbbb] CustomUnitRanges v1.0.2
+  [9a962f9c] DataAPI v1.10.0
+  [864edb3b] DataStructures v0.18.13
+  [ffbed154] DocStringExtensions v0.8.6
+  [4f61f5a4] FFTViews v0.3.2
+  [7a1cc6ca] FFTW v1.4.6
+  [5789e2e9] FileIO v1.14.0
+  [53c48c17] FixedPointNumbers v0.8.4
+  [a2cc645c] GraphPlot v0.5.2
+  [a2bd30eb] Graphics v1.1.1
+  [86223c79] Graphs v1.7.0
+  [a09fc81d] ImageCore v0.8.22
+  [6a3955dd] ImageFiltering v0.6.21
+  [6218d12a] ImageMagick v1.2.2
+  [d25df0c9] Inflate v0.1.2
+  [3587e190] InverseFunctions v0.1.4
+  [92d709cd] IrrationalConstants v0.1.1
+  [c8e1da08] IterTools v1.4.0
+  [692b3bcd] JLLWrappers v1.4.1
+  [682c06a0] JSON v0.21.3
+  [2ab3a3ac] LogExpFunctions v0.3.15
+  [1914dd2f] MacroTools v0.5.9
+  [dbb5928d] MappedArrays v0.4.1
+  [442fdcdd] Measures v0.3.1
+  [e1d29d7a] Missings v1.0.2
+  [e94cdb99] MosaicViews v0.3.3
+  [77ba4419] NaNMath v0.3.7
+  [6fe1bfb0] OffsetArrays v1.12.1
+  [bac558e1] OrderedCollections v1.4.1
+  [5432bcbf] PaddedViews v0.5.11
+  [69de0a69] Parsers v2.3.1
+  [21216c6a] Preferences v1.3.0
+  [dca85d43] QuartzImageIO v0.7.3
+  [189a3867] Reexport v1.2.2
+  [ae029012] Requires v1.3.0
+  [699a6c99] SimpleTraits v0.9.4
+  [a2af1166] SortingAlgorithms v1.0.1
+  [276daf66] SpecialFunctions v1.8.5
+  [cae243ae] StackViews v0.1.1
+  [90137ffa] StaticArrays v1.4.4
+  [82ae8749] StatsAPI v1.3.0
+  [2913bbd2] StatsBase v0.33.16
+  [06e1c1a7] TiledIteration v0.3.1
+  [34922c18] VisualRegressionTests v1.0.0
+  [6e34b625] Bzip2_jll v1.0.8+0
+  [83423d85] Cairo_jll v1.16.1+1
+  [2e619515] Expat_jll v2.4.8+0
+  [f5851436] FFTW_jll v3.3.10+0
+  [a3f928ae] Fontconfig_jll v2.13.93+0
+  [d7e528f0] FreeType2_jll v2.10.4+0
+  [559328eb] FriBidi_jll v1.0.10+0
+  [78b55507] Gettext_jll v0.21.0+0
+  [7746bdde] Glib_jll v2.68.3+2
+  [3b182d85] Graphite2_jll v1.3.14+0
+  [2e76f6c2] HarfBuzz_jll v2.8.1+1
+  [c73af94c] ImageMagick_jll v6.9.10-12+3
+  [1d5cc7b8] IntelOpenMP_jll v2018.0.3+2
+  [aacddb02] JpegTurbo_jll v2.1.2+0
+  [88015f11] LERC_jll v3.0.0+1
+  [dd4b983a] LZO_jll v2.10.1+0
+  [e9f186c6] Libffi_jll v3.2.2+1
+  [d4300ac3] Libgcrypt_jll v1.8.7+0
+  [7add5ba3] Libgpg_error_jll v1.42.0+0
+  [94ce4f54] Libiconv_jll v1.16.1+1
+  [4b2f31a3] Libmount_jll v2.35.0+0
+  [89763e89] Libtiff_jll v4.3.0+1
+  [38a345b3] Libuuid_jll v2.36.0+0
+  [856f044c] MKL_jll v2022.0.0+0
+  [efe28fd5] OpenSpecFun_jll v0.5.5+0
+  [2f80f16e] PCRE_jll v8.44.0+0
+  [36c8627f] Pango_jll v1.50.3+0
+  [30392449] Pixman_jll v0.40.1+0
+  [02c8fc9c] XML2_jll v2.9.14+0
+  [aed1982a] XSLT_jll v1.1.34+0
+  [4f6342f7] Xorg_libX11_jll v1.6.9+4
+  [0c0b7dd1] Xorg_libXau_jll v1.0.9+4
+  [a3789734] Xorg_libXdmcp_jll v1.1.3+4
+  [1082639a] Xorg_libXext_jll v1.3.4+4
+  [ea2f1a96] Xorg_libXrender_jll v0.9.10+4
+  [14d82f49] Xorg_libpthread_stubs_jll v0.1.0+3
+  [c7cfdc94] Xorg_libxcb_jll v1.13.0+3
+  [c5fb5394] Xorg_xtrans_jll v1.4.0+3
+  [3161d3a3] Zstd_jll v1.5.2+0
+  [b53b4c65] libpng_jll v1.6.38+0
+  [0dad84c5] ArgTools `@stdlib/ArgTools`
+  [56f22d72] Artifacts `@stdlib/Artifacts`
+  [2a0f44e3] Base64 `@stdlib/Base64`
+  [ade2ca70] Dates `@stdlib/Dates`
+  [8bb1440f] DelimitedFiles `@stdlib/DelimitedFiles`
+  [8ba89e20] Distributed `@stdlib/Distributed`
+  [f43a241f] Downloads `@stdlib/Downloads`
+  [7b1f6079] FileWatching `@stdlib/FileWatching`
+  [b77e0a4c] InteractiveUtils `@stdlib/InteractiveUtils`
+  [4af54fe1] LazyArtifacts `@stdlib/LazyArtifacts`
+  [b27032c2] LibCURL `@stdlib/LibCURL`
+  [76f85450] LibGit2 `@stdlib/LibGit2`
+  [8f399da3] Libdl `@stdlib/Libdl`
+  [37e2e46d] LinearAlgebra `@stdlib/LinearAlgebra`
+  [56ddb016] Logging `@stdlib/Logging`
+  [d6f4376e] Markdown `@stdlib/Markdown`
+  [a63ad114] Mmap `@stdlib/Mmap`
+  [ca575930] NetworkOptions `@stdlib/NetworkOptions`
+  [44cfe95a] Pkg `@stdlib/Pkg`
+  [de0858da] Printf `@stdlib/Printf`
+  [3fa0cd96] REPL `@stdlib/REPL`
+  [9a3f8284] Random `@stdlib/Random`
+  [ea8e919c] SHA `@stdlib/SHA`
+  [9e88b42a] Serialization `@stdlib/Serialization`
+  [1a1011a3] SharedArrays `@stdlib/SharedArrays`
+  [6462fe0b] Sockets `@stdlib/Sockets`
+  [2f01184e] SparseArrays `@stdlib/SparseArrays`
+  [10745b16] Statistics `@stdlib/Statistics`
+  [fa267f1f] TOML `@stdlib/TOML`
+  [a4e569a6] Tar `@stdlib/Tar`
+  [8dfed614] Test `@stdlib/Test`
+  [cf7118a7] UUIDs `@stdlib/UUIDs`
+  [4ec0a83e] Unicode `@stdlib/Unicode`
+  [e66e0078] CompilerSupportLibraries_jll `@stdlib/CompilerSupportLibraries_jll`
+  [deac9b47] LibCURL_jll `@stdlib/LibCURL_jll`
+  [29816b5a] LibSSH2_jll `@stdlib/LibSSH2_jll`
+  [c8ffd9c3] MbedTLS_jll `@stdlib/MbedTLS_jll`
+  [14a3606d] MozillaCACerts_jll `@stdlib/MozillaCACerts_jll`
+  [4536629a] OpenBLAS_jll `@stdlib/OpenBLAS_jll`
+  [05823500] OpenLibm_jll `@stdlib/OpenLibm_jll`
+  [83775a58] Zlib_jll `@stdlib/Zlib_jll`
+  [8e850b90] libblastrampoline_jll `@stdlib/libblastrampoline_jll`
+  [8e850ede] nghttp2_jll `@stdlib/nghttp2_jll`
+  [3f19e933] p7zip_jll `@stdlib/p7zip_jll`
+Precompiling project...
+  13 dependencies successfully precompiled in 135 seconds (91 already precompiled)
+     Testing Running tests...
+[ Info: Importing test packages...
+[ Info: Starting tests...
+┌ Warning: `WheelGraph` is deprecated, use `wheel_graph` instead.
+│   caller = top-level scope at runtests.jl:43
+└ @ Core ~/.julia/packages/GraphPlot/HXIna/test/runtests.jl:43
+[ Info: Reference image /home/ian/.julia/packages/GraphPlot/HXIna/test/data/karate_different_nodesize.png matches.  Difference: 2.423367059867254e-6
+[ Info: Reference image /home/ian/.julia/packages/GraphPlot/HXIna/test/data/karate_straight_directed.png matches.  Difference: 0.0034471622086245375
+[ Info: Reference image /home/ian/.julia/packages/GraphPlot/HXIna/test/data/karate_groups.png matches.  Difference: 0.0
+Test Summary: | Pass  Total
+Karate Net    |    3      3
+[ Info: Reference image /home/ian/.julia/packages/GraphPlot/HXIna/test/data/wheel10.png matches.  Difference: 0.0024240095478126077
+Test Summary: | Pass  Total
+WheelGraph    |    1      1
+[ Info: Reference image /home/ian/.julia/packages/GraphPlot/HXIna/test/data/curve.png matches.  Difference: 0.0
+[ Info: Reference image /home/ian/.julia/packages/GraphPlot/HXIna/test/data/self_directed.png matches.  Difference: 0.0
+Test Summary: | Pass  Total
+Curves        |    2      2
+     Testing GraphPlot tests passed 
+
+(@v1.7) pkg> 
+
+
