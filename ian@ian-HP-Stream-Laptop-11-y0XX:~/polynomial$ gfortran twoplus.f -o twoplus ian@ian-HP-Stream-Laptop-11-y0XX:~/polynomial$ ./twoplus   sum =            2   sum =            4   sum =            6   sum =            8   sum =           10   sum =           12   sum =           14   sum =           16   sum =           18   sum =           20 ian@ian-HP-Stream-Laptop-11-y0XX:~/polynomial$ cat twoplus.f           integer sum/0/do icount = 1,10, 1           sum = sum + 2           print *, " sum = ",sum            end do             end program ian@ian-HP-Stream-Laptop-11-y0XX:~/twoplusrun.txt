@@ -1,0 +1,21 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~/polynomial$ gfortran twoplus.f -o twoplus
+ian@ian-HP-Stream-Laptop-11-y0XX:~/polynomial$ ./twoplus
+  sum =            2
+  sum =            4
+  sum =            6
+  sum =            8
+  sum =           10
+  sum =           12
+  sum =           14
+  sum =           16
+  sum =           18
+  sum =           20
+ian@ian-HP-Stream-Laptop-11-y0XX:~/polynomial$ cat twoplus.f
+          integer sum /0/
+          integer icount
+          do icount = 1,10, 1
+          sum = sum + 2
+          print *, " sum = ",sum 
+          end do  
+          end program
+ian@ian-HP-Stream-Laptop-11-y0XX:~/polynomial$ ii
