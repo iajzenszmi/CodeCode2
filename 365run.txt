@@ -1,0 +1,533 @@
+ALGORITHM 365
+COMPLEX ROOT FINDING [C5]
+H. BACH (Recd. 18 Apr. 1968 and 15 July 1969)
+Laboratory of Electromagnetic Theory, Technical Uni-
+versity of Denmark, Lyngby, Denmark
+KEY WORDS AND PHRASES: downhill method, complex
+relaxation method, complex iteration, complex equation,
+transcendental complex equation, algebraic complex equation
+OR C A T E G O R I E S : 5.15
+COMMENT. The present subroutine determines, within a cer-
+tain region, a root of a complex transcendental equationf(z) = 0,
+on which the only restriction is t h a t the function w = f(z) must be
+analytic in the region considered. The iterative method used,
+the downhill method, was originally described in [2] and is dis-
+cussed and modified in [1].
+The program uses a complex function subprogram F U N C ( Z )
+for the computation of f(z). F r o m a given complex starting point
+ZS, the iteration is performed in steps of initial length HS. The
+iterations stop at the root approximation ZE when either the
+function value D E at the end point is less than the prescribed
+minimum deviation DM or when the step length H E has become
+less than the prescribed minimum step length HM. For reference,
+the subroutine also returns DS, the function value at the starting
+point ZS, and N, the number of iterations used. There are thus
+four input parameters, namely the starting point ZS, the initial
+step length HS, the minimum step length t I M , and the minimum
+deviation DM.
+ACKNOWLEDGMENT. Thanks are due to Mr. F r a n k Jensen,
+M.Sc., who helped in the testing of this algorithm.
+REFERENCES:
+1. BACH, H. On the downhill method. Comm. A C M 12 (Dec.
+1969) 675-677.
+2. WARD, J. A. The downhill method of solving ](z) = 0. J .
+A C M ~ (Mar. 1957), 148--150.
+SUBROUTINE CRFIZS,HSiHM,DM~FUNC,DSgZE,MEtDE,NI
+C
+C THE SUBROUTINE DETERMINES A ROOT OF A TRANSCEN-
+C DENTAL COMPLEX EQUATION F I Z ) = 0 BY STEP-WISE I T E -
+C RATION,ITHE DOWN HILL METHOD}
+C
+C INPUT-PARAMETERS.
+C
+E ZS = START VALUE OF Z,(COMPLEX)
+C HS = LENGTHOF STED AT START.
+C HM = MINIMUM LENGTH OF STEP,
+C DM = MINIMUM DEVIATION,
+C
+6 8 6 C o m m u n i c a t i o n s o f t h e ACM V o l u m e 12 / N u m b e r 12 / D e c e m b e r , 1969
+http://calgo.acm.org/365.gz code.
+https://dl.acm.org/doi/10.1145/363626.363644 manuscript
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365$ chmod u+x 3651.sh
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365$ ./3651.sh
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365$ ls
+365  3651  3651.sh  365.gz  Fortran
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365$ cd Fortran
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran$ ls
+Sp
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran$ cd Sp
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp$ ls
+Drivers  Src
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp$ cd Drivers
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ ls
+driver.f  Makefile  res
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ gfortran driver.f ~/365/Fortran/Sp/Src/src.f -o 365r
+/home/ian/365/Fortran/Sp/Src/src.f:74:72:
+
+   74 |       IF ( W0 - DM ) 18, 18, 1
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/ian/365/Fortran/Sp/Src/src.f:98:72:
+
+   98 |       IF ( W(1) - W(3) ) 5, 5, 6
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/ian/365/Fortran/Sp/Src/src.f:99:72:
+
+   99 | 5     IF ( W(1) - W(2) ) 7, 8, 8
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/ian/365/Fortran/Sp/Src/src.f:100:72:
+
+  100 | 6     IF ( W(2) - W(3) ) 8, 8, 9
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/ian/365/Fortran/Sp/Src/src.f:106:72:
+
+  106 | 10    IF ( W0 - W(NR) ) 11, 12, 12
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/ian/365/Fortran/Sp/Src/src.f:117:72:
+
+  117 |       IF ( W0 - DM ) 18, 18, 4
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+/home/ian/365/Fortran/Sp/Src/src.f:135:72:
+
+  135 |       IF ( I - 7 ) 16, 16, 17
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: Arithmetic IF statement at (1)
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ gfortran driver.f ~/365/Fortran/Sp/Src/src.f -std=legacy -o 365r
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ ./365r
+ 
+TOMS365_PRB:
+  Test the ACM TOMS 365 Algorithm CRF.
+ 
+TEST01:
+  CRF uses the downhill method to find
+  a root of a complex analytic function.
+  Here, we use F(Z) = Z + 1.
+ 
+  Initial estimate ZS =        2.00000      0.500000    
+  Initial stepsize HS =       0.250000    
+  Minimum stepsize HM =       0.100000E-03
+  Deviation tolerance DM =    0.100000E-04
+ 
+  Final estimate ZE =        -0.999964     -0.123724E-04
+  Final stepsize HE =         0.610352E-04
+  Initial deviation DS =       3.50000    
+  Final deviation DE =        0.484928E-04
+  Number of iterations, N =     30
+ 
+TEST02:
+  CRF uses the downhill method to find
+  a root of a complex analytic function.
+  Here, we use F(Z) = Z**5 + 1.
+ 
+  Initial estimate ZS =        2.00000      0.500000    
+  Initial stepsize HS =       0.250000    
+  Minimum stepsize HM =       0.100000E-03
+  Deviation tolerance DM =    0.100000E-04
+ 
+  Final estimate ZE =         0.809016      0.587773    
+  Final stepsize HE =         0.610352E-04
+  Initial deviation DS =       48.6562    
+  Final deviation DE =        0.892580E-04
+  Number of iterations, N =     23
+ 
+TOMS365_PRB:
+  Normal end of execution.
+ 
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ cat driver.f
+      program main
+
+c*******************************************************************************
+C      ALGORITHM 365, COLLECTED ALGORITHMS FROM ACM.
+C      THIS WORK PUBLISHED IN COMMUNICATIONS OF THE ACM
+C      VOL. 12, NO. 12, December, 1969, PP.686--687.
+C
+c
+cc TOMS365_PRB tests the CRF routine.
+c
+c  Modified:
+c
+c    06 January 2006
+c
+c  Author:
+c
+c    John Burkardt
+c
+      implicit none
+
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'TOMS365_PRB:'
+      write ( *, '(a)' ) '  Test the ACM TOMS 365 Algorithm CRF.'
+
+      call test01
+      call test02
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'TOMS365_PRB:'
+      write ( *, '(a)' ) '  Normal end of execution.'
+
+      write ( *, '(a)' ) ' '
+
+      stop
+      end
+      subroutine test01
+
+c*******************************************************************************
+c
+cc TEST01 tests CRF on the function F(Z) = Z + 1.
+c
+c  Modified:
+c
+c    08 January 2006
+c
+c  Author:
+c
+c    John Burkardt
+c
+      implicit none
+
+      real de
+      real dm
+      real ds
+      real he
+      real hm
+      real hs
+      complex f01
+      external f01
+      integer n
+      complex ze
+      complex zs
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'TEST01:'
+      write ( *, '(a)' ) '  CRF uses the downhill method to find' 
+      write ( *, '(a)' ) '  a root of a complex analytic function.'
+      write ( *, '(a)' ) '  Here, we use F(Z) = Z + 1.'
+
+      zs = ( 2.0E+00, 0.5E+00 )
+      hs = 0.25E+00
+      hm = 0.0001E+00
+      dm = 0.00001E+00
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a,2g14.6)' ) '  Initial estimate ZS =     ', zs
+      write ( *, '(a,g14.6)' ) '  Initial stepsize HS =     ', hs
+      write ( *, '(a,g14.6)' ) '  Minimum stepsize HM =     ', hm
+      write ( *, '(a,g14.6)' ) '  Deviation tolerance DM =  ', dm
+
+      call crf ( zs, hs, hm, dm, f01, ds, ze, he, de, n )
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a,2g14.6)' ) '  Final estimate ZE =       ', ze
+      write ( *, '(a,g14.6)' ) '  Final stepsize HE =       ', he
+      write ( *, '(a,g14.6)' ) '  Initial deviation DS =    ', ds
+      write ( *, '(a,g14.6)' ) '  Final deviation DE =      ', de
+      write ( *, '(a,i6)' ) '  Number of iterations, N = ', n
+
+      return
+      end
+      subroutine test02
+
+c*******************************************************************************
+c
+cc TEST02 tests CRF on the function F(Z) = Z**5 + 1.
+c
+c  Modified:
+c
+c    08 January 2006
+c
+c  Author:
+c
+c    John Burkardt
+c
+      implicit none
+
+      real de
+      real dm
+      real ds
+      real he
+      real hm
+      real hs
+      complex f02
+      external f02
+      integer n
+      complex ze
+      complex zs
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a)' ) 'TEST02:'
+      write ( *, '(a)' ) '  CRF uses the downhill method to find' 
+      write ( *, '(a)' ) '  a root of a complex analytic function.'
+      write ( *, '(a)' ) '  Here, we use F(Z) = Z**5 + 1.'
+
+      zs = ( 2.0E+00, 0.5E+00 )
+      hs = 0.25E+00
+      hm = 0.0001E+00
+      dm = 0.00001E+00
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a,2g14.6)' ) '  Initial estimate ZS =     ', zs
+      write ( *, '(a,g14.6)' ) '  Initial stepsize HS =     ', hs
+      write ( *, '(a,g14.6)' ) '  Minimum stepsize HM =     ', hm
+      write ( *, '(a,g14.6)' ) '  Deviation tolerance DM =  ', dm
+
+      call crf ( zs, hs, hm, dm, f02, ds, ze, he, de, n )
+
+      write ( *, '(a)' ) ' '
+      write ( *, '(a,2g14.6)' ) '  Final estimate ZE =       ', ze
+      write ( *, '(a,g14.6)' ) '  Final stepsize HE =       ', he
+      write ( *, '(a,g14.6)' ) '  Initial deviation DS =    ', ds
+      write ( *, '(a,g14.6)' ) '  Final deviation DE =      ', de
+      write ( *, '(a,i6)' ) '  Number of iterations, N = ', n
+
+      return
+      end
+      function f01 ( z )
+
+c*******************************************************************************
+c
+cc F01 evaluates the function F(Z) = Z + 1.
+c
+c  Modified:
+c
+c    06 January 2006
+c
+c  Author:
+c
+c    John Burkardt
+c
+c  Parameters:
+c
+c    Input, complex Z, the aergument.
+c
+c    Output, complex F01, the function value.
+c
+      implicit none
+
+      complex f01
+      complex z
+
+
+      f01 = z + 1.0E+00
+
+      return
+      end
+      function f02 ( z )
+
+c*******************************************************************************
+c
+cc F02 evaluates the function F(Z) = Z**5 + 1.
+c
+c  Modified:
+c
+c    06 January 2006
+c
+c  Author:
+c
+c    John Burkardt
+c
+c  Parameters:
+c
+c    Input, complex Z, the aergument.
+c
+c    Output, complex F02, the function value.
+c
+      implicit none
+
+      complex f02
+      complex z
+
+      f02 = z**5 + 1.0E+00
+
+      return
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ cat ~/365/Fortran/Sp/Src/src.f
+      SUBROUTINE CRF ( ZS, HS, HM, DM, FUNC, DS, ZE, HE, DE, N )
+C
+C  THE SUBROUTINE DETERMINES A ROOT OF A TRANSCEN-
+C  DENTAL COMPLEX EQUATION F(Z)=0 BY STEP-WISE ITE-
+C  RATION, (THE DOWN HILL METHOD).
+C
+C  INPUT-PARAMETERS.
+C
+C  ZS = START VALUE OF Z. (COMPLEX)
+C  HS = LENGTH OF STEP AT START.
+C  HM = MINIMUM LENGTH OF STEP.
+C  DM = MINIMUM DEVIATION.
+C
+C  SUBPROGRAM.
+C
+C  FUNC(Z), A COMPLEX FUNCTION SUBPROGRAM FOR THE
+C  CALCULATION OF THE VALUE OF F(Z) FOR A COMPLEX
+C  ARGUMENT Z.
+C
+C  OUTPUT-PARAMETERS.
+C
+C  DS = CABS(FUNC(ZS)) = DEVIATION AT START.
+C  ZE = END VALUE OF Z. (COMPLEX)
+C  HE = LENGTH OF STEP AT END.
+C  DE = CABS(FUNC(ZE)) = DEVIATION AT END.
+C  N  = NUMBER OF ITERATIONS.
+C
+C  RESTRICTIONS.
+C
+C  THE FUNCTION W=F(Z) MUST BE ANALYTICAL IN THE
+C  REGION WHERE ROOTS ARE SOUGHT.
+C
+      IMPLICIT NONE
+
+      COMPLEX A
+      COMPLEX CW
+      REAL DE
+      REAL DM
+      REAL DS
+      COMPLEX FUNC
+      REAL H
+      REAL HE
+      REAL HM
+      REAL HS
+      INTEGER I
+      INTEGER K
+      INTEGER N
+      INTEGER NR
+      COMPLEX U(7)
+      COMPLEX V
+      REAL W(3)
+      REAL W0
+      COMPLEX Z(3)
+      COMPLEX Z0
+      COMPLEX ZE
+      COMPLEX ZS
+
+      U(1) = (  1.0E+00, 0.0E+00 )
+      U(2) = (  0.8660254E+00, 0.5000000E+00 )
+      U(3) = (  0.0000000E+00, 1.0000000E+00 )
+      U(4) = (  0.9659258E+00, 0.2588190E+00 )
+      U(5) = (  0.7071068E+00, 0.7071068E+00 )
+      U(6) = (  0.2588190E+00, 0.9659258E+00 )
+      U(7) = ( -0.2588190E+00, 0.9659258E+00 )
+      H = HS
+      Z0 = ZS
+      N = 0
+C
+C  CALCULATION OF DS.
+C
+      CW = FUNC ( Z0 )
+      W0 = ABS ( REAL ( CW ) ) + ABS ( AIMAG ( CW ) )
+      DS = W0
+      IF ( W0 - DM ) 18, 18, 1
+1     K = 1
+      I = 0
+2     V = ( -1.0E+00, 0.0E+00 )
+C
+C  EQUILATERAL TRIANGLE WALK PATTERN.
+C
+3     A = ( -0.5E+00, 0.866E+00 )
+C
+C  CALCULATION OF DEVIATIONS W IN THE NEW TEST POINTS.
+C
+4     Z(1) = Z0 + H * V * A
+      CW = FUNC ( Z(1) )
+      W(1) = ABS ( REAL ( CW ) ) + ABS ( AIMAG ( CW ) )
+      Z(2) = Z0 + H * V
+      CW = FUNC ( Z(2) )
+      W(2) = ABS ( REAL ( CW ) ) + ABS ( AIMAG ( CW ) )
+      Z(3) = Z0 + H * CONJG ( A ) * V
+      CW = FUNC ( Z(3) )
+      W(3) = ABS ( REAL ( CW ) ) + ABS ( AIMAG ( CW ) )
+      N = N + 1
+C
+C  DETERMINATI0N OF W(NR), THE SMALLEST OF W(I).
+C
+      IF ( W(1) - W(3) ) 5, 5, 6
+5     IF ( W(1) - W(2) ) 7, 8, 8
+6     IF ( W(2) - W(3) ) 8, 8, 9
+7     NR = 1
+      GO TO 10
+8     NR = 2
+      GO TO 10
+9     NR = 3
+10    IF ( W0 - W(NR) ) 11, 12, 12
+11    GO TO ( 13, 14, 15 ), K
+12    K = 1
+      I = 0
+C
+C  FORWARD DIRECTED WALK PATTERN.
+C
+      A = ( 0.707E+00, 0.707E+00 )
+      V = ( Z(NR) - Z0 ) / H
+      W0 = W(NR)
+      Z0 = Z(NR)
+      IF ( W0 - DM ) 18, 18, 4
+13    K = 2
+C
+C  REDUCTION OF STEP LENGTH.
+C
+      IF ( H .LT. HM ) GO TO 18
+      H = H * 0.25E+00
+      GO TO 3
+14    K = 3
+C
+C  RESTORATION OF STEP LENGTH.
+C
+      H = H * 4.0E+00
+      GO TO 2
+15    I = I + 1
+C
+C  ROTATION OF WALK PATTERN.
+C
+      IF ( I - 7 ) 16, 16, 17
+16    V = U(I)
+      GO TO 3
+C
+C  REDUCTION OF STEP LENGTH.
+C
+17    IF ( H .LT. HM ) GO TO 18
+      H = H * 0.25E+00
+      I = 0
+      GO TO 2
+18    ZE = Z0
+      HE = H
+      DE = W0
+      RETURN
+      END
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ sloccount ~/365
+Creating filelist for 365
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+611     365             sh=423,fortran=188
+
+
+Totals grouped by language (dominant language first):
+sh:             423 (69.23%)
+fortran:        188 (30.77%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 611
+Development Effort Estimate, Person-Years (Person-Months) = 0.12 (1.43)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.24 (2.86)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.50
+Total Estimated Cost to Develop                           = $ 16,106
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~/365/Fortran/Sp/Drivers$ 
+
+
