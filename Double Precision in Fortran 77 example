@@ -1,0 +1,43 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat sqrta.f
+           double precision sqrtx
+           sqrtx = sqrt(10.0)
+           print *, sqrtx
+           end program
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran sqrta.f -o sqrta
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./sqrta
+   3.1622776985168457     
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sloccount sqrta.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/sqrta.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+4       top_dir         fortran=4
+
+
+Totals grouped by language (dominant language first):
+fortran:          4 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 4
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.01)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.03 (0.39)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.02
+Total Estimated Cost to Develop                           = $ 82
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
