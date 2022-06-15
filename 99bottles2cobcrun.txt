@@ -1,0 +1,611 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat 99bottles2.cbl
+        identification division.
+         program-id. ninety-nine.
+          environment division.
+       data division.
+        working-storage section.
+        01	counter	pic 99.
+	       88 no-bottles-left value 0.
+	       88 one-bottle-left value 1.
+
+        01	parts-of-counter redefines counter.
+	      05	tens		pic 9.
+	      05	digits		pic 9.
+
+        01	after-ten-words.
+	      05	filler	pic x(7) value spaces.
+	      05	filler	pic x(7) value "Twenty".
+	      05	filler	pic x(7) value "Thirty".
+	      05	filler	pic x(7) value "Forty".
+              05	filler	pic x(7) value "Fifty".
+	      05	filler	pic x(7) value "Sixty".
+	      05	filler	pic x(7) value "Seventy".
+	      05	filler	pic x(7) value "Eighty".
+	      05	filler	pic x(7) value "Ninety".
+	      05	filler	pic x(7) value spaces.
+
+        01  after-ten-array redefines after-ten-words.
+   	      05	atens occurs 10 times pic x(7).
+
+        01	digit-words.
+	      05	filler	pic x(9) value "One".
+	      05	filler	pic x(9) value "Two".
+	      05	filler	pic x(9) value "Three".
+	      05	filler	pic x(9) value "Four".
+	      05	filler	pic x(9) value "Five".
+	      05	filler	pic x(9) value "Six".
+	      05	filler	pic x(9) value "Seven".
+	      05	filler	pic x(9) value "Eight".
+	      05	filler	pic x(9) value "Nine".
+	      05	filler	pic x(9) value "Ten".
+	      05	filler	pic x(9) value "Eleven".
+	      05	filler	pic x(9) value "Twelve".
+	      05	filler	pic x(9) value "Thirteen".
+	      05	filler	pic x(9) value "Fourteen".
+              05     	filler	pic x(9) value "Fifteen".
+	      05	filler	pic x(9) value "Sixteen".
+	      05	filler	pic x(9) value "Seventeen".
+	      05	filler	pic x(9) value "Eighteen".
+	      05	filler	pic x(9) value "Nineteen".
+	      05	filler	pic x(9) value spaces.
+	     
+       01	digit-array redefines digit-words.
+	      05	adigits occurs 20 times 	pic x(9).
+	
+       01	number-name pic x(15).
+
+        procedure division.
+        100-main section.
+       100-setup.
+	  perform varying counter from 99 by -1 until no-bottles-left
+		perform 100-show-number
+		display " of beer on the wall"
+		perform 100-show-number
+		display " of beer"
+		display "Take " with no advancing
+		if one-bottle-left 
+			display "it " with no advancing
+		else
+			display "one " with no advancing
+		end-if
+		display "down and pass it round"
+		subtract 1 from counter giving counter
+		perform 100-show-number
+		display " of beer on the wall"
+		add 1 to counter giving counter
+		display space
+	end-perform.
+	display "No more bottles of beer on the wall"
+	display "No more bottles of beer"
+	display "Go to the store and buy some more"
+	display "Ninety Nine bottles of beer on the wall"
+	stop run.
+	
+        100-show-number.
+	if no-bottles-left 
+	display "No more" with no advancing
+	else 
+		if counter < 20
+	display function trim( adigits( counter ) ) with no advancing
+			else 
+			if counter < 100
+				move spaces to number-name
+	string atens( tens ) delimited by space,
+	space delimited by size,
+	adigits( digits ) delimited by space into number-name
+	display function trim( number-name) with no advancing
+	end-if
+		end-if
+	end-if.
+	if one-bottle-left
+		display " bottle" with no advancing
+	else
+		display " bottles" with no advancing
+	       end-if.
+
+       100-end.
+       end-program.
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cobc 99bottles2.cbl -c
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cobc 99bottles2.cbl -x
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./99bottles2
+Ninety Nine bottles of beer on the wall
+Ninety Nine bottles of beer
+Take one down and pass it round
+Ninety Eight bottles of beer on the wall
+ 
+Ninety Eight bottles of beer on the wall
+Ninety Eight bottles of beer
+Take one down and pass it round
+Ninety Seven bottles of beer on the wall
+ 
+Ninety Seven bottles of beer on the wall
+Ninety Seven bottles of beer
+Take one down and pass it round
+Ninety Six bottles of beer on the wall
+ 
+Ninety Six bottles of beer on the wall
+Ninety Six bottles of beer
+Take one down and pass it round
+Ninety Five bottles of beer on the wall
+ 
+Ninety Five bottles of beer on the wall
+Ninety Five bottles of beer
+Take one down and pass it round
+Ninety Four bottles of beer on the wall
+ 
+Ninety Four bottles of beer on the wall
+Ninety Four bottles of beer
+Take one down and pass it round
+Ninety Three bottles of beer on the wall
+ 
+Ninety Three bottles of beer on the wall
+Ninety Three bottles of beer
+Take one down and pass it round
+Ninety Two bottles of beer on the wall
+ 
+Ninety Two bottles of beer on the wall
+Ninety Two bottles of beer
+Take one down and pass it round
+Ninety One bottles of beer on the wall
+ 
+Ninety One bottles of beer on the wall
+Ninety One bottles of beer
+Take one down and pass it round
+Ninety  bottles of beer on the wall
+ 
+Ninety  bottles of beer on the wall
+Ninety  bottles of beer
+Take one down and pass it round
+Eighty Nine bottles of beer on the wall
+ 
+Eighty Nine bottles of beer on the wall
+Eighty Nine bottles of beer
+Take one down and pass it round
+Eighty Eight bottles of beer on the wall
+ 
+Eighty Eight bottles of beer on the wall
+Eighty Eight bottles of beer
+Take one down and pass it round
+Eighty Seven bottles of beer on the wall
+ 
+Eighty Seven bottles of beer on the wall
+Eighty Seven bottles of beer
+Take one down and pass it round
+Eighty Six bottles of beer on the wall
+ 
+Eighty Six bottles of beer on the wall
+Eighty Six bottles of beer
+Take one down and pass it round
+Eighty Five bottles of beer on the wall
+ 
+Eighty Five bottles of beer on the wall
+Eighty Five bottles of beer
+Take one down and pass it round
+Eighty Four bottles of beer on the wall
+ 
+Eighty Four bottles of beer on the wall
+Eighty Four bottles of beer
+Take one down and pass it round
+Eighty Three bottles of beer on the wall
+ 
+Eighty Three bottles of beer on the wall
+Eighty Three bottles of beer
+Take one down and pass it round
+Eighty Two bottles of beer on the wall
+ 
+Eighty Two bottles of beer on the wall
+Eighty Two bottles of beer
+Take one down and pass it round
+Eighty One bottles of beer on the wall
+ 
+Eighty One bottles of beer on the wall
+Eighty One bottles of beer
+Take one down and pass it round
+Eighty  bottles of beer on the wall
+ 
+Eighty  bottles of beer on the wall
+Eighty  bottles of beer
+Take one down and pass it round
+Seventy Nine bottles of beer on the wall
+ 
+Seventy Nine bottles of beer on the wall
+Seventy Nine bottles of beer
+Take one down and pass it round
+Seventy Eight bottles of beer on the wall
+ 
+Seventy Eight bottles of beer on the wall
+Seventy Eight bottles of beer
+Take one down and pass it round
+Seventy Seven bottles of beer on the wall
+ 
+Seventy Seven bottles of beer on the wall
+Seventy Seven bottles of beer
+Take one down and pass it round
+Seventy Six bottles of beer on the wall
+ 
+Seventy Six bottles of beer on the wall
+Seventy Six bottles of beer
+Take one down and pass it round
+Seventy Five bottles of beer on the wall
+ 
+Seventy Five bottles of beer on the wall
+Seventy Five bottles of beer
+Take one down and pass it round
+Seventy Four bottles of beer on the wall
+ 
+Seventy Four bottles of beer on the wall
+Seventy Four bottles of beer
+Take one down and pass it round
+Seventy Three bottles of beer on the wall
+ 
+Seventy Three bottles of beer on the wall
+Seventy Three bottles of beer
+Take one down and pass it round
+Seventy Two bottles of beer on the wall
+ 
+Seventy Two bottles of beer on the wall
+Seventy Two bottles of beer
+Take one down and pass it round
+Seventy One bottles of beer on the wall
+ 
+Seventy One bottles of beer on the wall
+Seventy One bottles of beer
+Take one down and pass it round
+Seventy  bottles of beer on the wall
+ 
+Seventy  bottles of beer on the wall
+Seventy  bottles of beer
+Take one down and pass it round
+Sixty Nine bottles of beer on the wall
+ 
+Sixty Nine bottles of beer on the wall
+Sixty Nine bottles of beer
+Take one down and pass it round
+Sixty Eight bottles of beer on the wall
+ 
+Sixty Eight bottles of beer on the wall
+Sixty Eight bottles of beer
+Take one down and pass it round
+Sixty Seven bottles of beer on the wall
+ 
+Sixty Seven bottles of beer on the wall
+Sixty Seven bottles of beer
+Take one down and pass it round
+Sixty Six bottles of beer on the wall
+ 
+Sixty Six bottles of beer on the wall
+Sixty Six bottles of beer
+Take one down and pass it round
+Sixty Five bottles of beer on the wall
+ 
+Sixty Five bottles of beer on the wall
+Sixty Five bottles of beer
+Take one down and pass it round
+Sixty Four bottles of beer on the wall
+ 
+Sixty Four bottles of beer on the wall
+Sixty Four bottles of beer
+Take one down and pass it round
+Sixty Three bottles of beer on the wall
+ 
+Sixty Three bottles of beer on the wall
+Sixty Three bottles of beer
+Take one down and pass it round
+Sixty Two bottles of beer on the wall
+ 
+Sixty Two bottles of beer on the wall
+Sixty Two bottles of beer
+Take one down and pass it round
+Sixty One bottles of beer on the wall
+ 
+Sixty One bottles of beer on the wall
+Sixty One bottles of beer
+Take one down and pass it round
+Sixty  bottles of beer on the wall
+ 
+Sixty  bottles of beer on the wall
+Sixty  bottles of beer
+Take one down and pass it round
+Fifty Nine bottles of beer on the wall
+ 
+Fifty Nine bottles of beer on the wall
+Fifty Nine bottles of beer
+Take one down and pass it round
+Fifty Eight bottles of beer on the wall
+ 
+Fifty Eight bottles of beer on the wall
+Fifty Eight bottles of beer
+Take one down and pass it round
+Fifty Seven bottles of beer on the wall
+ 
+Fifty Seven bottles of beer on the wall
+Fifty Seven bottles of beer
+Take one down and pass it round
+Fifty Six bottles of beer on the wall
+ 
+Fifty Six bottles of beer on the wall
+Fifty Six bottles of beer
+Take one down and pass it round
+Fifty Five bottles of beer on the wall
+ 
+Fifty Five bottles of beer on the wall
+Fifty Five bottles of beer
+Take one down and pass it round
+Fifty Four bottles of beer on the wall
+ 
+Fifty Four bottles of beer on the wall
+Fifty Four bottles of beer
+Take one down and pass it round
+Fifty Three bottles of beer on the wall
+ 
+Fifty Three bottles of beer on the wall
+Fifty Three bottles of beer
+Take one down and pass it round
+Fifty Two bottles of beer on the wall
+ 
+Fifty Two bottles of beer on the wall
+Fifty Two bottles of beer
+Take one down and pass it round
+Fifty One bottles of beer on the wall
+ 
+Fifty One bottles of beer on the wall
+Fifty One bottles of beer
+Take one down and pass it round
+Fifty  bottles of beer on the wall
+ 
+Fifty  bottles of beer on the wall
+Fifty  bottles of beer
+Take one down and pass it round
+Forty Nine bottles of beer on the wall
+ 
+Forty Nine bottles of beer on the wall
+Forty Nine bottles of beer
+Take one down and pass it round
+Forty Eight bottles of beer on the wall
+ 
+Forty Eight bottles of beer on the wall
+Forty Eight bottles of beer
+Take one down and pass it round
+Forty Seven bottles of beer on the wall
+ 
+Forty Seven bottles of beer on the wall
+Forty Seven bottles of beer
+Take one down and pass it round
+Forty Six bottles of beer on the wall
+ 
+Forty Six bottles of beer on the wall
+Forty Six bottles of beer
+Take one down and pass it round
+Forty Five bottles of beer on the wall
+ 
+Forty Five bottles of beer on the wall
+Forty Five bottles of beer
+Take one down and pass it round
+Forty Four bottles of beer on the wall
+ 
+Forty Four bottles of beer on the wall
+Forty Four bottles of beer
+Take one down and pass it round
+Forty Three bottles of beer on the wall
+ 
+Forty Three bottles of beer on the wall
+Forty Three bottles of beer
+Take one down and pass it round
+Forty Two bottles of beer on the wall
+ 
+Forty Two bottles of beer on the wall
+Forty Two bottles of beer
+Take one down and pass it round
+Forty One bottles of beer on the wall
+ 
+Forty One bottles of beer on the wall
+Forty One bottles of beer
+Take one down and pass it round
+Forty  bottles of beer on the wall
+ 
+Forty  bottles of beer on the wall
+Forty  bottles of beer
+Take one down and pass it round
+Thirty Nine bottles of beer on the wall
+ 
+Thirty Nine bottles of beer on the wall
+Thirty Nine bottles of beer
+Take one down and pass it round
+Thirty Eight bottles of beer on the wall
+ 
+Thirty Eight bottles of beer on the wall
+Thirty Eight bottles of beer
+Take one down and pass it round
+Thirty Seven bottles of beer on the wall
+ 
+Thirty Seven bottles of beer on the wall
+Thirty Seven bottles of beer
+Take one down and pass it round
+Thirty Six bottles of beer on the wall
+ 
+Thirty Six bottles of beer on the wall
+Thirty Six bottles of beer
+Take one down and pass it round
+Thirty Five bottles of beer on the wall
+ 
+Thirty Five bottles of beer on the wall
+Thirty Five bottles of beer
+Take one down and pass it round
+Thirty Four bottles of beer on the wall
+ 
+Thirty Four bottles of beer on the wall
+Thirty Four bottles of beer
+Take one down and pass it round
+Thirty Three bottles of beer on the wall
+ 
+Thirty Three bottles of beer on the wall
+Thirty Three bottles of beer
+Take one down and pass it round
+Thirty Two bottles of beer on the wall
+ 
+Thirty Two bottles of beer on the wall
+Thirty Two bottles of beer
+Take one down and pass it round
+Thirty One bottles of beer on the wall
+ 
+Thirty One bottles of beer on the wall
+Thirty One bottles of beer
+Take one down and pass it round
+Thirty  bottles of beer on the wall
+ 
+Thirty  bottles of beer on the wall
+Thirty  bottles of beer
+Take one down and pass it round
+Twenty Nine bottles of beer on the wall
+ 
+Twenty Nine bottles of beer on the wall
+Twenty Nine bottles of beer
+Take one down and pass it round
+Twenty Eight bottles of beer on the wall
+ 
+Twenty Eight bottles of beer on the wall
+Twenty Eight bottles of beer
+Take one down and pass it round
+Twenty Seven bottles of beer on the wall
+ 
+Twenty Seven bottles of beer on the wall
+Twenty Seven bottles of beer
+Take one down and pass it round
+Twenty Six bottles of beer on the wall
+ 
+Twenty Six bottles of beer on the wall
+Twenty Six bottles of beer
+Take one down and pass it round
+Twenty Five bottles of beer on the wall
+ 
+Twenty Five bottles of beer on the wall
+Twenty Five bottles of beer
+Take one down and pass it round
+Twenty Four bottles of beer on the wall
+ 
+Twenty Four bottles of beer on the wall
+Twenty Four bottles of beer
+Take one down and pass it round
+Twenty Three bottles of beer on the wall
+ 
+Twenty Three bottles of beer on the wall
+Twenty Three bottles of beer
+Take one down and pass it round
+Twenty Two bottles of beer on the wall
+ 
+Twenty Two bottles of beer on the wall
+Twenty Two bottles of beer
+Take one down and pass it round
+Twenty One bottles of beer on the wall
+ 
+Twenty One bottles of beer on the wall
+Twenty One bottles of beer
+Take one down and pass it round
+Twenty  bottles of beer on the wall
+ 
+Twenty  bottles of beer on the wall
+Twenty  bottles of beer
+Take one down and pass it round
+Nineteen bottles of beer on the wall
+ 
+Nineteen bottles of beer on the wall
+Nineteen bottles of beer
+Take one down and pass it round
+Eighteen bottles of beer on the wall
+ 
+Eighteen bottles of beer on the wall
+Eighteen bottles of beer
+Take one down and pass it round
+Seventeen bottles of beer on the wall
+ 
+Seventeen bottles of beer on the wall
+Seventeen bottles of beer
+Take one down and pass it round
+Sixteen bottles of beer on the wall
+ 
+Sixteen bottles of beer on the wall
+Sixteen bottles of beer
+Take one down and pass it round
+Fifteen bottles of beer on the wall
+ 
+Fifteen bottles of beer on the wall
+Fifteen bottles of beer
+Take one down and pass it round
+Fourteen bottles of beer on the wall
+ 
+Fourteen bottles of beer on the wall
+Fourteen bottles of beer
+Take one down and pass it round
+Thirteen bottles of beer on the wall
+ 
+Thirteen bottles of beer on the wall
+Thirteen bottles of beer
+Take one down and pass it round
+Twelve bottles of beer on the wall
+ 
+Twelve bottles of beer on the wall
+Twelve bottles of beer
+Take one down and pass it round
+Eleven bottles of beer on the wall
+ 
+Eleven bottles of beer on the wall
+Eleven bottles of beer
+Take one down and pass it round
+Ten bottles of beer on the wall
+ 
+Ten bottles of beer on the wall
+Ten bottles of beer
+Take one down and pass it round
+Nine bottles of beer on the wall
+ 
+Nine bottles of beer on the wall
+Nine bottles of beer
+Take one down and pass it round
+Eight bottles of beer on the wall
+ 
+Eight bottles of beer on the wall
+Eight bottles of beer
+Take one down and pass it round
+Seven bottles of beer on the wall
+ 
+Seven bottles of beer on the wall
+Seven bottles of beer
+Take one down and pass it round
+Six bottles of beer on the wall
+ 
+Six bottles of beer on the wall
+Six bottles of beer
+Take one down and pass it round
+Five bottles of beer on the wall
+ 
+Five bottles of beer on the wall
+Five bottles of beer
+Take one down and pass it round
+Four bottles of beer on the wall
+ 
+Four bottles of beer on the wall
+Four bottles of beer
+Take one down and pass it round
+Three bottles of beer on the wall
+ 
+Three bottles of beer on the wall
+Three bottles of beer
+Take one down and pass it round
+Two bottles of beer on the wall
+ 
+Two bottles of beer on the wall
+Two bottles of beer
+Take one down and pass it round
+One bottle of beer on the wall
+ 
+One bottle of beer on the wall
+One bottle of beer
+Take it down and pass it round
+No more bottles of beer on the wall
+ 
+No more bottles of beer on the wall
+No more bottles of beer
+Go to the store and buy some more
+Ninety Nine bottles of beer on the wall
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
