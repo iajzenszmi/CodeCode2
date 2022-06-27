@@ -1,0 +1,87 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat householder-reduction.py
+# :Householder reduction of a real symmetric n by n matrix a stored in an np by np physical array on output a is replaced by the orthoganal matrix #
+# Q effecting the transformation. D returns the diagonal elements of the tridiagonalmatrix, and E the off-diagonal elements with E(1) = 0 
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.linalg as la
+import scipy.sparse as sp
+import scipy.sparse.linalg as sla
+
+
+def householder(a):
+    n = a.shape[0]
+ #   n = a.shape[100]
+    d = np.zeros(n)
+    e = np.zeros(n)                                                                                                                           
+    for i in range(n - 1):                                                                                                                    
+        h = np.eye(n)                                                                                                                         
+        h[i:, i] = -np.sign(a[i, i]) * np.linalg.norm(a[i:, i])                                                                               
+        h[i, i] += 1                                                                                                                          
+        a = h @ a @ h.T                                                                                                                       
+        d[i] = a[i, i]                                                                                                                        
+        e[i] = a[i, i + 1]                                                                                                                    
+    d[n - 1] = a[n - 1, n - 1]                                                                                                                
+    e[n - 1] = 0      
+    return a, d, e
+
+def  print_matrix(a):
+    for i in range(a.shape[0]):                                                                                                               
+        print(a[i, :])                                                                                                                        
+    print("\n") 
+
+
+useuser_input = input("Enter the number of rows and columns of the matrix: ")
+rows = int(useuser_input.split()[0])
+cols = int(useuser_input.split()[1])
+
+
+a = np.random.rand(rows, cols)
+a = np.tril(a)
+a = a + a.T
+print("The matrix is: ")
+print_matrix(a)
+
+
+
+
+a, d, e = householder(a)
+print("The matrix after householder reduction is: ")
+print_matrix(a)
+print("The diagonal elements of the tridiagonal matrix are: ")
+print(d)
+print("The off-diagonal elements of the tridiagonal matrix are: ")
+print(e)
+
+
+# Plot the eigenvalues of the tridiagonal matrix
+plt.plot(d)
+plt.show()
+plt.plot(e)
+plt.show()
+
+
+
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ipython3 householder-reduction
+[TerminalIPythonApp] WARNING | File 'householder-reduction' doesn't exist
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ipython3 householder-reduction.py
+Enter the number of rows and columns of the matrix: 4 4
+The matrix is: 
+[0.29866521 0.69899151 0.84424893 0.9652796 ]
+[0.69899151 0.7799554  0.31392647 0.99648412]
+[0.84424893 0.31392647 1.34852478 0.97808258]
+[0.9652796  0.99648412 0.97808258 1.73614074]
+
+
+The matrix after householder reduction is: 
+[ 0.07192679 -0.33416466 -4.20586195 -4.26525676]
+[ -0.33416466  -4.61094194 -66.83091418 -65.48348976]
+[  -4.20586195  -66.83091418 -728.8770674  -725.82289666]
+[  -4.26525676  -65.48348976 -725.82289666 -721.64022556]
+
+
+The diagonal elements of the tridiagonal matrix are: 
+[ 7.19267892e-02 -4.61094194e+00 -7.28877067e+02 -7.21640226e+02]
+The off-diagonal elements of the tridiagonal matrix are: 
+[-1.24530047e-01 -6.44255492e+00 -7.25822897e+02  0.00000000e+00]
+
