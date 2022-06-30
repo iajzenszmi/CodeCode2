@@ -1,0 +1,130 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ipython3 integrations.py
+Rutishauser summation numerical integration: 0.0010000000000000002
+Romberg numerical integration: 0.051000000000000004
+Quadrature numerical integration: 0.051000000000000004
+Simpson numerical integration: 0.035666666666666666
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat integrations.py
+# 
+#for: Havie integration with expanded Rutishauser summation numerical integration, quadrature, Romberg integration
+# and other numerical integration methods
+# 
+#
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import scipy.integrate as integrate
+import scipy.special as special 
+import scipy.stats as stats 
+import scipy.optimize as optimize 
+
+
+
+
+
+
+
+
+
+
+
+ 
+#Rutishauser summation numerical integration
+def ruttishauser(f,a,b,n):
+    f = lambda x: x**2
+    h=(b-a)/n
+    s=0
+    for i in range(1,n+1): 
+        s=s+f(a+i*h)
+        s=s*h
+        return s
+
+
+def romberg(f,a,b,n): #Romberg numerical integration
+    f=lambda x: x**2
+    h=(b-a)/n
+    s=0
+    for i in range(1,n+1):
+        s=s+f(a+i*h)
+        s=s*h
+        s=s+(h/2)*(f(a)+f(b))
+        return s
+
+
+            
+     
+ 
+    
+def quadrature(f,a,b,n): #Quadrature numerical integration
+    h=(b-a)/n
+    s=0                                                                 
+    f=lambda x: x**2                                                    
+    for i in range(1,n+1):                                              
+      s=s+f(a+i*h)                                                      
+      s=s*h                                                             
+      s=s+(h/2)*(f(a)+f(b))                                             
+      return s                                                          
+
+
+
+
+def simpson(f,a,b,n): #Simpson numerical integration
+    h=(b-a)/n #h is the step size
+    s=0
+    f=lambda x: x**2
+    for i in range(1,n+1):
+       s=s+f(a+i*h)
+       s=s*h                                                             
+       s=s+(h/3)*(f(a)+4*f(a+h)+f(b))                                     
+       return s 
+
+
+def trapezoid(f,a,b,n): #Trapezoid numerical integration
+    h=(b-a)/n  #h is the step size for the trapezoid
+    s=0
+    f=lambda x: x**2
+    for i in range(1,n+1):
+       s=s+f(a+i*h)
+       s=s*h
+       s=s+(h/2)*(f(a)+f(b))
+       return s
+
+
+def simpson38(f,a,b,n): #Simpson 3/8 numerical integration
+    h=(b-a)/n
+    s=0
+    f=lambda x: x**2
+    for i in range(1,n+1):
+      s=s+f(a+i*h)                                                        
+      s=s*h                                                               
+      s=s+(h/3)*(f(a)+3*f(a+h)+3*f(a+2*h)+f(b))                           
+      return s                                                              
+f=lambda x: x**2
+a=0  
+b=1
+n=10
+s=ruttishauser(f,a,b,n)
+print("Rutishauser summation numerical integration:",s)
+s=romberg(f,a,b,n)
+print("Romberg numerical integration:",s)
+s=quadrature(f,a,b,n) 
+print("Quadrature numerical integration:",s)
+s=simpson(f,a,b,n)
+print("Simpson numerical integration:",s)
+
+
+
+
+
+
+
+
+
+
+
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ipython3 integrations.py
+Rutishauser summation numerical integration: 0.0010000000000000002
+Romberg numerical integration: 0.051000000000000004
+Quadrature numerical integration: 0.051000000000000004
+Simpson numerical integration: 0.035666666666666666
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
