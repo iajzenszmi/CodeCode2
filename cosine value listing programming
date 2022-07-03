@@ -1,0 +1,32 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat coslist.cpp
+// program to list x and cos(x) ie y values.
+//by I.M. Ajzenszmidt
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
+int main(){
+ float y;
+ float x;
+std::cout << "program to list cosine values " << std::endl;
+std::cout << "by I.M. Ajzenszmidt " << std::endl;
+ for(x=1;x<=10;x++){
+ y=cos(x);
+  std::cout << x<<" "<<y << std::endl;
+ }
+}
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ g++  coslist.cpp -lm  -o coslist
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./coslist
+program to list cosine values 
+by I.M. Ajzenszmidt 
+1 0.540302
+2 -0.416147
+3 -0.989992
+4 -0.653644
+5 0.283662
+6 0.96017
+7 0.753902
+8 -0.1455
+9 -0.91113
+10 -0.839072
+ian@ian-HP-Stream-Laptop-11-y0XX:~$
