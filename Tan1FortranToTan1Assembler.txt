@@ -1,0 +1,200 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ vim Tan1RunWithSloccount.txt
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran tan1.f -s
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ls tan1.*
+tan1.f  tan1.o
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran tan1.f -S
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ls tan1.*
+tan1.f  tan1.o  tan1.s
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat tan1.s
+	.file	"tan1.f"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"tan1.f"
+	.align 8
+.LC1:
+	.ascii	"Program by Ian Martin Ajzenszmidt, Melbourne AU 190722"
+.LC2:
+	.ascii	"         count"
+.LC3:
+	.ascii	" "
+.LC4:
+	.ascii	"result"
+.LC5:
+	.ascii	"       -----------------------"
+	.text
+	.type	MAIN__, @function
+MAIN__:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$544, %rsp
+	leaq	.LC0(%rip), %rax
+	movq	%rax, -536(%rbp)
+	movl	$5, -528(%rbp)
+	movl	$128, -544(%rbp)
+	movl	$6, -540(%rbp)
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write@PLT
+	leaq	-544(%rbp), %rax
+	movl	$54, %edx
+	leaq	.LC1(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_character_write@PLT
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write_done@PLT
+	leaq	.LC0(%rip), %rax
+	movq	%rax, -536(%rbp)
+	movl	$6, -528(%rbp)
+	movl	$128, -544(%rbp)
+	movl	$6, -540(%rbp)
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write@PLT
+	leaq	-544(%rbp), %rax
+	movl	$14, %edx
+	leaq	.LC2(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_character_write@PLT
+	leaq	-544(%rbp), %rax
+	movl	$1, %edx
+	leaq	.LC3(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_character_write@PLT
+	leaq	-544(%rbp), %rax
+	movl	$6, %edx
+	leaq	.LC4(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_character_write@PLT
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write_done@PLT
+	leaq	.LC0(%rip), %rax
+	movq	%rax, -536(%rbp)
+	movl	$7, -528(%rbp)
+	movl	$128, -544(%rbp)
+	movl	$6, -540(%rbp)
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write@PLT
+	leaq	-544(%rbp), %rax
+	movl	$30, %edx
+	leaq	.LC5(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_character_write@PLT
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write_done@PLT
+	movl	$1, -4(%rbp)
+.L3:
+	movl	-4(%rbp), %eax
+	cmpl	$10, %eax
+	setg	%al
+	movzbl	%al, %eax
+	testl	%eax, %eax
+	jne	.L4
+	movl	-4(%rbp), %eax
+	pxor	%xmm1, %xmm1
+	cvtsi2ssl	%eax, %xmm1
+	movd	%xmm1, %eax
+	movd	%eax, %xmm0
+	call	tanf@PLT
+	movss	%xmm0, -8(%rbp)
+	leaq	.LC0(%rip), %rax
+	movq	%rax, -536(%rbp)
+	movl	$10, -528(%rbp)
+	movl	$128, -544(%rbp)
+	movl	$6, -540(%rbp)
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write@PLT
+	leaq	-4(%rbp), %rcx
+	leaq	-544(%rbp), %rax
+	movl	$4, %edx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_integer_write@PLT
+	leaq	-544(%rbp), %rax
+	movl	$1, %edx
+	leaq	.LC3(%rip), %rcx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_character_write@PLT
+	leaq	-8(%rbp), %rcx
+	leaq	-544(%rbp), %rax
+	movl	$4, %edx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_real_write@PLT
+	leaq	-544(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write_done@PLT
+	movl	-4(%rbp), %eax
+	addl	$1, %eax
+	movl	%eax, -4(%rbp)
+	jmp	.L3
+.L4:
+	nop
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	MAIN__, .-MAIN__
+	.globl	main
+	.type	main, @function
+main:
+.LFB1:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movl	%edi, -4(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	-16(%rbp), %rdx
+	movl	-4(%rbp), %eax
+	movq	%rdx, %rsi
+	movl	%eax, %edi
+	call	_gfortran_set_args@PLT
+	leaq	options.4.0(%rip), %rax
+	movq	%rax, %rsi
+	movl	$7, %edi
+	call	_gfortran_set_options@PLT
+	call	MAIN__
+	movl	$0, %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	main, .-main
+	.section	.rodata
+	.align 16
+	.type	options.4.0, @object
+	.size	options.4.0, 28
+options.4.0:
+	.long	2116
+	.long	4095
+	.long	0
+	.long	1
+	.long	1
+	.long	0
+	.long	31
+	.ident	"GCC: (Ubuntu 11.2.0-19ubuntu1) 11.2.0"
+	.section	.note.GNU-sack,"",@progbits
+t
