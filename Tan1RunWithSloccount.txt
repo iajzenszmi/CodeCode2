@@ -1,0 +1,65 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat tan1.f
+       !program to print count and tangent "tan" of count
+       !
+       integer count1
+       real result1
+       print *, "Program by Ian Martin Ajzenszmidt, Melbourne AU 190722"
+       print *,"         count"," ","result"
+       print *,"       -----------------------"
+       do count1 = 1, 10, 1
+            result1 = (tan(real(count1)))
+            print *,count1," ", result1
+       enddo
+       end program
+            
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran tan1.f -o tan1
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./tan1
+ Program by Ian Martin Ajzenszmidt, Melbourne AU 190722
+          count result
+        -----------------------
+           1     1.55740774    
+           2    -2.18503976    
+           3   -0.142546549    
+           4     1.15782130    
+           5    -3.38051510    
+           6   -0.291006178    
+           7    0.871447980    
+           8    -6.79971123    
+           9   -0.452315658    
+          10    0.648360848    
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sloccount tan1.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/tan1.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+10      top_dir         fortran=10
+
+
+Totals grouped by language (dominant language first):
+fortran:         10 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 10
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.02)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.05 (0.56)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.03
+Total Estimated Cost to Develop                           = $ 215
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
+
