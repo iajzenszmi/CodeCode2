@@ -1,0 +1,92 @@
+an@ian-HP-Stream-Laptop-11-y0XX:~$ ls taylor*
+taylor2.f08  taylor_expansion.f08  taylor.py
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ gfortran taylor2.f08 -o taylor
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ ./taylor
+ x =    1.0000000000000000     
+ exp_true  =    2.7182818284590451     
+ exptaylor =    2.7182818284590455     
+ error     =    4.4408920985006262E-016
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ cat taylor2.f08
+! $CLASSHG/codes/fortran/taylor.f90
+
+program taylor
+
+    implicit none                  
+    real (kind=8) :: x, exp_true, y
+    real (kind=8), external :: exptaylor
+    integer :: n
+
+    n = 20               ! number of terms to use
+    x = 1.0
+    exp_true = exp(x)
+    y = exptaylor(x,n)   ! uses function below
+    print *, "x = ",x
+    print *, "exp_true  = ",exp_true
+    print *, "exptaylor = ",y
+    print *, "error     = ",y - exp_true
+
+end program taylor
+
+!==========================
+function exptaylor(x,n)
+!==========================
+    implicit none
+
+    ! function arguments:
+    real (kind=8), intent(in) :: x
+    integer, intent(in) :: n
+    real (kind=8) :: exptaylor
+
+    ! local variables:
+    real (kind=8) :: term, partial_sum
+    integer :: j
+
+    term = 1.
+    partial_sum = term
+
+    do j=1,n
+        ! j'th term is  x**j / j!  which is the previous term times x/j:
+        term = term*x/j   
+        ! add this term to the partial sum:
+        partial_sum = partial_sum + term   
+        enddo
+     exptaylor = partial_sum  ! this is the value returned
+end function exptaylor
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ sloccount taylor3.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/taylor3.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+29      top_dir         fortran=29
+
+
+Totals grouped by language (dominant language first):
+fortran:         29 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 29
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.06)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.07 (0.85)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.07
+Total Estimated Cost to Develop                           = $ 656
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Stream-Laptop-11-y0XX:~$ 
+
+
