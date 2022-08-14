@@ -1,8 +1,27 @@
        program testgen
 !      programmer Ian Martin Ajzenszmidt Melbourne Australia.
 !      programmed  for entertainment purposes only.               
-       integer ndim
-       read(5,9018) ndim
+       integer ndim,i
+       integer narray
+       integer arrayparam(8)
+       read *,(arrayparam(i),i=1,8)
+!      read(5,9018) ndim
+       narray = arrayparam(1)
+       ndim = 0
+       do i = 2,8,1
+       if(arrayparam(i).ge.1)  then
+         if(arrayparam(i) .le. 823543) then
+        ndim =ndim +1
+        endif
+        endif
+        enddo
+        do i = 1,ndim,1
+        arrayprod = arrayprod * arrayparam(i)
+        enddo
+        if(arrayprod .ge. 823543) then
+         print *,"array overflow"
+         stop
+         endif
  9018  format(i10)      
        if (ndim.eq. 1) call nsevdim1
        if (ndim. eq. 2) call nsevdim2
