@@ -1,0 +1,118 @@
+(21:33 ian@ian-Aspire-One-753 ~) > ./mlpack1.sh
+--2022-08-15 21:34:12--  https://www.mlpack.org/datasets/covertype-small.data.csv.gz
+Resolving www.mlpack.org (www.mlpack.org)... 209.195.13.98
+Connecting to www.mlpack.org (www.mlpack.org)|209.195.13.98|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2153841 (2.1M) [application/x-gzip]
+Saving to: ‘covertype-small.data.csv.gz’
+
+covertype-small.dat 100%[===================>]   2.05M  1.09MB/s    in 1.9s    
+
+2022-08-15 21:34:16 (1.09 MB/s) - ‘covertype-small.data.csv.gz’ saved [2153841/2153841]
+
+--2022-08-15 21:34:16--  https://www.mlpack.org/datasets/covertype-small.labels.csv.gz
+Resolving www.mlpack.org (www.mlpack.org)... 209.195.13.98
+Connecting to www.mlpack.org (www.mlpack.org)|209.195.13.98|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 34037 (33K) [application/x-gzip]
+Saving to: ‘covertype-small.labels.csv.gz’
+
+covertype-small.lab 100%[===================>]  33.24K   149KB/s    in 0.2s    
+
+2022-08-15 21:34:17 (149 KB/s) - ‘covertype-small.labels.csv.gz’ saved [34037/34037]
+
+gzip: covertype-small.data.csv already exists; do you wish to overwrite (y or n)? y
+gzip: covertype-small.labels.csv already exists; do you wish to overwrite (y or n)? y
+[DEBUG] Compiled with debugging symbols.
+[INFO ] Loading 'covertype-small.data.csv' as CSV data.  Size is 54 x 100000.
+[INFO ] Loading 'covertype-small.labels.csv' as raw ASCII formatted data.  Size is 1 x 100000.
+[INFO ] Training data contains 70000 points.
+[INFO ] Test data contains 30000 points.
+[INFO ] Saving CSV data to 'covertype-small.test.csv'.
+[INFO ] Saving CSV data to 'covertype-small.test.labels.csv'.
+[INFO ] Saving CSV data to 'covertype-small.train.csv'.
+[INFO ] Saving CSV data to 'covertype-small.train.labels.csv'.
+[INFO ] 
+[INFO ] Execution parameters:
+[INFO ]   help: 0
+[INFO ]   info: 
+[INFO ]   input_file: 'covertype-small.data.csv' (54x100000 matrix)
+[INFO ]   input_labels_file: 'covertype-small.labels.csv' (1x100000 matrix)
+[INFO ]   no_shuffle: 0
+[INFO ]   seed: 0
+[INFO ]   test_file: 'covertype-small.test.csv' (54x30000 matrix)
+[INFO ]   test_labels_file: 'covertype-small.test.labels.csv' (1x30000 matrix)
+[INFO ]   test_ratio: 0.3
+[INFO ]   training_file: 'covertype-small.train.csv' (54x70000 matrix)
+[INFO ]   training_labels_file: 'covertype-small.train.labels.csv' (1x70000 matrix)
+[INFO ]   verbose: 1
+[INFO ]   version: 0
+[INFO ] Program timers:
+[INFO ]   loading_data: 1.953559s
+[INFO ]   saving_data: 11.461776s
+[INFO ]   total_time: 2.254346s
+[DEBUG] Compiled with debugging symbols.
+[INFO ] Loading 'covertype-small.train.csv' as CSV data.  Size is 54 x 70000.
+[INFO ] Loading 'covertype-small.train.labels.csv' as raw ASCII formatted data.  Size is 70000 x 1.
+[INFO ] Training random forest with 10 trees...
+[INFO ] 61425 of 70000 correct on training set (87.75).
+[INFO ] 
+[INFO ] Execution parameters:
+[INFO ]   help: 0
+[INFO ]   info: 
+[INFO ]   input_model_file: 
+[INFO ]   labels_file: 'covertype-small.train.labels.csv' (1x0 matrix)
+[INFO ]   maximum_depth: 0
+[INFO ]   minimum_gain_split: 0
+[INFO ]   minimum_leaf_size: 3
+[INFO ]   num_trees: 10
+[INFO ]   output_model_file: rf-model.bin
+[INFO ]   predictions_file: ''
+[INFO ]   print_training_accuracy: 1
+[INFO ]   probabilities_file: ''
+[INFO ]   seed: 0
+[INFO ]   subspace_dim: 0
+[INFO ]   test_file: ''
+[INFO ]   test_labels_file: ''
+[INFO ]   training_file: 'covertype-small.train.csv' (0x0 matrix)
+[INFO ]   verbose: 1
+[INFO ]   version: 0
+[INFO ] Program timers:
+[INFO ]   bootstrap: 0.795707s
+[INFO ]   loading_data: 2.349000s
+[INFO ]   rf_prediction: 1.057301s
+[INFO ]   rf_training: 53.231510s
+[INFO ]   total_time: 54.292375s
+[INFO ]   train_tree: 99.954213s (1 mins, 39.9 secs)
+[DEBUG] Compiled with debugging symbols.
+[INFO ] Loading 'covertype-small.test.csv' as CSV data.  Size is 54 x 30000.
+[INFO ] Loading 'covertype-small.test.labels.csv' as raw ASCII formatted data.  Size is 30000 x 1.
+[INFO ] 24632 of 30000 correct on test set (82.1067).
+[INFO ] Saving CSV data to 'predictions.csv'.
+[INFO ] 
+[INFO ] Execution parameters:
+[INFO ]   help: 0
+[INFO ]   info: 
+[INFO ]   input_model_file: rf-model.bin
+[INFO ]   labels_file: ''
+[INFO ]   maximum_depth: 0
+[INFO ]   minimum_gain_split: 0
+[INFO ]   minimum_leaf_size: 1
+[INFO ]   num_trees: 10
+[INFO ]   output_model_file: 
+[INFO ]   predictions_file: 'predictions.csv' (1x30000 matrix)
+[INFO ]   print_training_accuracy: 0
+[INFO ]   probabilities_file: ''
+[INFO ]   seed: 0
+[INFO ]   subspace_dim: 0
+[INFO ]   test_file: 'covertype-small.test.csv' (0x0 matrix)
+[INFO ]   test_labels_file: 'covertype-small.test.labels.csv' (1x0 matrix)
+[INFO ]   training_file: ''
+[INFO ]   verbose: 1
+[INFO ]   version: 0
+[INFO ] Program timers:
+[INFO ]   loading_data: 1.018956s
+[INFO ]   rf_prediction: 0.431145s
+[INFO ]   saving_data: 0.006712s
+[INFO ]   total_time: 2.078358s
+(21:35 ian@ian-Aspire-One-753 ~) > 
