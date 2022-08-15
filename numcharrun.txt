@@ -1,0 +1,75 @@
+This is BASH 5.1- DISPLAY on :0
+
+Tue 16 Aug 2022 07:18:54 AEST
+
+[~] 
+(07:18:54)-(ian)-(431)-> g++ numchar.cpp -o numchar
+
+[~] 
+(07:19:21)-(ian)-(432)-> ./numchar
+5
+10
+hello world
+hello
+
+[~] 
+(07:19:43)-(ian)-(433)-> ./numchar
+5
+10
+helloworld
+helloworld
+
+[~] 
+(07:20:23)-(ian)-(433)-> cat numchar.cpp
+// Programmer: Ian Martin Ajzenszmidt
+#include <iostream>
+using namespace std;
+int main() {
+	int num;
+	int num2;
+	char string1[15];
+	cin >> num ;    //Reading input from STDIN
+	num2 = num * 2;
+	cout << num2 << endl;	// Writing output to STDOUT 
+	cin >> string1;
+	cout << string1 << std::endl;
+}
+
+[~] 
+(07:20:35)-(ian)-(434)-> sloccount numchar.cpp
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/numchar.cpp to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+12      top_dir         cpp=12
+
+
+Totals grouped by language (dominant language first):
+cpp:             12 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 12
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.02)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.05 (0.60)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.04
+Total Estimated Cost to Develop                           = $ 260
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+
+[~] 
+(07:20:48)-(ian)-(435)-> 
+
