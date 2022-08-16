@@ -1,0 +1,15 @@
+Wed 17 Aug 2022 03:57:51 AEST
+(03:57 ian@ian-HP-Stream-Laptop-11-y0XX ~) > nano
+(04:02 ian@ian-HP-Stream-Laptop-11-y0XX ~) > ls forth
+ls: cannot access 'forth': No such file or directory
+(04:03 ian@ian-HP-Stream-Laptop-11-y0XX ~) > ls *.forth
+happybirthday.forth
+(04:03 ian@ian-HP-Stream-Laptop-11-y0XX ~) > gforth happybirthday.forth
+HAPPY 67TH BIRTHDAY IAN MARTIN AJZENSZMIDT Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+bye 
+(04:05 ian@ian-HP-Stream-Laptop-11-y0XX ~) > cat happybirthday.forth
+: HAPPY_BIRTHDAY   ." HAPPY 67TH BIRTHDAY IAN MARTIN AJZENSZMIDT " ;
+HAPPY_BIRTHDAY
+(04:06 ian@ian-HP-Stream-Laptop-11-y0XX ~) > 
