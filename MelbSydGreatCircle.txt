@@ -1,0 +1,120 @@
+This is BASH 5.1- DISPLAY on :0
+
+Wed 24 Aug 2022 21:48:21 AEST
+(21:48 ian@ian-HP-Stream-Laptop-11-y0XX ~) > cat geop2.py
+import numpy as np
+#             model             major (km)   minor (km)     flattening
+ELLIPSOIDS = {'WGS-84':        (6378.137,    6356.7523142,  1 / 298.257223563),
+              'GRS-80':        (6378.137,    6356.7523141,  1 / 298.257222101),
+              'Airy (1830)':   (6377.563396, 6356.256909,   1 / 299.3249646),
+              'Intl 1924':     (6378.388,    6356.911946,   1 / 297.0),
+              'Clarke (1880)': (6378.249145, 6356.51486955, 1 / 293.465),
+              'GRS-67':        (6378.1600,   6356.774719,   1 / 298.25),
+              }
+
+
+EARTH_RADIUS = 6371.009
+
+
+def great_circle(ax, ay, bx, by, radius=EARTH_RADIUS):
+    """
+    calculate the great circle distance (km) between points
+
+    Provide points (ax, ay) and (bx, by) as floats, or as
+    vectors. If ax and ay are vectors or arrays of the
+    same shape, the element-wise distance will be found
+    between points in the vectors/arrays. If ax, ay are
+    (Mx1) column vectors and (bx, by) are (1xN) row
+    vectors, the vectors will be broadcast using numpy
+    broadcasting rules and the distance between each pair
+    of points will be returned as an (MxN) matrix.
+
+    Parameters
+    -----------
+    ax : float or array
+        x/long of point a
+    ay : float or array
+        y/lat of point a
+    bx : float or array
+        x/long of point b
+    by : float or array
+        y/lat of point b
+    radius : float, optional
+        Radius of the sphere on which to calculate the great
+        circle distance (default is to use the Earth's radius in
+        km, `6371.009`). Values returned will be in units of the
+        radius provided.
+
+    Returns
+    --------
+    distance : float or array
+        great circle distance between points a and b. Units will
+        match the radius provided (default km)
+    """
+    ax=37.8136
+    ay=144.9631
+    bx=33.8688
+    by=151.209
+    lat1, lng1 = np.radians(ay), np.radians(ax)
+    lat2, lng2 = np.radians(by), np.radians(bx)
+
+    sin_lat1, cos_lat1 = np.sin(lat1), np.cos(lat1)
+    sin_lat2, cos_lat2 = np.sin(lat2), np.cos(lat2)
+
+    delta_lng = lng2 - lng1
+    cos_delta_lng, sin_delta_lng = np.cos(delta_lng), np.sin(delta_lng)
+
+    d = np.arctan2(np.sqrt((cos_lat2 * sin_delta_lng) ** 2 +
+                   (cos_lat1 * sin_lat2 -
+                    sin_lat1 * cos_lat2 * cos_delta_lng) ** 2),
+              sin_lat1 * sin_lat2 + cos_lat1 * cos_lat2 * cos_delta_lng)
+#    print(radius * d)
+    print(ax,ay,bx,by,radius * d)
+    return radius * d
+
+import climate_toolbox
+import numpy
+radius=EARTH_RADIUS
+ax=37.8136
+ay=144.9631
+bx=33.8688
+by=151.209
+great_circle(ax,ay,bx,by)
+
+(21:48 ian@ian-HP-Stream-Laptop-11-y0XX ~) > ipython3 geop2.py
+37.8136 144.9631 33.8688 151.209 787.8275404613371
+(21:49 ian@ian-HP-Stream-Laptop-11-y0XX ~) > sloccount geop2.py
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/geop2.py to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+34      top_dir         python=34
+
+
+Totals grouped by language (dominant language first):
+python:          34 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 34
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.07)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.08 (0.90)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.08
+Total Estimated Cost to Develop                           = $ 776
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+(21:51 ian@ian-HP-Stream-Laptop-11-y0XX ~) > 
+
