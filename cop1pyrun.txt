@@ -1,0 +1,66 @@
+Sun 28 Aug 2022 14:06:31 AEST
+(14:06 ian@ian-HP-Stream-Laptop-11-y0XX ~) > ipython3 cop1.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+(14:06 ian@ian-HP-Stream-Laptop-11-y0XX ~) > cat cop1.py
+#count from one to ten
+for i in range(1,11): 
+    print(i)
+(14:08 ian@ian-HP-Stream-Laptop-11-y0XX ~) > time ipython3 cop1.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+real 2.178	user 1.738	sys 0.200	pcpu 88.93
+
+(14:10 ian@ian-HP-Stream-Laptop-11-y0XX ~) > sloccount cop1.py
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/cop1.py to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+2       top_dir         python=2
+
+
+Totals grouped by language (dominant language first):
+python:           2 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 2
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.00)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.02 (0.29)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.01
+Total Estimated Cost to Develop                           = $ 40
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+(14:11 ian@ian-HP-Stream-Laptop-11-y0XX ~) > 
+
+
