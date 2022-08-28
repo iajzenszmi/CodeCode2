@@ -1,0 +1,80 @@
+This is BASH 5.1- DISPLAY on :0
+
+Sun 28 Aug 2022 19:43:03 AEST
+(19:43 ian@ian-HP-Stream-Laptop-11-y0XX ~) > gcc count1to10.c -o count1to10
+(19:43 ian@ian-HP-Stream-Laptop-11-y0XX ~) > ./count1to10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+(19:44 ian@ian-HP-Stream-Laptop-11-y0XX ~) > cat count1to10.c
+// program to count from   1 to 10
+// Author: Ian Martin Ajzenszmidt
+//
+// Compile: gcc count1to10.c -o count1to10
+//Run: ./count1to10
+
+#include <stdio.h> // include the standard input output library
+
+int main() { // main function
+        int i; // declare i as an integer                                                                                                     
+        for (i = 1; i <= 10; i++) { // for loop to count from 1 to 10                                                                         
+                printf("%d\n", i); // print the value of i                                                                                    
+        }                                                                                                                                     
+        return 0; // return 0                                                                                                                 
+} // end of main function
+(19:44 ian@ian-HP-Stream-Laptop-11-y0XX ~) > sloccount count1to10.c
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/count1to10.c to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+8       top_dir         ansic=8
+
+
+Totals grouped by language (dominant language first):
+ansic:            8 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 8
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.02)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.04 (0.51)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.03
+Total Estimated Cost to Develop                           = $ 170
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+(19:45 ian@ian-HP-Stream-Laptop-11-y0XX ~) > time ./count1to10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+real 0.003	user 0.000	sys 0.002	pcpu 98.12
+
+(19:46 ian@ian-HP-Stream-Laptop-11-y0XX ~) > 
+
