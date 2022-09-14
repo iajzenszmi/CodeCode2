@@ -1,0 +1,2519 @@
+Welcome to Termux!
+
+Community forum: https://termux.com/community
+Gitter chat:     https://gitter.im/termux/termux
+IRC channel:     #termux on libera.chat
+
+Working with packages:
+
+ * Search packages:   pkg search <query>
+ * Install a package: pkg install <package>
+ * Upgrade packages:  pkg upgrade
+
+Subscribing to additional repositories:
+
+ * Root:     pkg install root-repo
+ * X11:      pkg install x11-repo
+
+Report issues at https://termux.com/issues
+
+~/downloads $ ls
+322.gz
+~/downloads $ tar -xf 322.gz
+tar: This does not look like a tar archive
+tar: Skipping to next header
+tar: Exiting with failure status due to previous errors
+~/downloads $ gzip 322.gz
+gzip: 322.gz already has .gz suffix -- unchanged
+~/downloads $ gzip 322.gz -d
+~/downloads $ ls
+322
+~/downloads $ cat 322
+<<<<<<<< FILE CONTAINS BOTH A FORTRAN 77 VERSION AND
+<<<<<<<< A SHAR FILE CONTAINING A C VERSION
+<<<<<<<< LOOK FOR <<<<<< AS A SEPARATOR
+
+<<< C version also provided by Larry Weissman >>>
+
+Subject: Re: TOMS algorithm 322
+Date: Tue, 29 Mar 94 15:34:51 -0800
+From: Larry Weissman 5-2011 <larryw@nsr.bioeng.washington.edu>
+To: ehg@research.att.com
+
+In netlib.att.com:/netlib/toms/322.Z:
+
+> Sorry, netlib does not have this algorithm online.  If you locate it
+> elsewhere, please email a copy to ehg@research.att.com.
+
+Below is a Fortran '77 coding of this algorithm, followed by a test program.
+
+Larry Weissman                         Center for Bioengineering, WD-12
+larryw@nsr.bioeng.washington.edu       Univ of Washington, Seattle WA 98195
+Phone: (206)685-2011                   FAX: (206)685-3300
+---------------------------------------------------------------------------
+
+      FUNCTION PROB(LM,LN,X)
+C
+C          Probabilities in several variance distributions
+C
+C  References:
+C     Egon Dorrer, "Algorithm 322: F-Distribution [S14]",
+C         Communications of the ACM, Vol 11(2), 1968, p116-117.
+C     J.B.F. Field, "Certification of Algorithm 322",
+C         Communications of the ACM, Vol 12(1), 1969, p39.
+C     Hubert Tolman, "Remark on Algorithm 322 [S14]",
+C         Communications of the ACM, Vol 14(2), 1979, p117.
+C
+C  Probabilities are returned as the integral of P(q)dq for q
+C  in the range zero to X (F-ratio and chi-square) or from -X to +X
+C  (Student's t and Normal).
+C
+C  For F-ratios:
+C     M = numerator degrees of freedom
+C     N = denominator degrees of freedom
+C     X = F-ratio
+C  For Student's t (two tailed):
+C     M = 1
+C     N = Degrees of freedom
+C     X = The square of t
+C  For normal deviates (two tailed):
+C     M = 1
+C     N = 5000
+C     X = The square of the deviate
+C  For chi-square:
+C     M = Degrees of freedom
+C     N = 5000
+C     X = Chi-square/M
+C
+C  The returned probability will be in the range 0 to 1, unless an error
+C  occurred, in which case -1.0 is returned.
+C  Recoded by LW, 28-Mar-94.
+C
+      INTEGER M,N,LM,LN,A,B,I,J
+      REAL    X,W,Y,Z,D,P,ZK
+C
+      M  = MIN(LM,300)
+      N  = MIN(LN,5000)
+      IF(MIN(M,N) .LT. 1) THEN
+          PROB = -1.0
+          RETURN
+      ENDIF
+C
+      A = 2*(M/2)-M+2
+      B = 2*(N/2)-N+2
+      W = X*FLOAT(M)/FLOAT(N)
+      Z = 1.0/(1.0+W)
+      IF(A .EQ. 1) THEN
+          IF(B .EQ. 1)THEN
+              P=SQRT(W)
+              Y=0.3183098862
+              D=Y*Z/P
+              P=2.0*Y*ATAN(P)
+          ELSE
+              P=SQRT(W*Z)
+              D=P*Z/(2.0*W)
+          ENDIF
+      ELSE
+          IF(B .EQ. 1)THEN
+              P=SQRT(Z)
+              D=Z*P/2.0
+              P=1.0-P
+          ELSE
+              D=Z*Z
+              P=W*Z
+          ENDIF
+      ENDIF
+      Y = 2.0*W/Z
+      IF(A .EQ. 1) THEN
+          DO 10 J=B+2,N,2
+              D = (1.0 + FLOAT(A)/FLOAT(J-2)) * D * Z
+              P = P + D * Y/FLOAT(J-1)
+10        CONTINUE
+      ELSE
+          ZK = Z**((N-1)/2)
+          D  = D * ZK * N/B
+          P  = P * ZK + W * Z * (ZK-1.0)/(Z-1.0)
+      ENDIF
+      Y = W * Z
+      Z = 2.0/Z
+      B = N-2
+      DO 20 I=A+2,M,2
+          J = I + B
+          D = (Y*D*FLOAT(J))/FLOAT(I-2)
+20        P = P - Z * D/FLOAT(J)
+      PROB = MAX(0.0,MIN(1.0,P))
+      RETURN
+      END
+
+-------------
+
+
+      PROGRAM tstprob
+c
+c  Test function prob() that generates critical values of standard
+c  probability functions
+c
+c  L. Weissman 29-Mar-94  larryw@bioeng.washington.edu
+c
+      PARAMETER (NZ=13)
+      REAL      z(NZ),pz(NZ)
+      PARAMETER (NT=25)
+      REAL      t(NT),pt(NT)
+      INTEGER   nut(NT)
+      PARAMETER (NX=25)
+      REAL      x(NX),px(NX)
+      INTEGER   nux(NX)
+      PARAMETER (NF=100)
+      REAL      f(NF),pf(NF)
+      INTEGER   nf1(NF),nf2(NF)
+c
+      DATA  z/4.417, 3.891, 3.291, 2.576, 2.241,
+     1        1.960, 1.645, 1.150, 0.674, 0.319,
+     2        0.126, 0.063, 0.0125/
+      DATA pz/1.e-5, 1.e-4, 1.e-3, 1.e-2, 0.025,
+     1        0.050, 0.100, 0.250, 0.500, 0.750,
+     2        0.900, 0.950, 0.990/
+c
+      DATA   t/1.000, 0.817, 0.700, 0.687, 0.677,
+     1         6.314, 2.920, 1.813, 1.725, 1.658,
+     2        12.706, 4.303, 2.228, 2.086, 1.980,
+     3        63.657, 9.925, 3.169, 2.845, 2.617,
+     4        127.32,14.089, 3.581, 3.153, 2.860/
+      DATA nut/    1,     2,    10,    20,   120,
+     1             1,     2,    10,    20,   120,
+     2             1,     2,    10,    20,   120,
+     3             1,     2,    10,    20,   120,
+     4             1,     2,    10,    20,   120/
+      DATA  pt/0.500, 0.500, 0.500, 0.500, 0.500,
+     1         0.100, 0.100, 0.100, 0.100, 0.100,
+     2         0.050, 0.050, 0.050, 0.050, 0.050,
+     3         0.010, 0.010, 0.010, 0.010, 0.010,
+     4         0.005, 0.005, 0.005, 0.005, 0.005/
+c
+      DATA   x/ 0.45,  1.39,  9.34, 19.34, 99.33,
+     1          3.84,  5.99, 18.31, 31.41,124.34,
+     2          5.02,  7.38, 20.48, 34.17,129.56,
+     3          6.63,  9.21, 23.21, 37.57,135.81,
+     4          7.88, 10.60, 25.19, 40.00,140.17/
+      DATA nux/    1,     2,    10,    20,   100,
+     1             1,     2,    10,    20,   100,
+     2             1,     2,    10,    20,   100,
+     3             1,     2,    10,    20,   100,
+     4             1,     2,    10,    20,   100/
+      DATA  px/0.500, 0.500, 0.500, 0.500, 0.500,
+     1         0.050, 0.050, 0.050, 0.050, 0.050,
+     2         0.025, 0.025, 0.025, 0.025, 0.025,
+     3         0.010, 0.010, 0.010, 0.010, 0.010,
+     4         0.005, 0.005, 0.005, 0.005, 0.005/
+c
+      DATA   f/ 16211.,198.50,12.826,9.9439,8.1790,
+     1          20000.,199.00,9.4270,6.9865,5.5393,
+     2          24224.,199.40,5.8467,3.8470,2.7052,
+     3          24836.,199.45,5.2740,3.3178,2.1881,
+     4          25359.,199.49,4.7501,2.8058,1.6055,
+
+     5          4052.2,98.503,10.044,8.0960,6.8510,
+     6          4999.5,99.000,7.5594,5.8489,4.7865,
+     7          6055.8,99.399,4.8492,3.3682,2.4721,
+     8          6208.7,99.490,4.4054,2.9377,2.0346,
+     9          6339.4,99.491,3.9965,2.5168,1.5330,
+
+     A          161.45,18.513,4.9646,4.3513,3.9201,
+     B          199.50,19.000,4.1028,3.4928,3.0718,
+     C          241.88,19.396,2.9782,2.3479,1.9105,
+     D          248.01,19.446,2.7740,2.1242,1.6587,
+     E          253.25,19.487,2.5801,1.8963,1.3519,
+
+     F          1.0000,.66667,.48973,.47192,.45774,
+     G          1.5000,1.0000,.74349,.71773,.69717,
+     H          2.0419,1.3450,1.0000,.96626,.93943,
+     I          2.1190,1.3933,1.0349,1.0000,.97228,
+     J          2.1848,1.4344,1.0645,1.0285,1.0000/
+      DATA nf1/ 5* 1, 5  *2, 5* 10, 5* 20, 5*120,
+     1          5* 1, 5  *2, 5* 10, 5* 20, 5*120,
+     2          5* 1, 5  *2, 5* 10, 5* 20, 5*120,
+     3          5* 1, 5  *2, 5* 10, 5* 20, 5*120/
+      DATA nf2/1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     1         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     2         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     3         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     4         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120/
+      DATA  pf/25*0.005, 25*0.01, 25*0.05, 25*0.50/
+c
+10    FORMAT(/15x,a//4x,
+     1'n1   n2       x      p-exp       p-calc      e-diff     e-rel'/
+     22x,
+     3'---- ----    ------  ----------  ----------  ----------   -----')
+c
+      WRITE(*,10)'Testing two-tailed normal distribution'
+      DO 20 i=1,NZ
+          p=1.0-prob(1,5000,z(i)**2)
+          CALL report(1,5000,z(i),pz(i),p)
+20    CONTINUE
+c
+      WRITE(*,10)'Testing two-tailed Student''s t'
+      DO 30 i=1,NT
+          p=1.0-prob(1,nut(i),t(i)**2)
+          CALL report(1,nut(i),t(i),pt(i),p)
+30    CONTINUE
+c
+      WRITE(*,10)'Testing chi-square distribution'
+      DO 40 i=1,NX
+          p=1.0-prob(nux(i),5000,x(i)/nux(i))
+          CALL report(nux(i),5000,x(i),px(i),p)
+40    CONTINUE
+c
+      WRITE(*,10)'Testing F distribution'
+      DO 50 i=1,NF
+          p=1.0-prob(nf1(i),nf2(i),f(i))
+          CALL report(nf1(i),nf2(i),f(i),pf(i),p)
+50    CONTINUE
+      STOP
+      END
+
+      SUBROUTINE report(n1,n2,x,pexp,pcalc)
+c
+c  Report the difference between the expected probability pexp and
+c  the calculated probability pcalc. Also report the relative error.
+c
+      pdiff = ABS(pexp-pcalc)
+      prel  = 0.0
+      IF(ABS(pexp) .GT. 1.e-30) prel = pdiff/pexp
+      WRITE(*,10)n1,n2,x,pexp,pcalc,pdiff,prel
+10    FORMAt(1x,i5,i5,f10.4,3g12.4,f8.3)
+      RETURN
+      END
+
+<<<<<<< 322.sh
+#! /bin/sh
+# This is a shell archive, meaning:
+# 1. Remove everything above the #! /bin/sh line.
+# 2. Save the resulting text in a file.
+# 3. Execute the file with /bin/sh (not csh) to create the files:
+#       Makefile
+#       fisher.c
+#       fisher.h
+#       ftest.c
+# This archive created: Thu Oct 26 21:47:05 1995
+export PATH; PATH=/bin:$PATH
+if test -f 'Makefile'
+then
+        echo shar: will not over-write existing file "'Makefile'"
+else
+cat << \SHAR_EOF > 'Makefile'
+#Makefile for fisher.c and driver program.
+#Copyright (c) 1995 by Matthew Belmonte <mkb4@Cornell.edu>.
+#Permission for use and distribution is hereby granted, subject to the
+#restrictions that this copyright notice be included in its entirety, and that
+#any and all changes are clearly noted.
+#
+CC = /bin/cc
+CFLAGS = -O2
+
+ftest: ftest.o fisher.o
+        $(CC) $(CFLAGS) -o ftest ftest.o fisher.o -lm
+
+ftest.o: ftest.c fisher.h
+        $(CC) $(CFLAGS) -c ftest.c
+
+fisher.o: fisher.c
+        $(CC) $(CFLAGS) -c fisher.c
+
+clean:
+        rm -f ftest.o fisher.o ftest
+SHAR_EOF
+fi # end of overwriting check
+if test -f 'fisher.c'
+then
+        echo shar: will not over-write existing file "'fisher.c'"
+else
+cat << \SHAR_EOF > 'fisher.c'
+/*fisher.c - compute the two-tailed probability of correct rejection of the null
+  hypothesis with an F-ratio of x, for m degrees of freedom in the numerator and
+  n degrees of freedom in the denominator.  In the special case of only two
+  populations, this is equivalent to Student's t-test with m=1 and x=t**2.
+  Coded by Matthew Belmonte <mkb4@Cornell.edu>, 28 September 1995.  This
+  implementation Copyright (c) 1995 by Matthew Belmonte.  Permission for use and
+  distribution is hereby granted, subject to the restrictions that this
+  copyright notice and reference list be included in its entirety, and that any
+  and all changes made to the program be clearly noted in the program text.
+
+  This software is provided 'as is', with no warranty, express or implied,
+  including but not limited to warranties of merchantability or fitness for a
+  particular purpose.  The user of this software assumes liability for any and
+  all damages, whether direct or consequential, arising from its use.  The
+  author of this implementation will not be liable for any such damages.
+
+  References:
+
+  Egon Dorrer, "Algorithm 322: F-Distribution [S14]", Communications of the
+  Association for Computing Machinery 11:2:116-117 (1968).
+
+  J.B.F. Field, "Certification of Algorithm 322 [S14] F-Distribution",
+  Communications of the Association for Computing Machinery 12:1:39 (1969).
+
+  Hubert Tolman, "Remark on Algorithm 322 [S14] F-Distribution", Communications
+  of the Association for Computing Machinery 14:2:117 (1971).
+*/
+
+#include <math.h>
+
+double fisher(m, n, x)
+int m, n;
+double x;
+  {
+  int a, b, i, j;
+  double w, y, z, zk, d, p;
+  a = 2*(m/2)-m+2;
+  b = 2*(n/2)-n+2;
+  w = (x*m)/n;
+  z = 1.0/(1.0+w);
+  if(a == 1)
+    {
+    if(b == 1)
+      {
+      p = sqrt(w);
+      y = 0.3183098862;
+      d = y*z/p;
+      p = 2.0*y*atan(p);
+      }
+    else
+      {
+      p = sqrt(w*z);
+      d = 0.5*p*z/w;
+      }
+    }
+  else if(b == 1)
+    {
+    p = sqrt(z);
+    d = 0.5*z*p;
+    p = 1.0-p;
+    }
+  else
+    {
+    d = z*z;
+    p = w*z;
+    }
+  y = 2.0*w/z;
+  if(a == 1)
+    for(j = b+2; j <= n; j += 2)
+      {
+      d *= (1.0+1.0/(j-2))*z;
+      p += d*y/(j-1);
+      }
+  else
+    {
+    zk = pow(z, (double)((n-1)/2));
+    d *= (zk*n)/b;
+    p = p*zk+w*z*(zk-1.0)/(z-1.0);
+    }
+  y = w*z;
+  z = 2.0/z;
+  b = n-2;
+  for(i = a+2; i <= m; i += 2)
+    {
+    j = i+b;
+    d *= (y*j)/(i-2);
+    p -= z*d/j;
+    }
+  return(p<0.0? 0.0: p>1.0? 1.0: p);
+  }
+
+double student(df, t)
+int df;
+double t;
+  {
+  return(fisher(1, df, t*t));
+  }
+SHAR_EOF
+fi # end of overwriting check
+if test -f 'fisher.h'
+then
+        echo shar: will not over-write existing file "'fisher.h'"
+else
+cat << \SHAR_EOF > 'fisher.h'
+/*fisher.h - header file for fisher.c.
+  Copyright (c) 1995 by Matthew Belmonte.  Permission for use and distribution
+  is hereby granted, subject to the restrictions that this copyright notice be
+  included in its entirety, and that any and all changes made to the program be
+  clearly noted in the program text.
+
+  This software is provided 'as is', with no warranty, express or implied,
+  including but not limited to warranties of merchantability or fitness for a
+  particular purpose.  The user of this software assumes liability for any and
+  all damages, whether direct or consequential, arising from its use.  The
+  author of this software will not be liable for any such damages.
+*/
+
+extern double fisher(int, int, double);
+extern double student(int, double);
+SHAR_EOF
+fi # end of overwriting check
+if test -f 'ftest.c'
+then
+        echo shar: will not over-write existing file "'ftest.c'"
+else
+cat << \SHAR_EOF > 'ftest.c'
+/*ftest.c - driver program for fisher.c.
+  Copyright (c) 1995 by Matthew Belmonte.  Permission for use and distribution
+  is hereby granted, subject to the restrictions that this copyright notice be
+  included in its entirety, and that any and all changes made to the program be
+  clearly noted in the program text.
+
+  This software is provided 'as is', with no warranty, express or implied,
+  including but not limited to warranties of merchantability or fitness for a
+  particular purpose.  The user of this software assumes liability for any and
+  all damages, whether direct or consequential, arising from its use.  The
+  author of this software will not be liable for any such damages.
+*/
+
+#include <stdio.h>
+#include <math.h>
+#include "fisher.h"
+
+void main()
+  {
+  double f, t;
+  int df, df_num;
+  char test_type;
+  printf("Enter test type, degrees of freedom, and value, or 'q' to quit -\nfor example 'f 1 10 10.04' or 't 10 3.169'\n");
+  test_type = getchar();
+  while(test_type != 'q')
+    {
+    if((test_type == 't') || (test_type == 'f'))
+      {
+      if(test_type != 't')
+        scanf("%d", &df_num);
+      else
+        df_num = 1;
+      scanf("%d", &df);
+      if(test_type == 't')
+        {
+        scanf("%lf", &t);
+        f = t*t;
+        }
+      else
+        {
+        scanf("%lf", &f);
+        if(df_num == 1)
+          t = sqrt(f);
+        }
+      printf("\tF(%d,%d)=%f, ", df_num, df, f);
+      if(df_num == 1)
+        printf("t(%d)=%f, ", df, t);
+      printf("p=%f\n", 1.0-fisher(df_num, df, f));
+      }
+    test_type = getchar();
+    }
+  exit(0);
+  }
+SHAR_EOF
+fi # end of overwriting check
+#       End of shell archive
+exit 0
+~/downloads $ cp 322 322.sh
+~/downloads $ chmod u+x 322.sh
+~/downloads $ ./322.sh
+./322.sh: line 1: syntax error near unexpected token `<<<'
+./322.sh: line 1: `<<<<<<<< FILE CONTAINS BOTH A FORTRAN 77 VERSION AND'
+~/downloads $ nano 322.sh
+~/downloads $ apt install gedit
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package gedit
+~/downloads $ apt install vim
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  vim-runtime
+The following NEW packages will be installed:
+  vim vim-runtime
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5554 kB of archives.
+After this operation, 28.1 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm vim-runtime all 9.0.0000 [4546 kB]
+Get:2 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm vim arm 9.0.0000 [1008 kB]
+Fetched 5554 kB in 15s (370 kB/s)
+Selecting previously unselected package vim-runtime.
+(Reading database ... 5007 files and directories currently installed.)
+Preparing to unpack .../vim-runtime_9.0.0000_all.deb ...
+Unpacking vim-runtime (9.0.0000) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../archives/vim_9.0.0000_arm.deb ...
+Unpacking vim (9.0.0000) ...
+Setting up vim-runtime (9.0.0000) ...
+Setting up vim (9.0.0000) ...
+update-alternatives: using /data/data/com.termux/files/usr/bin/vim to provide /data/data/com.termux/files/usr/bin/editor (editor) in auto mode
+update-alternatives: using /data/data/com.termux/files/usr/bin/vim to provide /data/data/com.termux/files/usr/bin/vi (vi) in auto mode
+~/downloads $ vim 322.sh
+~/downloads $ gcc
+The program gcc is not installed. Install it by executing:
+ pkg install clang
+~/downloads $ pkg install clang
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://mirrors.scau.edu.cn/termux/apt/termux-main: ok
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcompiler-rt libffi libllvm libxml2
+  lld llvm ndk-sysroot
+The following NEW packages will be installed:
+  clang libcompiler-rt libffi libllvm
+  libxml2 lld llvm ndk-sysroot
+0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Need to get 58.0 MB of archives.
+After this operation, 286 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libffi arm 3.4.2-1 [33.5 kB]
+Get:2 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libxml2 arm 2.9.14 [804 kB]
+Get:3 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libllvm arm 14.0.6-2 [22.2 MB]
+Get:4 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libcompiler-rt arm 14.0.6-2 [1774 kB]
+Get:5 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm lld arm 14.0.6-2 [1965 kB]
+Get:6 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm llvm arm 14.0.6-2 [8117 kB]
+Get:7 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm ndk-sysroot arm 25-1 [1447 kB]
+Get:8 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm clang arm 14.0.6-2 [21.7 MB]
+Fetched 58.0 MB in 38s (1522 kB/s)
+Selecting previously unselected package libffi.
+(Reading database ... 6529 files and directories currently installed.)
+Preparing to unpack .../0-libffi_3.4.2-1_arm.deb ...
+Unpacking libffi (3.4.2-1) ...
+Selecting previously unselected package libxml2.
+Preparing to unpack .../1-libxml2_2.9.14_arm.deb ...
+Unpacking libxml2 (2.9.14) ...
+Selecting previously unselected package libllvm.
+Preparing to unpack .../2-libllvm_14.0.6-2_arm.deb ...
+Unpacking libllvm (14.0.6-2) ...
+Selecting previously unselected package libcompiler-rt.
+Preparing to unpack .../3-libcompiler-rt_14.0.6-2_arm.deb ...
+Unpacking libcompiler-rt (14.0.6-2) ...
+Selecting previously unselected package lld.
+Preparing to unpack .../4-lld_14.0.6-2_arm.deb ...
+Unpacking lld (14.0.6-2) ...
+Selecting previously unselected package llvm.
+Preparing to unpack .../5-llvm_14.0.6-2_arm.deb ...
+Unpacking llvm (14.0.6-2) ...
+Selecting previously unselected package ndk-sysroot.
+Preparing to unpack .../6-ndk-sysroot_25-1_arm.deb ...
+Unpacking ndk-sysroot (25-1) ...
+Selecting previously unselected package clang.
+Preparing to unpack .../7-clang_14.0.6-2_arm.deb ...
+Unpacking clang (14.0.6-2) ...
+Setting up ndk-sysroot (25-1) ...
+Setting up libffi (3.4.2-1) ...
+Setting up libxml2 (2.9.14) ...
+Setting up libllvm (14.0.6-2) ...
+Setting up lld (14.0.6-2) ...
+Setting up libcompiler-rt (14.0.6-2) ...
+Setting up llvm (14.0.6-2) ...
+Setting up clang (14.0.6-2) ...
+~/downloads $ gcc
+clang-14: error: no input files
+~/downloads $ gfortran
+No command gfortran found, did you mean:
+ Command gforth in package gforth
+ Command geartrain in package mesa-demos
+~/downloads $ ls
+322  322.sh
+~/downloads $ csplit
+csplit: missing operand
+Try 'csplit --help' for more information.
+~/downloads $ cspli help
+No command cspli found, did you mean:
+ Command csplit in package coreutils
+~/downloads $ csplit help
+csplit: missing operand after ‘help’
+Try 'csplit --help' for more information.
+~/downloads $ csplit --help
+Usage: csplit [OPTION]... FILE PATTERN...
+Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ...,
+and output byte counts of each piece to standard output.
+
+Read standard input if FILE is -
+
+Mandatory arguments to long options are mandatory for short options too.
+  -b, --suffix-format=FORMAT  use sprintf FORMAT instead of %02d
+  -f, --prefix=PREFIX        use PREFIX instead of 'xx'
+  -k, --keep-files           do not remove output files on errors
+      --suppress-matched     suppress the lines matching PATTERN
+  -n, --digits=DIGITS        use specified number of digits instead of 2
+  -s, --quiet, --silent      do not print counts of output file sizes
+  -z, --elide-empty-files    remove empty output files
+      --help        display this help and exit
+      --version     output version information and exit
+
+Each PATTERN may be:
+  INTEGER            copy up to but not including specified line number
+  /REGEXP/[OFFSET]   copy up to but not including a matching line
+  %REGEXP%[OFFSET]   skip to, but not including a matching line
+  {INTEGER}          repeat the previous pattern specified number of times
+  {*}                repeat the previous pattern as many times as possible
+
+A line OFFSET is an integer optionally preceded by '+' or '-'
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/csplit>
+or available locally via: info '(coreutils) csplit invocation'
+~/downloads $ ls
+322  322.sh
+~/downloads $ csplit 322.sh "<<<<<"
+csplit: ‘<<<<<’: invalid pattern
+~/downloads $ cp 322 3221
+~/downloads $ vim 3221
+~/downloads $ csplit 3221 255
+8500
+6330
+~/downloads $ nano 8500
+~/downloads $ ls
+322  322.sh  3221  xx00  xx01
+~/downloads $ nano xxoo
+~/downloads $ nano xx00
+~/downloads $ ld
+The program ld is not installed. Install it by executing:
+ pkg install binutils
+or
+ pkg install binutils-is-llvm
+~/downloads $ ls
+322  322.f  322.sh  3221  xx00  xx01
+~/downloads $ gfortran 322.f
+No command gfortran found, did you mean:
+ Command gforth in package gforth
+ Command geartrain in package mesa-demos
+~/downloads $ ls
+322  322.f  322.sh  3221  xx00  xx01
+~/downloads $ cd
+~ $ ls
+core               ubuntu-fs
+downloads          ubuntu.sh
+start-ubuntu.sh    ubuntu20-binds
+start-ubuntu20.sh  ubuntu20-fs
+storage            ubuntu20-lxde.sh
+ubuntu-binds       ubuntu20-xfce.sh
+~ $ ./start-ubuntu.sh
+root@localhost:~# ls
+hello.f
+root@localhost:~# mkdir 322d
+root@localhost:~# cd 322d
+root@localhost:~/322d# ls
+root@localhost:~/322d# wget calgo.acm.org/322.gz
+--2022-09-13 23:10:57--  http://calgo.acm.org/322.gz
+Resolving calgo.acm.org (calgo.acm.org)... 190.92.158.4
+Connecting to calgo.acm.org (calgo.acm.org)|190.92.158.4|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4989 (4.9K) [application/x-gzip]
+Saving to: ‘322.gz’
+
+322.gz        0%       0  --.-KB/s        322.gz      100%   4.87K  --.-KB/s    in 0s
+
+2022-09-13 23:10:58 (52.2 MB/s) - ‘322.gz’ saved [4989/4989]
+
+root@localhost:~/322d# gzip 322.gz -d
+root@localhost:~/322d# ls
+322
+root@localhost:~/322d# cp 322 3221
+root@localhost:~/322d# vim 3221
+bash: vim: command not found
+root@localhost:~/322d# apt install vim
+E: dpkg was interrupted, you must manually run 'dpkg --configure -a' to correct the problem.
+root@localhost:~/322d# dpkg --configure -aProcessing triggers for libgdk-pixbuf2.0-0:armhf (2.36.11-2) ...
+Setting up humanity-icon-theme (0.6.15) ...
+Setting up libgtk-3-0:armhf (3.22.30-1ubuntu1) ...
+Setting up libgtk-3-bin (3.22.30-1ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libgtksourceview-3.0-1:armhf (3.24.7-1) ...
+Setting up gir1.2-gtk-3.0:armhf (3.22.30-1ubuntu1) ...
+Setting up ubuntu-mono (16.10+18.04.20180421.1-0ubuntu1) ...
+Setting up gir1.2-gtksource-3.0:armhf (3.24.7-1) ...
+Setting up pychess (0.12.2-1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+root@localhost:~/322d# apt install vim
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libgpm2 libpython3.6 vim-common
+  vim-runtime xxd
+Suggested packages:
+  gpm ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  libgpm2 libpython3.6 vim vim-common
+  vim-runtime xxd
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 7819 kB of archives.
+After this operation, 35.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf xxd armhf 2:8.0.1453-1ubuntu1 [48.9 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf vim-common all 2:8.0.1453-1ubuntu1 [70.4 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf libgpm2 armhf 1.20.7-5 [14.3 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf libpython3.6 armhf 3.6.5-3 [1263 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf vim-runtime all 2:8.0.1453-1ubuntu1 [5437 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf vim armhf 2:8.0.1453-1ubuntu1 [986 kB]
+Fetched 7819 kB in 6s (1236 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package xxd.
+(Reading database ... 38779 files and directories currently installed.)
+Preparing to unpack .../0-xxd_2%3a8.0.1453-1ubuntu1_armhf.deb ...
+Unpacking xxd (2:8.0.1453-1ubuntu1) ...
+Selecting previously unselected package vim-common.
+Preparing to unpack .../1-vim-common_2%3a8.0.1453-1ubuntu1_all.deb ...
+Unpacking vim-common (2:8.0.1453-1ubuntu1) ...
+Selecting previously unselected package libgpm2:armhf.
+Preparing to unpack .../2-libgpm2_1.20.7-5_armhf.deb ...
+Unpacking libgpm2:armhf (1.20.7-5) ...
+Selecting previously unselected package libpython3.6:armhf.
+Preparing to unpack .../3-libpython3.6_3.6.5-3_armhf.deb ...
+Unpacking libpython3.6:armhf (3.6.5-3) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../4-vim-runtime_2%3a8.0.1453-1ubuntu1_all.deb ...
+Adding 'diversion of /usr/share/vim/vim80/doc/help.txt to /usr/share/vim/vim80/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim80/doc/tags to /usr/share/vim/vim80/doc/tags.vim-tiny by vim-runtime'Welcome to Termux!
+
+Community forum: https://termux.com/community
+Gitter chat:     https://gitter.im/termux/termux
+IRC channel:     #termux on libera.chat
+
+Working with packages:
+
+ * Search packages:   pkg search <query>
+ * Install a package: pkg install <package>
+ * Upgrade packages:  pkg upgrade
+
+Subscribing to additional repositories:
+
+ * Root:     pkg install root-repo
+ * X11:      pkg install x11-repo
+
+Report issues at https://termux.com/issues
+
+~/downloads $ ls
+322.gz
+~/downloads $ tar -xf 322.gz
+tar: This does not look like a tar archive
+tar: Skipping to next header
+tar: Exiting with failure status due to previous errors
+~/downloads $ gzip 322.gz
+gzip: 322.gz already has .gz suffix -- unchanged
+~/downloads $ gzip 322.gz -d
+~/downloads $ ls
+322
+~/downloads $ cat 322
+<<<<<<<< FILE CONTAINS BOTH A FORTRAN 77 VERSION AND
+<<<<<<<< A SHAR FILE CONTAINING A C VERSION
+<<<<<<<< LOOK FOR <<<<<< AS A SEPARATOR
+
+<<< C version also provided by Larry Weissman >>>
+
+Subject: Re: TOMS algorithm 322
+Date: Tue, 29 Mar 94 15:34:51 -0800
+From: Larry Weissman 5-2011 <larryw@nsr.bioeng.washington.edu>
+To: ehg@research.att.com
+
+In netlib.att.com:/netlib/toms/322.Z:
+
+> Sorry, netlib does not have this algorithm online.  If you locate it
+> elsewhere, please email a copy to ehg@research.att.com.
+
+Below is a Fortran '77 coding of this algorithm, followed by a test program.
+
+Larry Weissman                         Center for Bioengineering, WD-12
+larryw@nsr.bioeng.washington.edu       Univ of Washington, Seattle WA 98195
+Phone: (206)685-2011                   FAX: (206)685-3300
+---------------------------------------------------------------------------
+
+      FUNCTION PROB(LM,LN,X)
+C
+C          Probabilities in several variance distributions
+C
+C  References:
+C     Egon Dorrer, "Algorithm 322: F-Distribution [S14]",
+C         Communications of the ACM, Vol 11(2), 1968, p116-117.
+C     J.B.F. Field, "Certification of Algorithm 322",
+C         Communications of the ACM, Vol 12(1), 1969, p39.
+C     Hubert Tolman, "Remark on Algorithm 322 [S14]",
+C         Communications of the ACM, Vol 14(2), 1979, p117.
+C
+C  Probabilities are returned as the integral of P(q)dq for q
+C  in the range zero to X (F-ratio and chi-square) or from -X to +X
+C  (Student's t and Normal).
+C
+C  For F-ratios:
+C     M = numerator degrees of freedom
+C     N = denominator degrees of freedom
+C     X = F-ratio
+C  For Student's t (two tailed):
+C     M = 1
+C     N = Degrees of freedom
+C     X = The square of t
+C  For normal deviates (two tailed):
+C     M = 1
+C     N = 5000
+C     X = The square of the deviate
+C  For chi-square:
+C     M = Degrees of freedom
+C     N = 5000
+C     X = Chi-square/M
+C
+C  The returned probability will be in the range 0 to 1, unless an error
+C  occurred, in which case -1.0 is returned.
+C  Recoded by LW, 28-Mar-94.
+C
+      INTEGER M,N,LM,LN,A,B,I,J
+      REAL    X,W,Y,Z,D,P,ZK
+C
+      M  = MIN(LM,300)
+      N  = MIN(LN,5000)
+      IF(MIN(M,N) .LT. 1) THEN
+          PROB = -1.0
+          RETURN
+      ENDIF
+C
+      A = 2*(M/2)-M+2
+      B = 2*(N/2)-N+2
+      W = X*FLOAT(M)/FLOAT(N)
+      Z = 1.0/(1.0+W)
+      IF(A .EQ. 1) THEN
+          IF(B .EQ. 1)THEN
+              P=SQRT(W)
+              Y=0.3183098862
+              D=Y*Z/P
+              P=2.0*Y*ATAN(P)
+          ELSE
+              P=SQRT(W*Z)
+              D=P*Z/(2.0*W)
+          ENDIF
+      ELSE
+          IF(B .EQ. 1)THEN
+              P=SQRT(Z)
+              D=Z*P/2.0
+              P=1.0-P
+          ELSE
+              D=Z*Z
+              P=W*Z
+          ENDIF
+      ENDIF
+      Y = 2.0*W/Z
+      IF(A .EQ. 1) THEN
+          DO 10 J=B+2,N,2
+              D = (1.0 + FLOAT(A)/FLOAT(J-2)) * D * Z
+              P = P + D * Y/FLOAT(J-1)
+10        CONTINUE
+      ELSE
+          ZK = Z**((N-1)/2)
+          D  = D * ZK * N/B
+          P  = P * ZK + W * Z * (ZK-1.0)/(Z-1.0)
+      ENDIF
+      Y = W * Z
+      Z = 2.0/Z
+      B = N-2
+      DO 20 I=A+2,M,2
+          J = I + B
+          D = (Y*D*FLOAT(J))/FLOAT(I-2)
+20        P = P - Z * D/FLOAT(J)
+      PROB = MAX(0.0,MIN(1.0,P))
+      RETURN
+      END
+
+-------------
+
+
+      PROGRAM tstprob
+c
+c  Test function prob() that generates critical values of standard
+c  probability functions
+c
+c  L. Weissman 29-Mar-94  larryw@bioeng.washington.edu
+c
+      PARAMETER (NZ=13)
+      REAL      z(NZ),pz(NZ)
+      PARAMETER (NT=25)
+      REAL      t(NT),pt(NT)
+      INTEGER   nut(NT)
+      PARAMETER (NX=25)
+      REAL      x(NX),px(NX)
+      INTEGER   nux(NX)
+      PARAMETER (NF=100)
+      REAL      f(NF),pf(NF)
+      INTEGER   nf1(NF),nf2(NF)
+c
+      DATA  z/4.417, 3.891, 3.291, 2.576, 2.241,
+     1        1.960, 1.645, 1.150, 0.674, 0.319,
+     2        0.126, 0.063, 0.0125/
+      DATA pz/1.e-5, 1.e-4, 1.e-3, 1.e-2, 0.025,
+     1        0.050, 0.100, 0.250, 0.500, 0.750,
+     2        0.900, 0.950, 0.990/
+c
+      DATA   t/1.000, 0.817, 0.700, 0.687, 0.677,
+     1         6.314, 2.920, 1.813, 1.725, 1.658,
+     2        12.706, 4.303, 2.228, 2.086, 1.980,
+     3        63.657, 9.925, 3.169, 2.845, 2.617,
+     4        127.32,14.089, 3.581, 3.153, 2.860/
+      DATA nut/    1,     2,    10,    20,   120,
+     1             1,     2,    10,    20,   120,
+     2             1,     2,    10,    20,   120,
+     3             1,     2,    10,    20,   120,
+     4             1,     2,    10,    20,   120/
+      DATA  pt/0.500, 0.500, 0.500, 0.500, 0.500,
+     1         0.100, 0.100, 0.100, 0.100, 0.100,
+     2         0.050, 0.050, 0.050, 0.050, 0.050,
+     3         0.010, 0.010, 0.010, 0.010, 0.010,
+     4         0.005, 0.005, 0.005, 0.005, 0.005/
+c
+      DATA   x/ 0.45,  1.39,  9.34, 19.34, 99.33,
+     1          3.84,  5.99, 18.31, 31.41,124.34,
+     2          5.02,  7.38, 20.48, 34.17,129.56,
+     3          6.63,  9.21, 23.21, 37.57,135.81,
+     4          7.88, 10.60, 25.19, 40.00,140.17/
+      DATA nux/    1,     2,    10,    20,   100,
+     1             1,     2,    10,    20,   100,
+     2             1,     2,    10,    20,   100,
+     3             1,     2,    10,    20,   100,
+     4             1,     2,    10,    20,   100/
+      DATA  px/0.500, 0.500, 0.500, 0.500, 0.500,
+     1         0.050, 0.050, 0.050, 0.050, 0.050,
+     2         0.025, 0.025, 0.025, 0.025, 0.025,
+     3         0.010, 0.010, 0.010, 0.010, 0.010,
+     4         0.005, 0.005, 0.005, 0.005, 0.005/
+c
+      DATA   f/ 16211.,198.50,12.826,9.9439,8.1790,
+     1          20000.,199.00,9.4270,6.9865,5.5393,
+     2          24224.,199.40,5.8467,3.8470,2.7052,
+     3          24836.,199.45,5.2740,3.3178,2.1881,
+     4          25359.,199.49,4.7501,2.8058,1.6055,
+
+     5          4052.2,98.503,10.044,8.0960,6.8510,
+     6          4999.5,99.000,7.5594,5.8489,4.7865,
+     7          6055.8,99.399,4.8492,3.3682,2.4721,
+     8          6208.7,99.490,4.4054,2.9377,2.0346,
+     9          6339.4,99.491,3.9965,2.5168,1.5330,
+
+     A          161.45,18.513,4.9646,4.3513,3.9201,
+     B          199.50,19.000,4.1028,3.4928,3.0718,
+     C          241.88,19.396,2.9782,2.3479,1.9105,
+     D          248.01,19.446,2.7740,2.1242,1.6587,
+     E          253.25,19.487,2.5801,1.8963,1.3519,
+
+     F          1.0000,.66667,.48973,.47192,.45774,
+     G          1.5000,1.0000,.74349,.71773,.69717,
+     H          2.0419,1.3450,1.0000,.96626,.93943,
+     I          2.1190,1.3933,1.0349,1.0000,.97228,
+     J          2.1848,1.4344,1.0645,1.0285,1.0000/
+      DATA nf1/ 5* 1, 5  *2, 5* 10, 5* 20, 5*120,
+     1          5* 1, 5  *2, 5* 10, 5* 20, 5*120,
+     2          5* 1, 5  *2, 5* 10, 5* 20, 5*120,
+     3          5* 1, 5  *2, 5* 10, 5* 20, 5*120/
+      DATA nf2/1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     1         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     2         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     3         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,
+     4         1,2,10,20,120,1,2,10,20,120,1,2,10,20,120,1,2,10,20,120/
+      DATA  pf/25*0.005, 25*0.01, 25*0.05, 25*0.50/
+c
+10    FORMAT(/15x,a//4x,
+     1'n1   n2       x      p-exp       p-calc      e-diff     e-rel'/
+     22x,
+     3'---- ----    ------  ----------  ----------  ----------   -----')
+c
+      WRITE(*,10)'Testing two-tailed normal distribution'
+      DO 20 i=1,NZ
+          p=1.0-prob(1,5000,z(i)**2)
+          CALL report(1,5000,z(i),pz(i),p)
+20    CONTINUE
+c
+      WRITE(*,10)'Testing two-tailed Student''s t'
+      DO 30 i=1,NT
+          p=1.0-prob(1,nut(i),t(i)**2)
+          CALL report(1,nut(i),t(i),pt(i),p)
+30    CONTINUE
+c
+      WRITE(*,10)'Testing chi-square distribution'
+      DO 40 i=1,NX
+          p=1.0-prob(nux(i),5000,x(i)/nux(i))
+          CALL report(nux(i),5000,x(i),px(i),p)
+40    CONTINUE
+c
+      WRITE(*,10)'Testing F distribution'
+      DO 50 i=1,NF
+          p=1.0-prob(nf1(i),nf2(i),f(i))
+          CALL report(nf1(i),nf2(i),f(i),pf(i),p)
+50    CONTINUE
+      STOP
+      END
+
+      SUBROUTINE report(n1,n2,x,pexp,pcalc)
+c
+c  Report the difference between the expected probability pexp and
+c  the calculated probability pcalc. Also report the relative error.
+c
+      pdiff = ABS(pexp-pcalc)
+      prel  = 0.0
+      IF(ABS(pexp) .GT. 1.e-30) prel = pdiff/pexp
+      WRITE(*,10)n1,n2,x,pexp,pcalc,pdiff,prel
+10    FORMAt(1x,i5,i5,f10.4,3g12.4,f8.3)
+      RETURN
+      END
+
+<<<<<<< 322.sh
+#! /bin/sh
+# This is a shell archive, meaning:
+# 1. Remove everything above the #! /bin/sh line.
+# 2. Save the resulting text in a file.
+# 3. Execute the file with /bin/sh (not csh) to create the files:
+#       Makefile
+#       fisher.c
+#       fisher.h
+#       ftest.c
+# This archive created: Thu Oct 26 21:47:05 1995
+export PATH; PATH=/bin:$PATH
+if test -f 'Makefile'
+then
+        echo shar: will not over-write existing file "'Makefile'"
+else
+cat << \SHAR_EOF > 'Makefile'
+#Makefile for fisher.c and driver program.
+#Copyright (c) 1995 by Matthew Belmonte <mkb4@Cornell.edu>.
+#Permission for use and distribution is hereby granted, subject to the
+#restrictions that this copyright notice be included in its entirety, and that
+#any and all changes are clearly noted.
+#
+CC = /bin/cc
+CFLAGS = -O2
+
+ftest: ftest.o fisher.o
+        $(CC) $(CFLAGS) -o ftest ftest.o fisher.o -lm
+
+ftest.o: ftest.c fisher.h
+        $(CC) $(CFLAGS) -c ftest.c
+
+fisher.o: fisher.c
+        $(CC) $(CFLAGS) -c fisher.c
+
+clean:
+        rm -f ftest.o fisher.o ftest
+SHAR_EOF
+fi # end of overwriting check
+if test -f 'fisher.c'
+then
+        echo shar: will not over-write existing file "'fisher.c'"
+else
+cat << \SHAR_EOF > 'fisher.c'
+/*fisher.c - compute the two-tailed probability of correct rejection of the null
+  hypothesis with an F-ratio of x, for m degrees of freedom in the numerator and
+  n degrees of freedom in the denominator.  In the special case of only two
+  populations, this is equivalent to Student's t-test with m=1 and x=t**2.
+  Coded by Matthew Belmonte <mkb4@Cornell.edu>, 28 September 1995.  This
+  implementation Copyright (c) 1995 by Matthew Belmonte.  Permission for use and
+  distribution is hereby granted, subject to the restrictions that this
+  copyright notice and reference list be included in its entirety, and that any
+  and all changes made to the program be clearly noted in the program text.
+
+  This software is provided 'as is', with no warranty, express or implied,
+  including but not limited to warranties of merchantability or fitness for a
+  particular purpose.  The user of this software assumes liability for any and
+  all damages, whether direct or consequential, arising from its use.  The
+  author of this implementation will not be liable for any such damages.
+
+  References:
+
+  Egon Dorrer, "Algorithm 322: F-Distribution [S14]", Communications of the
+  Association for Computing Machinery 11:2:116-117 (1968).
+
+  J.B.F. Field, "Certification of Algorithm 322 [S14] F-Distribution",
+  Communications of the Association for Computing Machinery 12:1:39 (1969).
+
+  Hubert Tolman, "Remark on Algorithm 322 [S14] F-Distribution", Communications
+  of the Association for Computing Machinery 14:2:117 (1971).
+*/
+
+#include <math.h>
+
+double fisher(m, n, x)
+int m, n;
+double x;
+  {
+  int a, b, i, j;
+  double w, y, z, zk, d, p;
+  a = 2*(m/2)-m+2;
+  b = 2*(n/2)-n+2;
+  w = (x*m)/n;
+  z = 1.0/(1.0+w);
+  if(a == 1)
+    {
+    if(b == 1)
+      {
+      p = sqrt(w);
+      y = 0.3183098862;
+      d = y*z/p;
+      p = 2.0*y*atan(p);
+      }
+    else
+      {
+      p = sqrt(w*z);
+      d = 0.5*p*z/w;
+      }
+    }
+  else if(b == 1)
+    {
+    p = sqrt(z);
+    d = 0.5*z*p;
+    p = 1.0-p;
+    }
+  else
+    {
+    d = z*z;
+    p = w*z;
+    }
+  y = 2.0*w/z;
+  if(a == 1)
+    for(j = b+2; j <= n; j += 2)
+      {
+      d *= (1.0+1.0/(j-2))*z;
+      p += d*y/(j-1);
+      }
+  else
+    {
+    zk = pow(z, (double)((n-1)/2));
+    d *= (zk*n)/b;
+    p = p*zk+w*z*(zk-1.0)/(z-1.0);
+    }
+  y = w*z;
+  z = 2.0/z;
+  b = n-2;
+  for(i = a+2; i <= m; i += 2)
+    {
+    j = i+b;
+    d *= (y*j)/(i-2);
+    p -= z*d/j;
+    }
+  return(p<0.0? 0.0: p>1.0? 1.0: p);
+  }
+
+double student(df, t)
+int df;
+double t;
+  {
+  return(fisher(1, df, t*t));
+  }
+SHAR_EOF
+fi # end of overwriting check
+if test -f 'fisher.h'
+then
+        echo shar: will not over-write existing file "'fisher.h'"
+else
+cat << \SHAR_EOF > 'fisher.h'
+/*fisher.h - header file for fisher.c.
+  Copyright (c) 1995 by Matthew Belmonte.  Permission for use and distribution
+  is hereby granted, subject to the restrictions that this copyright notice be
+  included in its entirety, and that any and all changes made to the program be
+  clearly noted in the program text.
+
+  This software is provided 'as is', with no warranty, express or implied,
+  including but not limited to warranties of merchantability or fitness for a
+  particular purpose.  The user of this software assumes liability for any and
+  all damages, whether direct or consequential, arising from its use.  The
+  author of this software will not be liable for any such damages.
+*/
+
+extern double fisher(int, int, double);
+extern double student(int, double);
+SHAR_EOF
+fi # end of overwriting check
+if test -f 'ftest.c'
+then
+        echo shar: will not over-write existing file "'ftest.c'"
+else
+cat << \SHAR_EOF > 'ftest.c'
+/*ftest.c - driver program for fisher.c.
+  Copyright (c) 1995 by Matthew Belmonte.  Permission for use and distribution
+  is hereby granted, subject to the restrictions that this copyright notice be
+  included in its entirety, and that any and all changes made to the program be
+  clearly noted in the program text.
+
+  This software is provided 'as is', with no warranty, express or implied,
+  including but not limited to warranties of merchantability or fitness for a
+  particular purpose.  The user of this software assumes liability for any and
+  all damages, whether direct or consequential, arising from its use.  The
+  author of this software will not be liable for any such damages.
+*/
+
+#include <stdio.h>
+#include <math.h>
+#include "fisher.h"
+
+void main()
+  {
+  double f, t;
+  int df, df_num;
+  char test_type;
+  printf("Enter test type, degrees of freedom, and value, or 'q' to quit -\nfor example 'f 1 10 10.04' or 't 10 3.169'\n");
+  test_type = getchar();
+  while(test_type != 'q')
+    {
+    if((test_type == 't') || (test_type == 'f'))
+      {
+      if(test_type != 't')
+        scanf("%d", &df_num);
+      else
+        df_num = 1;
+      scanf("%d", &df);
+      if(test_type == 't')
+        {
+        scanf("%lf", &t);
+        f = t*t;
+        }
+      else
+        {
+        scanf("%lf", &f);
+        if(df_num == 1)
+          t = sqrt(f);
+        }
+      printf("\tF(%d,%d)=%f, ", df_num, df, f);
+      if(df_num == 1)
+        printf("t(%d)=%f, ", df, t);
+      printf("p=%f\n", 1.0-fisher(df_num, df, f));
+      }
+    test_type = getchar();
+    }
+  exit(0);
+  }
+SHAR_EOF
+fi # end of overwriting check
+#       End of shell archive
+exit 0
+~/downloads $ cp 322 322.sh
+~/downloads $ chmod u+x 322.sh
+~/downloads $ ./322.sh
+./322.sh: line 1: syntax error near unexpected token `<<<'
+./322.sh: line 1: `<<<<<<<< FILE CONTAINS BOTH A FORTRAN 77 VERSION AND'
+~/downloads $ nano 322.sh
+~/downloads $ apt install gedit
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package gedit
+~/downloads $ apt install vim
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  vim-runtime
+The following NEW packages will be installed:
+  vim vim-runtime
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5554 kB of archives.
+After this operation, 28.1 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm vim-runtime all 9.0.0000 [4546 kB]
+Get:2 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm vim arm 9.0.0000 [1008 kB]
+Fetched 5554 kB in 15s (370 kB/s)
+Selecting previously unselected package vim-runtime.
+(Reading database ... 5007 files and directories currently installed.)
+Preparing to unpack .../vim-runtime_9.0.0000_all.deb ...
+Unpacking vim-runtime (9.0.0000) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../archives/vim_9.0.0000_arm.deb ...
+Unpacking vim (9.0.0000) ...
+Setting up vim-runtime (9.0.0000) ...
+Setting up vim (9.0.0000) ...
+update-alternatives: using /data/data/com.termux/files/usr/bin/vim to provide /data/data/com.termux/files/usr/bin/editor (editor) in auto mode
+update-alternatives: using /data/data/com.termux/files/usr/bin/vim to provide /data/data/com.termux/files/usr/bin/vi (vi) in auto mode
+~/downloads $ vim 322.sh
+~/downloads $ gcc
+The program gcc is not installed. Install it by executing:
+ pkg install clang
+~/downloads $ pkg install clang
+No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+Checking availability of current mirror:
+[*] https://mirrors.scau.edu.cn/termux/apt/termux-main: ok
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcompiler-rt libffi libllvm libxml2
+  lld llvm ndk-sysroot
+The following NEW packages will be installed:
+  clang libcompiler-rt libffi libllvm
+  libxml2 lld llvm ndk-sysroot
+0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Need to get 58.0 MB of archives.
+After this operation, 286 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libffi arm 3.4.2-1 [33.5 kB]
+Get:2 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libxml2 arm 2.9.14 [804 kB]
+Get:3 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libllvm arm 14.0.6-2 [22.2 MB]
+Get:4 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm libcompiler-rt arm 14.0.6-2 [1774 kB]
+Get:5 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm lld arm 14.0.6-2 [1965 kB]
+Get:6 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm llvm arm 14.0.6-2 [8117 kB]
+Get:7 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm ndk-sysroot arm 25-1 [1447 kB]
+Get:8 https://mirrors.scau.edu.cn/termux/apt/termux-main stable/main arm clang arm 14.0.6-2 [21.7 MB]
+Fetched 58.0 MB in 38s (1522 kB/s)
+Selecting previously unselected package libffi.
+(Reading database ... 6529 files and directories currently installed.)
+Preparing to unpack .../0-libffi_3.4.2-1_arm.deb ...
+Unpacking libffi (3.4.2-1) ...
+Selecting previously unselected package libxml2.
+Preparing to unpack .../1-libxml2_2.9.14_arm.deb ...
+Unpacking libxml2 (2.9.14) ...
+Selecting previously unselected package libllvm.
+Preparing to unpack .../2-libllvm_14.0.6-2_arm.deb ...
+Unpacking libllvm (14.0.6-2) ...
+Selecting previously unselected package libcompiler-rt.
+Preparing to unpack .../3-libcompiler-rt_14.0.6-2_arm.deb ...
+Unpacking libcompiler-rt (14.0.6-2) ...
+Selecting previously unselected package lld.
+Preparing to unpack .../4-lld_14.0.6-2_arm.deb ...
+Unpacking lld (14.0.6-2) ...
+Selecting previously unselected package llvm.
+Preparing to unpack .../5-llvm_14.0.6-2_arm.deb ...
+Unpacking llvm (14.0.6-2) ...
+Selecting previously unselected package ndk-sysroot.
+Preparing to unpack .../6-ndk-sysroot_25-1_arm.deb ...
+Unpacking ndk-sysroot (25-1) ...
+Selecting previously unselected package clang.
+Preparing to unpack .../7-clang_14.0.6-2_arm.deb ...
+Unpacking clang (14.0.6-2) ...
+Setting up ndk-sysroot (25-1) ...
+Setting up libffi (3.4.2-1) ...
+Setting up libxml2 (2.9.14) ...
+Setting up libllvm (14.0.6-2) ...
+Setting up lld (14.0.6-2) ...
+Setting up libcompiler-rt (14.0.6-2) ...
+Setting up llvm (14.0.6-2) ...
+Setting up clang (14.0.6-2) ...
+~/downloads $ gcc
+clang-14: error: no input files
+~/downloads $ gfortran
+No command gfortran found, did you mean:
+ Command gforth in package gforth
+ Command geartrain in package mesa-demos
+~/downloads $ ls
+322  322.sh
+~/downloads $ csplit
+csplit: missing operand
+Try 'csplit --help' for more information.
+~/downloads $ cspli help
+No command cspli found, did you mean:
+ Command csplit in package coreutils
+~/downloads $ csplit help
+csplit: missing operand after ‘help’
+Try 'csplit --help' for more information.
+~/downloads $ csplit --help
+Usage: csplit [OPTION]... FILE PATTERN...
+Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ...,
+and output byte counts of each piece to standard output.
+
+Read standard input if FILE is -
+
+Mandatory arguments to long options are mandatory for short options too.
+  -b, --suffix-format=FORMAT  use sprintf FORMAT instead of %02d
+  -f, --prefix=PREFIX        use PREFIX instead of 'xx'
+  -k, --keep-files           do not remove output files on errors
+      --suppress-matched     suppress the lines matching PATTERN
+  -n, --digits=DIGITS        use specified number of digits instead of 2
+  -s, --quiet, --silent      do not print counts of output file sizes
+  -z, --elide-empty-files    remove empty output files
+      --help        display this help and exit
+      --version     output version information and exit
+
+Each PATTERN may be:
+  INTEGER            copy up to but not including specified line number
+  /REGEXP/[OFFSET]   copy up to but not including a matching line
+  %REGEXP%[OFFSET]   skip to, but not including a matching line
+  {INTEGER}          repeat the previous pattern specified number of times
+  {*}                repeat the previous pattern as many times as possible
+
+A line OFFSET is an integer optionally preceded by '+' or '-'
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/csplit>
+or available locally via: info '(coreutils) csplit invocation'
+~/downloads $ ls
+322  322.sh
+~/downloads $ csplit 322.sh "<<<<<"
+csplit: ‘<<<<<’: invalid pattern
+~/downloads $ cp 322 3221
+~/downloads $ vim 3221
+~/downloads $ csplit 3221 255
+8500
+6330
+~/downloads $ nano 8500
+~/downloads $ ls
+322  322.sh  3221  xx00  xx01
+~/downloads $ nano xxoo
+~/downloads $ nano xx00
+~/downloads $ ld
+The program ld is not installed. Install it by executing:
+ pkg install binutils
+or
+ pkg install binutils-is-llvm
+~/downloads $ ls
+322  322.f  322.sh  3221  xx00  xx01
+~/downloads $ gfortran 322.f
+No command gfortran found, did you mean:
+ Command gforth in package gforth
+ Command geartrain in package mesa-demos
+~/downloads $ ls
+322  322.f  322.sh  3221  xx00  xx01
+~/downloads $ cd
+~ $ ls
+core               ubuntu-fs
+downloads          ubuntu.sh
+start-ubuntu.sh    ubuntu20-binds
+start-ubuntu20.sh  ubuntu20-fs
+storage            ubuntu20-lxde.sh
+ubuntu-binds       ubuntu20-xfce.sh
+~ $ ./start-ubuntu.sh
+root@localhost:~# ls
+hello.f
+root@localhost:~# mkdir 322d
+root@localhost:~# cd 322d
+root@localhost:~/322d# ls
+root@localhost:~/322d# wget calgo.acm.org/322.gz
+--2022-09-13 23:10:57--  http://calgo.acm.org/322.gz
+Resolving calgo.acm.org (calgo.acm.org)... 190.92.158.4
+Connecting to calgo.acm.org (calgo.acm.org)|190.92.158.4|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4989 (4.9K) [application/x-gzip]
+Saving to: ‘322.gz’
+
+322.gz        0%       0  --.-KB/s        322.gz      100%   4.87K  --.-KB/s    in 0s
+
+2022-09-13 23:10:58 (52.2 MB/s) - ‘322.gz’ saved [4989/4989]
+
+root@localhost:~/322d# gzip 322.gz -d
+root@localhost:~/322d# ls
+322
+root@localhost:~/322d# cp 322 3221
+root@localhost:~/322d# vim 3221
+bash: vim: command not found
+root@localhost:~/322d# apt install vim
+E: dpkg was interrupted, you must manually run 'dpkg --configure -a' to correct the problem.
+root@localhost:~/322d# dpkg --configure -aProcessing triggers for libgdk-pixbuf2.0-0:armhf (2.36.11-2) ...
+Setting up humanity-icon-theme (0.6.15) ...
+Setting up libgtk-3-0:armhf (3.22.30-1ubuntu1) ...
+Setting up libgtk-3-bin (3.22.30-1ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libgtksourceview-3.0-1:armhf (3.24.7-1) ...
+Setting up gir1.2-gtk-3.0:armhf (3.22.30-1ubuntu1) ...
+Setting up ubuntu-mono (16.10+18.04.20180421.1-0ubuntu1) ...
+Setting up gir1.2-gtksource-3.0:armhf (3.24.7-1) ...
+Setting up pychess (0.12.2-1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+root@localhost:~/322d# apt install vim
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libgpm2 libpython3.6 vim-common
+  vim-runtime xxd
+Suggested packages:
+  gpm ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  libgpm2 libpython3.6 vim vim-common
+  vim-runtime xxd
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 7819 kB of archives.
+After this operation, 35.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf xxd armhf 2:8.0.1453-1ubuntu1 [48.9 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf vim-common all 2:8.0.1453-1ubuntu1 [70.4 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf libgpm2 armhf 1.20.7-5 [14.3 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf libpython3.6 armhf 3.6.5-3 [1263 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf vim-runtime all 2:8.0.1453-1ubuntu1 [5437 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports bionic/main armhf vim armhf 2:8.0.1453-1ubuntu1 [986 kB]
+Fetched 7819 kB in 6s (1236 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package xxd.
+(Reading database ... 38779 files and directories currently installed.)
+Preparing to unpack .../0-xxd_2%3a8.0.1453-1ubuntu1_armhf.deb ...
+Unpacking xxd (2:8.0.1453-1ubuntu1) ...
+Selecting previously unselected package vim-common.
+Preparing to unpack .../1-vim-common_2%3a8.0.1453-1ubuntu1_all.deb ...
+Unpacking vim-common (2:8.0.1453-1ubuntu1) ...
+Selecting previously unselected package libgpm2:armhf.
+Preparing to unpack .../2-libgpm2_1.20.7-5_armhf.deb ...
+Unpacking libgpm2:armhf (1.20.7-5) ...
+Selecting previously unselected package libpython3.6:armhf.
+Preparing to unpack .../3-libpython3.6_3.6.5-3_armhf.deb ...
+Unpacking libpython3.6:armhf (3.6.5-3) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../4-vim-runtime_2%3a8.0.1453-1ubuntu1_all.deb ...
+Adding 'diversion of /usr/share/vim/vim80/doc/help.txt to /usr/share/vim/vim80/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim80/doc/tags to /usr/share/vim/vim80/doc/tags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:8.0.1453-1ubuntu1) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../5-vim_2%3a8.0.1453-1ubuntu1_armhf.deb ...
+Unpacking vim (2:8.0.1453-1ubuntu1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Setting up xxd (2:8.0.1453-1ubuntu1) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3) ...
+Setting up libgpm2:armhf (1.20.7-5) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up vim-common (2:8.0.1453-1ubuntu1) ...
+Setting up vim-runtime (2:8.0.1453-1ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Setting up libpython3.6:armhf (3.6.5-3) ...
+Setting up vim (2:8.0.1453-1ubuntu1) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+root@localhost:~/322d# ls
+322  3221
+root@localhost:~/322d# vim 3221
+root@localhost:~/322d# csplit 3221 255
+8500
+6330
+root@localhost:~/322d# ls
+322  3221  xx00  xx01
+root@localhost:~/322d# cp xx00 322.f
+root@localhost:~/322d# vim 322.f
+root@localhost:~/322d# gfortran 322.f
+root@localhost:~/322d# ./a.out
+
+               Testing two-tailed normal distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    4.4170  0.1000E-04  0.1180E-04  0.1802E-05   0.180
+     1 5000    3.8910  0.1000E-03  0.1148E-03  0.1480E-04   0.148
+     1 5000    3.2910  0.1000E-02  0.1003E-02  0.3206E-05   0.003
+     1 5000    2.5760  0.1000E-01  0.1001E-01  0.1364E-04   0.001
+     1 5000    2.2410  0.2500E-01  0.2508E-01  0.8396E-04   0.003
+     1 5000    1.9600  0.5000E-01  0.5004E-01  0.4132E-04   0.001
+     1 5000    1.6450  0.1000      0.1000      0.3316E-04   0.000
+     1 5000    1.1500  0.2500      0.2502      0.2174E-03   0.001
+     1 5000    0.6740  0.5000      0.5003      0.3387E-03   0.001
+     1 5000    0.3190  0.7500      0.7497      0.2537E-03   0.000
+     1 5000    0.1260  0.9000      0.8997      0.2593E-03   0.000
+     1 5000    0.0630  0.9500      0.9498      0.2293E-03   0.000
+     1 5000    0.0125  0.9900      0.9900      0.2694E-04   0.000
+
+               Testing two-tailed Student's t
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.8170  0.5000      0.4998      0.2311E-03   0.000
+     1   10    0.7000  0.5000      0.4999      0.1124E-03   0.000
+     1   20    0.6870  0.5000      0.5000      0.2813E-04   0.000
+     1  120    0.6770  0.5000      0.4997      0.2906E-03   0.001
+     1    1    6.3140  0.1000      0.1000      0.3852E-05   0.000
+     1    2    2.9200  0.1000      0.1000      0.8121E-06   0.000
+     1   10    1.8130  0.1000      0.9991E-01  0.8778E-04   0.001
+     1   20    1.7250  0.1000      0.9995E-01  0.5148E-04   0.001
+     1  120    1.6580  0.1000      0.9993E-01  0.6972E-04   0.001
+     1    1   12.7060  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+     1    2    4.3030  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1   10    2.2280  0.5000E-01  0.5001E-01  0.1181E-04   0.000
+     1   20    2.0860  0.5000E-01  0.5000E-01  0.3565E-05   0.000
+     1  120    1.9800  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1    1   63.6570  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2    9.9250  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1   10    3.1690  0.1000E-01  0.1000E-01  0.4640E-05   0.000
+     1   20    2.8450  0.1000E-01  0.1001E-01  0.7620E-05   0.001
+     1  120    2.6170  0.1000E-01  0.1001E-01  0.1191E-04   0.001
+     1    1  127.3200  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+     1    2   14.0890  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10    3.5810  0.5000E-02  0.5003E-02  0.3452E-05   0.001
+     1   20    3.1530  0.5000E-02  0.5005E-02  0.4645E-05   0.001
+     1  120    2.8600  0.5000E-02  0.4997E-02  0.2508E-05   0.001
+
+               Testing chi-square distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    0.4500  0.5000      0.5024      0.2371E-02   0.005
+     2 5000    1.3900  0.5000      0.4991      0.8813E-03   0.002
+    10 5000    9.3400  0.5000      0.5003      0.2518E-03   0.001
+    20 5000   19.3400  0.5000      0.5000      0.4172E-05   0.000
+   100 5000   99.3300  0.5000      0.5005      0.4959E-03   0.001
+     1 5000    3.8400  0.5000E-01  0.5007E-01  0.6862E-04   0.001
+     2 5000    5.9900  0.5000E-01  0.5016E-01  0.1643E-03   0.003
+    10 5000   18.3100  0.5000E-01  0.5024E-01  0.2447E-03   0.005
+    20 5000   31.4100  0.5000E-01  0.5051E-01  0.5143E-03   0.010
+   100 5000  124.3400  0.5000E-01  0.5208E-01  0.2080E-02   0.042
+     1 5000    5.0200  0.2500E-01  0.2509E-01  0.8891E-04   0.004
+     2 5000    7.3800  0.2500E-01  0.2509E-01  0.8724E-04   0.003
+    10 5000   20.4800  0.2500E-01  0.2524E-01  0.2442E-03   0.010
+    20 5000   34.1700  0.2500E-01  0.2536E-01  0.3611E-03   0.014
+   100 5000  129.5600  0.2500E-01  0.2643E-01  0.1434E-02   0.057
+     1 5000    6.6300  0.1000E-01  0.1005E-01  0.5334E-04   0.005
+     2 5000    9.2100  0.1000E-01  0.1005E-01  0.4982E-04   0.005
+    10 5000   23.2100  0.1000E-01  0.1012E-01  0.1194E-03   0.012
+    20 5000   37.5700  0.1000E-01  0.1020E-01  0.1964E-03   0.020
+   100 5000  135.8100  0.1000E-01  0.1080E-01  0.7977E-03   0.080
+     1 5000    7.8800  0.5000E-02  0.4995E-02  0.5071E-05   0.001
+     2 5000   10.6000  0.5000E-02  0.5035E-02  0.3469E-04   0.007
+    10 5000   25.1900  0.5000E-02  0.5075E-02  0.7504E-04   0.015
+    20 5000   40.0000  0.5000E-02  0.5128E-02  0.1275E-03   0.026
+   100 5000  140.1700  0.5000E-02  0.5494E-02  0.4941E-03   0.099
+
+               Testing F distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    116211.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1    2  198.5000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10   12.8260  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+     1   20    9.9439  0.5000E-02  0.5000E-02  0.5495E-07   0.000
+     1  120    8.1790  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    120000.0000  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    2  199.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   10    9.4270  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   20    6.9865  0.5000E-02  0.5000E-02  0.1835E-06   0.000
+     2  120    5.5393  0.5000E-02  0.5000E-02  0.2431E-06   0.000
+    10    124224.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+    10    2  199.4000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    10   10    5.8467  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10   20    3.8470  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10  120    2.7052  0.5000E-02  0.5000E-02  0.1742E-06   0.000
+    20    124836.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    20    2  199.4500  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   10    5.2740  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   20    3.3178  0.5000E-02  0.5000E-02  0.1239E-06   0.000
+    20  120    2.1881  0.5000E-02  0.5000E-02  0.3530E-06   0.000
+   120    125359.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120    2  199.4900  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+   120   10    4.7501  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+   120   20    2.8058  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120  120    1.6055  0.5000E-02  0.5000E-02  0.2934E-06   0.000
+     1    1 4052.2000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2   98.5030  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     1   10   10.0440  0.1000E-01  0.1000E-01  0.8252E-06   0.000
+     1   20    8.0960  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1  120    6.8510  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2    1 4999.5000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     2    2   99.0000  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2   10    7.5594  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     2   20    5.8489  0.1000E-01  0.1000E-01  0.2291E-06   0.000
+     2  120    4.7865  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+    10    1 6055.7998  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10    2   99.3990  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10   10    4.8492  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+    10   20    3.3682  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+    10  120    2.4721  0.1000E-01  0.9999E-02  0.7246E-06   0.000
+    20    1 6208.7002  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+    20    2   99.4900  0.1000E-01  0.9996E-02  0.4122E-05   0.000
+    20   10    4.4054  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    20   20    2.9377  0.1000E-01  0.1000E-01  0.5271E-06   0.000
+    20  120    2.0346  0.1000E-01  0.1000E-01  0.3669E-06   0.000
+   120    1 6339.3999  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+   120    2   99.4910  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+   120   10    3.9965  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+   120   20    2.5168  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+   120  120    1.5330  0.1000E-01  0.9999E-02  0.6650E-06   0.000
+     1    1  161.4500  0.5000E-01  0.5000E-01  0.3465E-06   0.000
+     1    2   18.5130  0.5000E-01  0.5000E-01  0.4657E-06   0.000
+     1   10    4.9646  0.5000E-01  0.5000E-01  0.4843E-07   0.000
+     1   20    4.3513  0.5000E-01  0.5000E-01  0.1360E-05   0.000
+     1  120    3.9201  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2    1  199.5000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2    2   19.0000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2   10    4.1028  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2   20    3.4928  0.5000E-01  0.5000E-01  0.1024E-05   0.000
+     2  120    3.0718  0.5000E-01  0.5000E-01  0.5253E-06   0.000
+    10    1  241.8800  0.5000E-01  0.5000E-01  0.1900E-06   0.000
+    10    2   19.3960  0.5000E-01  0.5000E-01  0.2272E-06   0.000
+    10   10    2.9782  0.5000E-01  0.5000E-01  0.1859E-05   0.000
+    10   20    2.3479  0.5000E-01  0.5000E-01  0.1956E-05   0.000
+    10  120    1.9105  0.5000E-01  0.4999E-01  0.5413E-05   0.000
+    20    1  248.0100  0.5000E-01  0.5000E-01  0.3092E-06   0.000
+    20    2   19.4460  0.5000E-01  0.5000E-01  0.7041E-06   0.000
+    20   10    2.7740  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+    20   20    2.1242  0.5000E-01  0.5000E-01  0.4519E-05   0.000
+    20  120    1.6587  0.5000E-01  0.5000E-01  0.4102E-05   0.000
+   120    1  253.2500  0.5000E-01  0.5000E-01  0.3688E-06   0.000
+   120    2   19.4870  0.5000E-01  0.5000E-01  0.1203E-05   0.000
+   120   10    2.5801  0.5000E-01  0.5000E-01  0.1382E-05   0.000
+   120   20    1.8963  0.5000E-01  0.5000E-01  0.2217E-05   0.000
+   120  120    1.3519  0.5000E-01  0.4999E-01  0.5890E-05   0.000
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.6667  0.5000      0.5000      0.9537E-06   0.000
+     1   10    0.4897  0.5000      0.5000      0.2921E-05   0.000
+     1   20    0.4719  0.5000      0.5000      0.6020E-05   0.000
+     1  120    0.4577  0.5000      0.5000      0.1615E-04   0.000
+     2    1    1.5000  0.5000      0.5000       0.000       0.000
+     2    2    1.0000  0.5000      0.5000       0.000       0.000
+     2   10    0.7435  0.5000      0.5000      0.7153E-06   0.000
+     2   20    0.7177  0.5000      0.5000      0.2325E-05   0.000
+     2  120    0.6972  0.5000      0.5000      0.2742E-05   0.000
+    10    1    2.0419  0.5000      0.5000      0.1311E-05   0.000
+    10    2    1.3450  0.5000      0.5000      0.1192E-05   0.000
+    10   10    1.0000  0.5000      0.5000       0.000       0.000
+    10   20    0.9663  0.5000      0.5000      0.3219E-05   0.000
+    10  120    0.9394  0.5000      0.5000      0.5007E-05   0.000
+    20    1    2.1190  0.5000      0.5000      0.6497E-05   0.000
+    20    2    1.3933  0.5000      0.5000      0.6497E-05   0.000
+    20   10    1.0349  0.5000      0.5000      0.9716E-05   0.000
+    20   20    1.0000  0.5000      0.5000       0.000       0.000
+    20  120    0.9723  0.5000      0.5000       0.000       0.000
+   120    1    2.1848  0.5000      0.5000      0.1073E-05   0.000
+   120    2    1.4344  0.5000      0.5000      0.5364E-05   0.000
+   120   10    1.0645  0.5000      0.5000      0.1371E-04   0.000
+   120   20    1.0285  0.5000      0.5000      0.1270E-04   0.000
+   120  120    1.0000  0.5000      0.5000      0.5960E-07   0.000
+root@localhost:~/322d# vim 322.f
+root@localhost:~/322d#
+root@localhost:~/322d# ls
+322  322.f  3221  a.out  xx00  xx01
+root@localhost:~/322d# gfortran 322.f -o 322run
+root@localhost:~/322d# ./322run
+
+               Testing two-tailed normal distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    4.4170  0.1000E-04  0.1180E-04  0.1802E-05   0.180
+     1 5000    3.8910  0.1000E-03  0.1148E-03  0.1480E-04   0.148
+     1 5000    3.2910  0.1000E-02  0.1003E-02  0.3206E-05   0.003
+     1 5000    2.5760  0.1000E-01  0.1001E-01  0.1364E-04   0.001
+     1 5000    2.2410  0.2500E-01  0.2508E-01  0.8396E-04   0.003
+     1 5000    1.9600  0.5000E-01  0.5004E-01  0.4132E-04   0.001
+     1 5000    1.6450  0.1000      0.1000      0.3316E-04   0.000
+     1 5000    1.1500  0.2500      0.2502      0.2174E-03   0.001
+     1 5000    0.6740  0.5000      0.5003      0.3387E-03   0.001
+     1 5000    0.3190  0.7500      0.7497      0.2537E-03   0.000
+     1 5000    0.1260  0.9000      0.8997      0.2593E-03   0.000
+     1 5000    0.0630  0.9500      0.9498      0.2293E-03   0.000
+     1 5000    0.0125  0.9900      0.9900      0.2694E-04   0.000
+
+               Testing two-tailed Student's t
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.8170  0.5000      0.4998      0.2311E-03   0.000
+     1   10    0.7000  0.5000      0.4999      0.1124E-03   0.000
+     1   20    0.6870  0.5000      0.5000      0.2813E-04   0.000
+     1  120    0.6770  0.5000      0.4997      0.2906E-03   0.001
+     1    1    6.3140  0.1000      0.1000      0.3852E-05   0.000
+     1    2    2.9200  0.1000      0.1000      0.8121E-06   0.000
+     1   10    1.8130  0.1000      0.9991E-01  0.8778E-04   0.001
+     1   20    1.7250  0.1000      0.9995E-01  0.5148E-04   0.001
+     1  120    1.6580  0.1000      0.9993E-01  0.6972E-04   0.001
+     1    1   12.7060  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+     1    2    4.3030  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1   10    2.2280  0.5000E-01  0.5001E-01  0.1181E-04   0.000
+     1   20    2.0860  0.5000E-01  0.5000E-01  0.3565E-05   0.000
+     1  120    1.9800  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1    1   63.6570  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2    9.9250  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1   10    3.1690  0.1000E-01  0.1000E-01  0.4640E-05   0.000
+     1   20    2.8450  0.1000E-01  0.1001E-01  0.7620E-05   0.001
+     1  120    2.6170  0.1000E-01  0.1001E-01  0.1191E-04   0.001
+     1    1  127.3200  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+     1    2   14.0890  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10    3.5810  0.5000E-02  0.5003E-02  0.3452E-05   0.001
+     1   20    3.1530  0.5000E-02  0.5005E-02  0.4645E-05   0.001
+     1  120    2.8600  0.5000E-02  0.4997E-02  0.2508E-05   0.001
+
+               Testing chi-square distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    0.4500  0.5000      0.5024      0.2371E-02   0.005
+     2 5000    1.3900  0.5000      0.4991      0.8813E-03   0.002
+    10 5000    9.3400  0.5000      0.5003      0.2518E-03   0.001
+    20 5000   19.3400  0.5000      0.5000      0.4172E-05   0.000
+   100 5000   99.3300  0.5000      0.5005      0.4959E-03   0.001
+     1 5000    3.8400  0.5000E-01  0.5007E-01  0.6862E-04   0.001
+     2 5000    5.9900  0.5000E-01  0.5016E-01  0.1643E-03   0.003
+    10 5000   18.3100  0.5000E-01  0.5024E-01  0.2447E-03   0.005
+    20 5000   31.4100  0.5000E-01  0.5051E-01  0.5143E-03   0.010
+   100 5000  124.3400  0.5000E-01  0.5208E-01  0.2080E-02   0.042
+     1 5000    5.0200  0.2500E-01  0.2509E-01  0.8891E-04   0.004
+     2 5000    7.3800  0.2500E-01  0.2509E-01  0.8724E-04   0.003
+    10 5000   20.4800  0.2500E-01  0.2524E-01  0.2442E-03   0.010
+    20 5000   34.1700  0.2500E-01  0.2536E-01  0.3611E-03   0.014
+   100 5000  129.5600  0.2500E-01  0.2643E-01  0.1434E-02   0.057
+     1 5000    6.6300  0.1000E-01  0.1005E-01  0.5334E-04   0.005
+     2 5000    9.2100  0.1000E-01  0.1005E-01  0.4982E-04   0.005
+    10 5000   23.2100  0.1000E-01  0.1012E-01  0.1194E-03   0.012
+    20 5000   37.5700  0.1000E-01  0.1020E-01  0.1964E-03   0.020
+   100 5000  135.8100  0.1000E-01  0.1080E-01  0.7977E-03   0.080
+     1 5000    7.8800  0.5000E-02  0.4995E-02  0.5071E-05   0.001
+     2 5000   10.6000  0.5000E-02  0.5035E-02  0.3469E-04   0.007
+    10 5000   25.1900  0.5000E-02  0.5075E-02  0.7504E-04   0.015
+    20 5000   40.0000  0.5000E-02  0.5128E-02  0.1275E-03   0.026
+   100 5000  140.1700  0.5000E-02  0.5494E-02  0.4941E-03   0.099
+
+               Testing F distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    116211.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1    2  198.5000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10   12.8260  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+     1   20    9.9439  0.5000E-02  0.5000E-02  0.5495E-07   0.000
+     1  120    8.1790  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    120000.0000  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    2  199.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   10    9.4270  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   20    6.9865  0.5000E-02  0.5000E-02  0.1835E-06   0.000
+     2  120    5.5393  0.5000E-02  0.5000E-02  0.2431E-06   0.000
+    10    124224.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+    10    2  199.4000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    10   10    5.8467  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10   20    3.8470  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10  120    2.7052  0.5000E-02  0.5000E-02  0.1742E-06   0.000
+    20    124836.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    20    2  199.4500  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   10    5.2740  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   20    3.3178  0.5000E-02  0.5000E-02  0.1239E-06   0.000
+    20  120    2.1881  0.5000E-02  0.5000E-02  0.3530E-06   0.000
+   120    125359.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120    2  199.4900  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+   120   10    4.7501  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+   120   20    2.8058  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120  120    1.6055  0.5000E-02  0.5000E-02  0.2934E-06   0.000
+     1    1 4052.2000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2   98.5030  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     1   10   10.0440  0.1000E-01  0.1000E-01  0.8252E-06   0.000
+     1   20    8.0960  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1  120    6.8510  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2    1 4999.5000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     2    2   99.0000  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2   10    7.5594  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     2   20    5.8489  0.1000E-01  0.1000E-01  0.2291E-06   0.000
+     2  120    4.7865  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+    10    1 6055.7998  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10    2   99.3990  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10   10    4.8492  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+    10   20    3.3682  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+    10  120    2.4721  0.1000E-01  0.9999E-02  0.7246E-06   0.000
+    20    1 6208.7002  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+    20    2   99.4900  0.1000E-01  0.9996E-02  0.4122E-05   0.000
+    20   10    4.4054  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    20   20    2.9377  0.1000E-01  0.1000E-01  0.5271E-06   0.000
+    20  120    2.0346  0.1000E-01  0.1000E-01  0.3669E-06   0.000
+   120    1 6339.3999  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+   120    2   99.4910  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+   120   10    3.9965  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+   120   20    2.5168  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+   120  120    1.5330  0.1000E-01  0.9999E-02  0.6650E-06   0.000
+     1    1  161.4500  0.5000E-01  0.5000E-01  0.3465E-06   0.000
+     1    2   18.5130  0.5000E-01  0.5000E-01  0.4657E-06   0.000
+     1   10    4.9646  0.5000E-01  0.5000E-01  0.4843E-07   0.000
+     1   20    4.3513  0.5000E-01  0.5000E-01  0.1360E-05   0.000
+     1  120    3.9201  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2    1  199.5000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2    2   19.0000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2   10    4.1028  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2   20    3.4928  0.5000E-01  0.5000E-01  0.1024E-05   0.000
+     2  120    3.0718  0.5000E-01  0.5000E-01  0.5253E-06   0.000
+    10    1  241.8800  0.5000E-01  0.5000E-01  0.1900E-06   0.000
+    10    2   19.3960  0.5000E-01  0.5000E-01  0.2272E-06   0.000
+    10   10    2.9782  0.5000E-01  0.5000E-01  0.1859E-05   0.000
+    10   20    2.3479  0.5000E-01  0.5000E-01  0.1956E-05   0.000
+    10  120    1.9105  0.5000E-01  0.4999E-01  0.5413E-05   0.000
+    20    1  248.0100  0.5000E-01  0.5000E-01  0.3092E-06   0.000
+    20    2   19.4460  0.5000E-01  0.5000E-01  0.7041E-06   0.000
+    20   10    2.7740  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+    20   20    2.1242  0.5000E-01  0.5000E-01  0.4519E-05   0.000
+    20  120    1.6587  0.5000E-01  0.5000E-01  0.4102E-05   0.000
+   120    1  253.2500  0.5000E-01  0.5000E-01  0.3688E-06   0.000
+   120    2   19.4870  0.5000E-01  0.5000E-01  0.1203E-05   0.000
+   120   10    2.5801  0.5000E-01  0.5000E-01  0.1382E-05   0.000
+   120   20    1.8963  0.5000E-01  0.5000E-01  0.2217E-05   0.000
+   120  120    1.3519  0.5000E-01  0.4999E-01  0.5890E-05   0.000
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.6667  0.5000      0.5000      0.9537E-06   0.000
+     1   10    0.4897  0.5000      0.5000      0.2921E-05   0.000
+     1   20    0.4719  0.5000      0.5000      0.6020E-05   0.000
+     1  120    0.4577  0.5000      0.5000      0.1615E-04   0.000
+     2    1    1.5000  0.5000      0.5000       0.000       0.000
+     2    2    1.0000  0.5000      0.5000       0.000       0.000
+     2   10    0.7435  0.5000      0.5000      0.7153E-06   0.000
+     2   20    0.7177  0.5000      0.5000      0.2325E-05   0.000
+     2  120    0.6972  0.5000      0.5000      0.2742E-05   0.000
+    10    1    2.0419  0.5000      0.5000      0.1311E-05   0.000
+    10    2    1.3450  0.5000      0.5000      0.1192E-05   0.000
+    10   10    1.0000  0.5000      0.5000       0.000       0.000
+    10   20    0.9663  0.5000      0.5000      0.3219E-05   0.000
+    10  120    0.9394  0.5000      0.5000      0.5007E-05   0.000
+    20    1    2.1190  0.5000      0.5000      0.6497E-05   0.000
+    20    2    1.3933  0.5000      0.5000      0.6497E-05   0.000
+    20   10    1.0349  0.5000      0.5000      0.9716E-05   0.000
+    20   20    1.0000  0.5000      0.5000       0.000       0.000
+    20  120    0.9723  0.5000      0.5000       0.000       0.000
+   120    1    2.1848  0.5000      0.5000      0.1073E-05   0.000
+   120    2    1.4344  0.5000      0.5000      0.5364E-05   0.000
+   120   10    1.0645  0.5000      0.5000      0.1371E-04   0.000
+   120   20    1.0285  0.5000      0.5000      0.1270E-04   0.000
+   120  120    1.0000  0.5000      0.5000      0.5960E-07   0.000
+root@localhost:~/322d#
+root@localhost:~/322d# ls
+322    3221    a.out  xx01
+322.f  322run  xx00
+root@localhost:~/322d# cp xx01 xx011
+root@localhost:~/322d# vim xx011
+root@localhost:~/322d# cp xx011 322.sh
+root@localhost:~/322d# chmod u+x 322.sh
+root@localhost:~/322d# ./322.sh
+root@localhost:~/322d# ls
+322     322run    fisher.h  xx011
+322.f   Makefile  ftest.c
+322.sh  a.out     xx00
+3221    fisher.c  xx01
+root@localhost:~/322d# make
+/bin/cc -O2 -c ftest.c
+make: /bin/cc: Command not found
+Makefile:14: recipe for target 'ftest.o' failed
+make: *** [ftest.o] Error 127
+root@localhost:~/322d# gcc fisher
+gcc: error: fisher: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+root@localhost:~/322d# gcc fisher.h fisher.c ftest.c -o fisher
+ftest.c: In function ‘main’:
+ftest.c:52:3: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]
+   exit(0);
+   ^~~~
+ftest.c:52:3: warning: incompatible implicit declaration of built-in function ‘exit’
+ftest.c:52:3: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’
+/tmp/ccVc4dMq.o: In function `fisher':
+fisher.c:(.text+0x82): undefined reference to `sqrt'
+fisher.c:(.text+0xb8): undefined reference to `atan'
+fisher.c:(.text+0xda): undefined reference to `sqrt'
+fisher.c:(.text+0x10e): undefined reference to `sqrt'
+fisher.c:(.text+0x204): undefined reference to `pow'
+/tmp/ccxPoiqi.o: In function `main':
+ftest.c:(.text+0xa4): undefined reference to `sqrt'
+collect2: error: ld returned 1 exit status
+root@localhost:~/322d# gcc fisher.h fisher.c ftest.c -lm -o fisher
+ftest.c: In function ‘main’:
+ftest.c:52:3: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]
+   exit(0);
+   ^~~~
+ftest.c:52:3: warning: incompatible implicit declaration of built-in function ‘exit’
+ftest.c:52:3: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’
+root@localhost:~/322d# ls
+322     322run    fisher.c  xx01
+322.f   Makefile  fisher.h  xx011
+322.sh  a.out     ftest.c
+3221    fisher    xx00
+root@localhost:~/322d# ./fisher
+Enter test type, degrees of freedom, and value, or 'q' to quit -
+for example 'f 1 10 10.04' or 't 10 3.169'
+f 1 10 10.04
+        F(1,10)=10.040000, t(10)=3.168596, p=0.010012
+
+^C
+root@localhost:~/322d# vim ftest.c
+root@localhost:~/322d# gcc fisher.h fisher.c ftest.c -lm -o fisher
+root@localhost:~/322d# ./fisher
+Enter test type, degrees of freedom, and value, or 'q' to quit -
+for example 'f 1 10 10.04' or 't 10 3.169'
+f 1 10 1
+        F(1,10)=1.000000, t(10)=1.000000, p=0.340893
+
+^C
+root@localhost:~/322d# ./fisher
+Enter test type, degrees of freedom, and value, or 'q' to quit -
+for example 'f 1 10 10.04' or 't 10 3.169'
+t 10 3.169
+        F(1,10)=10.042561, t(10)=3.169000, p=0.010005
+
+^C
+root@localhost:~/322d#
+root@localhost:~/322d# vim Makefile
+root@localhost:~/322d# cc
+cc: fatal error: no input files
+compilation terminated.
+root@localhost:~/322d# gfortran and calgo.acm.org/322.gz on ZTE A Blade essential smartphone. purchased for $49.00. also runs andronix and Ubuntu Linux 18. termux downloaded. follow andronix instructions carefully.py-
+Unpacking vim-runtime (2:8.0.1453-1ubuntu1) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../5-vim_2%3a8.0.1453-1ubuntu1_armhf.deb ...
+Unpacking vim (2:8.0.1453-1ubuntu1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Setting up xxd (2:8.0.1453-1ubuntu1) ...
+Processing triggers for desktop-file-utils (0.23-1ubuntu3) ...
+Setting up libgpm2:armhf (1.20.7-5) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up vim-common (2:8.0.1453-1ubuntu1) ...
+Setting up vim-runtime (2:8.0.1453-1ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Setting up libpython3.6:armhf (3.6.5-3) ...
+Setting up vim (2:8.0.1453-1ubuntu1) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+root@localhost:~/322d# ls
+322  3221
+root@localhost:~/322d# vim 3221
+root@localhost:~/322d# csplit 3221 255
+8500
+6330
+root@localhost:~/322d# ls
+322  3221  xx00  xx01
+root@localhost:~/322d# cp xx00 322.f
+root@localhost:~/322d# vim 322.f
+root@localhost:~/322d# gfortran 322.f
+root@localhost:~/322d# ./a.out
+
+               Testing two-tailed normal distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    4.4170  0.1000E-04  0.1180E-04  0.1802E-05   0.180
+     1 5000    3.8910  0.1000E-03  0.1148E-03  0.1480E-04   0.148
+     1 5000    3.2910  0.1000E-02  0.1003E-02  0.3206E-05   0.003
+     1 5000    2.5760  0.1000E-01  0.1001E-01  0.1364E-04   0.001
+     1 5000    2.2410  0.2500E-01  0.2508E-01  0.8396E-04   0.003
+     1 5000    1.9600  0.5000E-01  0.5004E-01  0.4132E-04   0.001
+     1 5000    1.6450  0.1000      0.1000      0.3316E-04   0.000
+     1 5000    1.1500  0.2500      0.2502      0.2174E-03   0.001
+     1 5000    0.6740  0.5000      0.5003      0.3387E-03   0.001
+     1 5000    0.3190  0.7500      0.7497      0.2537E-03   0.000
+     1 5000    0.1260  0.9000      0.8997      0.2593E-03   0.000
+     1 5000    0.0630  0.9500      0.9498      0.2293E-03   0.000
+     1 5000    0.0125  0.9900      0.9900      0.2694E-04   0.000
+
+               Testing two-tailed Student's t
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.8170  0.5000      0.4998      0.2311E-03   0.000
+     1   10    0.7000  0.5000      0.4999      0.1124E-03   0.000
+     1   20    0.6870  0.5000      0.5000      0.2813E-04   0.000
+     1  120    0.6770  0.5000      0.4997      0.2906E-03   0.001
+     1    1    6.3140  0.1000      0.1000      0.3852E-05   0.000
+     1    2    2.9200  0.1000      0.1000      0.8121E-06   0.000
+     1   10    1.8130  0.1000      0.9991E-01  0.8778E-04   0.001
+     1   20    1.7250  0.1000      0.9995E-01  0.5148E-04   0.001
+     1  120    1.6580  0.1000      0.9993E-01  0.6972E-04   0.001
+     1    1   12.7060  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+     1    2    4.3030  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1   10    2.2280  0.5000E-01  0.5001E-01  0.1181E-04   0.000
+     1   20    2.0860  0.5000E-01  0.5000E-01  0.3565E-05   0.000
+     1  120    1.9800  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1    1   63.6570  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2    9.9250  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1   10    3.1690  0.1000E-01  0.1000E-01  0.4640E-05   0.000
+     1   20    2.8450  0.1000E-01  0.1001E-01  0.7620E-05   0.001
+     1  120    2.6170  0.1000E-01  0.1001E-01  0.1191E-04   0.001
+     1    1  127.3200  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+     1    2   14.0890  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10    3.5810  0.5000E-02  0.5003E-02  0.3452E-05   0.001
+     1   20    3.1530  0.5000E-02  0.5005E-02  0.4645E-05   0.001
+     1  120    2.8600  0.5000E-02  0.4997E-02  0.2508E-05   0.001
+
+               Testing chi-square distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    0.4500  0.5000      0.5024      0.2371E-02   0.005
+     2 5000    1.3900  0.5000      0.4991      0.8813E-03   0.002
+    10 5000    9.3400  0.5000      0.5003      0.2518E-03   0.001
+    20 5000   19.3400  0.5000      0.5000      0.4172E-05   0.000
+   100 5000   99.3300  0.5000      0.5005      0.4959E-03   0.001
+     1 5000    3.8400  0.5000E-01  0.5007E-01  0.6862E-04   0.001
+     2 5000    5.9900  0.5000E-01  0.5016E-01  0.1643E-03   0.003
+    10 5000   18.3100  0.5000E-01  0.5024E-01  0.2447E-03   0.005
+    20 5000   31.4100  0.5000E-01  0.5051E-01  0.5143E-03   0.010
+   100 5000  124.3400  0.5000E-01  0.5208E-01  0.2080E-02   0.042
+     1 5000    5.0200  0.2500E-01  0.2509E-01  0.8891E-04   0.004
+     2 5000    7.3800  0.2500E-01  0.2509E-01  0.8724E-04   0.003
+    10 5000   20.4800  0.2500E-01  0.2524E-01  0.2442E-03   0.010
+    20 5000   34.1700  0.2500E-01  0.2536E-01  0.3611E-03   0.014
+   100 5000  129.5600  0.2500E-01  0.2643E-01  0.1434E-02   0.057
+     1 5000    6.6300  0.1000E-01  0.1005E-01  0.5334E-04   0.005
+     2 5000    9.2100  0.1000E-01  0.1005E-01  0.4982E-04   0.005
+    10 5000   23.2100  0.1000E-01  0.1012E-01  0.1194E-03   0.012
+    20 5000   37.5700  0.1000E-01  0.1020E-01  0.1964E-03   0.020
+   100 5000  135.8100  0.1000E-01  0.1080E-01  0.7977E-03   0.080
+     1 5000    7.8800  0.5000E-02  0.4995E-02  0.5071E-05   0.001
+     2 5000   10.6000  0.5000E-02  0.5035E-02  0.3469E-04   0.007
+    10 5000   25.1900  0.5000E-02  0.5075E-02  0.7504E-04   0.015
+    20 5000   40.0000  0.5000E-02  0.5128E-02  0.1275E-03   0.026
+   100 5000  140.1700  0.5000E-02  0.5494E-02  0.4941E-03   0.099
+
+               Testing F distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    116211.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1    2  198.5000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10   12.8260  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+     1   20    9.9439  0.5000E-02  0.5000E-02  0.5495E-07   0.000
+     1  120    8.1790  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    120000.0000  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    2  199.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   10    9.4270  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   20    6.9865  0.5000E-02  0.5000E-02  0.1835E-06   0.000
+     2  120    5.5393  0.5000E-02  0.5000E-02  0.2431E-06   0.000
+    10    124224.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+    10    2  199.4000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    10   10    5.8467  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10   20    3.8470  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10  120    2.7052  0.5000E-02  0.5000E-02  0.1742E-06   0.000
+    20    124836.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    20    2  199.4500  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   10    5.2740  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   20    3.3178  0.5000E-02  0.5000E-02  0.1239E-06   0.000
+    20  120    2.1881  0.5000E-02  0.5000E-02  0.3530E-06   0.000
+   120    125359.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120    2  199.4900  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+   120   10    4.7501  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+   120   20    2.8058  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120  120    1.6055  0.5000E-02  0.5000E-02  0.2934E-06   0.000
+     1    1 4052.2000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2   98.5030  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     1   10   10.0440  0.1000E-01  0.1000E-01  0.8252E-06   0.000
+     1   20    8.0960  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1  120    6.8510  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2    1 4999.5000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     2    2   99.0000  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2   10    7.5594  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     2   20    5.8489  0.1000E-01  0.1000E-01  0.2291E-06   0.000
+     2  120    4.7865  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+    10    1 6055.7998  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10    2   99.3990  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10   10    4.8492  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+    10   20    3.3682  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+    10  120    2.4721  0.1000E-01  0.9999E-02  0.7246E-06   0.000
+    20    1 6208.7002  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+    20    2   99.4900  0.1000E-01  0.9996E-02  0.4122E-05   0.000
+    20   10    4.4054  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    20   20    2.9377  0.1000E-01  0.1000E-01  0.5271E-06   0.000
+    20  120    2.0346  0.1000E-01  0.1000E-01  0.3669E-06   0.000
+   120    1 6339.3999  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+   120    2   99.4910  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+   120   10    3.9965  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+   120   20    2.5168  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+   120  120    1.5330  0.1000E-01  0.9999E-02  0.6650E-06   0.000
+     1    1  161.4500  0.5000E-01  0.5000E-01  0.3465E-06   0.000
+     1    2   18.5130  0.5000E-01  0.5000E-01  0.4657E-06   0.000
+     1   10    4.9646  0.5000E-01  0.5000E-01  0.4843E-07   0.000
+     1   20    4.3513  0.5000E-01  0.5000E-01  0.1360E-05   0.000
+     1  120    3.9201  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2    1  199.5000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2    2   19.0000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2   10    4.1028  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2   20    3.4928  0.5000E-01  0.5000E-01  0.1024E-05   0.000
+     2  120    3.0718  0.5000E-01  0.5000E-01  0.5253E-06   0.000
+    10    1  241.8800  0.5000E-01  0.5000E-01  0.1900E-06   0.000
+    10    2   19.3960  0.5000E-01  0.5000E-01  0.2272E-06   0.000
+    10   10    2.9782  0.5000E-01  0.5000E-01  0.1859E-05   0.000
+    10   20    2.3479  0.5000E-01  0.5000E-01  0.1956E-05   0.000
+    10  120    1.9105  0.5000E-01  0.4999E-01  0.5413E-05   0.000
+    20    1  248.0100  0.5000E-01  0.5000E-01  0.3092E-06   0.000
+    20    2   19.4460  0.5000E-01  0.5000E-01  0.7041E-06   0.000
+    20   10    2.7740  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+    20   20    2.1242  0.5000E-01  0.5000E-01  0.4519E-05   0.000
+    20  120    1.6587  0.5000E-01  0.5000E-01  0.4102E-05   0.000
+   120    1  253.2500  0.5000E-01  0.5000E-01  0.3688E-06   0.000
+   120    2   19.4870  0.5000E-01  0.5000E-01  0.1203E-05   0.000
+   120   10    2.5801  0.5000E-01  0.5000E-01  0.1382E-05   0.000
+   120   20    1.8963  0.5000E-01  0.5000E-01  0.2217E-05   0.000
+   120  120    1.3519  0.5000E-01  0.4999E-01  0.5890E-05   0.000
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.6667  0.5000      0.5000      0.9537E-06   0.000
+     1   10    0.4897  0.5000      0.5000      0.2921E-05   0.000
+     1   20    0.4719  0.5000      0.5000      0.6020E-05   0.000
+     1  120    0.4577  0.5000      0.5000      0.1615E-04   0.000
+     2    1    1.5000  0.5000      0.5000       0.000       0.000
+     2    2    1.0000  0.5000      0.5000       0.000       0.000
+     2   10    0.7435  0.5000      0.5000      0.7153E-06   0.000
+     2   20    0.7177  0.5000      0.5000      0.2325E-05   0.000
+     2  120    0.6972  0.5000      0.5000      0.2742E-05   0.000
+    10    1    2.0419  0.5000      0.5000      0.1311E-05   0.000
+    10    2    1.3450  0.5000      0.5000      0.1192E-05   0.000
+    10   10    1.0000  0.5000      0.5000       0.000       0.000
+    10   20    0.9663  0.5000      0.5000      0.3219E-05   0.000
+    10  120    0.9394  0.5000      0.5000      0.5007E-05   0.000
+    20    1    2.1190  0.5000      0.5000      0.6497E-05   0.000
+    20    2    1.3933  0.5000      0.5000      0.6497E-05   0.000
+    20   10    1.0349  0.5000      0.5000      0.9716E-05   0.000
+    20   20    1.0000  0.5000      0.5000       0.000       0.000
+    20  120    0.9723  0.5000      0.5000       0.000       0.000
+   120    1    2.1848  0.5000      0.5000      0.1073E-05   0.000
+   120    2    1.4344  0.5000      0.5000      0.5364E-05   0.000
+   120   10    1.0645  0.5000      0.5000      0.1371E-04   0.000
+   120   20    1.0285  0.5000      0.5000      0.1270E-04   0.000
+   120  120    1.0000  0.5000      0.5000      0.5960E-07   0.000
+root@localhost:~/322d# vim 322.f
+root@localhost:~/322d#
+root@localhost:~/322d# ls
+322  322.f  3221  a.out  xx00  xx01
+root@localhost:~/322d# gfortran 322.f -o 322run
+root@localhost:~/322d# ./322run
+
+               Testing two-tailed normal distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    4.4170  0.1000E-04  0.1180E-04  0.1802E-05   0.180
+     1 5000    3.8910  0.1000E-03  0.1148E-03  0.1480E-04   0.148
+     1 5000    3.2910  0.1000E-02  0.1003E-02  0.3206E-05   0.003
+     1 5000    2.5760  0.1000E-01  0.1001E-01  0.1364E-04   0.001
+     1 5000    2.2410  0.2500E-01  0.2508E-01  0.8396E-04   0.003
+     1 5000    1.9600  0.5000E-01  0.5004E-01  0.4132E-04   0.001
+     1 5000    1.6450  0.1000      0.1000      0.3316E-04   0.000
+     1 5000    1.1500  0.2500      0.2502      0.2174E-03   0.001
+     1 5000    0.6740  0.5000      0.5003      0.3387E-03   0.001
+     1 5000    0.3190  0.7500      0.7497      0.2537E-03   0.000
+     1 5000    0.1260  0.9000      0.8997      0.2593E-03   0.000
+     1 5000    0.0630  0.9500      0.9498      0.2293E-03   0.000
+     1 5000    0.0125  0.9900      0.9900      0.2694E-04   0.000
+
+               Testing two-tailed Student's t
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.8170  0.5000      0.4998      0.2311E-03   0.000
+     1   10    0.7000  0.5000      0.4999      0.1124E-03   0.000
+     1   20    0.6870  0.5000      0.5000      0.2813E-04   0.000
+     1  120    0.6770  0.5000      0.4997      0.2906E-03   0.001
+     1    1    6.3140  0.1000      0.1000      0.3852E-05   0.000
+     1    2    2.9200  0.1000      0.1000      0.8121E-06   0.000
+     1   10    1.8130  0.1000      0.9991E-01  0.8778E-04   0.001
+     1   20    1.7250  0.1000      0.9995E-01  0.5148E-04   0.001
+     1  120    1.6580  0.1000      0.9993E-01  0.6972E-04   0.001
+     1    1   12.7060  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+     1    2    4.3030  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1   10    2.2280  0.5000E-01  0.5001E-01  0.1181E-04   0.000
+     1   20    2.0860  0.5000E-01  0.5000E-01  0.3565E-05   0.000
+     1  120    1.9800  0.5000E-01  0.4999E-01  0.7499E-05   0.000
+     1    1   63.6570  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2    9.9250  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1   10    3.1690  0.1000E-01  0.1000E-01  0.4640E-05   0.000
+     1   20    2.8450  0.1000E-01  0.1001E-01  0.7620E-05   0.001
+     1  120    2.6170  0.1000E-01  0.1001E-01  0.1191E-04   0.001
+     1    1  127.3200  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+     1    2   14.0890  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10    3.5810  0.5000E-02  0.5003E-02  0.3452E-05   0.001
+     1   20    3.1530  0.5000E-02  0.5005E-02  0.4645E-05   0.001
+     1  120    2.8600  0.5000E-02  0.4997E-02  0.2508E-05   0.001
+
+               Testing chi-square distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1 5000    0.4500  0.5000      0.5024      0.2371E-02   0.005
+     2 5000    1.3900  0.5000      0.4991      0.8813E-03   0.002
+    10 5000    9.3400  0.5000      0.5003      0.2518E-03   0.001
+    20 5000   19.3400  0.5000      0.5000      0.4172E-05   0.000
+   100 5000   99.3300  0.5000      0.5005      0.4959E-03   0.001
+     1 5000    3.8400  0.5000E-01  0.5007E-01  0.6862E-04   0.001
+     2 5000    5.9900  0.5000E-01  0.5016E-01  0.1643E-03   0.003
+    10 5000   18.3100  0.5000E-01  0.5024E-01  0.2447E-03   0.005
+    20 5000   31.4100  0.5000E-01  0.5051E-01  0.5143E-03   0.010
+   100 5000  124.3400  0.5000E-01  0.5208E-01  0.2080E-02   0.042
+     1 5000    5.0200  0.2500E-01  0.2509E-01  0.8891E-04   0.004
+     2 5000    7.3800  0.2500E-01  0.2509E-01  0.8724E-04   0.003
+    10 5000   20.4800  0.2500E-01  0.2524E-01  0.2442E-03   0.010
+    20 5000   34.1700  0.2500E-01  0.2536E-01  0.3611E-03   0.014
+   100 5000  129.5600  0.2500E-01  0.2643E-01  0.1434E-02   0.057
+     1 5000    6.6300  0.1000E-01  0.1005E-01  0.5334E-04   0.005
+     2 5000    9.2100  0.1000E-01  0.1005E-01  0.4982E-04   0.005
+    10 5000   23.2100  0.1000E-01  0.1012E-01  0.1194E-03   0.012
+    20 5000   37.5700  0.1000E-01  0.1020E-01  0.1964E-03   0.020
+   100 5000  135.8100  0.1000E-01  0.1080E-01  0.7977E-03   0.080
+     1 5000    7.8800  0.5000E-02  0.4995E-02  0.5071E-05   0.001
+     2 5000   10.6000  0.5000E-02  0.5035E-02  0.3469E-04   0.007
+    10 5000   25.1900  0.5000E-02  0.5075E-02  0.7504E-04   0.015
+    20 5000   40.0000  0.5000E-02  0.5128E-02  0.1275E-03   0.026
+   100 5000  140.1700  0.5000E-02  0.5494E-02  0.4941E-03   0.099
+
+               Testing F distribution
+
+    n1   n2       x      p-exp       p-calc      e-diff     e-rel
+  ---- ----    ------  ----------  ----------  ----------   -----
+     1    116211.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1    2  198.5000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     1   10   12.8260  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+     1   20    9.9439  0.5000E-02  0.5000E-02  0.5495E-07   0.000
+     1  120    8.1790  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    120000.0000  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+     2    2  199.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   10    9.4270  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+     2   20    6.9865  0.5000E-02  0.5000E-02  0.1835E-06   0.000
+     2  120    5.5393  0.5000E-02  0.5000E-02  0.2431E-06   0.000
+    10    124224.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+    10    2  199.4000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    10   10    5.8467  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10   20    3.8470  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    10  120    2.7052  0.5000E-02  0.5000E-02  0.1742E-06   0.000
+    20    124836.0000  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+    20    2  199.4500  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   10    5.2740  0.5000E-02  0.5000E-02  0.6426E-07   0.000
+    20   20    3.3178  0.5000E-02  0.5000E-02  0.1239E-06   0.000
+    20  120    2.1881  0.5000E-02  0.5000E-02  0.3530E-06   0.000
+   120    125359.0000  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120    2  199.4900  0.5000E-02  0.5000E-02  0.4657E-08   0.000
+   120   10    4.7501  0.5000E-02  0.5000E-02  0.4722E-06   0.000
+   120   20    2.8058  0.5000E-02  0.5000E-02  0.1146E-06   0.000
+   120  120    1.6055  0.5000E-02  0.5000E-02  0.2934E-06   0.000
+     1    1 4052.2000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     1    2   98.5030  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     1   10   10.0440  0.1000E-01  0.1000E-01  0.8252E-06   0.000
+     1   20    8.0960  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+     1  120    6.8510  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2    1 4999.5000  0.1000E-01  0.1000E-01  0.9313E-08   0.000
+     2    2   99.0000  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+     2   10    7.5594  0.1000E-01  0.1000E-01  0.6892E-07   0.000
+     2   20    5.8489  0.1000E-01  0.1000E-01  0.2291E-06   0.000
+     2  120    4.7865  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+    10    1 6055.7998  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10    2   99.3990  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    10   10    4.8492  0.1000E-01  0.1000E-01  0.3073E-06   0.000
+    10   20    3.3682  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+    10  120    2.4721  0.1000E-01  0.9999E-02  0.7246E-06   0.000
+    20    1 6208.7002  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+    20    2   99.4900  0.1000E-01  0.9996E-02  0.4122E-05   0.000
+    20   10    4.4054  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+    20   20    2.9377  0.1000E-01  0.1000E-01  0.5271E-06   0.000
+    20  120    2.0346  0.1000E-01  0.1000E-01  0.3669E-06   0.000
+   120    1 6339.3999  0.1000E-01  0.1000E-01  0.1099E-06   0.000
+   120    2   99.4910  0.1000E-01  0.1000E-01  0.5029E-07   0.000
+   120   10    3.9965  0.1000E-01  0.1000E-01  0.1285E-06   0.000
+   120   20    2.5168  0.1000E-01  0.1000E-01  0.4862E-06   0.000
+   120  120    1.5330  0.1000E-01  0.9999E-02  0.6650E-06   0.000
+     1    1  161.4500  0.5000E-01  0.5000E-01  0.3465E-06   0.000
+     1    2   18.5130  0.5000E-01  0.5000E-01  0.4657E-06   0.000
+     1   10    4.9646  0.5000E-01  0.5000E-01  0.4843E-07   0.000
+     1   20    4.3513  0.5000E-01  0.5000E-01  0.1360E-05   0.000
+     1  120    3.9201  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2    1  199.5000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2    2   19.0000  0.5000E-01  0.5000E-01  0.1118E-07   0.000
+     2   10    4.1028  0.5000E-01  0.5000E-01  0.6072E-06   0.000
+     2   20    3.4928  0.5000E-01  0.5000E-01  0.1024E-05   0.000
+     2  120    3.0718  0.5000E-01  0.5000E-01  0.5253E-06   0.000
+    10    1  241.8800  0.5000E-01  0.5000E-01  0.1900E-06   0.000
+    10    2   19.3960  0.5000E-01  0.5000E-01  0.2272E-06   0.000
+    10   10    2.9782  0.5000E-01  0.5000E-01  0.1859E-05   0.000
+    10   20    2.3479  0.5000E-01  0.5000E-01  0.1956E-05   0.000
+    10  120    1.9105  0.5000E-01  0.4999E-01  0.5413E-05   0.000
+    20    1  248.0100  0.5000E-01  0.5000E-01  0.3092E-06   0.000
+    20    2   19.4460  0.5000E-01  0.5000E-01  0.7041E-06   0.000
+    20   10    2.7740  0.5000E-01  0.5000E-01  0.8456E-06   0.000
+    20   20    2.1242  0.5000E-01  0.5000E-01  0.4519E-05   0.000
+    20  120    1.6587  0.5000E-01  0.5000E-01  0.4102E-05   0.000
+   120    1  253.2500  0.5000E-01  0.5000E-01  0.3688E-06   0.000
+   120    2   19.4870  0.5000E-01  0.5000E-01  0.1203E-05   0.000
+   120   10    2.5801  0.5000E-01  0.5000E-01  0.1382E-05   0.000
+   120   20    1.8963  0.5000E-01  0.5000E-01  0.2217E-05   0.000
+   120  120    1.3519  0.5000E-01  0.4999E-01  0.5890E-05   0.000
+     1    1    1.0000  0.5000      0.5000       0.000       0.000
+     1    2    0.6667  0.5000      0.5000      0.9537E-06   0.000
+     1   10    0.4897  0.5000      0.5000      0.2921E-05   0.000
+     1   20    0.4719  0.5000      0.5000      0.6020E-05   0.000
+     1  120    0.4577  0.5000      0.5000      0.1615E-04   0.000
+     2    1    1.5000  0.5000      0.5000       0.000       0.000
+     2    2    1.0000  0.5000      0.5000       0.000       0.000
+     2   10    0.7435  0.5000      0.5000      0.7153E-06   0.000
+     2   20    0.7177  0.5000      0.5000      0.2325E-05   0.000
+     2  120    0.6972  0.5000      0.5000      0.2742E-05   0.000
+    10    1    2.0419  0.5000      0.5000      0.1311E-05   0.000
+    10    2    1.3450  0.5000      0.5000      0.1192E-05   0.000
+    10   10    1.0000  0.5000      0.5000       0.000       0.000
+    10   20    0.9663  0.5000      0.5000      0.3219E-05   0.000
+    10  120    0.9394  0.5000      0.5000      0.5007E-05   0.000
+    20    1    2.1190  0.5000      0.5000      0.6497E-05   0.000
+    20    2    1.3933  0.5000      0.5000      0.6497E-05   0.000
+    20   10    1.0349  0.5000      0.5000      0.9716E-05   0.000
+    20   20    1.0000  0.5000      0.5000       0.000       0.000
+    20  120    0.9723  0.5000      0.5000       0.000       0.000
+   120    1    2.1848  0.5000      0.5000      0.1073E-05   0.000
+   120    2    1.4344  0.5000      0.5000      0.5364E-05   0.000
+   120   10    1.0645  0.5000      0.5000      0.1371E-04   0.000
+   120   20    1.0285  0.5000      0.5000      0.1270E-04   0.000
+   120  120    1.0000  0.5000      0.5000      0.5960E-07   0.000
+root@localhost:~/322d#
+root@localhost:~/322d# ls
+322    3221    a.out  xx01
+322.f  322run  xx00
+root@localhost:~/322d# cp xx01 xx011
+root@localhost:~/322d# vim xx011
+root@localhost:~/322d# cp xx011 322.sh
+root@localhost:~/322d# chmod u+x 322.sh
+root@localhost:~/322d# ./322.sh
+root@localhost:~/322d# ls
+322     322run    fisher.h  xx011
+322.f   Makefile  ftest.c
+322.sh  a.out     xx00
+3221    fisher.c  xx01
+root@localhost:~/322d# make
+/bin/cc -O2 -c ftest.c
+make: /bin/cc: Command not found
+Makefile:14: recipe for target 'ftest.o' failed
+make: *** [ftest.o] Error 127
+root@localhost:~/322d# gcc fisher
+gcc: error: fisher: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+root@localhost:~/322d# gcc fisher.h fisher.c ftest.c -o fisher
+ftest.c: In function ‘main’:
+ftest.c:52:3: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]
+   exit(0);
+   ^~~~
+ftest.c:52:3: warning: incompatible implicit declaration of built-in function ‘exit’
+ftest.c:52:3: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’
+/tmp/ccVc4dMq.o: In function `fisher':
+fisher.c:(.text+0x82): undefined reference to `sqrt'
+fisher.c:(.text+0xb8): undefined reference to `atan'
+fisher.c:(.text+0xda): undefined reference to `sqrt'
+fisher.c:(.text+0x10e): undefined reference to `sqrt'
+fisher.c:(.text+0x204): undefined reference to `pow'
+/tmp/ccxPoiqi.o: In function `main':
+ftest.c:(.text+0xa4): undefined reference to `sqrt'
+collect2: error: ld returned 1 exit status
+root@localhost:~/322d# gcc fisher.h fisher.c ftest.c -lm -o fisher
+ftest.c: In function ‘main’:
+ftest.c:52:3: warning: implicit declaration of function ‘exit’ [-Wimplicit-function-declaration]
+   exit(0);
+   ^~~~
+ftest.c:52:3: warning: incompatible implicit declaration of built-in function ‘exit’
+ftest.c:52:3: note: include ‘<stdlib.h>’ or provide a declaration of ‘exit’
+root@localhost:~/322d# ls
+322     322run    fisher.c  xx01
+322.f   Makefile  fisher.h  xx011
+322.sh  a.out     ftest.c
+3221    fisher    xx00
+root@localhost:~/322d# ./fisher
+Enter test type, degrees of freedom, and value, or 'q' to quit -
+for example 'f 1 10 10.04' or 't 10 3.169'
+f 1 10 10.04
+        F(1,10)=10.040000, t(10)=3.168596, p=0.010012
+
+^C
+root@localhost:~/322d# vim ftest.c
+root@localhost:~/322d# gcc fisher.h fisher.c ftest.c -lm -o fisher
+root@localhost:~/322d# ./fisher
+Enter test type, degrees of freedom, and value, or 'q' to quit -
+for example 'f 1 10 10.04' or 't 10 3.169'
+f 1 10 1
+        F(1,10)=1.000000, t(10)=1.000000, p=0.340893
+
+^C
+root@localhost:~/322d# ./fisher
+Enter test type, degrees of freedom, and value, or 'q' to quit -
+for example 'f 1 10 10.04' or 't 10 3.169'
+t 10 3.169
+        F(1,10)=10.042561, t(10)=3.169000, p=0.010005
+
+^C
+root@localhost:~/322d#
+root@localhost:~/322d# vim Makefile
+root@localhost:~/322d# cc
+cc: fatal error: no input files
+compilation terminated.
+root@localhost:~/322d# gfortran and calgo.acm.org/322.gz on ZTE A Blade essential smartphone. purchased for $49.00. also runs andronix and Ubuntu Linux 18. termux downloaded. follow andronix instructions carefully.py-
