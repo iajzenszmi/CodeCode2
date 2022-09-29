@@ -1,0 +1,25 @@
+printf ("# best fit: Y = %g + %g X\n", c0, c1);
+printf ("# covariance matrix:\n");
+printf ("# [ %g, %g\n# %g, %g]\n",
+cov00, cov01, cov01, cov11);
+printf ("# chisq = %g\n", chisq);
+for (i = 0; i < n; i++)
+printf ("data: %g %g %g\n",
+x[i], y[i], 1/sqrt(w[i]));
+printf ("\n");
+for (i = -30; i < 130; i++)
+{
+double xf = x[0] + (i/100.0) * (x[n-1] - x[0]);
+double yf, yf_err;
+gsl_fit_linear_est (xf,
+c0, c1,
+cov00, cov01, cov11,
+&yf, &yf_err);
+printf ("fit: %g %g\n", xf, yf);
+printf ("hi : %g %g\n", xf, yf + yf_err);
+printf ("lo : %g %g\n", xf, yf - yf_err);
+}
+return 0;
+}
+
+ian@ian-HP-Stream-Laptop-11-y0XX:~/gsl/gsl$ 
