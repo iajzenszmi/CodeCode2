@@ -1,0 +1,169 @@
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f77 nilakanthapi.f -ffast-math -ffree-form -o nilakanthapi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ Give me desired calculation limit:
+1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m5.647s
+user	0m0.000s
+sys	0m0.008s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ ls *.f90
+NilakanthasPi.f90
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f95 NilakanthasPi.f90 -ffast-math -o NilakanthasPi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./NilakanthasPi
+ Give me desired calculation limit:
+1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m9.244s
+user	0m0.003s
+sys	0m0.008s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./NilakanthasPi
+ Give me desired calculation limit:
+1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m34.614s
+user	0m0.004s
+sys	0m0.006s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./NilakanthasPi
+ Give me desired calculation limit:
+1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m4.404s
+user	0m0.001s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f77 nilakanthapi.f -ffast-math -ffree-form -o nilakanthapi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.008s
+user	0m0.001s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.011s
+user	0m0.003s
+sys	0m0.003s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.006s
+user	0m0.000s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ cat nilakanthapi.f
+         Program NilakanthaPi
+
+         integer*8 i /1/, pre / 1/, calc   
+         real*16 start /3.0/, cont / 0.0/
+
+ !        print*, 'Give me desired calculation limit:'
+ !        read *, calc
+         calc = 1000
+         print *,"desired calculation limit = ", calc 
+         do while (i .lt. calc)       
+          cont=(i+1)*(i+2)*(i+3)
+          start=start+4/cont*pre
+          pre=pre*(-1)
+          i=i+2
+          end do 
+
+          print *, 'Pi calculation using Nilakantha series, with ',  calc, ' number of iterations, gives: ', start
+
+          end program
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f77 nilakanthapi.f -ffast-math -ffree-form -funroll-loops -O3 -o nilakanthapi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.043s
+user	0m0.006s
+sys	0m0.000s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.029s
+user	0m0.002s
+sys	0m0.004s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f77 nilakanthapi.f -ffast-math -ffree-form -funroll-loops  -o nilakanthapi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f77 nilakanthapi.f -ffast-math -ffree-form -funroll-loops  -o nilakanthapi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.010s
+user	0m0.001s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ f77 nilakanthapi.f -ffast-math -ffree-form  -o nilakanthapi
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.001s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.007s
+user	0m0.001s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.010s
+user	0m0.001s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.007s
+user	0m0.001s
+sys	0m0.005s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.012s
+user	0m0.005s
+sys	0m0.000s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.000s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.013s
+user	0m0.001s
+sys	0m0.004s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.041s
+user	0m0.001s
+sys	0m0.006s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ time ./nilakanthapi
+ desired calculation limit =                  1000
+ Pi calculation using Nilakantha series, with                  1000  number of iterations, gives:    3.14159265160175529846089210639850089      
+
+real	0m0.017s
+user	0m0.005s
+sys	0m0.002s
+ian@ian-HP-Stream-Laptop-11-y0XX:~/Downloads$ 
+
+
