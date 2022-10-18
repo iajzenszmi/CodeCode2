@@ -1,0 +1,77 @@
+(base) ian@ian-HP-Notebook:~$ gfortran helloworld.f -o helloworld
+(base) ian@ian-HP-Notebook:~$ ./helloworld
+ hello  world
+(base) ian@ian-HP-Notebook:~$ cat helloworld.f
+       character(len=6) hello
+       character(len=6) world
+       character(len=12) helloworld
+       hello = "hello "
+       world = " world"
+       helloworld = hello // world
+       print *,helloworld
+       end program
+(base) ian@ian-HP-Notebook:~$ sloccount helloworld.f
+
+Command 'sloccount' not found, but can be installed with:
+
+sudo apt install sloccount
+
+(base) ian@ian-HP-Notebook:~$ sudo apt install sloccount
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi libfwupdplugin1
+  libgstreamer-plugins-bad1.0-0 libllvm11 libva-wayland2
+Use 'sudo apt autoremove' to remove them.
+Suggested packages:
+  doc-base
+The following NEW packages will be installed:
+  sloccount
+0 to upgrade, 1 to newly install, 0 to remove and 6 not to upgrade.
+Need to get 84.8 kB of archives.
+After this operation, 442 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 sloccount amd64 2.26-5.2 [84.8 kB]
+Fetched 84.8 kB in 6s (13.7 kB/s)                                              
+Selecting previously unselected package sloccount.
+(Reading database ... 401674 files and directories currently installed.)
+Preparing to unpack .../sloccount_2.26-5.2_amd64.deb ...
+Unpacking sloccount (2.26-5.2) ...
+Setting up sloccount (2.26-5.2) ...
+Processing triggers for man-db (2.9.1-1) ...
+(base) ian@ian-HP-Notebook:~$ sloccount helloworld.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/helloworld.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+8       top_dir         fortran=8
+
+
+Totals grouped by language (dominant language first):
+fortran:          8 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 8
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.02)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.04 (0.51)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.03
+Total Estimated Cost to Develop                           = $ 170
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+(base) ian@ian-HP-Notebook:~$ 
+
