@@ -1,0 +1,22 @@
+(base) ian@ian-HP-Notebook:~$ cp compute_pi compute_pi.c
+(base) ian@ian-HP-Notebook:~$ gcc compute_pi.c -o compute_pi
+(base) ian@ian-HP-Notebook:~$ ./compute_pi
+Pi = 3.141591
+
+(base) ian@ian-HP-Notebook:~$ cat compute_pi.c
+#include <stdio.h>
+#define STEPS 1000000
+int main()
+{
+int i;
+double p=2;
+for (i=0;i<STEPS;i++)
+{
+p*=((double)(((int)((i+2)/2))*2))/(((int)((i+1)/2))*2+1);
+}
+printf("Pi = %f\n",p);
+getchar();
+return 0;
+}
+(base) ian@ian-HP-Notebook:~$ 
+
