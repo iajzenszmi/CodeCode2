@@ -1,0 +1,199 @@
+(base) ian@ian-HP-Notebook:~$ ls
+ 1001doors.c
+ 1001doors.py
+ 100doors.c
+ 100doors.py
+ aima
+ aima-data
+ aima-python
+ alpha-go-zero
+ a.out
+ ballbounce.py
+ callrw.f
+ callrw.f08
+ chebfun
+ compute_pi
+ compute_pi.c
+ compute_pi_run.txt
+ copilot.vim
+ countprint.f
+ countprint.o
+ cprint
+ cv_debug.log
+ data
+ Desktop
+ Documents
+ Downloads
+ etaxconversatintext.txt
+ facerecognition.py
+ finance
+ google-chrome-stable_current_amd64.deb
+ helloworld
+ helloworlddotf.txt
+ helloworld.f
+ helloworld.o
+ httpstan
+ IDCJAC0009_086232_1800.zip
+ IDCJAC0009_086232_2021.zip
+ jacobian.cpp
+ JacobianEllipticalFiles
+ JacobianEllipticalFiles.c
+ JacobianEllipticalFiles.f
+ JacobianEllipticalFiles.o
+ jacobian.m
+ linuxdrivers
+ mcidas
+ mcidas-build
+ mcidasv
+ McIDAS-V
+ McIDAS-V-System
+ microsoft.gp
+ miniconda3
+ Miniconda3-latest-Linux-x86_64.sh
+ mozilla.pdf
+ Music
+ nasmexamples
+ NewFolder
+ nohup.out
+ nvim.appimage
+'NYE Village People-R0p2oW-PjLY.mp4'
+ octave-4.0.0.pdf
+'octave-symbolic-chebyshev -functions run.txt'
+ pensionnotice.pdf
+ Pictures
+'# plot function x^2.py'
+ precision.f90
+ Public
+ pyball.pt
+ pystan
+ pystan2
+ pystan2dev
+ pystan2-develop
+ quadprog
+'Robbie Williams - Angels ( Live at Knebworth )-04wofd-rZtE.mp4'
+ sinefine
+ sinefine.c
+ sinefine.c.save
+ sinefine.o
+ snap
+ Tax2022agedcareexpenses.txt
+ Templates
+'thank-you.html?installdataindex=empty'
+ Videos
+ wget-log
+ yequalsxsquared
+ yequalsxsquared.c
+(base) ian@ian-HP-Notebook:~$ gfortran precision.f90 -o precision
+(base) ian@ian-HP-Notebook:~$ ./precision
+   3.3333333333333335     
+(base) ian@ian-HP-Notebook:~$ gfortran precision.f90 -s 
+(base) ian@ian-HP-Notebook:~$ ls precision
+precision
+(base) ian@ian-HP-Notebook:~$ ls precision*
+precision  precision.f90
+(base) ian@ian-HP-Notebook:~$ gfortran precision.f90 -S 
+(base) ian@ian-HP-Notebook:~$ ks precision.*
+ks: command not found
+(base) ian@ian-HP-Notebook:~$ ls precision.*
+precision.f90  precision.s
+(base) ian@ian-HP-Notebook:~$ cat precision.s
+	.file	"precision.f90"
+	.text
+	.section	.rodata
+.LC2:
+	.string	"precision.f90"
+	.text
+	.type	MAIN__, @function
+MAIN__:
+.LFB0:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$560, %rsp
+	movsd	.LC0(%rip), %xmm0
+	movsd	%xmm0, -8(%rbp)
+	movsd	.LC1(%rip), %xmm0
+	movsd	%xmm0, -16(%rbp)
+	movsd	-8(%rbp), %xmm0
+	divsd	-16(%rbp), %xmm0
+	movsd	%xmm0, -24(%rbp)
+	leaq	.LC2(%rip), %rax
+	movq	%rax, -552(%rbp)
+	movl	$12, -544(%rbp)
+	movl	$128, -560(%rbp)
+	movl	$6, -556(%rbp)
+	leaq	-560(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write@PLT
+	leaq	-24(%rbp), %rcx
+	leaq	-560(%rbp), %rax
+	movl	$8, %edx
+	movq	%rcx, %rsi
+	movq	%rax, %rdi
+	call	_gfortran_transfer_real_write@PLT
+	leaq	-560(%rbp), %rax
+	movq	%rax, %rdi
+	call	_gfortran_st_write_done@PLT
+	nop
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	MAIN__, .-MAIN__
+	.globl	main
+	.type	main, @function
+main:
+.LFB1:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movl	%edi, -4(%rbp)
+	movq	%rsi, -16(%rbp)
+	movq	-16(%rbp), %rdx
+	movl	-4(%rbp), %eax
+	movq	%rdx, %rsi
+	movl	%eax, %edi
+	call	_gfortran_set_args@PLT
+	leaq	options.1.3880(%rip), %rsi
+	movl	$7, %edi
+	call	_gfortran_set_options@PLT
+	call	MAIN__
+	movl	$0, %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	main, .-main
+	.section	.rodata
+	.align 16
+	.type	options.1.3880, @object
+	.size	options.1.3880, 28
+options.1.3880:
+	.long	2116
+	.long	4095
+	.long	0
+	.long	1
+	.long	1
+	.long	0
+	.long	31
+	.align 8
+.LC0:
+	.long	0
+	.long	1076101120
+	.align 8
+.LC1:
+	.long	0
+	.long	1074266112
+	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
+	.section	.note.GNU-stack,"",@progbits
+(base) ian@ian-HP-Notebook:~$ 
+
