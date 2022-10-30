@@ -1,0 +1,927 @@
+(base) ian@ian-HP-Notebook:~$ ls
+ 1001doors.c
+ 1001doors.py
+ 100doors.c
+ 100doors.py
+ absolute
+ absolute.f
+ absolute.o
+ aima
+ aima-data
+ aima-python
+ alpha-go-zero
+ a.out
+ ballbounce.py
+ callrw.f
+ callrw.f08
+ chebfun
+ climate_indices
+ compute_pi
+ compute_pi.c
+ compute_pi_run.txt
+ copilot.vim
+ countprint.f
+ countprint.o
+ cprint
+ cv_debug.log
+ data
+ Desktop
+ Documents
+ Downloads
+ etaxconversatintext.txt
+ facerecognition.py
+ finance
+ google-chrome-stable_current_amd64.deb
+ helloworld
+ helloworlddotf.txt
+ helloworld.f
+ helloworld.o
+ httpstan
+ IDCJAC0009_086232_1800.zip
+ IDCJAC0009_086232_2021.zip
+ jacobian.cpp
+ JacobianEllipticalFiles
+ JacobianEllipticalFiles.c
+ JacobianEllipticalFiles.f
+ JacobianEllipticalFiles.o
+ jacobian.m
+ linuxdrivers
+ mcidas
+ mcidas-build
+ mcidasv
+ McIDAS-V
+ McIDAS-V-System
+ microsoft.gp
+ miniconda3
+ Miniconda3-latest-Linux-x86_64.sh
+ mozilla.pdf
+ Music
+ nasmexamples
+ NewFolder
+ nohup.out
+ nvim.appimage
+'NYE Village People-R0p2oW-PjLY.mp4'
+ octave-4.0.0.pdf
+'octave-symbolic-chebyshev -functions run.txt'
+ pensionnotice.pdf
+ Pictures
+'# plot function x^2.py'
+ precision
+ precision.f90
+ precisionrun.txt
+ precision.s
+ Public
+ pyball.pt
+ pystan
+ pystan2
+ pystan2dev
+ pystan2-develop
+ quadprog
+'Robbie Williams - Angels ( Live at Knebworth )-04wofd-rZtE.mp4'
+ sinefine
+ sinefine.c
+ sinefine.c.save
+ sinefine.o
+ snap
+ Tax2022agedcareexpenses.txt
+ Templates
+'thank-you.html?installdataindex=empty'
+ Videos
+ wget-log
+ yequalsxsquared
+ yequalsxsquared.c
+(base) ian@ian-HP-Notebook:~$ cd climate_indices
+(base) ian@ian-HP-Notebook:~/climate_indices$ ls
+build               DISCLAIMER  notebooks        requirements.txt  tox.ini
+code_of_conduct.md  dist        pyproject.toml   setup.py
+_config.yml         docs        README.md        src
+CONTRIBUTING.md     LICENSE     requirements.in  tests
+(base) ian@ian-HP-Notebook:~/climate_indices$ pip install climate_indices
+Requirement already satisfied: climate_indices in /usr/local/lib/python3.8/dist-packages/climate_indices-1.0.10-py3.8.egg (1.0.10)
+Requirement already satisfied: dask in /usr/local/lib/python3.8/dist-packages/dask-2022.10.1-py3.8.egg (from climate_indices) (2022.10.1)
+Requirement already satisfied: nco in /usr/local/lib/python3.8/dist-packages/nco-1.0.0-py3.8.egg (from climate_indices) (1.0.0)
+Requirement already satisfied: netcdf4 in /usr/lib/python3/dist-packages (from climate_indices) (1.5.3)
+Requirement already satisfied: numba in /usr/local/lib/python3.8/dist-packages/numba-0.56.3-py3.8-linux-x86_64.egg (from climate_indices) (0.56.3)
+Requirement already satisfied: numpy in /usr/lib/python3/dist-packages (from climate_indices) (1.17.4)
+Requirement already satisfied: scipy in /usr/lib/python3/dist-packages (from climate_indices) (1.3.3)
+Requirement already satisfied: toolz in /usr/local/lib/python3.8/dist-packages/toolz-0.12.0-py3.8.egg (from climate_indices) (0.12.0)
+Requirement already satisfied: xarray in /usr/local/lib/python3.8/dist-packages/xarray-2022.10.0-py3.8.egg (from climate_indices) (2022.10.0)
+Requirement already satisfied: click>=7.0 in /usr/lib/python3/dist-packages (from dask->climate_indices) (7.0)
+Collecting cloudpickle>=1.1.1
+  Downloading cloudpickle-2.2.0-py3-none-any.whl (25 kB)
+Collecting fsspec>=0.6.0
+  Downloading fsspec-2022.10.0-py3-none-any.whl (138 kB)
+     |████████████████████████████████| 138 kB 4.6 MB/s 
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.8/dist-packages/packaging-21.3-py3.8.egg (from dask->climate_indices) (21.3)
+Collecting partd>=0.3.10
+  Downloading partd-1.3.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: pyyaml>=5.3.1 in /usr/lib/python3/dist-packages (from dask->climate_indices) (5.3.1)
+Requirement already satisfied: importlib-metadata in /usr/lib/python3/dist-packages (from numba->climate_indices) (1.5.0)
+Collecting llvmlite<0.40,>=0.39.0dev0
+  Downloading llvmlite-0.39.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.6 MB)
+     |████████████████████████████████| 34.6 MB 147 kB/s 
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from numba->climate_indices) (45.2.0)
+Requirement already satisfied: pandas>=1.3 in /usr/local/lib/python3.8/dist-packages/pandas-1.5.1-py3.8-linux-x86_64.egg (from xarray->climate_indices) (1.5.1)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/lib/python3/dist-packages (from packaging>=20.0->dask->climate_indices) (2.4.6)
+Collecting locket
+  Downloading locket-1.0.0-py2.py3-none-any.whl (4.4 kB)
+Collecting python-dateutil>=2.8.1
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+     |████████████████████████████████| 247 kB 17.9 MB/s 
+Collecting pytz>=2020.1
+  Downloading pytz-2022.5-py2.py3-none-any.whl (500 kB)
+     |████████████████████████████████| 500 kB 19.7 MB/s 
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil>=2.8.1->pandas>=1.3->xarray->climate_indices) (1.14.0)
+ERROR: numba 0.56.3 has requirement numpy<1.24,>=1.18, but you'll have numpy 1.17.4 which is incompatible.
+ERROR: pandas 1.5.1 has requirement numpy>=1.20.3, but you'll have numpy 1.17.4 which is incompatible.
+Installing collected packages: cloudpickle, fsspec, locket, partd, llvmlite, python-dateutil, pytz
+Successfully installed cloudpickle-2.2.0 fsspec-2022.10.0 llvmlite-0.39.1 locket-1.0.0 partd-1.3.0 python-dateutil-2.8.2 pytz-2022.5
+(base) ian@ian-HP-Notebook:~/climate_indices$ ls
+build               DISCLAIMER  notebooks        requirements.txt  tox.ini
+code_of_conduct.md  dist        pyproject.toml   setup.py
+_config.yml         docs        README.md        src
+CONTRIBUTING.md     LICENSE     requirements.in  tests
+(base) ian@ian-HP-Notebook:~/climate_indices$ cd tests
+(base) ian@ian-HP-Notebook:~/climate_indices/tests$ ls
+conftest.py  __init__.py      test_eto.py      test_palmer.py
+fixture      test_compute.py  test_indices.py  test_utils.py
+(base) ian@ian-HP-Notebook:~/climate_indices/tests$ pip setup.py test
+ERROR: unknown command "setup.py"
+(base) ian@ian-HP-Notebook:~/climate_indices/tests$ cd ~/climate_indices
+(base) ian@ian-HP-Notebook:~/climate_indices$ pip setup.py test
+ERROR: unknown command "setup.py"
+(base) ian@ian-HP-Notebook:~/climate_indices$ ipython3 setup.py test
+running test
+WARNING: Testing via this command is deprecated and will be removed in a future version. Users looking for a generic test entry point independent of test runner are encouraged to use tox.
+running egg_info
+---------------------------------------------------------------------------
+PermissionError                           Traceback (most recent call last)
+/usr/lib/python3.8/distutils/core.py in setup(**attrs)
+    147         try:
+--> 148             dist.run_commands()
+    149         except KeyboardInterrupt:
+
+/usr/lib/python3.8/distutils/dist.py in run_commands(self)
+    965         for cmd in self.commands:
+--> 966             self.run_command(cmd)
+    967 
+
+/usr/lib/python3.8/distutils/dist.py in run_command(self, command)
+    984         cmd_obj.ensure_finalized()
+--> 985         cmd_obj.run()
+    986         self.have_run[command] = 1
+
+/usr/lib/python3/dist-packages/setuptools/command/test.py in run(self)
+    236         with self.paths_on_pythonpath(paths):
+--> 237             with self.project_on_sys_path():
+    238                 self.run_tests()
+
+/usr/lib/python3.8/contextlib.py in __enter__(self)
+    112         try:
+--> 113             return next(self.gen)
+    114         except StopIteration:
+
+/usr/lib/python3/dist-packages/setuptools/command/test.py in project_on_sys_path(self, include_dists)
+    151             # Without 2to3 inplace works fine:
+--> 152             self.run_command('egg_info')
+    153 
+
+/usr/lib/python3.8/distutils/cmd.py in run_command(self, command)
+    312         """
+--> 313         self.distribution.run_command(command)
+    314 
+
+/usr/lib/python3.8/distutils/dist.py in run_command(self, command)
+    984         cmd_obj.ensure_finalized()
+--> 985         cmd_obj.run()
+    986         self.have_run[command] = 1
+
+/usr/lib/python3/dist-packages/setuptools/command/egg_info.py in run(self)
+    284         self.mkpath(self.egg_info)
+--> 285         os.utime(self.egg_info, None)
+    286         installer = self.distribution.fetch_build_egg
+
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+SystemExit                                Traceback (most recent call last)
+~/climate_indices/setup.py in <module>
+      8 README = (BASE_DIR / "README.md").read_text()
+      9 
+---> 10 setup(
+     11     name="climate_indices",
+     12     version="1.0.10",
+
+/usr/lib/python3/dist-packages/setuptools/__init__.py in setup(**attrs)
+    142     # Make sure we have any requirements needed to interpret 'attrs'.
+    143     _install_setup_requires(attrs)
+--> 144     return distutils.core.setup(**attrs)
+    145 
+    146 
+
+/usr/lib/python3.8/distutils/core.py in setup(**attrs)
+    154                 raise
+    155             else:
+--> 156                 raise SystemExit("error: %s" % (exc,))
+    157 
+    158         except (DistutilsError,
+
+SystemExit: error: [Errno 13] Permission denied
+(base) ian@ian-HP-Notebook:~/climate_indices$ sudo ipython3 setup.py test
+[sudo] password for ian: 
+running test
+WARNING: Testing via this command is deprecated and will be removed in a future version. Users looking for a generic test entry point independent of test runner are encouraged to use tox.
+running egg_info
+writing src/climate_indices.egg-info/PKG-INFO
+writing dependency_links to src/climate_indices.egg-info/dependency_links.txt
+writing entry points to src/climate_indices.egg-info/entry_points.txt
+writing requirements to src/climate_indices.egg-info/requires.txt
+writing top-level names to src/climate_indices.egg-info/top_level.txt
+reading manifest file 'src/climate_indices.egg-info/SOURCES.txt'
+writing manifest file 'src/climate_indices.egg-info/SOURCES.txt'
+running build_ext
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+(base) ian@ian-HP-Notebook:~/climate_indices$ apt-cache search tox
+css2xslfo - XML+CSS2 to XSL-FO converter
+detox - replace problematic characters in filenames
+dxtool - DistoX data download utility
+fotoxx - easy-to-use digital photo editor
+fotoxx-common - easy-to-use digital photo editor - common files
+ipe5toxml - converts Ipe5 figures to an XML file readable by Ipe
+libfreediameter-dev - Library for the Diameter protocol (development files)
+libsqlite3-mod-blobtoxy - SQLite3 extension module for read-only BLOB to X/Y mapping
+libtoxcore-dev - Distributed, secure messenger - development headers
+libtoxcore2 - Distributed, secure messenger
+libwoodstox-java - High-performance XML processor
+nox - Flexible test automation
+picard-tools - Command line tools to manipulate SAM and BAM files
+python-nox-doc - Flexible test automation (Documentation)
+python3-dicttoxml - Python 3 module for converting dict into a XML string
+python3-nox - Flexible test automation (Python3 version)
+qtox - Powerful Tox client that follows the Tox design guidelines
+tox - virtualenv-based automation of test activities
+toxcore-utils - Distributed, secure messenger - DHT bootstrap tools
+toxic - curses Tox based instant messenging client
+utox - lightest and fluffiest Tox client
+wings3d - Nendo-inspired 3D polygon mesh modeller
+(base) ian@ian-HP-Notebook:~/climate_indices$ sudo apt install tox
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  diffstat gedit-common gir1.2-appindicator3-0.1 gir1.2-clutter-1.0
+  gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-goa-1.0
+  gir1.2-gtkclutter-1.0 gir1.2-gtksource-4 gir1.2-snapd-1 gir1.2-wnck-3.0 gmsh
+  gmsh-doc gnome-screensaver gnome-terminal-data gstreamer1.0-vaapi gtk3-nocsd
+  hplip-data hud hwdata indicator-appmenu indicator-datetime
+  indicator-keyboard indicator-messages indicator-power indicator-printers
+  indicator-session indicator-sound intltool-debian jayatana libaccounts-glib0
+  libamtk-5-0 libamtk-5-common libappstream-glib8 libapt-pkg-perl
+  libarchive-zip-perl libassimp-dev libassimp5 libasync-mergepoint-perl
+  libbamf3-2 libblosc1 libboost-chrono-dev libboost-math-dev libboost-mpi-dev
+  libboost-serialization-dev libboost-timer-dev libcapture-tiny-perl libcmor2
+  libcolumbus1-common libcolumbus1v5 libcompizconfig0 libdbusmenu-qt5-2
+  libdeal.ii-9.1.1 libdecoration0 libdevel-size-perl
+  libdigest-bubblebabble-perl libdolfin2019.1 libeckit-dev libeckit-utils
+  libeckit0d libegl1-mesa libemail-valid-perl libexpat1:i386 libfcitx-config4
+  libfcitx-gclient1 libfcitx-utils0 libffi-dev libfile-find-rule-perl
+  libfltk-images1.3 libfont-ttf-perl libframe6 libfreeimage-dev libfuture-perl
+  libfwupdplugin1 libgail-3-0 libgeis1 libgeonames-common libgeonames0
+  libglew2.1 libglewmx1.13 libgmsh-dev libgmsh4 libgrail6 libgsettings-qt1
+  libgstreamer-plugins-bad1.0-0 libgtk2-perl libgtk3-nocsd0 libhpmud0
+  libido3-0.1-0 libimport-into-perl libio-async-loop-epoll-perl
+  libio-async-perl libio-pty-perl libipc-run-perl libjson-c-dev
+  libjson-maybexs-perl liblaszip8 liblightdm-gobject-1-0 liblinux-epoll-perl
+  liblist-compare-perl libllvm11 libmagics++-data libmagics++-metview-dev
+  libmagplus3v5 libmetacity1 libmoo-perl libmoox-aliases-perl libmshr2019.1
+  libnemo-extension1 libnet-dns-perl libnet-dns-sec-perl
+  libnet-domain-tld-perl libnet-ip-perl libnetcdf-cxx-legacy-dev libnetplan0
+  libnfs13 libnumber-compare-perl libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev libocct-ocaf-dev
+  libocct-visualization-dev libodb-api-0d libodb-api-bin libodb-api-data
+  libodb-api-dev libpango-perl libparpack2-dev libpath-tiny-perl libpdal-base9
+  libpdal-plugin-faux libpdal-plugin-icebridge libpdal-plugin-pgpointcloud
+  libpdal-plugin-sqlite libpdal-util9 libperl4-corelibs-perl
+  libperlio-gzip-perl libpetsc3.12-dev-common libpetsc3.12-dev-examples
+  libpfm4 libptscotch-dev libpython3-dev libpython3.8-dev
+  libpython3.8-minimal:i386 libqt5x11extras5 librsync2 libsane-hpaio
+  libscotch-dev libsereal-decoder-perl libsereal-encoder-perl libsereal-perl
+  libsnappy-dev libsqlite3-mod-spatialite libssl-dev libssl1.1:i386
+  libstrictures-perl libstruct-dumb-perl libsundials-arkode2
+  libsundials-cvode3 libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtest-refcount-perl libtext-glob-perl
+  libtext-levenshtein-perl libtimezonemap-data libtimezonemap1
+  libtype-tiny-perl libtype-tiny-xs-perl libunicode-utf8-perl
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxcb-xtest0 libxml-writer-perl libxmlb1
+  libxmu-dev libxmu-headers libxxhash-dev libxxhash0 libyaml-libyaml-perl
+  libz3-4 libz3-dev lintian llvm-9 llvm-9-runtime metacity-common numdiff
+  nux-tools paraview-doc patchutils printer-driver-hpcups
+  printer-driver-postscript-hp python-tables-data python3-fasteners
+  python3-geojson python3-isodate python3-lockfile python3-louis
+  python3-monotonic python3-pkgconfig python3-ply python3-png python3-pyqrcode
+  python3-speechd python3-suds python3-trie python3-u-msgpack
+  session-shortcuts tcl ttf-dejavu-core ttf-dejavu-extra ubuntu-touch-sounds
+  unity-asset-pool unity-greeter unity-gtk-module-common unity-gtk2-module
+  unity-gtk3-module unity-schemas unity-scope-home unity-scopes-master-default
+  unity-services unity-settings-daemon unity-settings-daemon-schemas x11-apps
+  x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  python3-distlib python3-filelock python3-toml python3-virtualenv virtualenv
+The following NEW packages will be installed:
+  python3-distlib python3-filelock python3-toml python3-virtualenv tox
+  virtualenv
+0 to upgrade, 6 to newly install, 0 to remove and 0 not to upgrade.
+Need to get 448 kB of archives.
+After this operation, 2,733 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 python3-distlib all 0.3.0-1 [116 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/universe amd64 python3-filelock all 3.0.12-2 [7,948 B]
+Get:3 http://archive.ubuntu.com/ubuntu focal/universe amd64 python3-toml all 0.10.0-3 [14.6 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python3-virtualenv all 20.0.17-1ubuntu0.4 [62.7 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 virtualenv all 20.0.17-1ubuntu0.4 [2,144 B]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 tox all 3.13.2-2 [244 kB]
+Fetched 448 kB in 2s (192 kB/s)
+Selecting previously unselected package python3-distlib.
+(Reading database ... 409396 files and directories currently installed.)
+Preparing to unpack .../0-python3-distlib_0.3.0-1_all.deb ...
+Unpacking python3-distlib (0.3.0-1) ...
+Selecting previously unselected package python3-filelock.
+Preparing to unpack .../1-python3-filelock_3.0.12-2_all.deb ...
+Unpacking python3-filelock (3.0.12-2) ...
+Selecting previously unselected package python3-toml.
+Preparing to unpack .../2-python3-toml_0.10.0-3_all.deb ...
+Unpacking python3-toml (0.10.0-3) ...
+Selecting previously unselected package python3-virtualenv.
+Preparing to unpack .../3-python3-virtualenv_20.0.17-1ubuntu0.4_all.deb ...
+Unpacking python3-virtualenv (20.0.17-1ubuntu0.4) ...
+Selecting previously unselected package virtualenv.
+Preparing to unpack .../4-virtualenv_20.0.17-1ubuntu0.4_all.deb ...
+Unpacking virtualenv (20.0.17-1ubuntu0.4) ...
+Selecting previously unselected package tox.
+Preparing to unpack .../5-tox_3.13.2-2_all.deb ...
+Unpacking tox (3.13.2-2) ...
+Setting up python3-filelock (3.0.12-2) ...
+Setting up python3-distlib (0.3.0-1) ...
+Setting up python3-toml (0.10.0-3) ...
+Setting up python3-virtualenv (20.0.17-1ubuntu0.4) ...
+Setting up virtualenv (20.0.17-1ubuntu0.4) ...
+Setting up tox (3.13.2-2) ...
+Processing triggers for man-db (2.9.1-1) ...
+(base) ian@ian-HP-Notebook:~/climate_indices$ tox
+.package create: /home/ian/climate_indices/.tox/.package
+.package installdeps: setuptools>=40.8.0, wheel
+ERROR: invocation failed (exit code 1), logfile: /home/ian/climate_indices/.tox/.package/log/.package-2.log
+================================== log start ===================================
+running egg_info
+error: [Errno 13] Permission denied
+
+=================================== log end ====================================
+ERROR: FAIL could not package project - v = InvocationError("/home/ian/climate_indices/.tox/.package/bin/python /usr/lib/python3/dist-packages/tox/helper/build_requires.py setuptools.build_meta ''", 1)
+(base) ian@ian-HP-Notebook:~/climate_indices$ sudo tox
+py36 create: /home/ian/climate_indices/.tox/py36
+ERROR: InterpreterNotFound: python3.6
+py37 create: /home/ian/climate_indices/.tox/py37
+ERROR: InterpreterNotFound: python3.7
+py38 create: /home/ian/climate_indices/.tox/py38
+py38 installdeps: codecov, coverage, pytest
+py38 inst: /home/ian/climate_indices/.tox/.tmp/package/1/climate_indices-1.0.10.tar.gz
+py38 installed: attrs==22.1.0,certifi==2022.9.24,cftime==1.6.2,charset-normalizer==2.1.1,click==8.1.3,climate-indices==1.0.10,cloudpickle==2.2.0,codecov==2.1.12,coverage==6.5.0,dask==2022.10.1,exceptiongroup==1.0.0,fsspec==2022.10.0,idna==3.4,importlib-metadata==5.0.0,iniconfig==1.1.1,llvmlite==0.39.1,locket==1.0.0,nco==1.0.0,netCDF4==1.6.1,numba==0.56.3,numpy==1.23.4,packaging==21.3,pandas==1.5.1,partd==1.3.0,pluggy==1.0.0,pyparsing==3.0.9,pytest==7.2.0,python-dateutil==2.8.2,pytz==2022.5,PyYAML==6.0,requests==2.28.1,scipy==1.9.3,six==1.16.0,tomli==2.0.1,toolz==0.12.0,urllib3==1.26.12,xarray==2022.10.0,zipp==3.10.0
+py38 run-test-pre: PYTHONHASHSEED='3204563141'
+py38 run-test: commands[0] | python setup.py check -m -s
+running check
+py38 run-test: commands[1] | coverage run -m pytest tests
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-7.2.0, pluggy-1.0.0
+cachedir: .tox/py38/.pytest_cache
+rootdir: /home/ian/climate_indices
+collected 37 items                                                             
+
+tests/test_compute.py .....                                              [ 13%]
+tests/test_eto.py .....                                                  [ 27%]
+tests/test_indices.py .......                                            [ 45%]
+tests/test_palmer.py ..........                                          [ 72%]
+tests/test_utils.py ..........                                           [100%]
+
+=============================== warnings summary ===============================
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/compute.py:635: RuntimeWarning: Mean of empty slice
+    means = np.nanmean(calibration_values, axis=0)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/compute.py:638: RuntimeWarning: Mean of empty slice
+    mean_logs = np.nanmean(logs, axis=0)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/compute.py:640: RuntimeWarning: divide by zero encountered in divide
+    alphas = (1 + np.sqrt(1 + 4 * a / 3)) / (4 * a)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py:2168: RuntimeWarning: divide by zero encountered in divide
+    x = np.asarray((x - loc)/scale, dtype=dtyp)
+
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/compute.py:371: RuntimeWarning: divide by zero encountered in divide
+    alpha = 4.0 / (skew * skew)
+
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/compute.py:375: RuntimeWarning: invalid value encountered in multiply
+    return loc - ((alpha * scale * skew) / 2.0)
+
+tests/test_indices.py::test_pnp
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/indices.py:522: RuntimeWarning: Mean of empty slice
+    averages[i] = np.nanmean(calibration_period_sums[i::periodicity])
+
+tests/test_palmer.py::test_water_balance
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/palmer.py:381: RuntimeWarning: invalid value encountered in double_scalars
+    ((pet - potential_loss_surface) * stored_moisture_under) / awc
+
+tests/test_palmer.py::test_water_balance
+  /home/ian/climate_indices/.tox/py38/lib/python3.8/site-packages/climate_indices/palmer.py:328: RuntimeWarning: invalid value encountered in double_scalars
+    Lu[k] = min(((abs(B[k]) - Ls[k]) * Su0) / awc, Su0)
+
+tests/test_utils.py::test_transform_to_366day
+  /home/ian/climate_indices/tests/test_utils.py:420: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+    values_366_faux_feb29 = np.array(range(366), dtype=np.float)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 37 passed, 14 warnings in 11.91s =======================
+py38 run-test: commands[2] | codecov
+
+      _____          _
+     / ____|        | |
+    | |     ___   __| | ___  ___ _____   __
+    | |    / _ \ / _  |/ _ \/ __/ _ \ \ / /
+    | |___| (_) | (_| |  __/ (_| (_) \ V /
+     \_____\___/ \____|\___|\___\___/ \_/
+                                    v2.1.12
+
+==> Detecting CI provider
+fatal: detected dubious ownership in repository at '/home/ian/climate_indices'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/ian/climate_indices
+    Error running `['git', 'rev-parse', '--abbrev-ref', 'HEAD']`: returncode=128, output=b''
+    Error running `['hg', 'branch']`: returncode=None, output=[Errno 2] No such file or directory: 'hg'
+  -> Got branch from git/hg
+fatal: detected dubious ownership in repository at '/home/ian/climate_indices'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/ian/climate_indices
+    Error running `['git', 'rev-parse', 'HEAD']`: returncode=128, output=b''
+    Error running `['hg', 'log', '-r', '.', '-T', '{node}']`: returncode=None, output=[Errno 2] No such file or directory: 'hg'
+  -> Got sha from git/hg
+==> Preparing upload
+Error: Commit sha is missing. Please specify via --commit=:sha
+Tip: See all example repositories: https://github.com/codecov?query=example
+py39 create: /home/ian/climate_indices/.tox/py39
+py39 installdeps: codecov, coverage, pytest
+py39 inst: /home/ian/climate_indices/.tox/.tmp/package/1/climate_indices-1.0.10.tar.gz
+py39 installed: attrs==22.1.0,certifi==2022.9.24,cftime==1.6.2,charset-normalizer==2.1.1,click==8.1.3,climate-indices==1.0.10,cloudpickle==2.2.0,codecov==2.1.12,coverage==6.5.0,dask==2022.10.1,exceptiongroup==1.0.0,fsspec==2022.10.0,idna==3.4,importlib-metadata==5.0.0,iniconfig==1.1.1,llvmlite==0.39.1,locket==1.0.0,nco==1.0.0,netCDF4==1.6.1,numba==0.56.3,numpy==1.23.4,packaging==21.3,pandas==1.5.1,partd==1.3.0,pluggy==1.0.0,pyparsing==3.0.9,pytest==7.2.0,python-dateutil==2.8.2,pytz==2022.5,PyYAML==6.0,requests==2.28.1,scipy==1.9.3,six==1.16.0,tomli==2.0.1,toolz==0.12.0,urllib3==1.26.12,xarray==2022.10.0,zipp==3.10.0
+py39 run-test-pre: PYTHONHASHSEED='3204563141'
+py39 run-test: commands[0] | python setup.py check -m -s
+running check
+py39 run-test: commands[1] | coverage run -m pytest tests
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-7.2.0, pluggy-1.0.0
+cachedir: .tox/py39/.pytest_cache
+rootdir: /home/ian/climate_indices
+collected 37 items                                                             
+
+tests/test_compute.py .....                                              [ 13%]
+tests/test_eto.py .....                                                  [ 27%]
+tests/test_indices.py .......                                            [ 45%]
+tests/test_palmer.py ..........                                          [ 72%]
+tests/test_utils.py ..........                                           [100%]
+
+=============================== warnings summary ===============================
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/compute.py:635: RuntimeWarning: Mean of empty slice
+    means = np.nanmean(calibration_values, axis=0)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/compute.py:638: RuntimeWarning: Mean of empty slice
+    mean_logs = np.nanmean(logs, axis=0)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/compute.py:640: RuntimeWarning: divide by zero encountered in divide
+    alphas = (1 + np.sqrt(1 + 4 * a / 3)) / (4 * a)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py:2168: RuntimeWarning: divide by zero encountered in divide
+    x = np.asarray((x - loc)/scale, dtype=dtyp)
+
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/compute.py:371: RuntimeWarning: divide by zero encountered in divide
+    alpha = 4.0 / (skew * skew)
+
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/compute.py:375: RuntimeWarning: invalid value encountered in multiply
+    return loc - ((alpha * scale * skew) / 2.0)
+
+tests/test_indices.py::test_pnp
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/indices.py:522: RuntimeWarning: Mean of empty slice
+    averages[i] = np.nanmean(calibration_period_sums[i::periodicity])
+
+tests/test_palmer.py::test_water_balance
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/palmer.py:381: RuntimeWarning: invalid value encountered in double_scalars
+    ((pet - potential_loss_surface) * stored_moisture_under) / awc
+
+tests/test_palmer.py::test_water_balance
+  /home/ian/climate_indices/.tox/py39/lib/python3.8/site-packages/climate_indices/palmer.py:328: RuntimeWarning: invalid value encountered in double_scalars
+    Lu[k] = min(((abs(B[k]) - Ls[k]) * Su0) / awc, Su0)
+
+tests/test_utils.py::test_transform_to_366day
+  /home/ian/climate_indices/tests/test_utils.py:420: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+    values_366_faux_feb29 = np.array(range(366), dtype=np.float)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 37 passed, 14 warnings in 12.08s =======================
+py39 run-test: commands[2] | codecov
+
+      _____          _
+     / ____|        | |
+    | |     ___   __| | ___  ___ _____   __
+    | |    / _ \ / _  |/ _ \/ __/ _ \ \ / /
+    | |___| (_) | (_| |  __/ (_| (_) \ V /
+     \_____\___/ \____|\___|\___\___/ \_/
+                                    v2.1.12
+
+==> Detecting CI provider
+fatal: detected dubious ownership in repository at '/home/ian/climate_indices'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/ian/climate_indices
+    Error running `['git', 'rev-parse', '--abbrev-ref', 'HEAD']`: returncode=128, output=b''
+    Error running `['hg', 'branch']`: returncode=None, output=[Errno 2] No such file or directory: 'hg'
+  -> Got branch from git/hg
+fatal: detected dubious ownership in repository at '/home/ian/climate_indices'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/ian/climate_indices
+    Error running `['git', 'rev-parse', 'HEAD']`: returncode=128, output=b''
+    Error running `['hg', 'log', '-r', '.', '-T', '{node}']`: returncode=None, output=[Errno 2] No such file or directory: 'hg'
+  -> Got sha from git/hg
+==> Preparing upload
+Error: Commit sha is missing. Please specify via --commit=:sha
+Tip: See all example repositories: https://github.com/codecov?query=example
+py310 create: /home/ian/climate_indices/.tox/py310
+py310 installdeps: codecov, coverage, pytest
+py310 inst: /home/ian/climate_indices/.tox/.tmp/package/1/climate_indices-1.0.10.tar.gz
+py310 installed: attrs==22.1.0,certifi==2022.9.24,cftime==1.6.2,charset-normalizer==2.1.1,click==8.1.3,climate-indices==1.0.10,cloudpickle==2.2.0,codecov==2.1.12,coverage==6.5.0,dask==2022.10.1,exceptiongroup==1.0.0,fsspec==2022.10.0,idna==3.4,importlib-metadata==5.0.0,iniconfig==1.1.1,llvmlite==0.39.1,locket==1.0.0,nco==1.0.0,netCDF4==1.6.1,numba==0.56.3,numpy==1.23.4,packaging==21.3,pandas==1.5.1,partd==1.3.0,pluggy==1.0.0,pyparsing==3.0.9,pytest==7.2.0,python-dateutil==2.8.2,pytz==2022.5,PyYAML==6.0,requests==2.28.1,scipy==1.9.3,six==1.16.0,tomli==2.0.1,toolz==0.12.0,urllib3==1.26.12,xarray==2022.10.0,zipp==3.10.0
+py310 run-test-pre: PYTHONHASHSEED='3204563141'
+py310 run-test: commands[0] | python setup.py check -m -s
+running check
+py310 run-test: commands[1] | coverage run -m pytest tests
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-7.2.0, pluggy-1.0.0
+cachedir: .tox/py310/.pytest_cache
+rootdir: /home/ian/climate_indices
+collected 37 items                                                             
+
+tests/test_compute.py .....                                              [ 13%]
+tests/test_eto.py .....                                                  [ 27%]
+tests/test_indices.py .......                                            [ 45%]
+tests/test_palmer.py ..........                                          [ 72%]
+tests/test_utils.py ..........                                           [100%]
+
+=============================== warnings summary ===============================
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/compute.py:635: RuntimeWarning: Mean of empty slice
+    means = np.nanmean(calibration_values, axis=0)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/compute.py:638: RuntimeWarning: Mean of empty slice
+    mean_logs = np.nanmean(logs, axis=0)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_gamma_parameters
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/compute.py:640: RuntimeWarning: divide by zero encountered in divide
+    alphas = (1 + np.sqrt(1 + 4 * a / 3)) / (4 * a)
+
+tests/test_compute.py::test_transform_fitted_gamma
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/scipy/stats/_distn_infrastructure.py:2168: RuntimeWarning: divide by zero encountered in divide
+    x = np.asarray((x - loc)/scale, dtype=dtyp)
+
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/compute.py:371: RuntimeWarning: divide by zero encountered in divide
+    alpha = 4.0 / (skew * skew)
+
+tests/test_compute.py::test_transform_fitted_pearson
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/compute.py:375: RuntimeWarning: invalid value encountered in multiply
+    return loc - ((alpha * scale * skew) / 2.0)
+
+tests/test_indices.py::test_pnp
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/indices.py:522: RuntimeWarning: Mean of empty slice
+    averages[i] = np.nanmean(calibration_period_sums[i::periodicity])
+
+tests/test_palmer.py::test_water_balance
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/palmer.py:381: RuntimeWarning: invalid value encountered in double_scalars
+    ((pet - potential_loss_surface) * stored_moisture_under) / awc
+
+tests/test_palmer.py::test_water_balance
+  /home/ian/climate_indices/.tox/py310/lib/python3.8/site-packages/climate_indices/palmer.py:328: RuntimeWarning: invalid value encountered in double_scalars
+    Lu[k] = min(((abs(B[k]) - Ls[k]) * Su0) / awc, Su0)
+
+tests/test_utils.py::test_transform_to_366day
+  /home/ian/climate_indices/tests/test_utils.py:420: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+  Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+    values_366_faux_feb29 = np.array(range(366), dtype=np.float)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 37 passed, 14 warnings in 11.83s =======================
+py310 run-test: commands[2] | codecov
+
+      _____          _
+     / ____|        | |
+    | |     ___   __| | ___  ___ _____   __
+    | |    / _ \ / _  |/ _ \/ __/ _ \ \ / /
+    | |___| (_) | (_| |  __/ (_| (_) \ V /
+     \_____\___/ \____|\___|\___\___/ \_/
+                                    v2.1.12
+
+==> Detecting CI provider
+fatal: detected dubious ownership in repository at '/home/ian/climate_indices'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/ian/climate_indices
+    Error running `['git', 'rev-parse', '--abbrev-ref', 'HEAD']`: returncode=128, output=b''
+    Error running `['hg', 'branch']`: returncode=None, output=[Errno 2] No such file or directory: 'hg'
+  -> Got branch from git/hg
+fatal: detected dubious ownership in repository at '/home/ian/climate_indices'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home/ian/climate_indices
+    Error running `['git', 'rev-parse', 'HEAD']`: returncode=128, output=b''
+    Error running `['hg', 'log', '-r', '.', '-T', '{node}']`: returncode=None, output=[Errno 2] No such file or directory: 'hg'
+  -> Got sha from git/hg
+==> Preparing upload
+Error: Commit sha is missing. Please specify via --commit=:sha
+Tip: See all example repositories: https://github.com/codecov?query=example
+___________________________________ summary ____________________________________
+ERROR:  py36: InterpreterNotFound: python3.6
+ERROR:  py37: InterpreterNotFound: python3.7
+  py38: commands succeeded
+  py39: commands succeeded
+  py310: commands succeeded
+(base) ian@ian-HP-Notebook:~/climate_indices$ sudo pip install 
+ERROR: You must give at least one requirement to install (see "pip help install")
+(base) ian@ian-HP-Notebook:~/climate_indices$ sudo pip install ml_drought
+ERROR: Could not find a version that satisfies the requirement ml_drought (from versions: none)
+ERROR: No matching distribution found for ml_drought
+(base) ian@ian-HP-Notebook:~/climate_indices$ cd
+(base) ian@ian-HP-Notebook:~$ pip3 install ml_drought
+ERROR: Could not find a version that satisfies the requirement ml_drought (from versions: none)
+ERROR: No matching distribution found for ml_drought
+(base) ian@ian-HP-Notebook:~$ git clone https://github.com/esowc/ml_drought.git
+Cloning into 'ml_drought'...
+remote: Enumerating objects: 16804, done.
+remote: Counting objects: 100% (839/839), done.
+remote: Compressing objects: 100% (291/291), done.
+remote: Total 16804 (delta 555), reused 829 (delta 548), pack-reused 15965
+Receiving objects: 100% (16804/16804), 316.09 MiB | 17.63 MiB/s, done.
+Resolving deltas: 100% (12984/12984), done.
+Updating files: 100% (299/299), done.
+(base) ian@ian-HP-Notebook:~$ ls
+ 1001doors.c
+ 1001doors.py
+ 100doors.c
+ 100doors.py
+ absolute
+ absolute.f
+ absolute.o
+ aima
+ aima-data
+ aima-python
+ alpha-go-zero
+ a.out
+ ballbounce.py
+ callrw.f
+ callrw.f08
+ chebfun
+ climate_indices
+ compute_pi
+ compute_pi.c
+ compute_pi_run.txt
+ copilot.vim
+ countprint.f
+ countprint.o
+ cprint
+ cv_debug.log
+ data
+ Desktop
+ Documents
+ Downloads
+ etaxconversatintext.txt
+ facerecognition.py
+ finance
+ google-chrome-stable_current_amd64.deb
+ helloworld
+ helloworlddotf.txt
+ helloworld.f
+ helloworld.o
+ httpstan
+ IDCJAC0009_086232_1800.zip
+ IDCJAC0009_086232_2021.zip
+ jacobian.cpp
+ JacobianEllipticalFiles
+ JacobianEllipticalFiles.c
+ JacobianEllipticalFiles.f
+ JacobianEllipticalFiles.o
+ jacobian.m
+ linuxdrivers
+ mcidas
+ mcidas-build
+ mcidasv
+ McIDAS-V
+ McIDAS-V-System
+ microsoft.gp
+ miniconda3
+ Miniconda3-latest-Linux-x86_64.sh
+ ml_drought
+ mozilla.pdf
+ Music
+ nasmexamples
+ NewFolder
+ nohup.out
+ nvim.appimage
+'NYE Village People-R0p2oW-PjLY.mp4'
+ octave-4.0.0.pdf
+'octave-symbolic-chebyshev -functions run.txt'
+ pensionnotice.pdf
+ Pictures
+'# plot function x^2.py'
+ precision
+ precision.f90
+ precisionrun.txt
+ precision.s
+ Public
+ pyball.pt
+ pystan
+ pystan2
+ pystan2dev
+ pystan2-develop
+ quadprog
+'Robbie Williams - Angels ( Live at Knebworth )-04wofd-rZtE.mp4'
+ sinefine
+ sinefine.c
+ sinefine.c.save
+ sinefine.o
+ snap
+ Tax2022agedcareexpenses.txt
+ Templates
+'thank-you.html?installdataindex=empty'
+ Videos
+ wget-log
+ yequalsxsquared
+ yequalsxsquared.c
+(base) ian@ian-HP-Notebook:~$ git clone https://github.com/esowc/ml_drought.git
+fatal: destination path 'ml_drought' already exists and is not an empty directory.
+(base) ian@ian-HP-Notebook:~$ cd ml_drought
+(base) ian@ian-HP-Notebook:~/ml_drought$ ls
+data          environment.yml  notebooks        README.md  src
+Dockerfile    img              pipeline_config  run.py     tests
+environments  mypy.ini         pytest.ini       scripts
+(base) ian@ian-HP-Notebook:~/ml_drought$ conda env create -f environment.yml
+Collecting package metadata (repodata.json): done
+Solving environment: \ failed
+
+CondaError: KeyboardInterrupt
+
+(base) ian@ian-HP-Notebook:~/ml_drought$ ls
+data          environment.yml  notebooks        README.md  src
+Dockerfile    img              pipeline_config  run.py     tests
+environments  mypy.ini         pytest.ini       scripts
+(base) ian@ian-HP-Notebook:~/ml_drought$ dsudo apt  install  docker
+bash: dsudo: command not found
+(base) ian@ian-HP-Notebook:~/ml_drought$ sudo apt  install  docker
+[sudo] password for ian: 
+Sorry, try again.
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+docker is already the newest version (1.5-2).
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  diffstat gedit-common gir1.2-appindicator3-0.1 gir1.2-clutter-1.0
+  gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-goa-1.0
+  gir1.2-gtkclutter-1.0 gir1.2-gtksource-4 gir1.2-snapd-1 gir1.2-wnck-3.0 gmsh
+  gmsh-doc gnome-screensaver gnome-terminal-data gstreamer1.0-vaapi gtk3-nocsd
+  hplip-data hud hwdata indicator-appmenu indicator-datetime
+  indicator-keyboard indicator-messages indicator-power indicator-printers
+  indicator-session indicator-sound intltool-debian jayatana libaccounts-glib0
+  libamtk-5-0 libamtk-5-common libappstream-glib8 libapt-pkg-perl
+  libarchive-zip-perl libassimp-dev libassimp5 libasync-mergepoint-perl
+  libbamf3-2 libblosc1 libboost-chrono-dev libboost-math-dev libboost-mpi-dev
+  libboost-serialization-dev libboost-timer-dev libcapture-tiny-perl libcmor2
+  libcolumbus1-common libcolumbus1v5 libcompizconfig0 libdbusmenu-qt5-2
+  libdeal.ii-9.1.1 libdecoration0 libdevel-size-perl
+  libdigest-bubblebabble-perl libdolfin2019.1 libeckit-dev libeckit-utils
+  libeckit0d libegl1-mesa libemail-valid-perl libexpat1:i386 libfcitx-config4
+  libfcitx-gclient1 libfcitx-utils0 libffi-dev libfile-find-rule-perl
+  libfltk-images1.3 libfont-ttf-perl libframe6 libfreeimage-dev libfuture-perl
+  libfwupdplugin1 libgail-3-0 libgeis1 libgeonames-common libgeonames0
+  libglew2.1 libglewmx1.13 libgmsh-dev libgmsh4 libgrail6 libgsettings-qt1
+  libgstreamer-plugins-bad1.0-0 libgtk2-perl libgtk3-nocsd0 libhpmud0
+  libido3-0.1-0 libimport-into-perl libio-async-loop-epoll-perl
+  libio-async-perl libio-pty-perl libipc-run-perl libjson-c-dev
+  libjson-maybexs-perl liblaszip8 liblightdm-gobject-1-0 liblinux-epoll-perl
+  liblist-compare-perl libllvm11 libmagics++-data libmagics++-metview-dev
+  libmagplus3v5 libmetacity1 libmoo-perl libmoox-aliases-perl libmshr2019.1
+  libnemo-extension1 libnet-dns-perl libnet-dns-sec-perl
+  libnet-domain-tld-perl libnet-ip-perl libnetcdf-cxx-legacy-dev libnetplan0
+  libnfs13 libnumber-compare-perl libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev libocct-ocaf-dev
+  libocct-visualization-dev libodb-api-0d libodb-api-bin libodb-api-data
+  libodb-api-dev libpango-perl libparpack2-dev libpath-tiny-perl libpdal-base9
+  libpdal-plugin-faux libpdal-plugin-icebridge libpdal-plugin-pgpointcloud
+  libpdal-plugin-sqlite libpdal-util9 libperl4-corelibs-perl
+  libperlio-gzip-perl libpetsc3.12-dev-common libpetsc3.12-dev-examples
+  libpfm4 libptscotch-dev libpython3-dev libpython3.8-dev
+  libpython3.8-minimal:i386 libqt5x11extras5 librsync2 libsane-hpaio
+  libscotch-dev libsereal-decoder-perl libsereal-encoder-perl libsereal-perl
+  libsnappy-dev libsqlite3-mod-spatialite libssl-dev libssl1.1:i386
+  libstrictures-perl libstruct-dumb-perl libsundials-arkode2
+  libsundials-cvode3 libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtest-refcount-perl libtext-glob-perl
+  libtext-levenshtein-perl libtimezonemap-data libtimezonemap1
+  libtype-tiny-perl libtype-tiny-xs-perl libunicode-utf8-perl
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxcb-xtest0 libxml-writer-perl libxmlb1
+  libxmu-dev libxmu-headers libxxhash-dev libxxhash0 libyaml-libyaml-perl
+  libz3-4 libz3-dev lintian llvm-9 llvm-9-runtime metacity-common numdiff
+  nux-tools paraview-doc patchutils printer-driver-hpcups
+  printer-driver-postscript-hp python-tables-data python3-fasteners
+  python3-geojson python3-isodate python3-lockfile python3-louis
+  python3-monotonic python3-pkgconfig python3-ply python3-png python3-pyqrcode
+  python3-speechd python3-suds python3-trie python3-u-msgpack
+  session-shortcuts tcl ttf-dejavu-core ttf-dejavu-extra ubuntu-touch-sounds
+  unity-asset-pool unity-greeter unity-gtk-module-common unity-gtk2-module
+  unity-gtk3-module unity-schemas unity-scope-home unity-scopes-master-default
+  unity-services unity-settings-daemon unity-settings-daemon-schemas x11-apps
+  x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+0 to upgrade, 0 to newly install, 0 to remove and 0 not to upgrade.
+(base) ian@ian-HP-Notebook:~/ml_drought$ sudo groupadd docker
+(base) ian@ian-HP-Notebook:~/ml_drought$ sudo service docker start
+Failed to start docker.service: Unit docker.service not found.
+(base) ian@ian-HP-Notebook:~/ml_drought$ pip install docker
+Collecting docker
+  Downloading docker-6.0.0-py3-none-any.whl (147 kB)
+     |████████████████████████████████| 147 kB 3.2 MB/s 
+Requirement already satisfied: packaging>=14.0 in /usr/local/lib/python3.8/dist-packages/packaging-21.3-py3.8.egg (from docker) (21.3)
+Collecting urllib3>=1.26.0
+  Downloading urllib3-1.26.12-py2.py3-none-any.whl (140 kB)
+     |████████████████████████████████| 140 kB 13.5 MB/s 
+Collecting requests>=2.26.0
+  Downloading requests-2.28.1-py3-none-any.whl (62 kB)
+     |████████████████████████████████| 62 kB 1.5 MB/s 
+Collecting websocket-client>=0.32.0
+  Downloading websocket_client-1.4.1-py3-none-any.whl (55 kB)
+     |████████████████████████████████| 55 kB 3.0 MB/s 
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/lib/python3/dist-packages (from packaging>=14.0->docker) (2.4.6)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3/dist-packages (from requests>=2.26.0->docker) (2.8)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3/dist-packages (from requests>=2.26.0->docker) (2019.11.28)
+Collecting charset-normalizer<3,>=2
+  Downloading charset_normalizer-2.1.1-py3-none-any.whl (39 kB)
+Installing collected packages: urllib3, charset-normalizer, requests, websocket-client, docker
+Successfully installed charset-normalizer-2.1.1 docker-6.0.0 requests-2.28.1 urllib3-1.26.12 websocket-client-1.4.1
+(base) ian@ian-HP-Notebook:~/ml_drought$ 
+
