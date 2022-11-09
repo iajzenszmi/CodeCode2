@@ -1,0 +1,3644 @@
+(base) ian@ian-HP-Notebook:~/Downloads$ sudo apt install pychess
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  gedit-common gir1.2-appindicator3-0.1 gir1.2-clutter-1.0
+  gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-goa-1.0
+  gir1.2-gtkclutter-1.0 gir1.2-gtksource-4 gir1.2-snapd-1 gir1.2-wnck-3.0 gmsh
+  gmsh-doc gnome-screensaver gstreamer1.0-vaapi gtk3-nocsd hplip-data hud
+  hwdata indicator-appmenu indicator-datetime indicator-keyboard
+  indicator-messages indicator-power indicator-printers indicator-session
+  indicator-sound jayatana libaccounts-glib0 libamtk-5-0 libamtk-5-common
+  libappstream-glib8 libassimp-dev libassimp5 libbamf3-2 libblosc1
+  libboost-chrono-dev libboost-math-dev libboost-mpi-dev
+  libboost-serialization-dev libboost-timer-dev libcmor2 libcolumbus1-common
+  libcolumbus1v5 libcompizconfig0 libdbusmenu-qt5-2 libdeal.ii-9.1.1
+  libdecoration0 libdolfin2019.1 libeckit-dev libeckit-utils libeckit0d
+  libexpat1:i386 libfcitx-config4 libfcitx-gclient1 libfcitx-utils0 libffi-dev
+  libfltk-images1.3 libframe6 libfreeimage-dev libfwupdplugin1 libgail-3-0
+  libgeis1 libgeonames-common libgeonames0 libglew2.1 libglewmx1.13
+  libgmsh-dev libgmsh4 libgrail6 libgsettings-qt1
+  libgstreamer-plugins-bad1.0-0 libgtk3-nocsd0 libhpmud0 libido3-0.1-0
+  libjson-c-dev liblaszip8 liblightdm-gobject-1-0 libllvm11 libmagics++-data
+  libmagics++-metview-dev libmagplus3v5 libmetacity1 libmshr2019.1
+  libnemo-extension1 libnetcdf-cxx-legacy-dev libnetplan0 libnfs13
+  libnux-4.0-0 libnux-4.0-common libocct-data-exchange-dev
+  libocct-foundation-dev libocct-modeling-algorithms-dev
+  libocct-modeling-data-dev libocct-ocaf-dev libocct-visualization-dev
+  libodb-api-0d libodb-api-bin libodb-api-data libodb-api-dev libparpack2-dev
+  libpdal-base9 libpdal-plugin-faux libpdal-plugin-icebridge
+  libpdal-plugin-pgpointcloud libpdal-plugin-sqlite libpdal-util9
+  libpetsc3.12-dev-common libpetsc3.12-dev-examples libpfm4 libptscotch-dev
+  libpython3-dev libpython3.8-dev libpython3.8-minimal:i386 libqt5x11extras5
+  librsync2 libsane-hpaio libscotch-dev libsnappy-dev
+  libsqlite3-mod-spatialite libssl-dev libssl1.1:i386 libsundials-arkode2
+  libsundials-cvode3 libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxmu-dev libxmu-headers
+  libxxhash-dev libxxhash0 libz3-4 libz3-dev llvm-9 llvm-9-runtime
+  metacity-common numdiff nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-tables-data python3-fasteners
+  python3-geojson python3-isodate python3-lockfile python3-louis
+  python3-monotonic python3-pkgconfig python3-ply python3-png python3-pyqrcode
+  python3-speechd python3-suds python3-trie python3-u-msgpack
+  session-shortcuts tcl ttf-dejavu-core ttf-dejavu-extra ubuntu-touch-sounds
+  unity-asset-pool unity-greeter unity-gtk-module-common unity-gtk2-module
+  unity-gtk3-module unity-schemas unity-scope-home unity-scopes-master-default
+  unity-services unity-settings-daemon unity-settings-daemon-schemas x11-apps
+  x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  gaviotatb gir1.2-gtksource-3.0 gobject-introspection libgaviotatb1
+  libgtksourceview-3.0-1 libgtksourceview-3.0-common python-cairo python-gi
+  python-gi-cairo python3-markdown
+Suggested packages:
+  python-markdown-doc
+The following NEW packages will be installed:
+  gaviotatb gir1.2-gtksource-3.0 gobject-introspection libgaviotatb1
+  libgtksourceview-3.0-1 libgtksourceview-3.0-common pychess python-cairo
+  python-gi python-gi-cairo python3-markdown
+0 to upgrade, 11 to newly install, 0 to remove and 13 not to upgrade.
+Need to get 4,243 kB of archives.
+After this operation, 18.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgtksourceview-3.0-common all 3.24.11-2 [276 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgtksourceview-3.0-1 amd64 3.24.11-2 [227 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/universe amd64 gir1.2-gtksource-3.0 amd64 3.24.11-2 [18.4 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-markdown all 3.1.1-3 [59.3 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gobject-introspection amd64 1.64.1-1~ubuntu20.04.1 [282 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 python-cairo amd64 1.16.2-2ubuntu2 [57.1 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/universe amd64 python-gi amd64 3.36.0-1 [212 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/universe amd64 python-gi-cairo amd64 3.36.0-1 [7,668 B]
+Get:9 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgaviotatb1 amd64 0.4-2 [47.7 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/universe amd64 gaviotatb all 0.4-2 [288 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 pychess all 0.12.2-1build1 [2,766 kB]
+Fetched 4,243 kB in 4s (1,131 kB/s)   
+Selecting previously unselected package libgtksourceview-3.0-common.
+(Reading database ... 411861 files and directories currently installed.)
+Preparing to unpack .../00-libgtksourceview-3.0-common_3.24.11-2_all.deb ...
+Unpacking libgtksourceview-3.0-common (3.24.11-2) ...
+Selecting previously unselected package libgtksourceview-3.0-1:amd64.
+Preparing to unpack .../01-libgtksourceview-3.0-1_3.24.11-2_amd64.deb ...
+Unpacking libgtksourceview-3.0-1:amd64 (3.24.11-2) ...
+Selecting previously unselected package gir1.2-gtksource-3.0:amd64.
+Preparing to unpack .../02-gir1.2-gtksource-3.0_3.24.11-2_amd64.deb ...
+Unpacking gir1.2-gtksource-3.0:amd64 (3.24.11-2) ...
+Selecting previously unselected package python3-markdown.
+Preparing to unpack .../03-python3-markdown_3.1.1-3_all.deb ...
+Unpacking python3-markdown (3.1.1-3) ...
+Selecting previously unselected package gobject-introspection.
+Preparing to unpack .../04-gobject-introspection_1.64.1-1~ubuntu20.04.1_amd64.de
+b ...
+Unpacking gobject-introspection (1.64.1-1~ubuntu20.04.1) ...
+Selecting previously unselected package python-cairo:amd64.
+Preparing to unpack .../05-python-cairo_1.16.2-2ubuntu2_amd64.deb ...
+Unpacking python-cairo:amd64 (1.16.2-2ubuntu2) ...
+Selecting previously unselected package python-gi.
+Preparing to unpack .../06-python-gi_3.36.0-1_amd64.deb ...
+Unpacking python-gi (3.36.0-1) ...
+Selecting previously unselected package python-gi-cairo.
+Preparing to unpack .../07-python-gi-cairo_3.36.0-1_amd64.deb ...
+Unpacking python-gi-cairo (3.36.0-1) ...
+Selecting previously unselected package libgaviotatb1.
+Preparing to unpack .../08-libgaviotatb1_0.4-2_amd64.deb ...
+Unpacking libgaviotatb1 (0.4-2) ...
+Selecting previously unselected package gaviotatb.
+Preparing to unpack .../09-gaviotatb_0.4-2_all.deb ...
+Unpacking gaviotatb (0.4-2) ...
+Selecting previously unselected package pychess.
+Preparing to unpack .../10-pychess_0.12.2-1build1_all.deb ...
+Unpacking pychess (0.12.2-1build1) ...
+Setting up python-gi (3.36.0-1) ...
+Setting up python-cairo:amd64 (1.16.2-2ubuntu2) ...
+Setting up python3-markdown (3.1.1-3) ...
+Setting up python-gi-cairo (3.36.0-1) ...
+Setting up libgaviotatb1 (0.4-2) ...
+Setting up libgtksourceview-3.0-common (3.24.11-2) ...
+Setting up gaviotatb (0.4-2) ...
+Setting up gobject-introspection (1.64.1-1~ubuntu20.04.1) ...
+Setting up libgtksourceview-3.0-1:amd64 (3.24.11-2) ...
+Setting up gir1.2-gtksource-3.0:amd64 (3.24.11-2) ...
+Setting up pychess (0.12.2-1build1) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for menu (2.1.47ubuntu4) ...
+Processing triggers for bamfdaemon (0.5.3+18.04.20180207.2-0ubuntu2) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+(base) ian@ian-HP-Notebook:~/Downloads$ pychess
+/usr/lib/python2.7/dist-packages/pychess/System/gstreamer.py:35: PyGIWarning: Gst was imported without specifying a version first. Use gi.require_version('Gst', '1.0') before import to ensure that the right version gets loaded.
+  from gi.repository import Gst
+^C(base) ian@ian-HP-Notebook:~/Downloads$ sudo apt remove pychess
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  gaviotatb gedit-common gir1.2-appindicator3-0.1 gir1.2-clutter-1.0
+  gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-goa-1.0
+  gir1.2-gtkclutter-1.0 gir1.2-gtksource-3.0 gir1.2-gtksource-4 gir1.2-snapd-1
+  gir1.2-wnck-3.0 gmsh gmsh-doc gnome-screensaver gobject-introspection
+  gstreamer1.0-vaapi gtk3-nocsd hplip-data hud hwdata indicator-appmenu
+  indicator-datetime indicator-keyboard indicator-messages indicator-power
+  indicator-printers indicator-session indicator-sound jayatana
+  libaccounts-glib0 libamtk-5-0 libamtk-5-common libappstream-glib8
+  libassimp-dev libassimp5 libbamf3-2 libblosc1 libboost-chrono-dev
+  libboost-math-dev libboost-mpi-dev libboost-serialization-dev
+  libboost-timer-dev libcmor2 libcolumbus1-common libcolumbus1v5
+  libcompizconfig0 libdbusmenu-qt5-2 libdeal.ii-9.1.1 libdecoration0
+  libdolfin2019.1 libeckit-dev libeckit-utils libeckit0d libexpat1:i386
+  libfcitx-config4 libfcitx-gclient1 libfcitx-utils0 libffi-dev
+  libfltk-images1.3 libframe6 libfreeimage-dev libfwupdplugin1 libgail-3-0
+  libgaviotatb1 libgeis1 libgeonames-common libgeonames0 libglew2.1
+  libglewmx1.13 libgmsh-dev libgmsh4 libgrail6 libgsettings-qt1
+  libgstreamer-plugins-bad1.0-0 libgtk3-nocsd0 libgtksourceview-3.0-1
+  libgtksourceview-3.0-common libhpmud0 libido3-0.1-0 libjson-c-dev liblaszip8
+  liblightdm-gobject-1-0 libllvm11 libmagics++-data libmagics++-metview-dev
+  libmagplus3v5 libmetacity1 libmshr2019.1 libnemo-extension1
+  libnetcdf-cxx-legacy-dev libnetplan0 libnfs13 libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev libocct-ocaf-dev
+  libocct-visualization-dev libodb-api-0d libodb-api-bin libodb-api-data
+  libodb-api-dev libparpack2-dev libpdal-base9 libpdal-plugin-faux
+  libpdal-plugin-icebridge libpdal-plugin-pgpointcloud libpdal-plugin-sqlite
+  libpdal-util9 libpetsc3.12-dev-common libpetsc3.12-dev-examples libpfm4
+  libptscotch-dev libpython3-dev libpython3.8-dev libpython3.8-minimal:i386
+  libqt5x11extras5 librsync2 libsane-hpaio libscotch-dev libsnappy-dev
+  libsqlite3-mod-spatialite libssl-dev libssl1.1:i386 libsundials-arkode2
+  libsundials-cvode3 libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxmu-dev libxmu-headers
+  libxxhash-dev libxxhash0 libz3-4 libz3-dev llvm-9 llvm-9-runtime
+  metacity-common numdiff nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-cairo python-gi python-gi-cairo
+  python-tables-data python3-fasteners python3-geojson python3-isodate
+  python3-lockfile python3-louis python3-markdown python3-monotonic
+  python3-pkgconfig python3-ply python3-png python3-pyqrcode python3-speechd
+  python3-suds python3-trie python3-u-msgpack session-shortcuts tcl
+  ttf-dejavu-core ttf-dejavu-extra ubuntu-touch-sounds unity-asset-pool
+  unity-greeter unity-gtk-module-common unity-gtk2-module unity-gtk3-module
+  unity-schemas unity-scope-home unity-scopes-master-default unity-services
+  unity-settings-daemon unity-settings-daemon-schemas x11-apps
+  x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  pychess
+0 to upgrade, 0 to newly install, 1 to remove and 13 not to upgrade.
+After this operation, 11.3 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 413218 files and directories currently installed.)
+Removing pychess (0.12.2-1build1) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for menu (2.1.47ubuntu4) ...
+Processing triggers for bamfdaemon (0.5.3+18.04.20180207.2-0ubuntu2) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+(base) ian@ian-HP-Notebook:~/Downloads$ pip install pychess
+ERROR: Could not find a version that satisfies the requirement pychess (from versions: none)
+ERROR: No matching distribution found for pychess
+(base) ian@ian-HP-Notebook:~/Downloads$ pip3 install pychess
+ERROR: Could not find a version that satisfies the requirement pychess (from versions: none)
+ERROR: No matching distribution found for pychess
+(base) ian@ian-HP-Notebook:~/Downloads$ sudo apt remove xboard
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  fairymax gaviotatb gedit-common gir1.2-appindicator3-0.1 gir1.2-clutter-1.0
+  gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-goa-1.0
+  gir1.2-gtkclutter-1.0 gir1.2-gtksource-3.0 gir1.2-gtksource-4 gir1.2-snapd-1
+  gir1.2-wnck-3.0 gmsh gmsh-doc gnome-screensaver gobject-introspection
+  gstreamer1.0-vaapi gtk3-nocsd hplip-data hud hwdata indicator-appmenu
+  indicator-datetime indicator-keyboard indicator-messages indicator-power
+  indicator-printers indicator-session indicator-sound jayatana
+  libaccounts-glib0 libamtk-5-0 libamtk-5-common libappstream-glib8
+  libassimp-dev libassimp5 libbamf3-2 libblosc1 libboost-chrono-dev
+  libboost-math-dev libboost-mpi-dev libboost-serialization-dev
+  libboost-timer-dev libcmor2 libcolumbus1-common libcolumbus1v5
+  libcompizconfig0 libdbusmenu-qt5-2 libdeal.ii-9.1.1 libdecoration0
+  libdolfin2019.1 libeckit-dev libeckit-utils libeckit0d libexpat1:i386
+  libfcitx-config4 libfcitx-gclient1 libfcitx-utils0 libffi-dev
+  libfltk-images1.3 libframe6 libfreeimage-dev libfwupdplugin1 libgail-3-0
+  libgaviotatb1 libgeis1 libgeonames-common libgeonames0 libglew2.1
+  libglewmx1.13 libgmsh-dev libgmsh4 libgrail6 libgsettings-qt1
+  libgstreamer-plugins-bad1.0-0 libgtk3-nocsd0 libgtksourceview-3.0-1
+  libgtksourceview-3.0-common libhpmud0 libido3-0.1-0 libjson-c-dev liblaszip8
+  liblightdm-gobject-1-0 libllvm11 libmagics++-data libmagics++-metview-dev
+  libmagplus3v5 libmetacity1 libmshr2019.1 libnemo-extension1
+  libnetcdf-cxx-legacy-dev libnetplan0 libnfs13 libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev libocct-ocaf-dev
+  libocct-visualization-dev libodb-api-0d libodb-api-bin libodb-api-data
+  libodb-api-dev libparpack2-dev libpdal-base9 libpdal-plugin-faux
+  libpdal-plugin-icebridge libpdal-plugin-pgpointcloud libpdal-plugin-sqlite
+  libpdal-util9 libpetsc3.12-dev-common libpetsc3.12-dev-examples libpfm4
+  libptscotch-dev libpython3-dev libpython3.8-dev libpython3.8-minimal:i386
+  libqt5x11extras5 librsync2 libsane-hpaio libscotch-dev libsnappy-dev
+  libsqlite3-mod-spatialite libssl-dev libssl1.1:i386 libsundials-arkode2
+  libsundials-cvode3 libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxmu-dev libxmu-headers
+  libxxhash-dev libxxhash0 libz3-4 libz3-dev llvm-9 llvm-9-runtime
+  metacity-common numdiff nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-cairo python-gi python-gi-cairo
+  python-tables-data python3-fasteners python3-geojson python3-isodate
+  python3-lockfile python3-louis python3-markdown python3-monotonic
+  python3-pkgconfig python3-ply python3-png python3-pyqrcode python3-speechd
+  python3-suds python3-trie python3-u-msgpack session-shortcuts tcl
+  ttf-dejavu-core ttf-dejavu-extra ubuntu-touch-sounds unity-asset-pool
+  unity-greeter unity-gtk-module-common unity-gtk2-module unity-gtk3-module
+  unity-schemas unity-scope-home unity-scopes-master-default unity-services
+  unity-settings-daemon unity-settings-daemon-schemas x11-apps
+  x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  xboard
+0 to upgrade, 0 to newly install, 1 to remove and 13 not to upgrade.
+After this operation, 3,553 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 412375 files and directories currently installed.)
+Removing xboard (4.9.1-1build1) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for shared-mime-info (1.15-1) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for menu (2.1.47ubuntu4) ...
+Processing triggers for bamfdaemon (0.5.3+18.04.20180207.2-0ubuntu2) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+(base) ian@ian-HP-Notebook:~/Downloads$ wget http://mirror.us-midwest-1.nexcess.net/gnu/xboard/xboard-4.9.1.tar.gz
+--2022-11-09 10:33:15--  http://mirror.us-midwest-1.nexcess.net/gnu/xboard/xboard-4.9.1.tar.gz
+Resolving mirror.us-midwest-1.nexcess.net (mirror.us-midwest-1.nexcess.net)... 208.69.120.125
+Connecting to mirror.us-midwest-1.nexcess.net (mirror.us-midwest-1.nexcess.net)|208.69.120.125|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4015017 (3.8M) [application/octet-stream]
+Saving to: 'xboard-4.9.1.tar.gz’
+
+xboard-4.9.1.tar.gz 100%[===================>]   3.83M  1.97MB/s    in 1.9s    
+
+2022-11-09 10:33:18 (1.97 MB/s) - 'xboard-4.9.1.tar.gz’ saved [4015017/4015017]
+
+(base) ian@ian-HP-Notebook:~/Downloads$ tar -xzvf xboard-4.9.1.tar.gz
+xboard-4.9.1/
+xboard-4.9.1/po/
+xboard-4.9.1/po/uk.po
+xboard-4.9.1/po/pl.po
+xboard-4.9.1/po/insert-header.sin
+xboard-4.9.1/po/vi.gmo
+xboard-4.9.1/po/zh_TW.po
+xboard-4.9.1/po/quot.sed
+xboard-4.9.1/po/de.gmo
+xboard-4.9.1/po/de.po
+xboard-4.9.1/po/Rules-quot
+xboard-4.9.1/po/sr.gmo
+xboard-4.9.1/po/xboard.pot
+xboard-4.9.1/po/nl.gmo
+xboard-4.9.1/po/LINGUAS
+xboard-4.9.1/po/boldquot.sed
+xboard-4.9.1/po/ru.gmo
+xboard-4.9.1/po/pl.gmo
+xboard-4.9.1/po/uk.gmo
+xboard-4.9.1/po/en@quot.header
+xboard-4.9.1/po/es.po
+xboard-4.9.1/po/da.po
+xboard-4.9.1/po/zh_HK.po
+xboard-4.9.1/po/POTFILES.in
+xboard-4.9.1/po/vi.po
+xboard-4.9.1/po/ru.po
+xboard-4.9.1/po/stamp-po
+xboard-4.9.1/po/Makevars
+xboard-4.9.1/po/zh_HK.gmo
+xboard-4.9.1/po/fr.po
+xboard-4.9.1/po/it.gmo
+xboard-4.9.1/po/it.po
+xboard-4.9.1/po/tr.po
+xboard-4.9.1/po/zh_CN.po
+xboard-4.9.1/po/tr.gmo
+xboard-4.9.1/po/remove-potcdate.sin
+xboard-4.9.1/po/sr.po
+xboard-4.9.1/po/en@boldquot.header
+xboard-4.9.1/po/da.gmo
+xboard-4.9.1/po/fr.gmo
+xboard-4.9.1/po/es.gmo
+xboard-4.9.1/po/zh_TW.gmo
+xboard-4.9.1/po/nl.po
+xboard-4.9.1/po/Makefile.in.in
+xboard-4.9.1/po/zh_CN.gmo
+xboard-4.9.1/COPYRIGHT
+xboard-4.9.1/history.c
+xboard-4.9.1/pgntags.c
+xboard-4.9.1/moves.h
+xboard-4.9.1/INSTALL
+xboard-4.9.1/config.guess
+xboard-4.9.1/gamelist.c
+xboard-4.9.1/FAQ.html
+xboard-4.9.1/install-sh
+xboard-4.9.1/depcomp
+xboard-4.9.1/cmail.in
+xboard-4.9.1/ics-parsing.txt
+xboard-4.9.1/draw.h
+xboard-4.9.1/evalgraph.c
+xboard-4.9.1/book.c
+xboard-4.9.1/backend.h
+xboard-4.9.1/README
+xboard-4.9.1/m4/
+xboard-4.9.1/m4/intlmacosx.m4
+xboard-4.9.1/m4/progtest.m4
+xboard-4.9.1/m4/gettext.m4
+xboard-4.9.1/m4/nls.m4
+xboard-4.9.1/m4/po.m4
+xboard-4.9.1/m4/lib-ld.m4
+xboard-4.9.1/m4/lib-prefix.m4
+xboard-4.9.1/m4/iconv.m4
+xboard-4.9.1/m4/lib-link.m4
+xboard-4.9.1/svg/
+xboard-4.9.1/svg/BlackLShield.svg
+xboard-4.9.1/svg/WhiteGoldSilver.svg
+xboard-4.9.1/svg/WhiteHSword.svg
+xboard-4.9.1/svg/BlackCanon.svg
+xboard-4.9.1/svg/WhitePromoHorse.svg
+xboard-4.9.1/svg/WhiteRShield.svg
+xboard-4.9.1/svg/WhiteAdvisor.svg
+xboard-4.9.1/svg/WhiteHawk.svg
+xboard-4.9.1/svg/BlackGoldLance.svg
+xboard-4.9.1/svg/BlackPromoHorse.svg
+xboard-4.9.1/svg/WhiteRook.svg
+xboard-4.9.1/svg/BlackCopper.svg
+xboard-4.9.1/svg/WhitePromoSword.svg
+xboard-4.9.1/svg/BlackCrownedRook.svg
+xboard-4.9.1/svg/WhiteNightrider.svg
+xboard-4.9.1/svg/BlackArchbishop.svg
+xboard-4.9.1/svg/WhiteIron.svg
+xboard-4.9.1/svg/eo_White.svg
+xboard-4.9.1/svg/BlackZebra.svg
+xboard-4.9.1/svg/BlackDragon.svg
+xboard-4.9.1/svg/WhiteGnu.svg
+xboard-4.9.1/svg/WhiteAxe.svg
+xboard-4.9.1/svg/WhiteSword.svg
+xboard-4.9.1/svg/BlackHawk.svg
+xboard-4.9.1/svg/WhiteLion.svg
+xboard-4.9.1/svg/BlackWolf.svg
+xboard-4.9.1/svg/WhiteDuck.svg
+xboard-4.9.1/svg/WhitePromoRook.svg
+xboard-4.9.1/svg/BlackGoldPawn.svg
+xboard-4.9.1/svg/BlackQueen.svg
+xboard-4.9.1/svg/WhiteHat.svg
+xboard-4.9.1/svg/BlackPromoHSword.svg
+xboard-4.9.1/svg/WhiteDragon.svg
+xboard-4.9.1/svg/WhiteQueen.svg
+xboard-4.9.1/svg/BlackGoldKnight.svg
+xboard-4.9.1/svg/WhiteGoldKnight.svg
+xboard-4.9.1/svg/BlackPegasus.svg
+xboard-4.9.1/svg/WhiteBishop.svg
+xboard-4.9.1/svg/BlackAxe.svg
+xboard-4.9.1/svg/WhiteArchbishop.svg
+xboard-4.9.1/svg/BlackCobra.svg
+xboard-4.9.1/svg/BlackPromoDragon.svg
+xboard-4.9.1/svg/BlackCrownedBishop.svg
+xboard-4.9.1/svg/WhitePromoHSword.svg
+xboard-4.9.1/svg/BlackKing.svg
+xboard-4.9.1/svg/WhiteDolphin.svg
+xboard-4.9.1/svg/WhiteFlag.svg
+xboard-4.9.1/svg/BlackButterfly.svg
+xboard-4.9.1/svg/icon_black.svg
+xboard-4.9.1/svg/BlackMarshall.svg
+xboard-4.9.1/svg/BlackViking.svg
+xboard-4.9.1/svg/eo_Clear.svg
+xboard-4.9.1/svg/BlackLeopard.svg
+xboard-4.9.1/svg/WhiteCommoner.svg
+xboard-4.9.1/svg/BlackPrincess.svg
+xboard-4.9.1/svg/BlackPromoSword.svg
+xboard-4.9.1/svg/WhiteZebra.svg
+xboard-4.9.1/svg/WhiteUnicorn.svg
+xboard-4.9.1/svg/WhiteWizard.svg
+xboard-4.9.1/svg/BlackUnicorn.svg
+xboard-4.9.1/svg/WhitePromoBishop.svg
+xboard-4.9.1/svg/WhiteGold.svg
+xboard-4.9.1/svg/BlackRook.svg
+xboard-4.9.1/svg/BlackDuck.svg
+xboard-4.9.1/svg/WhiteKing.svg
+xboard-4.9.1/svg/WhiteGoldLance.svg
+xboard-4.9.1/svg/WhiteClaw.svg
+xboard-4.9.1/svg/WhitePegasus.svg
+xboard-4.9.1/svg/BlackCub.svg
+xboard-4.9.1/svg/WhiteCobra.svg
+xboard-4.9.1/svg/WhiteMarshall.svg
+xboard-4.9.1/svg/eo_Analyzing.svg
+xboard-4.9.1/svg/WhiteLance.svg
+xboard-4.9.1/svg/BlackPromoRook.svg
+xboard-4.9.1/svg/WhiteChancellor.svg
+xboard-4.9.1/svg/BlackLance.svg
+xboard-4.9.1/svg/BlackGold.svg
+xboard-4.9.1/svg/BlackSword.svg
+xboard-4.9.1/svg/BlackTower.svg
+xboard-4.9.1/svg/BlackHat.svg
+xboard-4.9.1/svg/WhiteButterfly.svg
+xboard-4.9.1/svg/WhiteTower.svg
+xboard-4.9.1/svg/WhitePrincess.svg
+xboard-4.9.1/svg/BlackBishop.svg
+xboard-4.9.1/svg/WhitePromoDragon.svg
+xboard-4.9.1/svg/BlackHCrown.svg
+xboard-4.9.1/svg/WhiteCrownedBishop.svg
+xboard-4.9.1/svg/BlackLeft.svg
+xboard-4.9.1/svg/icon_white.svg
+xboard-4.9.1/svg/BlackCamel.svg
+xboard-4.9.1/svg/WhiteLeopard.svg
+xboard-4.9.1/svg/BlackLion.svg
+xboard-4.9.1/svg/WhiteGoldPawn.svg
+xboard-4.9.1/svg/WhitePawn.svg
+xboard-4.9.1/svg/BlackKnight.svg
+xboard-4.9.1/svg/WhiteHCrown.svg
+xboard-4.9.1/svg/WhiteCub.svg
+xboard-4.9.1/svg/BlackClaw.svg
+xboard-4.9.1/svg/eo_Ponder.svg
+xboard-4.9.1/svg/BlackWizard.svg
+xboard-4.9.1/svg/WhiteLeft.svg
+xboard-4.9.1/svg/WhiteCanon.svg
+xboard-4.9.1/svg/BlackIron.svg
+xboard-4.9.1/svg/BlackFlag.svg
+xboard-4.9.1/svg/WhiteKnight.svg
+xboard-4.9.1/svg/BlackGnu.svg
+xboard-4.9.1/svg/WhiteViking.svg
+xboard-4.9.1/svg/WhiteWolf.svg
+xboard-4.9.1/svg/BlackDolphin.svg
+xboard-4.9.1/svg/BlackElephant.svg
+xboard-4.9.1/svg/eo_Unknown.svg
+xboard-4.9.1/svg/WhiteRight.svg
+xboard-4.9.1/svg/WhiteElephant.svg
+xboard-4.9.1/svg/BlackNightrider.svg
+xboard-4.9.1/svg/BlackGoldSilver.svg
+xboard-4.9.1/svg/BlackRight.svg
+xboard-4.9.1/svg/BlackPromoBishop.svg
+xboard-4.9.1/svg/eo_Black.svg
+xboard-4.9.1/svg/eo_Thinking.svg
+xboard-4.9.1/svg/BlackAdvisor.svg
+xboard-4.9.1/svg/BlackCommoner.svg
+xboard-4.9.1/svg/WhiteCopper.svg
+xboard-4.9.1/svg/BlackRShield.svg
+xboard-4.9.1/svg/WhiteCrownedRook.svg
+xboard-4.9.1/svg/BlackHSword.svg
+xboard-4.9.1/svg/BlackChancellor.svg
+xboard-4.9.1/svg/WhiteLShield.svg
+xboard-4.9.1/svg/BlackPawn.svg
+xboard-4.9.1/svg/WhiteCamel.svg
+xboard-4.9.1/compile
+xboard-4.9.1/zippy.README
+xboard-4.9.1/engineoutput.h
+xboard-4.9.1/childio.h
+xboard-4.9.1/nhistory.c
+xboard-4.9.1/xboard.xml
+xboard-4.9.1/configure
+xboard-4.9.1/draw.c
+xboard-4.9.1/conf/
+xboard-4.9.1/conf/mini.fen
+xboard-4.9.1/conf/xq
+xboard-4.9.1/conf/ics
+xboard-4.9.1/conf/sho.fen
+xboard-4.9.1/conf/shogi
+xboard-4.9.1/conf/sho
+xboard-4.9.1/conf/mini
+xboard-4.9.1/sounds/
+xboard-4.9.1/sounds/channel1.wav
+xboard-4.9.1/sounds/lose.wav
+xboard-4.9.1/sounds/unfinished.wav
+xboard-4.9.1/sounds/squeak.wav
+xboard-4.9.1/sounds/tell.wav
+xboard-4.9.1/sounds/README
+xboard-4.9.1/sounds/challenge.wav
+xboard-4.9.1/sounds/pop.wav
+xboard-4.9.1/sounds/laser.wav
+xboard-4.9.1/sounds/phone.wav
+xboard-4.9.1/sounds/swish.wav
+xboard-4.9.1/sounds/alarm.wav
+xboard-4.9.1/sounds/draw.wav
+xboard-4.9.1/sounds/slap.wav
+xboard-4.9.1/sounds/channel.wav
+xboard-4.9.1/sounds/shout.wav
+xboard-4.9.1/sounds/whipcrak.wav
+xboard-4.9.1/sounds/cymbal.wav
+xboard-4.9.1/sounds/seek.wav
+xboard-4.9.1/sounds/move.wav
+xboard-4.9.1/sounds/thud.wav
+xboard-4.9.1/sounds/woodthunk.wav
+xboard-4.9.1/sounds/click.wav
+xboard-4.9.1/sounds/request.wav
+xboard-4.9.1/sounds/kibitz.wav
+xboard-4.9.1/sounds/ding1.wav
+xboard-4.9.1/sounds/sshout.wav
+xboard-4.9.1/sounds/win.wav
+xboard-4.9.1/sounds/drip.wav
+xboard-4.9.1/sounds/honkhonk.wav
+xboard-4.9.1/sounds/gong.wav
+xboard-4.9.1/sounds/penalty.wav
+xboard-4.9.1/sounds/roar.wav
+xboard-4.9.1/sounds/ching.wav
+xboard-4.9.1/sounds/pop2.wav
+xboard-4.9.1/configure.ac
+xboard-4.9.1/Makefile.in
+xboard-4.9.1/winboard/
+xboard-4.9.1/winboard/winboard.dsw
+xboard-4.9.1/winboard/makefile.gcc
+xboard-4.9.1/winboard/wchat.c
+xboard-4.9.1/winboard/winboard.dsp
+xboard-4.9.1/winboard/help.c
+xboard-4.9.1/winboard/makefile.ms
+xboard-4.9.1/winboard/help.h
+xboard-4.9.1/winboard/internationalize
+xboard-4.9.1/winboard/wsockerr.h
+xboard-4.9.1/winboard/woptions.c
+xboard-4.9.1/winboard/Winboard.dev
+xboard-4.9.1/winboard/winboard.hpj
+xboard-4.9.1/winboard/wedittags.c
+xboard-4.9.1/winboard/wsettings.c
+xboard-4.9.1/winboard/shogibitmaps/
+xboard-4.9.1/winboard/shogibitmaps/bamazon.bmp
+xboard-4.9.1/winboard/shogibitmaps/sn58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sb58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sa58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/README
+xboard-4.9.1/winboard/shogibitmaps/largeking.bmp
+xboard-4.9.1/winboard/shogibitmaps/sl58w.bmp
+xboard-4.9.1/winboard/shogibitmaps/sn58w.bmp
+xboard-4.9.1/winboard/shogibitmaps/sf58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sp58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sp58w.bmp
+xboard-4.9.1/winboard/shogibitmaps/sc58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sh58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sr58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sk58w.bmp
+xboard-4.9.1/winboard/shogibitmaps/sg58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sw58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sw58w.bmp
+xboard-4.9.1/winboard/shogibitmaps/king.bmp
+xboard-4.9.1/winboard/shogibitmaps/su58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/ss58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sr58w.bmp
+xboard-4.9.1/winboard/shogibitmaps/sk58o.bmp
+xboard-4.9.1/winboard/shogibitmaps/sl58o.bmp
+xboard-4.9.1/winboard/wsockerr.c
+xboard-4.9.1/winboard/jaws.c
+xboard-4.9.1/winboard/resource.h
+xboard-4.9.1/winboard/language/
+xboard-4.9.1/winboard/language/romanian.lng
+xboard-4.9.1/winboard/language/chinese(trad).lng
+xboard-4.9.1/winboard/language/deutsch.lng
+xboard-4.9.1/winboard/language/italiano.lng
+xboard-4.9.1/winboard/language/chinese(simp).lng
+xboard-4.9.1/winboard/language/spanish.lng
+xboard-4.9.1/winboard/language/nederlands.lng
+xboard-4.9.1/winboard/language/russian.lng
+xboard-4.9.1/winboard/language/vietnamese.lng
+xboard-4.9.1/winboard/res/
+xboard-4.9.1/winboard/res/winboard.exe.manifest
+xboard-4.9.1/winboard/bitmaps/
+xboard-4.9.1/winboard/bitmaps/p33s.bmp
+xboard-4.9.1/winboard/bitmaps/c72w.bmp
+xboard-4.9.1/winboard/bitmaps/f72w.bmp
+xboard-4.9.1/winboard/bitmaps/b58s.bmp
+xboard-4.9.1/winboard/bitmaps/q72s.bmp
+xboard-4.9.1/winboard/bitmaps/c58w.bmp
+xboard-4.9.1/winboard/bitmaps/s72s.bmp
+xboard-4.9.1/winboard/bitmaps/e49w.bmp
+xboard-4.9.1/winboard/bitmaps/r80o.bmp
+xboard-4.9.1/winboard/bitmaps/n45o.bmp
+xboard-4.9.1/winboard/bitmaps/r87o.bmp
+xboard-4.9.1/winboard/bitmaps/w72o.bmp
+xboard-4.9.1/winboard/bitmaps/l45o.bmp
+xboard-4.9.1/winboard/bitmaps/k21w.bmp
+xboard-4.9.1/winboard/bitmaps/b54s.bmp
+xboard-4.9.1/winboard/bitmaps/a58w.bmp
+xboard-4.9.1/winboard/bitmaps/wn72s.bmp
+xboard-4.9.1/winboard/bitmaps/r25s.bmp
+xboard-4.9.1/winboard/bitmaps/r54o.bmp
+xboard-4.9.1/winboard/bitmaps/m33w.bmp
+xboard-4.9.1/winboard/bitmaps/p29s.bmp
+xboard-4.9.1/winboard/bitmaps/n29o.bmp
+xboard-4.9.1/winboard/bitmaps/a37w.bmp
+xboard-4.9.1/winboard/bitmaps/k58o.bmp
+xboard-4.9.1/winboard/bitmaps/a64s.bmp
+xboard-4.9.1/winboard/bitmaps/k80w.bmp
+xboard-4.9.1/winboard/bitmaps/q58s.bmp
+xboard-4.9.1/winboard/bitmaps/b33w.bmp
+xboard-4.9.1/winboard/bitmaps/k116o.bmp
+xboard-4.9.1/winboard/bitmaps/a40s.bmp
+xboard-4.9.1/winboard/bitmaps/k87s.bmp
+xboard-4.9.1/winboard/bitmaps/n72o.bmp
+xboard-4.9.1/winboard/bitmaps/o72o.bmp
+xboard-4.9.1/winboard/bitmaps/a54o.bmp
+xboard-4.9.1/winboard/bitmaps/cv37s.bmp
+xboard-4.9.1/winboard/bitmaps/p25o.bmp
+xboard-4.9.1/winboard/bitmaps/f72o.bmp
+xboard-4.9.1/winboard/bitmaps/n95w.bmp
+xboard-4.9.1/winboard/bitmaps/a58o.bmp
+xboard-4.9.1/winboard/bitmaps/b29s.bmp
+xboard-4.9.1/winboard/bitmaps/r25w.bmp
+xboard-4.9.1/winboard/bitmaps/w72w.bmp
+xboard-4.9.1/winboard/bitmaps/n58s.bmp
+xboard-4.9.1/winboard/bitmaps/l49w.bmp
+xboard-4.9.1/winboard/bitmaps/q21o.bmp
+xboard-4.9.1/winboard/bitmaps/b40s.bmp
+xboard-4.9.1/winboard/bitmaps/icon_ob.ico
+xboard-4.9.1/winboard/bitmaps/h72o.bmp
+xboard-4.9.1/winboard/bitmaps/q29s.bmp
+xboard-4.9.1/winboard/bitmaps/h49s.bmp
+xboard-4.9.1/winboard/bitmaps/c45o.bmp
+xboard-4.9.1/winboard/bitmaps/p29o.bmp
+xboard-4.9.1/winboard/bitmaps/r58o.bmp
+xboard-4.9.1/winboard/bitmaps/b58o.bmp
+xboard-4.9.1/winboard/bitmaps/cv33s.bmp
+xboard-4.9.1/winboard/bitmaps/c37o.bmp
+xboard-4.9.1/winboard/bitmaps/e33s.bmp
+xboard-4.9.1/winboard/bitmaps/b54w.bmp
+xboard-4.9.1/winboard/bitmaps/c33w.bmp
+xboard-4.9.1/winboard/bitmaps/r25o.bmp
+xboard-4.9.1/winboard/bitmaps/a72s.bmp
+xboard-4.9.1/winboard/bitmaps/n29s.bmp
+xboard-4.9.1/winboard/bitmaps/r108w.bmp
+xboard-4.9.1/winboard/bitmaps/unknown_14.ico
+xboard-4.9.1/winboard/bitmaps/a72w.bmp
+xboard-4.9.1/winboard/bitmaps/b80o.bmp
+xboard-4.9.1/winboard/bitmaps/n64w.bmp
+xboard-4.9.1/winboard/bitmaps/w33w.bmp
+xboard-4.9.1/winboard/bitmaps/cv64s.bmp
+xboard-4.9.1/winboard/bitmaps/analyze2_14.ico
+xboard-4.9.1/winboard/bitmaps/board.ico
+xboard-4.9.1/winboard/bitmaps/cv54s.bmp
+xboard-4.9.1/winboard/bitmaps/p21s.bmp
+xboard-4.9.1/winboard/bitmaps/b129s.bmp
+xboard-4.9.1/winboard/bitmaps/dk72s.bmp
+xboard-4.9.1/winboard/bitmaps/k45o.bmp
+xboard-4.9.1/winboard/bitmaps/n108o.bmp
+xboard-4.9.1/winboard/bitmaps/n58o.bmp
+xboard-4.9.1/winboard/bitmaps/q25w.bmp
+xboard-4.9.1/winboard/bitmaps/cv33w.bmp
+xboard-4.9.1/winboard/bitmaps/b116s.bmp
+xboard-4.9.1/winboard/bitmaps/h33o.bmp
+xboard-4.9.1/winboard/bitmaps/cv45s.bmp
+xboard-4.9.1/winboard/bitmaps/dk33s.bmp
+xboard-4.9.1/winboard/bitmaps/r33w.bmp
+xboard-4.9.1/winboard/bitmaps/ln72s.bmp
+xboard-4.9.1/winboard/bitmaps/wolf72o.bmp
+xboard-4.9.1/winboard/bitmaps/r37s.bmp
+xboard-4.9.1/winboard/bitmaps/g72w.bmp
+xboard-4.9.1/winboard/bitmaps/k37o.bmp
+xboard-4.9.1/winboard/bitmaps/p40w.bmp
+xboard-4.9.1/winboard/bitmaps/a72o.bmp
+xboard-4.9.1/winboard/bitmaps/wl49s.bmp
+xboard-4.9.1/winboard/bitmaps/n25o.bmp
+xboard-4.9.1/winboard/bitmaps/r49s.bmp
+xboard-4.9.1/winboard/bitmaps/as33o.bmp
+xboard-4.9.1/winboard/bitmaps/q45w.bmp
+xboard-4.9.1/winboard/bitmaps/a33s.bmp
+xboard-4.9.1/winboard/bitmaps/cv64o.bmp
+xboard-4.9.1/winboard/bitmaps/k21o.bmp
+xboard-4.9.1/winboard/bitmaps/b95w.bmp
+xboard-4.9.1/winboard/bitmaps/l49o.bmp
+xboard-4.9.1/winboard/bitmaps/l40s.bmp
+xboard-4.9.1/winboard/bitmaps/q129w.bmp
+xboard-4.9.1/winboard/bitmaps/k45w.bmp
+xboard-4.9.1/winboard/bitmaps/l54s.bmp
+xboard-4.9.1/winboard/bitmaps/c33s.bmp
+xboard-4.9.1/winboard/bitmaps/n72w.bmp
+xboard-4.9.1/winboard/bitmaps/q45o.bmp
+xboard-4.9.1/winboard/bitmaps/n45w.bmp
+xboard-4.9.1/winboard/bitmaps/as49o.bmp
+xboard-4.9.1/winboard/bitmaps/k29w.bmp
+xboard-4.9.1/winboard/bitmaps/as72o.bmp
+xboard-4.9.1/winboard/bitmaps/k64s.bmp
+xboard-4.9.1/winboard/bitmaps/cv54o.bmp
+xboard-4.9.1/winboard/bitmaps/k25w.bmp
+xboard-4.9.1/winboard/bitmaps/c33o.bmp
+xboard-4.9.1/winboard/bitmaps/b29o.bmp
+xboard-4.9.1/winboard/bitmaps/h49w.bmp
+xboard-4.9.1/winboard/bitmaps/q58o.bmp
+xboard-4.9.1/winboard/bitmaps/n21w.bmp
+xboard-4.9.1/winboard/bitmaps/k64w.bmp
+xboard-4.9.1/winboard/bitmaps/n80s.bmp
+xboard-4.9.1/winboard/bitmaps/a33w.bmp
+xboard-4.9.1/winboard/bitmaps/p45s.bmp
+xboard-4.9.1/winboard/bitmaps/c40w.bmp
+xboard-4.9.1/winboard/bitmaps/p108w.bmp
+xboard-4.9.1/winboard/bitmaps/k54w.bmp
+xboard-4.9.1/winboard/bitmaps/k40s.bmp
+xboard-4.9.1/winboard/bitmaps/n54w.bmp
+xboard-4.9.1/winboard/bitmaps/f72s.bmp
+xboard-4.9.1/winboard/bitmaps/b116o.bmp
+xboard-4.9.1/winboard/bitmaps/n25w.bmp
+xboard-4.9.1/winboard/bitmaps/c37w.bmp
+xboard-4.9.1/winboard/bitmaps/r95s.bmp
+xboard-4.9.1/winboard/bitmaps/n116w.bmp
+xboard-4.9.1/winboard/bitmaps/p40s.bmp
+xboard-4.9.1/winboard/bitmaps/k116s.bmp
+xboard-4.9.1/winboard/bitmaps/l72w.bmp
+xboard-4.9.1/winboard/bitmaps/r129w.bmp
+xboard-4.9.1/winboard/bitmaps/l37s.bmp
+xboard-4.9.1/winboard/bitmaps/q87w.bmp
+xboard-4.9.1/winboard/bitmaps/b64o.bmp
+xboard-4.9.1/winboard/bitmaps/icon_w.bmp
+xboard-4.9.1/winboard/bitmaps/n49o.bmp
+xboard-4.9.1/winboard/bitmaps/n45s.bmp
+xboard-4.9.1/winboard/bitmaps/e129o.bmp
+xboard-4.9.1/winboard/bitmaps/q40s.bmp
+xboard-4.9.1/winboard/bitmaps/b45s.bmp
+xboard-4.9.1/winboard/bitmaps/k49s.bmp
+xboard-4.9.1/winboard/bitmaps/k129w.bmp
+xboard-4.9.1/winboard/bitmaps/b40o.bmp
+xboard-4.9.1/winboard/bitmaps/p49o.bmp
+xboard-4.9.1/winboard/bitmaps/b129o.bmp
+xboard-4.9.1/winboard/bitmaps/cv37o.bmp
+xboard-4.9.1/winboard/bitmaps/w33o.bmp
+xboard-4.9.1/winboard/bitmaps/n116s.bmp
+xboard-4.9.1/winboard/bitmaps/wp33o.bmp
+xboard-4.9.1/winboard/bitmaps/r29s.bmp
+xboard-4.9.1/winboard/bitmaps/q40o.bmp
+xboard-4.9.1/winboard/bitmaps/q54w.bmp
+xboard-4.9.1/winboard/bitmaps/n33s.bmp
+xboard-4.9.1/winboard/bitmaps/r108o.bmp
+xboard-4.9.1/winboard/bitmaps/b108w.bmp
+xboard-4.9.1/winboard/bitmaps/k95w.bmp
+xboard-4.9.1/winboard/bitmaps/b72s.bmp
+xboard-4.9.1/winboard/bitmaps/q37w.bmp
+xboard-4.9.1/winboard/bitmaps/r45o.bmp
+xboard-4.9.1/winboard/bitmaps/r72s.bmp
+xboard-4.9.1/winboard/bitmaps/n21o.bmp
+xboard-4.9.1/winboard/bitmaps/o49s.bmp
+xboard-4.9.1/winboard/bitmaps/c64o.bmp
+xboard-4.9.1/winboard/bitmaps/icon_o.ico
+xboard-4.9.1/winboard/bitmaps/dk33o.bmp
+xboard-4.9.1/winboard/bitmaps/o33w.bmp
+xboard-4.9.1/winboard/bitmaps/q25o.bmp
+xboard-4.9.1/winboard/bitmaps/ws49o.bmp
+xboard-4.9.1/winboard/bitmaps/n33o.bmp
+xboard-4.9.1/winboard/bitmaps/wl49o.bmp
+xboard-4.9.1/winboard/bitmaps/p72s.bmp
+xboard-4.9.1/winboard/bitmaps/k72s.bmp
+xboard-4.9.1/winboard/bitmaps/c40s.bmp
+xboard-4.9.1/winboard/bitmaps/as33w.bmp
+xboard-4.9.1/winboard/bitmaps/p54w.bmp
+xboard-4.9.1/winboard/bitmaps/wolf49o.bmp
+xboard-4.9.1/winboard/bitmaps/k45s.bmp
+xboard-4.9.1/winboard/bitmaps/l72o.bmp
+xboard-4.9.1/winboard/bitmaps/wolf49s.bmp
+xboard-4.9.1/winboard/bitmaps/p58o.bmp
+xboard-4.9.1/winboard/bitmaps/h49o.bmp
+xboard-4.9.1/winboard/bitmaps/n95o.bmp
+xboard-4.9.1/winboard/bitmaps/c49o.bmp
+xboard-4.9.1/winboard/bitmaps/k54s.bmp
+xboard-4.9.1/winboard/bitmaps/r72o.bmp
+xboard-4.9.1/winboard/bitmaps/r45s.bmp
+xboard-4.9.1/winboard/bitmaps/r54w.bmp
+xboard-4.9.1/winboard/bitmaps/b54o.bmp
+xboard-4.9.1/winboard/bitmaps/a58s.bmp
+xboard-4.9.1/winboard/bitmaps/u49o.bmp
+xboard-4.9.1/winboard/bitmaps/u72w.bmp
+xboard-4.9.1/winboard/bitmaps/g72s.bmp
+xboard-4.9.1/winboard/bitmaps/o49o.bmp
+xboard-4.9.1/winboard/bitmaps/k108s.bmp
+xboard-4.9.1/winboard/bitmaps/k80o.bmp
+xboard-4.9.1/winboard/bitmaps/as49s.bmp
+xboard-4.9.1/winboard/bitmaps/wolf49w.bmp
+xboard-4.9.1/winboard/bitmaps/b25w.bmp
+xboard-4.9.1/winboard/bitmaps/k49w.bmp
+xboard-4.9.1/winboard/bitmaps/e33w.bmp
+xboard-4.9.1/winboard/bitmaps/c40o.bmp
+xboard-4.9.1/winboard/bitmaps/n29w.bmp
+xboard-4.9.1/winboard/bitmaps/l37o.bmp
+xboard-4.9.1/winboard/bitmaps/b37s.bmp
+xboard-4.9.1/winboard/bitmaps/c54s.bmp
+xboard-4.9.1/winboard/bitmaps/k33s.bmp
+xboard-4.9.1/winboard/bitmaps/o33o.bmp
+xboard-4.9.1/winboard/bitmaps/wn72o.bmp
+xboard-4.9.1/winboard/bitmaps/cv45w.bmp
+xboard-4.9.1/winboard/bitmaps/cross.ico
+xboard-4.9.1/winboard/bitmaps/q116s.bmp
+xboard-4.9.1/winboard/bitmaps/s49w.bmp
+xboard-4.9.1/winboard/bitmaps/dk49w.bmp
+xboard-4.9.1/winboard/bitmaps/camel49o.bmp
+xboard-4.9.1/winboard/bitmaps/e49s.bmp
+xboard-4.9.1/winboard/bitmaps/g33w.bmp
+xboard-4.9.1/winboard/bitmaps/n21s.bmp
+xboard-4.9.1/winboard/bitmaps/q49s.bmp
+xboard-4.9.1/winboard/bitmaps/b80w.bmp
+xboard-4.9.1/winboard/bitmaps/icon_ow.ico
+xboard-4.9.1/winboard/bitmaps/white_14.ico
+xboard-4.9.1/winboard/bitmaps/b87s.bmp
+xboard-4.9.1/winboard/bitmaps/r80w.bmp
+xboard-4.9.1/winboard/bitmaps/clock_14.ico
+xboard-4.9.1/winboard/bitmaps/v49o.bmp
+xboard-4.9.1/winboard/bitmaps/p80w.bmp
+xboard-4.9.1/winboard/bitmaps/k72w.bmp
+xboard-4.9.1/winboard/bitmaps/g49s.bmp
+xboard-4.9.1/winboard/bitmaps/c58o.bmp
+xboard-4.9.1/winboard/bitmaps/wp33s.bmp
+xboard-4.9.1/winboard/bitmaps/q87s.bmp
+xboard-4.9.1/winboard/bitmaps/k108o.bmp
+xboard-4.9.1/winboard/bitmaps/m33o.bmp
+xboard-4.9.1/winboard/bitmaps/cv40s.bmp
+xboard-4.9.1/winboard/bitmaps/b21s.bmp
+xboard-4.9.1/winboard/bitmaps/r40o.bmp
+xboard-4.9.1/winboard/bitmaps/r87w.bmp
+xboard-4.9.1/winboard/bitmaps/l54o.bmp
+xboard-4.9.1/winboard/bitmaps/v33o.bmp
+xboard-4.9.1/winboard/bitmaps/wp72s.bmp
+xboard-4.9.1/winboard/bitmaps/v49s.bmp
+xboard-4.9.1/winboard/bitmaps/q95o.bmp
+xboard-4.9.1/winboard/bitmaps/b25o.bmp
+xboard-4.9.1/winboard/bitmaps/l45w.bmp
+xboard-4.9.1/winboard/bitmaps/ws33s.bmp
+xboard-4.9.1/winboard/bitmaps/r64o.bmp
+xboard-4.9.1/winboard/bitmaps/b108o.bmp
+xboard-4.9.1/winboard/bitmaps/r21o.bmp
+xboard-4.9.1/winboard/bitmaps/q33o.bmp
+xboard-4.9.1/winboard/bitmaps/cv64w.bmp
+xboard-4.9.1/winboard/bitmaps/v49w.bmp
+xboard-4.9.1/winboard/bitmaps/n49s.bmp
+xboard-4.9.1/winboard/bitmaps/f33s.bmp
+xboard-4.9.1/winboard/bitmaps/wn33s.bmp
+xboard-4.9.1/winboard/bitmaps/p37s.bmp
+xboard-4.9.1/winboard/bitmaps/b95o.bmp
+xboard-4.9.1/winboard/bitmaps/black_14.ico
+xboard-4.9.1/winboard/bitmaps/k25o.bmp
+xboard-4.9.1/winboard/bitmaps/m49s.bmp
+xboard-4.9.1/winboard/bitmaps/wolf72s.bmp
+xboard-4.9.1/winboard/bitmaps/a64w.bmp
+xboard-4.9.1/winboard/bitmaps/q21s.bmp
+xboard-4.9.1/winboard/bitmaps/a49w.bmp
+xboard-4.9.1/winboard/bitmaps/b64s.bmp
+xboard-4.9.1/winboard/bitmaps/q64s.bmp
+xboard-4.9.1/winboard/bitmaps/b45w.bmp
+xboard-4.9.1/winboard/bitmaps/README.bitmaps
+xboard-4.9.1/winboard/bitmaps/q49w.bmp
+xboard-4.9.1/winboard/bitmaps/q64w.bmp
+xboard-4.9.1/winboard/bitmaps/q95w.bmp
+xboard-4.9.1/winboard/bitmaps/wp72o.bmp
+xboard-4.9.1/winboard/bitmaps/c49s.bmp
+xboard-4.9.1/winboard/bitmaps/b49o.bmp
+xboard-4.9.1/winboard/bitmaps/b72o.bmp
+xboard-4.9.1/winboard/bitmaps/w72s.bmp
+xboard-4.9.1/winboard/bitmaps/camel72o.bmp
+xboard-4.9.1/winboard/bitmaps/r64s.bmp
+xboard-4.9.1/winboard/bitmaps/a45s.bmp
+xboard-4.9.1/winboard/bitmaps/r29o.bmp
+xboard-4.9.1/winboard/bitmaps/s72o.bmp
+xboard-4.9.1/winboard/bitmaps/w49s.bmp
+xboard-4.9.1/winboard/bitmaps/ln33o.bmp
+xboard-4.9.1/winboard/bitmaps/q95s.bmp
+xboard-4.9.1/winboard/bitmaps/p108o.bmp
+xboard-4.9.1/winboard/bitmaps/l64s.bmp
+xboard-4.9.1/winboard/bitmaps/r95o.bmp
+xboard-4.9.1/winboard/bitmaps/k58s.bmp
+xboard-4.9.1/winboard/bitmaps/r37o.bmp
+xboard-4.9.1/winboard/bitmaps/dk72o.bmp
+xboard-4.9.1/winboard/bitmaps/b45o.bmp
+xboard-4.9.1/winboard/bitmaps/p72o.bmp
+xboard-4.9.1/winboard/bitmaps/u49s.bmp
+xboard-4.9.1/winboard/bitmaps/l58w.bmp
+xboard-4.9.1/winboard/bitmaps/c54o.bmp
+xboard-4.9.1/winboard/bitmaps/trans_14.ico
+xboard-4.9.1/winboard/bitmaps/r21s.bmp
+xboard-4.9.1/winboard/bitmaps/p64w.bmp
+xboard-4.9.1/winboard/bitmaps/r54s.bmp
+xboard-4.9.1/winboard/bitmaps/ws33o.bmp
+xboard-4.9.1/winboard/bitmaps/v72o.bmp
+xboard-4.9.1/winboard/bitmaps/p49s.bmp
+xboard-4.9.1/winboard/bitmaps/h33w.bmp
+xboard-4.9.1/winboard/bitmaps/k64o.bmp
+xboard-4.9.1/winboard/bitmaps/zebra72o.bmp
+xboard-4.9.1/winboard/bitmaps/w49w.bmp
+xboard-4.9.1/winboard/bitmaps/r116o.bmp
+xboard-4.9.1/winboard/bitmaps/b64w.bmp
+xboard-4.9.1/winboard/bitmaps/m72o.bmp
+xboard-4.9.1/winboard/bitmaps/e72w.bmp
+xboard-4.9.1/winboard/bitmaps/ln49o.bmp
+xboard-4.9.1/winboard/bitmaps/c72s.bmp
+xboard-4.9.1/winboard/bitmaps/f49o.bmp
+xboard-4.9.1/winboard/bitmaps/n40o.bmp
+xboard-4.9.1/winboard/bitmaps/ws72o.bmp
+xboard-4.9.1/winboard/bitmaps/p64s.bmp
+xboard-4.9.1/winboard/bitmaps/w49o.bmp
+xboard-4.9.1/winboard/bitmaps/zebra49s.bmp
+xboard-4.9.1/winboard/bitmaps/r108s.bmp
+xboard-4.9.1/winboard/bitmaps/wn49s.bmp
+xboard-4.9.1/winboard/bitmaps/e33o.bmp
+xboard-4.9.1/winboard/bitmaps/q29o.bmp
+xboard-4.9.1/winboard/bitmaps/q37o.bmp
+xboard-4.9.1/winboard/bitmaps/n64o.bmp
+xboard-4.9.1/winboard/bitmaps/l37w.bmp
+xboard-4.9.1/winboard/bitmaps/n72s.bmp
+xboard-4.9.1/winboard/bitmaps/o72s.bmp
+xboard-4.9.1/winboard/bitmaps/a37o.bmp
+xboard-4.9.1/winboard/bitmaps/b21o.bmp
+xboard-4.9.1/winboard/bitmaps/k49o.bmp
+xboard-4.9.1/winboard/bitmaps/l58s.bmp
+xboard-4.9.1/winboard/bitmaps/r29w.bmp
+xboard-4.9.1/winboard/bitmaps/n54o.bmp
+xboard-4.9.1/winboard/bitmaps/dk49o.bmp
+xboard-4.9.1/winboard/bitmaps/b116w.bmp
+xboard-4.9.1/winboard/bitmaps/camel49s.bmp
+xboard-4.9.1/winboard/bitmaps/b72w.bmp
+xboard-4.9.1/winboard/bitmaps/f33o.bmp
+xboard-4.9.1/winboard/bitmaps/q21w.bmp
+xboard-4.9.1/winboard/bitmaps/cv40w.bmp
+xboard-4.9.1/winboard/bitmaps/galactic.bmp
+xboard-4.9.1/winboard/bitmaps/r64w.bmp
+xboard-4.9.1/winboard/bitmaps/m33s.bmp
+xboard-4.9.1/winboard/bitmaps/cv72o.bmp
+xboard-4.9.1/winboard/bitmaps/f49s.bmp
+xboard-4.9.1/winboard/bitmaps/h72w.bmp
+xboard-4.9.1/winboard/bitmaps/p129s.bmp
+xboard-4.9.1/winboard/bitmaps/r40w.bmp
+xboard-4.9.1/winboard/bitmaps/k95s.bmp
+xboard-4.9.1/winboard/bitmaps/n33w.bmp
+xboard-4.9.1/winboard/bitmaps/p129w.bmp
+xboard-4.9.1/winboard/bitmaps/cv54w.bmp
+xboard-4.9.1/winboard/bitmaps/m49w.bmp
+xboard-4.9.1/winboard/bitmaps/q129s.bmp
+xboard-4.9.1/winboard/bitmaps/zebra72s.bmp
+xboard-4.9.1/winboard/bitmaps/r49o.bmp
+xboard-4.9.1/winboard/bitmaps/b37o.bmp
+xboard-4.9.1/winboard/bitmaps/q80o.bmp
+xboard-4.9.1/winboard/bitmaps/q54o.bmp
+xboard-4.9.1/winboard/bitmaps/k40o.bmp
+xboard-4.9.1/winboard/bitmaps/n64s.bmp
+xboard-4.9.1/winboard/bitmaps/k25s.bmp
+xboard-4.9.1/winboard/bitmaps/ln49s.bmp
+xboard-4.9.1/winboard/bitmaps/ln72o.bmp
+xboard-4.9.1/winboard/bitmaps/p49w.bmp
+xboard-4.9.1/winboard/bitmaps/s72w.bmp
+xboard-4.9.1/winboard/bitmaps/w33s.bmp
+xboard-4.9.1/winboard/bitmaps/f33w.bmp
+xboard-4.9.1/winboard/bitmaps/wolf72w.bmp
+xboard-4.9.1/winboard/bitmaps/n37w.bmp
+xboard-4.9.1/winboard/bitmaps/k29s.bmp
+xboard-4.9.1/winboard/bitmaps/p33o.bmp
+xboard-4.9.1/winboard/bitmaps/r58w.bmp
+xboard-4.9.1/winboard/bitmaps/b87w.bmp
+xboard-4.9.1/winboard/bitmaps/q72o.bmp
+xboard-4.9.1/winboard/bitmaps/n129s.bmp
+xboard-4.9.1/winboard/bitmaps/r116w.bmp
+xboard-4.9.1/winboard/bitmaps/cv58s.bmp
+xboard-4.9.1/winboard/bitmaps/b87o.bmp
+xboard-4.9.1/winboard/bitmaps/n80w.bmp
+xboard-4.9.1/winboard/bitmaps/e72o.bmp
+xboard-4.9.1/winboard/bitmaps/p87o.bmp
+xboard-4.9.1/winboard/bitmaps/p54o.bmp
+xboard-4.9.1/winboard/bitmaps/k29o.bmp
+xboard-4.9.1/winboard/bitmaps/r116s.bmp
+xboard-4.9.1/winboard/bitmaps/n58w.bmp
+xboard-4.9.1/winboard/bitmaps/cv33o.bmp
+xboard-4.9.1/winboard/bitmaps/v33s.bmp
+xboard-4.9.1/winboard/bitmaps/icon_w.ico
+xboard-4.9.1/winboard/bitmaps/q25s.bmp
+xboard-4.9.1/winboard/bitmaps/u49w.bmp
+xboard-4.9.1/winboard/bitmaps/a49s.bmp
+xboard-4.9.1/winboard/bitmaps/r45w.bmp
+xboard-4.9.1/winboard/bitmaps/q40w.bmp
+xboard-4.9.1/winboard/bitmaps/r33o.bmp
+xboard-4.9.1/winboard/bitmaps/r87s.bmp
+xboard-4.9.1/winboard/bitmaps/c64w.bmp
+xboard-4.9.1/winboard/bitmaps/l40w.bmp
+xboard-4.9.1/winboard/bitmaps/wn49o.bmp
+xboard-4.9.1/winboard/bitmaps/b29w.bmp
+xboard-4.9.1/winboard/bitmaps/p40o.bmp
+xboard-4.9.1/winboard/bitmaps/p25w.bmp
+xboard-4.9.1/winboard/bitmaps/q80w.bmp
+xboard-4.9.1/winboard/bitmaps/s49s.bmp
+xboard-4.9.1/winboard/bitmaps/b33o.bmp
+xboard-4.9.1/winboard/bitmaps/n49w.bmp
+xboard-4.9.1/winboard/bitmaps/q33w.bmp
+xboard-4.9.1/winboard/bitmaps/c72o.bmp
+xboard-4.9.1/winboard/bitmaps/cv40o.bmp
+xboard-4.9.1/winboard/bitmaps/q45s.bmp
+xboard-4.9.1/winboard/bitmaps/q29w.bmp
+xboard-4.9.1/winboard/bitmaps/cv45o.bmp
+xboard-4.9.1/winboard/bitmaps/p87s.bmp
+xboard-4.9.1/winboard/bitmaps/r21w.bmp
+xboard-4.9.1/winboard/bitmaps/l33w.bmp
+xboard-4.9.1/winboard/bitmaps/p108s.bmp
+xboard-4.9.1/winboard/bitmaps/n40s.bmp
+xboard-4.9.1/winboard/bitmaps/r95w.bmp
+xboard-4.9.1/winboard/bitmaps/p45o.bmp
+xboard-4.9.1/winboard/bitmaps/k87o.bmp
+xboard-4.9.1/winboard/bitmaps/icon_whi.ico
+xboard-4.9.1/winboard/bitmaps/l54w.bmp
+xboard-4.9.1/winboard/bitmaps/q49o.bmp
+xboard-4.9.1/winboard/bitmaps/as72w.bmp
+xboard-4.9.1/winboard/bitmaps/v72s.bmp
+xboard-4.9.1/winboard/bitmaps/n108s.bmp
+xboard-4.9.1/winboard/bitmaps/as49w.bmp
+xboard-4.9.1/winboard/bitmaps/p21w.bmp
+xboard-4.9.1/winboard/bitmaps/p87w.bmp
+xboard-4.9.1/winboard/bitmaps/g33o.bmp
+xboard-4.9.1/winboard/bitmaps/l33o.bmp
+xboard-4.9.1/winboard/bitmaps/r72w.bmp
+xboard-4.9.1/winboard/bitmaps/r49w.bmp
+xboard-4.9.1/winboard/bitmaps/p95w.bmp
+xboard-4.9.1/winboard/bitmaps/l49s.bmp
+xboard-4.9.1/winboard/bitmaps/b33s.bmp
+xboard-4.9.1/winboard/bitmaps/b37w.bmp
+xboard-4.9.1/winboard/bitmaps/p58s.bmp
+xboard-4.9.1/winboard/bitmaps/h72s.bmp
+xboard-4.9.1/winboard/bitmaps/n129w.bmp
+xboard-4.9.1/winboard/bitmaps/p29w.bmp
+xboard-4.9.1/winboard/bitmaps/n80o.bmp
+xboard-4.9.1/winboard/bitmaps/a54w.bmp
+xboard-4.9.1/winboard/bitmaps/k95o.bmp
+xboard-4.9.1/winboard/bitmaps/n108w.bmp
+xboard-4.9.1/winboard/bitmaps/m72w.bmp
+xboard-4.9.1/winboard/bitmaps/k54o.bmp
+xboard-4.9.1/winboard/bitmaps/r58s.bmp
+xboard-4.9.1/winboard/bitmaps/k58w.bmp
+xboard-4.9.1/winboard/bitmaps/p95s.bmp
+xboard-4.9.1/winboard/bitmaps/a54s.bmp
+xboard-4.9.1/winboard/bitmaps/n95s.bmp
+xboard-4.9.1/winboard/bitmaps/as72s.bmp
+xboard-4.9.1/winboard/bitmaps/b40w.bmp
+xboard-4.9.1/winboard/bitmaps/p116o.bmp
+xboard-4.9.1/winboard/bitmaps/p95o.bmp
+xboard-4.9.1/winboard/bitmaps/k87w.bmp
+xboard-4.9.1/winboard/bitmaps/p80s.bmp
+xboard-4.9.1/winboard/bitmaps/f49w.bmp
+xboard-4.9.1/winboard/bitmaps/r37w.bmp
+xboard-4.9.1/winboard/bitmaps/convert.exe
+xboard-4.9.1/winboard/bitmaps/cv49s.bmp
+xboard-4.9.1/winboard/bitmaps/b25s.bmp
+xboard-4.9.1/winboard/bitmaps/p33w.bmp
+xboard-4.9.1/winboard/bitmaps/wp49s.bmp
+xboard-4.9.1/winboard/bitmaps/camel72s.bmp
+xboard-4.9.1/winboard/bitmaps/k37w.bmp
+xboard-4.9.1/winboard/bitmaps/wl33s.bmp
+xboard-4.9.1/winboard/bitmaps/q108w.bmp
+xboard-4.9.1/winboard/bitmaps/wl72o.bmp
+xboard-4.9.1/winboard/bitmaps/wn33o.bmp
+xboard-4.9.1/winboard/bitmaps/q108o.bmp
+xboard-4.9.1/winboard/bitmaps/dk33w.bmp
+xboard-4.9.1/winboard/bitmaps/o49w.bmp
+xboard-4.9.1/winboard/bitmaps/ln33w.bmp
+xboard-4.9.1/winboard/bitmaps/n116o.bmp
+xboard-4.9.1/winboard/bitmaps/e72s.bmp
+xboard-4.9.1/winboard/bitmaps/k33o.bmp
+xboard-4.9.1/winboard/bitmaps/q58w.bmp
+xboard-4.9.1/winboard/bitmaps/icon_b.ico
+xboard-4.9.1/winboard/bitmaps/l58o.bmp
+xboard-4.9.1/winboard/bitmaps/k33w.bmp
+xboard-4.9.1/winboard/bitmaps/q80s.bmp
+xboard-4.9.1/winboard/bitmaps/k108w.bmp
+xboard-4.9.1/winboard/bitmaps/ln33s.bmp
+xboard-4.9.1/winboard/bitmaps/l40o.bmp
+xboard-4.9.1/winboard/bitmaps/cv49w.bmp
+xboard-4.9.1/winboard/bitmaps/n129o.bmp
+xboard-4.9.1/winboard/bitmaps/g49o.bmp
+xboard-4.9.1/winboard/bitmaps/e49o.bmp
+xboard-4.9.1/winboard/bitmaps/p54s.bmp
+xboard-4.9.1/winboard/bitmaps/ws49s.bmp
+xboard-4.9.1/winboard/bitmaps/b21w.bmp
+xboard-4.9.1/winboard/bitmaps/a49o.bmp
+xboard-4.9.1/winboard/bitmaps/v72w.bmp
+xboard-4.9.1/winboard/bitmaps/q33s.bmp
+xboard-4.9.1/winboard/bitmaps/r33s.bmp
+xboard-4.9.1/winboard/bitmaps/n40w.bmp
+xboard-4.9.1/winboard/bitmaps/cv58o.bmp
+xboard-4.9.1/winboard/bitmaps/baloon_14.ico
+xboard-4.9.1/winboard/bitmaps/wp49o.bmp
+xboard-4.9.1/winboard/bitmaps/c49w.bmp
+xboard-4.9.1/winboard/bitmaps/q87o.bmp
+xboard-4.9.1/winboard/bitmaps/dk72w.bmp
+xboard-4.9.1/winboard/bitmaps/n54s.bmp
+xboard-4.9.1/winboard/bitmaps/p116s.bmp
+xboard-4.9.1/winboard/bitmaps/l64w.bmp
+xboard-4.9.1/winboard/bitmaps/p80o.bmp
+xboard-4.9.1/winboard/bitmaps/k80s.bmp
+xboard-4.9.1/winboard/bitmaps/p64o.bmp
+xboard-4.9.1/winboard/bitmaps/a49c.bmp
+xboard-4.9.1/winboard/bitmaps/b108s.bmp
+xboard-4.9.1/winboard/bitmaps/o33s.bmp
+xboard-4.9.1/winboard/bitmaps/k129o.bmp
+xboard-4.9.1/winboard/bitmaps/h33s.bmp
+xboard-4.9.1/winboard/bitmaps/k72o.bmp
+xboard-4.9.1/winboard/bitmaps/b58w.bmp
+xboard-4.9.1/winboard/bitmaps/ws72s.bmp
+xboard-4.9.1/winboard/bitmaps/n37o.bmp
+xboard-4.9.1/winboard/bitmaps/k21s.bmp
+xboard-4.9.1/winboard/bitmaps/b95s.bmp
+xboard-4.9.1/winboard/bitmaps/l64o.bmp
+xboard-4.9.1/winboard/bitmaps/n87o.bmp
+xboard-4.9.1/winboard/bitmaps/p116w.bmp
+xboard-4.9.1/winboard/bitmaps/l45s.bmp
+xboard-4.9.1/winboard/bitmaps/r129o.bmp
+xboard-4.9.1/winboard/bitmaps/g72o.bmp
+xboard-4.9.1/winboard/bitmaps/l33s.bmp
+xboard-4.9.1/winboard/bitmaps/convert.c
+xboard-4.9.1/winboard/bitmaps/p21o.bmp
+xboard-4.9.1/winboard/bitmaps/analyze_14.ico
+xboard-4.9.1/winboard/bitmaps/b49w.bmp
+xboard-4.9.1/winboard/bitmaps/cv72w.bmp
+xboard-4.9.1/winboard/bitmaps/r80s.bmp
+xboard-4.9.1/winboard/bitmaps/q116w.bmp
+xboard-4.9.1/winboard/bitmaps/q72w.bmp
+xboard-4.9.1/winboard/bitmaps/s49o.bmp
+xboard-4.9.1/winboard/bitmaps/wl33o.bmp
+xboard-4.9.1/winboard/bitmaps/as33s.bmp
+xboard-4.9.1/winboard/bitmaps/a40o.bmp
+xboard-4.9.1/winboard/bitmaps/c54w.bmp
+xboard-4.9.1/winboard/bitmaps/camel49w.bmp
+xboard-4.9.1/winboard/bitmaps/ponder_14.ico
+xboard-4.9.1/winboard/bitmaps/k129s.bmp
+xboard-4.9.1/winboard/bitmaps/n87w.bmp
+xboard-4.9.1/winboard/bitmaps/c45w.bmp
+xboard-4.9.1/winboard/bitmaps/n37s.bmp
+xboard-4.9.1/winboard/bitmaps/m49o.bmp
+xboard-4.9.1/winboard/bitmaps/tim.bmp
+xboard-4.9.1/winboard/bitmaps/c37s.bmp
+xboard-4.9.1/winboard/bitmaps/a45w.bmp
+xboard-4.9.1/winboard/bitmaps/a33o.bmp
+xboard-4.9.1/winboard/bitmaps/icon_b.bmp
+xboard-4.9.1/winboard/bitmaps/c45s.bmp
+xboard-4.9.1/winboard/bitmaps/l72s.bmp
+xboard-4.9.1/winboard/bitmaps/p45w.bmp
+xboard-4.9.1/winboard/bitmaps/p37w.bmp
+xboard-4.9.1/winboard/bitmaps/zebra49o.bmp
+xboard-4.9.1/winboard/bitmaps/p58w.bmp
+xboard-4.9.1/winboard/bitmaps/r129s.bmp
+xboard-4.9.1/winboard/bitmaps/n87s.bmp
+xboard-4.9.1/winboard/bitmaps/u72s.bmp
+xboard-4.9.1/winboard/bitmaps/cv72s.bmp
+xboard-4.9.1/winboard/bitmaps/camel72w.bmp
+xboard-4.9.1/winboard/bitmaps/p72w.bmp
+xboard-4.9.1/winboard/bitmaps/a45o.bmp
+xboard-4.9.1/winboard/bitmaps/v33w.bmp
+xboard-4.9.1/winboard/bitmaps/k116w.bmp
+xboard-4.9.1/winboard/bitmaps/q64o.bmp
+xboard-4.9.1/winboard/bitmaps/k37s.bmp
+xboard-4.9.1/winboard/bitmaps/cv49o.bmp
+xboard-4.9.1/winboard/bitmaps/p25s.bmp
+xboard-4.9.1/winboard/bitmaps/a64o.bmp
+xboard-4.9.1/winboard/bitmaps/m72s.bmp
+xboard-4.9.1/winboard/bitmaps/g49w.bmp
+xboard-4.9.1/winboard/bitmaps/q116o.bmp
+xboard-4.9.1/winboard/bitmaps/q108s.bmp
+xboard-4.9.1/winboard/bitmaps/cv37w.bmp
+xboard-4.9.1/winboard/bitmaps/p37o.bmp
+xboard-4.9.1/winboard/bitmaps/c64s.bmp
+xboard-4.9.1/winboard/bitmaps/u72o.bmp
+xboard-4.9.1/winboard/bitmaps/ln49w.bmp
+xboard-4.9.1/winboard/bitmaps/g33s.bmp
+xboard-4.9.1/winboard/bitmaps/q129o.bmp
+xboard-4.9.1/winboard/bitmaps/a37s.bmp
+xboard-4.9.1/winboard/bitmaps/q37s.bmp
+xboard-4.9.1/winboard/bitmaps/b129w.bmp
+xboard-4.9.1/winboard/bitmaps/wl72s.bmp
+xboard-4.9.1/winboard/bitmaps/r40s.bmp
+xboard-4.9.1/winboard/bitmaps/cv58w.bmp
+xboard-4.9.1/winboard/bitmaps/k40w.bmp
+xboard-4.9.1/winboard/bitmaps/ln72w.bmp
+xboard-4.9.1/winboard/bitmaps/p129o.bmp
+xboard-4.9.1/winboard/bitmaps/b80s.bmp
+xboard-4.9.1/winboard/bitmaps/c58s.bmp
+xboard-4.9.1/winboard/bitmaps/b49s.bmp
+xboard-4.9.1/winboard/bitmaps/n25s.bmp
+xboard-4.9.1/winboard/bitmaps/o72w.bmp
+xboard-4.9.1/winboard/bitmaps/q54s.bmp
+xboard-4.9.1/winboard/bitmaps/dk49s.bmp
+xboard-4.9.1/winboard/bitmaps/a40w.bmp
+xboard-4.9.1/winboard/wlayout.c
+xboard-4.9.1/winboard/winboard.rc
+xboard-4.9.1/winboard/wsnap.h
+xboard-4.9.1/winboard/wengineoutput.c
+xboard-4.9.1/winboard/winboard.rtf
+xboard-4.9.1/winboard/woptions.h
+xboard-4.9.1/winboard/wsnap.c
+xboard-4.9.1/winboard/wevalgraph.c
+xboard-4.9.1/winboard/wgamelist.c
+xboard-4.9.1/winboard/winboard.h
+xboard-4.9.1/winboard/language.txt
+xboard-4.9.1/winboard/metascript.txt
+xboard-4.9.1/winboard/whistory.c
+xboard-4.9.1/winboard/WB4Jaws.dev
+xboard-4.9.1/winboard/winboard.c
+xboard-4.9.1/winboard/COMPILING
+xboard-4.9.1/winboard/defaults.h
+xboard-4.9.1/winboard/wclipbrd.c
+xboard-4.9.1/winboard/config.h
+xboard-4.9.1/winboard/help/
+xboard-4.9.1/winboard/help/contents.hhc
+xboard-4.9.1/winboard/help/winboard
+xboard-4.9.1/winboard/help/winboard.hhp
+xboard-4.9.1/winboard/help/winboard.hhk
+xboard-4.9.1/winboard/help/winboard.chm
+xboard-4.9.1/winboard/help/html/
+xboard-4.9.1/winboard/help/html/08.htm
+xboard-4.9.1/winboard/help/html/11.htm
+xboard-4.9.1/winboard/help/html/01.htm
+xboard-4.9.1/winboard/help/html/05.htm
+xboard-4.9.1/winboard/help/html/21.htm
+xboard-4.9.1/winboard/help/html/19.htm
+xboard-4.9.1/winboard/help/html/17.htm
+xboard-4.9.1/winboard/help/html/07.htm
+xboard-4.9.1/winboard/help/html/23.htm
+xboard-4.9.1/winboard/help/html/16.htm
+xboard-4.9.1/winboard/help/html/24.htm
+xboard-4.9.1/winboard/help/html/04.htm
+xboard-4.9.1/winboard/help/html/22.htm
+xboard-4.9.1/winboard/help/html/06.htm
+xboard-4.9.1/winboard/help/html/20.htm
+xboard-4.9.1/winboard/help/html/15.htm
+xboard-4.9.1/winboard/help/html/14.htm
+xboard-4.9.1/winboard/help/html/02.htm
+xboard-4.9.1/winboard/help/html/12.htm
+xboard-4.9.1/winboard/help/html/09.htm
+xboard-4.9.1/winboard/help/html/03.htm
+xboard-4.9.1/winboard/help/html/13.htm
+xboard-4.9.1/winboard/help/html/10.htm
+xboard-4.9.1/winboard/help/html/18.htm
+xboard-4.9.1/winboard/wclipbrd.h
+xboard-4.9.1/xboard-config.desktop
+xboard-4.9.1/DIFFSTAT
+xboard-4.9.1/parser.c
+xboard-4.9.1/xboard.info
+xboard-4.9.1/xboard.png
+xboard-4.9.1/config.rpath
+xboard-4.9.1/texinfo.tex
+xboard-4.9.1/xboard.conf
+xboard-4.9.1/engineoutput.c
+xboard-4.9.1/frontend.h
+xboard-4.9.1/dialogs.h
+xboard-4.9.1/xboard.desktop
+xboard-4.9.1/gpl.texinfo
+xboard-4.9.1/args.h
+xboard-4.9.1/xboard.svg
+xboard-4.9.1/SHORTLOG
+xboard-4.9.1/TODO
+xboard-4.9.1/usystem.c
+xboard-4.9.1/board.c
+xboard-4.9.1/texi2man
+xboard-4.9.1/AUTHORS
+xboard-4.9.1/parser.h
+xboard-4.9.1/usounds.c
+xboard-4.9.1/lists.c
+xboard-4.9.1/config.h.in
+xboard-4.9.1/common.h
+xboard-4.9.1/pixmaps/
+xboard-4.9.1/pixmaps/ini48.png
+xboard-4.9.1/pixmaps/board48.png
+xboard-4.9.1/pixmaps/ini32.png
+xboard-4.9.1/pixmaps/cross48.png
+xboard-4.9.1/pixmaps/cross32.png
+xboard-4.9.1/pixmaps/board32.png
+xboard-4.9.1/dialogs.c
+xboard-4.9.1/xboard-pgn-viewer.desktop
+xboard-4.9.1/mdate-sh
+xboard-4.9.1/aclocal.m4
+xboard-4.9.1/menus.h
+xboard-4.9.1/png/
+xboard-4.9.1/png/marble_d.png
+xboard-4.9.1/png/BlackGold.png
+xboard-4.9.1/png/BlackMarshall.png
+xboard-4.9.1/png/xqwood-9x10.png
+xboard-4.9.1/png/WhitePrincess.png
+xboard-4.9.1/png/BlackChancellor.png
+xboard-4.9.1/png/BlackCommoner.png
+xboard-4.9.1/png/wood_l.png
+xboard-4.9.1/png/WhiteGoldLance.png
+xboard-4.9.1/png/WhiteUnicorn.png
+xboard-4.9.1/png/WhiteGoldKnight.png
+xboard-4.9.1/png/WhiteGold.png
+xboard-4.9.1/png/WhiteCobra.png
+xboard-4.9.1/png/BlackUnicorn.png
+xboard-4.9.1/png/WhiteRook.png
+xboard-4.9.1/png/BlackAdvisor.png
+xboard-4.9.1/png/hatch.png
+xboard-4.9.1/png/BlackKnight.png
+xboard-4.9.1/png/WhiteArchbishop.png
+xboard-4.9.1/png/WhiteGoldPawn.png
+xboard-4.9.1/png/WhiteQueen.png
+xboard-4.9.1/png/BlackPrincess.png
+xboard-4.9.1/png/BlackGoldSilver.png
+xboard-4.9.1/png/WhiteBishop.png
+xboard-4.9.1/png/BlackBishop.png
+xboard-4.9.1/png/WhiteCommoner.png
+xboard-4.9.1/png/WhiteAdvisor.png
+xboard-4.9.1/png/WhiteKing.png
+xboard-4.9.1/png/BlackCobra.png
+xboard-4.9.1/png/BlackLance.png
+xboard-4.9.1/png/BlackPawn.png
+xboard-4.9.1/png/BlackRook.png
+xboard-4.9.1/png/BlackCanon.png
+xboard-4.9.1/png/BlackNightrider.png
+xboard-4.9.1/png/BlackQueen.png
+xboard-4.9.1/png/BlackElephant.png
+xboard-4.9.1/png/WhiteLance.png
+xboard-4.9.1/png/BlackHawk.png
+xboard-4.9.1/png/WhiteGoldSilver.png
+xboard-4.9.1/png/BlackGoldKnight.png
+xboard-4.9.1/png/WhiteChancellor.png
+xboard-4.9.1/png/BlackGoldPawn.png
+xboard-4.9.1/png/WhiteHawk.png
+xboard-4.9.1/png/WhiteCanon.png
+xboard-4.9.1/png/WhiteCrownedBishop.png
+xboard-4.9.1/png/BlackCrownedRook.png
+xboard-4.9.1/png/xqboard-9x10.png
+xboard-4.9.1/png/BlackGoldLance.png
+xboard-4.9.1/png/wood_d.png
+xboard-4.9.1/png/WhiteElephant.png
+xboard-4.9.1/png/WhiteMarshall.png
+xboard-4.9.1/png/WhiteKnight.png
+xboard-4.9.1/png/WhitePawn.png
+xboard-4.9.1/png/marble_l.png
+xboard-4.9.1/png/WhiteNightrider.png
+xboard-4.9.1/png/WhiteCrownedRook.png
+xboard-4.9.1/png/BlackKing.png
+xboard-4.9.1/png/BlackCrownedBishop.png
+xboard-4.9.1/png/BlackArchbishop.png
+xboard-4.9.1/backend.c
+xboard-4.9.1/xboard.man
+xboard-4.9.1/backendz.h
+xboard-4.9.1/nevalgraph.c
+xboard-4.9.1/ABOUT-NLS
+xboard-4.9.1/bitmaps/
+xboard-4.9.1/bitmaps/icon_black.bm
+xboard-4.9.1/bitmaps/checkmark.bm
+xboard-4.9.1/bitmaps/icon_white.bm
+xboard-4.9.1/xboard.texi
+xboard-4.9.1/themes/
+xboard-4.9.1/themes/shogi/
+xboard-4.9.1/themes/shogi/BlackPrince.svg
+xboard-4.9.1/themes/shogi/WhiteGoldSilver.svg
+xboard-4.9.1/themes/shogi/WhiteAdvisor.svg
+xboard-4.9.1/themes/shogi/BlackGoldLance.svg
+xboard-4.9.1/themes/shogi/WhiteRook.svg
+xboard-4.9.1/themes/shogi/BlackCrownedRook.svg
+xboard-4.9.1/themes/shogi/BlackZebra.svg
+xboard-4.9.1/themes/shogi/BlackGoldPawn.svg
+xboard-4.9.1/themes/shogi/BlackGoldKnight.svg
+xboard-4.9.1/themes/shogi/WhiteGoldKnight.svg
+xboard-4.9.1/themes/shogi/WhiteBishop.svg
+xboard-4.9.1/themes/shogi/BlackCrownedBishop.svg
+xboard-4.9.1/themes/shogi/BlackKing.svg
+xboard-4.9.1/themes/shogi/WhiteZebra.svg
+xboard-4.9.1/themes/shogi/WhiteGold.svg
+xboard-4.9.1/themes/shogi/BlackRook.svg
+xboard-4.9.1/themes/shogi/WhiteKing.svg
+xboard-4.9.1/themes/shogi/WhiteGoldLance.svg
+xboard-4.9.1/themes/shogi/WhiteLance.svg
+xboard-4.9.1/themes/shogi/BlackLance.svg
+xboard-4.9.1/themes/shogi/BlackGold.svg
+xboard-4.9.1/themes/shogi/BlackBishop.svg
+xboard-4.9.1/themes/shogi/WhiteCrownedBishop.svg
+xboard-4.9.1/themes/shogi/WhiteGoldPawn.svg
+xboard-4.9.1/themes/shogi/WhitePawn.svg
+xboard-4.9.1/themes/shogi/BlackKnight.svg
+xboard-4.9.1/themes/shogi/WhiteKnight.svg
+xboard-4.9.1/themes/shogi/BlackElephant.svg
+xboard-4.9.1/themes/shogi/WhitePrince.svg
+xboard-4.9.1/themes/shogi/WhiteElephant.svg
+xboard-4.9.1/themes/shogi/BlackGoldSilver.svg
+xboard-4.9.1/themes/shogi/BlackAdvisor.svg
+xboard-4.9.1/themes/shogi/WhiteCrownedRook.svg
+xboard-4.9.1/themes/shogi/BlackPawn.svg
+xboard-4.9.1/themes/xiangqi/
+xboard-4.9.1/themes/xiangqi/BlackCanon.svg
+xboard-4.9.1/themes/xiangqi/WhiteAdvisor.svg
+xboard-4.9.1/themes/xiangqi/WhiteRook.svg
+xboard-4.9.1/themes/xiangqi/WhiteGold.svg
+xboard-4.9.1/themes/xiangqi/BlackRook.svg
+xboard-4.9.1/themes/xiangqi/BlackGold.svg
+xboard-4.9.1/themes/xiangqi/WhitePawn.svg
+xboard-4.9.1/themes/xiangqi/BlackKnight.svg
+xboard-4.9.1/themes/xiangqi/WhiteCanon.svg
+xboard-4.9.1/themes/xiangqi/WhiteKnight.svg
+xboard-4.9.1/themes/xiangqi/BlackElephant.svg
+xboard-4.9.1/themes/xiangqi/WhiteElephant.svg
+xboard-4.9.1/themes/xiangqi/BlackAdvisor.svg
+xboard-4.9.1/themes/xiangqi/BlackPawn.svg
+xboard-4.9.1/themes/Mono/
+xboard-4.9.1/themes/Mono/WhiteGoldSilver.svg
+xboard-4.9.1/themes/Mono/BlackCanon.svg
+xboard-4.9.1/themes/Mono/shogi_silver_promoted.svg
+xboard-4.9.1/themes/Mono/WhiteAdvisor.svg
+xboard-4.9.1/themes/Mono/shogi_pawn.svg
+xboard-4.9.1/themes/Mono/shogi_pawn_promoted.svg
+xboard-4.9.1/themes/Mono/WhiteHawk.svg
+xboard-4.9.1/themes/Mono/BlackGoldLance.svg
+xboard-4.9.1/themes/Mono/WhiteRook.svg
+xboard-4.9.1/themes/Mono/shogi_rook.svg
+xboard-4.9.1/themes/Mono/BlackCrownedRook.svg
+xboard-4.9.1/themes/Mono/WhiteNightrider.svg
+xboard-4.9.1/themes/Mono/BlackArchbishop.svg
+xboard-4.9.1/themes/Mono/eo_White.svg
+xboard-4.9.1/themes/Mono/shogi_knight.svg
+xboard-4.9.1/themes/Mono/BlackHawk.svg
+xboard-4.9.1/themes/Mono/shogi_lance_promoted.svg
+xboard-4.9.1/themes/Mono/BlackGoldPawn.svg
+xboard-4.9.1/themes/Mono/BlackQueen.svg
+xboard-4.9.1/themes/Mono/WhiteQueen.svg
+xboard-4.9.1/themes/Mono/BlackGoldKnight.svg
+xboard-4.9.1/themes/Mono/WhiteGoldKnight.svg
+xboard-4.9.1/themes/Mono/shogi_bishop_promoted.svg
+xboard-4.9.1/themes/Mono/shogi_knight_promoted.svg
+xboard-4.9.1/themes/Mono/WhiteBishop.svg
+xboard-4.9.1/themes/Mono/WhiteArchbishop.svg
+xboard-4.9.1/themes/Mono/BlackCobra.svg
+xboard-4.9.1/themes/Mono/BlackCrownedBishop.svg
+xboard-4.9.1/themes/Mono/BlackKing.svg
+xboard-4.9.1/themes/Mono/icon_black.svg
+xboard-4.9.1/themes/Mono/BlackMarshall.svg
+xboard-4.9.1/themes/Mono/eo_Clear.svg
+xboard-4.9.1/themes/Mono/WhiteCommoner.svg
+xboard-4.9.1/themes/Mono/BlackPrincess.svg
+xboard-4.9.1/themes/Mono/WhiteUnicorn.svg
+xboard-4.9.1/themes/Mono/BlackUnicorn.svg
+xboard-4.9.1/themes/Mono/WhiteGold.svg
+xboard-4.9.1/themes/Mono/BlackRook.svg
+xboard-4.9.1/themes/Mono/shogi_bishop.svg
+xboard-4.9.1/themes/Mono/WhiteKing.svg
+xboard-4.9.1/themes/Mono/WhiteGoldLance.svg
+xboard-4.9.1/themes/Mono/WhiteCobra.svg
+xboard-4.9.1/themes/Mono/WhiteMarshall.svg
+xboard-4.9.1/themes/Mono/eo_Analyzing.svg
+xboard-4.9.1/themes/Mono/WhiteLance.svg
+xboard-4.9.1/themes/Mono/WhiteChancellor.svg
+xboard-4.9.1/themes/Mono/BlackLance.svg
+xboard-4.9.1/themes/Mono/BlackGold.svg
+xboard-4.9.1/themes/Mono/WhitePrincess.svg
+xboard-4.9.1/themes/Mono/BlackBishop.svg
+xboard-4.9.1/themes/Mono/WhiteCrownedBishop.svg
+xboard-4.9.1/themes/Mono/icon_white.svg
+xboard-4.9.1/themes/Mono/WhiteGoldPawn.svg
+xboard-4.9.1/themes/Mono/WhitePawn.svg
+xboard-4.9.1/themes/Mono/BlackKnight.svg
+xboard-4.9.1/themes/Mono/eo_Ponder.svg
+xboard-4.9.1/themes/Mono/shogi_lance.svg
+xboard-4.9.1/themes/Mono/shogi_silver.svg
+xboard-4.9.1/themes/Mono/WhiteCanon.svg
+xboard-4.9.1/themes/Mono/shogi_rook_promoted.svg
+xboard-4.9.1/themes/Mono/WhiteKnight.svg
+xboard-4.9.1/themes/Mono/BlackElephant.svg
+xboard-4.9.1/themes/Mono/eo_Unknown.svg
+xboard-4.9.1/themes/Mono/WhiteElephant.svg
+xboard-4.9.1/themes/Mono/BlackNightrider.svg
+xboard-4.9.1/themes/Mono/BlackGoldSilver.svg
+xboard-4.9.1/themes/Mono/eo_Black.svg
+xboard-4.9.1/themes/Mono/eo_Thinking.svg
+xboard-4.9.1/themes/Mono/BlackAdvisor.svg
+xboard-4.9.1/themes/Mono/BlackCommoner.svg
+xboard-4.9.1/themes/Mono/shogi_gold.svg
+xboard-4.9.1/themes/Mono/shogi_king.svg
+xboard-4.9.1/themes/Mono/WhiteCrownedRook.svg
+xboard-4.9.1/themes/Mono/BlackChancellor.svg
+xboard-4.9.1/themes/Mono/BlackPawn.svg
+xboard-4.9.1/version.texi
+xboard-4.9.1/moves.c
+xboard-4.9.1/evalgraph.h
+xboard-4.9.1/NEWS
+xboard-4.9.1/board.h
+xboard-4.9.1/xboard-tourney.desktop
+xboard-4.9.1/copyright.texi
+xboard-4.9.1/usystem.h
+xboard-4.9.1/mkinstalldirs
+xboard-4.9.1/Makefile.am
+xboard-4.9.1/xboard-fen-viewer.desktop
+xboard-4.9.1/osxapp/
+xboard-4.9.1/osxapp/Info.plist.in
+xboard-4.9.1/engine-intf.html
+xboard-4.9.1/config.sub
+xboard-4.9.1/zippy.c
+xboard-4.9.1/ngamelist.c
+xboard-4.9.1/COPYING
+xboard-4.9.1/gettext.h
+xboard-4.9.1/lists.h
+xboard-4.9.1/ChangeLog
+xboard-4.9.1/menus.c
+xboard-4.9.1/xaw/
+xboard-4.9.1/xaw/xboard.h
+xboard-4.9.1/xaw/xhistory.h
+xboard-4.9.1/xaw/xgamelist.c
+xboard-4.9.1/xaw/xboard.c
+xboard-4.9.1/xaw/xoptions.c
+xboard-4.9.1/xaw/xengineoutput.c
+xboard-4.9.1/xaw/xhistory.c
+xboard-4.9.1/xaw/xgamelist.h
+xboard-4.9.1/xboard2.h
+xboard-4.9.1/missing
+xboard-4.9.1/zippy.h
+xboard-4.9.1/uci.c
+xboard-4.9.1/gtk/
+xboard-4.9.1/gtk/xboard.h
+xboard-4.9.1/gtk/xtimer.c
+xboard-4.9.1/gtk/xboard.c
+xboard-4.9.1/gtk/xoptions.c
+xboard-4.9.1/gtk/xengineoutput.c
+xboard-4.9.1/readme.htm
+xboard-4.9.1/childio.c
+xboard-4.9.1/nengineoutput.c
+xboard-4.9.1/stamp-vti
+(base) ian@ian-HP-Notebook:~/Downloads$ cd xboard-4.9.1
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ls
+ABOUT-NLS       depcomp           menus.c          TODO
+aclocal.m4      dialogs.c         menus.h          uci.c
+args.h          dialogs.h         missing          usounds.c
+AUTHORS         DIFFSTAT          mkinstalldirs    usystem.c
+backend.c       draw.c            moves.c          usystem.h
+backend.h       draw.h            moves.h          version.texi
+backendz.h      engine-intf.html  nengineoutput.c  winboard
+bitmaps         engineoutput.c    nevalgraph.c     xaw
+board.c         engineoutput.h    NEWS             xboard2.h
+board.h         evalgraph.c       ngamelist.c      xboard.conf
+book.c          evalgraph.h       nhistory.c       xboard-config.desktop
+ChangeLog       FAQ.html          osxapp           xboard.desktop
+childio.c       frontend.h        parser.c         xboard-fen-viewer.desktop
+childio.h       gamelist.c        parser.h         xboard.info
+cmail.in        gettext.h         pgntags.c        xboard.man
+common.h        gpl.texinfo       pixmaps          xboard-pgn-viewer.desktop
+compile         gtk               png              xboard.png
+conf            history.c         po               xboard.svg
+config.guess    ics-parsing.txt   README           xboard.texi
+config.h.in     INSTALL           readme.htm       xboard-tourney.desktop
+config.rpath    install-sh        SHORTLOG         xboard.xml
+config.sub      lists.c           sounds           zippy.c
+configure       lists.h           stamp-vti        zippy.h
+configure.ac    m4                svg              zippy.README
+COPYING         Makefile.am       texi2man
+COPYRIGHT       Makefile.in       texinfo.tex
+copyright.texi  mdate-sh          themes
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for remsh... no
+checking for rsh... rsh
+checking for makeinfo... makeinfo
+checking for nroff... nroff -man
+checking for awk... /usr/bin/awk
+checking for perl... /usr/bin/perl
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking return type of signal handlers... void
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for _getpty... no
+checking for grantpt... yes
+checking for setitimer... yes
+checking for usleep... yes
+checking for gettimeofday... yes
+checking for random... yes
+checking for gethostname... yes
+checking for setlocale... yes
+checking for getpseudotty in -lseq... no
+checking whether compiler understands -Wall -Wno-parentheses... yes
+checking for pkg-config... pkg-config
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for CAIRO... no
+configure: error: Package requirements ( cairo >= 1.2.0 pangocairo librsvg-2.0 >= 2.14.0 ) were not met:
+
+No package 'cairo' found
+No package 'pangocairo' found
+No package 'librsvg-2.0' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables CAIRO_CFLAGS
+and CAIRO_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo apt install cairo pangocairo librsvg-2.0
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package cairo
+E: Unable to locate package pangocairo
+E: Unable to locate package librsvg-2.0
+E: Couldn't find any package by glob 'librsvg-2.0'
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ apt-cache search cairo
+fonts-hosny-amiri - Arabic Naskh style typographically oriented font
+gir1.2-freedesktop - Introspection data for some FreeDesktop components
+gir1.2-pango-1.0 - Layout and rendering of internationalized text - gir bindings
+gtk2-engines-murrine - cairo-based gtk+-2.0 theme engine
+libcairo-gobject-perl - integrate Cairo into the Glib type system in Perl
+libcairo-gobject2 - Cairo 2D vector graphics library (GObject library)
+libcairo-perl - Perl interface to the Cairo graphics library
+libcairo-script-interpreter2 - Cairo 2D vector graphics library (script interpreter)
+libcairo2 - Cairo 2D vector graphics library
+libcairo2-dev - Development files for the Cairo 2D graphics library
+libcairo2-doc - Documentation for the Cairo Multi-platform 2D graphics library
+libcairomm-1.0-1v5 - C++ wrappers for Cairo (shared libraries)
+libcairomm-1.0-dev - C++ wrappers for Cairo (development files)
+libcairomm-1.0-doc - C++ wrappers for Cairo (documentation)
+libpangocairo-1.0-0 - Layout and rendering of internationalized text
+libpixman-1-0 - pixel-manipulation library for X and cairo
+libpixman-1-dev - pixel-manipulation library for X and cairo (development files)
+poppler-utils - PDF utilities (based on Poppler)
+python3-cairo - Python3 bindings for the Cairo vector graphics library
+python3-cairo-dbg - Python3 bindings for the Cairo vector graphics library (debug extension)
+python3-cairo-dev - Python3 cairo bindings: development files
+python3-cairo-doc - Python 3 cairo bindings: documentation files
+python3-gi-cairo - Python 3 Cairo bindings for the GObject library
+aghermann - Sleep-research experiment manager
+cairo-5c - nickle bindings for the cairo graphics library
+cairo-dock - Metapackage for cairo-dock
+cairo-dock-alsamixer-plug-in - Alsamixer plug-in for Cairo-dock
+cairo-dock-animated-icons-plug-in - Animated icons plug-in Cairo-dock
+cairo-dock-cairo-penguin-plug-in - Cairo-Penguin plug-in for Cairo-dock
+cairo-dock-clipper-plug-in - Clipper plug-in for Cairo-dock
+cairo-dock-clock-plug-in - Clock plug-in for Cairo-dock
+cairo-dock-core - Light eye-candy fully themable animated dock for Linux desktop
+cairo-dock-dbus-plug-in - Dbus plug-in for Cairo-dock
+cairo-dock-dbus-plug-in-interface-mono - library of D-Bus interface for mono of Cairo-dock
+cairo-dock-dbus-plug-in-interface-python - library of D-Bus interface for Python of Cairo-dock
+cairo-dock-dbus-plug-in-interface-ruby - library of D-Bus interface for ruby of Cairo-dock
+cairo-dock-dbus-plug-in-interface-vala - library of D-Bus interface for vala of Cairo-dock
+cairo-dock-desklet-rendering-plug-in - Desklet rendering plug-in for Cairo-dock
+cairo-dock-dev - Cairo-dock development file
+cairo-dock-dialog-rendering-plug-in - Dialog rendering plug-in for Cairo-dock
+cairo-dock-dnd2share-plug-in - Dnd2share plug-in for Cairo-dock
+cairo-dock-drop-indicator-plug-in - Drop indicator plug-in for Cairo-dock
+cairo-dock-dustbin-plug-in - Dustbin plug-in for Cairo-dock
+cairo-dock-folders-plug-in - Folders plug-in Cairo-dock
+cairo-dock-gmenu-plug-in - GMenu plug-in for Cairo-dock
+cairo-dock-gnome-integration-plug-in - GNOME integration plug-in for Cairo-dock
+cairo-dock-icon-effect-plug-in - Icon effect plug-in for Cairo-dock
+cairo-dock-illusion-plug-in - Illusion plug-in for Cairo-dock
+cairo-dock-impulse-plug-in - Implus plug-in Cairo-dock
+cairo-dock-kde-integration-plug-in - KDE integration plug-in for Cairo-dock
+cairo-dock-keyboard-indicator-plug-in - Keyboard indicator plug-in for Cairo-dock
+cairo-dock-logout-plug-in - Logout plug-in for Cairo-dock
+cairo-dock-mail-plug-in - Mail plug-in for Cairo-dock
+cairo-dock-messaging-menu-plug-in - Messaging menu plug-in Cairo-dock
+cairo-dock-motion-blur-plug-in - Motion blur plug-in for Cairo-dock
+cairo-dock-musicplayer-plug-in - Music player plug-in for Cairo-dock
+cairo-dock-netspeed-plug-in - Netspeed plug-in for Cairo-dock
+cairo-dock-plug-in-data - Cairo-dock - Plug-in data files
+cairo-dock-plug-ins - Cairo-dock - All plug-ins
+cairo-dock-powermanager-plug-in - Powermanager plug-in for Cairo-dock
+cairo-dock-quick-browser-plug-in - Quick browser plug-in for Cairo-dock
+cairo-dock-recent-events-plug-in - Recent events plug-in for Cairo-dock
+cairo-dock-remote-control-plug-in - Remote control plug-in for Cairo-dock
+cairo-dock-rendering-plug-in - Rendering plug-in for Cairo-dock
+cairo-dock-rssreader-plug-in - RSS Reader plug-in for Cairo-dock
+cairo-dock-shortcuts-plug-in - Shortcuts plug-in for Cairo-dock
+cairo-dock-showdesktop-plug-in - Show desktop plug-in for Cairo-dock
+cairo-dock-showmouse-plug-in - Showmouse plug-in Cairo-dock
+cairo-dock-slider-plug-in - Slider plug-in Cairo-dock
+cairo-dock-stack-plug-in - Stack plug-in for Cairo-dock
+cairo-dock-switcher-plug-in - Switcher plug-in for Cairo-dock
+cairo-dock-system-monitor-plug-in - System Monitor plug-in for Cairo-dock
+cairo-dock-systray-plug-in - Systray plug-in for Cairo-dock
+cairo-dock-terminal-plug-in - Terminal plug-in for Cairo-dock
+cairo-dock-tomboy-plug-in - Tomboy plug-in for Cairo-dock
+cairo-dock-toons-plug-in - Toons plug-in for Cairo-dock
+cairo-dock-weather-plug-in - Weather plug-in for Cairo-dock
+cairo-dock-wifi-plug-in - Wifi plug-in for Cairo-dock
+cairo-dock-xfce-integration-plug-in - Xfce integration plug-in for Cairo-dock
+cairo-dock-xgamma-plug-in - Xgamma plug-in for Cairo-dock
+cairo-perf-utils - Cairo 2D vector graphics library performance utilities
+cairosvg - SVG to PDF/PS/PNG converter based on Cairo
+conky-all - highly configurable system monitor (all features enabled)
+conky-all-dbg - highly configurable system monitor (all features enabled - debug)
+darktable - virtual lighttable and darkroom for photographers
+fcitx-ui-light - light weight xlibs and xft based UI for Fcitx
+fdclock - freedesktop.org clock
+fp-units-gfx - Free Pascal - graphics-library units dependency package
+fp-units-gfx-3.0.4 - Free Pascal - graphics-library units
+gambas3-gb-cairo - Gambas bindings for cairo
+gir1.2-goocanvas-2.0 - GObject introspection data for GooCanvas - gir bindings
+giza-dev - Lightweight scientific plotting library (development files)
+gnome-twitch-player-backend-gstreamer-cairo - Player backend for GNOME Twitch based on gstreamer+cairo
+gnustep-back0.27-cairo - GNUstep GUI Backend (cairo)
+golang-github-gotk3-gotk3-dev - Go bindings for GTK3
+guile-cairo - Guile bindings for Cairo
+guile-cairo-dev - Guile bindings for Cairo, development files
+libaosd-dev - atheme.org's on screen display library - dev
+libaosd-text2 - atheme.org's on screen display library - text layout
+libaosd2 - atheme.org's on screen display library - main
+libcairo-5c-dev - library for cairo nickle bindings dev files
+libcairo-5c0 - library for cairo nickle bindings
+libcairo-ocaml - OCaml bindings for Cairo (runtime)
+libcairo-ocaml-dev - OCaml bindings for Cairo
+libcairo1.10-cil - CLI binding for Cairo
+libcairo2-ocaml - OCaml binding for Cairo (runtime library)
+libcairo2-ocaml-dev - OCaml binding for Cairo (development files)
+libcpgplot0 - CPGPLOT replacement shared lib based on giza
+libfltk-cairo1.3 - Fast Light Toolkit - Cairo rendering layer support
+libghc-cairo-dev - binding to the Cairo library
+libghc-cairo-doc - Binding to the Cairo library; documentation
+libghc-cairo-prof - Binding to the Cairo library; profiling libraries
+libghc-chart-cairo-dev - Cairo backend for Charts
+libghc-chart-cairo-doc - Cairo backend for Charts; documentation
+libghc-chart-cairo-prof - Cairo backend for Charts; profiling libraries
+libghc-chart-dev - library for generating 2D Charts and Plots
+libghc-chart-doc - library for generating 2D Charts and Plots; documentation
+libghc-chart-prof - library for generating 2D Charts and Plots; profiling libraries
+libghc-diagrams-cairo-dev - Cairo backend for the diagrams drawing EDSL
+libghc-diagrams-cairo-doc - Cairo backend for the diagrams drawing EDSL; documentation
+libghc-diagrams-cairo-prof - Cairo backend for the diagrams drawing EDSL; profiling libraries
+libghc-diagrams-dev - embedded domain-specific language for declarative vector graphics
+libghc-diagrams-doc - Embedded domain-specific language for declarative vector graphics
+libghc-diagrams-gtk-dev - Backend for rendering diagrams directly to GTK windows
+libghc-diagrams-gtk-doc - Backend for rendering diagrams directly to GTK windows; documentation
+libghc-diagrams-gtk-prof - Backend for rendering diagrams directly to GTK windows; profiling libraries
+libghc-diagrams-prof - Embedded domain-specific language for declarative vector graphics
+libghc-gi-cairo-connector-dev - GI friendly Binding to the Cairo library
+libghc-gi-cairo-connector-doc - GI friendly Binding to the Cairo library; documentation
+libghc-gi-cairo-connector-prof - GI friendly Binding to the Cairo library; profiling libraries
+libghc-gi-cairo-dev - Cairo bindings
+libghc-gi-cairo-doc - Cairo bindings; documentation
+libghc-gi-cairo-prof - Cairo bindings; profiling libraries
+libghc-gi-cairo-render-dev - GI friendly Binding to the Cairo library.
+libghc-gi-cairo-render-doc - GI friendly Binding to the Cairo library.; documentation
+libghc-gi-cairo-render-prof - GI friendly Binding to the Cairo library.; profiling libraries
+libghc-pango-dev - binding to the Pango text rendering engine
+libghc-pango-doc - Binding to the Pango text rendering engine; documentation
+libghc-pango-prof - Binding to the Pango text rendering engine; profiling libraries
+libgiza0 - Lightweight scientific plotting library (shared library)
+libgoocanvas-2.0-9 - Canvas widget for GTK+ - shared library
+libgoocanvas-2.0-common - Canvas widget for GTK+ - common files
+libgoocanvas-2.0-dev - Canvas widget for GTK+ - development files
+libgoocanvas2-perl - Perl bindings for the goocanvas-2.0 widget using Glib::Object::Introspection
+libgoocanvasmm-2.0-6 - C++ bindings for GooCanvas - shared library
+libgoocanvasmm-2.0-dev - C++ bindings for GooCanvas - development files
+libgoocanvasmm-2.0-doc - C++ bindings for GooCanvas - documentation and examples
+libgraphics-primitive-driver-cairo-perl - backend providing graphics support using Cairo
+libgtk3.0-cil-dev - CLI binding for the GTK+ toolkit 3.0
+libmono-cairo4.0-cil - Mono Cairo library (for CLI 4.0)
+libpango-perl - Perl module to layout and render international text
+libpgplot0 - PGPLOT replacement shared lib based on giza
+librust-cairo-rs+dox-dev - Rust bindings for the Cairo library - feature "dox"
+librust-cairo-rs+embed-lgpl-docs-dev - Rust bindings for the Cairo library - feature "embed-lgpl-docs"
+librust-cairo-rs+glib-dev - Rust bindings for the Cairo library - feature "glib"
+librust-cairo-rs+glib-sys-dev - Rust bindings for the Cairo library - feature "glib-sys"
+librust-cairo-rs+gobject-sys-dev - Rust bindings for the Cairo library - feature "gobject-sys"
+librust-cairo-rs+gtk-rs-lgpl-docs-dev - Rust bindings for the Cairo library - feature "gtk-rs-lgpl-docs"
+librust-cairo-rs+pdf-dev - Rust bindings for the Cairo library - feature "pdf"
+librust-cairo-rs+png-dev - Rust bindings for the Cairo library - feature "png"
+librust-cairo-rs+ps-dev - Rust bindings for the Cairo library - feature "ps"
+librust-cairo-rs+purge-lgpl-docs-dev - Rust bindings for the Cairo library - feature "purge-lgpl-docs"
+librust-cairo-rs+svg-dev - Rust bindings for the Cairo library - feature "svg"
+librust-cairo-rs+use-glib-dev - Rust bindings for the Cairo library - feature "use_glib"
+librust-cairo-rs+v1-14-dev - Rust bindings for the Cairo library - feature "v1_14"
+librust-cairo-rs+v1-16-dev - Rust bindings for the Cairo library - feature "v1_16"
+librust-cairo-rs+xcb-dev - Rust bindings for the Cairo library - feature "xcb"
+librust-cairo-rs+xlib-dev - Rust bindings for the Cairo library - feature "xlib"
+librust-cairo-rs-dev - Rust bindings for the Cairo library - Rust source code
+librust-cairo-sys-rs+dox-dev - FFI bindings to libcairo - feature "dox"
+librust-cairo-sys-rs+glib-sys-dev - FFI bindings to libcairo - feature "glib-sys"
+librust-cairo-sys-rs+use-glib-dev - FFI bindings to libcairo - feature "use_glib"
+librust-cairo-sys-rs+x11-dev - FFI bindings to libcairo - feature "x11"
+librust-cairo-sys-rs+xlib-dev - FFI bindings to libcairo - feature "xlib"
+librust-cairo-sys-rs-dev - FFI bindings to libcairo - Rust source code
+librust-pangocairo+dox-dev - Rust bindings for the PangoCairo library - feature "dox"
+librust-pangocairo+embed-lgpl-docs-dev - Rust bindings for the PangoCairo library - feature "embed-lgpl-docs"
+librust-pangocairo+gtk-rs-lgpl-docs-dev - Rust bindings for the PangoCairo library - feature "gtk-rs-lgpl-docs"
+librust-pangocairo+purge-lgpl-docs-dev - Rust bindings for the PangoCairo library - feature "purge-lgpl-docs"
+librust-pangocairo-dev - Rust bindings for the PangoCairo library - Rust source code
+librust-pangocairo-sys-dev - FFI bindings to libgtk-3 - Rust source code
+libswt-cairo-gtk-4-jni - Standard Widget Toolkit for GTK+ Cairo JNI library
+murrine-themes - themes for gtk2 murrine engine
+pdf2svg - converts PDF documents to SVG files (one per page)
+plplot-driver-cairo - Scientific plotting library (Cairo driver)
+python-cairo - Python bindings for the Cairo vector graphics library
+python-cairo-dbg - Python bindings for the Cairo vector graphics library (debug extension)
+python-cairo-dev - Python cairo bindings: development files
+python-cairocffi-doc - cffi-based cairo bindings for Python - Documentation
+python-gi-cairo - Python Cairo bindings for the GObject library
+python3-cairocffi - cffi-based cairo bindings for Python (Python3)
+python3-cairosvg - SVG to PDF/PS/PNG converter based on Cairo (Python3 library)
+python3-igraph - High performance graph data structures and algorithms (Python 3)
+r-cran-cairo - GNU R graphics device using cairo graphics library
+r-cran-cairodevice - GNU R Cairo/Gtk2 device driver package
+r-cran-freetypeharfbuzz - GNU R deterministic computation of text box metrics
+ruby-cairo - Cairo bindings for the Ruby language
+ruby-cairo-gobject - CairoGObject bindings for the Ruby language
+scour - SVG scrubber and optimizer (CLI and debhelper)
+sndfile-tools - Collection of programs for operating on sound files
+spectools - Utilities for using the Wi-Spy USB spectrum analyzer hardware
+tcpflow-nox - TCP flow recorder - version without X11 dependencies
+vim-syntax-gtk - Syntax files to highlight GTK+ keywords in vim
+xdot - interactive viewer for Graphviz dot files
+lib2geom-dev - robust computational geometry framework -- development library
+lib2geom1.1.0 - robust computational geometry framework -- shared library
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo apt install libcairo2
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+libcairo2 is already the newest version (1.16.0-4ubuntu1).
+libcairo2 set to manually installed.
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  fairymax gaviotatb gedit-common gir1.2-appindicator3-0.1 gir1.2-clutter-1.0
+  gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-goa-1.0
+  gir1.2-gtkclutter-1.0 gir1.2-gtksource-3.0 gir1.2-gtksource-4 gir1.2-snapd-1
+  gir1.2-wnck-3.0 gmsh gmsh-doc gnome-screensaver gobject-introspection
+  gstreamer1.0-vaapi gtk3-nocsd hplip-data hud hwdata indicator-appmenu
+  indicator-datetime indicator-keyboard indicator-messages indicator-power
+  indicator-printers indicator-session indicator-sound jayatana
+  libaccounts-glib0 libamtk-5-0 libamtk-5-common libappstream-glib8
+  libassimp-dev libassimp5 libbamf3-2 libblosc1 libboost-chrono-dev
+  libboost-math-dev libboost-mpi-dev libboost-serialization-dev
+  libboost-timer-dev libcmor2 libcolumbus1-common libcolumbus1v5
+  libcompizconfig0 libdbusmenu-qt5-2 libdeal.ii-9.1.1 libdecoration0
+  libdolfin2019.1 libeckit-dev libeckit-utils libeckit0d libexpat1:i386
+  libfcitx-config4 libfcitx-gclient1 libfcitx-utils0 libfltk-images1.3
+  libframe6 libfreeimage-dev libfwupdplugin1 libgail-3-0 libgaviotatb1
+  libgeis1 libgeonames-common libgeonames0 libglew2.1 libglewmx1.13
+  libgmsh-dev libgmsh4 libgrail6 libgsettings-qt1
+  libgstreamer-plugins-bad1.0-0 libgtk3-nocsd0 libgtksourceview-3.0-1
+  libgtksourceview-3.0-common libhpmud0 libido3-0.1-0 libjson-c-dev liblaszip8
+  liblightdm-gobject-1-0 libllvm11 libmagics++-data libmagics++-metview-dev
+  libmagplus3v5 libmetacity1 libmshr2019.1 libnemo-extension1
+  libnetcdf-cxx-legacy-dev libnetplan0 libnfs13 libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev libocct-ocaf-dev
+  libocct-visualization-dev libodb-api-0d libodb-api-bin libodb-api-data
+  libodb-api-dev libparpack2-dev libpdal-base9 libpdal-plugin-faux
+  libpdal-plugin-icebridge libpdal-plugin-pgpointcloud libpdal-plugin-sqlite
+  libpdal-util9 libpetsc3.12-dev-common libpetsc3.12-dev-examples libpfm4
+  libptscotch-dev libpython3-dev libpython3.8-dev libpython3.8-minimal:i386
+  libqt5x11extras5 librsync2 libsane-hpaio libscotch-dev libsnappy-dev
+  libsqlite3-mod-spatialite libssl-dev libssl1.1:i386 libsundials-arkode2
+  libsundials-cvode3 libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxmu-dev libxmu-headers
+  libxxhash-dev libxxhash0 libz3-4 libz3-dev llvm-9 llvm-9-runtime
+  metacity-common numdiff nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-cairo python-gi python-gi-cairo
+  python-tables-data python3-fasteners python3-geojson python3-isodate
+  python3-lockfile python3-louis python3-markdown python3-monotonic
+  python3-pkgconfig python3-ply python3-png python3-pyqrcode python3-speechd
+  python3-suds python3-trie python3-u-msgpack session-shortcuts tcl
+  ttf-dejavu-core ttf-dejavu-extra ubuntu-touch-sounds unity-asset-pool
+  unity-greeter unity-gtk-module-common unity-gtk2-module unity-gtk3-module
+  unity-schemas unity-scope-home unity-scopes-master-default unity-services
+  unity-settings-daemon unity-settings-daemon-schemas x11-apps
+  x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+0 to upgrade, 0 to newly install, 0 to remove and 12 not to upgrade.
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ apt-cache search pango
+gir1.2-coglpango-1.0 - GObject introspection data for the CoglPango 1.0 library
+gir1.2-pango-1.0 - Layout and rendering of internationalized text - gir bindings
+gstreamer1.0-x - GStreamer plugins for X11 and Pango
+libcogl-pango-dev - Object oriented GL/GLES Abstraction/Utility Layer (development files)
+libcogl-pango20 - Object oriented GL/GLES Abstraction/Utility Layer
+libpango-1.0-0 - Layout and rendering of internationalized text
+libpango1.0-dev - Development files for the Pango
+libpango1.0-doc - Documentation files for the Pango
+libpangocairo-1.0-0 - Layout and rendering of internationalized text
+libpangoft2-1.0-0 - Layout and rendering of internationalized text
+libpangomm-1.4-1v5 - C++ Wrapper for pango (shared libraries)
+libpangomm-1.4-dev - C++ Wrapper for pango (development files)
+libpangomm-1.4-doc - C++ Wrapper for pango (documentation)
+libpangoxft-1.0-0 - Layout and rendering of internationalized text
+pango1.0-tools - Development utilities for Pango
+fcitx-ui-light - light weight xlibs and xft based UI for Fcitx
+guile-gnome2-gtk - Guile bindings for GTK+, libglade, Pango and ATK
+irssi-scripts - collection of scripts for irssi
+libaosd-dev - atheme.org's on screen display library - dev
+libaosd-text2 - atheme.org's on screen display library - text layout
+libaosd2 - atheme.org's on screen display library - main
+libghc-gi-pango-dev - Pango bindings
+libghc-gi-pango-doc - Pango bindings; documentation
+libghc-gi-pango-prof - Pango bindings; profiling libraries
+libghc-pango-dev - binding to the Pango text rendering engine
+libghc-pango-doc - Binding to the Pango text rendering engine; documentation
+libghc-pango-prof - Binding to the Pango text rendering engine; profiling libraries
+libghc-yi-frontend-pango-dev - Pango frontend for Yi editor
+libghc-yi-frontend-pango-doc - Pango frontend for Yi editor; documentation
+libghc-yi-frontend-pango-prof - Pango frontend for Yi editor; profiling libraries
+libgtk2.0-cil - CLI binding for the GTK+ toolkit 2.12
+libgtk2.0-cil-dev - CLI binding for the GTK+ toolkit 2.12
+libgtk3.0-cil-dev - CLI binding for the GTK+ toolkit 3.0
+liblasi-dev - development files and documentation for the LASi library
+liblasi0 - creation of PostScript documents containing Unicode symbols
+libpango-perl - Perl module to layout and render international text
+libpango3.0-cil - CLI binding for Pango
+libpangox-1.0-0 - pango library X backend
+libpangox-1.0-dev - pango library X backend - development files
+libpaps-dev - Development files for libpaps
+libpaps0 - UTF-8 to PostScript converter library using Pango
+librust-pango+dox-dev - Rust bindings for the Pango library - feature "dox"
+librust-pango+embed-lgpl-docs-dev - Rust bindings for the Pango library - feature "embed-lgpl-docs" and 2 more
+librust-pango+v1-38-dev - Rust bindings for the Pango library - feature "v1_38" and 1 more
+librust-pango+v1-42-dev - Rust bindings for the Pango library - feature "v1_42"
+librust-pango-dev - Rust bindings for the Pango library - Rust source code
+librust-pango-sys-dev - FFI bindings to libpango-1.0 - Rust source code
+librust-pangocairo+dox-dev - Rust bindings for the PangoCairo library - feature "dox"
+librust-pangocairo+embed-lgpl-docs-dev - Rust bindings for the PangoCairo library - feature "embed-lgpl-docs"
+librust-pangocairo+gtk-rs-lgpl-docs-dev - Rust bindings for the PangoCairo library - feature "gtk-rs-lgpl-docs"
+librust-pangocairo+purge-lgpl-docs-dev - Rust bindings for the PangoCairo library - feature "purge-lgpl-docs"
+librust-pangocairo-dev - Rust bindings for the PangoCairo library - Rust source code
+librust-pangocairo-sys-dev - FFI bindings to libgtk-3 - Rust source code
+libsdl-pango-dev - text rendering with Pango in SDL applications (development)
+libsdl-pango1 - text rendering with Pango in SDL applications (shared library)
+packagekit-gtk3-module - Install fonts automatically using PackageKit
+pango1.0-tests - Layout and rendering of internationalized text - installed tests
+pangoterm - GTK/Pango-based terminal
+paps - UTF-8 to PostScript converter using Pango
+rofi - window switcher, run dialog and dmenu replacement
+ruby-pango - Pango bindings for the Ruby language
+theme-d-gnome - GNOME library for programming language Theme-D
+vim-syntax-gtk - Syntax files to highlight GTK+ keywords in vim
+xen-tools - Tools to manage Xen virtual servers
+yabar - modern and lightweight status bar for X window managers
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo apt install libpangox-1.0-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  fairymax gaviotatb gedit-common gir1.2-appindicator3-0.1
+  gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0
+  gir1.2-coglpango-1.0 gir1.2-goa-1.0 gir1.2-gtkclutter-1.0
+  gir1.2-gtksource-3.0 gir1.2-gtksource-4 gir1.2-snapd-1 gir1.2-wnck-3.0
+  gmsh gmsh-doc gnome-screensaver gobject-introspection gstreamer1.0-vaapi
+  gtk3-nocsd hplip-data hud hwdata indicator-appmenu indicator-datetime
+  indicator-keyboard indicator-messages indicator-power indicator-printers
+  indicator-session indicator-sound jayatana libaccounts-glib0 libamtk-5-0
+  libamtk-5-common libappstream-glib8 libassimp-dev libassimp5 libbamf3-2
+  libblosc1 libboost-chrono-dev libboost-math-dev libboost-mpi-dev
+  libboost-serialization-dev libboost-timer-dev libcmor2
+  libcolumbus1-common libcolumbus1v5 libcompizconfig0 libdbusmenu-qt5-2
+  libdeal.ii-9.1.1 libdecoration0 libdolfin2019.1 libeckit-dev
+  libeckit-utils libeckit0d libexpat1:i386 libfcitx-config4
+  libfcitx-gclient1 libfcitx-utils0 libfltk-images1.3 libframe6
+  libfreeimage-dev libfwupdplugin1 libgail-3-0 libgaviotatb1 libgeis1
+  libgeonames-common libgeonames0 libglew2.1 libglewmx1.13 libgmsh-dev
+  libgmsh4 libgrail6 libgsettings-qt1 libgstreamer-plugins-bad1.0-0
+  libgtk3-nocsd0 libgtksourceview-3.0-1 libgtksourceview-3.0-common
+  libhpmud0 libido3-0.1-0 libjson-c-dev liblaszip8 liblightdm-gobject-1-0
+  libllvm11 libmagics++-data libmagics++-metview-dev libmagplus3v5
+  libmetacity1 libmshr2019.1 libnemo-extension1 libnetcdf-cxx-legacy-dev
+  libnetplan0 libnfs13 libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev
+  libocct-ocaf-dev libocct-visualization-dev libodb-api-0d libodb-api-bin
+  libodb-api-data libodb-api-dev libparpack2-dev libpdal-base9
+  libpdal-plugin-faux libpdal-plugin-icebridge libpdal-plugin-pgpointcloud
+  libpdal-plugin-sqlite libpdal-util9 libpetsc3.12-dev-common
+  libpetsc3.12-dev-examples libpfm4 libptscotch-dev libpython3-dev
+  libpython3.8-dev libpython3.8-minimal:i386 libqt5x11extras5 librsync2
+  libsane-hpaio libscotch-dev libsnappy-dev libsqlite3-mod-spatialite
+  libssl-dev libssl1.1:i386 libsundials-arkode2 libsundials-cvode3
+  libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxmu-dev libxmu-headers
+  libxxhash-dev libxxhash0 libz3-4 libz3-dev llvm-9 llvm-9-runtime
+  metacity-common numdiff nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-cairo python-gi python-gi-cairo
+  python-tables-data python3-fasteners python3-geojson python3-isodate
+  python3-lockfile python3-louis python3-markdown python3-monotonic
+  python3-pkgconfig python3-ply python3-png python3-pyqrcode
+  python3-speechd python3-suds python3-trie python3-u-msgpack
+  session-shortcuts tcl ttf-dejavu-core ttf-dejavu-extra
+  ubuntu-touch-sounds unity-asset-pool unity-greeter
+  unity-gtk-module-common unity-gtk2-module unity-gtk3-module
+  unity-schemas unity-scope-home unity-scopes-master-default
+  unity-services unity-settings-daemon unity-settings-daemon-schemas
+  x11-apps x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  gir1.2-harfbuzz-0.0 libdatrie-dev libfribidi-dev libgraphite2-dev
+  libharfbuzz-dev libharfbuzz-gobject0 libpango1.0-dev libpangox-1.0-0
+  libthai-dev libxft-dev pango1.0-tools
+Suggested packages:
+  libdatrie-doc libgraphite2-utils imagemagick libpango1.0-doc libthai-doc
+The following NEW packages will be installed:
+  gir1.2-harfbuzz-0.0 libdatrie-dev libfribidi-dev libgraphite2-dev
+  libharfbuzz-dev libharfbuzz-gobject0 libpango1.0-dev libpangox-1.0-0
+  libpangox-1.0-dev libthai-dev libxft-dev pango1.0-tools
+0 to upgrade, 12 to newly install, 0 to remove and 12 not to upgrade.
+Need to get 984 kB of archives.
+After this operation, 5,929 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gir1.2-harfbuzz-0.0 amd64 2.6.4-1ubuntu4.2 [26.4 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libdatrie-dev amd64 0.2.12-3 [17.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libfribidi-dev amd64 1.0.8-2ubuntu0.1 [62.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 libgraphite2-dev amd64 1.3.13-11build1 [14.7 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libharfbuzz-gobject0 amd64 2.6.4-1ubuntu4.2 [20.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libharfbuzz-dev amd64 2.6.4-1ubuntu4.2 [526 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 libthai-dev amd64 0.1.28-3 [24.5 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 libxft-dev amd64 2.3.3-0ubuntu1 [49.1 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 pango1.0-tools amd64 1.44.7-2ubuntu4 [26.2 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/main amd64 libpango1.0-dev amd64 1.44.7-2ubuntu4 [132 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 libpangox-1.0-0 amd64 0.0.2-5ubuntu1 [41.9 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/universe amd64 libpangox-1.0-dev amd64 0.0.2-5ubuntu1 [42.2 kB]
+Fetched 984 kB in 3s (317 kB/s)              
+Selecting previously unselected package gir1.2-harfbuzz-0.0:amd64.
+(Reading database ... 412839 files and directories currently installed.)
+Preparing to unpack .../00-gir1.2-harfbuzz-0.0_2.6.4-1ubuntu4.2_amd64.deb ..
+.
+Unpacking gir1.2-harfbuzz-0.0:amd64 (2.6.4-1ubuntu4.2) ...
+Selecting previously unselected package libdatrie-dev:amd64.
+Preparing to unpack .../01-libdatrie-dev_0.2.12-3_amd64.deb ...
+Unpacking libdatrie-dev:amd64 (0.2.12-3) ...
+Selecting previously unselected package libfribidi-dev:amd64.
+Preparing to unpack .../02-libfribidi-dev_1.0.8-2ubuntu0.1_amd64.deb ...
+Unpacking libfribidi-dev:amd64 (1.0.8-2ubuntu0.1) ...
+Selecting previously unselected package libgraphite2-dev:amd64.
+Preparing to unpack .../03-libgraphite2-dev_1.3.13-11build1_amd64.deb ...
+Unpacking libgraphite2-dev:amd64 (1.3.13-11build1) ...
+Selecting previously unselected package libharfbuzz-gobject0:amd64.
+Preparing to unpack .../04-libharfbuzz-gobject0_2.6.4-1ubuntu4.2_amd64.deb .
+..
+Unpacking libharfbuzz-gobject0:amd64 (2.6.4-1ubuntu4.2) ...
+Selecting previously unselected package libharfbuzz-dev:amd64.
+Preparing to unpack .../05-libharfbuzz-dev_2.6.4-1ubuntu4.2_amd64.deb ...
+Unpacking libharfbuzz-dev:amd64 (2.6.4-1ubuntu4.2) ...
+Selecting previously unselected package libthai-dev:amd64.
+Preparing to unpack .../06-libthai-dev_0.1.28-3_amd64.deb ...
+Unpacking libthai-dev:amd64 (0.1.28-3) ...
+Selecting previously unselected package libxft-dev:amd64.
+Preparing to unpack .../07-libxft-dev_2.3.3-0ubuntu1_amd64.deb ...
+Unpacking libxft-dev:amd64 (2.3.3-0ubuntu1) ...
+Selecting previously unselected package pango1.0-tools.
+Preparing to unpack .../08-pango1.0-tools_1.44.7-2ubuntu4_amd64.deb ...
+Unpacking pango1.0-tools (1.44.7-2ubuntu4) ...
+Selecting previously unselected package libpango1.0-dev:amd64.
+Preparing to unpack .../09-libpango1.0-dev_1.44.7-2ubuntu4_amd64.deb ...
+Unpacking libpango1.0-dev:amd64 (1.44.7-2ubuntu4) ...
+Selecting previously unselected package libpangox-1.0-0:amd64.
+Preparing to unpack .../10-libpangox-1.0-0_0.0.2-5ubuntu1_amd64.deb ...
+Unpacking libpangox-1.0-0:amd64 (0.0.2-5ubuntu1) ...
+Selecting previously unselected package libpangox-1.0-dev.
+Preparing to unpack .../11-libpangox-1.0-dev_0.0.2-5ubuntu1_amd64.deb ...
+Unpacking libpangox-1.0-dev (0.0.2-5ubuntu1) ...
+Setting up libpangox-1.0-0:amd64 (0.0.2-5ubuntu1) ...
+Setting up libfribidi-dev:amd64 (1.0.8-2ubuntu0.1) ...
+Setting up pango1.0-tools (1.44.7-2ubuntu4) ...
+Setting up libharfbuzz-gobject0:amd64 (2.6.4-1ubuntu4.2) ...
+Setting up gir1.2-harfbuzz-0.0:amd64 (2.6.4-1ubuntu4.2) ...
+Setting up libgraphite2-dev:amd64 (1.3.13-11build1) ...
+Setting up libdatrie-dev:amd64 (0.2.12-3) ...
+Setting up libxft-dev:amd64 (2.3.3-0ubuntu1) ...
+Setting up libharfbuzz-dev:amd64 (2.6.4-1ubuntu4.2) ...
+Setting up libthai-dev:amd64 (0.1.28-3) ...
+Setting up libpango1.0-dev:amd64 (1.44.7-2ubuntu4) ...
+Setting up libpangox-1.0-dev (0.0.2-5ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ l./configure
+bash: l./configure: No such file or directory
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for remsh... no
+checking for rsh... rsh
+checking for makeinfo... makeinfo
+checking for nroff... nroff -man
+checking for awk... /usr/bin/awk
+checking for perl... /usr/bin/perl
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking return type of signal handlers... void
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for _getpty... no
+checking for grantpt... yes
+checking for setitimer... yes
+checking for usleep... yes
+checking for gettimeofday... yes
+checking for random... yes
+checking for gethostname... yes
+checking for setlocale... yes
+checking for getpseudotty in -lseq... no
+checking whether compiler understands -Wall -Wno-parentheses... yes
+checking for pkg-config... pkg-config
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for CAIRO... no
+configure: error: Package requirements ( cairo >= 1.2.0 pangocairo librsvg-2.0 >= 2.14.0 ) were not met:
+
+No package 'librsvg-2.0' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables CAIRO_CFLAGS
+and CAIRO_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ apt-cache search librsvg*
+librsvg2-2 - SAX-based renderer library for SVG files (runtime)
+librsvg2-common - SAX-based renderer library for SVG files (extra runtime)
+librsvg2-dev - SAX-based renderer library for SVG files (development)
+librsvg2-doc - SAX-based renderer library for SVG files (documentation)
+libimage-librsvg-perl - Perl binding for the GNOME librsvg SVG renderer library
+librsvg2-bin - command-line utility to convert SVG files
+lyx - document processor
+pandoc - general markup converter
+python3-sphinxcontrib.svg2pdfconverter - Sphinx SVG to PDF Converter Extension
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo apt install librsvg2-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  fairymax gaviotatb gedit-common gir1.2-appindicator3-0.1
+  gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0
+  gir1.2-coglpango-1.0 gir1.2-goa-1.0 gir1.2-gtkclutter-1.0
+  gir1.2-gtksource-3.0 gir1.2-gtksource-4 gir1.2-snapd-1 gir1.2-wnck-3.0
+  gmsh gmsh-doc gnome-screensaver gobject-introspection gstreamer1.0-vaapi
+  gtk3-nocsd hplip-data hud hwdata indicator-appmenu indicator-datetime
+  indicator-keyboard indicator-messages indicator-power indicator-printers
+  indicator-session indicator-sound jayatana libaccounts-glib0 libamtk-5-0
+  libamtk-5-common libappstream-glib8 libassimp-dev libassimp5 libbamf3-2
+  libblosc1 libboost-chrono-dev libboost-math-dev libboost-mpi-dev
+  libboost-serialization-dev libboost-timer-dev libcmor2
+  libcolumbus1-common libcolumbus1v5 libcompizconfig0 libdbusmenu-qt5-2
+  libdeal.ii-9.1.1 libdecoration0 libdolfin2019.1 libeckit-dev
+  libeckit-utils libeckit0d libexpat1:i386 libfcitx-config4
+  libfcitx-gclient1 libfcitx-utils0 libfltk-images1.3 libframe6
+  libfreeimage-dev libfwupdplugin1 libgail-3-0 libgaviotatb1 libgeis1
+  libgeonames-common libgeonames0 libglew2.1 libglewmx1.13 libgmsh-dev
+  libgmsh4 libgrail6 libgsettings-qt1 libgstreamer-plugins-bad1.0-0
+  libgtk3-nocsd0 libgtksourceview-3.0-1 libgtksourceview-3.0-common
+  libhpmud0 libido3-0.1-0 libjson-c-dev liblaszip8 liblightdm-gobject-1-0
+  libllvm11 libmagics++-data libmagics++-metview-dev libmagplus3v5
+  libmetacity1 libmshr2019.1 libnemo-extension1 libnetcdf-cxx-legacy-dev
+  libnetplan0 libnfs13 libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev
+  libocct-ocaf-dev libocct-visualization-dev libodb-api-0d libodb-api-bin
+  libodb-api-data libodb-api-dev libparpack2-dev libpdal-base9
+  libpdal-plugin-faux libpdal-plugin-icebridge libpdal-plugin-pgpointcloud
+  libpdal-plugin-sqlite libpdal-util9 libpetsc3.12-dev-common
+  libpetsc3.12-dev-examples libpfm4 libptscotch-dev libpython3-dev
+  libpython3.8-dev libpython3.8-minimal:i386 libqt5x11extras5 librsync2
+  libsane-hpaio libscotch-dev libsnappy-dev libsqlite3-mod-spatialite
+  libssl-dev libssl1.1:i386 libsundials-arkode2 libsundials-cvode3
+  libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxmu-dev libxmu-headers
+  libxxhash-dev libxxhash0 libz3-4 libz3-dev llvm-9 llvm-9-runtime
+  metacity-common numdiff nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-cairo python-gi python-gi-cairo
+  python-tables-data python3-fasteners python3-geojson python3-isodate
+  python3-lockfile python3-louis python3-markdown python3-monotonic
+  python3-pkgconfig python3-ply python3-png python3-pyqrcode
+  python3-speechd python3-suds python3-trie python3-u-msgpack
+  session-shortcuts tcl ttf-dejavu-core ttf-dejavu-extra
+  ubuntu-touch-sounds unity-asset-pool unity-greeter
+  unity-gtk-module-common unity-gtk2-module unity-gtk3-module
+  unity-schemas unity-scope-home unity-scopes-master-default
+  unity-services unity-settings-daemon unity-settings-daemon-schemas
+  x11-apps x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libgdk-pixbuf2.0-dev
+Suggested packages:
+  librsvg2-doc
+The following NEW packages will be installed:
+  libgdk-pixbuf2.0-dev librsvg2-dev
+0 to upgrade, 2 to newly install, 0 to remove and 12 not to upgrade.
+Need to get 75.1 kB of archives.
+After this operation, 621 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgdk-pixbuf2.0-dev amd64 2.40.0+dfsg-3ubuntu0.4 [43.6 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 librsvg2-dev amd64 2.48.9-1ubuntu0.20.04.1 [31.5 kB]
+Fetched 75.1 kB in 2s (40.0 kB/s)       
+Selecting previously unselected package libgdk-pixbuf2.0-dev:amd64.
+(Reading database ... 413086 files and directories currently installed.)
+Preparing to unpack .../libgdk-pixbuf2.0-dev_2.40.0+dfsg-3ubuntu0.4_amd64.de
+b ...
+Unpacking libgdk-pixbuf2.0-dev:amd64 (2.40.0+dfsg-3ubuntu0.4) ...
+Selecting previously unselected package librsvg2-dev:amd64.
+Preparing to unpack .../librsvg2-dev_2.48.9-1ubuntu0.20.04.1_amd64.deb ...
+Unpacking librsvg2-dev:amd64 (2.48.9-1ubuntu0.20.04.1) ...
+Setting up libgdk-pixbuf2.0-dev:amd64 (2.40.0+dfsg-3ubuntu0.4) ...
+Setting up librsvg2-dev:amd64 (2.48.9-1ubuntu0.20.04.1) ...
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for remsh... no
+checking for rsh... rsh
+checking for makeinfo... makeinfo
+checking for nroff... nroff -man
+checking for awk... /usr/bin/awk
+checking for perl... /usr/bin/perl
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking return type of signal handlers... void
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for _getpty... no
+checking for grantpt... yes
+checking for setitimer... yes
+checking for usleep... yes
+checking for gettimeofday... yes
+checking for random... yes
+checking for gethostname... yes
+checking for setlocale... yes
+checking for getpseudotty in -lseq... no
+checking whether compiler understands -Wall -Wno-parentheses... yes
+checking for pkg-config... pkg-config
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for CAIRO... yes
+checking for xdg-mime... /usr/bin/xdg-mime
+checking for xdg-desktop-menu... /usr/bin/xdg-desktop-menu
+checking for xdg-icon-resource... /usr/bin/xdg-icon-resource
+checking for GTK... no
+configure: error: Package requirements ( gtk+-2.0 >= 2.16.0 gmodule-2.0 ) were not met:
+
+No package 'gtk+-2.0' found
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables GTK_CFLAGS
+and GTK_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo apt dep-build xboard
+E: Invalid operation dep-build
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo apt build-dep xboard
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  accountsservice-ubuntu-schemas activity-log-manager apport-symptoms
+  bamfdaemon chromium-codecs-ffmpeg-extra cinnamon-l10n cmor-tables
+  code-saturne-data code-saturne-doc compiz-core compiz-plugins-default
+  fairymax gaviotatb gedit-common gir1.2-appindicator3-0.1
+  gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-cogl-1.0
+  gir1.2-coglpango-1.0 gir1.2-goa-1.0 gir1.2-gtkclutter-1.0
+  gir1.2-gtksource-3.0 gir1.2-gtksource-4 gir1.2-snapd-1 gir1.2-wnck-3.0
+  gmsh gmsh-doc gnome-screensaver gobject-introspection gstreamer1.0-vaapi
+  gtk3-nocsd hplip-data hud hwdata indicator-appmenu indicator-datetime
+  indicator-keyboard indicator-messages indicator-power indicator-printers
+  indicator-session indicator-sound jayatana libaccounts-glib0 libamtk-5-0
+  libamtk-5-common libappstream-glib8 libassimp-dev libassimp5 libbamf3-2
+  libblosc1 libboost-chrono-dev libboost-math-dev libboost-mpi-dev
+  libboost-serialization-dev libboost-timer-dev libcmor2
+  libcolumbus1-common libcolumbus1v5 libcompizconfig0 libdbusmenu-qt5-2
+  libdeal.ii-9.1.1 libdecoration0 libdolfin2019.1 libeckit-dev
+  libeckit-utils libeckit0d libexpat1:i386 libfcitx-config4
+  libfcitx-gclient1 libfcitx-utils0 libfltk-images1.3 libframe6
+  libfreeimage-dev libfwupdplugin1 libgail-3-0 libgaviotatb1 libgeis1
+  libgeonames-common libgeonames0 libglew2.1 libglewmx1.13 libgmsh-dev
+  libgmsh4 libgrail6 libgsettings-qt1 libgstreamer-plugins-bad1.0-0
+  libgtk3-nocsd0 libgtksourceview-3.0-1 libgtksourceview-3.0-common
+  libhpmud0 libido3-0.1-0 libjson-c-dev liblaszip8 liblightdm-gobject-1-0
+  libllvm11 libmagics++-data libmagics++-metview-dev libmagplus3v5
+  libmetacity1 libmshr2019.1 libnemo-extension1 libnetcdf-cxx-legacy-dev
+  libnetplan0 libnfs13 libnux-4.0-0 libnux-4.0-common
+  libocct-data-exchange-dev libocct-foundation-dev
+  libocct-modeling-algorithms-dev libocct-modeling-data-dev
+  libocct-ocaf-dev libocct-visualization-dev libodb-api-0d libodb-api-bin
+  libodb-api-data libodb-api-dev libparpack2-dev libpdal-base9
+  libpdal-plugin-faux libpdal-plugin-icebridge libpdal-plugin-pgpointcloud
+  libpdal-plugin-sqlite libpdal-util9 libpetsc3.12-dev-common
+  libpetsc3.12-dev-examples libpfm4 libptscotch-dev libpython3-dev
+  libpython3.8-dev libpython3.8-minimal:i386 libqt5x11extras5 librsync2
+  libsane-hpaio libscotch-dev libsnappy-dev libsqlite3-mod-spatialite
+  libssl-dev libssl1.1:i386 libsundials-arkode2 libsundials-cvode3
+  libsundials-cvodes3 libsundials-ida3 libsundials-idas2
+  libsundials-kinsol3 libsundials-nvecparallel-hypre3
+  libsundials-nvecparallel-mpi3 libsundials-nvecparallel-openmp3
+  libsundials-nvecparallel-petsc3 libsundials-nvecparallel-pthread3
+  libsundials-nvecserial3 libsundials-sunlinsol1 libsundials-sunmatrix1
+  libsuperlu-dist-dev libtepl-4-0 libtimezonemap-data libtimezonemap1
+  libunity-control-center1 libunity-core-6.0-9 libunity-gtk2-parser0
+  libunity-gtk3-parser0 libunity-misc4 libunity-settings-daemon1
+  liburl-dispatcher1 libva-wayland2 libxmlb1 libxxhash-dev libxxhash0
+  libz3-4 libz3-dev llvm-9 llvm-9-runtime metacity-common numdiff
+  nux-tools paraview-doc printer-driver-hpcups
+  printer-driver-postscript-hp python-cairo python-gi python-gi-cairo
+  python-tables-data python3-fasteners python3-geojson python3-isodate
+  python3-lockfile python3-louis python3-markdown python3-monotonic
+  python3-pkgconfig python3-ply python3-png python3-pyqrcode
+  python3-speechd python3-suds python3-trie python3-u-msgpack
+  session-shortcuts tcl ttf-dejavu-core ttf-dejavu-extra
+  ubuntu-touch-sounds unity-asset-pool unity-greeter
+  unity-gtk-module-common unity-gtk2-module unity-gtk3-module
+  unity-schemas unity-scope-home unity-scopes-master-default
+  unity-services unity-settings-daemon unity-settings-daemon-schemas
+  x11-apps x11-session-utils xbrlapi xinit
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  autopoint debhelper dh-autoreconf dh-strip-nondeterminism dwz
+  gir1.2-gtk-2.0 libatk1.0-dev libdebhelper-perl
+  libfile-stripnondeterminism-perl libgtk2.0-dev libsub-override-perl
+  libxaw7-dev libxcomposite-dev libxcursor-dev libxdamage-dev
+  libxfixes-dev libxi-dev libxinerama-dev libxml2-utils libxrandr-dev
+  po-debconf x11proto-input-dev x11proto-randr-dev x11proto-xinerama-dev
+0 to upgrade, 24 to newly install, 0 to remove and 12 not to upgrade.
+Need to get 3,380 kB of archives.
+After this operation, 19.0 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 autopoint all 0.19.8.1-10build1 [412 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 dh-autoreconf all 19 [16.1 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 libdebhelper-perl all 12.10ubuntu1 [62.1 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 libsub-override-perl all 0.09-2 [9,532 B]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libfile-stripnondeterminism-perl all 1.7.0-1 [15.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/main amd64 dh-strip-nondeterminism all 1.7.0-1 [5,228 B]
+Get:7 http://archive.ubuntu.com/ubuntu focal/main amd64 dwz amd64 0.13-5 [151 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 po-debconf all 1.0.21 [233 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 debhelper all 12.10ubuntu1 [877 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/universe amd64 gir1.2-gtk-2.0 amd64 2.24.32-4ubuntu4 [172 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/main amd64 libatk1.0-dev amd64 2.35.1-1ubuntu2 [95.2 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 x11proto-xinerama-dev all 2019.2-1ubuntu1 [2,628 B]
+Get:13 http://archive.ubuntu.com/ubuntu focal/main amd64 libxinerama-dev amd64 2:1.1.4-2 [7,896 B]
+Get:14 http://archive.ubuntu.com/ubuntu focal/main amd64 libxfixes-dev amd64 1:5.0.3-2 [11.4 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal/main amd64 x11proto-input-dev all 2019.2-1ubuntu1 [2,628 B]
+Get:16 http://archive.ubuntu.com/ubuntu focal/main amd64 libxi-dev amd64 2:1.7.10-0ubuntu1 [187 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal/main amd64 x11proto-randr-dev all 2019.2-1ubuntu1 [2,620 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal/main amd64 libxrandr-dev amd64 2:1.5.2-0ubuntu1 [25.0 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal/main amd64 libxcursor-dev amd64 1:1.2.0-2 [26.5 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal/main amd64 libxcomposite-dev amd64 1:0.4.5-1 [9,152 B]
+Get:21 http://archive.ubuntu.com/ubuntu focal/main amd64 libxdamage-dev amd64 1:1.1.5-2 [5,228 B]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libxml2-utils amd64 2.9.10+dfsg-5ubuntu0.20.04.4 [37.1 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgtk2.0-dev amd64 2.24.32-4ubuntu4 [782 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal/main amd64 libxaw7-dev amd64 2:1.0.13-1 [231 kB]
+Fetched 3,380 kB in 5s (632 kB/s)     
+Selecting previously unselected package autopoint.
+(Reading database ... 413129 files and directories currently installed.)
+Preparing to unpack .../00-autopoint_0.19.8.1-10build1_all.deb ...
+Unpacking autopoint (0.19.8.1-10build1) ...
+Selecting previously unselected package dh-autoreconf.
+Preparing to unpack .../01-dh-autoreconf_19_all.deb ...
+Unpacking dh-autoreconf (19) ...
+Selecting previously unselected package libdebhelper-perl.
+Preparing to unpack .../02-libdebhelper-perl_12.10ubuntu1_all.deb ...
+Unpacking libdebhelper-perl (12.10ubuntu1) ...
+Selecting previously unselected package libsub-override-perl.
+Preparing to unpack .../03-libsub-override-perl_0.09-2_all.deb ...
+Unpacking libsub-override-perl (0.09-2) ...
+Selecting previously unselected package libfile-stripnondeterminism-perl.
+Preparing to unpack .../04-libfile-stripnondeterminism-perl_1.7.0-1_all.deb 
+...
+Unpacking libfile-stripnondeterminism-perl (1.7.0-1) ...
+Selecting previously unselected package dh-strip-nondeterminism.
+Preparing to unpack .../05-dh-strip-nondeterminism_1.7.0-1_all.deb ...
+Unpacking dh-strip-nondeterminism (1.7.0-1) ...
+Selecting previously unselected package dwz.
+Preparing to unpack .../06-dwz_0.13-5_amd64.deb ...
+Unpacking dwz (0.13-5) ...
+Selecting previously unselected package po-debconf.
+Preparing to unpack .../07-po-debconf_1.0.21_all.deb ...
+Unpacking po-debconf (1.0.21) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../08-debhelper_12.10ubuntu1_all.deb ...
+Unpacking debhelper (12.10ubuntu1) ...
+Selecting previously unselected package gir1.2-gtk-2.0:amd64.
+Preparing to unpack .../09-gir1.2-gtk-2.0_2.24.32-4ubuntu4_amd64.deb ...
+Unpacking gir1.2-gtk-2.0:amd64 (2.24.32-4ubuntu4) ...
+Selecting previously unselected package libatk1.0-dev:amd64.
+Preparing to unpack .../10-libatk1.0-dev_2.35.1-1ubuntu2_amd64.deb ...
+Unpacking libatk1.0-dev:amd64 (2.35.1-1ubuntu2) ...
+Selecting previously unselected package x11proto-xinerama-dev.
+Preparing to unpack .../11-x11proto-xinerama-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-xinerama-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package libxinerama-dev:amd64.
+Preparing to unpack .../12-libxinerama-dev_2%3a1.1.4-2_amd64.deb ...
+Unpacking libxinerama-dev:amd64 (2:1.1.4-2) ...
+Selecting previously unselected package libxfixes-dev:amd64.
+Preparing to unpack .../13-libxfixes-dev_1%3a5.0.3-2_amd64.deb ...
+Unpacking libxfixes-dev:amd64 (1:5.0.3-2) ...
+Selecting previously unselected package x11proto-input-dev.
+Preparing to unpack .../14-x11proto-input-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-input-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package libxi-dev:amd64.
+Preparing to unpack .../15-libxi-dev_2%3a1.7.10-0ubuntu1_amd64.deb ...
+Unpacking libxi-dev:amd64 (2:1.7.10-0ubuntu1) ...
+Selecting previously unselected package x11proto-randr-dev.
+Preparing to unpack .../16-x11proto-randr-dev_2019.2-1ubuntu1_all.deb ...
+Unpacking x11proto-randr-dev (2019.2-1ubuntu1) ...
+Selecting previously unselected package libxrandr-dev:amd64.
+Preparing to unpack .../17-libxrandr-dev_2%3a1.5.2-0ubuntu1_amd64.deb ...
+Unpacking libxrandr-dev:amd64 (2:1.5.2-0ubuntu1) ...
+Selecting previously unselected package libxcursor-dev:amd64.
+Preparing to unpack .../18-libxcursor-dev_1%3a1.2.0-2_amd64.deb ...
+Unpacking libxcursor-dev:amd64 (1:1.2.0-2) ...
+Selecting previously unselected package libxcomposite-dev:amd64.
+Preparing to unpack .../19-libxcomposite-dev_1%3a0.4.5-1_amd64.deb ...
+Unpacking libxcomposite-dev:amd64 (1:0.4.5-1) ...
+Selecting previously unselected package libxdamage-dev:amd64.
+Preparing to unpack .../20-libxdamage-dev_1%3a1.1.5-2_amd64.deb ...
+Unpacking libxdamage-dev:amd64 (1:1.1.5-2) ...
+Selecting previously unselected package libxml2-utils.
+Preparing to unpack .../21-libxml2-utils_2.9.10+dfsg-5ubuntu0.20.04.4_amd64.
+deb ...
+Unpacking libxml2-utils (2.9.10+dfsg-5ubuntu0.20.04.4) ...
+Selecting previously unselected package libgtk2.0-dev:amd64.
+Preparing to unpack .../22-libgtk2.0-dev_2.24.32-4ubuntu4_amd64.deb ...
+Unpacking libgtk2.0-dev:amd64 (2.24.32-4ubuntu4) ...
+Selecting previously unselected package libxaw7-dev:amd64.
+Preparing to unpack .../23-libxaw7-dev_2%3a1.0.13-1_amd64.deb ...
+Unpacking libxaw7-dev:amd64 (2:1.0.13-1) ...
+Setting up x11proto-randr-dev (2019.2-1ubuntu1) ...
+Setting up po-debconf (1.0.21) ...
+Setting up libdebhelper-perl (12.10ubuntu1) ...
+Setting up x11proto-xinerama-dev (2019.2-1ubuntu1) ...
+Setting up libxfixes-dev:amd64 (1:5.0.3-2) ...
+Setting up libxrandr-dev:amd64 (2:1.5.2-0ubuntu1) ...
+Setting up gir1.2-gtk-2.0:amd64 (2.24.32-4ubuntu4) ...
+Setting up x11proto-input-dev (2019.2-1ubuntu1) ...
+Setting up autopoint (0.19.8.1-10build1) ...
+Setting up libxinerama-dev:amd64 (2:1.1.4-2) ...
+Setting up dwz (0.13-5) ...
+Setting up libxaw7-dev:amd64 (2:1.0.13-1) ...
+Setting up libsub-override-perl (0.09-2) ...
+Setting up libxi-dev:amd64 (2:1.7.10-0ubuntu1) ...
+Setting up libxml2-utils (2.9.10+dfsg-5ubuntu0.20.04.4) ...
+Setting up libatk1.0-dev:amd64 (2.35.1-1ubuntu2) ...
+Setting up libxdamage-dev:amd64 (1:1.1.5-2) ...
+Setting up libfile-stripnondeterminism-perl (1.7.0-1) ...
+Setting up libxcomposite-dev:amd64 (1:0.4.5-1) ...
+Setting up libxcursor-dev:amd64 (1:1.2.0-2) ...
+Setting up dh-strip-nondeterminism (1.7.0-1) ...
+Setting up libgtk2.0-dev:amd64 (2.24.32-4ubuntu4) ...
+Setting up dh-autoreconf (19) ...
+Setting up debhelper (12.10ubuntu1) ...
+Processing triggers for man-db (2.9.1-1) ...
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ./configure
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for library containing strerror... none required
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for remsh... no
+checking for rsh... rsh
+checking for makeinfo... makeinfo
+checking for nroff... nroff -man
+checking for awk... /usr/bin/awk
+checking for perl... /usr/bin/perl
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking return type of signal handlers... void
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/systeminfo.h usability... no
+checking sys/systeminfo.h presence... no
+checking for sys/systeminfo.h... no
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for _getpty... no
+checking for grantpt... yes
+checking for setitimer... yes
+checking for usleep... yes
+checking for gettimeofday... yes
+checking for random... yes
+checking for gethostname... yes
+checking for setlocale... yes
+checking for getpseudotty in -lseq... no
+checking whether compiler understands -Wall -Wno-parentheses... yes
+checking for pkg-config... pkg-config
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for CAIRO... yes
+checking for xdg-mime... /usr/bin/xdg-mime
+checking for xdg-desktop-menu... /usr/bin/xdg-desktop-menu
+checking for xdg-icon-resource... /usr/bin/xdg-icon-resource
+checking for GTK... yes
+checking whether ptys or pipes should be used... pipes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating cmail
+config.status: creating po/Makefile.in
+config.status: creating osxapp/Info.plist
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing test-stamp-h commands
+config.status: executing chmod-cmail commands
+
+ Configurations summary:
+
+        prefix:          /usr/local       
+        datarootdir:     ${prefix}/share  
+        datadir:         ${datarootdir}      
+        gamedatadir:     $(datadir)/games/xboard  
+        desktopdir:      $(datadir)/applications   
+        mimedir:         $(datadir)/mime/packages      
+        iconsdir:        $(datadir)/icons/hicolor/48x48/apps     
+        svgiconsdir:     $(datadir)/icons/hicolor/scalable/apps  
+        infodir:         ${datarootdir}/info   (info files will go here)
+        sysconfdir:      ${prefix}/etc   (xboard.conf will go here)
+
+        update mimedb:   yes
+
+        NLS support:     yes
+
+        GTK:             yes
+        Xaw3d:           no
+        Xaw:             no
+
+        ptys:            pipes
+        zippy:           no
+        sigint:          yes
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ls
+ABOUT-NLS      COPYING           Makefile.am      svg
+aclocal.m4     COPYRIGHT         Makefile.in      texi2man
+args.h         copyright.texi    mdate-sh         texinfo.tex
+AUTHORS        depcomp           menus.c          themes
+backend.c      dialogs.c         menus.h          TODO
+backend.h      dialogs.h         missing          uci.c
+backendz.h     DIFFSTAT          mkinstalldirs    usounds.c
+bitmaps        draw.c            moves.c          usystem.c
+board.c        draw.h            moves.h          usystem.h
+board.h        engine-intf.html  nengineoutput.c  version.texi
+book.c         engineoutput.c    nevalgraph.c     winboard
+ChangeLog      engineoutput.h    NEWS             xaw
+childio.c      evalgraph.c       ngamelist.c      xboard2.h
+childio.h      evalgraph.h       nhistory.c       xboard.conf
+cmail          FAQ.html          osxapp           xboard-config.desktop
+cmail.in       frontend.h        parser.c         xboard.desktop
+common.h       gamelist.c        parser.h         xboard-fen-viewer.desktop
+compile        gettext.h         pgntags.c        xboard.info
+conf           gpl.texinfo       pixmaps          xboard.man
+config.guess   gtk               png              xboard-pgn-viewer.desktop
+config.h       history.c         po               xboard.png
+config.h.in    ics-parsing.txt   README           xboard.svg
+config.log     INSTALL           readme.htm       xboard.texi
+config.rpath   install-sh        SHORTLOG         xboard-tourney.desktop
+config.status  lists.c           sounds           xboard.xml
+config.sub     lists.h           stamp-h          zippy.c
+configure      m4                stamp-h1         zippy.h
+configure.ac   Makefile          stamp-vti        zippy.README
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ make
+make  all-recursive
+make[1]: Entering directory '/home/ian/Downloads/xboard-4.9.1'
+Making all in po
+make[2]: Entering directory '/home/ian/Downloads/xboard-4.9.1/po'
+make[2]: Leaving directory '/home/ian/Downloads/xboard-4.9.1/po'
+make[2]: Entering directory '/home/ian/Downloads/xboard-4.9.1'
+  CC       backend.o
+In file included from backend.c:142:
+backend.c: In function ‘Load’:
+common.h:912:22: warning: macro expands to multiple statements [-Wmultistatement-macros]
+  912 | #define ASSIGN(x, y) if(x) free(x); x = strdup(y)
+      |                      ^~
+backend.c:1026:17: note: in expansion of macro ‘ASSIGN’
+ 1026 |     if(useNick) ASSIGN(appData.pgnName[i], nickName);
+      |                 ^~~~~~
+backend.c:1026:5: note: some parts of macro expansion are not guarded by this ‘if’ clause
+ 1026 |     if(useNick) ASSIGN(appData.pgnName[i], nickName);
+      |     ^~
+backend.c: In function ‘ReserveGame’:
+backend.c:1532:7: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1532 |       if(gameNr < 0 || appData.tourneyType < 1 ||  // gauntlet engine can always stay loaded as first engine
+      |       ^~
+backend.c:1535:2: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1535 |  UnloadEngine(&second); // already unload the engines, so TwoMachinesEvent will load new ones.
+      |  ^~~~~~~~~~~~
+backend.c: In function ‘read_from_ics’:
+backend.c:4036:21: warning: variable ‘blackname’ set but not used [-Wunused-but-set-variable]
+ 4036 |   char *whitename, *blackname, *why, *endtoken;
+      |                     ^~~~~~~~~
+backend.c:4036:9: warning: variable ‘whitename’ set but not used [-Wunused-but-set-variable]
+ 4036 |   char *whitename, *blackname, *why, *endtoken;
+      |         ^~~~~~~~~
+backend.c:4177:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 4177 |    if (appData.debugMode)
+      |    ^~
+backend.c:4179:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 4179 |                           UserMoveEvent(premoveFromX, premoveFromY,
+      |                           ^~~~~~~~~~~~~
+backend.c: In function ‘SendMoveToProgram’:
+backend.c:5180:4: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+ 5180 |  } else
+      |    ^~~~
+backend.c:5185:4: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+ 5185 |    SendToProgram(buf, cps);
+      |    ^~~~~~~~~~~~~
+backend.c: In function ‘HandleMachineMove’:
+backend.c:9435:9: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+ 9435 |       } else
+      |         ^~~~
+backend.c:9443:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+ 9443 |         if( appData.testLegality && gameMode == TwoMachinesPlay ) {
+      |         ^~
+backend.c: In function ‘ApplyMove’:
+backend.c:10215:70: warning: variable ‘killed2’ set but not used [-Wunused-but-set-variable]
+10215 | e captured = board[toY][toX], piece, pawn, king, killed, killed2; int p, rookX, oldEP, epRank, berolina = 0;
+      |                                                          ^~~~~~~
+
+backend.c: In function ‘TwoMachinesEventIfReady’:
+backend.c:11008:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+11008 |     if(curMess != 1) DisplayMessage("", _("Waiting for first chess program")); curMess = 1;
+      |     ^~
+backend.c:11008:80: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+11008 | = 1) DisplayMessage("", _("Waiting for first chess program")); curMess = 1;
+      |                                                                ^~~~~~~
+
+backend.c:11013:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+11013 |     if(curMess != 2) DisplayMessage("", _("Waiting for second chess program")); curMess = 2;
+      |     ^~
+backend.c:11013:81: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+11013 |  2) DisplayMessage("", _("Waiting for second chess program")); curMess = 2;
+      |                                                                ^~~~~~~
+
+backend.c: In function ‘LoadPosition’:
+backend.c:13658:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+13658 |   for(j=0;j<6;j++)fprintf(debugFP, " %d", initialRights[j]);fprintf(debugFP,"\n");
+      |   ^~~
+backend.c:13658:61: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+13658 | or(j=0;j<6;j++)fprintf(debugFP, " %d", initialRights[j]);fprintf(debugFP,"\n");
+      |                                                          ^~~~~~~
+
+backend.c: In function ‘read_from_ics’:
+backend.c:3136:36: warning: ‘ kibitzes: ’ directive output may be truncated writing 11 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+ 3136 |          snprintf(tmp, MSG_SIZ, "%s kibitzes: %s", star_match[0], parse);
+      |                                    ^~~~~~~~~~~
+backend.c:3136:10: note: ‘snprintf’ output between 12 and 20522 bytes into a destination of size 512
+ 3136 |          snprintf(tmp, MSG_SIZ, "%s kibitzes: %s", star_match[0], parse);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:3095:31: warning: ‘%s’ directive output may be truncated writing up to 19999 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+ 3095 |    snprintf(mess, MSG_SIZ, "%s%s", talker, parse);
+      |                               ^~           ~~~~~
+backend.c:3095:4: note: ‘snprintf’ output between 1 and 20511 bytes into a destination of size 512
+ 3095 |    snprintf(mess, MSG_SIZ, "%s%s", talker, parse);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:3101:32: warning: ‘: ’ directive output may be truncated writing 2 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+ 3101 |     snprintf(mess, MSG_SIZ, "%s: %s", chatPartner[chattingPartner], parse);
+      |                                ^~
+backend.c:3101:5: note: ‘snprintf’ output between 3 and 20513 bytes into a destination of size 512
+ 3101 |     snprintf(mess, MSG_SIZ, "%s: %s", chatPartner[chattingPartner], parse);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:3201:41: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+ 3201 |        snprintf(buf, sizeof(buf), "%s@%s", ics_handle, appData.icsHost);
+      |                                         ^
+backend.c:3201:8: note: ‘snprintf’ output 2 or more bytes (assuming 513) into a destination of size 512
+ 3201 |        snprintf(buf, sizeof(buf), "%s@%s", ics_handle, appData.icsHost);
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:3704:31: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 508 [-Wformat-truncation=]
+ 3704 |   snprintf(str, MSG_SIZ, "ICS %s %s match", star_match[0], star_match[1]);
+      |                               ^~            ~~~~~~~~~~~~~
+backend.c:3704:3: note: ‘snprintf’ output between 12 and 1034 bytes into a destination of size 512
+ 3704 |   snprintf(str, MSG_SIZ, "ICS %s %s match", star_match[0], star_match[1]);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c: In function ‘ParseBoard12’:
+backend.c:4575:34: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 508 [-Wformat-truncation=]
+ 4575 |      snprintf(str, MSG_SIZ, "ICS %s", gs_kind);
+      |                                  ^~   ~~~~~~~
+backend.c:4575:6: note: ‘snprintf’ output between 5 and 516 bytes into a destination of size 512
+ 4575 |      snprintf(str, MSG_SIZ, "ICS %s", gs_kind);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c: In function ‘UploadGameEvent’:
+backend.c:5308:37: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 506 [-Wformat-truncation=]
+ 5308 |    snprintf(command,MSG_SIZ, "match %s", ics_handle);
+      |                                     ^~   ~~~~~~~~~~
+backend.c:5308:4: note: ‘snprintf’ output between 7 and 518 bytes into a destination of size 512
+ 5308 |    snprintf(command,MSG_SIZ, "match %s", ics_handle);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:5318:64: warning: ‘ w’ directive output may be truncated writing 2 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+ 5318 | f(i<=36 && ics_type == ICS_ICC) snprintf(buf, MSG_SIZ,"%s w%d\n", command, i);
+      |                                                          ^~
+
+backend.c:5318:39: note: ‘snprintf’ output between 5 and 526 bytes into a destination of size 512
+ 5318 |      if(i<=36 && ics_type == ICS_ICC) snprintf(buf, MSG_SIZ,"%s w%d\n", command, i);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:5320:39: warning: ‘
+   ’ directive output may be truncated writing 1 byte into a region of size between 0 and 511 [-Wformat-truncation=]
+ 5320 |      else snprintf(buf, MSG_SIZ,"%s %s\n", command, VariantName(gameInfo.variant));
+      |                                       ^~
+backend.c:5320:11: note: ‘snprintf’ output 3 or more bytes (assuming 514) into a destination of size 512
+ 5320 |      else snprintf(buf, MSG_SIZ,"%s %s\n", command, VariantName(gameInfo.variant));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:5319:48: warning: ‘ fr
+   ’ directive output may be truncated writing 4 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+ 5319 |      else if(i == 22) snprintf(buf,MSG_SIZ, "%s fr\n", command);
+      |                                                ^~~~~
+backend.c:5319:23: note: ‘snprintf’ output between 5 and 516 bytes into a destination of size 512
+ 5319 |      else if(i == 22) snprintf(buf,MSG_SIZ, "%s fr\n", command);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:5355:44: warning: ‘%s’ directive output may be truncated writing up to 63 bytes into a region of size 20 [-Wformat-truncation=]
+ 5355 |  snprintf(buf, sizeof(buf)/sizeof(buf[0]),"%s\n", parseList[i]);
+      |                                            ^~
+backend.c:5355:2: note: ‘snprintf’ output between 2 and 65 bytes into a destination of size 20
+ 5355 |  snprintf(buf, sizeof(buf)/sizeof(buf[0]),"%s\n", parseList[i]);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:5358:48: warning: ‘%s’ directive output may be truncated writing up to 31 bytes into a region of size 20 [-Wformat-truncation=]
+ 5358 |      snprintf(buf, sizeof(buf)/sizeof(buf[0]),"%s", moveList[i]); // use long algebraic
+      |                                                ^~
+backend.c:5358:6: note: ‘snprintf’ output between 1 and 32 bytes into a destination of size 20
+ 5358 |      snprintf(buf, sizeof(buf)/sizeof(buf[0]),"%s", moveList[i]); // use long algebraic
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c: In function ‘UserMoveEvent’:
+backend.c:7193:41: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 498 [-Wformat-truncation=]
+ 7193 |  snprintf(buf, MSG_SIZ, "  0.0%%     1  %s\n", move);
+      |                                         ^~     ~~~~
+backend.c:7193:2: note: ‘snprintf’ output between 16 and 527 bytes into a destination of size 512
+ 7193 |  snprintf(buf, MSG_SIZ, "  0.0%%     1  %s\n", move);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c: In function ‘HandleMachineMove’:
+backend.c:9901:72: warning: ‘ (only move)’ directive output may be truncated writing 12 bytes into a region of size between 1 and 5120 [-Wformat-truncation=]
+ 9901 | nkOutput, sizeof(thinkOutput)/sizeof(thinkOutput[0]), "%s (only move)", buf1);
+      |                                                          ^~~~~~~~~~~~
+
+backend.c:9901:3: note: ‘snprintf’ output between 13 and 5132 bytes into a destination of size 5120
+ 9901 |   snprintf(thinkOutput, sizeof(thinkOutput)/sizeof(thinkOutput[0]), "%s (only move)", buf1);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c:9902:35: warning: ‘%s’ directive writing up to 5119 bytes into a region of size 1112 [-Wformat-overflow=]
+ 9902 |   sprintf(programStats.movelist, "%s (only move)", buf1);
+      |                                   ^~               ~~~~
+backend.c:9902:3: note: ‘sprintf’ output between 13 and 5132 bytes into a destination of size 1112
+ 9902 |   sprintf(programStats.movelist, "%s (only move)", buf1);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend.c: In function ‘SaveGamePGN2’:
+backend.c:13959:90: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size between 93 and 94 [-Wformat-truncation=]
+13959 | r, sizeof(move_buffer)/sizeof(move_buffer[0]),"{%s%.2f/%d%s}",
+      |                                                          ^~
+
+......
+13963 | 
+      |                                                           
+
+backend.c:13959:13: note: ‘snprintf’ output 8 or more bytes (assuming 520) into a destination of size 100
+13959 |             snprintf( move_buffer, sizeof(move_buffer)/sizeof(move_buffer[0]),"{%s%.2f/%d%s}",
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+13960 |         pvInfoList[i].score >= 0 ? "+" : "",
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+13961 |         pvInfoList[i].score / 100.0,
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+13962 |         pvInfoList[i].depth,
+      |         ~~~~~~~~~~~~~~~~~~~~
+13963 |         buf );
+      |         ~~~~~
+backend.c: In function ‘DisplayMove’:
+backend.c:17585:42: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size between 447 and 510 [-Wformat-truncation=]
+17585 |       snprintf(message, MSG_SIZ, "%d.%s%s%s", moveNumber / 2 + 1,
+      |                                          ^~
+17586 |   WhiteOnMove(moveNumber) ? " " : ".. ",
+17587 |   parseList[moveNumber], res);
+      |                          ~~~              
+backend.c:17585:7: note: ‘snprintf’ output 3 or more bytes (assuming 577) into a destination of size 512
+17585 |       snprintf(message, MSG_SIZ, "%d.%s%s%s", moveNumber / 2 + 1,
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+17586 |   WhiteOnMove(moveNumber) ? " " : ".. ",
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+17587 |   parseList[moveNumber], res);
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC       book.o
+book.c: In function ‘SaveToBook’:
+book.c:891:6: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+  891 |      for(i=0; i<len1; i++) buf2[i] = buf1[i]; len2 = len1;
+      |      ^~~
+book.c:891:47: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+  891 |      for(i=0; i<len1; i++) buf2[i] = buf1[i]; len2 = len1;
+      |                                               ^~~~
+book.c: In function ‘PlayBookMove’:
+book.c:1032:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+ 1032 |     while(*end && *++end != ' ' && *end != '\n')
+      |     ^~~~~
+book.c:1033:51: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+ 1033 |                                                 ; *end = NULLCHAR; // find clicked word
+      |                                                   ^
+book.c: In function ‘MovesToText’:
+book.c:751:47: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size between 0 and 27 [-Wformat-truncation=]
+  751 |      snprintf(p+strlen(p), 40, "%5.1f%% %5d %s%s\n", 100*entries[i].weight/(totalWeight+0.001),
+      |                                               ^~
+  752 |      entries[i].weight, algMove, buf);
+      |                                  ~~~           
+book.c:751:6: note: ‘snprintf’ output between 15 and 844 bytes into a destination of size 40
+  751 |      snprintf(p+strlen(p), 40, "%5.1f%% %5d %s%s\n", 100*entries[i].weight/(totalWeight+0.001),
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  752 |      entries[i].weight, algMove, buf);
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC       childio.o
+  CC       gamelist.o
+  CC       ngamelist.o
+  CC       lists.o
+  CC       moves.o
+moves.c: In function ‘CollectPieceDescriptors’:
+moves.c:209:15: warning: variable ‘pieceName’ set but not used [-Wunused-but-set-variable]
+  209 |     char *m, *pieceName = defaultName;
+      |               ^~~~~~~~~
+moves.c: In function ‘MovesFromString’:
+moves.c:498:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  498 |    if(killX < 0) cb(board, flags, FirstLeg,   r, f, y, x, cl); if(killX < f)
+      |    ^~
+moves.c:498:64: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  498 |   if(killX < 0) cb(board, flags, FirstLeg,   r, f, y, x, cl); if(killX < f)
+      |                                                               ^~
+
+moves.c:506:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  506 |    if(killX < 0) cb(board, flags, FirstLeg,   r, f, y, x, cl); if(killX > f)
+      |    ^~
+moves.c:506:64: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  506 |   if(killX < 0) cb(board, flags, FirstLeg,   r, f, y, x, cl); if(killX > f)
+      |                                                               ^~
+
+moves.c: In function ‘GenPseudoLegal’:
+moves.c:1117:15: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+ 1117 |               for (d = 0; d <= 1; d++) // Dababba moves that Rook cannot do
+      |               ^~~
+moves.c:1126:3: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+ 1126 |   Rook(board, flags, rf, ff, callback, closure);
+      |   ^~~~
+  CC       parser.o
+parser.c: In function ‘KifuMove’:
+parser.c:269:10: warning: ‘*’ in boolean context, suggest ‘&&’ instead [-Wint-in-bool-context]
+  269 |  if(kifu * ~1) { // disambiguation was given, and thus is probably needed
+      |     ~~~~~^~~~
+parser.c: In function ‘NextUnit’:
+parser.c:727:6: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  727 |      if(**p == '.') (*p)++; SkipWhite(p);
+      |      ^~
+parser.c:727:29: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  727 |      if(**p == '.') (*p)++; SkipWhite(p);
+      |                             ^~~~~~~~~
+  CC       pgntags.o
+  CC       uci.o
+  CC       board.o
+  CC       draw.o
+In file included from draw.c:59:
+/usr/include/librsvg-2.0/librsvg/rsvg-cairo.h:26:2: warning: #warning "Including <librsvg/rsvg-cairo.h> directly is deprecated." [-Wcpp]
+   26 | #warning "Including <librsvg/rsvg-cairo.h> directly is deprecated."
+      |  ^~~~~~~
+draw.c: In function ‘ScaleOnePiece’:
+draw.c:386:3: warning: ‘g_type_init’ is deprecated [-Wdeprecated-declarations]
+  386 |   g_type_init ();
+      |   ^~~~~~~~~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/librsvg-2.0/librsvg/rsvg.h:30,
+                 from draw.c:58:
+/usr/include/glib-2.0/gobject/gtype.h:691:23: note: declared here
+  691 | void                  g_type_init                    (void);
+      |                       ^~~~~~~~~~~
+draw.c: In function ‘ClearPieces’:
+draw.c:479:2: warning: ‘rsvg_handle_close’ is deprecated: Use 'rsvg_handle_read_stream_sync' instead [-Wdeprecated-declarations]
+  479 |  if(svgPieces[i][p]) rsvg_handle_close(svgPieces[i][p], NULL);
+      |  ^~
+In file included from draw.c:58:
+/usr/include/librsvg-2.0/librsvg/rsvg.h:192:14: note: declared here
+  192 | gboolean     rsvg_handle_close  (RsvgHandle *handle, GError **error);
+      |              ^~~~~~~~~~~~~~~~~
+  CC       dialogs.o
+dialogs.c: In function ‘RefreshColor’:
+dialogs.c:991:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  991 |     if(r < 0) r = 0; if(g < 0) g = 0; if(b < 0) b = 0;
+      |     ^~
+dialogs.c:991:22: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  991 |     if(r < 0) r = 0; if(g < 0) g = 0; if(b < 0) b = 0;
+      |                      ^~
+dialogs.c:992:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  992 |     if(r > 0xFF0000) r = 0xFF0000; if(g > 0xFF00) g = 0xFF00; if(b > 0xFF) b = 0xFF;
+      |     ^~
+dialogs.c:992:36: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  992 |     if(r > 0xFF0000) r = 0xFF0000; if(g > 0xFF00) g = 0xFF00; if(b > 0xFF) b = 0xFF;
+      |                                    ^~
+dialogs.c: In function ‘NewCommentPopup’:
+dialogs.c:1169:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1169 |     if(commentText) free(commentText); commentText = strdup(text);
+      |     ^~
+dialogs.c:1169:40: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1169 |     if(commentText) free(commentText); commentText = strdup(text);
+      |                                        ^~~~~~~~~~~
+dialogs.c: In function ‘NewTagsPopup’:
+dialogs.c:1265:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1265 |     if(tagsText) free(tagsText); tagsText = strdup(text);
+      |     ^~
+dialogs.c:1265:34: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1265 |     if(tagsText) free(tagsText); tagsText = strdup(text);
+      |                                  ^~~~~~~~
+dialogs.c: In function ‘LoadEngineProc’:
+dialogs.c:1562:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1562 |    if(engineLine)   free(engineLine);   engineLine = strdup("");
+      |    ^~
+dialogs.c:1562:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1562 |    if(engineLine)   free(engineLine);   engineLine = strdup("");
+      |                                         ^~~~~~~~~~
+dialogs.c:1563:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1563 |    if(engineDir)    free(engineDir);    engineDir = strdup(".");
+      |    ^~
+dialogs.c:1563:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1563 |    if(engineDir)    free(engineDir);    engineDir = strdup(".");
+      |                                         ^~~~~~~~~
+dialogs.c:1564:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1564 |    if(nickName)     free(nickName);     nickName = strdup("");
+      |    ^~
+dialogs.c:1564:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1564 |    if(nickName)     free(nickName);     nickName = strdup("");
+      |                                         ^~~~~~~~
+dialogs.c:1565:4: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+ 1565 |    if(params)       free(params);       params = strdup("");
+      |    ^~
+dialogs.c:1565:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+ 1565 |    if(params)       free(params);       params = strdup("");
+      |                                         ^~~~~~
+dialogs.c: In function ‘GetHelpText’:
+dialogs.c:2636:5: warning: this ‘while’ clause does not guard... [-Wmisleading-indentation]
+ 2636 |     while(buf[--len] == ' ') buf[len] = NULLCHAR; len++;
+      |     ^~~~~
+dialogs.c:2636:51: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+ 2636 |     while(buf[--len] == ' ') buf[len] = NULLCHAR; len++;
+      |                                                   ^~~
+dialogs.c: In function ‘StartDir’:
+dialogs.c:3340:3: warning: this ‘for’ clause does not guard... [-Wmisleading-indentation]
+ 3340 |   for(p=*res; q=strchr(p, '/');) p = q + 1; *p = NULLCHAR;
+      |   ^~~
+dialogs.c:3340:45: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+ 3340 |   for(p=*res; q=strchr(p, '/');) p = q + 1; *p = NULLCHAR;
+      |                                             ^
+dialogs.c: In function ‘ChatOK’:
+dialogs.c:2185:32: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 507 [-Wformat-truncation=]
+ 2185 |   snprintf(buf, MSG_SIZ, "tell %s %s\n", chatPartner[activePartner], line);
+      |                                ^~
+dialogs.c:2185:3: note: ‘snprintf’ output 8 or more bytes (assuming 519) into a destination of size 512
+ 2185 |   snprintf(buf, MSG_SIZ, "tell %s %s\n", chatPartner[activePartner], line);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dialogs.c:2183:33: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 506 [-Wformat-truncation=]
+ 2183 |   snprintf(buf, MSG_SIZ, "xtell %s %s\n", chatPartner[activePartner], line);
+      |                                 ^~
+dialogs.c:2183:3: note: ‘snprintf’ output 9 or more bytes (assuming 520) into a destination of size 512
+ 2183 |   snprintf(buf, MSG_SIZ, "xtell %s %s\n", chatPartner[activePartner], line);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dialogs.c: In function ‘DisplayHelp’:
+dialogs.c:2710:38: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 502 [-Wformat-truncation=]
+ 2710 |   snprintf(tidy, MSG_SIZ, "gunzip -c %s", buf);
+      |                                      ^~   ~~~
+dialogs.c:2710:3: note: ‘snprintf’ output between 11 and 522 bytes into a destination of size 512
+ 2710 |   snprintf(tidy, MSG_SIZ, "gunzip -c %s", buf);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dialogs.c: In function ‘BrowseOK’:
+dialogs.c:3165:38: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+ 3165 |       snprintf(title, MSG_SIZ, "%s/%s", curDir, fileName);
+      |                                      ^
+dialogs.c:3165:7: note: ‘snprintf’ output 2 or more bytes (assuming 513) into a destination of size 512
+ 3165 |       snprintf(title, MSG_SIZ, "%s/%s", curDir, fileName);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dialogs.c: In function ‘ListDir’:
+dialogs.c:3219:33: warning: ‘%s’ directive output may be truncated writing up to 511 bytes into a region of size 509 [-Wformat-truncation=]
+ 3219 |  snprintf(title, MSG_SIZ, "%s   %s", _("Contents of"), curDir);
+      |                                 ^~                     ~~~~~~
+dialogs.c:3219:2: note: ‘snprintf’ output 4 or more bytes (assuming 515) into a destination of size 512
+ 3219 |  snprintf(title, MSG_SIZ, "%s   %s", _("Contents of"), curDir);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC       engineoutput.o
+  CC       nengineoutput.o
+  CC       evalgraph.o
+  CC       nevalgraph.o
+  CC       history.o
+  CC       nhistory.o
+  CC       menus.o
+  CC       usounds.o
+  CC       usystem.o
+  CC       gtk/xboard.o
+In file included from /usr/include/gtk-2.0/gtk/gtkobject.h:37,
+                 from /usr/include/gtk-2.0/gtk/gtkwidget.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkcontainer.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkbin.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkwindow.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkdialog.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkaboutdialog.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:33,
+                 from gtk/xboard.c:66:
+/usr/include/gtk-2.0/gtk/gtktypeutils.h:236:1: warning: ‘GTypeDebugFlags’ is deprecated [-Wdeprecated-declarations]
+  236 | void            gtk_type_init   (GTypeDebugFlags    debug_flags);
+      | ^~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xboard.c:66:
+/usr/include/glib-2.0/gobject/gtype.h:679:1: note: declared here
+  679 | {
+      | ^
+In file included from /usr/include/gtk-2.0/gtk/gtktoolitem.h:31,
+                 from /usr/include/gtk-2.0/gtk/gtktoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtkmenutoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:126,
+                 from gtk/xboard.c:66:
+/usr/include/gtk-2.0/gtk/gtktooltips.h:73:3: warning: ‘GTimeVal’ is deprecated: Use 'GDateTime' instead [-Wdeprecated-declarations]
+   73 |   GTimeVal last_popdown;
+      |   ^~~~~~~~
+In file included from /usr/include/glib-2.0/glib/galloca.h:32,
+                 from /usr/include/glib-2.0/glib.h:30,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xboard.c:66:
+/usr/include/glib-2.0/glib/gtypes.h:547:8: note: declared here
+  547 | struct _GTimeVal
+      |        ^~~~~~~~~
+In file included from gtk/xboard.c:355:
+./args.h: In function ‘ParseSettingsFile’:
+./args.h:941:32: warning: ‘/themes/conf’ directive output may be truncated writing 12 bytes into a region of size between 1 and 512 [-Wformat-truncation=]
+  941 |      snprintf(buf, MSG_SIZ, "%s/themes/conf", dataDir);
+      |                                ^~~~~~~~~~~~
+./args.h:941:6: note: ‘snprintf’ output between 13 and 524 bytes into a destination of size 512
+  941 |      snprintf(buf, MSG_SIZ, "%s/themes/conf", dataDir);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC       gtk/xoptions.o
+In file included from /usr/include/gtk-2.0/gtk/gtkobject.h:37,
+                 from /usr/include/gtk-2.0/gtk/gtkwidget.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkcontainer.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkbin.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkwindow.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkdialog.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkaboutdialog.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:33,
+                 from gtk/xoptions.c:51:
+/usr/include/gtk-2.0/gtk/gtktypeutils.h:236:1: warning: ‘GTypeDebugFlags’ is deprecated [-Wdeprecated-declarations]
+  236 | void            gtk_type_init   (GTypeDebugFlags    debug_flags);
+      | ^~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xoptions.c:51:
+/usr/include/glib-2.0/gobject/gtype.h:679:1: note: declared here
+  679 | {
+      | ^
+In file included from /usr/include/gtk-2.0/gtk/gtktoolitem.h:31,
+                 from /usr/include/gtk-2.0/gtk/gtktoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtkmenutoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:126,
+                 from gtk/xoptions.c:51:
+/usr/include/gtk-2.0/gtk/gtktooltips.h:73:3: warning: ‘GTimeVal’ is deprecated: Use 'GDateTime' instead [-Wdeprecated-declarations]
+   73 |   GTimeVal last_popdown;
+      |   ^~~~~~~~
+In file included from /usr/include/glib-2.0/glib/galloca.h:32,
+                 from /usr/include/glib-2.0/glib.h:30,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xoptions.c:51:
+/usr/include/glib-2.0/glib/gtypes.h:547:8: note: declared here
+  547 | struct _GTimeVal
+      |        ^~~~~~~~~
+gtk/xoptions.c: In function ‘SetTextColor’:
+gtk/xoptions.c:627:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  627 |     if(fg < 0) fg = 0; if(bg < 0) bg = 7;
+      |     ^~
+gtk/xoptions.c:627:24: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  627 |     if(fg < 0) fg = 0; if(bg < 0) bg = 7;
+      |                        ^~
+gtk/xoptions.c: In function ‘PopDown’:
+gtk/xoptions.c:879:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+  879 |     if(messedUp) Preview(0, NULL); messedUp = FALSE; // Board Options dialog can need this to cancel preview
+      |     ^~
+gtk/xoptions.c:879:36: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  879 |     if(messedUp) Preview(0, NULL); messedUp = FALSE; // Board Options dialog can need this to cancel preview
+      |                                    ^~~~~~~~
+gtk/xoptions.c: In function ‘GraphEventProc’:
+gtk/xoptions.c:982:13: warning: variable ‘opt’ set but not used [-Wunused-but-set-variable]
+  982 |     Option *opt, *graph = (Option *) gdata;
+      |             ^~~
+  CC       gtk/xtimer.o
+In file included from /usr/include/gtk-2.0/gtk/gtkobject.h:37,
+                 from /usr/include/gtk-2.0/gtk/gtkwidget.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkcontainer.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkbin.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkwindow.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkdialog.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkaboutdialog.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:33,
+                 from gtk/xtimer.c:61:
+/usr/include/gtk-2.0/gtk/gtktypeutils.h:236:1: warning: ‘GTypeDebugFlags’ is deprecated [-Wdeprecated-declarations]
+  236 | void            gtk_type_init   (GTypeDebugFlags    debug_flags);
+      | ^~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xtimer.c:61:
+/usr/include/glib-2.0/gobject/gtype.h:679:1: note: declared here
+  679 | {
+      | ^
+In file included from /usr/include/gtk-2.0/gtk/gtktoolitem.h:31,
+                 from /usr/include/gtk-2.0/gtk/gtktoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtkmenutoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:126,
+                 from gtk/xtimer.c:61:
+/usr/include/gtk-2.0/gtk/gtktooltips.h:73:3: warning: ‘GTimeVal’ is deprecated: Use 'GDateTime' instead [-Wdeprecated-declarations]
+   73 |   GTimeVal last_popdown;
+      |   ^~~~~~~~
+In file included from /usr/include/glib-2.0/glib/galloca.h:32,
+                 from /usr/include/glib-2.0/glib.h:30,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xtimer.c:61:
+/usr/include/glib-2.0/glib/gtypes.h:547:8: note: declared here
+  547 | struct _GTimeVal
+      |        ^~~~~~~~~
+  CC       gtk/xengineoutput.o
+In file included from /usr/include/gtk-2.0/gtk/gtkobject.h:37,
+                 from /usr/include/gtk-2.0/gtk/gtkwidget.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkcontainer.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkbin.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkwindow.h:36,
+                 from /usr/include/gtk-2.0/gtk/gtkdialog.h:35,
+                 from /usr/include/gtk-2.0/gtk/gtkaboutdialog.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:33,
+                 from gtk/xengineoutput.c:52:
+/usr/include/gtk-2.0/gtk/gtktypeutils.h:236:1: warning: ‘GTypeDebugFlags’ is deprecated [-Wdeprecated-declarations]
+  236 | void            gtk_type_init   (GTypeDebugFlags    debug_flags);
+      | ^~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xengineoutput.c:52:
+/usr/include/glib-2.0/gobject/gtype.h:679:1: note: declared here
+  679 | {
+      | ^
+In file included from /usr/include/gtk-2.0/gtk/gtktoolitem.h:31,
+                 from /usr/include/gtk-2.0/gtk/gtktoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtkmenutoolbutton.h:30,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:126,
+                 from gtk/xengineoutput.c:52:
+/usr/include/gtk-2.0/gtk/gtktooltips.h:73:3: warning: ‘GTimeVal’ is deprecated: Use 'GDateTime' instead [-Wdeprecated-declarations]
+   73 |   GTimeVal last_popdown;
+      |   ^~~~~~~~
+In file included from /usr/include/glib-2.0/glib/galloca.h:32,
+                 from /usr/include/glib-2.0/glib.h:30,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h:30,
+                 from /usr/include/gtk-2.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-2.0/gtk/gtk.h:32,
+                 from gtk/xengineoutput.c:52:
+/usr/include/glib-2.0/glib/gtypes.h:547:8: note: declared here
+  547 | struct _GTimeVal
+      |        ^~~~~~~~~
+  CCLD     xboard
+make[2]: Leaving directory '/home/ian/Downloads/xboard-4.9.1'
+make[1]: Leaving directory '/home/ian/Downloads/xboard-4.9.1'
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ ls
+ABOUT-NLS      copyright.texi    Makefile.in      stamp-vti
+aclocal.m4     depcomp           mdate-sh         svg
+args.h         dialogs.c         menus.c          texi2man
+AUTHORS        dialogs.h         menus.h          texinfo.tex
+backend.c      dialogs.o         menus.o          themes
+backend.h      DIFFSTAT          missing          TODO
+backend.o      draw.c            mkinstalldirs    uci.c
+backendz.h     draw.h            moves.c          uci.o
+bitmaps        draw.o            moves.h          usounds.c
+board.c        engine-intf.html  moves.o          usounds.o
+board.h        engineoutput.c    nengineoutput.c  usystem.c
+board.o        engineoutput.h    nengineoutput.o  usystem.h
+book.c         engineoutput.o    nevalgraph.c     usystem.o
+book.o         evalgraph.c       nevalgraph.o     version.texi
+ChangeLog      evalgraph.h       NEWS             winboard
+childio.c      evalgraph.o       ngamelist.c      xaw
+childio.h      FAQ.html          ngamelist.o      xboard
+childio.o      frontend.h        nhistory.c       xboard2.h
+cmail          gamelist.c        nhistory.o       xboard.conf
+cmail.in       gamelist.o        osxapp           xboard-config.desktop
+common.h       gettext.h         parser.c         xboard.desktop
+compile        gpl.texinfo       parser.h         xboard-fen-viewer.desktop
+conf           gtk               parser.o         xboard.info
+config.guess   history.c         pgntags.c        xboard.man
+config.h       history.o         pgntags.o        xboard-pgn-viewer.desktop
+config.h.in    ics-parsing.txt   pixmaps          xboard.png
+config.log     INSTALL           png              xboard.svg
+config.rpath   install-sh        po               xboard.texi
+config.status  lists.c           README           xboard-tourney.desktop
+config.sub     lists.h           readme.htm       xboard.xml
+configure      lists.o           SHORTLOG         zippy.c
+configure.ac   m4                sounds           zippy.h
+COPYING        Makefile          stamp-h          zippy.README
+COPYRIGHT      Makefile.am       stamp-h1
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ sudo make install
+Making install in po
+make[1]: Entering directory '/home/ian/Downloads/xboard-4.9.1/po'
+/usr/bin/mkdir -p /usr/local/share
+installing da.gmo as /usr/local/share/locale/da/LC_MESSAGES/xboard.mo
+installing de.gmo as /usr/local/share/locale/de/LC_MESSAGES/xboard.mo
+installing es.gmo as /usr/local/share/locale/es/LC_MESSAGES/xboard.mo
+installing fr.gmo as /usr/local/share/locale/fr/LC_MESSAGES/xboard.mo
+installing it.gmo as /usr/local/share/locale/it/LC_MESSAGES/xboard.mo
+installing nl.gmo as /usr/local/share/locale/nl/LC_MESSAGES/xboard.mo
+installing pl.gmo as /usr/local/share/locale/pl/LC_MESSAGES/xboard.mo
+installing ru.gmo as /usr/local/share/locale/ru/LC_MESSAGES/xboard.mo
+installing sr.gmo as /usr/local/share/locale/sr/LC_MESSAGES/xboard.mo
+installing tr.gmo as /usr/local/share/locale/tr/LC_MESSAGES/xboard.mo
+installing uk.gmo as /usr/local/share/locale/uk/LC_MESSAGES/xboard.mo
+installing vi.gmo as /usr/local/share/locale/vi/LC_MESSAGES/xboard.mo
+installing zh_CN.gmo as /usr/local/share/locale/zh_CN/LC_MESSAGES/xboard.mo
+installing zh_HK.gmo as /usr/local/share/locale/zh_HK/LC_MESSAGES/xboard.mo
+installing zh_TW.gmo as /usr/local/share/locale/zh_TW/LC_MESSAGES/xboard.mo
+if test "xboard" = "gettext-tools"; then \
+  /usr/bin/mkdir -p /usr/local/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -c -m 644 ./$file \
+		    /usr/local/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /usr/local/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/home/ian/Downloads/xboard-4.9.1/po'
+make[1]: Entering directory '/home/ian/Downloads/xboard-4.9.1'
+make[2]: Entering directory '/home/ian/Downloads/xboard-4.9.1'
+ /usr/bin/mkdir -p '/usr/local/bin'
+  /usr/bin/install -c xboard '/usr/local/bin'
+ /usr/bin/mkdir -p '/usr/local/etc'
+ /usr/bin/install -c -m 644 xboard.conf '/usr/local/etc'
+ /usr/bin/mkdir -p '/usr/local/share/applications'
+ /usr/bin/install -c -m 644 xboard.desktop xboard-fen-viewer.desktop xboard-pgn-viewer.desktop xboard-tourney.desktop xboard-config.desktop '/usr/local/share/applications'
+ /usr/bin/mkdir -p '/usr/local/share/icons/hicolor/48x48/apps'
+ /usr/bin/install -c -m 644 xboard.png '/usr/local/share/icons/hicolor/48x48/apps'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/pixmaps/textures'
+ /usr/bin/install -c -m 644 pixmaps/cross32.png pixmaps/cross48.png pixmaps/board32.png pixmaps/board48.png pixmaps/ini32.png pixmaps/ini48.png '/usr/local/share/games/xboard/pixmaps/textures'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/themes/textures'
+ /usr/bin/install -c -m 644 png/hatch.png png/wood_d.png png/wood_l.png png/xqboard-9x10.png '/usr/local/share/games/xboard/themes/textures'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/themes/shogi'
+ /usr/bin/install -c -m 644 themes/shogi/WhiteGold.svg themes/shogi/WhiteCrownedBishop.svg themes/shogi/WhiteBishop.svg themes/shogi/WhiteKing.svg themes/shogi/WhiteKnight.svg themes/shogi/WhiteGoldKnight.svg themes/shogi/WhiteLance.svg themes/shogi/WhiteGoldLance.svg themes/shogi/WhitePawn.svg themes/shogi/WhiteGoldPawn.svg themes/shogi/WhiteRook.svg themes/shogi/WhiteCrownedRook.svg themes/shogi/WhiteAdvisor.svg themes/shogi/WhiteGoldSilver.svg themes/shogi/BlackGold.svg themes/shogi/BlackCrownedBishop.svg themes/shogi/BlackBishop.svg themes/shogi/BlackKing.svg themes/shogi/BlackKnight.svg themes/shogi/BlackGoldKnight.svg themes/shogi/BlackLance.svg themes/shogi/BlackGoldLance.svg themes/shogi/BlackPawn.svg themes/shogi/BlackGoldPawn.svg themes/shogi/BlackRook.svg themes/shogi/BlackCrownedRook.svg themes/shogi/BlackAdvisor.svg themes/shogi/BlackGoldSilver.svg '/usr/local/share/games/xboard/themes/shogi'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/sounds'
+ /usr/bin/install -c -m 644 sounds/cymbal.wav sounds/pop2.wav sounds/slap.wav sounds/ding1.wav sounds/laser.wav sounds/woodthunk.wav sounds/gong.wav sounds/penalty.wav sounds/honkhonk.wav sounds/phone.wav sounds/roar.wav '/usr/local/share/games/xboard/sounds'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/themes/default'
+ /usr/bin/install -c -m 644 svg/icon_white.svg svg/icon_black.svg svg/BlackAdvisor.svg svg/WhiteAdvisor.svg svg/BlackArchbishop.svg svg/WhiteArchbishop.svg svg/BlackBishop.svg svg/WhiteBishop.svg svg/BlackCanon.svg svg/WhiteCanon.svg svg/BlackChancellor.svg svg/WhiteChancellor.svg svg/BlackCobra.svg svg/WhiteCobra.svg svg/BlackCommoner.svg svg/WhiteCommoner.svg svg/BlackCrownedBishop.svg svg/WhiteCrownedBishop.svg svg/BlackCrownedRook.svg svg/WhiteCrownedRook.svg svg/BlackElephant.svg svg/WhiteElephant.svg svg/BlackGoldKnight.svg svg/WhiteGoldKnight.svg svg/BlackGoldLance.svg svg/WhiteGoldLance.svg svg/BlackGoldPawn.svg svg/WhiteGoldPawn.svg svg/BlackGoldSilver.svg svg/WhiteGoldSilver.svg svg/BlackGold.svg svg/WhiteGold.svg svg/BlackHawk.svg svg/WhiteHawk.svg svg/BlackKing.svg svg/WhiteKing.svg svg/BlackKnight.svg svg/WhiteKnight.svg svg/BlackLance.svg svg/WhiteLance.svg '/usr/local/share/games/xboard/themes/default'
+ /usr/bin/install -c -m 644 svg/BlackMarshall.svg svg/WhiteMarshall.svg svg/BlackNightrider.svg svg/WhiteNightrider.svg svg/BlackPawn.svg svg/WhitePawn.svg svg/BlackPrincess.svg svg/WhitePrincess.svg svg/BlackQueen.svg svg/WhiteQueen.svg svg/BlackRook.svg svg/WhiteRook.svg svg/BlackUnicorn.svg svg/WhiteUnicorn.svg svg/BlackSword.svg svg/WhiteSword.svg svg/BlackHSword.svg svg/WhiteHSword.svg svg/BlackLeopard.svg svg/WhiteLeopard.svg svg/BlackLion.svg svg/WhiteLion.svg svg/BlackPromoBishop.svg svg/WhitePromoBishop.svg svg/BlackPromoRook.svg svg/WhitePromoRook.svg svg/BlackPromoHorse.svg svg/WhitePromoHorse.svg svg/BlackPromoDragon.svg svg/WhitePromoDragon.svg svg/BlackPromoSword.svg svg/WhitePromoSword.svg svg/BlackPromoHSword.svg svg/WhitePromoHSword.svg svg/BlackHCrown.svg svg/WhiteHCrown.svg svg/BlackDolphin.svg svg/WhiteDolphin.svg svg/BlackClaw.svg svg/WhiteClaw.svg '/usr/local/share/games/xboard/themes/default'
+ /usr/bin/install -c -m 644 svg/BlackWolf.svg svg/WhiteWolf.svg svg/BlackCamel.svg svg/WhiteCamel.svg svg/BlackZebra.svg svg/WhiteZebra.svg svg/BlackGnu.svg svg/WhiteGnu.svg svg/BlackWizard.svg svg/WhiteWizard.svg svg/BlackViking.svg svg/WhiteViking.svg svg/BlackIron.svg svg/WhiteIron.svg svg/BlackCopper.svg svg/WhiteCopper.svg svg/BlackTower.svg svg/WhiteTower.svg svg/BlackDragon.svg svg/WhiteDragon.svg svg/BlackCub.svg svg/WhiteCub.svg svg/BlackButterfly.svg svg/WhiteButterfly.svg svg/BlackLeft.svg svg/WhiteLeft.svg svg/BlackRight.svg svg/WhiteRight.svg svg/BlackHat.svg svg/WhiteHat.svg svg/BlackRShield.svg svg/WhiteRShield.svg svg/BlackLShield.svg svg/WhiteLShield.svg svg/BlackAxe.svg svg/WhiteAxe.svg svg/BlackFlag.svg svg/WhiteFlag.svg svg/BlackDuck.svg svg/WhiteDuck.svg '/usr/local/share/games/xboard/themes/default'
+ /usr/bin/install -c -m 644 svg/BlackPegasus.svg svg/WhitePegasus.svg svg/eo_Analyzing.svg svg/eo_Black.svg svg/eo_Clear.svg svg/eo_Ponder.svg svg/eo_Thinking.svg svg/eo_Unknown.svg svg/eo_White.svg '/usr/local/share/games/xboard/themes/default'
+ /usr/bin/mkdir -p '/usr/local/share/icons/hicolor/scalable/apps'
+ /usr/bin/install -c -m 644 xboard.svg '/usr/local/share/icons/hicolor/scalable/apps'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/themes/conf'
+ /usr/bin/install -c -m 644 conf/shogi conf/xq conf/ics conf/mini conf/mini.fen conf/sho conf/sho.fen '/usr/local/share/games/xboard/themes/conf'
+ /usr/bin/mkdir -p '/usr/local/share/games/xboard/themes/xiangqi'
+ /usr/bin/install -c -m 644 themes/xiangqi/BlackAdvisor.svg themes/xiangqi/WhiteAdvisor.svg themes/xiangqi/BlackCanon.svg themes/xiangqi/WhiteCanon.svg themes/xiangqi/BlackElephant.svg themes/xiangqi/WhiteElephant.svg themes/xiangqi/BlackKnight.svg themes/xiangqi/WhiteKnight.svg themes/xiangqi/BlackGold.svg themes/xiangqi/WhiteGold.svg themes/xiangqi/BlackPawn.svg themes/xiangqi/WhitePawn.svg themes/xiangqi/BlackRook.svg themes/xiangqi/WhiteRook.svg '/usr/local/share/games/xboard/themes/xiangqi'
+ /usr/bin/mkdir -p '/usr/local/share/info'
+ /usr/bin/install -c -m 644 ./xboard.info '/usr/local/share/info'
+ install-info --info-dir='/usr/local/share/info' '/usr/local/share/info/xboard.info'
+ /usr/bin/mkdir -p '/usr/local/share/man/man6'
+ /usr/bin/install -c -m 644 'xboard.man' '/usr/local/share/man/man6/xboard.6'
+ /usr/bin/mkdir -p '/usr/local/share/mime/packages'
+ /usr/bin/install -c -m 644 xboard.xml '/usr/local/share/mime/packages'
+make  install-data-hook
+make[3]: Entering directory '/home/ian/Downloads/xboard-4.9.1'
+if test -z "" -a -n "/usr/bin/xdg-mime" -a -n "/usr/bin/xdg-desktop-menu" -a -n "/usr/bin/xdg-icon-resource" ; then \
+	/usr/bin/xdg-mime install --mode system --novendor xboard.xml ;\
+	/usr/bin/xdg-desktop-menu install --mode system --novendor xboard-pgn-viewer.desktop;\
+	/usr/bin/xdg-desktop-menu install --mode system --novendor xboard-fen-viewer.desktop;\
+	/usr/bin/xdg-desktop-menu install --mode system --novendor xboard-tourney.desktop;\
+	/usr/bin/xdg-desktop-menu install --mode system --novendor xboard-config.desktop;\
+	/usr/bin/xdg-icon-resource install --context mimetypes --size 32 pixmaps/board32.png application-x-chess-pgn;\
+	/usr/bin/xdg-icon-resource install --context mimetypes --size 32 pixmaps/cross32.png application-x-xboard-trn;\
+	/usr/bin/xdg-icon-resource install --context mimetypes --size 32 pixmaps/ini32.png application-x-xboard-opt;\
+	/usr/bin/xdg-icon-resource install --context mimetypes --size 48 pixmaps/board48.png application-x-chess-pgn;\
+	/usr/bin/xdg-icon-resource install --context mimetypes --size 48 pixmaps/cross48.png application-x-xboard-trn;\
+	/usr/bin/xdg-icon-resource install --context mimetypes --size 48 pixmaps/ini48.png application-x-xboard-opt;\
+fi
+make[3]: Leaving directory '/home/ian/Downloads/xboard-4.9.1'
+make[2]: Leaving directory '/home/ian/Downloads/xboard-4.9.1'
+make[1]: Leaving directory '/home/ian/Downloads/xboard-4.9.1'
+(base) ian@ian-HP-Notebook:~/Downloads/xboard-4.9.1$ xboard
+Gtk-Message: 10:56:22.842: Failed to load module "canberra-gtk-module"
+
+
