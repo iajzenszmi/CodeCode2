@@ -1,0 +1,180 @@
+
+:: ERROR: Incorrect usage: this script must be sourced.
+  
+usage: source setvars.sh [--force] [--config=file] [--help] [...]
+  --force        Force setvars.sh to re-run, doing so may overload environment.
+  --config=file  Customize env vars using a setvars.sh configuration file.
+  --help         Display this help message and exit.
+  ...            Additional args are passed to individual env/vars.sh scripts
+                 and should follow this script's arguments.
+  
+  Some POSIX shells do not accept command-line options. In that case, you can pass
+  command-line options via the SETVARS_ARGS environment variable. For example:
+  
+  $ SETVARS_ARGS="ia32 --config=config.txt" ; export SETVARS_ARGS
+  $ . path/to/setvars.sh
+  
+  The SETVARS_ARGS environment variable is cleared on exiting setvars.sh.
+  
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.1.16(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ls *.c
+coarray.c  ExampleofCNR.c  LAPACKE_zgeev.c
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ icx LAPACKE_zgeev.c
+/usr/bin/ld: /tmp/LAPACKE_zgeev-35503f.o: in function `main':
+LAPACKE_zgeev.c:(.text+0x7b): undefined reference to `LAPACKE_zgeev'
+icx: error: linker command failed with exit code 1 (use -v to see invocation)
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ icx LAPACKE_zgeev.c -v
+Intel(R) oneAPI DPC++/C++ Compiler 2022.2.1 (2022.2.1.20221020)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm
+Configuration file: /opt/intel/oneapi/compiler/2022.2.1/linux/bin/icx.cfg
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name LAPACKE_zgeev.c -mrelocation-model static -fveclib=SVML -mframe-pointer=none -menable-no-infs -menable-no-nans -fapprox-func -menable-unsafe-fp-math -fno-signed-zeros -mreassociate -freciprocal-math -fdenormal-fp-math=preserve-sign,preserve-sign -ffp-contract=fast -fno-rounding-math -ffast-math -ffinite-math-only -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -mllvm -x86-enable-unaligned-vector-move=true -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/ian -resource-dir /opt/intel/oneapi/compiler/2022.2.1/linux/lib/clang/15.0.0 -I/opt/intel/oneapi/vpl/2022.2.5/include -I/opt/intel/oneapi/tbb/2021.7.1/env/../include -I/opt/intel/oneapi/mpi/2021.7.1//include -I/opt/intel/oneapi/mkl/2022.2.1/include -I/opt/intel/oneapi/ipp/2021.6.2/include -I/opt/intel/oneapi/ippcp/2021.6.2/include -I/opt/intel/oneapi/ipp/2021.6.2/include -I/opt/intel/oneapi/dpl/2021.7.2/linux/include -I/opt/intel/oneapi/dpcpp-ct/2022.2.1/include -I/opt/intel/oneapi/dnnl/2022.2.1/cpu_dpcpp_gpu_dpcpp/include -I/opt/intel/oneapi/dev-utilities/2021.7.1/include -I/opt/intel/oneapi/dal/2021.7.1/include -I/opt/intel/oneapi/ccl/2021.7.1/include/cpu_gpu_dpcpp -internal-isystem /opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm/../compiler/include -internal-isystem /opt/intel/oneapi/compiler/2022.2.1/linux/lib/clang/15.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -fdebug-compilation-dir=/home/ian -ferror-limit 19 -fheinous-gnu-extensions -fgnuc-version=4.2.1 -fcolor-diagnostics -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -fintel-compatibility -fintel-libirc-allowed -mllvm -disable-hir-generate-mkl-call -mllvm -loopopt=1 -floopopt-pipeline=light -mllvm -intel-abi-compatible=true -o /tmp/LAPACKE_zgeev-697e6c.o -x c LAPACKE_zgeev.c
+clang -cc1 version 15.0.0 based upon LLVM 15.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/opt/intel/oneapi/ipp/2021.6.2/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/intel/oneapi/vpl/2022.2.5/include
+ /opt/intel/oneapi/tbb/2021.7.1/env/../include
+ /opt/intel/oneapi/mpi/2021.7.1//include
+ /opt/intel/oneapi/mkl/2022.2.1/include
+ /opt/intel/oneapi/ipp/2021.6.2/include
+ /opt/intel/oneapi/ippcp/2021.6.2/include
+ /opt/intel/oneapi/dpl/2021.7.2/linux/include
+ /opt/intel/oneapi/dpcpp-ct/2022.2.1/include
+ /opt/intel/oneapi/dnnl/2022.2.1/cpu_dpcpp_gpu_dpcpp/include
+ /opt/intel/oneapi/dev-utilities/2021.7.1/include
+ /opt/intel/oneapi/dal/2021.7.1/include
+ /opt/intel/oneapi/ccl/2021.7.1/include/cpu_gpu_dpcpp
+ /opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm/../compiler/include
+ /opt/intel/oneapi/compiler/2022.2.1/linux/lib/clang/15.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o a.out /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbegin.o -L/opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm/../compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm/../lib -L/opt/intel/oneapi/compiler/2022.2.1/linux/bin-llvm/../compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. -L/lib -L/usr/lib -L/opt/intel/oneapi/vpl/2022.2.5/lib -L/opt/intel/oneapi/tbb/2021.7.1/env/../lib/intel64/gcc4.8 -L/opt/intel/oneapi/mpi/2021.7.1//libfabric/lib -L/opt/intel/oneapi/mpi/2021.7.1//lib/release -L/opt/intel/oneapi/mpi/2021.7.1//lib -L/opt/intel/oneapi/mkl/2022.2.1/lib/intel64 -L/opt/intel/oneapi/ipp/2021.6.2/lib/intel64 -L/opt/intel/oneapi/ippcp/2021.6.2/lib/intel64 -L/opt/intel/oneapi/ipp/2021.6.2/lib/intel64 -L/opt/intel/oneapi/dnnl/2022.2.1/cpu_dpcpp_gpu_dpcpp/lib -L/opt/intel/oneapi/dal/2021.7.1/lib/intel64 -L/opt/intel/oneapi/compiler/2022.2.1/linux/compiler/lib/intel64_lin -L/opt/intel/oneapi/compiler/2022.2.1/linux/lib -L/opt/intel/oneapi/ccl/2021.7.1/lib/cpu_gpu_dpcpp /tmp/LAPACKE_zgeev-697e6c.o -Bstatic -lsvml -Bdynamic -Bstatic -lirng -Bdynamic -Bstatic -limf -Bdynamic -lm -lgcc --as-needed -lgcc_s --no-as-needed -Bstatic -lirc -Bdynamic -ldl -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed -Bstatic -lirc_s -Bdynamic /usr/lib/gcc/x86_64-linux-gnu/12/crtend.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: /tmp/LAPACKE_zgeev-697e6c.o: in function `main':
+LAPACKE_zgeev.c:(.text+0x7b): undefined reference to `LAPACKE_zgeev'
+icx: error: linker command failed with exit code 1 (use -v to see invocation)
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ git clone https://github.com/oneapi-src/oneAPI-samples.git
+Cloning into 'oneAPI-samples'...
+remote: Enumerating objects: 21421, done.
+remote: Counting objects: 100% (264/264), done.
+remote: Compressing objects: 100% (196/196), done.
+remote: Total 21421 (delta 79), reused 207 (delta 63), pack-reused 21157
+Receiving objects: 100% (21421/21421), 252.78 MiB | 18.19 MiB/s, done.
+Resolving deltas: 100% (13799/13799), done.
+Updating files: 100% (3259/3259), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd oneAPI-SAMPLES
+bash: cd: oneAPI-SAMPLES: No such file or directory
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd oneAPI-samples
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples$ ls
+AI-and-Analytics  CONTRIBUTING.md    License.txt   RenderingToolkit
+CODEOWNERS        DirectProgramming  Publications  third-party-programs.txt
+common            Libraries          README.md     Tools
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples$ cd DirectProgramming
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming$ ls
+C++  DPC++  DPC++FPGA  Fortran
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming$ cd Fortran
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran$ ls
+CombinationalLogic  DenseLinearAlgebra  Jupyter
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran$ cd DenseLinearAlgebra
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra$ ls
+optimize-integral  third-party-programs.txt  vectorize-vecmatmult
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra$ cd optimize-integral
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ ls
+License.txt  Makefile  README.md  sample.json  src
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ make
+ifort -O0  src/int_sin.f90 -c
+ifort int_sin.o -o int_sin
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ ls
+int_sin  int_sin.o  License.txt  Makefile  README.md  sample.json  src
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ ./int_sin
+  
+    Number of    | Computed Integral |
+ Interior Points |                   |
+--------------------------------------
+             4   |   3.1415927E+00   |
+--------------------------------------
+             8   |   3.7922378E+00   |
+--------------------------------------
+            16   |   3.9484632E+00   |
+--------------------------------------
+            32   |   3.9871407E+00   |
+--------------------------------------
+            64   |   3.9967867E+00   |
+--------------------------------------
+           128   |   3.9991968E+00   |
+--------------------------------------
+           256   |   3.9997992E+00   |
+--------------------------------------
+           512   |   3.9999498E+00   |
+--------------------------------------
+          1024   |   3.9999875E+00   |
+--------------------------------------
+          2048   |   3.9999969E+00   |
+--------------------------------------
+          4096   |   3.9999992E+00   |
+--------------------------------------
+          8192   |   3.9999998E+00   |
+--------------------------------------
+         16384   |   4.0000000E+00   |
+--------------------------------------
+         32768   |   4.0000000E+00   |
+--------------------------------------
+         65536   |   4.0000000E+00   |
+--------------------------------------
+        131072   |   4.0000000E+00   |
+--------------------------------------
+        262144   |   4.0000000E+00   |
+--------------------------------------
+        524288   |   4.0000000E+00   |
+--------------------------------------
+       1048576   |   4.0000000E+00   |
+--------------------------------------
+       2097152   |   4.0000000E+00   |
+--------------------------------------
+       4194304   |   4.0000000E+00   |
+--------------------------------------
+       8388608   |   4.0000000E+00   |
+--------------------------------------
+      16777216   |   4.0000000E+00   |
+--------------------------------------
+      33554432   |   4.0000000E+00   |
+--------------------------------------
+      67108864   |   4.0000000E+00   |
+--------------------------------------
+  
+ CPU Time =    4.897823      seconds
+ian@ian-HP-Convertible-x360-11-ab1XX:~/oneAPI-samples/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ 
+
