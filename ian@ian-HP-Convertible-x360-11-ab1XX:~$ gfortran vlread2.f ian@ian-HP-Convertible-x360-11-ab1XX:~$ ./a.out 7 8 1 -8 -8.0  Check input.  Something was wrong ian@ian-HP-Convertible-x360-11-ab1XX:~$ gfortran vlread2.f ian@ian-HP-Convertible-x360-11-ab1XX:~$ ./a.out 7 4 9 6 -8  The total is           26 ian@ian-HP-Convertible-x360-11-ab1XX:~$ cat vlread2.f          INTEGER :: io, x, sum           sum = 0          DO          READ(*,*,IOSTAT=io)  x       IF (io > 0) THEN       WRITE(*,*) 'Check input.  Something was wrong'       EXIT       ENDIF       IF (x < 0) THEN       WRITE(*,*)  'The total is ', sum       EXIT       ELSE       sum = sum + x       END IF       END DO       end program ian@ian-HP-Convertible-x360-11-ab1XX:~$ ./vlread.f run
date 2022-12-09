@@ -1,0 +1,35 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran vlread2.f
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./a.out
+7
+8
+1
+-8
+-8.0
+ Check input.  Something was wrong
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran vlread2.f
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./a.out
+7
+4
+9
+6
+-8
+ The total is           26
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat vlread2.f
+         INTEGER :: io, x, sum
+
+         sum = 0
+         DO
+         READ(*,*,IOSTAT=io)  x
+      IF (io > 0) THEN
+      WRITE(*,*) 'Check input.  Something was wrong'
+      EXIT
+      ENDIF
+      IF (x < 0) THEN
+      WRITE(*,*)  'The total is ', sum
+      EXIT
+      ELSE
+      sum = sum + x
+      END IF
+      END DO
+      end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./a.out
