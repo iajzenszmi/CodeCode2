@@ -1,0 +1,162 @@
+ 
+:: ERROR: Incorrect usage: this script must be sourced.
+  
+usage: source setvars.sh [--force] [--config=file] [--help] [...]
+  --force        Force setvars.sh to re-run, doing so may overload environment.
+  --config=file  Customize env vars using a setvars.sh configuration file.
+  --help         Display this help message and exit.
+  ...            Additional args are passed to individual env/vars.sh scripts
+                 and should follow this script's arguments.
+  
+  Some POSIX shells do not accept command-line options. In that case, you can pass
+  command-line options via the SETVARS_ARGS environment variable. For example:
+  
+  $ SETVARS_ARGS="ia32 --config=config.txt" ; export SETVARS_ARGS
+  $ . path/to/setvars.sh
+  
+  The SETVARS_ARGS environment variable is cleared on exiting setvars.sh.
+  
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.1.16(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.8.3 (2022-11-14)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> test HDF5
+ERROR: syntax: extra token "HDF5" after end of expression
+Stacktrace:
+ [1] top-level scope
+   @ none:1
+
+(@v1.8) pkg> test HDF5
+     Testing HDF5
+      Status `/tmp/jl_lQ73LV/Project.toml`
+  [b99e7846] BinaryProvider v0.5.10
+⌅ [a74b3585] Blosc v0.5.1
+  [d5fb7624] CMakeWrapper v0.2.4
+⌃ [f67ccb44] HDF5 v0.12.5
+  [8bf52ea8] CRC32c `@stdlib/CRC32c`
+  [8ba89e20] Distributed `@stdlib/Distributed`
+  [8f399da3] Libdl `@stdlib/Libdl`
+  [37e2e46d] LinearAlgebra `@stdlib/LinearAlgebra`
+  [a63ad114] Mmap `@stdlib/Mmap`
+  [44cfe95a] Pkg v1.8.0 `@stdlib/Pkg`
+  [8dfed614] Test `@stdlib/Test`
+      Status `/tmp/jl_lQ73LV/Manifest.toml`
+  [9e28174c] BinDeps v1.0.2
+  [b99e7846] BinaryProvider v0.5.10
+⌅ [a74b3585] Blosc v0.5.1
+  [631607c0] CMake v1.2.0
+  [d5fb7624] CMakeWrapper v0.2.4
+⌅ [34da2185] Compat v2.2.1
+⌃ [f67ccb44] HDF5 v0.12.5
+  [bac558e1] OrderedCollections v1.4.1
+  [d96e819e] Parameters v0.12.3
+  [30578b45] URIParser v0.4.1
+  [3a884ed6] UnPack v1.0.2
+  [0dad84c5] ArgTools v1.1.1 `@stdlib/ArgTools`
+  [56f22d72] Artifacts `@stdlib/Artifacts`
+  [2a0f44e3] Base64 `@stdlib/Base64`
+  [8bf52ea8] CRC32c `@stdlib/CRC32c`
+  [ade2ca70] Dates `@stdlib/Dates`
+  [8bb1440f] DelimitedFiles `@stdlib/DelimitedFiles`
+  [8ba89e20] Distributed `@stdlib/Distributed`
+  [f43a241f] Downloads v1.6.0 `@stdlib/Downloads`
+  [7b1f6079] FileWatching `@stdlib/FileWatching`
+  [b77e0a4c] InteractiveUtils `@stdlib/InteractiveUtils`
+  [b27032c2] LibCURL v0.6.3 `@stdlib/LibCURL`
+  [76f85450] LibGit2 `@stdlib/LibGit2`
+  [8f399da3] Libdl `@stdlib/Libdl`
+  [37e2e46d] LinearAlgebra `@stdlib/LinearAlgebra`
+  [56ddb016] Logging `@stdlib/Logging`
+  [d6f4376e] Markdown `@stdlib/Markdown`
+  [a63ad114] Mmap `@stdlib/Mmap`
+  [ca575930] NetworkOptions v1.2.0 `@stdlib/NetworkOptions`
+  [44cfe95a] Pkg v1.8.0 `@stdlib/Pkg`
+  [de0858da] Printf `@stdlib/Printf`
+  [3fa0cd96] REPL `@stdlib/REPL`
+  [9a3f8284] Random `@stdlib/Random`
+  [ea8e919c] SHA v0.7.0 `@stdlib/SHA`
+  [9e88b42a] Serialization `@stdlib/Serialization`
+  [1a1011a3] SharedArrays `@stdlib/SharedArrays`
+  [6462fe0b] Sockets `@stdlib/Sockets`
+  [2f01184e] SparseArrays `@stdlib/SparseArrays`
+  [10745b16] Statistics `@stdlib/Statistics`
+  [fa267f1f] TOML v1.0.0 `@stdlib/TOML`
+  [a4e569a6] Tar v1.10.1 `@stdlib/Tar`
+  [8dfed614] Test `@stdlib/Test`
+  [cf7118a7] UUIDs `@stdlib/UUIDs`
+  [4ec0a83e] Unicode `@stdlib/Unicode`
+  [e66e0078] CompilerSupportLibraries_jll v0.5.2+0 `@stdlib/CompilerSupportLibraries_jll`
+  [deac9b47] LibCURL_jll v7.84.0+0 `@stdlib/LibCURL_jll`
+  [29816b5a] LibSSH2_jll v1.10.2+0 `@stdlib/LibSSH2_jll`
+  [c8ffd9c3] MbedTLS_jll v2.28.0+0 `@stdlib/MbedTLS_jll`
+  [14a3606d] MozillaCACerts_jll v2022.2.1 `@stdlib/MozillaCACerts_jll`
+  [4536629a] OpenBLAS_jll v0.3.20+0 `@stdlib/OpenBLAS_jll`
+  [83775a58] Zlib_jll v1.2.12+3 `@stdlib/Zlib_jll`
+  [8e850b90] libblastrampoline_jll v5.1.1+0 `@stdlib/libblastrampoline_jll`
+  [8e850ede] nghttp2_jll v1.48.0+0 `@stdlib/nghttp2_jll`
+  [3f19e933] p7zip_jll v17.4.0+0 `@stdlib/p7zip_jll`
+        Info Packages marked with ⌃ and ⌅ have new versions available, but those with ⌅ are restricted by compatibility constraints from upgrading.
+     Testing Running tests...
+HDF5 version 1.10.4
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+Test Summary: | Pass  Total   Time
+plain         |  129    129  54.0s
+Test Summary: | Pass  Total  Time
+complex       |   13     13  1.1s
+Test Summary:      | Pass  Total  Time
+undefined and null |    4      4  0.0s
+Test Summary:   | Pass  Total  Time
+abstract arrays |    2      2  0.4s
+┌ Warning: Base.download is deprecated; use Downloads.download instead
+│   caller = (::var"#getfile#47"{String, String})(name::String) at readremote.jl:60
+└ @ Main ~/.julia/packages/HDF5/Zh9on/test/readremote.jl:60
+Test Summary: | Pass  Total  Time
+readremote    |   23     23  9.4s
+Test Summary: | Pass  Total  Time
+extendtest    |   17     17  1.5s
+Test Summary: | Pass  Total  Time
+gc            |  100    100  3.8s
+Test Summary: | Pass  Total  Time
+external      |    6      6  0.1s
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+Test Summary: | Pass  Total   Time
+swmr          |    4      4  17.2s
+Test Summary: | Pass  Total  Time
+mmap          |    3      3  6.7s
+┌ Warning: Pkg.installed() is deprecated
+└ @ Pkg /cache/build/default-amdci5-6/julialang/julia-release-1-dot-8/usr/share/julia/stdlib/v1.8/Pkg/src/Pkg.jl:675
+     Testing HDF5 tests passed 
