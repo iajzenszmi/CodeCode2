@@ -1,0 +1,733 @@
+ 
+:: ERROR: Incorrect usage: this script must be sourced.
+  
+usage: source setvars.sh [--force] [--config=file] [--help] [...]
+  --force        Force setvars.sh to re-run, doing so may overload environment.
+  --config=file  Customize env vars using a setvars.sh configuration file.
+  --help         Display this help message and exit.
+  ...            Additional args are passed to individual env/vars.sh scripts
+                 and should follow this script's arguments.
+  
+  Some POSIX shells do not accept command-line options. In that case, you can pass
+  command-line options via the SETVARS_ARGS environment variable. For example:
+  
+  $ SETVARS_ARGS="ia32 --config=config.txt" ; export SETVARS_ARGS
+  $ . path/to/setvars.sh
+  
+  The SETVARS_ARGS environment variable is cleared on exiting setvars.sh.
+  
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.1.16(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+  | | |_| | | | (_| |  |  Version 1.8.3 (2022-11-14)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+(@v1.8) pkg> add bifurcationkit
+    Updating registry at `~/.julia/registries/General.toml`
+ERROR: The following package names could not be resolved:
+ * bifurcationkit (not found in project, manifest or registry)
+   Suggestions: BifurcationKit BifurcationInference
+
+(@v1.8) pkg> add Bifurcationkit
+ERROR: The following package names could not be resolved:
+ * Bifurcationkit (not found in project, manifest or registry)
+   Suggestions: BifurcationKit BifurcationInference
+
+(@v1.8) pkg> add BifurcationKit
+   Resolving package versions...
+   Installed Arpack_jll ───── v3.5.1+1
+   Installed Arpack ───────── v0.5.4
+   Installed KrylovKit ────── v0.5.4
+   Installed StructArrays ─── v0.4.4
+   Installed BifurcationKit ─ v0.1.5
+  Downloaded artifact: Arpack
+    Updating `~/.julia/environments/v1.8/Project.toml`
+⌃ [0f109fa4] + BifurcationKit v0.1.5
+    Updating `~/.julia/environments/v1.8/Manifest.toml`
+  [7d9fca2a] + Arpack v0.5.4
+⌃ [0f109fa4] + BifurcationKit v0.1.5
+  [e2d170a0] + DataValueInterfaces v1.0.0
+⌅ [0b1a1467] + KrylovKit v0.5.4
+⌅ [f2b01f46] ↑ Roots v1.2.0 ⇒ v1.4.1
+⌅ [efcf1570] ↓ Setfield v1.1.1 ⇒ v0.8.2
+⌅ [09ab397b] + StructArrays v0.4.4
+  [bd369af6] + Tables v1.10.0
+⌅ [68821587] + Arpack_jll v3.5.1+1
+        Info Packages marked with ⌃ and ⌅ have new versions available, but those with ⌅ are restricted by compatibility constraints from upgrading. To see why use `status --outdated -m`
+Precompiling project...
+  16 dependencies successfully precompiled in 80 seconds. 240 already precompiled.
+
+(@v1.8) pkg> test  Bifurcationkit
+ERROR: The following package names could not be resolved:
+ * Bifurcationkit (not found in project or manifest)
+   Suggestions: BifurcationKit
+
+(@v1.8) pkg> test  BifurcationKit
+     Testing BifurcationKit
+      Status `/tmp/jl_j8x4rS/Project.toml`
+⌅ [ec485272] ArnoldiMethod v0.1.0
+  [7d9fca2a] Arpack v0.5.4
+⌃ [0f109fa4] BifurcationKit v0.1.5
+⌅ [8e7c35d0] BlockArrays v0.12.12
+⌅ [864edb3b] DataStructures v0.17.20
+⌅ [2b5f629d] DiffEqBase v6.44.3
+⌅ [ffbed154] DocStringExtensions v0.8.6
+  [f6369f11] ForwardDiff v0.10.34
+⌅ [42fd0dbc] IterativeSolvers v0.8.5
+⌅ [0b1a1467] KrylovKit v0.5.4
+⌃ [7a12625a] LinearMaps v2.7.0
+⌃ [1dea7af3] OrdinaryDiffEq v5.42.3
+  [d96e819e] Parameters v0.12.3
+  [3cdcf5f2] RecipesBase v1.3.2
+⌃ [731186ca] RecursiveArrayTools v2.11.4
+  [ae029012] Requires v1.3.0
+⌅ [efcf1570] Setfield v0.8.2
+⌅ [09ab397b] StructArrays v0.4.4
+  [ade2ca70] Dates `@stdlib/Dates`
+  [37e2e46d] LinearAlgebra `@stdlib/LinearAlgebra`
+  [de0858da] Printf `@stdlib/Printf`
+  [9a3f8284] Random `@stdlib/Random`
+  [2f01184e] SparseArrays `@stdlib/SparseArrays`
+  [8dfed614] Test `@stdlib/Test`
+      Status `/tmp/jl_j8x4rS/Manifest.toml`
+  [1520ce14] AbstractTrees v0.4.3
+⌅ [79e6a3ab] Adapt v2.4.0
+⌅ [ec485272] ArnoldiMethod v0.1.0
+  [7d9fca2a] Arpack v0.5.4
+⌅ [4fba245c] ArrayInterface v2.14.17
+  [30b0a656] ArrayInterfaceCore v0.1.27
+⌅ [4c555306] ArrayLayouts v0.4.7
+⌃ [0f109fa4] BifurcationKit v0.1.5
+  [9e28174c] BinDeps v1.0.2
+  [b99e7846] BinaryProvider v0.5.10
+⌅ [8e7c35d0] BlockArrays v0.12.12
+⌅ [d360d2e6] ChainRulesCore v0.9.45
+  [38540f10] CommonSolve v0.2.3
+  [bbf7d656] CommonSubexpressions v0.3.0
+⌅ [34da2185] Compat v2.2.1
+  [88cd18e8] ConsoleProgressMonitor v0.1.2
+  [187b0558] ConstructionBase v1.4.1
+  [9a962f9c] DataAPI v1.14.0
+⌅ [864edb3b] DataStructures v0.17.20
+  [e2d170a0] DataValueInterfaces v1.0.0
+⌅ [2b5f629d] DiffEqBase v6.44.3
+  [163ba53b] DiffResults v1.1.0
+⌃ [b552c78f] DiffRules v1.5.0
+  [b4f34e82] Distances v0.10.7
+⌅ [ffbed154] DocStringExtensions v0.8.6
+⌃ [d4d017d3] ExponentialUtilities v1.19.0
+  [9aa1b823] FastClosures v0.3.2
+⌅ [1a297f60] FillArrays v0.9.7
+  [6a86dc24] FiniteDiff v2.17.0
+  [f6369f11] ForwardDiff v0.10.34
+  [069b7b12] FunctionWrappers v1.1.3
+  [46192b85] GPUArraysCore v0.1.2
+  [01680d73] GenericSVD v0.3.0
+  [c145ed77] GenericSchur v0.5.3
+  [d25df0c9] Inflate v0.1.3
+  [92d709cd] IrrationalConstants v0.1.1
+⌅ [42fd0dbc] IterativeSolvers v0.8.5
+  [82899510] IteratorInterfaceExtensions v1.0.0
+  [692b3bcd] JLLWrappers v1.4.1
+⌅ [0b1a1467] KrylovKit v0.5.4
+⌃ [2ee39098] LabelledArrays v1.6.6
+  [1d6d02ad] LeftChildRightSiblingTrees v0.2.0
+  [093fc24a] LightGraphs v1.3.5
+⌃ [d3d80556] LineSearches v7.1.1
+⌃ [7a12625a] LinearMaps v2.7.0
+⌃ [2ab3a3ac] LogExpFunctions v0.3.0
+⌅ [e6f89c97] LoggingExtras v0.4.9
+  [1914dd2f] MacroTools v0.5.10
+  [46d2c3a1] MuladdMacro v0.2.4
+  [d41bc354] NLSolversBase v7.8.3
+  [2774e3e8] NLsolve v4.5.1
+⌅ [77ba4419] NaNMath v0.3.7
+  [bac558e1] OrderedCollections v1.4.1
+⌃ [1dea7af3] OrdinaryDiffEq v5.42.3
+  [d96e819e] Parameters v0.12.3
+  [21216c6a] Preferences v1.3.0
+  [33c8b6b6] ProgressLogging v0.1.4
+  [92933f4c] ProgressMeter v1.7.2
+  [3cdcf5f2] RecipesBase v1.3.2
+⌃ [731186ca] RecursiveArrayTools v2.11.4
+⌅ [f2c3362d] RecursiveFactorization v0.1.0
+⌅ [189a3867] Reexport v0.2.0
+  [ae029012] Requires v1.3.0
+⌅ [f2b01f46] Roots v1.4.1
+⌅ [efcf1570] Setfield v0.8.2
+  [699a6c99] SimpleTraits v0.9.4
+  [66db9d55] SnoopPrecompile v1.0.1
+⌃ [47a9eef4] SparseDiffTools v1.13.2
+⌃ [276daf66] SpecialFunctions v0.8.0
+⌅ [90137ffa] StaticArrays v0.12.5
+  [1e83bf80] StaticArraysCore v1.4.0
+  [82ae8749] StatsAPI v1.5.0
+⌅ [09ab397b] StructArrays v0.4.4
+  [3783bdb8] TableTraits v1.0.1
+  [bd369af6] Tables v1.10.0
+  [5d786b92] TerminalLoggers v0.1.6
+  [a2a6695c] TreeViews v0.3.0
+  [30578b45] URIParser v0.4.1
+  [3a884ed6] UnPack v1.0.2
+⌅ [19fa3120] VertexSafeGraphs v0.1.2
+  [700de1a5] ZygoteRules v0.2.2
+⌅ [68821587] Arpack_jll v3.5.1+1
+  [0dad84c5] ArgTools v1.1.1 `@stdlib/ArgTools`
+  [56f22d72] Artifacts `@stdlib/Artifacts`
+  [2a0f44e3] Base64 `@stdlib/Base64`
+  [ade2ca70] Dates `@stdlib/Dates`
+  [8bb1440f] DelimitedFiles `@stdlib/DelimitedFiles`
+  [8ba89e20] Distributed `@stdlib/Distributed`
+  [f43a241f] Downloads v1.6.0 `@stdlib/Downloads`
+  [7b1f6079] FileWatching `@stdlib/FileWatching`
+  [9fa8497b] Future `@stdlib/Future`
+  [b77e0a4c] InteractiveUtils `@stdlib/InteractiveUtils`
+  [b27032c2] LibCURL v0.6.3 `@stdlib/LibCURL`
+  [76f85450] LibGit2 `@stdlib/LibGit2`
+  [8f399da3] Libdl `@stdlib/Libdl`
+  [37e2e46d] LinearAlgebra `@stdlib/LinearAlgebra`
+  [56ddb016] Logging `@stdlib/Logging`
+  [d6f4376e] Markdown `@stdlib/Markdown`
+  [a63ad114] Mmap `@stdlib/Mmap`
+  [ca575930] NetworkOptions v1.2.0 `@stdlib/NetworkOptions`
+  [44cfe95a] Pkg v1.8.0 `@stdlib/Pkg`
+  [de0858da] Printf `@stdlib/Printf`
+  [3fa0cd96] REPL `@stdlib/REPL`
+  [9a3f8284] Random `@stdlib/Random`
+  [ea8e919c] SHA v0.7.0 `@stdlib/SHA`
+  [9e88b42a] Serialization `@stdlib/Serialization`
+  [1a1011a3] SharedArrays `@stdlib/SharedArrays`
+  [6462fe0b] Sockets `@stdlib/Sockets`
+  [2f01184e] SparseArrays `@stdlib/SparseArrays`
+  [10745b16] Statistics `@stdlib/Statistics`
+  [4607b0f0] SuiteSparse `@stdlib/SuiteSparse`
+  [fa267f1f] TOML v1.0.0 `@stdlib/TOML`
+  [a4e569a6] Tar v1.10.1 `@stdlib/Tar`
+  [8dfed614] Test `@stdlib/Test`
+  [cf7118a7] UUIDs `@stdlib/UUIDs`
+  [4ec0a83e] Unicode `@stdlib/Unicode`
+  [e66e0078] CompilerSupportLibraries_jll v0.5.2+0 `@stdlib/CompilerSupportLibraries_jll`
+  [deac9b47] LibCURL_jll v7.84.0+0 `@stdlib/LibCURL_jll`
+  [29816b5a] LibSSH2_jll v1.10.2+0 `@stdlib/LibSSH2_jll`
+  [c8ffd9c3] MbedTLS_jll v2.28.0+0 `@stdlib/MbedTLS_jll`
+  [14a3606d] MozillaCACerts_jll v2022.2.1 `@stdlib/MozillaCACerts_jll`
+  [4536629a] OpenBLAS_jll v0.3.20+0 `@stdlib/OpenBLAS_jll`
+  [83775a58] Zlib_jll v1.2.12+3 `@stdlib/Zlib_jll`
+  [8e850b90] libblastrampoline_jll v5.1.1+0 `@stdlib/libblastrampoline_jll`
+  [8e850ede] nghttp2_jll v1.48.0+0 `@stdlib/nghttp2_jll`
+  [3f19e933] p7zip_jll v17.4.0+0 `@stdlib/p7zip_jll`
+        Info Packages marked with ⌃ and ⌅ have new versions available, but those with ⌅ are restricted by compatibility constraints from upgrading.
+     Testing Running tests...
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: BorderingBLS did not achieve tolerance
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearBorderSolver.jl:60
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: Shift is not implemented for the bordered linear solver MatrixFreeBLS
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearBorderSolver.jl:172
+┌ Warning: Shift is not implemented for the bordered linear solver MatrixFreeBLS
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearBorderSolver.jl:172
+┌ Warning: IterativeSolvers.gmres iterated maxIter = 100 times without achieving the desired tolerance.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:145
+┌ Warning: IterativeSolvers.gmres iterated maxIter = 100 times without achieving the desired tolerance.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:145
+┌ Warning: IterativeSolvers.gmres iterated maxIter = 100 times without achieving the desired tolerance.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:145
+┌ Warning: IterativeSolvers.gmres iterated maxIter = 100 times without achieving the desired tolerance.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:145
+┌ Warning: KrylovKit.linsolve solver did not converge
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:196
+┌ Warning: KrylovKit.linsolve solver did not converge
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:196
+┌ Warning: KrylovKit.linsolve solver did not converge
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:196
+┌ Warning: KrylovKit.linsolve solver did not converge
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:196
+┌ Warning: KrylovKit.linsolve solver did not converge
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:196
+┌ Warning: KrylovKit.linsolve solver did not converge
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/LinearSolver.jl:196
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+┌ Warning: Shift-Invert strategy not implemented for maps
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/EigSolver.jl:169
+┌ Error: WIP
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/BorderedProblem.jl:74
+Branch number of points: 131
+Branch of Equilibrium
+Type of vectors: Vector{Float64}
+Parameters p1 from -3.0 to 4.0
+Special points:
+ (ind_ev = index of the bifurcating eigenvalue e.g. `br.eig[idx].eigenvals[ind_ev]`)
+- #  1,    bp at p1 ≈ -1.13352254 ∈ (-1.13352254, -1.13351184), |δp|=1e-05, [    guess], δ = ( 1,  0), step =  33, eigenelements in eig[ 34], ind_ev =   1
+- #  2,    bp at p1 ≈ -2.32505862 ∈ (-2.32505862, -2.32505849), |δp|=1e-07, [converged], δ = (-1,  0), step =  46, eigenelements in eig[ 47], ind_ev =   1
+- #  3,  hopf at p1 ≈ -0.95384426 ∈ (-0.95385423, -0.95384426), |δp|=1e-05, [converged], δ = ( 2,  2), step =  60, eigenelements in eig[ 61], ind_ev =   2
+- #  4,  hopf at p1 ≈ +0.95385225 ∈ (+0.95384228, +0.95385225), |δp|=1e-05, [converged], δ = (-2, -2), step =  80, eigenelements in eig[ 81], ind_ev =   2
+- #  5,    bp at p1 ≈ +2.32505862 ∈ (+2.32505862, +2.32505862), |δp|=3e-09, [converged], δ = ( 1,  0), step =  94, eigenelements in eig[ 95], ind_ev =   1
+- #  6,    bp at p1 ≈ +1.13286415 ∈ (+1.13286415, +1.13286415), |δp|=4e-09, [converged], δ = (-1,  0), step = 107, eigenelements in eig[108], ind_ev =   1
+Continuation: Error During Test at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:16
+  Got exception outside of a @test
+  LoadError: The function `Base.propertynames` was overloaded for type `ContResult{NamedTuple{(:p1, :p2, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Nothing, Int64}}, Nothing, Nothing, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:p1, :p2, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}}, Vector{NamedTuple{(:x, :p, :step), Tuple{BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}, Float64, Int64}}}, Nothing, Tuple{Float64, Float64}, Setfield.IndexLens{Tuple{Int64}}}`.
+  Please make sure the following methods are also overloaded for this type:
+  ```julia
+  ConstructionBase.setproperties
+  ConstructionBase.getproperties # optional in VERSION >= julia v1.7
+  ```
+  
+  Stacktrace:
+    [1] error(s::String)
+      @ Base ./error.jl:35
+    [2] macro expansion
+      @ ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:67 [inlined]
+    [3] check_properties_are_fields(obj::ContResult{NamedTuple{(:p1, :p2, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Nothing, Int64}}, Nothing, Nothing, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:p1, :p2, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}}, Vector{NamedTuple{(:x, :p, :step), Tuple{BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}, Float64, Int64}}}, Nothing, Tuple{Float64, Float64}, Setfield.IndexLens{Tuple{Int64}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:55
+    [4] setproperties_object(obj::ContResult{NamedTuple{(:p1, :p2, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Nothing, Int64}}, Nothing, Nothing, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:p1, :p2, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}}, Vector{NamedTuple{(:x, :p, :step), Tuple{BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}, Float64, Int64}}}, Nothing, Tuple{Float64, Float64}, Setfield.IndexLens{Tuple{Int64}}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, FoldProblemMinimallyAugmented{typeof(Fb), var"#66#69", var"#67#70", var"#68#71", Setfield.IndexLens{Tuple{Int64}}, BorderedArray{Vector{Float64}, Float64}, linsolveBd, linsolveBd, BorderingBLS{linsolveBd, Float64}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:186
+    [5] setproperties(obj::ContResult{NamedTuple{(:p1, :p2, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Nothing, Int64}}, Nothing, Nothing, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:p1, :p2, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}}, Vector{NamedTuple{(:x, :p, :step), Tuple{BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}, Float64, Int64}}}, Nothing, Tuple{Float64, Float64}, Setfield.IndexLens{Tuple{Int64}}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, FoldProblemMinimallyAugmented{typeof(Fb), var"#66#69", var"#67#70", var"#68#71", Setfield.IndexLens{Tuple{Int64}}, BorderedArray{Vector{Float64}, Float64}, linsolveBd, linsolveBd, BorderingBLS{linsolveBd, Float64}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:105
+    [6] setproperties(obj::ContResult{NamedTuple{(:p1, :p2, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Nothing, Int64}}, Nothing, Nothing, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:p1, :p2, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}}, Vector{NamedTuple{(:x, :p, :step), Tuple{BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}, Float64, Int64}}}, Nothing, Tuple{Float64, Float64}, Setfield.IndexLens{Tuple{Int64}}}; kw::Base.Pairs{Symbol, Any, Tuple{Symbol, Symbol}, NamedTuple{(:type, :functional), Tuple{Symbol, FoldProblemMinimallyAugmented{typeof(Fb), var"#66#69", var"#67#70", var"#68#71", Setfield.IndexLens{Tuple{Int64}}, BorderedArray{Vector{Float64}, Float64}, linsolveBd, linsolveBd, BorderingBLS{linsolveBd, Float64}}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:101
+    [7] continuationFold(F::typeof(Fb), J::var"#66#69", foldpointguess::BorderedArray{BorderedArray{Vector{Float64}, Float64}, Float64}, par::Tuple{Float64, Float64}, lens1::Setfield.IndexLens{Tuple{Int64}}, lens2::Setfield.IndexLens{Tuple{Int64}}, eigenvec::BorderedArray{Vector{Float64}, Float64}, eigenvec_ad::BorderedArray{Vector{Float64}, Float64}, options_cont::ContinuationPar{Float64, linsolveBd, DefaultEig{typeof(real)}}; normC::typeof(norm), updateMinAugEveryStep::Int64, issymmetric::Bool, Jᵗ::Function, d2F::Function, bdlinsolver::BorderingBLS{linsolveBd, Float64}, kwargs::Base.Pairs{Symbol, Bool, Tuple{Symbol}, NamedTuple{(:plot,), Tuple{Bool}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/MinAugFold.jl:472
+    [8] continuationFold(F::typeof(Fb), J::var"#66#69", br::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Nothing, Int64}}, Nothing, Nothing, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, BorderedArray{Vector{Float64}, Float64}}, Vector{NamedTuple{(:x, :p, :step), Tuple{BorderedArray{Vector{Float64}, Float64}, Float64, Int64}}}, Nothing, Tuple{Float64, Float64}, Setfield.IndexLens{Tuple{Int64}}}, ind_fold::Int64, lens2::Setfield.IndexLens{Tuple{Int64}}, options_cont::ContinuationPar{Float64, linsolveBd, DefaultEig{typeof(real)}}; normC::typeof(norm), issymmetric::Bool, Jᵗ::var"#67#70", d2F::Function, nev::Int64, startWithEigen::Bool, kwargs::Base.Pairs{Symbol, Bool, Tuple{Symbol}, NamedTuple{(:plot,), Tuple{Bool}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/MinAugFold.jl:510
+    [9] #continuation#279
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/codim2.jl:92 [inlined]
+   [10] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/test-cont-non-vector.jl:78
+   [11] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [12] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:18 [inlined]
+   [13] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [14] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:17 [inlined]
+   [15] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [16] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:6
+   [17] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [18] top-level scope
+      @ none:6
+   [19] eval
+      @ ./boot.jl:368 [inlined]
+   [20] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:276
+   [21] _start()
+      @ Base ./client.jl:522
+  in expression starting at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/test-cont-non-vector.jl:78
+┌ Warning: More than one event in `SetOfEvents` was detected. We take the first in the list to save data in the branch.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/events/EventDetection.jl:312
+┌ Warning: More than one event in `SetOfEvents` was detected. We take the first in the list to save data in the branch.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/events/EventDetection.jl:312
+┌ Warning: More than one event in `SetOfEvents` was detected. We take the first in the list to save data in the branch.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/events/EventDetection.jl:312
+┌ Warning: More than one event in `SetOfEvents` was detected. We take the first in the list to save data in the branch.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/events/EventDetection.jl:312
+┌ Warning: More than one event in `SetOfEvents` was detected. We take the first in the list to save data in the branch.
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/events/EventDetection.jl:312
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+Deflation operator with 1 roots
+Fold Codim 2: Error During Test at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:27
+  Got exception outside of a @test
+  LoadError: The function `Base.propertynames` was overloaded for type `ContResult{NamedTuple{(:α, :β, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:α, :β, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{Vector{Float64}, Float64}}, Nothing, Nothing, NamedTuple{(:α, :β), Tuple{Float64, Float64}}, Setfield.PropertyLens{:β}}`.
+  Please make sure the following methods are also overloaded for this type:
+  ```julia
+  ConstructionBase.setproperties
+  ConstructionBase.getproperties # optional in VERSION >= julia v1.7
+  ```
+  
+  Stacktrace:
+    [1] error(s::String)
+      @ Base ./error.jl:35
+    [2] macro expansion
+      @ ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:67 [inlined]
+    [3] check_properties_are_fields(obj::ContResult{NamedTuple{(:α, :β, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:α, :β, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{Vector{Float64}, Float64}}, Nothing, Nothing, NamedTuple{(:α, :β), Tuple{Float64, Float64}}, Setfield.PropertyLens{:β}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:55
+    [4] setproperties_object(obj::ContResult{NamedTuple{(:α, :β, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:α, :β, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{Vector{Float64}, Float64}}, Nothing, Nothing, NamedTuple{(:α, :β), Tuple{Float64, Float64}}, Setfield.PropertyLens{:β}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, FoldProblemMinimallyAugmented{typeof(F_chan), typeof(J_chan), Nothing, Nothing, Setfield.PropertyLens{:α}, Vector{Float64}, DefaultLS, DefaultLS, BorderingBLS{DefaultLS, Float64}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:186
+    [5] setproperties(obj::ContResult{NamedTuple{(:α, :β, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:α, :β, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{Vector{Float64}, Float64}}, Nothing, Nothing, NamedTuple{(:α, :β), Tuple{Float64, Float64}}, Setfield.PropertyLens{:β}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, FoldProblemMinimallyAugmented{typeof(F_chan), typeof(J_chan), Nothing, Nothing, Setfield.PropertyLens{:α}, Vector{Float64}, DefaultLS, DefaultLS, BorderingBLS{DefaultLS, Float64}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:105
+    [6] setproperties(obj::ContResult{NamedTuple{(:α, :β, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:α, :β, :BT), Tuple{Float64, Float64, Float64}}, BorderedArray{Vector{Float64}, Float64}}, Nothing, Nothing, NamedTuple{(:α, :β), Tuple{Float64, Float64}}, Setfield.PropertyLens{:β}}; kw::Base.Pairs{Symbol, Any, Tuple{Symbol, Symbol}, NamedTuple{(:type, :functional), Tuple{Symbol, FoldProblemMinimallyAugmented{typeof(F_chan), typeof(J_chan), Nothing, Nothing, Setfield.PropertyLens{:α}, Vector{Float64}, DefaultLS, DefaultLS, BorderingBLS{DefaultLS, Float64}}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:101
+    [7] continuationFold(F::typeof(F_chan), J::typeof(J_chan), foldpointguess::BorderedArray{Vector{Float64}, Float64}, par::NamedTuple{(:α, :β), Tuple{Float64, Float64}}, lens1::Setfield.PropertyLens{:α}, lens2::Setfield.PropertyLens{:β}, eigenvec::Vector{Float64}, eigenvec_ad::Vector{Float64}, options_cont::ContinuationPar{Float64, DefaultLS, DefaultEig{typeof(real)}}; normC::typeof(norm), updateMinAugEveryStep::Int64, issymmetric::Bool, Jᵗ::Nothing, d2F::Nothing, bdlinsolver::BorderingBLS{DefaultLS, Float64}, kwargs::Base.Pairs{Symbol, Bool, Tuple{Symbol}, NamedTuple{(:plot,), Tuple{Bool}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/MinAugFold.jl:472
+    [8] continuationFold(F::typeof(F_chan), J::typeof(J_chan), br::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:α, :β), Tuple{Float64, Float64}}, Setfield.PropertyLens{:α}}, ind_fold::Int64, lens2::Setfield.PropertyLens{:β}, options_cont::ContinuationPar{Float64, DefaultLS, DefaultEig{typeof(real)}}; normC::typeof(norm), issymmetric::Bool, Jᵗ::Nothing, d2F::Nothing, nev::Int64, startWithEigen::Bool, kwargs::Base.Pairs{Symbol, Integer, Tuple{Symbol, Symbol}, NamedTuple{(:updateMinAugEveryStep, :plot), Tuple{Int64, Bool}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/MinAugFold.jl:510
+    [9] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/testJacobianFoldDeflation.jl:83
+   [10] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [11] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:28 [inlined]
+   [12] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [13] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:28 [inlined]
+   [14] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [15] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:6
+   [16] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [17] top-level scope
+      @ none:6
+   [18] eval
+      @ ./boot.jl:368 [inlined]
+   [19] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:276
+   [20] _start()
+      @ Base ./client.jl:522
+  in expression starting at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/testJacobianFoldDeflation.jl:83
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+Hopf Codim 2: Error During Test at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:32
+  Got exception outside of a @test
+  LoadError: The function `Base.propertynames` was overloaded for type `ContResult{NamedTuple{(:l, :β, :ω, :l1, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:l, :β, :ω, :l1, :BT), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64}}, BorderedArray{Vector{Float64}, Vector{Float64}}}, Nothing, Nothing, NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, Setfield.PropertyLens{:β}}`.
+  Please make sure the following methods are also overloaded for this type:
+  ```julia
+  ConstructionBase.setproperties
+  ConstructionBase.getproperties # optional in VERSION >= julia v1.7
+  ```
+  
+  Stacktrace:
+    [1] error(s::String)
+      @ Base ./error.jl:35
+    [2] macro expansion
+      @ ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:67 [inlined]
+    [3] check_properties_are_fields(obj::ContResult{NamedTuple{(:l, :β, :ω, :l1, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:l, :β, :ω, :l1, :BT), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64}}, BorderedArray{Vector{Float64}, Vector{Float64}}}, Nothing, Nothing, NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, Setfield.PropertyLens{:β}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:55
+    [4] setproperties_object(obj::ContResult{NamedTuple{(:l, :β, :ω, :l1, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:l, :β, :ω, :l1, :BT), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64}}, BorderedArray{Vector{Float64}, Vector{Float64}}}, Nothing, Nothing, NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, Setfield.PropertyLens{:β}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, HopfProblemMinimallyAugmented{typeof(Fbru), typeof(Jbru_ana), Nothing, Nothing, Setfield.PropertyLens{:l}, Vector{ComplexF64}, DefaultLS, BorderingBLS{DefaultLS, Float64}, BorderingBLS{DefaultLS, Float64}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:186
+    [5] setproperties(obj::ContResult{NamedTuple{(:l, :β, :ω, :l1, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:l, :β, :ω, :l1, :BT), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64}}, BorderedArray{Vector{Float64}, Vector{Float64}}}, Nothing, Nothing, NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, Setfield.PropertyLens{:β}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, HopfProblemMinimallyAugmented{typeof(Fbru), typeof(Jbru_ana), Nothing, Nothing, Setfield.PropertyLens{:l}, Vector{ComplexF64}, DefaultLS, BorderingBLS{DefaultLS, Float64}, BorderingBLS{DefaultLS, Float64}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:105
+    [6] setproperties(obj::ContResult{NamedTuple{(:l, :β, :ω, :l1, :BT, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:l, :β, :ω, :l1, :BT), Tuple{Float64, Float64, Float64, ComplexF64, ComplexF64}}, BorderedArray{Vector{Float64}, Vector{Float64}}}, Nothing, Nothing, NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, Setfield.PropertyLens{:β}}; kw::Base.Pairs{Symbol, Any, Tuple{Symbol, Symbol}, NamedTuple{(:type, :functional), Tuple{Symbol, HopfProblemMinimallyAugmented{typeof(Fbru), typeof(Jbru_ana), Nothing, Nothing, Setfield.PropertyLens{:l}, Vector{ComplexF64}, DefaultLS, BorderingBLS{DefaultLS, Float64}, BorderingBLS{DefaultLS, Float64}}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:101
+    [7] continuationHopf(F::typeof(Fbru), J::typeof(Jbru_ana), hopfpointguess::BorderedArray{Vector{Float64}, Vector{Float64}}, par::NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, lens1::Setfield.PropertyLens{:l}, lens2::Setfield.PropertyLens{:β}, eigenvec::Vector{ComplexF64}, eigenvec_ad::Vector{ComplexF64}, options_cont::ContinuationPar{Float64, DefaultLS, DefaultEig{typeof(real)}}; updateMinAugEveryStep::Int64, normC::typeof(norm), Jᵗ::Nothing, d2F::Nothing, d3F::Nothing, bdlinsolver::BorderingBLS{DefaultLS, Float64}, kwargs::Base.Pairs{Symbol, Bool, Tuple{Symbol}, NamedTuple{(:plot,), Tuple{Bool}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/MinAugHopf.jl:497
+    [8] continuationHopf(F::Function, J::typeof(Jbru_ana), br::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:α, :β, :D1, :D2, :l), NTuple{5, Float64}}, Setfield.PropertyLens{:l}}, ind_hopf::Int64, lens2::Setfield.PropertyLens{:β}, options_cont::ContinuationPar{Float64, DefaultLS, DefaultEig{typeof(real)}}; startWithEigen::Bool, normC::typeof(norm), Jᵗ::Nothing, d2F::Nothing, d3F::Nothing, kwargs::Base.Pairs{Symbol, Integer, Tuple{Symbol, Symbol}, NamedTuple{(:updateMinAugEveryStep, :plot), Tuple{Int64, Bool}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/codim2/MinAugHopf.jl:535
+    [9] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/testHopfMA.jl:88
+   [10] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [11] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:33 [inlined]
+   [12] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [13] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:33 [inlined]
+   [14] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [15] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:6
+   [16] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [17] top-level scope
+      @ none:6
+   [18] eval
+      @ ./boot.jl:368 [inlined]
+   [19] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:276
+   [20] _start()
+      @ Base ./client.jl:522
+  in expression starting at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/testHopfMA.jl:88
+  6.386711 seconds (2.98 M allocations: 175.298 MiB, 24.34% gc time, 97.14% compilation time)
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1093 [inlined]
+└ @ Core ./broadcast.jl:1093
+  4.700218 seconds (729.36 k allocations: 84.847 MiB, 25.49% gc time, 68.35% compilation time)
+  2.790353 seconds (1.02 M allocations: 64.090 MiB, 2.24% gc time, 90.63% compilation time)
+  2.810311 seconds (1.08 M allocations: 102.478 MiB, 2.09% gc time, 88.30% compilation time)
+  2.670651 seconds (896.26 k allocations: 110.306 MiB, 1.75% gc time, 87.09% compilation time)
+  2.521917 seconds (1.16 M allocations: 71.133 MiB, 91.40% compilation time)
+  0.122763 seconds
+  0.219268 seconds
+  0.209972 seconds (62 allocations: 34.334 MiB, 26.51% gc time)
+  0.156181 seconds (122 allocations: 51.501 MiB)
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+  9.036817 seconds (5.16 M allocations: 255.757 MiB, 2.30% gc time, 99.08% compilation time)
+┌ Error: Updating section
+└ @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/periodicorbit/PeriodicOrbitTrapeze.jl:595
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = broadcasted at broadcast.jl:1092 [inlined]
+└ @ Core ./broadcast.jl:1092
+  0.052032 seconds (492 allocations: 233.781 KiB)
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{Float64}, A::Matrix{Float64}, b::Vector{Float64}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{Float64}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{Float64}}, DiffEqBase.ScaleVector{Vector{Float64}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+┌ Warning: `LU{T, S}(factors::AbstractMatrix{T}, ipiv::AbstractVector{<:Integer}, info::BlasInt) where {T, S}` is deprecated, use `LU{T, S, typeof(ipiv)}(factors, ipiv, info)` instead.
+│   caller = ip:0x0
+└ @ Core :-1
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}, A::Matrix{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}, b::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}}, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+--> dΠ using Analytical formula
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Nothing, Tuple{Symbol}, NamedTuple{(:callback,), Tuple{Nothing}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}, A::Matrix{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Nothing, Tuple{Symbol}, NamedTuple{(:callback,), Tuple{Nothing}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}, b::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Nothing, Tuple{Symbol}, NamedTuple{(:callback,), Tuple{Nothing}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Nothing, Tuple{Symbol}, NamedTuple{(:callback,), Tuple{Nothing}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Nothing, Tuple{Symbol}, NamedTuple{(:callback,), Tuple{Nothing}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}}, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#190#191"{var"#198#200"{Base.Pairs{Symbol, Nothing, Tuple{Symbol}, NamedTuple{(:callback,), Tuple{Nothing}}}, Float64}, Vector{Float64}, Vector{Float64}}, Float64}, Float64, 1}}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+[0.0, -0.014028790336979277]--> dΠ using Finite differences
+[-2.8419649446276285e-9, -0.014024320593719608]--> Norm of the difference = 4.46974325966909e-6
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#204#205", Float64}, Float64, 2}}, A::Matrix{ForwardDiff.Dual{ForwardDiff.Tag{var"#204#205", Float64}, Float64, 2}}, b::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#204#205", Float64}, Float64, 2}}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#204#205", Float64}, Float64, 2}}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#204#205", Float64}, Float64, 2}}}, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#204#205", Float64}, Float64, 2}}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+BK.diffPoincareMap(probHPsh, u0, par_sl, du0, 1) = [0.0, -0.014028318927786216]
+
+Entree dans DPoincare
+z = [-0.3666544185573828, -0.012625914534829231]
+tΣ = 6.283185482552532
+solΣ = [2.3669149864895267e-16, 0.36665441855738273]
+y = [5.08094706892098e-8, -0.014028788587331647]
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#210#211", Float64}, Float64, 1}}, A::Matrix{ForwardDiff.Dual{ForwardDiff.Tag{var"#210#211", Float64}, Float64, 1}}, b::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#210#211", Float64}, Float64, 1}}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#210#211", Float64}, Float64, 1}}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#210#211", Float64}, Float64, 1}}}, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#210#211", Float64}, Float64, 1}}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#212#213", Float64}, Float64, 3}}, A::Matrix{ForwardDiff.Dual{ForwardDiff.Tag{var"#212#213", Float64}, Float64, 3}}, b::Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#212#213", Float64}, Float64, 3}}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#212#213", Float64}, Float64, 3}}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#212#213", Float64}, Float64, 3}}}, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{var"#212#213", Float64}, Float64, 3}}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{ForwardDiff.Dual{ForwardDiff.Tag{BifurcationKit.var"#773#777"{Float64, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}}, Float64}, Float64, 2}}, A::Matrix{ForwardDiff.Dual{ForwardDiff.Tag{BifurcationKit.var"#773#777"{Float64, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}}, Float64}, Float64, 2}}, b::Vector{ForwardDiff.Dual{ForwardDiff.Tag{BifurcationKit.var"#773#777"{Float64, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}}, Float64}, Float64, 2}}, update_matrix::Bool; tol::Float64, kwargs::Base.Pairs{Symbol, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{BifurcationKit.var"#773#777"{Float64, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}}, Float64}, Float64, 2}}}, Tuple{Symbol, Symbol}, NamedTuple{(:Pl, :Pr), Tuple{DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{BifurcationKit.var"#773#777"{Float64, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}}, Float64}, Float64, 2}}}, DiffEqBase.ScaleVector{Vector{ForwardDiff.Dual{ForwardDiff.Tag{BifurcationKit.var"#773#777"{Float64, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}}, Float64}, Float64, 2}}}}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+│   caller = (::DefaultLinSolve)(x::Vector{Float64}, A::Matrix{Float64}, b::Vector{Float64}, update_matrix::Bool; tol::Nothing, kwargs::Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}) at linear_nonlinear.jl:64
+└ @ DiffEqBase ~/.julia/packages/DiffEqBase/V7P18/src/linear_nonlinear.jl:64
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+┌ Warning: `range(start, stop)` (with neither `length` nor `step` given) is deprecated, use `range(start, stop=stop)` instead.
+│   caller = getindex at range.jl:974 [inlined]
+└ @ Core ./range.jl:974
+
+Periodic orbits: Error During Test at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:36
+  Got exception outside of a @test
+  LoadError: The function `Base.propertynames` was overloaded for type `ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, Setfield.PropertyLens{:r}}`.
+  Please make sure the following methods are also overloaded for this type:
+  ```julia
+  ConstructionBase.setproperties
+  ConstructionBase.getproperties # optional in VERSION >= julia v1.7
+  ```
+  
+  Stacktrace:
+    [1] error(s::String)
+      @ Base ./error.jl:35
+    [2] macro expansion
+      @ ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:67 [inlined]
+    [3] check_properties_are_fields(obj::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, Setfield.PropertyLens{:r}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:55
+    [4] setproperties_object(obj::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, Setfield.PropertyLens{:r}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:186
+    [5] setproperties(obj::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, Setfield.PropertyLens{:r}}, patch::NamedTuple{(:type, :functional), Tuple{Symbol, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:105
+    [6] setproperties(obj::ContResult{NamedTuple{(:x, :param, :itnewton, :itlinear, :ds, :theta, :n_unstable, :n_imag, :stable, :step), Tuple{Float64, Float64, Int64, Int64, Float64, Float64, Int64, Int64, Bool, Int64}}, Vector{ComplexF64}, Matrix{ComplexF64}, BifurcationKit.SpecialPoint{Float64, NamedTuple{(:x,), Tuple{Float64}}, Vector{Float64}}, Nothing, Nothing, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, Setfield.PropertyLens{:r}}; kw::Base.Pairs{Symbol, Any, Tuple{Symbol, Symbol}, NamedTuple{(:type, :functional), Tuple{Symbol, ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}}}})
+      @ ConstructionBase ~/.julia/packages/ConstructionBase/ZLOSb/src/ConstructionBase.jl:101
+    [7] continuation(prob::ShootingProblem{Flow{typeof(Fsl), BifurcationKit.var"#707#719"{BifurcationKit.var"#707#708#720"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#709#721"{BifurcationKit.var"#709#710#722"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#711#723"{BifurcationKit.var"#711#712#724"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#713#725"{BifurcationKit.var"#713#714#726"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}}}, BifurcationKit.var"#715#727"{BifurcationKit.var"#715#716#728"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}, Nothing, BifurcationKit.var"#717#729"{BifurcationKit.var"#717#718#730"{Base.Pairs{Symbol, Float64, Tuple{Symbol, Symbol}, NamedTuple{(:abstol, :reltol), Tuple{Float64, Float64}}}, KenCarp4{0, true, DefaultLinSolve, NLNewton{Rational{Int64}, Rational{Int64}, Rational{Int64}}, DataType}, ODEProblem{Vector{Float64}, Tuple{Float64, Float64}, true, NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, ODEFunction{true, typeof(Fode), UniformScaling{Bool}, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing}, Base.Pairs{Symbol, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, DiffEqBase.StandardODEProblem}}}}, Vector{Float64}, SectionSS{Vector{Float64}, Vector{Float64}}}, orbitguess::Vector{Float64}, par::NamedTuple{(:r, :μ, :ν, :c3, :c5), NTuple{5, Float64}}, lens::Setfield.PropertyLens{:r}, contParams::ContinuationPar{Float64, GMRESIterativeSolvers{Float64, IterativeSolvers.Identity, IterativeSolvers.Identity}, DefaultEig{typeof(real)}}, linearAlgo::BorderingBLS{GMRESIterativeSolvers{Float64, IterativeSolvers.Identity, IterativeSolvers.Identity}, Float64}; linearPO::Symbol, updateSectionEveryStep::Int64, kwargs::Base.Pairs{Symbol, Any, NTuple{5, Symbol}, NamedTuple{(:tangentAlgo, :verbosity, :plot, :printSolution, :normC), Tuple{BorderedPred, Int64, Bool, var"#216#217", var"#206#207"}}})
+      @ BifurcationKit ~/.julia/packages/BifurcationKit/Yvq7p/src/periodicorbit/PeriodicOrbits.jl:221
+    [8] #continuation#555
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/src/periodicorbit/PeriodicOrbits.jl:237 [inlined]
+    [9] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/stuartLandauSH.jl:99
+   [10] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [11] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:40 [inlined]
+   [12] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [13] macro expansion
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:37 [inlined]
+   [14] macro expansion
+      @ /snap/julia/67/share/julia/stdlib/v1.8/Test/src/Test.jl:1360 [inlined]
+   [15] top-level scope
+      @ ~/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:6
+   [16] include(fname::String)
+      @ Base.MainInclude ./client.jl:476
+   [17] top-level scope
+      @ none:6
+   [18] eval
+      @ ./boot.jl:368 [inlined]
+   [19] exec_options(opts::Base.JLOptions)
+      @ Base ./client.jl:276
+   [20] _start()
+      @ Base ./client.jl:522
+  in expression starting at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/stuartLandauSH.jl:99
+Test Summary:            | Pass  Error  Total       Time
+BifurcationKit           | 7918      4   7922  451m42.0s
+  Linear Solvers         |   39            39    5m22.6s
+  Newton                 |    2             2      22.3s
+  Continuation           | 2690      1   2691    1m39.1s
+  Events / User function | 5134          5134   12m08.5s
+  Fold Codim 2           |    4      1      5   23m45.0s
+  Hopf Codim 2           |    1      1      2   15m54.5s
+  Periodic orbits        |   48      1     49  392m29.8s
+ERROR: LoadError: Some tests did not pass: 7918 passed, 0 failed, 4 errored, 0 broken.
+in expression starting at /home/ian/.julia/packages/BifurcationKit/Yvq7p/test/runtests.jl:4
+ERROR: Package BifurcationKit errored during testing
