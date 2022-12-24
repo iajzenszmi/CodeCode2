@@ -1,0 +1,26 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~/MetPy/examples$ ipython3 isentropic_example.py
+['Temperature', 'time', 'isobaric', 'y', 'x', 'Lambert_Conformal', 'lat', 'lon', 'u_wind', 'v_wind', 'Geopotential_height', 'Specific_humidity']
+/home/ian/.local/lib/python3.9/site-packages/metpy/interpolate/one_dimension.py:152: UserWarning: Interpolation point out of data bounds encountered
+  warnings.warn('Interpolation point out of data bounds encountered')
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:487: RuntimeWarning: invalid value encountered in cos
+  x_perturbations = delta * np.cos(vector_angles)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:488: RuntimeWarning: invalid value encountered in sin
+  y_perturbations = delta * np.sin(vector_angles)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:504: RuntimeWarning: invalid value encountered in less
+  source_x + x_perturbations < src_proj.x_limits[0] - eps,
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:505: RuntimeWarning: invalid value encountered in greater
+  source_x + x_perturbations > src_proj.x_limits[1] + eps)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:514: RuntimeWarning: invalid value encountered in less
+  source_y + y_perturbations < src_proj.y_limits[0] - eps,
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:515: RuntimeWarning: invalid value encountered in greater
+  source_y + y_perturbations > src_proj.y_limits[1] + eps)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:526: RuntimeWarning: invalid value encountered in less
+  source_x + x_perturbations < src_proj.x_limits[0] - eps,
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:527: RuntimeWarning: invalid value encountered in greater
+  source_x + x_perturbations > src_proj.x_limits[1] + eps)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:546: RuntimeWarning: invalid value encountered in cos
+  projected_u = vector_magnitudes * np.cos(projected_angles)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/crs.py:547: RuntimeWarning: invalid value encountered in sin
+  projected_v = vector_magnitudes * np.sin(projected_angles)
+
+
