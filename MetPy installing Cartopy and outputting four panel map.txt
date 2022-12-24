@@ -1,0 +1,100 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~/MetPy/examples$ sudo apt -y install libgeos-dev
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  dctrl-tools dkms libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libgeos-c1v5 libgeos3.10.2
+Suggested packages:
+  libgdal-doc
+The following NEW packages will be installed:
+  libgeos-c1v5 libgeos-dev libgeos3.10.2
+0 to upgrade, 3 to newly install, 0 to remove and 5 not to upgrade.
+Need to get 843 kB of archives.
+After this operation, 3,011 kB of additional disk space will be used.
+Get:1 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libgeos3.10.2 amd64 3.10.2-1 [713 kB]
+Get:2 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libgeos-c1v5 amd64 3.10.2-1 [82.5 kB]
+Get:3 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 libgeos-dev amd64 3.10.2-1 [46.6 kB]
+Fetched 843 kB in 1s (1,478 kB/s) 
+Selecting previously unselected package libgeos3.10.2:amd64.
+(Reading database ... 311222 files and directories currently installed.)
+Preparing to unpack .../libgeos3.10.2_3.10.2-1_amd64.deb ...
+Unpacking libgeos3.10.2:amd64 (3.10.2-1) ...
+Selecting previously unselected package libgeos-c1v5:amd64.
+Preparing to unpack .../libgeos-c1v5_3.10.2-1_amd64.deb ...
+Unpacking libgeos-c1v5:amd64 (3.10.2-1) ...
+Selecting previously unselected package libgeos-dev.
+Preparing to unpack .../libgeos-dev_3.10.2-1_amd64.deb ...
+Unpacking libgeos-dev (3.10.2-1) ...
+Setting up libgeos3.10.2:amd64 (3.10.2-1) ...
+Setting up libgeos-c1v5:amd64 (3.10.2-1) ...
+Setting up libgeos-dev (3.10.2-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+ian@ian-HP-Convertible-x360-11-ab1XX:~/MetPy/examples$ pip3 install cartopy
+Defaulting to user installation because normal site-packages is not writeable
+Collecting cartopy
+  Using cached Cartopy-0.21.1.tar.gz (10.9 MB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: matplotlib>=3.1 in /home/ian/.local/lib/python3.9/site-packages (from cartopy) (3.6.2)
+Collecting shapely>=1.6.4
+  Using cached shapely-2.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+Requirement already satisfied: numpy>=1.18 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from cartopy) (1.21.4)
+Requirement already satisfied: pyproj>=3.0.0 in /home/ian/.local/lib/python3.9/site-packages (from cartopy) (3.4.1)
+Collecting pyshp>=2.1
+  Using cached pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
+Requirement already satisfied: pyparsing>=2.2.1 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (3.0.9)
+Requirement already satisfied: contourpy>=1.0.1 in /home/ian/.local/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (1.0.6)
+Requirement already satisfied: fonttools>=4.22.0 in /home/ian/.local/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (4.38.0)
+Requirement already satisfied: pillow>=6.2.0 in /home/ian/.local/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (9.3.0)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (2.8.2)
+Requirement already satisfied: cycler>=0.10 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (0.11.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (1.3.2)
+Requirement already satisfied: packaging>=20.0 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from matplotlib>=3.1->cartopy) (21.3)
+Requirement already satisfied: certifi in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from pyproj>=3.0.0->cartopy) (2022.6.15)
+Requirement already satisfied: six>=1.5 in /opt/intel/oneapi/intelpython/python3.9/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib>=3.1->cartopy) (1.16.0)
+Building wheels for collected packages: cartopy
+  Building wheel for cartopy (pyproject.toml) ... done
+  Created wheel for cartopy: filename=Cartopy-0.21.1-cp39-cp39-linux_x86_64.whl size=10808814 sha256=b7aa81b5f5ffb667eaa35d491c7f0b9efcd2f0e6ec5062a0b457c97782ee4529
+  Stored in directory: /home/ian/.cache/pip/wheels/3d/b4/c8/2d9d06eb0b82a421395dd9dc90854eac9652905aa2e1c08b0f
+Successfully built cartopy
+Installing collected packages: shapely, pyshp, cartopy
+Successfully installed cartopy-0.21.1 pyshp-2.3.1 shapely-2.0.0
+ian@ian-HP-Convertible-x360-11-ab1XX:~/MetPy/examples$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd MetPy/examples
+ian@ian-HP-Convertible-x360-11-ab1XX:~/MetPy/examples$ ls
+Advanced_Sounding.py  Four_Panel_Map.py      plots
+calculations          gridding               README.txt
+cross_section.py      isentropic_example.py  sigma_to_pressure_interpolation.py
+formats               meteogram_metpy.py     XArray_Projections.py
+ian@ian-HP-Convertible-x360-11-ab1XX:~/MetPy/examples$ ipython3 Four_Panel_Map.py
+Downloading file 'gfs_output.nc' from 'https://github.com/Unidata/MetPy/raw/v1.4.0/staticdata/gfs_output.nc' to '/home/ian/.cache/metpy/v1.4.0'.
+<xarray.Dataset>
+Dimensions:       (lat: 201, lon: 361, time: 1)
+Coordinates:
+  * lat           (lat) float32 65.0 64.75 64.5 64.25 ... 15.75 15.5 15.25 15.0
+  * lon           (lon) float32 220.0 220.2 220.5 220.8 ... 309.5 309.8 310.0
+  * time          (time) datetime64[ns] 2017-02-28T21:00:00
+Data variables:
+    temp          (time, lat, lon) float64 ...
+    precip_water  (time, lat, lon) float64 ...
+    heights_300   (time, lat, lon) float64 ...
+    heights_500   (time, lat, lon) float64 ...
+    vort_500      (time, lat, lon) float64 ...
+    winds_300     (time, lat, lon) float64 ...
+Attributes:
+    title:     Test GFS Output Data
+    subtitle:  For MetPy examples and tests
+/home/ian/.local/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline.zip
+  warnings.warn(f'Downloading: {url}', DownloadWarning)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_cultural/ne_50m_admin_1_states_provinces_lakes.zip
+  warnings.warn(f'Downloading: {url}', DownloadWarning)
+/home/ian/.local/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip
+  warnings.warn(f'Downloading: {url}', DownloadWarning)
+
+
