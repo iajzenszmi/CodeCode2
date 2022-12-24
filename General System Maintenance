@@ -1,0 +1,251 @@
+:: ERROR: Incorrect usage: this script must be sourced.
+  
+usage: source setvars.sh [--force] [--config=file] [--help] [...]
+  --force        Force setvars.sh to re-run, doing so may overload environment.
+  --config=file  Customize env vars using a setvars.sh configuration file.
+  --help         Display this help message and exit.
+  ...            Additional args are passed to individual env/vars.sh scripts
+                 and should follow this script's arguments.
+  
+  Some POSIX shells do not accept command-line options. In that case, you can pass
+  command-line options via the SETVARS_ARGS environment variable. For example:
+  
+  $ SETVARS_ARGS="ia32 --config=config.txt" ; export SETVARS_ARGS
+  $ . path/to/setvars.sh
+  
+  The SETVARS_ARGS environment variable is cleared on exiting setvars.sh.
+  
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.1.16(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+ian@ian-HP-Convertible-x360-11-ab1XX:~/cartopy/cython$ sudo apt update
+[sudo] password for ian: 
+Hit:1 http://au.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://au.archive.ubuntu.com/ubuntu jammy-updates InRelease              
+Hit:3 http://au.archive.ubuntu.com/ubuntu jammy-backports InRelease            
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]      
+Hit:5 https://packages.microsoft.com/repos/ms-teams stable InRelease           
+Hit:6 https://dl.google.com/linux/chrome/deb stable InRelease                  
+Get:7 https://apt.repos.intel.com/oneapi all InRelease [10.2 kB]               
+Hit:8 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy InRelease
+Hit:9 https://repositories.intel.com/graphics/ubuntu jammy InRelease
+Err:7 https://apt.repos.intel.com/oneapi all InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ACFA9FC57E6C5DBE
+Reading package lists... Done
+W: GPG error: https://apt.repos.intel.com/oneapi all InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ACFA9FC57E6C5DBE
+E: The repository 'https://apt.repos.intel.com/oneapi all InRelease' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: Target Packages (main/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Packages (main/binary-i386/Packages) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Packages (main/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Translations (main/i18n/Translation-en_AU) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Translations (main/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11 (main/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11 (main/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11-icons-small (main/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11-icons (main/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11-icons-hidpi (main/dep11/icons-64x64@2.tar) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target CNF (main/cnf/Commands-amd64) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target CNF (main/cnf/Commands-all) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+ian@ian-HP-Convertible-x360-11-ab1XX:~/cartopy/cython$ sudo apt-get update
+Hit:1 http://au.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://au.archive.ubuntu.com/ubuntu jammy-updates InRelease              
+Hit:3 http://au.archive.ubuntu.com/ubuntu jammy-backports InRelease            
+Hit:4 https://dl.google.com/linux/chrome/deb stable InRelease                  
+Get:5 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]      
+Hit:6 https://packages.microsoft.com/repos/ms-teams stable InRelease           
+Get:7 https://apt.repos.intel.com/oneapi all InRelease [10.2 kB]               
+Err:7 https://apt.repos.intel.com/oneapi all InRelease                         
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ACFA9FC57E6C5DBE
+Hit:8 https://repositories.intel.com/graphics/ubuntu jammy InRelease           
+Hit:9 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy InRelease
+Reading package lists... Done                            
+W: GPG error: https://apt.repos.intel.com/oneapi all InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ACFA9FC57E6C5DBE
+E: The repository 'https://apt.repos.intel.com/oneapi all InRelease' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: Target Packages (main/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Packages (main/binary-i386/Packages) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Packages (main/binary-all/Packages) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Translations (main/i18n/Translation-en_AU) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target Translations (main/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11 (main/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11 (main/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11-icons-small (main/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11-icons (main/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target DEP-11-icons-hidpi (main/dep11/icons-64x64@2.tar) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target CNF (main/cnf/Commands-amd64) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+W: Target CNF (main/cnf/Commands-all) is configured multiple times in /etc/apt/sources.list.d/archive_uri-https_apt_repos_intel_com_oneapi-jammy.list:1 and /etc/apt/sources.list.d/oneAPI.list:1
+ian@ian-HP-Convertible-x360-11-ab1XX:~/cartopy/cython$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  dctrl-tools dkms libflashrom1 libftdi1-2
+Use 'sudo apt autoremove' to remove them.
+#
+# News about significant security updates, features and services will
+# appear here to raise awareness and perhaps tease /r/Linux ;)
+# Use 'pro config set apt_news=false' to hide this and future APT news.
+#
+The following packages have been kept back:
+  libegl-mesa0 libgbm1 libgl1-mesa-dri libglapi-mesa libglx-mesa0
+The following packages will be upgraded:
+  apport apport-gtk google-chrome-stable initramfs-tools initramfs-tools-bin
+  initramfs-tools-core libdrm-amdgpu1 libdrm-common libdrm-intel1
+  libdrm-nouveau2 libdrm-radeon1 libdrm2 libegl1-mesa libgl1-mesa-glx
+  libxatracker2 mesa-vulkan-drivers python3-apport python3-problem-report
+  python3-tz
+19 to upgrade, 0 to newly install, 0 to remove and 5 not to upgrade.
+Need to get 106 MB of archives.
+After this operation, 837 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+Get:1 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-problem-report all 2.20.11-0ubuntu82.3 [11.0 kB]
+Get:2 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-apport all 2.20.11-0ubuntu82.3 [88.0 kB]
+Get:3 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apport all 2.20.11-0ubuntu82.3 [133 kB]
+Get:4 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 apport-gtk all 2.20.11-0ubuntu82.3 [9,598 B]
+Get:5 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 initramfs-tools all 0.140ubuntu13.1 [9,034 B]
+Get:6 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 initramfs-tools-core all 0.140ubuntu13.1 [47.7 kB]
+Get:7 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 initramfs-tools-bin amd64 0.140ubuntu13.1 [9,166 B]
+Get:8 http://au.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-tz all 2022.1-1ubuntu0.22.04.0 [33.4 kB]
+Get:9 https://dl.google.com/linux/chrome/deb stable/main amd64 google-chrome-stable amd64 108.0.5359.124-1 [93.0 MB]
+Get:10 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libdrm-common all 2.4.114+git2212220500.64d6fa~oibaf~j [16.7 kB]
+Get:11 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libdrm2 amd64 2.4.114+git2212220500.64d6fa~oibaf~j [49.4 kB]
+Get:12 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libdrm-amdgpu1 amd64 2.4.114+git2212220500.64d6fa~oibaf~j [31.1 kB]
+Get:13 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libdrm-intel1 amd64 2.4.114+git2212220500.64d6fa~oibaf~j [77.0 kB]
+Get:14 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libdrm-nouveau2 amd64 2.4.114+git2212220500.64d6fa~oibaf~j [28.7 kB]
+Get:15 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libdrm-radeon1 amd64 2.4.114+git2212220500.64d6fa~oibaf~j [32.8 kB]
+Get:16 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libegl1-mesa amd64 23.0~git2212230600.97c948~oibaf~j [53.7 kB]
+Get:17 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libgl1-mesa-glx amd64 23.0~git2212230600.97c948~oibaf~j [53.7 kB]
+Get:18 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 libxatracker2 amd64 23.0~git2212230600.97c948~oibaf~j [2,093 kB]
+Get:19 https://ppa.launchpadcontent.net/oibaf/graphics-drivers/ubuntu jammy/main amd64 mesa-vulkan-drivers amd64 23.0~git2212230600.97c948~oibaf~j [9,977 kB]
+Fetched 106 MB in 34s (3,117 kB/s)                                             
+(Reading database ... 311222 files and directories currently installed.)
+Preparing to unpack .../00-libdrm-common_2.4.114+git2212220500.64d6fa~oibaf~j_al
+l.deb ...
+Unpacking libdrm-common (2.4.114+git2212220500.64d6fa~oibaf~j) over (2.4.114+git
+2212080500.874af9~oibaf~j) ...
+Preparing to unpack .../01-libdrm2_2.4.114+git2212220500.64d6fa~oibaf~j_amd64.de
+b ...
+Unpacking libdrm2:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) over (2.4.114+git
+2212080500.874af9~oibaf~j) ...
+Preparing to unpack .../02-google-chrome-stable_108.0.5359.124-1_amd64.deb ...
+Unpacking google-chrome-stable (108.0.5359.124-1) over (108.0.5359.98-1) ...
+Preparing to unpack .../03-python3-problem-report_2.20.11-0ubuntu82.3_all.deb ..
+.
+Unpacking python3-problem-report (2.20.11-0ubuntu82.3) over (2.20.11-0ubuntu82.2
+) ...
+Preparing to unpack .../04-python3-apport_2.20.11-0ubuntu82.3_all.deb ...
+Unpacking python3-apport (2.20.11-0ubuntu82.3) over (2.20.11-0ubuntu82.2) ...
+Preparing to unpack .../05-apport_2.20.11-0ubuntu82.3_all.deb ...
+Unpacking apport (2.20.11-0ubuntu82.3) over (2.20.11-0ubuntu82.2) ...
+Preparing to unpack .../06-apport-gtk_2.20.11-0ubuntu82.3_all.deb ...
+Unpacking apport-gtk (2.20.11-0ubuntu82.3) over (2.20.11-0ubuntu82.2) ...
+Preparing to unpack .../07-initramfs-tools_0.140ubuntu13.1_all.deb ...
+Unpacking initramfs-tools (0.140ubuntu13.1) over (0.140ubuntu13) ...
+Preparing to unpack .../08-initramfs-tools-core_0.140ubuntu13.1_all.deb ...
+Unpacking initramfs-tools-core (0.140ubuntu13.1) over (0.140ubuntu13) ...
+Preparing to unpack .../09-initramfs-tools-bin_0.140ubuntu13.1_amd64.deb ...
+Unpacking initramfs-tools-bin (0.140ubuntu13.1) over (0.140ubuntu13) ...
+Preparing to unpack .../10-libdrm-amdgpu1_2.4.114+git2212220500.64d6fa~oibaf~j_a
+md64.deb ...
+Unpacking libdrm-amdgpu1:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) over (2.4.
+114+git2212080500.874af9~oibaf~j) ...
+Preparing to unpack .../11-libdrm-intel1_2.4.114+git2212220500.64d6fa~oibaf~j_am
+d64.deb ...
+Unpacking libdrm-intel1:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) over (2.4.1
+14+git2212080500.874af9~oibaf~j) ...
+Preparing to unpack .../12-libdrm-nouveau2_2.4.114+git2212220500.64d6fa~oibaf~j_
+amd64.deb ...
+Unpacking libdrm-nouveau2:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) over (2.4
+.114+git2212080500.874af9~oibaf~j) ...
+Preparing to unpack .../13-libdrm-radeon1_2.4.114+git2212220500.64d6fa~oibaf~j_a
+md64.deb ...
+Unpacking libdrm-radeon1:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) over (2.4.
+114+git2212080500.874af9~oibaf~j) ...
+Preparing to unpack .../14-libegl1-mesa_23.0~git2212230600.97c948~oibaf~j_amd64.
+deb ...
+Unpacking libegl1-mesa:amd64 (23.0~git2212230600.97c948~oibaf~j) over (23.0~git2
+212100600.a099d6~oibaf~j) ...
+Preparing to unpack .../15-libgl1-mesa-glx_23.0~git2212230600.97c948~oibaf~j_amd
+64.deb ...
+Unpacking libgl1-mesa-glx:amd64 (23.0~git2212230600.97c948~oibaf~j) over (23.0~g
+it2212100600.a099d6~oibaf~j) ...
+Preparing to unpack .../16-libxatracker2_23.0~git2212230600.97c948~oibaf~j_amd64
+.deb ...
+Unpacking libxatracker2:amd64 (23.0~git2212230600.97c948~oibaf~j) over (23.0~git
+2212100600.a099d6~oibaf~j) ...
+Preparing to unpack .../17-mesa-vulkan-drivers_23.0~git2212230600.97c948~oibaf~j
+_amd64.deb ...
+Unpacking mesa-vulkan-drivers:amd64 (23.0~git2212230600.97c948~oibaf~j) over (23
+.0~git2212100600.a099d6~oibaf~j) ...
+Preparing to unpack .../18-python3-tz_2022.1-1ubuntu0.22.04.0_all.deb ...
+Unpacking python3-tz (2022.1-1ubuntu0.22.04.0) over (2022.1-1) ...
+Setting up python3-problem-report (2.20.11-0ubuntu82.3) ...
+Setting up python3-tz (2022.1-1ubuntu0.22.04.0) ...
+Setting up python3-apport (2.20.11-0ubuntu82.3) ...
+Setting up libegl1-mesa:amd64 (23.0~git2212230600.97c948~oibaf~j) ...
+Setting up libgl1-mesa-glx:amd64 (23.0~git2212230600.97c948~oibaf~j) ...
+Setting up libdrm-common (2.4.114+git2212220500.64d6fa~oibaf~j) ...
+Setting up initramfs-tools-bin (0.140ubuntu13.1) ...
+Setting up apport (2.20.11-0ubuntu82.3) ...
+apport-autoreport.service is a disabled or a static unit, not starting it.
+Setting up apport-gtk (2.20.11-0ubuntu82.3) ...
+Setting up libdrm2:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) ...
+Setting up initramfs-tools-core (0.140ubuntu13.1) ...
+Setting up libdrm-amdgpu1:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) ...
+Setting up mesa-vulkan-drivers:amd64 (23.0~git2212230600.97c948~oibaf~j) ...
+Setting up google-chrome-stable (108.0.5359.124-1) ...
+Setting up libdrm-nouveau2:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) ...
+Setting up initramfs-tools (0.140ubuntu13.1) ...
+update-initramfs: deferring update (trigger activated)
+Setting up libdrm-radeon1:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) ...
+Setting up libdrm-intel1:amd64 (2.4.114+git2212220500.64d6fa~oibaf~j) ...
+Setting up libxatracker2:amd64 (23.0~git2212230600.97c948~oibaf~j) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for initramfs-tools (0.140ubuntu13.1) ...
+update-initramfs: Generating /boot/initrd.img-5.15.0-56-generic
+ian@ian-HP-Convertible-x360-11-ab1XX:~/cartopy/cython$ ls
+appveyor         doc-requirements.txt  setup.py
+bin              docs                  test-requirements-27.txt
+build            INSTALL.txt           test-requirements-312.txt
+BUILD.bazel      LICENSE.txt           test-requirements-34.txt
+CHANGES.rst      Makefile              test-requirements-cpython.txt
+COPYING.txt      MANIFEST.in           test-requirements-pypy27.txt
+cygdb.py         __pycache__           test-requirements.txt
+Cython           pylintrc              tests
+Cython.egg-info  pyximport             ToDo.txt
+cythonize.py     README.rst            Tools
+cython.py        runtests.py           tox.ini
+Demos            setup.cfg             USAGE.txt
+Doc              setupegg.py
+ian@ian-HP-Convertible-x360-11-ab1XX:~/cartopy/cython$ 
+
