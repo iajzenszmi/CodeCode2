@@ -1,0 +1,86 @@
+ cat interact.f 
+   character(len=80)inputrequest/"Enter persno, name blank separated"/
+   character(len=20) firstname(20)/20* " "/,middlename(20)/20 * " "/
+   character(len=20) surname(20) /20 * " "/
+   character(len=72) filename /"persfile.txt"/
+          integer persno /1/, persct /1/
+      print *,inputrequest
+      open(10,file=filename)
+      do while(persno .ne.99      )
+      read *,persno,firstname(persno),middlename(persno),surname(persno)
+  write(10,*)persno,firstname(persno),middlename(persno),surname(persno)
+    print *,persno,firstname(persno),middlename(persno),surname(persno)
+    do persct = 1, 20, 1
+    print *,persct,firstname(persct),middlename(persct),surname(persct)
+    enddo  
+    enddo          
+    end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran interact.f -ffree-form -o interact
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./interact
+ Enter persno, name blank separated                                              
+7 name71 name72 name73
+           7 name71              name72              name73              
+           1                                                             
+           2                                                             
+           3                                                             
+           4                                                             
+           5                                                             
+           6                                                             
+           7 name71              name72              name73              
+           8                                                             
+           9                                                             
+          10                                                             
+          11                                                             
+          12                                                             
+          13                                                             
+          14                                                             
+          15                                                             
+          16                                                             
+          17                                                             
+          18                                                             
+          19                                                             
+          20                                                             
+15 name151 name152 name153
+          15 name151             name152             name153             
+           1                                                             
+           2                                                             
+           3                                                             
+           4                                                             
+           5                                                             
+           6                                                             
+           7 name71              name72              name73              
+           8                                                             
+           9                                                             
+          10                                                             
+          11                                                             
+          12                                                             
+          13                                                             
+          14                                                             
+          15 name151             name152             name153             
+          16                                                             
+          17                                                             
+          18                                                             
+          19                                                             
+          20                                                             
+99 n n n
+          99 n                   n                   n                   
+           1                                                             
+           2                                                             
+           3                                                             
+           4                                                             
+           5                                                             
+           6                                                             
+           7 name71              name72              name73              
+           8                                                             
+           9                                                             
+          10                                                             
+          11                                                             
+          12                                                             
+          13                                                             
+          14                                                             
+          15 name151             name152             name153             
+          16                                                             
+          17                                                             
+          18                                                             
+          19                                                             
+          20                            
