@@ -1,0 +1,46 @@
+ 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran fourdim.f -ffree-form  -o fourdim
+fourdim.f:7:6:
+
+    7 | hcube(a,b,c,d) = 8*a+4*b+2*c+d
+      |      1
+Warning: Legacy Extension: REAL array index at (1)
+fourdim.f:7:8:
+
+    7 | hcube(a,b,c,d) = 8*a+4*b+2*c+d
+      |        1
+Warning: Legacy Extension: REAL array index at (1)
+fourdim.f:7:10:
+
+    7 | hcube(a,b,c,d) = 8*a+4*b+2*c+d
+      |          1
+Warning: Legacy Extension: REAL array index at (1)
+fourdim.f:7:12:
+
+    7 | hcube(a,b,c,d) = 8*a+4*b+2*c+d
+      |            1
+Warning: Legacy Extension: REAL array index at (1)
+fourdim.f:6:8:
+
+    6 |    do 10 d = 0,1
+      |        1
+Warning: Deleted feature: Loop variable at (1) must be integer
+fourdim.f:5:7:
+
+    5 |   do 20 c=0,1
+      |       1
+Warning: Deleted feature: Loop variable at (1) must be integer
+fourdim.f:4:6:
+
+    4 |  do 30  b=0,1
+      |      1
+Warning: Deleted feature: Loop variable at (1) must be integer
+fourdim.f:3:5:
+
+    3 | do 40 a=0,1
+      |     1
+Warning: Deleted feature: Loop variable at (1) must be integer
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran fourdim.f -ffree-form -std=legacy -o fourdim
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./fourdim
+   2.00000000       2.00000000       2.00000000       2.00000000       15.0000000    
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
