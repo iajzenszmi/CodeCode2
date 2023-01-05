@@ -1,0 +1,28 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat sevdim2.f
+!programmed by Ian Martin Ajzenszmidt
+!Melbourne Australia
+!Thursday 5 Jan 2023
+
+real a,b,c,d,e,f,g
+real hcube(1,1,1,1,1,1,1)
+do 70 a=0,1
+ do 60  b=0,1
+  do 50 c=0,1
+   do 40 d = 0,1
+     do 30 e =0,1
+     do 20  f=0,1
+     do 10  g =0,1
+hcube(a,b,c,d,e,f,g) = 64*a+32*b+16*c+8*d+4*e+2*f+g 
+10 continue 
+20 continue 
+30 continue 
+40 continue
+50 continue
+60 continue
+70 continue 
+print *, a,b,c,d,e,f,g ,hcube
+end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran sevdim2.f -ffree-form -std=legacy -o sevdim
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./sevdim
+   2.00000000       2.00000000       2.00000000       2.00000000       2.00000000       2.00000000       2.00000000       127.000000    
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
