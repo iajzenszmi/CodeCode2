@@ -1,0 +1,13 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./inttoreal
+ real number =    7.00000000     integer number =            7
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat inttoreal.f
+!      programmer Ian Martin Ajzenszmidt
+!      Melbourne Australia      10/1/2023
+!      compiler gfortran f77 in Fortran 77 computer programming
+!      language.      
+       integer inum /7/
+       real rnum 
+       rnum = real(inum)
+       print *, "real number = ",rnum, "integer number = ",inum
+       end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ^C
