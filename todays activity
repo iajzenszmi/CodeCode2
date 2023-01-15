@@ -1,0 +1,2189 @@
+ CodeCode2
+ countto10a.f
+"Dafydd Iwan a'r Holl Artistiaid - Yma o Hyd-ZUbJwikfUz0.mp4"
+ DecisionTreeLearner.java
+ decodes.f08
+'Der Windsbacher Knabenchor singt für Prinz Charles und Camilla _ BR Fernsehen 09.05.2019-qixHfDKmR3g.mp4'
+ Desktop
+'Die Wiener Sängerknaben & die Wiener Chormädchen singen gemeinsam beim Neujahrskonzert 2023 in Wien-Bh7CkEXA6uc.mp4'
+ DiffEqOperators.jl-4.44.0
+ Documents
+'Dona nobis pacem Kinderchor + Kanon-ip5MCHjzqVo.mkv'
+ download
+ download.pdf
+'download.php?file=%2Foomph%2Fepp%2F2022-12%2FR%2Feclipse-inst-jre-linux64.tar.gz'
+'download.php?file=%2Foomph%2Fepp%2F2022-12%2FR%2Feclipse-inst-jre-linux64.tar.gz.1'
+ Downloads
+ DrWatson.jl
+ dynamic_array.f
+ dynamic_array.f90
+ eclipse
+ eclipse-workspace
+ eclipse-workspace2
+ Elevator-Scheduling-Simulator
+ encode1.f
+ encode1.f08
+ encode2.f
+ encode3.f
+ encodes1.f08
+ encodes.f
+ encodes.f08
+ env1
+ espeak
+ espeak-ng
+ Essential+MATLAB+for+Engineers+and+Scientists+Fourth+Edition.pdf
+ ExampleofCNR.c
+ fib1.asm.save
+ fibo1.asm
+ fibo.asm
+ fort.1260844715
+ Fortran-MOOC
+ fourdim
+ fourdim2
+ fourdim2.f
+ fourdim2.o
+ fourdim3
+ fourdim3.f
+ fourdim.f
+ fourdim.o
+ gcc
+ gmp-6.2.1
+ gmp-6.2.1.tar.lz
+ gmp-chudnovsky.c
+ gpt-3
+ gpt3-sandbox
+ GPTNeo
+ HDF5.jl
+ hello1
+ hello1.f
+ hello1.o
+ hello.f
+ hello.f.save
+ hello_world
+ hello_world.exe
+ hello_world.f90
+'IEEE - A Metaverse for Sustainability-5GPk1A42jaU.mkv'
+'index.html?LinkID=2112886'
+ intel
+ interact
+ interact.f
+ interact.o
+ inttoreal
+ inttoreal.f
+'January 2023 CPI Advice.pdf'
+ julia-1.8.3
+ julia-1.8.3-full.tar.gz
+ julia-1.8.3-full.tar.gz.1
+ julia-1.8.3-linux-x86_64.tar.gz
+ julia-1.8.4
+ julia-1.8.4-linux-x86_64.tar.gz
+ julia-1.8.5
+ julia-1.8.5-linux-x86_64.tar.gz
+ julia-1.8.5-linux-x86_64.tar.gz.1
+ julia2
+ KAZABLANRESPECT.mp4
+ kspice
+ kspice.tar.Z
+ LAPACKE_zgeev.c
+ lean
+ lean-3.4.2-linux
+ lean-3.4.2-linux.tar.gz
+ l_fortran-compiler_p_2022.2.1.16992
+ l_fortran-compiler_p_2022.2.1.16992_offline.sh
+ l_fortran-compiler_p_2022.2.1.16992.sh
+ lib
+ l_pythoni39_oneapi_p_2022.2.1.17274_offline.sh
+ master.zip
+ mcidasv
+ McIDAS-V
+ McIDAS-V_1.8_linux_x86-64_installer.sh
+ McIDAS-V_1.8_source
+ McIDAS-V_1.8_source.zip
+ McIDAS-V-System
+ mcpi_sequential.f90
+ mesh1.m
+ mesh2.m
+ meshgrid1.m
+ MetPy
+ MLJ.jl
+ MonaLisa
+ mpfr
+ Music
+ nbviewer
+ nines
+ nines2
+ nines.asm
+ nines.o
+ noaa_1354_DS1.pdf
+ oaitest.py
+ octave-7.3.0.tar.xz
+ octave-workspace
+ oneAPI-samples
+ palindrome.f90
+"Papirosn - yiddish song - klezmer band 'Inejnem'-7Sw3LNC10GI.mkv"
+ persfile.txt
+ phievo
+ Pictures
+ playsong
+ plot1.m
+ PlotMesh.jl
+ Public
+ py4fi
+ pyplot-fortran
+ readvl.f
+ sevd
+ sevd.f08
+ sevdim
+ sevdim2
+ sevdim2.f
+ sevdim2.o
+ snap
+ sofa
+ sofa_f-20210512.tar.gz
+ spice3.f
+ spicea.f
+ spiceb.f
+ Templates
+ testb.f
+ testfile
+ test.java
+ test.js
+ testkinds.f90
+ test.m
+ threesmall
+ threesmall.f
+ threesmall.f08
+ threesmall.s
+ Tiritomba.mp4
+'TOMS435 run and listing.txt'
+ UserController.java
+ v0.1.7.5.2.tar.gz
+ v4.44.0.tar.gz
+ v4.44.0.zip
+ v4.44.0.zip.1
+ validate1.f
+ variables_and_initialization.cpp
+ Videos
+ vlread2.f
+ vr
+ vr6
+ vr6.f
+ vr6.o
+ vr.f
+ vr.f08
+ vrintel.f
+ vrintel.f08
+ vrl
+ vrl.f08
+ vrl.o
+ vr.o
+ wave1
+ wave1.f
+ wave1.o
+ wget-log
+ x2.txt
+ youtube-dl
+ zerodiv
+ zerodiv.f
+ zerodiv.o
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ls *.mp4
+'André Rieu & John Sheahan - Irish Washerwomen-KuMDjNQrdjY.mp4'
+"Dafydd Iwan a'r Holl Artistiaid - Yma o Hyd-ZUbJwikfUz0.mp4"
+'Der Windsbacher Knabenchor singt für Prinz Charles und Camilla _ BR Fernsehen 09.05.2019-qixHfDKmR3g.mp4'
+'Die Wiener Sängerknaben & die Wiener Chormädchen singen gemeinsam beim Neujahrskonzert 2023 in Wien-Bh7CkEXA6uc.mp4'
+ KAZABLANRESPECT.mp4
+ Tiritomba.mp4
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ffplay 'Der Windsbacher Knabenchor singt für Prinz Charles und Camilla _ BR Fernsehen 09.05.2019-qixHfDKmR3g.mp4'
+ffplay version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2003-2021 the FFmpeg developers
+  built with gcc 11 (Ubuntu 11.2.0-19ubuntu1)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.22.04.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+  libavutil      56. 70.100 / 56. 70.100
+  libavcodec     58.134.100 / 58.134.100
+  libavformat    58. 76.100 / 58. 76.100
+  libavdevice    58. 13.100 / 58. 13.100
+  libavfilter     7.110.100 /  7.110.100
+  libswscale      5.  9.100 /  5.  9.100
+  libswresample   3.  9.100 /  3.  9.100
+  libpostproc    55.  9.100 / 55.  9.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'Der Windsbacher Knabenchor singt für Prinz Charles und Camilla _ BR Fernsehen 09.05.2019-qixHfDKmR3g.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.76.100
+  Duration: 00:08:34.14, start: 0.000000, bitrate: 1683 kb/s
+  Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1280x720 [SAR 1:1 DAR 16:9], 1549 kb/s, 25 fps, 25 tbr, 12800 tbn, 50 tbc (default)
+    Metadata:
+      handler_name    : ISO Media file produced by Google Inc. Created on: 05/09/2019.
+      vendor_id       : [0][0][0][0]
+  Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : ISO Media file produced by Google Inc. Created on: 05/09/2019.
+      vendor_id       : [0][0][0][0]
+ 527.27 A-V:  0.018 fd=   1 aq=    0KB vq=    0KB sq=    0B f=0/0   
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ git clone https://github.com/alibaba/euler.git
+Cloning into 'euler'...
+remote: Enumerating objects: 1177, done.
+remote: Counting objects: 100% (286/286), done.
+remote: Compressing objects: 100% (100/100), done.
+remote: Total 1177 (delta 220), reused 186 (delta 186), pack-reused 891
+Receiving objects: 100% (1177/1177), 2.59 MiB | 7.20 MiB/s, done.
+Resolving deltas: 100% (609/609), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ ls
+build.sh        doc              examples  README.md         tf_euler
+cmake           euler            knn       requirements.txt  third_party
+CMakeLists.txt  euler_estimator  LICENSE   setup.cfg         tools
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ mkdir euler
+mkdir: cannot create directory ‘euler’: File exists
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ rm euler
+rm: cannot remove 'euler': Is a directory
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ rm euler
+rm: cannot remove 'euler': Is a directory
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ rm euler -r
+rm: remove write-protected regular file 'euler/.git/objects/pack/pack-e3eb23fefaeda8ec844f0f7eb7c63285d9f62504.idx'? yes all
+rm: remove write-protected regular file 'euler/.git/objects/pack/pack-e3eb23fefaeda8ec844f0f7eb7c63285d9f62504.pack'? ^C
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ rm euler -r --force
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ mkdir euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ git clone https://github.com/alibaba/euler.git
+Cloning into 'euler'...
+remote: Enumerating objects: 1177, done.
+remote: Counting objects: 100% (286/286), done.
+remote: Compressing objects: 100% (100/100), done.
+remote: Total 1177 (delta 220), reused 186 (delta 186), pack-reused 891
+Receiving objects: 100% (1177/1177), 2.59 MiB | 11.43 MiB/s, done.
+Resolving deltas: 100% (609/609), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ ls
+euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ cd euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler/euler$ ls
+build.sh        doc              examples  README.md         tf_euler
+cmake           euler            knn       requirements.txt  third_party
+CMakeLists.txt  euler_estimator  LICENSE   setup.cfg         tools
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler/euler$ cd euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler/euler/euler$ cd ~/euler
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ cmake euler
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for C++ include pthread.h
+-- Looking for C++ include pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+CMake Error at cmake/grpc.cmake:4 (add_subdirectory):
+  The source directory
+
+    /home/ian/euler/euler/third_party/grpc
+
+  does not contain a CMakeLists.txt file.
+Call Stack (most recent call first):
+  CMakeLists.txt:35 (include)
+
+
+CMake Error at cmake/googletest.cmake:3 (add_subdirectory):
+  The source directory
+
+    /home/ian/euler/euler/third_party/googletest
+
+  does not contain a CMakeLists.txt file.
+Call Stack (most recent call first):
+  CMakeLists.txt:36 (include)
+
+
+CMake Error at cmake/zookeeper.cmake:3 (add_subdirectory):
+  add_subdirectory given source
+  "/home/ian/euler/euler/third_party/zookeeper/src/c" which is not an
+  existing directory.
+Call Stack (most recent call first):
+  CMakeLists.txt:37 (include)
+
+
+-- 
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'tensorflow'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'tensorflow'
+-- tensorflow_framework library found: in TF_FRAMEWORK-NOTFOUND
+-- Configuring incomplete, errors occurred!
+See also "/home/ian/euler/CMakeFiles/CMakeOutput.log".
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ cheese
+
+(cheese:38112): Gdk-WARNING **: 21:18:09.730: Native Windows taller than 65535 pixels are not supported
+
+(cheese:38112): Clutter-CRITICAL **: 21:19:35.070: Unable to create dummy onscreen: No foreign surface, and wl_shell unsupported by the compositor
+ian@ian-HP-Convertible-x360-11-ab1XX:~/euler$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ git clone  https://github.com/fortran-lang/fpm.git
+Cloning into 'fpm'...
+remote: Enumerating objects: 48784, done.
+remote: Counting objects: 100% (5061/5061), done.
+remote: Compressing objects: 100% (264/264), done.
+remote: Total 48784 (delta 4788), reused 5029 (delta 4771), pack-reused 43723
+Receiving objects: 100% (48784/48784), 16.84 MiB | 12.83 MiB/s, done.
+Resolving deltas: 100% (44288/44288), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd fpm
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fpm$ ls
+app              doc               install.sh             README.md
+ChangeLog.md     docs.md           LICENSE                src
+ci               example_packages  manifest-reference.md  test
+CONTRIBUTING.md  fpm.toml          PACKAGING.md
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fpm$ ./install.sh
+--2023-01-15 21:31:49--  https://github.com/fortran-lang/fpm/releases/download/v0.6.0/fpm-0.6.0.F90
+Resolving github.com (github.com)... 20.248.137.48
+Connecting to github.com (github.com)|20.248.137.48|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/233763778/05f04058-3213-4f19-bfda-fce80c3b3701?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230115%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230115T103204Z&X-Amz-Expires=300&X-Amz-Signature=a6b562cc99a1f9c65ae632de7371c6ab9ca6d861089a4c6da01d5b9cf45fcb38&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=233763778&response-content-disposition=attachment%3B%20filename%3Dfpm-0.6.0.F90&response-content-type=application%2Foctet-stream [following]
+--2023-01-15 21:31:50--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/233763778/05f04058-3213-4f19-bfda-fce80c3b3701?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230115%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230115T103204Z&X-Amz-Expires=300&X-Amz-Signature=a6b562cc99a1f9c65ae632de7371c6ab9ca6d861089a4c6da01d5b9cf45fcb38&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=233763778&response-content-disposition=attachment%3B%20filename%3Dfpm-0.6.0.F90&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 913910 (892K) [application/octet-stream]
+Saving to: ‘STDOUT’
+
+-                   100%[===================>] 892.49K   688KB/s    in 1.3s    
+
+2023-01-15 21:31:53 (688 KB/s) - written to stdout [913910/913910]
+
+/usr/bin/ld: /tmp/ccxGDbVd.o: in function `__fpm_filesystem_MOD_get_temp_filename':
+/home/ian/fpm/build/bootstrap/fpm.F90:10050: warning: the use of `tempnam' is dangerous, better use `mkstemp'
+ + mkdir -p build/dependencies
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/ian/fpm/build/dependencies/toml-f/.git/
+remote: Enumerating objects: 276, done.
+remote: Counting objects: 100% (276/276), done.
+remote: Compressing objects: 100% (230/230), done.
+remote: Total 276 (delta 50), reused 156 (delta 14), pack-reused 0
+Receiving objects: 100% (276/276), 430.65 KiB | 2.78 MiB/s, done.
+Resolving deltas: 100% (50/50), done.
+From https://github.com/toml-f/toml-f
+ * branch            aee54c5a480d623af99828c76df0447a15ce90dc -> FETCH_HEAD
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/ian/fpm/build/dependencies/M_CLI2/.git/
+remote: Enumerating objects: 1335, done.
+remote: Counting objects: 100% (1335/1335), done.
+remote: Compressing objects: 100% (774/774), done.
+remote: Total 1335 (delta 419), reused 1026 (delta 249), pack-reused 0
+Receiving objects: 100% (1335/1335), 12.59 MiB | 10.02 MiB/s, done.
+Resolving deltas: 100% (419/419), done.
+From https://github.com/urbanjost/M_CLI2
+ * branch            7264878cdb1baff7323cc48596d829ccfe7751b8 -> FETCH_HEAD
+ [   0%]        filesystem_utilities.c
+ [   1%]        filesystem_utilities.c  done.
+ [   1%]       fpm_backend_console.f90
+ [   2%]       fpm_backend_console.f90  done.
+ [   2%]               fpm_strings.f90
+ [   4%]               fpm_strings.f90  done.
+ [   4%]                      isatty.c
+ [   5%]                      isatty.c  done.
+ [   5%]                    iscygpty.c
+ [   6%]                    iscygpty.c  done.
+ [   6%]                 constants.f90
+ [   8%]                 constants.f90  done.
+ [   8%]                   version.f90
+ [   9%]                   version.f90  done.
+ [   9%]                     token.f90
+ [  11%]                     token.f90  done.
+ [  11%]                    M_CLI2.F90
+ [  12%]                    M_CLI2.F90  done.
+ [  12%]                     error.f90
+ [  13%]                     error.f90  done.
+ [  13%]                  datetime.f90
+ [  15%]                  datetime.f90  done.
+ [  15%]                     error.f90
+ [  16%]                     error.f90  done.
+ [  16%]                        io.f90
+ [  18%]                        io.f90  done.
+ [  18%]           fpm_environment.f90
+ [  19%]           fpm_environment.f90  done.
+ [  19%]                    fpm_os.F90
+ [  20%]                    fpm_os.F90  done.
+ [  20%]                versioning.f90
+ [  22%]                versioning.f90  done.
+ [  22%]                     utils.f90
+ [  23%]                     utils.f90  done.
+ [  23%]                       abc.f90
+ [  25%]                       abc.f90  done.
+ [  25%]            fpm_filesystem.F90
+ [  26%]            fpm_filesystem.F90  done.
+ [  26%]                  terminal.f90
+ [  27%]                  terminal.f90  done.
+ [  27%]                     value.f90
+ [  29%]                     value.f90  done.
+ [  29%]          fpm_command_line.f90
+ [  30%]          fpm_command_line.f90  done.
+ [  30%]                       git.f90
+ [  31%]                       git.f90  done.
+ [  31%]                 installer.f90
+ [  33%]                 installer.f90  done.
+ [  33%]                diagnostic.f90
+ [  34%]                diagnostic.f90  done.
+ [  34%]                      base.f90
+ [  36%]                      base.f90  done.
+ [  36%]                    keyval.f90
+ [  37%]                    keyval.f90  done.
+ [  37%]                      sort.f90
+ [  38%]                      sort.f90  done.
+ [  38%]                   context.f90
+ [  40%]                   context.f90  done.
+ [  40%]                    vector.f90
+ [  41%]                    vector.f90  done.
+ [  41%]                 structure.f90
+ [  43%]                 structure.f90  done.
+ [  43%]                     lexer.f90
+ [  44%]                     lexer.f90  done.
+ [  44%]                     array.f90
+ [  45%]                     array.f90  done.
+ [  45%]                     table.f90
+ [  47%]                     table.f90  done.
+ [  47%]                      type.f90
+ [  48%]                      type.f90  done.
+ [  48%]                       ser.f90
+ [  50%]                       ser.f90  done.
+ [  50%]                    keyval.f90
+ [  51%]                    keyval.f90  done.
+ [  51%]                     merge.f90
+ [  52%]                     merge.f90  done.
+ [  52%]                    parser.f90
+ [  54%]                    parser.f90  done.
+ [  54%]                        de.f90
+ [  55%]                        de.f90  done.
+ [  55%]                     array.f90
+ [  56%]                     array.f90  done.
+ [  56%]                     table.f90
+ [  58%]                     table.f90  done.
+ [  58%]                      path.f90
+ [  59%]                      path.f90  done.
+ [  59%]                     build.f90
+ [  61%]                     build.f90  done.
+ [  61%]                     tomlf.f90
+ [  62%]                     tomlf.f90  done.
+ [  62%]                      toml.f90
+ [  63%]                      toml.f90  done.
+ [  63%]                     build.f90
+ [  65%]                     build.f90  done.
+ [  65%]                dependency.f90
+ [  66%]                dependency.f90  done.
+ [  66%]                   install.f90
+ [  68%]                   install.f90  done.
+ [  68%]                   library.f90
+ [  69%]                   library.f90  done.
+ [  69%]                preprocess.f90
+ [  70%]                preprocess.f90  done.
+ [  70%]                  profiles.f90
+ [  72%]                  profiles.f90  done.
+ [  72%]                executable.f90
+ [  73%]                executable.f90  done.
+ [  73%]                   example.f90
+ [  75%]                   example.f90  done.
+ [  75%]                      test.f90
+ [  76%]                      test.f90  done.
+ [  76%]                   package.f90
+ [  77%]                   package.f90  done.
+ [  77%]                  manifest.f90
+ [  79%]                  manifest.f90  done.
+ [  79%]                       new.f90
+ [  80%]                       new.f90  done.
+ [  80%]              fpm_compiler.f90
+ [  81%]              fpm_compiler.f90  done.
+ [  81%]                dependency.f90
+ [  83%]                dependency.f90  done.
+ [  83%]                 fpm_model.f90
+ [  84%]                 fpm_model.f90  done.
+ [  84%]                    update.f90
+ [  86%]                    update.f90  done.
+ [  86%]        fpm_source_parsing.f90
+ [  87%]        fpm_source_parsing.f90  done.
+ [  87%]               fpm_targets.f90
+ [  88%]               fpm_targets.f90  done.
+ [  88%]        fpm_backend_output.f90
+ [  90%]        fpm_backend_output.f90  done.
+ [  90%]               fpm_sources.f90
+ [  91%]               fpm_sources.f90  done.
+ [  91%]               fpm_backend.F90
+ [  93%]               fpm_backend.F90  done.
+ [  93%]                       fpm.f90
+ [  94%]                       fpm.f90  done.
+ [  94%]                   install.f90
+ [  95%]                   install.f90  done.
+ [  95%]                      libfpm.a
+ [  97%]                      libfpm.a  done.
+ [  97%]                      main.f90
+ [  98%]                      main.f90  done.
+ [  98%]                           fpm
+ [ 100%]                           fpm  done.
+[100%] Project compiled successfully.
+# Update: build/gfortran_367ECB55A902040F/app/fpm -> /home/ian/.local/bin
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fpm$ fpm
+Fortran Package Manager:
+ 
+USAGE: fpm [ SUBCOMMAND [SUBCOMMAND_OPTIONS] ]|[--list|--help|--version]
+       where SUBCOMMAND is commonly new|build|run|test
+
+ subcommand may be one of
+
+  build     Compile the package placing results in the "build" directory
+  help      Display help
+  list      Display this list of subcommand descriptions
+  new       Create a new Fortran package directory with sample files
+  run       Run the local package application programs
+  test      Run the test programs
+  update    Update and manage project dependencies
+  install   Install project
+  clean     Delete the build
+
+ Enter "fpm --list" for a brief list of subcommand options. Enter
+ "fpm --help" or "fpm SUBCOMMAND --help" for detailed descriptions.
+
+
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fpm$ ls
+app           CONTRIBUTING.md   fpm.toml               PACKAGING.md
+build         doc               install.sh             README.md
+ChangeLog.md  docs.md           LICENSE                src
+ci            example_packages  manifest-reference.md  test
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fpm$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ git clone https://github.com/toml-f/toml-f.git
+Cloning into 'toml-f'...
+remote: Enumerating objects: 1531, done.
+remote: Counting objects: 100% (642/642), done.
+remote: Compressing objects: 100% (315/315), done.
+remote: Total 1531 (delta 461), reused 408 (delta 322), pack-reused 889
+Receiving objects: 100% (1531/1531), 1.71 MiB | 10.94 MiB/s, done.
+Resolving deltas: 100% (913/913), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd toml-f
+ian@ian-HP-Convertible-x360-11-ab1XX:~/toml-f$ ls
+assets          CONTRIBUTING.md  fpm.toml        meson.build  subprojects
+CMakeLists.txt  doc              LICENSE-Apache  README.md    test
+config          docs.md          LICENSE-MIT     src
+ian@ian-HP-Convertible-x360-11-ab1XX:~/toml-f$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ mkdir tomlf
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd tomlf
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ git clone https://github.com/toml-f/toml-f.git
+Cloning into 'toml-f'...
+remote: Enumerating objects: 1531, done.
+remote: Counting objects: 100% (642/642), done.
+remote: Compressing objects: 100% (315/315), done.
+remote: Total 1531 (delta 461), reused 408 (delta 322), pack-reused 889
+Receiving objects: 100% (1531/1531), 1.71 MiB | 4.27 MiB/s, done.
+Resolving deltas: 100% (913/913), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ cmake toml-f
+-- The Fortran compiler identification is GNU 11.3.0
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /usr/bin/f95 - skipped
+-- Checking whether /usr/bin/f95 supports Fortran 90
+-- Checking whether /usr/bin/f95 supports Fortran 90 - yes
+-- Setting build type to 'RelWithDebInfo' as none was specified.
+-- test-drive: Find installed package
+-- Could NOT find test-drive (missing: test-drive_DIR)
+-- Retrieving test-drive from https://github.com/fortran-lang/test-drive
+-- Performing Test WITH_QP
+-- Performing Test WITH_QP - Success
+-- Performing Test WITH_XDP
+-- Performing Test WITH_XDP - Success
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ian/tomlf
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ ls
+CMakeCache.txt       config               include   test
+CMakeFiles           CTestTestfile.cmake  Makefile  toml-f
+cmake_install.cmake  _deps                src
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ make
+Scanning dependencies of target toml-f-lib
+[  1%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/constants.f90.o
+[  3%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/datetime.f90.o
+[  4%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/error.f90.o
+[  6%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/utils/io.f90.o
+[  8%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/utils.f90.o
+[  9%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/type/value.f90.o
+[ 11%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/structure/list.f90.o
+[ 13%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/structure/node.f90.o
+[ 14%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/structure/array_list.f90.o
+[ 16%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/structure/map.f90.o
+[ 18%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/structure/ordered_map.f90.o
+[ 19%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/structure.f90.o
+[ 21%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/type/array.f90.o
+[ 22%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/type/keyval.f90.o
+[ 24%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/type/table.f90.o
+[ 26%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/type.f90.o
+[ 27%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/build/keyval.f90.o
+[ 29%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/build/array.f90.o
+[ 31%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/build/merge.f90.o
+[ 32%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/build/table.f90.o
+[ 34%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/build/path.f90.o
+[ 36%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/build.f90.o
+[ 37%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/de/token.f90.o
+[ 39%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/terminal.f90.o
+[ 40%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/diagnostic.f90.o
+[ 42%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/de/context.f90.o
+[ 44%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/de/abc.f90.o
+[ 45%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/de/lexer.f90.o
+[ 47%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/de/parser.f90.o
+[ 49%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/de.f90.o
+[ 50%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/ser.f90.o
+[ 52%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/utils/sort.f90.o
+[ 54%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/version.f90.o
+[ 55%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf.f90.o
+[ 57%] Building Fortran object CMakeFiles/toml-f-lib.dir/src/tomlf/all.f90.o
+[ 59%] Linking Fortran static library libtoml-f.a
+[ 59%] Built target toml-f-lib
+Scanning dependencies of target toml-f-test-version
+[ 60%] Building Fortran object test/version/CMakeFiles/toml-f-test-version.dir/version.f90.o
+[ 62%] Linking Fortran executable toml-f-test-version
+[ 62%] Built target toml-f-test-version
+Scanning dependencies of target toml-f-test-fpm
+[ 63%] Building Fortran object test/version/CMakeFiles/toml-f-test-fpm.dir/fpm.f90.o
+[ 65%] Linking Fortran executable toml-f-test-fpm
+[ 65%] Built target toml-f-test-fpm
+Scanning dependencies of target test-drive-lib
+[ 67%] Building Fortran object _deps/test-drive-build/CMakeFiles/test-drive-lib.dir/src/testdrive.F90.o
+[ 68%] Building Fortran object _deps/test-drive-build/CMakeFiles/test-drive-lib.dir/src/testdrive_version.f90.o
+[ 70%] Linking Fortran static library libtest-drive.a
+[ 70%] Built target test-drive-lib
+Scanning dependencies of target tftester
+[ 72%] Building Fortran object test/unit/CMakeFiles/tftester.dir/build.f90.o
+[ 73%] Building Fortran object test/unit/CMakeFiles/tftester.dir/lexer.f90.o
+[ 75%] Building Fortran object test/unit/CMakeFiles/tftester.dir/parser.f90.o
+[ 77%] Building Fortran object test/unit/CMakeFiles/tftester.dir/sort.f90.o
+[ 78%] Building Fortran object test/unit/CMakeFiles/tftester.dir/utils.f90.o
+[ 80%] Building Fortran object test/unit/CMakeFiles/tftester.dir/main.f90.o
+[ 81%] Linking Fortran executable tftester
+[ 81%] Built target tftester
+Scanning dependencies of target test-drive-tester
+[ 83%] Building Fortran object _deps/test-drive-build/test/CMakeFiles/test-drive-tester.dir/test_check.F90.o
+[ 85%] Building Fortran object _deps/test-drive-build/test/CMakeFiles/test-drive-tester.dir/test_select.F90.o
+[ 86%] Building Fortran object _deps/test-drive-build/test/CMakeFiles/test-drive-tester.dir/main.f90.o
+[ 88%] Linking Fortran executable test-drive-tester
+[ 88%] Built target test-drive-tester
+Scanning dependencies of target toml2json
+[ 90%] Building Fortran object test/compliance/CMakeFiles/toml2json.dir/json_ser.f90.o
+[ 91%] Building Fortran object test/compliance/CMakeFiles/toml2json.dir/toml2json.f90.o
+[ 93%] Linking Fortran executable toml2json
+[ 93%] Built target toml2json
+Scanning dependencies of target json2toml
+[ 95%] Building Fortran object test/compliance/CMakeFiles/json2toml.dir/json_lexer.f90.o
+[ 96%] Building Fortran object test/compliance/CMakeFiles/json2toml.dir/json_parser.f90.o
+[ 98%] Building Fortran object test/compliance/CMakeFiles/json2toml.dir/json2toml.f90.o
+[100%] Linking Fortran executable json2toml
+[100%] Built target json2toml
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ ls
+CMakeCache.txt       config               include      src
+CMakeFiles           CTestTestfile.cmake  libtoml-f.a  test
+cmake_install.cmake  _deps                Makefile     toml-f
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ sudo make install
+[sudo] password for ian: 
+[ 59%] Built target toml-f-lib
+[ 62%] Built target toml-f-test-version
+[ 65%] Built target toml-f-test-fpm
+[ 70%] Built target test-drive-lib
+[ 81%] Built target tftester
+[ 88%] Built target test-drive-tester
+[ 93%] Built target toml2json
+[100%] Built target json2toml
+Install the project...
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /usr/local/lib/libtoml-f.a
+-- Installing: /usr/local/lib/cmake/toml-f/toml-f-targets.cmake
+-- Installing: /usr/local/lib/cmake/toml-f/toml-f-targets-relwithdebinfo.cmake
+-- Installing: /usr/local/include/toml-f/modules
+-- Installing: /usr/local/include/toml-f/modules/tomlf_build_array.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_de_parser.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_diagnostic.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_error.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_de_context.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_build_path.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_structure_array_list.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_utils.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_type.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_type_value.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_constants.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_build_table.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_type_table.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_build_keyval.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_de_token.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_ser.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_datetime.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_structure.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_utils_sort.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_version.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_build.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_type_keyval.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_build_merge.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_terminal.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_all.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_type_array.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_de_lexer.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_utils_io.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_structure_list.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_de.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_de_abc.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_structure_map.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_structure_ordered_map.mod
+-- Installing: /usr/local/include/toml-f/modules/tomlf_structure_node.mod
+-- Installing: /usr/local/share/licenses/toml-f/LICENSE-Apache
+-- Installing: /usr/local/share/licenses/toml-f/LICENSE-MIT
+-- Installing: /usr/local/lib/cmake/toml-f/toml-f-config.cmake
+-- Installing: /usr/local/lib/cmake/toml-f/toml-f-config-version.cmake
+-- Installing: /usr/local/lib/pkgconfig/toml-f.pc
+-- Installing: /usr/local/lib/libtest-drive.a
+-- Installing: /usr/local/lib/cmake/test-drive/test-drive-targets.cmake
+-- Installing: /usr/local/lib/cmake/test-drive/test-drive-targets-relwithdebinfo.cmake
+-- Installing: /usr/local/include/test-drive/GNU-11.3.0
+-- Installing: /usr/local/include/test-drive/GNU-11.3.0/testdrive_version.mod
+-- Installing: /usr/local/include/test-drive/GNU-11.3.0/testdrive.mod
+-- Installing: /usr/local/share/licenses/test-drive/LICENSE-Apache
+-- Installing: /usr/local/share/licenses/test-drive/LICENSE-MIT
+-- Installing: /usr/local/lib/cmake/test-drive/test-drive-config.cmake
+-- Installing: /usr/local/lib/cmake/test-drive/test-drive-config-version.cmake
+-- Installing: /usr/local/lib/pkgconfig/test-drive.pc
+ian@ian-HP-Convertible-x360-11-ab1XX:~/tomlf$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ mkdir stdlibf
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd stdlibf
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ git clone https://github.com/fortran-lang/stdlib.git
+Cloning into 'stdlib'...
+remote: Enumerating objects: 12904, done.
+remote: Counting objects: 100% (1720/1720), done.
+remote: Compressing objects: 100% (752/752), done.
+remote: Total 12904 (delta 1038), reused 1511 (delta 950), pack-reused 11184
+Receiving objects: 100% (12904/12904), 3.33 MiB | 12.77 MiB/s, done.
+Resolving deltas: 100% (9222/9222), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ cd stdlib
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf/stdlib$ ls
+API-doc-FORD-file.md  CODE_OF_CONDUCT.md  LICENSE         VERSION
+CHANGELOG.md          config              README.md       WORKFLOW.md
+ci                    CONTRIBUTING.md     src
+cmake                 doc                 STYLE_GUIDE.md
+CMakeLists.txt        example             test
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf/stdlib$ cd ~/stdlibf
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ cmake stdlib
+-- The Fortran compiler identification is GNU 11.3.0
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /usr/bin/f95 - skipped
+-- Checking whether /usr/bin/f95 supports Fortran 90
+-- Checking whether /usr/bin/f95 supports Fortran 90 - yes
+-- Performing Test WITH_QP
+-- Performing Test WITH_QP - Success
+-- Performing Test WITH_XDP
+-- Performing Test WITH_XDP - Success
+-- Performing Test f18errorstop
+-- Performing Test f18errorstop - Failed
+-- Performing Test f03rank
+-- Performing Test f03rank - Success
+-- Performing Test f03real128
+-- Performing Test f03real128 - Success
+CMake Error at CMakeLists.txt:48 (message):
+  Preprocessor fypp not found! Please install fypp following the instructions
+  in https://fypp.readthedocs.io/en/stable/fypp.html#installing
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/ian/stdlibf/CMakeFiles/CMakeOutput.log".
+See also "/home/ian/stdlibf/CMakeFiles/CMakeError.log".
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ sudo apt install fypp
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package fypp
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ git clone https://github.com/aradi/fypp.git
+Cloning into 'fypp'...
+remote: Enumerating objects: 1613, done.
+remote: Counting objects: 100% (149/149), done.
+remote: Compressing objects: 100% (50/50), done.
+remote: Total 1613 (delta 83), reused 141 (delta 82), pack-reused 1464
+Receiving objects: 100% (1613/1613), 426.45 KiB | 5.14 MiB/s, done.
+Resolving deltas: 100% (1022/1022), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ cd fypp
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf/fypp$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd fypp
+bash: cd: fypp: No such file or directory
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ git clone https://github.com/aradi/fypp.git
+Cloning into 'fypp'...
+remote: Enumerating objects: 1613, done.
+remote: Counting objects: 100% (149/149), done.
+remote: Compressing objects: 100% (50/50), done.
+remote: Total 1613 (delta 83), reused 141 (delta 82), pack-reused 1464
+Receiving objects: 100% (1613/1613), 426.45 KiB | 5.40 MiB/s, done.
+Resolving deltas: 100% (1022/1022), done.
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd fypp
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fypp$ ls
+bin            docs         MANIFEST.in  setup.py  test   tox.ini
+CHANGELOG.rst  LICENSE.txt  README.rst   src       tools  utils
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fypp$ sudo ipython3 setup.py install
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 1.16.0-unknown is an invalid version and will not be supported in a future release
+  warnings.warn(
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 0.1.43ubuntu1 is an invalid version and will not be supported in a future release
+  warnings.warn(
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 2.22.1ubuntu1 is an invalid version and will not be supported in a future release
+  warnings.warn(
+/usr/lib/python3/dist-packages/pkg_resources/__init__.py:116: PkgResourcesDeprecationWarning: 1.1build1 is an invalid version and will not be supported in a future release
+  warnings.warn(
+running bdist_egg
+running egg_info
+creating src/fypp.egg-info
+writing src/fypp.egg-info/PKG-INFO
+writing dependency_links to src/fypp.egg-info/dependency_links.txt
+writing entry points to src/fypp.egg-info/entry_points.txt
+writing top-level names to src/fypp.egg-info/top_level.txt
+writing manifest file 'src/fypp.egg-info/SOURCES.txt'
+reading manifest file 'src/fypp.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '*.pyc' found anywhere in distribution
+warning: no previously-included files matching '*~' found anywhere in distribution
+adding license file 'LICENSE.txt'
+writing manifest file 'src/fypp.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+copying src/fypp.py -> build/lib
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+copying build/lib/fypp.py -> build/bdist.linux-x86_64/egg
+byte-compiling build/bdist.linux-x86_64/egg/fypp.py to fypp.cpython-310.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/fypp.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/fypp.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/fypp.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/fypp.egg-info/entry_points.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying src/fypp.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating 'dist/fypp-3.1-py3.10.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing fypp-3.1-py3.10.egg
+Copying fypp-3.1-py3.10.egg to /usr/local/lib/python3.10/dist-packages
+Adding fypp 3.1 to easy-install.pth file
+Installing fypp script to /usr/local/bin
+
+Installed /usr/local/lib/python3.10/dist-packages/fypp-3.1-py3.10.egg
+Processing dependencies for fypp==3.1
+Finished processing dependencies for fypp==3.1
+ian@ian-HP-Convertible-x360-11-ab1XX:~/fypp$ cd
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cd stdlibf
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ ls
+CMakeCache.txt  config                 fypp    Testing
+CMakeFiles      DartConfiguration.tcl  stdlib
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ cmake stdlib
+-- test-drive: Find installed package
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The C compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ian/stdlibf
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ ls
+CMakeCache.txt       config                 example   src     Testing
+CMakeFiles           CTestTestfile.cmake    fypp      stdlib
+cmake_install.cmake  DartConfiguration.tcl  Makefile  test
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ make
+[  0%] Generating stdlib_version.f90
+[  0%] Generating stdlib_ascii.f90
+[  0%] Generating stdlib_bitsets.f90
+[  1%] Generating stdlib_bitsets_64.f90
+[  1%] Generating stdlib_bitsets_large.f90
+[  1%] Generating stdlib_hash_32bit.f90
+[  1%] Generating stdlib_hash_32bit_fnv.f90
+[  1%] Generating stdlib_hash_32bit_nm.f90
+[  1%] Generating stdlib_hash_32bit_water.f90
+[  1%] Generating stdlib_hash_64bit.f90
+[  2%] Generating stdlib_hash_64bit_fnv.f90
+[  2%] Generating stdlib_hash_64bit_pengy.f90
+[  2%] Generating stdlib_hash_64bit_spookyv2.f90
+[  2%] Generating stdlib_io.f90
+[  2%] Generating stdlib_io_npy.f90
+[  2%] Generating stdlib_io_npy_load.f90
+[  2%] Generating stdlib_io_npy_save.f90
+[  3%] Generating stdlib_kinds.f90
+[  3%] Generating stdlib_linalg.f90
+[  3%] Generating stdlib_linalg_diag.f90
+[  3%] Generating stdlib_linalg_outer_product.f90
+[  3%] Generating stdlib_optval.f90
+[  3%] Generating stdlib_selection.f90
+[  3%] Generating stdlib_sorting.f90
+[  4%] Generating stdlib_sorting_ord_sort.f90
+[  4%] Generating stdlib_sorting_sort.f90
+[  4%] Generating stdlib_sorting_sort_index.f90
+[  4%] Generating stdlib_specialfunctions_gamma.f90
+[  4%] Generating stdlib_stats.f90
+[  4%] Generating stdlib_stats_corr.f90
+[  4%] Generating stdlib_stats_cov.f90
+[  4%] Generating stdlib_stats_mean.f90
+[  5%] Generating stdlib_stats_median.f90
+[  5%] Generating stdlib_stats_moment.f90
+[  5%] Generating stdlib_stats_moment_all.f90
+[  5%] Generating stdlib_stats_moment_mask.f90
+[  5%] Generating stdlib_stats_moment_scalar.f90
+[  5%] Generating stdlib_stats_distribution_uniform.f90
+[  5%] Generating stdlib_stats_distribution_normal.f90
+[  6%] Generating stdlib_stats_distribution_exponential.f90
+[  6%] Generating stdlib_stats_var.f90
+[  6%] Generating stdlib_quadrature.f90
+[  6%] Generating stdlib_quadrature_trapz.f90
+[  6%] Generating stdlib_quadrature_simps.f90
+[  6%] Generating stdlib_random.f90
+[  6%] Generating stdlib_math.f90
+[  7%] Generating stdlib_math_linspace.f90
+[  7%] Generating stdlib_math_logspace.f90
+[  7%] Generating stdlib_math_arange.f90
+[  7%] Generating stdlib_math_is_close.f90
+[  7%] Generating stdlib_math_all_close.f90
+[  7%] Generating stdlib_math_diff.f90
+[  7%] Generating stdlib_string_type.f90
+[  8%] Generating stdlib_string_type_constructor.f90
+[  8%] Generating stdlib_strings_to_string.f90
+[  8%] Generating stdlib_strings.f90
+Scanning dependencies of target fortran_stdlib
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_kinds.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_optval.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_error.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/f08estop.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_ascii.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_string_type.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_ansi.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_ansi_operator.f90.o
+[  9%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_ansi_to_string.f90.o
+[ 10%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_array.f90.o
+[ 10%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_bitsets.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_bitsets_64.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_bitsets_large.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_32bit.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_32bit_fnv.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_32bit_nm.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_32bit_water.f90.o
+[ 11%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_64bit.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_64bit_fnv.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_64bit_pengy.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hash_64bit_spookyv2.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hashmap_wrappers.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hashmaps.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hashmap_chaining.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_hashmap_open.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_io.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_io_npy.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_strings.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_io_npy_load.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_io_npy_save.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_linalg.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_linalg_diag.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_linalg_outer_product.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_logger.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math_all_close.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math_arange.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math_diff.f90.o
+[ 12%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math_is_close.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math_linspace.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_math_logspace.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_quadrature.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_specialfunctions.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_quadrature_gauss.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_quadrature_simps.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_quadrature_trapz.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_random.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_selection.f90.o
+[ 13%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_sorting.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_sorting_ord_sort.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_sorting_sort.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_sorting_sort_index.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_specialfunctions_gamma.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_specialfunctions_legendre.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_corr.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_cov.f90.o
+[ 14%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_distribution_uniform.f90.o
+[ 15%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_distribution_exponential.f90.o
+[ 15%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_distribution_normal.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_mean.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_median.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_moment.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_moment_all.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_moment_mask.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_moment_scalar.f90.o
+[ 16%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stats_var.f90.o
+[ 17%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_string_type_constructor.f90.o
+[ 17%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_stringlist_type.f90.o
+[ 17%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_strings_to_string.f90.o
+[ 18%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_system.F90.o
+[ 18%] Building Fortran object src/CMakeFiles/fortran_stdlib.dir/stdlib_version.f90.o
+[ 18%] Linking Fortran static library libfortran_stdlib.a
+[ 18%] Built target fortran_stdlib
+Scanning dependencies of target test_always_skip
+[ 18%] Building Fortran object test/CMakeFiles/test_always_skip.dir/test_always_skip.f90.o
+[ 18%] Linking Fortran executable test_always_skip
+[ 18%] Built target test_always_skip
+Scanning dependencies of target test_always_fail
+[ 18%] Building Fortran object test/CMakeFiles/test_always_fail.dir/test_always_fail.f90.o
+[ 18%] Linking Fortran executable test_always_fail
+[ 18%] Built target test_always_fail
+Scanning dependencies of target test_logicalloc
+[ 18%] Building Fortran object test/array/CMakeFiles/test_logicalloc.dir/test_logicalloc.f90.o
+[ 18%] Linking Fortran executable test_logicalloc
+[ 18%] Built target test_logicalloc
+Scanning dependencies of target test_ascii
+[ 18%] Building Fortran object test/ascii/CMakeFiles/test_ascii.dir/test_ascii.f90.o
+[ 18%] Linking Fortran executable test_ascii
+[ 18%] Built target test_ascii
+Scanning dependencies of target test_stdlib_bitset_64
+[ 18%] Building Fortran object test/bitsets/CMakeFiles/test_stdlib_bitset_64.dir/test_stdlib_bitset_64.f90.o
+[ 18%] Linking Fortran executable test_stdlib_bitset_64
+[ 18%] Built target test_stdlib_bitset_64
+Scanning dependencies of target test_stdlib_bitset_large
+[ 18%] Building Fortran object test/bitsets/CMakeFiles/test_stdlib_bitset_large.dir/test_stdlib_bitset_large.f90.o
+[ 19%] Linking Fortran executable test_stdlib_bitset_large
+[ 19%] Built target test_stdlib_bitset_large
+Scanning dependencies of target test_hash_functions
+[ 19%] Building Fortran object test/hash_functions/CMakeFiles/test_hash_functions.dir/test_hash_functions.f90.o
+[ 19%] Building C object test/hash_functions/CMakeFiles/test_hash_functions.dir/nmhash_scalar.c.o
+[ 19%] Building C object test/hash_functions/CMakeFiles/test_hash_functions.dir/pengyhash.c.o
+[ 20%] Building CXX object test/hash_functions/CMakeFiles/test_hash_functions.dir/SpookyV2.cpp.o
+[ 20%] Building CXX object test/hash_functions/CMakeFiles/test_hash_functions.dir/SpookyV2Test.cpp.o
+[ 20%] Building C object test/hash_functions/CMakeFiles/test_hash_functions.dir/waterhash.c.o
+[ 20%] Building CXX object test/hash_functions/CMakeFiles/test_hash_functions.dir/generate_hash_arrays.cpp.o
+[ 20%] Linking CXX executable test_hash_functions
+[ 20%] Built target test_hash_functions
+Scanning dependencies of target test_32_bit_hash_performance
+[ 20%] Building Fortran object test/hash_functions_perf/CMakeFiles/test_32_bit_hash_performance.dir/test_32_bit_hash_performance.f90.o
+[ 21%] Linking Fortran executable test_32_bit_hash_performance
+[ 21%] Built target test_32_bit_hash_performance
+Scanning dependencies of target test_64_bit_hash_performance
+[ 21%] Building Fortran object test/hash_functions_perf/CMakeFiles/test_64_bit_hash_performance.dir/test_64_bit_hash_performance.f90.o
+[ 21%] Linking Fortran executable test_64_bit_hash_performance
+[ 21%] Built target test_64_bit_hash_performance
+Scanning dependencies of target test_chaining_maps
+[ 21%] Building Fortran object test/hashmaps/CMakeFiles/test_chaining_maps.dir/test_chaining_maps.f90.o
+[ 21%] Linking Fortran executable test_chaining_maps
+[ 21%] Built target test_chaining_maps
+Scanning dependencies of target test_open_maps
+[ 21%] Building Fortran object test/hashmaps/CMakeFiles/test_open_maps.dir/test_open_maps.f90.o
+[ 21%] Linking Fortran executable test_open_maps
+[ 21%] Built target test_open_maps
+[ 21%] Generating test_maps.f90
+Scanning dependencies of target test_maps
+[ 21%] Building Fortran object test/hashmaps/CMakeFiles/test_maps.dir/test_maps.f90.o
+[ 21%] Linking Fortran executable test_maps
+[ 21%] Built target test_maps
+[ 21%] Generating test_loadtxt_qp.f90
+Scanning dependencies of target test_loadtxt_qp
+[ 21%] Building Fortran object test/io/CMakeFiles/test_loadtxt_qp.dir/test_loadtxt_qp.f90.o
+[ 21%] Linking Fortran executable test_loadtxt_qp
+[ 21%] Built target test_loadtxt_qp
+Scanning dependencies of target test_getline
+[ 21%] Building Fortran object test/io/CMakeFiles/test_getline.dir/test_getline.f90.o
+[ 21%] Linking Fortran executable test_getline
+[ 21%] Built target test_getline
+Scanning dependencies of target test_npy
+[ 21%] Building Fortran object test/io/CMakeFiles/test_npy.dir/test_npy.f90.o
+[ 22%] Linking Fortran executable test_npy
+[ 22%] Built target test_npy
+[ 22%] Generating test_savetxt_qp.f90
+Scanning dependencies of target test_savetxt_qp
+[ 22%] Building Fortran object test/io/CMakeFiles/test_savetxt_qp.dir/test_savetxt_qp.f90.o
+[ 22%] Linking Fortran executable test_savetxt_qp
+[ 22%] Built target test_savetxt_qp
+Scanning dependencies of target test_savetxt
+[ 23%] Building Fortran object test/io/CMakeFiles/test_savetxt.dir/test_savetxt.f90.o
+[ 23%] Linking Fortran executable test_savetxt
+[ 23%] Built target test_savetxt
+Scanning dependencies of target test_loadtxt
+[ 23%] Building Fortran object test/io/CMakeFiles/test_loadtxt.dir/test_loadtxt.f90.o
+[ 23%] Linking Fortran executable test_loadtxt
+[ 23%] Built target test_loadtxt
+Scanning dependencies of target test_open
+[ 23%] Building Fortran object test/io/CMakeFiles/test_open.dir/test_open.f90.o
+[ 23%] Linking Fortran executable test_open
+[ 23%] Built target test_open
+Scanning dependencies of target test_parse_mode
+[ 23%] Building Fortran object test/io/CMakeFiles/test_parse_mode.dir/test_parse_mode.f90.o
+[ 23%] Linking Fortran executable test_parse_mode
+[ 23%] Built target test_parse_mode
+[ 24%] Generating test_linalg.f90
+Scanning dependencies of target test_linalg
+[ 24%] Building Fortran object test/linalg/CMakeFiles/test_linalg.dir/test_linalg.f90.o
+[ 24%] Linking Fortran executable test_linalg
+[ 24%] Built target test_linalg
+[ 24%] Generating test_linalg_matrix_property_checks.f90
+Scanning dependencies of target test_linalg_matrix_property_checks
+[ 24%] Building Fortran object test/linalg/CMakeFiles/test_linalg_matrix_property_checks.dir/test_linalg_matrix_property_checks.f90.o
+[ 24%] Linking Fortran executable test_linalg_matrix_property_checks
+[ 24%] Built target test_linalg_matrix_property_checks
+Scanning dependencies of target test_stdlib_logger
+[ 24%] Building Fortran object test/logger/CMakeFiles/test_stdlib_logger.dir/test_stdlib_logger.f90.o
+[ 24%] Linking Fortran executable test_stdlib_logger
+[ 24%] Built target test_stdlib_logger
+[ 24%] Generating test_optval.f90
+Scanning dependencies of target test_optval
+[ 24%] Building Fortran object test/optval/CMakeFiles/test_optval.dir/test_optval.f90.o
+[ 25%] Linking Fortran executable test_optval
+[ 25%] Built target test_optval
+[ 25%] Generating test_selection.f90
+Scanning dependencies of target test_selection
+[ 25%] Building Fortran object test/selection/CMakeFiles/test_selection.dir/test_selection.f90.o
+[ 26%] Linking Fortran executable test_selection
+[ 26%] Built target test_selection
+Scanning dependencies of target test_sorting
+[ 26%] Building Fortran object test/sorting/CMakeFiles/test_sorting.dir/test_sorting.f90.o
+[ 27%] Linking Fortran executable test_sorting
+[ 27%] Built target test_sorting
+[ 27%] Generating test_specialfunctions_gamma.f90
+Scanning dependencies of target test_specialfunctions_gamma
+[ 27%] Building Fortran object test/specialfunctions/CMakeFiles/test_specialfunctions_gamma.dir/test_specialfunctions_gamma.f90.o
+[ 27%] Linking Fortran executable test_specialfunctions_gamma
+[ 27%] Built target test_specialfunctions_gamma
+[ 27%] Generating test_distribution_normal.f90
+Scanning dependencies of target test_distribution_normal
+[ 27%] Building Fortran object test/stats/CMakeFiles/test_distribution_normal.dir/test_distribution_normal.f90.o
+[ 27%] Linking Fortran executable test_distribution_normal
+[ 27%] Built target test_distribution_normal
+[ 27%] Generating test_mean.f90
+Scanning dependencies of target test_mean
+[ 27%] Building Fortran object test/stats/CMakeFiles/test_mean.dir/test_mean.f90.o
+[ 28%] Linking Fortran executable test_mean
+[ 28%] Built target test_mean
+Scanning dependencies of target test_cov
+[ 28%] Building Fortran object test/stats/CMakeFiles/test_cov.dir/test_cov.f90.o
+[ 28%] Linking Fortran executable test_cov
+[ 28%] Built target test_cov
+Scanning dependencies of target test_rawmoment
+[ 28%] Building Fortran object test/stats/CMakeFiles/test_rawmoment.dir/test_rawmoment.f90.o
+[ 28%] Linking Fortran executable test_rawmoment
+[ 28%] Built target test_rawmoment
+[ 28%] Generating test_median.f90
+Scanning dependencies of target test_median
+[ 28%] Building Fortran object test/stats/CMakeFiles/test_median.dir/test_median.f90.o
+[ 28%] Linking Fortran executable test_median
+[ 28%] Built target test_median
+Scanning dependencies of target test_random
+[ 28%] Building Fortran object test/stats/CMakeFiles/test_random.dir/test_random.f90.o
+[ 28%] Linking Fortran executable test_random
+[ 28%] Built target test_random
+[ 28%] Generating test_distribution_exponential.f90
+Scanning dependencies of target test_distribution_exponential
+[ 28%] Building Fortran object test/stats/CMakeFiles/test_distribution_exponential.dir/test_distribution_exponential.f90.o
+[ 29%] Linking Fortran executable test_distribution_exponential
+[ 29%] Built target test_distribution_exponential
+[ 29%] Generating test_distribution_uniform.f90
+Scanning dependencies of target test_distribution_uniform
+[ 29%] Building Fortran object test/stats/CMakeFiles/test_distribution_uniform.dir/test_distribution_uniform.f90.o
+[ 29%] Linking Fortran executable test_distribution_uniform
+[ 29%] Built target test_distribution_uniform
+Scanning dependencies of target test_corr
+[ 29%] Building Fortran object test/stats/CMakeFiles/test_corr.dir/test_corr.f90.o
+[ 29%] Linking Fortran executable test_corr
+[ 29%] Built target test_corr
+Scanning dependencies of target test_moment
+[ 29%] Building Fortran object test/stats/CMakeFiles/test_moment.dir/test_moment.f90.o
+[ 29%] Linking Fortran executable test_moment
+[ 29%] Built target test_moment
+Scanning dependencies of target test_var
+[ 29%] Building Fortran object test/stats/CMakeFiles/test_var.dir/test_var.f90.o
+[ 29%] Linking Fortran executable test_var
+[ 29%] Built target test_var
+Scanning dependencies of target test_varn
+[ 29%] Building Fortran object test/stats/CMakeFiles/test_varn.dir/test_varn.f90.o
+[ 30%] Linking Fortran executable test_varn
+[ 30%] Built target test_varn
+Scanning dependencies of target test_string_intrinsic
+[ 30%] Building Fortran object test/string/CMakeFiles/test_string_intrinsic.dir/test_string_intrinsic.f90.o
+[ 30%] Linking Fortran executable test_string_intrinsic
+[ 30%] Built target test_string_intrinsic
+Scanning dependencies of target test_string_assignment
+[ 30%] Building Fortran object test/string/CMakeFiles/test_string_assignment.dir/test_string_assignment.f90.o
+[ 31%] Linking Fortran executable test_string_assignment
+[ 31%] Built target test_string_assignment
+Scanning dependencies of target test_string_derivedtype_io
+[ 31%] Building Fortran object test/string/CMakeFiles/test_string_derivedtype_io.dir/test_string_derivedtype_io.f90.o
+[ 31%] Linking Fortran executable test_string_derivedtype_io
+[ 31%] Built target test_string_derivedtype_io
+Scanning dependencies of target test_string_strip_chomp
+[ 31%] Building Fortran object test/string/CMakeFiles/test_string_strip_chomp.dir/test_string_strip_chomp.f90.o
+[ 31%] Linking Fortran executable test_string_strip_chomp
+[ 31%] Built target test_string_strip_chomp
+Scanning dependencies of target test_string_match
+[ 32%] Building Fortran object test/string/CMakeFiles/test_string_match.dir/test_string_match.f90.o
+[ 32%] Linking Fortran executable test_string_match
+[ 32%] Built target test_string_match
+Scanning dependencies of target test_string_to_string
+[ 32%] Building Fortran object test/string/CMakeFiles/test_string_to_string.dir/test_string_to_string.f90.o
+[ 33%] Linking Fortran executable test_string_to_string
+[ 33%] Built target test_string_to_string
+Scanning dependencies of target test_string_operator
+[ 33%] Building Fortran object test/string/CMakeFiles/test_string_operator.dir/test_string_operator.f90.o
+[ 33%] Linking Fortran executable test_string_operator
+[ 33%] Built target test_string_operator
+Scanning dependencies of target test_string_functions
+[ 33%] Building Fortran object test/string/CMakeFiles/test_string_functions.dir/test_string_functions.f90.o
+[ 33%] Linking Fortran executable test_string_functions
+[ 33%] Built target test_string_functions
+Scanning dependencies of target test_sleep
+[ 33%] Building Fortran object test/system/CMakeFiles/test_sleep.dir/test_sleep.f90.o
+[ 33%] Linking Fortran executable test_sleep
+[ 33%] Built target test_sleep
+[ 33%] Generating test_trapz.f90
+Scanning dependencies of target test_trapz
+[ 33%] Building Fortran object test/quadrature/CMakeFiles/test_trapz.dir/test_trapz.f90.o
+[ 33%] Linking Fortran executable test_trapz
+[ 33%] Built target test_trapz
+Scanning dependencies of target test_gauss
+[ 34%] Building Fortran object test/quadrature/CMakeFiles/test_gauss.dir/test_gauss.f90.o
+[ 34%] Linking Fortran executable test_gauss
+[ 34%] Built target test_gauss
+[ 34%] Generating test_simps.f90
+Scanning dependencies of target test_simps
+[ 34%] Building Fortran object test/quadrature/CMakeFiles/test_simps.dir/test_simps.f90.o
+[ 34%] Linking Fortran executable test_simps
+[ 34%] Built target test_simps
+[ 34%] Generating test_stdlib_math.f90
+Scanning dependencies of target test_stdlib_math
+[ 34%] Building Fortran object test/math/CMakeFiles/test_stdlib_math.dir/test_stdlib_math.f90.o
+[ 34%] Linking Fortran executable test_stdlib_math
+[ 34%] Built target test_stdlib_math
+Scanning dependencies of target test_logspace
+[ 35%] Building Fortran object test/math/CMakeFiles/test_logspace.dir/test_logspace.f90.o
+[ 35%] Linking Fortran executable test_logspace
+[ 35%] Built target test_logspace
+Scanning dependencies of target test_linspace
+[ 35%] Building Fortran object test/math/CMakeFiles/test_linspace.dir/test_linspace.f90.o
+[ 36%] Linking Fortran executable test_linspace
+[ 36%] Built target test_linspace
+Scanning dependencies of target test_append_prepend
+[ 37%] Building Fortran object test/stringlist/CMakeFiles/test_append_prepend.dir/test_append_prepend.f90.o
+[ 37%] Linking Fortran executable test_append_prepend
+[ 37%] Built target test_append_prepend
+Scanning dependencies of target test_insert_at
+[ 37%] Building Fortran object test/stringlist/CMakeFiles/test_insert_at.dir/test_insert_at.f90.o
+[ 37%] Linking Fortran executable test_insert_at
+[ 37%] Built target test_insert_at
+Scanning dependencies of target test_colors
+[ 37%] Building Fortran object test/terminal/CMakeFiles/test_colors.dir/test_colors.f90.o
+[ 38%] Linking Fortran executable test_colors
+[ 38%] Built target test_colors
+Scanning dependencies of target example_trueloc
+[ 39%] Building Fortran object example/array/CMakeFiles/example_trueloc.dir/example_trueloc.f90.o
+[ 39%] Linking Fortran executable example_trueloc
+[ 39%] Built target example_trueloc
+Scanning dependencies of target example_falseloc
+[ 39%] Building Fortran object example/array/CMakeFiles/example_falseloc.dir/example_falseloc.f90.o
+[ 39%] Linking Fortran executable example_falseloc
+[ 39%] Built target example_falseloc
+Scanning dependencies of target example_ascii_to_title
+[ 40%] Building Fortran object example/ascii/CMakeFiles/example_ascii_to_title.dir/example_ascii_to_title.f90.o
+[ 40%] Linking Fortran executable example_ascii_to_title
+[ 40%] Built target example_ascii_to_title
+Scanning dependencies of target example_ascii_to_lower
+[ 40%] Building Fortran object example/ascii/CMakeFiles/example_ascii_to_lower.dir/example_ascii_to_lower.f90.o
+[ 40%] Linking Fortran executable example_ascii_to_lower
+[ 40%] Built target example_ascii_to_lower
+Scanning dependencies of target example_ascii_to_sentence
+[ 40%] Building Fortran object example/ascii/CMakeFiles/example_ascii_to_sentence.dir/example_ascii_to_sentence.f90.o
+[ 40%] Linking Fortran executable example_ascii_to_sentence
+[ 40%] Built target example_ascii_to_sentence
+Scanning dependencies of target example_ascii_to_upper
+[ 40%] Building Fortran object example/ascii/CMakeFiles/example_ascii_to_upper.dir/example_ascii_to_upper.f90.o
+[ 40%] Linking Fortran executable example_ascii_to_upper
+[ 40%] Built target example_ascii_to_upper
+Scanning dependencies of target example_ascii_reverse
+[ 40%] Building Fortran object example/ascii/CMakeFiles/example_ascii_reverse.dir/example_ascii_reverse.f90.o
+[ 40%] Linking Fortran executable example_ascii_reverse
+[ 40%] Built target example_ascii_reverse
+Scanning dependencies of target example_bitsets_xor
+[ 40%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_xor.dir/example_bitsets_xor.f90.o
+[ 41%] Linking Fortran executable example_bitsets_xor
+[ 41%] Built target example_bitsets_xor
+Scanning dependencies of target example_bitsets_test
+[ 41%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_test.dir/example_bitsets_test.f90.o
+[ 41%] Linking Fortran executable example_bitsets_test
+[ 41%] Built target example_bitsets_test
+Scanning dependencies of target example_bitsets_read_bitset
+[ 41%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_read_bitset.dir/example_bitsets_read_bitset.f90.o
+[ 41%] Linking Fortran executable example_bitsets_read_bitset
+[ 41%] Built target example_bitsets_read_bitset
+Scanning dependencies of target example_bitsets_set
+[ 41%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_set.dir/example_bitsets_set.f90.o
+[ 41%] Linking Fortran executable example_bitsets_set
+[ 41%] Built target example_bitsets_set
+Scanning dependencies of target example_bitsets_output
+[ 41%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_output.dir/example_bitsets_output.f90.o
+[ 42%] Linking Fortran executable example_bitsets_output
+[ 42%] Built target example_bitsets_output
+Scanning dependencies of target example_bitsets_clear
+[ 42%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_clear.dir/example_bitsets_clear.f90.o
+[ 42%] Linking Fortran executable example_bitsets_clear
+[ 42%] Built target example_bitsets_clear
+Scanning dependencies of target example_bitsets_extract
+[ 42%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_extract.dir/example_bitsets_extract.f90.o
+[ 42%] Linking Fortran executable example_bitsets_extract
+[ 42%] Built target example_bitsets_extract
+Scanning dependencies of target example_bitsets_gt
+[ 42%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_gt.dir/example_bitsets_gt.f90.o
+[ 42%] Linking Fortran executable example_bitsets_gt
+[ 42%] Built target example_bitsets_gt
+Scanning dependencies of target example_bitsets_bits
+[ 42%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_bits.dir/example_bitsets_bits.f90.o
+[ 42%] Linking Fortran executable example_bitsets_bits
+[ 42%] Built target example_bitsets_bits
+Scanning dependencies of target example_bitsets_value
+[ 42%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_value.dir/example_bitsets_value.f90.o
+[ 42%] Linking Fortran executable example_bitsets_value
+[ 42%] Built target example_bitsets_value
+Scanning dependencies of target example_bitsets_any
+[ 42%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_any.dir/example_bitsets_any.f90.o
+[ 42%] Linking Fortran executable example_bitsets_any
+[ 42%] Built target example_bitsets_any
+Scanning dependencies of target example_bitsets_to_string
+[ 43%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_to_string.dir/example_bitsets_to_string.f90.o
+[ 43%] Linking Fortran executable example_bitsets_to_string
+[ 43%] Built target example_bitsets_to_string
+Scanning dependencies of target example_bitsets_bit_count
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_bit_count.dir/example_bitsets_bit_count.f90.o
+[ 44%] Linking Fortran executable example_bitsets_bit_count
+[ 44%] Built target example_bitsets_bit_count
+Scanning dependencies of target example_bitsets_assignment
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_assignment.dir/example_bitsets_assignment.f90.o
+[ 44%] Linking Fortran executable example_bitsets_assignment
+[ 44%] Built target example_bitsets_assignment
+Scanning dependencies of target example_bitsets_input
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_input.dir/example_bitsets_input.f90.o
+[ 44%] Linking Fortran executable example_bitsets_input
+[ 44%] Built target example_bitsets_input
+Scanning dependencies of target example_bitsets_all
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_all.dir/example_bitsets_all.f90.o
+[ 44%] Linking Fortran executable example_bitsets_all
+[ 44%] Built target example_bitsets_all
+Scanning dependencies of target example_bitsets_inequality
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_inequality.dir/example_bitsets_inequality.f90.o
+[ 44%] Linking Fortran executable example_bitsets_inequality
+[ 44%] Built target example_bitsets_inequality
+Scanning dependencies of target example_bitsets_and_not
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_and_not.dir/example_bitsets_and_not.f90.o
+[ 44%] Linking Fortran executable example_bitsets_and_not
+[ 44%] Built target example_bitsets_and_not
+Scanning dependencies of target example_bitsets_flip
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_flip.dir/example_bitsets_flip.f90.o
+[ 44%] Linking Fortran executable example_bitsets_flip
+[ 44%] Built target example_bitsets_flip
+Scanning dependencies of target example_bitsets_from_string
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_from_string.dir/example_bitsets_from_string.f90.o
+[ 44%] Linking Fortran executable example_bitsets_from_string
+[ 44%] Built target example_bitsets_from_string
+Scanning dependencies of target example_bitsets_and
+[ 44%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_and.dir/example_bitsets_and.f90.o
+[ 45%] Linking Fortran executable example_bitsets_and
+[ 45%] Built target example_bitsets_and
+Scanning dependencies of target example_bitsets_le
+[ 45%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_le.dir/example_bitsets_le.f90.o
+[ 45%] Linking Fortran executable example_bitsets_le
+[ 45%] Built target example_bitsets_le
+Scanning dependencies of target example_bitsets_ge
+[ 46%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_ge.dir/example_bitsets_ge.f90.o
+[ 46%] Linking Fortran executable example_bitsets_ge
+[ 46%] Built target example_bitsets_ge
+Scanning dependencies of target example_bitsets_lt
+[ 46%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_lt.dir/example_bitsets_lt.f90.o
+[ 46%] Linking Fortran executable example_bitsets_lt
+[ 46%] Built target example_bitsets_lt
+Scanning dependencies of target example_bitsets_write_bitset
+[ 46%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_write_bitset.dir/example_bitsets_write_bitset.f90.o
+[ 46%] Linking Fortran executable example_bitsets_write_bitset
+[ 46%] Built target example_bitsets_write_bitset
+Scanning dependencies of target example_bitsets_init
+[ 46%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_init.dir/example_bitsets_init.f90.o
+[ 47%] Linking Fortran executable example_bitsets_init
+[ 47%] Built target example_bitsets_init
+Scanning dependencies of target example_bitsets_none
+[ 48%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_none.dir/example_bitsets_none.f90.o
+[ 48%] Linking Fortran executable example_bitsets_none
+[ 48%] Built target example_bitsets_none
+Scanning dependencies of target example_bitsets_equality
+[ 48%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_equality.dir/example_bitsets_equality.f90.o
+[ 49%] Linking Fortran executable example_bitsets_equality
+[ 49%] Built target example_bitsets_equality
+Scanning dependencies of target example_bitsets_or
+[ 49%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_or.dir/example_bitsets_or.f90.o
+[ 49%] Linking Fortran executable example_bitsets_or
+[ 49%] Built target example_bitsets_or
+Scanning dependencies of target example_bitsets_not
+[ 49%] Building Fortran object example/bitsets/CMakeFiles/example_bitsets_not.dir/example_bitsets_not.f90.o
+[ 49%] Linking Fortran executable example_bitsets_not
+[ 49%] Built target example_bitsets_not
+Scanning dependencies of target example_check4
+[ 49%] Building Fortran object example/error/CMakeFiles/example_check4.dir/example_check4.f90.o
+[ 49%] Linking Fortran executable example_check4
+[ 49%] Built target example_check4
+Scanning dependencies of target example_check3
+[ 49%] Building Fortran object example/error/CMakeFiles/example_check3.dir/example_check3.f90.o
+[ 49%] Linking Fortran executable example_check3
+[ 49%] Built target example_check3
+Scanning dependencies of target example_check2
+[ 49%] Building Fortran object example/error/CMakeFiles/example_check2.dir/example_check2.f90.o
+[ 49%] Linking Fortran executable example_check2
+[ 49%] Built target example_check2
+Scanning dependencies of target example_check1
+[ 49%] Building Fortran object example/error/CMakeFiles/example_check1.dir/example_check1.f90.o
+[ 50%] Linking Fortran executable example_check1
+[ 50%] Built target example_check1
+Scanning dependencies of target example_error_stop1
+[ 50%] Building Fortran object example/error/CMakeFiles/example_error_stop1.dir/example_error_stop1.f90.o
+[ 50%] Linking Fortran executable example_error_stop1
+[ 50%] Built target example_error_stop1
+Scanning dependencies of target example_error_stop2
+[ 50%] Building Fortran object example/error/CMakeFiles/example_error_stop2.dir/example_error_stop2.f90.o
+[ 50%] Linking Fortran executable example_error_stop2
+[ 50%] Built target example_error_stop2
+Scanning dependencies of target example_hashmaps_slots_bits
+[ 50%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_slots_bits.dir/example_hashmaps_slots_bits.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_slots_bits
+[ 51%] Built target example_hashmaps_slots_bits
+Scanning dependencies of target example_hashmaps_set
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_set.dir/example_hashmaps_set.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_set
+[ 51%] Built target example_hashmaps_set
+Scanning dependencies of target example_hashmaps_seeded_water_hasher
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_seeded_water_hasher.dir/example_hashmaps_seeded_water_hasher.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_seeded_water_hasher
+[ 51%] Built target example_hashmaps_seeded_water_hasher
+Scanning dependencies of target example_hashmaps_copy_other
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_copy_other.dir/example_hashmaps_copy_other.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_copy_other
+[ 51%] Built target example_hashmaps_copy_other
+Scanning dependencies of target example_hashmaps_fnv_1a_hasher
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_fnv_1a_hasher.dir/example_hashmaps_fnv_1a_hasher.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_fnv_1a_hasher
+[ 51%] Built target example_hashmaps_fnv_1a_hasher
+Scanning dependencies of target example_hashmaps_total_depth
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_total_depth.dir/example_hashmaps_total_depth.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_total_depth
+[ 51%] Built target example_hashmaps_total_depth
+Scanning dependencies of target example_hashmaps_get
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_get.dir/example_hashmaps_get.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_get
+[ 51%] Built target example_hashmaps_get
+Scanning dependencies of target example_hashmaps_fnv_1_hasher
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_fnv_1_hasher.dir/example_hashmaps_fnv_1_hasher.f90.o
+[ 51%] Linking Fortran executable example_hashmaps_fnv_1_hasher
+[ 51%] Built target example_hashmaps_fnv_1_hasher
+Scanning dependencies of target example_hashmaps_calls
+[ 51%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_calls.dir/example_hashmaps_calls.f90.o
+[ 52%] Linking Fortran executable example_hashmaps_calls
+[ 52%] Built target example_hashmaps_calls
+Scanning dependencies of target example_hashmaps_entries
+[ 52%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_entries.dir/example_hashmaps_entries.f90.o
+[ 52%] Linking Fortran executable example_hashmaps_entries
+[ 52%] Built target example_hashmaps_entries
+Scanning dependencies of target example_hashmaps_equal_keys
+[ 53%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_equal_keys.dir/example_hashmaps_equal_keys.f90.o
+[ 53%] Linking Fortran executable example_hashmaps_equal_keys
+[ 53%] Built target example_hashmaps_equal_keys
+Scanning dependencies of target example_hashmaps_seeded_nmhash32_hasher
+[ 53%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_seeded_nmhash32_hasher.dir/example_hashmaps_seeded_nmhash32_hasher.f90.o
+[ 53%] Linking Fortran executable example_hashmaps_seeded_nmhash32_hasher
+[ 53%] Built target example_hashmaps_seeded_nmhash32_hasher
+Scanning dependencies of target example_hashmaps_set_other_data
+[ 53%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_set_other_data.dir/example_hashmaps_set_other_data.f90.o
+[ 53%] Linking Fortran executable example_hashmaps_set_other_data
+[ 53%] Built target example_hashmaps_set_other_data
+Scanning dependencies of target example_hashmaps_free_key
+[ 53%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_free_key.dir/example_hashmaps_free_key.f90.o
+[ 54%] Linking Fortran executable example_hashmaps_free_key
+[ 54%] Built target example_hashmaps_free_key
+Scanning dependencies of target example_hashmaps_rehash
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_rehash.dir/example_hashmaps_rehash.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_rehash
+[ 55%] Built target example_hashmaps_rehash
+Scanning dependencies of target example_hashmaps_map_entry
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_map_entry.dir/example_hashmaps_map_entry.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_map_entry
+[ 55%] Built target example_hashmaps_map_entry
+Scanning dependencies of target example_hashmaps_copy_key
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_copy_key.dir/example_hashmaps_copy_key.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_copy_key
+[ 55%] Built target example_hashmaps_copy_key
+Scanning dependencies of target example_hashmaps_get_other_data
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_get_other_data.dir/example_hashmaps_get_other_data.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_get_other_data
+[ 55%] Built target example_hashmaps_get_other_data
+Scanning dependencies of target example_hashmaps_init
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_init.dir/example_hashmaps_init.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_init
+[ 55%] Built target example_hashmaps_init
+Scanning dependencies of target example_hashmaps_free_other
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_free_other.dir/example_hashmaps_free_other.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_free_other
+[ 55%] Built target example_hashmaps_free_other
+Scanning dependencies of target example_hashmaps_remove
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_remove.dir/example_hashmaps_remove.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_remove
+[ 55%] Built target example_hashmaps_remove
+Scanning dependencies of target example_hashmaps_key_test
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_key_test.dir/example_hashmaps_key_test.f90.o
+[ 55%] Linking Fortran executable example_hashmaps_key_test
+[ 55%] Built target example_hashmaps_key_test
+Scanning dependencies of target example_hashmaps_loading
+[ 55%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_loading.dir/example_hashmaps_loading.f90.o
+[ 56%] Linking Fortran executable example_hashmaps_loading
+[ 56%] Built target example_hashmaps_loading
+Scanning dependencies of target example_hashmaps_hasher_fun
+[ 57%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_hasher_fun.dir/example_hashmaps_hasher_fun.f90.o
+[ 57%] Linking Fortran executable example_hashmaps_hasher_fun
+[ 57%] Built target example_hashmaps_hasher_fun
+Scanning dependencies of target example_hashmaps_num_slots
+[ 57%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_num_slots.dir/example_hashmaps_num_slots.f90.o
+[ 57%] Linking Fortran executable example_hashmaps_num_slots
+[ 57%] Built target example_hashmaps_num_slots
+Scanning dependencies of target example_hashmaps_seeded_nmhash32x_hasher
+[ 57%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_seeded_nmhash32x_hasher.dir/example_hashmaps_seeded_nmhash32x_hasher.f90.o
+[ 58%] Linking Fortran executable example_hashmaps_seeded_nmhash32x_hasher
+[ 58%] Built target example_hashmaps_seeded_nmhash32x_hasher
+Scanning dependencies of target example_hashmaps_probes
+[ 58%] Building Fortran object example/hashmaps/CMakeFiles/example_hashmaps_probes.dir/example_hashmaps_probes.f90.o
+[ 58%] Linking Fortran executable example_hashmaps_probes
+[ 58%] Built target example_hashmaps_probes
+Scanning dependencies of target example_universal_mult_hash_64
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_universal_mult_hash_64.dir/example_universal_mult_hash_64.f90.o
+[ 58%] Linking Fortran executable example_universal_mult_hash_64
+[ 58%] Built target example_universal_mult_hash_64
+Scanning dependencies of target example_universal_mult_hash
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_universal_mult_hash.dir/example_universal_mult_hash.f90.o
+[ 58%] Linking Fortran executable example_universal_mult_hash
+[ 58%] Built target example_universal_mult_hash
+Scanning dependencies of target example_fnv_1a_hash
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_fnv_1a_hash.dir/example_fnv_1a_hash.f90.o
+[ 58%] Linking Fortran executable example_fnv_1a_hash
+[ 58%] Built target example_fnv_1a_hash
+Scanning dependencies of target example_spooky_hash
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_spooky_hash.dir/example_spooky_hash.f90.o
+[ 58%] Linking Fortran executable example_spooky_hash
+[ 58%] Built target example_spooky_hash
+Scanning dependencies of target example_fnv_1a_hash_64
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_fnv_1a_hash_64.dir/example_fnv_1a_hash_64.f90.o
+[ 58%] Linking Fortran executable example_fnv_1a_hash_64
+[ 58%] Built target example_fnv_1a_hash_64
+Scanning dependencies of target example_water_hash
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_water_hash.dir/example_water_hash.f90.o
+[ 58%] Linking Fortran executable example_water_hash
+[ 58%] Built target example_water_hash
+Scanning dependencies of target example_fnv_1_hash
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_fnv_1_hash.dir/example_fnv_1_hash.f90.o
+[ 58%] Linking Fortran executable example_fnv_1_hash
+[ 58%] Built target example_fnv_1_hash
+Scanning dependencies of target example_fibonacci_hash
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_fibonacci_hash.dir/example_fibonacci_hash.f90.o
+[ 58%] Linking Fortran executable example_fibonacci_hash
+[ 58%] Built target example_fibonacci_hash
+Scanning dependencies of target example_fnv_1_hash_64
+[ 58%] Building Fortran object example/hash_procedures/CMakeFiles/example_fnv_1_hash_64.dir/example_fnv_1_hash_64.f90.o
+[ 59%] Linking Fortran executable example_fnv_1_hash_64
+[ 59%] Built target example_fnv_1_hash_64
+Scanning dependencies of target example_fibonacci_hash_64
+[ 59%] Building Fortran object example/hash_procedures/CMakeFiles/example_fibonacci_hash_64.dir/example_fibonacci_hash_64.f90.o
+[ 60%] Linking Fortran executable example_fibonacci_hash_64
+[ 60%] Built target example_fibonacci_hash_64
+Scanning dependencies of target example_nmhash32
+[ 61%] Building Fortran object example/hash_procedures/CMakeFiles/example_nmhash32.dir/example_nmhash32.f90.o
+[ 61%] Linking Fortran executable example_nmhash32
+[ 61%] Built target example_nmhash32
+Scanning dependencies of target example_pengy_hash
+[ 61%] Building Fortran object example/hash_procedures/CMakeFiles/example_pengy_hash.dir/example_pengy_hash.f90.o
+[ 61%] Linking Fortran executable example_pengy_hash
+[ 61%] Built target example_pengy_hash
+Scanning dependencies of target example_nmhash32x
+[ 61%] Building Fortran object example/hash_procedures/CMakeFiles/example_nmhash32x.dir/example_nmhash32x.f90.o
+[ 61%] Linking Fortran executable example_nmhash32x
+[ 61%] Built target example_nmhash32x
+Scanning dependencies of target example_open
+[ 61%] Building Fortran object example/io/CMakeFiles/example_open.dir/example_open.f90.o
+[ 61%] Linking Fortran executable example_open
+[ 61%] Built target example_open
+Scanning dependencies of target example_fmt_constants
+[ 61%] Building Fortran object example/io/CMakeFiles/example_fmt_constants.dir/example_fmt_constants.f90.o
+[ 61%] Linking Fortran executable example_fmt_constants
+[ 61%] Built target example_fmt_constants
+Scanning dependencies of target example_savenpy
+[ 61%] Building Fortran object example/io/CMakeFiles/example_savenpy.dir/example_savenpy.f90.o
+[ 61%] Linking Fortran executable example_savenpy
+[ 61%] Built target example_savenpy
+Scanning dependencies of target example_loadnpy
+[ 61%] Building Fortran object example/io/CMakeFiles/example_loadnpy.dir/example_loadnpy.f90.o
+[ 61%] Linking Fortran executable example_loadnpy
+[ 61%] Built target example_loadnpy
+Scanning dependencies of target example_savetxt
+[ 61%] Building Fortran object example/io/CMakeFiles/example_savetxt.dir/example_savetxt.f90.o
+[ 62%] Linking Fortran executable example_savetxt
+[ 62%] Built target example_savetxt
+Scanning dependencies of target example_loadtxt
+[ 62%] Building Fortran object example/io/CMakeFiles/example_loadtxt.dir/example_loadtxt.f90.o
+[ 62%] Linking Fortran executable example_loadtxt
+[ 62%] Built target example_loadtxt
+Scanning dependencies of target example_is_hermitian
+[ 62%] Building Fortran object example/linalg/CMakeFiles/example_is_hermitian.dir/example_is_hermitian.f90.o
+[ 62%] Linking Fortran executable example_is_hermitian
+[ 62%] Built target example_is_hermitian
+Scanning dependencies of target example_diag5
+[ 62%] Building Fortran object example/linalg/CMakeFiles/example_diag5.dir/example_diag5.f90.o
+[ 63%] Linking Fortran executable example_diag5
+[ 63%] Built target example_diag5
+Scanning dependencies of target example_eye1
+[ 63%] Building Fortran object example/linalg/CMakeFiles/example_eye1.dir/example_eye1.f90.o
+[ 63%] Linking Fortran executable example_eye1
+[ 63%] Built target example_eye1
+Scanning dependencies of target example_is_diagonal
+[ 63%] Building Fortran object example/linalg/CMakeFiles/example_is_diagonal.dir/example_is_diagonal.f90.o
+[ 63%] Linking Fortran executable example_is_diagonal
+[ 63%] Built target example_is_diagonal
+Scanning dependencies of target example_diag1
+[ 63%] Building Fortran object example/linalg/CMakeFiles/example_diag1.dir/example_diag1.f90.o
+[ 63%] Linking Fortran executable example_diag1
+[ 63%] Built target example_diag1
+Scanning dependencies of target example_is_hessenberg
+[ 63%] Building Fortran object example/linalg/CMakeFiles/example_is_hessenberg.dir/example_is_hessenberg.f90.o
+[ 64%] Linking Fortran executable example_is_hessenberg
+[ 64%] Built target example_is_hessenberg
+Scanning dependencies of target example_diag3
+[ 64%] Building Fortran object example/linalg/CMakeFiles/example_diag3.dir/example_diag3.f90.o
+[ 64%] Linking Fortran executable example_diag3
+[ 64%] Built target example_diag3
+Scanning dependencies of target example_diag2
+[ 65%] Building Fortran object example/linalg/CMakeFiles/example_diag2.dir/example_diag2.f90.o
+[ 65%] Linking Fortran executable example_diag2
+[ 65%] Built target example_diag2
+Scanning dependencies of target example_diag4
+[ 65%] Building Fortran object example/linalg/CMakeFiles/example_diag4.dir/example_diag4.f90.o
+[ 65%] Linking Fortran executable example_diag4
+[ 65%] Built target example_diag4
+Scanning dependencies of target example_is_skew_symmetric
+[ 65%] Building Fortran object example/linalg/CMakeFiles/example_is_skew_symmetric.dir/example_is_skew_symmetric.f90.o
+[ 65%] Linking Fortran executable example_is_skew_symmetric
+[ 65%] Built target example_is_skew_symmetric
+Scanning dependencies of target example_eye2
+[ 66%] Building Fortran object example/linalg/CMakeFiles/example_eye2.dir/example_eye2.f90.o
+[ 66%] Linking Fortran executable example_eye2
+[ 66%] Built target example_eye2
+Scanning dependencies of target example_is_symmetric
+[ 66%] Building Fortran object example/linalg/CMakeFiles/example_is_symmetric.dir/example_is_symmetric.f90.o
+[ 66%] Linking Fortran executable example_is_symmetric
+[ 66%] Built target example_is_symmetric
+Scanning dependencies of target example_is_triangular
+[ 67%] Building Fortran object example/linalg/CMakeFiles/example_is_triangular.dir/example_is_triangular.f90.o
+[ 67%] Linking Fortran executable example_is_triangular
+[ 67%] Built target example_is_triangular
+Scanning dependencies of target example_outer_product
+[ 67%] Building Fortran object example/linalg/CMakeFiles/example_outer_product.dir/example_outer_product.f90.o
+[ 67%] Linking Fortran executable example_outer_product
+[ 67%] Built target example_outer_product
+Scanning dependencies of target example_is_square
+[ 67%] Building Fortran object example/linalg/CMakeFiles/example_is_square.dir/example_is_square.f90.o
+[ 67%] Linking Fortran executable example_is_square
+[ 67%] Built target example_is_square
+Scanning dependencies of target example_trace
+[ 67%] Building Fortran object example/linalg/CMakeFiles/example_trace.dir/example_trace.f90.o
+[ 68%] Linking Fortran executable example_trace
+[ 68%] Built target example_trace
+Scanning dependencies of target example_configure
+[ 68%] Building Fortran object example/logger/CMakeFiles/example_configure.dir/example_configure.f90.o
+[ 69%] Linking Fortran executable example_configure
+[ 69%] Built target example_configure
+Scanning dependencies of target example_global_logger
+[ 69%] Building Fortran object example/logger/CMakeFiles/example_global_logger.dir/example_global_logger.f90.o
+[ 69%] Linking Fortran executable example_global_logger
+[ 69%] Built target example_global_logger
+Scanning dependencies of target example_add_log_unit
+[ 69%] Building Fortran object example/logger/CMakeFiles/example_add_log_unit.dir/example_add_log_unit.f90.o
+[ 69%] Linking Fortran executable example_add_log_unit
+[ 69%] Built target example_add_log_unit
+Scanning dependencies of target example_log_text_error
+[ 69%] Building Fortran object example/logger/CMakeFiles/example_log_text_error.dir/example_log_text_error.f90.o
+[ 69%] Linking Fortran executable example_log_text_error
+[ 69%] Built target example_log_text_error
+Scanning dependencies of target example_log_io_error
+[ 69%] Building Fortran object example/logger/CMakeFiles/example_log_io_error.dir/example_log_io_error.f90.o
+[ 69%] Linking Fortran executable example_log_io_error
+[ 69%] Built target example_log_io_error
+Scanning dependencies of target example_math_argpi
+[ 69%] Building Fortran object example/math/CMakeFiles/example_math_argpi.dir/example_math_argpi.f90.o
+[ 69%] Linking Fortran executable example_math_argpi
+[ 69%] Built target example_math_argpi
+Scanning dependencies of target example_math_arg
+[ 69%] Building Fortran object example/math/CMakeFiles/example_math_arg.dir/example_math_arg.f90.o
+[ 69%] Linking Fortran executable example_math_arg
+[ 69%] Built target example_math_arg
+Scanning dependencies of target example_math_argd
+[ 69%] Building Fortran object example/math/CMakeFiles/example_math_argd.dir/example_math_argd.f90.o
+[ 70%] Linking Fortran executable example_math_argd
+[ 70%] Built target example_math_argd
+Scanning dependencies of target example_math_arange
+[ 70%] Building Fortran object example/math/CMakeFiles/example_math_arange.dir/example_math_arange.f90.o
+[ 70%] Linking Fortran executable example_math_arange
+[ 70%] Built target example_math_arange
+Scanning dependencies of target example_gcd
+[ 70%] Building Fortran object example/math/CMakeFiles/example_gcd.dir/example_gcd.f90.o
+[ 70%] Linking Fortran executable example_gcd
+[ 70%] Built target example_gcd
+Scanning dependencies of target example_diff
+[ 70%] Building Fortran object example/math/CMakeFiles/example_diff.dir/example_diff.f90.o
+[ 70%] Linking Fortran executable example_diff
+[ 70%] Built target example_diff
+Scanning dependencies of target example_linspace_complex
+[ 71%] Building Fortran object example/math/CMakeFiles/example_linspace_complex.dir/example_linspace_complex.f90.o
+[ 71%] Linking Fortran executable example_linspace_complex
+[ 71%] Built target example_linspace_complex
+Scanning dependencies of target example_clip_real
+[ 71%] Building Fortran object example/math/CMakeFiles/example_clip_real.dir/example_clip_real.f90.o
+[ 71%] Linking Fortran executable example_clip_real
+[ 71%] Built target example_clip_real
+Scanning dependencies of target example_math_is_close
+[ 71%] Building Fortran object example/math/CMakeFiles/example_math_is_close.dir/example_math_is_close.f90.o
+[ 71%] Linking Fortran executable example_math_is_close
+[ 71%] Built target example_math_is_close
+Scanning dependencies of target example_logspace_rstart_cbase
+[ 71%] Building Fortran object example/math/CMakeFiles/example_logspace_rstart_cbase.dir/example_logspace_rstart_cbase.f90.o
+[ 71%] Linking Fortran executable example_logspace_rstart_cbase
+[ 71%] Built target example_logspace_rstart_cbase
+Scanning dependencies of target example_clip_integer
+[ 71%] Building Fortran object example/math/CMakeFiles/example_clip_integer.dir/example_clip_integer.f90.o
+[ 71%] Linking Fortran executable example_clip_integer
+[ 71%] Built target example_clip_integer
+Scanning dependencies of target example_linspace_int16
+[ 71%] Building Fortran object example/math/CMakeFiles/example_linspace_int16.dir/example_linspace_int16.f90.o
+[ 71%] Linking Fortran executable example_linspace_int16
+[ 71%] Built target example_linspace_int16
+Scanning dependencies of target example_logspace_complex
+[ 71%] Building Fortran object example/math/CMakeFiles/example_logspace_complex.dir/example_logspace_complex.f90.o
+[ 72%] Linking Fortran executable example_logspace_complex
+[ 72%] Built target example_logspace_complex
+Scanning dependencies of target example_logspace_int
+[ 72%] Building Fortran object example/math/CMakeFiles/example_logspace_int.dir/example_logspace_int.f90.o
+[ 72%] Linking Fortran executable example_logspace_int
+[ 72%] Built target example_logspace_int
+Scanning dependencies of target example_math_all_close
+[ 73%] Building Fortran object example/math/CMakeFiles/example_math_all_close.dir/example_math_all_close.f90.o
+[ 73%] Linking Fortran executable example_math_all_close
+[ 73%] Built target example_math_all_close
+Scanning dependencies of target example_optval
+[ 73%] Building Fortran object example/optval/CMakeFiles/example_optval.dir/example_optval.f90.o
+[ 73%] Linking Fortran executable example_optval
+[ 73%] Built target example_optval
+Scanning dependencies of target example_simps_weights
+[ 73%] Building Fortran object example/quadrature/CMakeFiles/example_simps_weights.dir/example_simps_weights.f90.o
+[ 73%] Linking Fortran executable example_simps_weights
+[ 73%] Built target example_simps_weights
+Scanning dependencies of target example_gauss_legendre
+[ 73%] Building Fortran object example/quadrature/CMakeFiles/example_gauss_legendre.dir/example_gauss_legendre.f90.o
+[ 73%] Linking Fortran executable example_gauss_legendre
+[ 73%] Built target example_gauss_legendre
+Scanning dependencies of target example_simps
+[ 74%] Building Fortran object example/quadrature/CMakeFiles/example_simps.dir/example_simps.f90.o
+[ 74%] Linking Fortran executable example_simps
+[ 74%] Built target example_simps
+Scanning dependencies of target example_gauss_legendre_lobatto
+[ 74%] Building Fortran object example/quadrature/CMakeFiles/example_gauss_legendre_lobatto.dir/example_gauss_legendre_lobatto.f90.o
+[ 74%] Linking Fortran executable example_gauss_legendre_lobatto
+[ 74%] Built target example_gauss_legendre_lobatto
+Scanning dependencies of target example_trapz_weights
+[ 74%] Building Fortran object example/quadrature/CMakeFiles/example_trapz_weights.dir/example_trapz_weights.f90.o
+[ 74%] Linking Fortran executable example_trapz_weights
+[ 74%] Built target example_trapz_weights
+Scanning dependencies of target example_trapz
+[ 74%] Building Fortran object example/quadrature/CMakeFiles/example_trapz.dir/example_trapz.f90.o
+[ 74%] Linking Fortran executable example_trapz
+[ 74%] Built target example_trapz
+Scanning dependencies of target example_dist_rand
+[ 74%] Building Fortran object example/random/CMakeFiles/example_dist_rand.dir/example_dist_rand.f90.o
+[ 74%] Linking Fortran executable example_dist_rand
+[ 74%] Built target example_dist_rand
+Scanning dependencies of target example_random_seed
+[ 74%] Building Fortran object example/random/CMakeFiles/example_random_seed.dir/example_random_seed.f90.o
+[ 74%] Linking Fortran executable example_random_seed
+[ 74%] Built target example_random_seed
+Scanning dependencies of target example_arg_select
+[ 74%] Building Fortran object example/selection/CMakeFiles/example_arg_select.dir/example_arg_select.f90.o
+[ 75%] Linking Fortran executable example_arg_select
+[ 75%] Built target example_arg_select
+Scanning dependencies of target example_select
+[ 75%] Building Fortran object example/selection/CMakeFiles/example_select.dir/example_select.f90.o
+[ 75%] Linking Fortran executable example_select
+[ 75%] Built target example_select
+Scanning dependencies of target example_ord_sort
+[ 76%] Building Fortran object example/sorting/CMakeFiles/example_ord_sort.dir/example_ord_sort.f90.o
+[ 76%] Linking Fortran executable example_ord_sort
+[ 76%] Built target example_ord_sort
+Scanning dependencies of target example_sort
+[ 76%] Building Fortran object example/sorting/CMakeFiles/example_sort.dir/example_sort.f90.o
+[ 77%] Linking Fortran executable example_sort
+[ 77%] Built target example_sort
+Scanning dependencies of target example_ligamma
+[ 77%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_ligamma.dir/example_ligamma.f90.o
+[ 77%] Linking Fortran executable example_ligamma
+[ 77%] Built target example_ligamma
+Scanning dependencies of target example_gamma_q
+[ 77%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_gamma_q.dir/example_gamma_q.f90.o
+[ 78%] Linking Fortran executable example_gamma_q
+[ 78%] Built target example_gamma_q
+Scanning dependencies of target example_log_factorial
+[ 78%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_log_factorial.dir/example_log_factorial.f90.o
+[ 78%] Linking Fortran executable example_log_factorial
+[ 78%] Built target example_log_factorial
+Scanning dependencies of target example_log_gamma
+[ 79%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_log_gamma.dir/example_log_gamma.f90.o
+[ 79%] Linking Fortran executable example_log_gamma
+[ 79%] Built target example_log_gamma
+Scanning dependencies of target example_gamma_p
+[ 79%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_gamma_p.dir/example_gamma_p.f90.o
+[ 79%] Linking Fortran executable example_gamma_p
+[ 79%] Built target example_gamma_p
+Scanning dependencies of target example_uigamma
+[ 79%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_uigamma.dir/example_uigamma.f90.o
+[ 79%] Linking Fortran executable example_uigamma
+[ 79%] Built target example_uigamma
+Scanning dependencies of target example_gamma
+[ 79%] Building Fortran object example/specialfunctions_gamma/CMakeFiles/example_gamma.dir/example_gamma.f90.o
+[ 79%] Linking Fortran executable example_gamma
+[ 79%] Built target example_gamma
+Scanning dependencies of target example_median
+[ 79%] Building Fortran object example/stats/CMakeFiles/example_median.dir/example_median.f90.o
+[ 80%] Linking Fortran executable example_median
+[ 80%] Built target example_median
+Scanning dependencies of target example_mean
+[ 80%] Building Fortran object example/stats/CMakeFiles/example_mean.dir/example_mean.f90.o
+[ 80%] Linking Fortran executable example_mean
+[ 80%] Built target example_mean
+Scanning dependencies of target example_corr
+[ 80%] Building Fortran object example/stats/CMakeFiles/example_corr.dir/example_corr.f90.o
+[ 81%] Linking Fortran executable example_corr
+[ 81%] Built target example_corr
+Scanning dependencies of target example_moment
+[ 81%] Building Fortran object example/stats/CMakeFiles/example_moment.dir/example_moment.f90.o
+[ 81%] Linking Fortran executable example_moment
+[ 81%] Built target example_moment
+Scanning dependencies of target example_cov
+[ 81%] Building Fortran object example/stats/CMakeFiles/example_cov.dir/example_cov.f90.o
+[ 81%] Linking Fortran executable example_cov
+[ 81%] Built target example_cov
+Scanning dependencies of target example_var
+[ 81%] Building Fortran object example/stats/CMakeFiles/example_var.dir/example_var.f90.o
+[ 81%] Linking Fortran executable example_var
+[ 81%] Built target example_var
+Scanning dependencies of target example_exponential_cdf
+[ 81%] Building Fortran object example/stats_distribution_exponential/CMakeFiles/example_exponential_cdf.dir/example_exponential_cdf.f90.o
+[ 82%] Linking Fortran executable example_exponential_cdf
+[ 82%] Built target example_exponential_cdf
+Scanning dependencies of target example_exponential_rvs
+[ 82%] Building Fortran object example/stats_distribution_exponential/CMakeFiles/example_exponential_rvs.dir/example_exponential_rvs.f90.o
+[ 82%] Linking Fortran executable example_exponential_rvs
+[ 82%] Built target example_exponential_rvs
+Scanning dependencies of target example_exponential_pdf
+[ 82%] Building Fortran object example/stats_distribution_exponential/CMakeFiles/example_exponential_pdf.dir/example_exponential_pdf.f90.o
+[ 82%] Linking Fortran executable example_exponential_pdf
+[ 82%] Built target example_exponential_pdf
+Scanning dependencies of target example_normal_pdf
+[ 82%] Building Fortran object example/stats_distribution_normal/CMakeFiles/example_normal_pdf.dir/example_normal_pdf.f90.o
+[ 83%] Linking Fortran executable example_normal_pdf
+[ 83%] Built target example_normal_pdf
+Scanning dependencies of target example_normal_rvs
+[ 83%] Building Fortran object example/stats_distribution_normal/CMakeFiles/example_normal_rvs.dir/example_normal_rvs.f90.o
+[ 83%] Linking Fortran executable example_normal_rvs
+[ 83%] Built target example_normal_rvs
+Scanning dependencies of target example_norm_cdf
+[ 83%] Building Fortran object example/stats_distribution_normal/CMakeFiles/example_norm_cdf.dir/example_norm_cdf.f90.o
+[ 83%] Linking Fortran executable example_norm_cdf
+[ 83%] Built target example_norm_cdf
+Scanning dependencies of target example_uniform_pdf
+[ 83%] Building Fortran object example/stats_distribution_uniform/CMakeFiles/example_uniform_pdf.dir/example_uniform_pdf.f90.o
+[ 84%] Linking Fortran executable example_uniform_pdf
+[ 84%] Built target example_uniform_pdf
+Scanning dependencies of target example_uniform_cdf
+[ 84%] Building Fortran object example/stats_distribution_uniform/CMakeFiles/example_uniform_cdf.dir/example_uniform_cdf.f90.o
+[ 84%] Linking Fortran executable example_uniform_cdf
+[ 84%] Built target example_uniform_cdf
+Scanning dependencies of target example_uniform_rvs
+[ 84%] Building Fortran object example/stats_distribution_uniform/CMakeFiles/example_uniform_rvs.dir/example_uniform_rvs.f90.o
+[ 84%] Linking Fortran executable example_uniform_rvs
+[ 84%] Built target example_uniform_rvs
+Scanning dependencies of target example_shuffle
+[ 84%] Building Fortran object example/stats_distribution_uniform/CMakeFiles/example_shuffle.dir/example_shuffle.f90.o
+[ 84%] Linking Fortran executable example_shuffle
+[ 84%] Built target example_shuffle
+Scanning dependencies of target example_stringlist_type_constructor
+[ 84%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_constructor.dir/example_stringlist_type_constructor.f90.o
+[ 84%] Linking Fortran executable example_stringlist_type_constructor
+[ 84%] Built target example_stringlist_type_constructor
+Scanning dependencies of target example_stringlist_type_insert_at
+[ 84%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_insert_at.dir/example_stringlist_type_insert_at.f90.o
+[ 84%] Linking Fortran executable example_stringlist_type_insert_at
+[ 84%] Built target example_stringlist_type_insert_at
+Scanning dependencies of target example_stringlist_type_concatenate_operator
+[ 85%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_concatenate_operator.dir/example_stringlist_type_concatenate_operator.f90.o
+[ 85%] Linking Fortran executable example_stringlist_type_concatenate_operator
+[ 85%] Built target example_stringlist_type_concatenate_operator
+Scanning dependencies of target example_stringlist_type_equality_operator
+[ 85%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_equality_operator.dir/example_stringlist_type_equality_operator.f90.o
+[ 85%] Linking Fortran executable example_stringlist_type_equality_operator
+[ 85%] Built target example_stringlist_type_equality_operator
+Scanning dependencies of target example_stringlist_type_get
+[ 85%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_get.dir/example_stringlist_type_get.f90.o
+[ 85%] Linking Fortran executable example_stringlist_type_get
+[ 85%] Built target example_stringlist_type_get
+Scanning dependencies of target example_stringlist_type_clear
+[ 85%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_clear.dir/example_stringlist_type_clear.f90.o
+[ 85%] Linking Fortran executable example_stringlist_type_clear
+[ 85%] Built target example_stringlist_type_clear
+Scanning dependencies of target example_stringlist_type_inequality_operator
+[ 85%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_inequality_operator.dir/example_stringlist_type_inequality_operator.f90.o
+[ 85%] Linking Fortran executable example_stringlist_type_inequality_operator
+[ 85%] Built target example_stringlist_type_inequality_operator
+Scanning dependencies of target example_stringlist_type_fidx_bidx
+[ 85%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_fidx_bidx.dir/example_stringlist_type_fidx_bidx.f90.o
+[ 86%] Linking Fortran executable example_stringlist_type_fidx_bidx
+[ 86%] Built target example_stringlist_type_fidx_bidx
+Scanning dependencies of target example_stringlist_type_len
+[ 86%] Building Fortran object example/stringlist_type/CMakeFiles/example_stringlist_type_len.dir/example_stringlist_type_len.f90.o
+[ 87%] Linking Fortran executable example_stringlist_type_len
+[ 87%] Built target example_stringlist_type_len
+Scanning dependencies of target example_ends_with
+[ 87%] Building Fortran object example/strings/CMakeFiles/example_ends_with.dir/example_ends_with.f90.o
+[ 87%] Linking Fortran executable example_ends_with
+[ 87%] Built target example_ends_with
+Scanning dependencies of target example_slice
+[ 87%] Building Fortran object example/strings/CMakeFiles/example_slice.dir/example_slice.f90.o
+[ 87%] Linking Fortran executable example_slice
+[ 87%] Built target example_slice
+Scanning dependencies of target example_chomp
+[ 88%] Building Fortran object example/strings/CMakeFiles/example_chomp.dir/example_chomp.f90.o
+[ 88%] Linking Fortran executable example_chomp
+[ 88%] Built target example_chomp
+Scanning dependencies of target example_count
+[ 88%] Building Fortran object example/strings/CMakeFiles/example_count.dir/example_count.f90.o
+[ 88%] Linking Fortran executable example_count
+[ 88%] Built target example_count
+Scanning dependencies of target example_padl
+[ 88%] Building Fortran object example/strings/CMakeFiles/example_padl.dir/example_padl.f90.o
+[ 88%] Linking Fortran executable example_padl
+[ 88%] Built target example_padl
+Scanning dependencies of target example_starts_with
+[ 88%] Building Fortran object example/strings/CMakeFiles/example_starts_with.dir/example_starts_with.f90.o
+[ 88%] Linking Fortran executable example_starts_with
+[ 88%] Built target example_starts_with
+Scanning dependencies of target example_find
+[ 88%] Building Fortran object example/strings/CMakeFiles/example_find.dir/example_find.f90.o
+[ 88%] Linking Fortran executable example_find
+[ 88%] Built target example_find
+Scanning dependencies of target example_padr
+[ 88%] Building Fortran object example/strings/CMakeFiles/example_padr.dir/example_padr.f90.o
+[ 89%] Linking Fortran executable example_padr
+[ 89%] Built target example_padr
+Scanning dependencies of target example_replace_all
+[ 90%] Building Fortran object example/strings/CMakeFiles/example_replace_all.dir/example_replace_all.f90.o
+[ 90%] Linking Fortran executable example_replace_all
+[ 90%] Built target example_replace_all
+Scanning dependencies of target example_to_string
+[ 91%] Building Fortran object example/strings/CMakeFiles/example_to_string.dir/example_to_string.f90.o
+[ 91%] Linking Fortran executable example_to_string
+[ 91%] Built target example_to_string
+Scanning dependencies of target example_strip
+[ 91%] Building Fortran object example/strings/CMakeFiles/example_strip.dir/example_strip.f90.o
+[ 91%] Linking Fortran executable example_strip
+[ 91%] Built target example_strip
+Scanning dependencies of target example_len_trim
+[ 91%] Building Fortran object example/string_type/CMakeFiles/example_len_trim.dir/example_len_trim.f90.o
+[ 92%] Linking Fortran executable example_len_trim
+[ 92%] Built target example_len_trim
+Scanning dependencies of target example_len
+[ 92%] Building Fortran object example/string_type/CMakeFiles/example_len.dir/example_len.f90.o
+[ 92%] Linking Fortran executable example_len
+[ 92%] Built target example_len
+Scanning dependencies of target example_le
+[ 92%] Building Fortran object example/string_type/CMakeFiles/example_le.dir/example_le.f90.o
+[ 92%] Linking Fortran executable example_le
+[ 92%] Built target example_le
+Scanning dependencies of target example_ge
+[ 93%] Building Fortran object example/string_type/CMakeFiles/example_ge.dir/example_ge.f90.o
+[ 93%] Linking Fortran executable example_ge
+[ 93%] Built target example_ge
+Scanning dependencies of target example_fread
+[ 93%] Building Fortran object example/string_type/CMakeFiles/example_fread.dir/example_fread.f90.o
+[ 93%] Linking Fortran executable example_fread
+[ 93%] Built target example_fread
+Scanning dependencies of target example_char_position
+[ 93%] Building Fortran object example/string_type/CMakeFiles/example_char_position.dir/example_char_position.f90.o
+[ 93%] Linking Fortran executable example_char_position
+[ 93%] Built target example_char_position
+Scanning dependencies of target example_to_title
+[ 93%] Building Fortran object example/string_type/CMakeFiles/example_to_title.dir/example_to_title.f90.o
+[ 93%] Linking Fortran executable example_to_title
+[ 93%] Built target example_to_title
+Scanning dependencies of target example_ichar
+[ 93%] Building Fortran object example/string_type/CMakeFiles/example_ichar.dir/example_ichar.f90.o
+[ 93%] Linking Fortran executable example_ichar
+[ 93%] Built target example_ichar
+Scanning dependencies of target example_to_sentence
+[ 93%] Building Fortran object example/string_type/CMakeFiles/example_to_sentence.dir/example_to_sentence.f90.o
+[ 93%] Linking Fortran executable example_to_sentence
+[ 93%] Built target example_to_sentence
+Scanning dependencies of target example_eq
+[ 94%] Building Fortran object example/string_type/CMakeFiles/example_eq.dir/example_eq.f90.o
+[ 94%] Linking Fortran executable example_eq
+[ 94%] Built target example_eq
+Scanning dependencies of target example_gt
+[ 94%] Building Fortran object example/string_type/CMakeFiles/example_gt.dir/example_gt.f90.o
+[ 94%] Linking Fortran executable example_gt
+[ 94%] Built target example_gt
+Scanning dependencies of target example_constructor_integer
+[ 94%] Building Fortran object example/string_type/CMakeFiles/example_constructor_integer.dir/example_constructor_integer.f90.o
+[ 94%] Linking Fortran executable example_constructor_integer
+[ 94%] Built target example_constructor_integer
+Scanning dependencies of target example_trim
+[ 94%] Building Fortran object example/string_type/CMakeFiles/example_trim.dir/example_trim.f90.o
+[ 94%] Linking Fortran executable example_trim
+[ 94%] Built target example_trim
+Scanning dependencies of target example_index
+[ 95%] Building Fortran object example/string_type/CMakeFiles/example_index.dir/example_index.f90.o
+[ 95%] Linking Fortran executable example_index
+[ 95%] Built target example_index
+Scanning dependencies of target example_iachar
+[ 95%] Building Fortran object example/string_type/CMakeFiles/example_iachar.dir/example_iachar.f90.o
+[ 95%] Linking Fortran executable example_iachar
+[ 95%] Built target example_iachar
+Scanning dependencies of target example_constructor_logical
+[ 96%] Building Fortran object example/string_type/CMakeFiles/example_constructor_logical.dir/example_constructor_logical.f90.o
+[ 96%] Linking Fortran executable example_constructor_logical
+[ 96%] Built target example_constructor_logical
+Scanning dependencies of target example_adjustr
+[ 96%] Building Fortran object example/string_type/CMakeFiles/example_adjustr.dir/example_adjustr.f90.o
+[ 96%] Linking Fortran executable example_adjustr
+[ 96%] Built target example_adjustr
+Scanning dependencies of target example_char
+[ 96%] Building Fortran object example/string_type/CMakeFiles/example_char.dir/example_char.f90.o
+[ 96%] Linking Fortran executable example_char
+[ 96%] Built target example_char
+Scanning dependencies of target example_ne
+[ 96%] Building Fortran object example/string_type/CMakeFiles/example_ne.dir/example_ne.f90.o
+[ 96%] Linking Fortran executable example_ne
+[ 96%] Built target example_ne
+Scanning dependencies of target example_adjustl
+[ 96%] Building Fortran object example/string_type/CMakeFiles/example_adjustl.dir/example_adjustl.f90.o
+[ 96%] Linking Fortran executable example_adjustl
+[ 96%] Built target example_adjustl
+Scanning dependencies of target example_cont
+[ 96%] Building Fortran object example/string_type/CMakeFiles/example_cont.dir/example_cont.f90.o
+[ 96%] Linking Fortran executable example_cont
+[ 96%] Built target example_cont
+Scanning dependencies of target example_fwrite
+[ 97%] Building Fortran object example/string_type/CMakeFiles/example_fwrite.dir/example_fwrite.f90.o
+[ 97%] Linking Fortran executable example_fwrite
+[ 97%] Built target example_fwrite
+Scanning dependencies of target example_lt
+[ 97%] Building Fortran object example/string_type/CMakeFiles/example_lt.dir/example_lt.f90.o
+[ 97%] Linking Fortran executable example_lt
+[ 97%] Built target example_lt
+Scanning dependencies of target example_verify
+[ 97%] Building Fortran object example/string_type/CMakeFiles/example_verify.dir/example_verify.f90.o
+[ 98%] Linking Fortran executable example_verify
+[ 98%] Built target example_verify
+Scanning dependencies of target example_constructor_scalar
+[ 98%] Building Fortran object example/string_type/CMakeFiles/example_constructor_scalar.dir/example_constructor_scalar.f90.o
+[ 98%] Linking Fortran executable example_constructor_scalar
+[ 98%] Built target example_constructor_scalar
+Scanning dependencies of target example_lge
+[ 98%] Building Fortran object example/string_type/CMakeFiles/example_lge.dir/example_lge.f90.o
+[ 98%] Linking Fortran executable example_lge
+[ 98%] Built target example_lge
+Scanning dependencies of target example_llt
+[ 98%] Building Fortran object example/string_type/CMakeFiles/example_llt.dir/example_llt.f90.o
+[ 99%] Linking Fortran executable example_llt
+[ 99%] Built target example_llt
+Scanning dependencies of target example_lgt
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_lgt.dir/example_lgt.f90.o
+[ 99%] Linking Fortran executable example_lgt
+[ 99%] Built target example_lgt
+Scanning dependencies of target example_scan
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_scan.dir/example_scan.f90.o
+[ 99%] Linking Fortran executable example_scan
+[ 99%] Built target example_scan
+Scanning dependencies of target example_lle
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_lle.dir/example_lle.f90.o
+[ 99%] Linking Fortran executable example_lle
+[ 99%] Built target example_lle
+Scanning dependencies of target example_char_range
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_char_range.dir/example_char_range.f90.o
+[ 99%] Linking Fortran executable example_char_range
+[ 99%] Built target example_char_range
+Scanning dependencies of target example_move
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_move.dir/example_move.f90.o
+[ 99%] Linking Fortran executable example_move
+[ 99%] Built target example_move
+Scanning dependencies of target example_constructor_empty
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_constructor_empty.dir/example_constructor_empty.f90.o
+[ 99%] Linking Fortran executable example_constructor_empty
+[ 99%] Built target example_constructor_empty
+Scanning dependencies of target example_reverse
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_reverse.dir/example_reverse.f90.o
+[ 99%] Linking Fortran executable example_reverse
+[ 99%] Built target example_reverse
+Scanning dependencies of target example_to_lower
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_to_lower.dir/example_to_lower.f90.o
+[ 99%] Linking Fortran executable example_to_lower
+[ 99%] Built target example_to_lower
+Scanning dependencies of target example_repeat
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_repeat.dir/example_repeat.f90.o
+[ 99%] Linking Fortran executable example_repeat
+[ 99%] Built target example_repeat
+Scanning dependencies of target example_to_upper
+[ 99%] Building Fortran object example/string_type/CMakeFiles/example_to_upper.dir/example_to_upper.f90.o
+[ 99%] Linking Fortran executable example_to_upper
+[ 99%] Built target example_to_upper
+Scanning dependencies of target example_uread
+[100%] Building Fortran object example/string_type/CMakeFiles/example_uread.dir/example_uread.f90.o
+[100%] Linking Fortran executable example_uread
+[100%] Built target example_uread
+Scanning dependencies of target example_constructor_character
+[100%] Building Fortran object example/string_type/CMakeFiles/example_constructor_character.dir/example_constructor_character.f90.o
+[100%] Linking Fortran executable example_constructor_character
+[100%] Built target example_constructor_character
+Scanning dependencies of target example_uwrite
+[100%] Building Fortran object example/string_type/CMakeFiles/example_uwrite.dir/example_uwrite.f90.o
+[100%] Linking Fortran executable example_uwrite
+[100%] Built target example_uwrite
+Scanning dependencies of target example_version
+[100%] Building Fortran object example/version/CMakeFiles/example_version.dir/example_version.f90.o
+[100%] Linking Fortran executable example_version
+[100%] Built target example_version
+ian@ian-HP-Convertible-x360-11-ab1XX:~/stdlibf$ 
