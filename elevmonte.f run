@@ -1,0 +1,214 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran elevmonte.f -ffree-form -std=legacy -o elevmonte
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./elevmonte
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            0
+ The elevator is currently on floor            1
+ The elevator is currently on floor            0
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            0
+ The elevator is currently on floor            1
+ The elevator is currently on floor            0
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            6
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            6
+ The elevator is currently on floor            7
+ The elevator is currently on floor            8
+ The elevator is currently on floor            9
+ The elevator is currently on floor           10
+ The elevator is currently on floor            9
+ The elevator is currently on floor            8
+ The elevator is currently on floor            7
+ The elevator is currently on floor            6
+ The elevator is currently on floor            7
+ The elevator is currently on floor            6
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            6
+ The elevator is currently on floor            7
+ The elevator is currently on floor            8
+ The elevator is currently on floor            9
+ The elevator is currently on floor            8
+ The elevator is currently on floor            7
+ The elevator is currently on floor            6
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            0
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            2
+ The elevator is currently on floor            1
+ The elevator is currently on floor            0
+ The elevator is currently on floor            1
+ The elevator is currently on floor            2
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            6
+ The elevator is currently on floor            5
+ The elevator is currently on floor            4
+ The elevator is currently on floor            3
+ The elevator is currently on floor            4
+ The elevator is currently on floor            5
+ The elevator is currently on floor            6
+ The elevator is currently on floor            7
+ The elevator is currently on floor            6
+ The elevator is currently on floor            7
+ The elevator is currently on floor            8
+ The elevator is currently on floor            9
+ The elevator is currently on floor           10
+ The elevator is currently on floor           11
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat elevmonte.f
+!Write a monte carlo elevator simulation with reporting in gfortran 77
+
+program montecarlo_elevator
+
+implicit none
+
+integer, parameter :: num_floors = 10
+
+real, parameter :: probability_up = 0.5
+
+integer :: current_floor = 1
+
+real :: next_floor
+
+!integer :: i
+
+integer :: seed
+
+!The seed of the random number generator
+
+seed = 100
+
+!Set the seed of the random number generator
+
+ call srand(seed)
+
+!Loop until the elevator reaches the 10th floor
+
+do while (current_floor <= num_floors) 
+
+!Generate a random number between 0 and 1
+
+ next_floor = rand()
+ 
+
+!If the random number is less than the probability of going up, then the elevator goes up
+
+if (next_floor < probability_up) then 
+
+  current_floor = current_floor + 1
+
+else
+
+  current_floor = current_floor - 1
+
+endif
+if (current_floor .le.  0) current_floor = current_floor * (-1)
+!Print the current floor
+
+  write(*,*) 'The elevator is currently on floor ', current_floor
+
+enddo
+
+end program montecarlo_elevator
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount elevmonte.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/elevmonte.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+20      top_dir         fortran=20
+
+
+Totals grouped by language (dominant language first):
+fortran:         20 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 20
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.04)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.06 (0.73)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.05
+Total Estimated Cost to Develop                           = $ 444
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
+
