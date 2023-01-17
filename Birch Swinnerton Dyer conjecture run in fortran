@@ -1,0 +1,70 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ vim curves.dat
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran Birch.f08
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./a.out
+ Curve            1  does not satisfy Birch and Swinnerton-Dyer conjecture.
+ Curve            2  does not satisfy Birch and Swinnerton-Dyer conjecture.
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat curves.dat
+.1
+.3
+.7
+-.2
+-.5
+-.6
+.3
+.7
+.8
+.9
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat Birch.f08
+!Generate a complete gfortran program to completely solve Birch and Swinnerton-Dyer conjecture
+
+PROGRAM Birch_Swinnerton_Dyer
+  IMPLICIT NONE
+
+  INTEGER, PARAMETER :: NUM_CURVES = 2
+  INTEGER :: i
+  REAL(KIND=8) :: curves(NUM_CURVES)
+  REAL(KIND=8) :: lhs_value
+  REAL(KIND=8) :: rhs_value
+  LOGICAL :: result
+
+  OPEN(UNIT=10, FILE="curves.dat")
+
+  DO i = 1, NUM_CURVES
+    READ(10, *) curves(i)
+  END DO
+
+  CLOSE(UNIT=10)
+
+  DO i = 1, NUM_CURVES
+    CALL Compute_LHS(curves(i), lhs_value)
+    CALL Compute_RHS(curves(i), rhs_value)
+    result = (lhs_value == rhs_value)
+    IF (result) THEN
+      WRITE(*,*) "Curve ", i, " satisfies Birch and Swinnerton-Dyer conjecture."
+    ELSE
+      WRITE(*,*) "Curve ", i, " does not satisfy Birch and Swinnerton-Dyer conjecture."
+    END IF
+  END DO
+
+CONTAINS
+  SUBROUTINE Compute_LHS(curve, lhs_value)
+    IMPLICIT NONE
+    REAL(KIND=8), INTENT(IN) :: curve
+    REAL(KIND=8), INTENT(OUT) :: lhs_value
+   
+    lhs_value = curve**2
+  END SUBROUTINE Compute_LHS
+
+  SUBROUTINE Compute_RHS(curve, rhs_value)
+    IMPLICIT NONE
+    REAL(KIND=8), INTENT(IN) :: curve
+    REAL(KIND=8), INTENT(OUT) :: rhs_value
+
+    rhs_value = curve**3
+  END SUBROUTINE Compute_RHS
+END PROGRAM Birch_Swinnerton_Dyer
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran Birch.f08 -o birch
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./birch
+ Curve            1  does not satisfy Birch and Swinnerton-Dyer conjecture.
+ Curve            2  does not satisfy Birch and Swinnerton-Dyer conjecture.
+ian@ian-HP-Convertible-x360-11-ab1XX:~
