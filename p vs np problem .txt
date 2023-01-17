@@ -1,0 +1,121 @@
+2. C++ Program */
+#include <iostream>
+#include <math.h> 
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cout << "Enter the size of the problem: " << endl;
+    cin >> n;
+    int matrix[n][n];
+    cout << "Enter the elements of the matrix: " << endl;
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            cin >> matrix[i][j];
+        }
+    }
+    int max = 0;
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            if (matrix[i][j] > max) 
+            {
+                max = matrix[i][j];
+            }
+        }
+    }
+     m = ceil(log2(max));
+    int d[n][n];
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            int sum = 0;
+            for (int k = 0; k < m; k++) 
+            {
+                if ((matrix[i][j] & (1 << k)) != 0) 
+                {
+                    sum += pow(2, k);
+                }
+            }
+            d[i][j] = sum;
+        }
+    }
+    int x[n][n];
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            x[i][j] = 0;
+            for (int k = 0; k < n; k++) 
+            {
+                x[i][j] += d[i][k] * d[k][j];
+            }
+        }
+    }
+    int y[n][n];
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            y[i][j] = 0;
+            for (int k = 0; k < n; k++) 
+            {
+                y[i][j] += x[i][k] * d[k][j];
+            }
+        }
+    }
+    int z[n][n];
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            z[i][j] = 0;
+            for (int k = 0; k < n; k++) 
+            {
+                z[i][j] += d[i][k] * y[k][j];
+            }
+        }
+    }
+    int result[n][n];
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            result[i][j] = 0;
+            for (int k = 0; k < n; k++) 
+            {
+                result[i][j] += z[i][k] * matrix[k][j];
+            }
+        }
+    }
+    cout << "The result is: " << endl;
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            cout << result[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ g++ pvsnp.cpp -o pvsnp
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./pvsnp
+Enter the size of the problem: 
+2
+Enter the elements of the matrix: 
+1
+2
+3
+4
+The result is: 
+133 214 
+165 246 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
+
