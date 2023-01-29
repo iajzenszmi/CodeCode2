@@ -1,0 +1,171 @@
+:: ERROR: Incorrect usage: this script must be sourced.
+  
+usage: source setvars.sh [--force] [--config=file] [--help] [...]
+  --force        Force setvars.sh to re-run, doing so may overload environment.
+  --config=file  Customize env vars using a setvars.sh configuration file.
+  --help         Display this help message and exit.
+  ...            Additional args are passed to individual env/vars.sh scripts
+                 and should follow this script's arguments.
+  
+  Some POSIX shells do not accept command-line options. In that case, you can pass
+  command-line options via the SETVARS_ARGS environment variable. For example:
+  
+  $ SETVARS_ARGS="ia32 --config=config.txt" ; export SETVARS_ARGS
+  $ . path/to/setvars.sh
+  
+  The SETVARS_ARGS environment variable is cleared on exiting setvars.sh.
+  
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.1.16(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ifort skilltest.f 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./a.out
+ number =            1  sine =   0.8414710     cosine =   0.5403023     tan = 
+   1.557408      sum  of series =            1
+ number =            2  sine =   0.9092974     cosine =  -0.4161468     tan = 
+  -2.185040      sum  of series =            3
+ number =            3  sine =   0.1411200     cosine =  -0.9899925     tan = 
+ -0.1425465      sum  of series =            6
+ number =            4  sine =  -0.7568025     cosine =  -0.6536436     tan = 
+   1.157821      sum  of series =           10
+ number =            5  sine =  -0.9589243     cosine =   0.2836622     tan = 
+  -3.380515      sum  of series =           15
+ number =            6  sine =  -0.2794155     cosine =   0.9601703     tan = 
+ -0.2910062      sum  of series =           21
+ number =            7  sine =   0.6569866     cosine =   0.7539023     tan = 
+  0.8714480      sum  of series =           28
+ number =            8  sine =   0.9893582     cosine =  -0.1455000     tan = 
+  -6.799711      sum  of series =           36
+ number =            9  sine =   0.4121185     cosine =  -0.9111302     tan = 
+ -0.4523157      sum  of series =           45
+ number =           10  sine =  -0.5440211     cosine =  -0.8390715     tan = 
+  0.6483608      sum  of series =           55
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./a.out
+ number =            1  sine =   0.8414710     cosine =   0.5403023     tan = 
+   1.557408      sum  of series =            1
+ number =            2  sine =   0.9092974     cosine =  -0.4161468     tan = 
+  -2.185040      sum  of series =            3
+ number =            3  sine =   0.1411200     cosine =  -0.9899925     tan = 
+ -0.1425465      sum  of series =            6
+ number =            4  sine =  -0.7568025     cosine =  -0.6536436     tan = 
+   1.157821      sum  of series =           10
+ number =            5  sine =  -0.9589243     cosine =   0.2836622     tan = 
+  -3.380515      sum  of series =           15
+ number =            6  sine =  -0.2794155     cosine =   0.9601703     tan = 
+ -0.2910062      sum  of series =           21
+ number =            7  sine =   0.6569866     cosine =   0.7539023     tan = 
+  0.8714480      sum  of series =           28
+ number =            8  sine =   0.9893582     cosine =  -0.1455000     tan = 
+  -6.799711      sum  of series =           36
+ number =            9  sine =   0.4121185     cosine =  -0.9111302     tan = 
+ -0.4523157      sum  of series =           45
+ number =           10  sine =  -0.5440211     cosine =  -0.8390715     tan = 
+  0.6483608      sum  of series =           55
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ifort skilltest.f -o skilltest
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./skilltest
+ number =            1  sine =   0.8414710     cosine =   0.5403023     tan = 
+   1.557408      sum  of series =            1
+ number =            2  sine =   0.9092974     cosine =  -0.4161468     tan = 
+  -2.185040      sum  of series =            3
+ number =            3  sine =   0.1411200     cosine =  -0.9899925     tan = 
+ -0.1425465      sum  of series =            6
+ number =            4  sine =  -0.7568025     cosine =  -0.6536436     tan = 
+   1.157821      sum  of series =           10
+ number =            5  sine =  -0.9589243     cosine =   0.2836622     tan = 
+  -3.380515      sum  of series =           15
+ number =            6  sine =  -0.2794155     cosine =   0.9601703     tan = 
+ -0.2910062      sum  of series =           21
+ number =            7  sine =   0.6569866     cosine =   0.7539023     tan = 
+  0.8714480      sum  of series =           28
+ number =            8  sine =   0.9893582     cosine =  -0.1455000     tan = 
+  -6.799711      sum  of series =           36
+ number =            9  sine =   0.4121185     cosine =  -0.9111302     tan = 
+ -0.4523157      sum  of series =           45
+ number =           10  sine =  -0.5440211     cosine =  -0.8390715     tan = 
+  0.6483608      sum  of series =           55
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran skilltest.f -ffree-form -o skilltest
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./skilltest
+ number =            1  sine =   0.841470957     cosine =   0.540302277     tan =    1.55740774      sum  of series =            1
+ number =            2  sine =   0.909297407     cosine =  -0.416146845     tan =   -2.18503976      sum  of series =            3
+ number =            3  sine =   0.141120002     cosine =  -0.989992499     tan =  -0.142546549      sum  of series =            6
+ number =            4  sine =  -0.756802499     cosine =  -0.653643608     tan =    1.15782130      sum  of series =           10
+ number =            5  sine =  -0.958924294     cosine =   0.283662200     tan =   -3.38051510      sum  of series =           15
+ number =            6  sine =  -0.279415488     cosine =   0.960170269     tan =  -0.291006178      sum  of series =           21
+ number =            7  sine =   0.656986594     cosine =   0.753902256     tan =   0.871447980      sum  of series =           28
+ number =            8  sine =   0.989358246     cosine =  -0.145500034     tan =   -6.79971123      sum  of series =           36
+ number =            9  sine =   0.412118495     cosine =  -0.911130250     tan =  -0.452315658      sum  of series =           45
+ number =           10  sine =  -0.544021130     cosine =  -0.839071512     tan =   0.648360848      sum  of series =           55
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran skilltest.f  -o skilltest
+skilltest.f:14:70:
+
+   14 |        print *, "number = ",k," sine = ",x,"cosine = ",y,"tan = ",z, &
+      |                                                                      1
+Error: Expected expression in PRINT statement at (1)
+skilltest.f:15:8:
+
+   15 |       & " sum  of series = ",sum1
+      |        1
+Error: Invalid character in name at (1)
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ifort skilltest.f -o skilltest
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./skilltest
+ number =            1  sine =   0.8414710     cosine =   0.5403023     tan = 
+   1.557408      sum  of series =            1
+ number =            2  sine =   0.9092974     cosine =  -0.4161468     tan = 
+  -2.185040      sum  of series =            3
+ number =            3  sine =   0.1411200     cosine =  -0.9899925     tan = 
+ -0.1425465      sum  of series =            6
+ number =            4  sine =  -0.7568025     cosine =  -0.6536436     tan = 
+   1.157821      sum  of series =           10
+ number =            5  sine =  -0.9589243     cosine =   0.2836622     tan = 
+  -3.380515      sum  of series =           15
+ number =            6  sine =  -0.2794155     cosine =   0.9601703     tan = 
+ -0.2910062      sum  of series =           21
+ number =            7  sine =   0.6569866     cosine =   0.7539023     tan = 
+  0.8714480      sum  of series =           28
+ number =            8  sine =   0.9893582     cosine =  -0.1455000     tan = 
+  -6.799711      sum  of series =           36
+ number =            9  sine =   0.4121185     cosine =  -0.9111302     tan = 
+ -0.4523157      sum  of series =           45
+ number =           10  sine =  -0.5440211     cosine =  -0.8390715     tan = 
+  0.6483608      sum  of series =           55
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat skilltest.f
+!      programmer Ian Martin Ajzenszmidt 30/01/2023
+!DIR$ FREEFORM          ! what follows is freeform
+       real x,y,z,j
+       integer i, k
+       integer sum1
+       sum1 = 0
+       do i= 1,10,1
+       j = real(i)
+       k = i
+       x=sin(j)
+       y=cos(j)
+       z=tan(j)
+       sum1 = sum1 + k
+       print *, "number = ",k," sine = ",x,"cosine = ",y,"tan = ",z, &
+      & " sum  of series = ",sum1
+       end do
+       end program
+       
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
