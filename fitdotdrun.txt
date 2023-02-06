@@ -1,0 +1,18 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./fit
+ ajzenszmidt
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat fit.f
+           character(len=1) name1(30)
+           name1(1)= 'a'
+           name1(2)= 'j'
+           name1(3)= 'z'
+           name1(4)= 'e'
+           name1(5)= 'n'
+           name1(6)= 's'
+           name1(7)= 'z'
+           name1(8)= 'm'
+           name1(9)= 'i'
+           name1(10)= 'd'
+           name1(11)= 't'
+           print *,name1(1:11)
+           end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
