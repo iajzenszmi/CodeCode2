@@ -1,0 +1,15 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat timeon.f
+      character(len=8)  clock_date, date 
+      character(len=10) clock_time, time
+      character(5) zone
+      call date_and_time(date=clock_date, time=clock_time, zone=zone) 
+      print *,clock_date
+      print *,clock_time
+      print *,zone
+      end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran timeon.f -o timeon
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./timeon
+ 20230305
+ 203842.579
+ +1100
+ian@ian-HP-Convertible-x360-11-ab1XX:~$
