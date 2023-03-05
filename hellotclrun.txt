@@ -1,0 +1,13 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ chmod +x hello.tcl
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./hello.tcl
+invalid command name "Puts"
+    while executing
+"Puts "Hello World""
+    (file "./hello.tcl" line 2)
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ chmod +x hello.tcl
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./hello.tcl
+Hello World
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat hello.tcl
+#!/usr/bin/tclsh
+puts "Hello World"
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
