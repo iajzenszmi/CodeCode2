@@ -1,0 +1,20 @@
+Ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$ cat testp.pli
+World: Procedure options(main);
+          Put Skip List( "Hello world Ian Martin Ajzenszmidt" );       
+          End World;
+ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$ make testp
+../plic -C -dELF -lsiaxgo -ew "-cn(^) -i../lib/include"  testp.pli -o testp.o
+ld -z muldefs -Bstatic -M -o testp		\
+--oformat=elf32-i386			\
+-melf_i386                              \
+-e main  				\
+ testp.o 					\
+ 	--start-group   			\
+  ../lib/libprf.a 			\
+ 	--end-group 				\
+>testp.map
+rm testp.o
+ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$ ./testp
+
+Hello world Ian Martin Ajzenszmidt 
+ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$
