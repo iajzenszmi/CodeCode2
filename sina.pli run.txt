@@ -1,0 +1,26 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$ make sina
+../plic -C -dELF -lsiaxgo -ew "-cn(^) -i../lib/include"  sina.pli -o sina.o
+ld -z muldefs -Bstatic -M -o sina		\
+--oformat=elf32-i386			\
+-melf_i386                              \
+-e main  				\
+ sina.o 					\
+ 	--start-group   			\
+  ../lib/libprf.a 			\
+ 	--end-group 				\
+>sina.map
+rm sina.o
+ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$ ./sina
+Ian Martin Ajzenszmidt               5                      10 
+ian@ian-HP-Convertible-x360-11-ab1XX:~/pli-0.9.10e/samples$ cat sina.pli
+
+sina: proc options(main);
+dcl a1 fixed binary(31);
+ dcl sum1 fixed binary(31);
+ a1 = 5;
+ sum1 = 0;
+ sum1 = a1 + a1;
+put list("Ian Martin Ajzenszmidt");
+put list(a1);
+put list(sum1);
+end;  
