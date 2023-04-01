@@ -1,0 +1,65 @@
+n@ian-HP-Convertible-x360-11-ab1XX:~$ javac CountToTen.java
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ java  CountToTen
+
+Count = 1 
+Count = 2 
+Count = 3 
+Count = 4 
+Count = 5 
+Count = 6 
+Count = 7 
+Count = 8 
+Count = 9 
+Count = 10
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat  CountToTen
+cat: CountToTen: No such file or directory
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat  CountToTen.java
+class CountToTen {
+    public static void main(String args[]) {
+	    int counta;
+	    for(counta=1;counta < 11;counta++){
+		    if(counta <= 9 ){
+		    System.out.printf("\nCount = %d ", counta);
+	    }
+	            if(counta == 10){
+		      System.out.printf("\nCount = %d\n", counta);
+		    }	      
+    }       
+    }
+}
+
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount CountToTen.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/CountToTen.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+13      top_dir         java=13
+
+
+Totals grouped by language (dominant language first):
+java:            13 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 13
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.03)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.05 (0.62)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.04
+Total Estimated Cost to Develop                           = $ 283
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
+
