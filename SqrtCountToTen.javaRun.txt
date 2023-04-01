@@ -1,0 +1,67 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ javac SqrtCountToTen.java
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ java SqrtCountToTen
+
+Count =  1 Square Root = 1.000000 
+Count =  2 Square Root = 1.414214 
+Count =  3 Square Root = 1.732051 
+Count =  4 Square Root = 2.000000 
+Count =  5 Square Root = 2.236068 
+Count =  6 Square Root = 2.449490 
+Count =  7 Square Root = 2.645751 
+Count =  8 Square Root = 2.828427 
+Count =  9 Square Root = 3.000000 
+Count = 10 Square Root = 3.162278
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat SqrtCountToTen.java
+class SqrtCountToTen {
+    public static void main(String args[]) {
+	    int counta;
+	    double countd;
+	    double sqrtcountd;
+	    for(counta=1;counta < 11;counta++){
+		    countd = (double)counta;
+		    sqrtcountd = Math.sqrt(countd);
+		    if(counta <= 9 ){
+		    System.out.printf("\nCount =  %d Square Root = %f ", counta,sqrtcountd);
+	    }
+	            if(counta == 10)
+		    {System.out.printf("\nCount = %d Square Root = %f\n",counta,sqrtcountd);                        
+		    }	      
+    }       
+    }
+}
+
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount SqrtCountToTen.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/SqrtCountToTen.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+17      top_dir         java=17
+
+
+Totals grouped by language (dominant language first):
+java:            17 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 17
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.03)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.06 (0.69)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.05
+Total Estimated Cost to Develop                           = $ 375
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
+
