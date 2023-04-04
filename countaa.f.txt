@@ -1,0 +1,26 @@
+ian@ian-HP-Stream-Notebook-PC-11:~$ f77 countaa.f -o countaa
+ian@ian-HP-Stream-Notebook-PC-11:~$ ./countaa
+   number           square root
+   1.00000000       1.00000000    
+   2.00000000       1.41421354    
+   3.00000000       1.73205078    
+   4.00000000       2.00000000    
+   5.00000000       2.23606801    
+   6.00000000       2.44948983    
+   7.00000000       2.64575124    
+   8.00000000       2.82842708    
+   9.00000000       3.00000000    
+   10.0000000       3.16227770    
+ian@ian-HP-Stream-Notebook-PC-11:~$ cat countaa.f
+       integer counta
+       real  countr
+       real  sqrta
+       print *, "  number           square root"
+       do counta =1,10,1
+       countr = counta
+       sqrta = sqrt(countr)
+       print *,countr, sqrta 
+       end do
+       end program
+ian@ian-HP-Stream-Notebook-PC-11:~$ 
+
