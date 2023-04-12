@@ -1,0 +1,161 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~/ONSAS.m/examples/trussChain/output/trussChain$ baobab
+^C
+ian@ian-HP-Convertible-x360-11-ab1XX:~/ONSAS.m/examples/trussChain/output/trussChain$ cd Downloads
+bash: cd: Downloads: No such file or directory
+ian@ian-HP-Convertible-x360-11-ab1XX:~/ONSAS.m/examples/trussChain/output/trussChain$ cd ~/Downloads
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ ls
+ 117850_21736909-Wage-Thesis.pdf
+ 404_Best-Practice-Food-Distribution-Systems.pdf
+ AllFort.pdf
+ Anaconda3-2023.03-Linux-x86_64.sh
+ android-studio
+ android-studio-2022.1.1.21-linux.tar.gz
+ anuclim61.pdf
+ a.out
+ bionicpup32-8.0+30-uefi.iso
+ boolobject.h
+ bytearrayobject.h
+ bytesobject.h
+'Client Service Agreement - Ian Ajzenszmidt - 12.04.2022 - 12.04.2023 - Signed-1.pdf'
+'Client Service Agreement - Ian Ajzenszmidt - 12.04.2022 - 12.04.2023 - Signed.pdf'
+ cmake
+ cmake-3.26.1
+ cmake-3.26.1.tar.gz
+ CMakeCache.txt
+ CMakeFiles
+'cobol standard .pdf'
+ CodeCode2
+ CodeCode2-main
+ commonwealth-day-service-2023-order-of-service.pdf
+ community-rain-reader_observation-sheet_2022.xls
+ complexobject.h
+'Computer Aptitude - 25Q - Test summary.pdf'
+ contrib
+ CPackConfig.cmake
+ CPackSourceConfig.cmake
+ cppfront
+ Cpython
+ CSC-product-disclosure-statement-death-and-invalidity-benefits-CIBR-DIB-css.pdf
+ cumulative_integral.c
+ cumulative_integral.cpp
+ cumulative_integral.py
+ cv_debug.log
+'download.php?submit=Download'
+'DS Exchange of Information Client Consent Form - IA - 12.04.2022 - 12.04.2023 - Signed.pdf'
+ eXg5G-GV.part
+ exports.h
+ firefox.tmp
+ FIXPOINT3.f08
+ floatobject.h
+'FM Consent Third Party to Act DOCX.docx'
+'FM Consent Third Party to ActJ DOCX.docx'
+'FM Consent to Share DOCX (1).docx'
+'FM Consent to Share DOCX2.docx'
+'FM Consent to Share DOCX (2).docx'
+'FM Consent to Share DOCX (3).docx'
+'FM Consent to Share DOCX.docx'
+ fossapup64-9.5.iso
+ gamesballoons_files
+ gamesballoons.kbs
+ GIF_StarterKit_eBook_OCT21_09_LR.pdf
+ google-chrome-stable_current_amd64.deb
+ google-earth-pro-stable_current_amd64.deb
+'Hays Salary Guide IT Edition FY2223.pdf'
+'IA DLS quote2.doc'
+'IA DLS quote2.pdf'
+'IA DLS quote3.pdf'
+'IA DLS quote6x.doc'
+'IA DLS quote6x.pdf'
+'IA DLS quote7x.pdf'
+'IA DLS quote.doc'
+'IA DLS quote.pdf'
+'IA DLS quote.txt'
+ IDCJAC0009_086338_1800_Data1.csv
+ IDCJAC0009_086338_1800_Data.csv
+ IDCJAC0009_086338_1800_Note.txt
+ IDCJAC0009_086338_1800.zip
+ ieee754lib-1.0.1.jar
+ ieee754lib-master.zip
+ il.pdf
+ incomplete
+ iso7185pascal.pdf
+ jpWopSTk.part
+ julia-1.8.5-linux-x86_64.tar.gz
+ julia-1.8.5-linux-x86_64.tar.gz.1
+ lfortran
+ libquadmath.pdf
+ listobject.h
+ longintrepr.h
+ longobject.h
+ main.zip
+ McIDAS-V_1.8_linux_x86-64_installer.sh
+ memoryobject.h
+ microsoft-edge-stable_111.0.1661.41-1_amd64.deb
+ mir82dcI.part
+ n4849.pdf
+ node-v18.15.0-linux-x64.tar.xz
+ object.h
+ objimpl.h
+ outdat.txt
+ ParaView-5.11.0-MPI-Linux-Python3.9-x86_64
+ ParaView-5.11.0-MPI-Linux-Python3.9-x86_64.tar.gz
+ patchlevel.h
+ PDFXLStats.pdf
+'Plan Approval D601M4H669.pdf'
+ pyconfig.h
+ pydebug.h
+ pyhash.h
+ pymacconfig.h
+ pymacro.h
+ pymath.h
+ pymem.h
+ pymem.h.gch
+ pyport.h
+ Python.h
+ Python.h.gch
+ rai2
+ rai2.txt
+ rainrec
+ rainrec2
+ rainrec2a.f
+ rainrecout.txt
+ rangeobject.h
+'Resident and Representative Meeting Agenda_Minutes March 2023.pdf'
+ R.jpeg
+ sdlBasic
+ sdlBasic-software-2012-12-15.zip
+ sev44
+ sevdim88test.F
+ Snaptube_6.18.0.6182910_Apkpure.apk
+ spline.h
+ spline.h.1
+ splines
+ splin.h
+ src
+ sRwl0Pu_.part
+ stable
+'St Kilda Marina-Daily-Rainfall.csv'
+ test
+ tupleobject.h
+ Turbo.C.3.2.zip
+ typeslots.h
+ ubuntu-22.04.2-desktop-amd64.iso
+ ubuntu-22.04.2-desktop-amd64.iso.1
+ unicodeobject.h
+ Version-Beta-v2.pdf
+'Visitors role in Infection Prevention.pdf'
+ wget-log
+ XLStats.xls
+ youtube-dl
+ youtube-dl-2021.12.17.tar.gz
+ zoom_amd64.deb
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ rm *.deb
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ rm *.gz
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ rm *.zip
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ baobab
+^C
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ rm *.iso
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ rm *.iso.1
+ian@ian-HP-Convertible-x360-11-ab1XX:~/Downloads$ baobab
+
+
