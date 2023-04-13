@@ -1,0 +1,90 @@
+an@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran sevlit.f -o sevlit
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./sevlit
+ read a digit between 0 and 9
+0
+ zero
+ read a digit between 0 and 9
+1
+ one
+ read a digit between 0 and 9
+2
+ two
+ read a digit between 0 and 9
+3
+ three
+ read a digit between 0 and 9
+4
+ four
+ read a digit between 0 and 9
+5
+ five
+ read a digit between 0 and 9
+6
+ six
+ read a digit between 0 and 9
+7
+ seven
+ read a digit between 0 and 9
+
+8   
+ eight
+ read a digit between 0 and 9
+9
+ nine
+ read a digit between 0 and 9
+1
+ one
+ read a digit between 0 and 9
+89
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat sevlit.f
+       integer anumba /22/
+       do while (anumba .ne. 89)
+       print *, "read a digit between 0 and 9"
+       read *,anumba
+       if (anumba .eq. 1) print *, "one"
+       if (anumba .eq. 2) print *, "two"
+       if (anumba .eq. 3) print *, "three"
+       if (anumba .eq. 4) print *, "four"
+       if (anumba .eq. 5) print *, "five"
+       if (anumba .eq. 6) print *, "six"
+       if (anumba .eq. 7) print *, "seven"
+       if (anumba .eq. 8) print *, "eight"
+       if (anumba .eq. 9) print *, "nine"
+       if (anumba .eq. 0) print *, "zero"
+       end do
+       end program
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount sevlit.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/sevlit.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+16      top_dir         fortran=16
+
+
+Totals grouped by language (dominant language first):
+fortran:         16 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 16
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.03)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.06 (0.67)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.05
+Total Estimated Cost to Develop                           = $ 352
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
+
