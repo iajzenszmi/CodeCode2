@@ -1,7 +1,7 @@
 ! Programmed by Ian Martin Ajzenszmidt
 ! Melbourne Australia
 ! 21 April 2023
-!
+! assisted by chat.openai.com 
 program seven_dim_array
     implicit none
 
