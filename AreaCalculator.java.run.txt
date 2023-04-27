@@ -1,0 +1,84 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ javac AreaCalculator.java
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ java AreaCalculator.java
+error: class found on application class path: AreaCalculator
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ls Ar*
+AreaCalculator.class  AreaCalculator.java
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ java AreaCalculator
+1.0 
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat AreaCalculator.java
+public class AreaCalculator {
+   public static void main(String[] args) {
+      double x, dx, result;
+      x =2.0;
+      dx = 1.0;
+      for(x=1; x<=2; x+=dx){
+         result = Math.sqrt(Math.abs((double)(1/x)));
+         System.out.print(result + " ");
+         
+         if(x == 1 || x == 3){
+            System.out.println();
+         }
+      }
+   }
+}
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount AreaCalculator.java
+Command 'sloccount' not found, but can be installed with:
+sudo apt install sloccount
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sudo apt install sloccount
+[sudo] password for ian: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2 libllvm13 linux-headers-5.15.0-25 linux-headers-5.15.0-25-generic linux-image-5.15.0-25-generic
+  linux-modules-5.15.0-25-generic linux-modules-extra-5.15.0-25-generic
+Use 'sudo apt autoremove' to remove them.
+Suggested packages:
+  doc-base
+The following NEW packages will be installed:
+  sloccount
+0 to upgrade, 1 to newly install, 0 to remove and 2 not to upgrade.
+Need to get 84.8 kB of archives.
+After this operation, 442 kB of additional disk space will be used.
+Get:1 http://au.archive.ubuntu.com/ubuntu jammy/universe amd64 sloccount amd64 2.26-5.2 [84.8 kB]
+Fetched 84.8 kB in 0s (503 kB/s) 
+Selecting previously unselected package sloccount.
+(Reading database ... 328470 files and directories currently installed.)
+Preparing to unpack .../sloccount_2.26-5.2_amd64.deb ...
+Unpacking sloccount (2.26-5.2) ...
+Setting up sloccount (2.26-5.2) ...
+Processing triggers for man-db (2.10.2-1) ...
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount AreaCalculator.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/AreaCalculator.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+14      top_dir         java=14
+
+
+Totals grouped by language (dominant language first):
+java:            14 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 14
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.03)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.05 (0.63)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.04
+Total Estimated Cost to Develop                           = $ 306
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
