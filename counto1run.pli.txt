@@ -1,0 +1,78 @@
+[ianmartinajzenszmidt@fedora samples]$ make countto10
+../plic -C -dELF -lsiaxgo -ew "-cn(^) -i../lib/include"  countto10.pli -o countto10.o
+ld -z muldefs -Bstatic -M -o countto10		\
+--oformat=elf32-i386			\
+-melf_i386                              \
+-e main  				\
+ countto10.o 					\
+ 	--start-group   			\
+  ../lib/libprf.a 			\
+ 	--end-group 				\
+>countto10.map
+rm countto10.o
+[ianmartinajzenszmidt@fedora samples]$ ./countto10
+
+counta =                             1 
+counta =                             2 
+counta =                             3 
+counta =                             4 
+counta =                             5 
+counta =                             6 
+counta =                             7 
+counta =                             8 
+counta =                             9 
+counta =                            10 
+[ianmartinajzenszmidt@fedora samples]$ cat countto10.pli
+countto10: procedure options(main);
+dcl counta fixed binary(31);
+counta = 0;
+do counta = 1 to 10;
+    put skip list ("counta = ", counta);
+    end;    
+[ianmartinajzenszmidt@fedora samples]$ cat Makefile
+# Makefile for PL/I Sample Programs
+# Iron Spring PL/I 1.0.0 [Linux]
+
+# ******************************************************
+# ***** This file builds sample executables linked *****
+# ***** with the static library.                   *****
+# ***** May be run on either 32-bit or 64-bit Linux*****
+# ******************************************************
+
+PLI	= ../plic
+PLIFLGS	= -lsiaxgo -ew "-cn(^) -i../lib/include"
+INC     = ../lib/include
+LIBDIR	= ../lib/static
+
+ALL =	filedump numwrd readu hanoi libver filefind.o hexdump.o	\
+	print_listing task spawntest sorttest keysamp refsamp \
+	countto10
+	
+all: ${ALL}	
+
+clean:	
+	rm ${ALL} *.obj *.exe *.o *.lst *.map
+
+%.o:	%.pli 
+	${PLI} -C -dELF ${PLIFLGS}  $^ -o $*.o
+%:	%.o
+	ld -z muldefs -Bstatic -M -o $@		\
+	--oformat=elf32-i386			\
+	-melf_i386                              \
+	-e main  				\
+	 $@.o 					\
+ 	--start-group   			\
+	  ../lib/libprf.a 			\
+ 	--end-group 				\
+	>$@.map
+
+spawntest: spawntest.o spawn.o
+	ld -z muldefs -Bstatic -M -o $@		\
+	--oformat=elf32-i386			\
+	-melf_i386                              \
+	-e main  				\
+	 $@.o spawn.o				\
+ 	--start-group   			\
+	  ~/pli/dev/lib/libprf.a 		\
+ 	--end-group 				\
+	>$@.map
