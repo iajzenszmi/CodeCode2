@@ -1,0 +1,96 @@
+[ianmartinajzenszmidt@fedora Downloads]$ gcc fiboasynctime.c -o fat
+[ianmartinajzenszmidt@fedora Downloads]$ ./fat
+fib( 0) = 0
+fib( 1) = 1
+fib( 2) = 1
+fib( 3) = 2
+fib( 4) = 3
+fib( 5) = 5
+fib( 6) = 8
+fib( 7) = 13
+fib( 8) = 21
+fib( 9) = 34
+fib(10) = 55
+fib(11) = 89
+fib(12) = 144
+fib(13) = 233
+fib(14) = 377
+fib(15) = 610
+fib(16) = 987
+fib(17) = 1597
+fib(18) = 2584
+fib(19) = 4181
+fib(20) = 6765
+fib(21) = 10946
+fib(22) = 17711
+fib(23) = 28657
+fib(24) = 46368
+fib(25) = 75025
+fib(26) = 121393
+fib(27) = 196418
+fib(28) = 317811
+fib(29) = 514229
+elapsed time =2
+^C
+[ianmartinajzenszmidt@fedora Downloads]$ cat fiboasynctime.c
+/* compute fibonacci numbers and pri t time asynchronously. */
+#include <stdio.h>
+#include <time.h>
+int fib(int);
+int fork(void);
+void sleep(unsigned);
+int main(void)
+{
+int begin =time(NULL);
+int i;
+if (fork()==0)  /* child */
+   for(i=0; i < 30;++i)
+   printf("fib(%2d) = %d\n", i, fib(i));
+   else
+   for(i=0;i <=30; ++i) {
+       sleep(2);
+       printf("elapsed time =%d\n",time(NULL) - begin);
+       }
+       return 0;
+       }
+       int fib(int n)
+       {
+       if(n <= 1)return n;
+       else
+       return (fib(n-1) + fib(n-2));
+       }
+
+[ianmartinajzenszmidt@fedora Downloads]$ sloccount fiboasynctime.c
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ianmartinajzenszmidt/Downloads/fiboasynctime.c to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+25      top_dir         ansic=25
+
+
+Totals grouped by language (dominant language first):
+ansic:           25 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 25
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.05)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.07 (0.80)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.06
+Total Estimated Cost to Develop                           = $ 562
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+[ianmartinajzenszmidt@fedora Downloads]$ 
