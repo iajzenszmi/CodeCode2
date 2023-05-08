@@ -1,0 +1,14 @@
+[ianmartinajzenszmidt@fedora ~]$ gcc fork1.c -o fork1
+[ianmartinajzenszmidt@fedora ~]$ ./fork1
+In main: value  = 23149
+In main: value  = 0
+[ianmartinajzenszmidt@fedora ~]$ cat fork1.c
+#include <stdio.h>
+int main(void)
+{
+int fork(void), value;
+value = fork();
+printf("In main: value  = %d\n",value);
+return 0;
+}
+[ianmartinajzenszmidt@fedora ~]$ 
