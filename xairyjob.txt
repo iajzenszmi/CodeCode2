@@ -1,0 +1,450 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gfortran xairy.f airy.f bessik.f beschb.f chebev.f bessjy.f -std=legacy -ffree-form -o xairyo
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./xairyo
+ Airy Functions
+  X
+    AI              BI              AIP             BIP
+    XAI             XBI             XAIP            XBIP
+ -3.50
+   -3.755338E-01    1.689398E-01   -3.434434E-01   -6.931163E-01
+   -3.755338E-01    1.689399E-01   -3.434436E-01   -6.931161E-01
+ -2.00
+    2.274074E-01   -4.123026E-01    6.182590E-01    2.787952E-01
+    1.829840E-01   -4.020635E-01    5.572387E-01    2.843048E-01
+ -1.00
+    5.355609E-01    1.039974E-01   -1.016057E-02    5.923756E-01
+    5.083190E-01    1.100567E-01   -5.591442E-02    6.120773E-01
+ -0.01
+    3.576162E-01    6.104437E-01   -2.588016E-01    4.483190E-01
+    3.227939E-01    5.507478E-01   -2.869955E-01    4.971462E-01
+  0.00
+    3.550281E-01    6.149266E-01   -2.588194E-01    4.482884E-01
+    3.550281E-01    6.149266E-01   -2.588194E-01    4.482884E-01
+  0.01
+    3.524399E-01    6.194096E-01   -2.588017E-01    4.483193E-01
+    3.177443E-01    5.586970E-01   -2.869956E-01    4.971465E-01
+  0.50
+    2.316936E-01    8.542770E-01   -2.249105E-01    5.445725E-01
+    2.055461E-01    7.770944E-01   -2.545723E-01    5.813112E-01
+  1.00
+    1.352924E-01    1.207424E+00   -1.591474E-01    9.324359E-01
+    1.184404E-01    1.106325E+00   -1.890991E-01    9.241223E-01
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat xairy.f airy.f bessik.f beschb.f chebev.f bessjy.f > xairyout.txt
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat xairyout.txt
+               PROGRAM xairy  
+	!C     driver for routine airy  
+	      INTEGER i,nval  
+	      REAL ai,bi,aip,bip,x,xai,xbi,xaip,xbip  
+	      CHARACTER text*14  
+	      open(7,file='airyfunc.dat',status='OLD')  
+	10    read(7,'(a)',end=4) text  
+	      if (text.ne.'Airy Functions') goto 10  
+	  4    read(7,*) nval  
+	      write(6,*) text  
+	      write(6,'(1x,t3,a1)') 'X'  
+	      write(6,'(1x,t5,a2,t21,a2,t37,a3,t53,a3)') 'AI','BI','AIP','BIP'  
+      write(6,'(1x,t5,a3,t21,a3,t37,a4,t53,a4)') 'XAI','XBI','XAIP','XBIP'  
+	      do 11 i=1,nval  
+	        read(7,*) x,ai,bi,aip,bip  
+	        call airy(x,xai,xbi,xaip,xbip)  
+      write(6,'(f6.2/1p4e16.6/1p4e16.6)') x,ai,bi,aip,bip,xai,xbi,xaip,xbip  
+	11    continue  
+	      close(7)  
+	      END PROGRAM
+              SUBROUTINE airy(x,ai,bi,aip,bip)  
+	      REAL ai,aip,bi,bip,x  
+	      EXTERNAL bessik,bessjy  
+	  REAL absx,ri,rip,rj,rjp,rk,rkp,rootx,ry,ryp,z,PI,THIRD,TWOTHR,ONOVRT  
+	  PARAMETER(PI=3.1415927,THIRD=1./3.,TWOTHR=2./3.0,ONOVRT=.57735027)  
+	      absx=abs(x)  
+	      rootx=sqrt(absx)  
+	      z=TWOTHR*absx*rootx  
+	      if(x.gt.0.)then  
+	        call bessik(z,THIRD,ri,rk,rip,rkp)  
+	        ai=rootx*ONOVRT*rk/PI  
+	        bi=rootx*(rk/PI+2.*ONOVRT*ri)  
+	        call bessik(z,TWOTHR,ri,rk,rip,rkp)  
+	        aip=-x*ONOVRT*rk/PI  
+	        bip=x*(rk/PI+2.*ONOVRT*ri)  
+	      else if(x.lt.0.)then  
+	        call bessjy(z,THIRD,rj,ry,rjp,ryp)  
+	        ai=.5*rootx*(rj-ONOVRT*ry)  
+	        bi=-.5*rootx*(ry+ONOVRT*rj)  
+	        call bessjy(z,TWOTHR,rj,ry,rjp,ryp)  
+	        aip=.5*absx*(ONOVRT*ry+rj)  
+	        bip=.5*absx*(ONOVRT*rj-ry)  
+	      else  
+	        ai=.35502805  
+	        bi=ai/ONOVRT  
+	        aip=-.25881940  
+	        bip=-aip/ONOVRT  
+	      endif  
+	      return  
+	      END  
+	      SUBROUTINE bessik(x,xnu,ri,rk,rip,rkp)  
+	      INTEGER MAXIT  
+	      REAL ri,rip,rk,rkp,x,xnu,XMIN  
+	      DOUBLE PRECISION EPS,FPMIN,PI  
+ PARAMETER (EPS=1.e-10,FPMIN=1.e-30,MAXIT=10000,XMIN=2.,PI=3.141592653589793d0)  
+	      external  beschb  
+	      INTEGER i,l,nl  
+	      DOUBLE PRECISION a,a1,b,c,d,del,del1,delh,dels,e,f,fact,fact2,ff,&  
+	     &gam1,gam2,gammi,gampl,h,p,pimu,q,q1,q2,qnew,ril,ril1,rimu,rip1,&  
+	     &ripl,ritemp,rk1,rkmu,rkmup,rktemp,s,sum,sum1,x2,xi,xi2,xmu,xmu2  
+	      if(x.le.0..or.xnu.lt.0.) pause 'bad arguments in bessik'  
+	      nl=int(xnu+.5d0)  
+	      xmu=xnu-nl  
+	      xmu2=xmu*xmu  
+	      xi=1.d0/x  
+	      xi2=2.d0*xi  
+	      h=xnu*xi  
+	      if(h.lt.FPMIN)h=FPMIN  
+	      b=xi2*xnu  
+	      d=0.d0  
+	      c=h  
+	      do 11 i=1,MAXIT  
+	        b=b+xi2  
+	        d=1.d0/(b+d)  
+	        c=b+1.d0/c  
+	        del=c*d  
+	        h=del*h  
+	        if(abs(del-1.d0).lt.EPS)goto 1  
+	11    continue  
+	      pause 'x too large in bessik; try asymptotic expansion'  
+	1     continue  
+	      ril=FPMIN  
+	      ripl=h*ril  
+	      ril1=ril  
+	      rip1=ripl  
+	      fact=xnu*xi  
+	      do 12 l=nl,1,-1  
+	        ritemp=fact*ril+ripl  
+	        fact=fact-xi  
+	        ripl=fact*ritemp+ril  
+	        ril=ritemp  
+	12    continue  
+	      f=ripl/ril  
+	      if(x.lt.XMIN) then  
+	        x2=.5d0*x  
+	        pimu=PI*xmu  
+	        if(abs(pimu).lt.EPS)then  
+	          fact=1.d0  
+	        else  
+	          fact=pimu/sin(pimu)  
+	        endif  
+	        d=-log(x2)  
+	        e=xmu*d  
+	        if(abs(e).lt.EPS)then  
+	          fact2=1.d0  
+	        else  
+	          fact2=sinh(e)/e  
+	        endif  
+	        call beschb(xmu,gam1,gam2,gampl,gammi)  
+	        ff=fact*(gam1*cosh(e)+gam2*fact2*d)  
+	        sum=ff  
+	        e=exp(e)  
+	        p=0.5d0*e/gampl  
+	        q=0.5d0/(e*gammi)  
+	        c=1.d0  
+	        d=x2*x2  
+	        sum1=p  
+	        do 13 i=1,MAXIT  
+	          ff=(i*ff+p+q)/(i*i-xmu2)  
+	          c=c*d/i  
+	          p=p/(i-xmu)  
+	          q=q/(i+xmu)  
+	          del=c*ff  
+	          sum=sum+del  
+	          del1=c*(p-i*ff)  
+	          sum1=sum1+del1  
+	          if(abs(del).lt.abs(sum)*EPS)goto 2  
+	13      continue  
+	        pause 'bessk series failed to converge'  
+	2       continue  
+	        rkmu=sum  
+	        rk1=sum1*xi2  
+	      else  
+	        b=2.d0*(1.d0+x)  
+	        d=1.d0/b  
+	        delh=d  
+	        h=delh  
+	        q1=0.d0  
+	        q2=1.d0  
+	        a1=.25d0-xmu2  
+	        c=a1  
+	        q=c  
+	        a=-a1  
+	        s=1.d0+q*delh  
+	        do 14 i=2,MAXIT  
+	          a=a-2*(i-1)  
+	          c=-a*c/i  
+	          qnew=(q1-b*q2)/a  
+	          q1=q2  
+	          q2=qnew  
+	          q=q+c*qnew  
+	          b=b+2.d0  
+	          d=1.d0/(b+a*d)  
+	          delh=(b*d-1.d0)*delh  
+	          h=h+delh  
+	          dels=q*delh  
+	          s=s+dels  
+	          if(abs(dels/s).lt.EPS)goto 3  
+	14      continue  
+	        pause 'bessik: failure to converge in cf2'  
+	3       continue  
+	        h=a1*h  
+	        rkmu=sqrt(PI/(2.d0*x))*exp(-x)/s  
+	        rk1=rkmu*(xmu+x+.5d0-h)*xi  
+	      endif  
+	      rkmup=xmu*xi*rkmu-rk1  
+	      rimu=xi/(f*rkmu-rkmup)  
+	      ri=(rimu*ril1)/ril  
+	      rip=(rimu*rip1)/ril  
+	      do 15 i=1,nl  
+	        rktemp=(xmu+i)*xi2*rk1+rkmu  
+	        rkmu=rk1  
+	        rk1=rktemp  
+	15    continue  
+	      rk=rkmu  
+	      rkp=xnu*xi*rkmu-rk1  
+	      return  
+	      END subroutine
+              SUBROUTINE beschb(x,gam1,gam2,gampl,gammi)  
+	      INTEGER NUSE1,NUSE2i
+              EXTERNAL chebev	        
+	      DOUBLE PRECISION gam1,gam2,gammi,gampl,x  
+	      REAL xx,c1(7),c2(8),chebev  
+	      SAVE c1,c2  
+	      DATA c1/-1.142022680371168d0,6.5165112670737d-3,3.087090173086d-4,& 
+     &-3.4706269649d-6,6.9437664d-9,3.67795d-11,-1.356d-13/  
+	      DATA c2/1.843740587300905d0,-7.68528408447867d-2,& 
+     &1.2719271366546d-3,-4.9717367042d-6,-3.31261198d-8,2.423096d-10,&   
+     &-1.702d-13,-1.49d-15/  
+	       PARAMETER (NUSE1=5,NUSE2=5)
+	      xx=8.d0*x*x
+!	      USE chebev   
+	      gam1=chebev(-1.,1.,c1,NUSE1,xx)  
+	      gam2=chebev(-1.,1.,c2,NUSE2,xx)  
+	      gampl=gam2-x*gam1  
+	      gammi=gam2+x*gam1  
+	      return  
+	      END  
+              FUNCTION chebev(a,b,c,m,x)  
+	      INTEGER m  
+	      REAL chebev,a,b,x,c(m)  
+	      INTEGER j  
+	      REAL d,dd,sv,y,y2  
+	      if ((x-a)*(x-b).gt.0.) pause 'x not in range in chebev'  
+	      d=0.  
+	      dd=0.  
+	      y=(2.*x-a-b)/(b-a)  
+	      y2=2.*y  
+	      do 11 j=m,2,-1  
+	        sv=d  
+	        d=y2*d-dd+c(j)  
+	        dd=sv  
+	11    continue  
+	      chebev=y*d-dd+0.5*c(1)  
+	      return  
+	      END  
+	 
+	      SUBROUTINE bessjy(x,xnu,rj,ry,rjp,ryp)  
+	      INTEGER MAXIT  
+	      REAL rj,rjp,ry,ryp,x,xnu,XMIN  
+	      DOUBLE PRECISION EPS,FPMIN,PI  
+              PARAMETER (EPS=1.e-10,FPMIN=1.e-30,MAXIT=10000,XMIN=2.,PI=3.141592653589793d0)  
+             EXTERNAL beschb  
+	      INTEGER i,isign,l,nl  
+	      DOUBLE PRECISION a,b,br,bi,c,cr,ci,d,del,del1,den,di,dlr,dli,dr,e,&  
+	     &f,fact,fact2,fact3,ff,gam,gam1,gam2,gammi,gampl,h,p,pimu,pimu2,q,&  
+	     &r,rjl,rjl1,rjmu,rjp1,rjpl,rjtemp,ry1,rymu,rymup,rytemp,sum,sum1,&  
+	     &temp,w,x2,xi,xi2,xmu,xmu2  
+	      if(x.le.0..or.xnu.lt.0.) pause 'bad arguments in bessjy'  
+	      if(x.lt.XMIN)then  
+	        nl=int(xnu+.5d0)  
+	      else  
+	        nl=max(0,int(xnu-x+1.5d0))  
+	      endif  
+	      xmu=xnu-nl  
+	      xmu2=xmu*xmu  
+	      xi=1.d0/x  
+	      xi2=2.d0*xi  
+	      w=xi2/PI  
+	      isign=1  
+	      h=xnu*xi  
+	      if(h.lt.FPMIN)h=FPMIN  
+	      b=xi2*xnu  
+	      d=0.d0  
+	      c=h  
+	      do 11 i=1,MAXIT  
+	        b=b+xi2  
+	        d=b-d  
+	        if(abs(d).lt.FPMIN)d=FPMIN  
+	        c=b-1.d0/c  
+	        if(abs(c).lt.FPMIN)c=FPMIN  
+	        d=1.d0/d  
+	        del=c*d  
+	        h=del*h  
+	        if(d.lt.0.d0)isign=-isign  
+	        if(abs(del-1.d0).lt.EPS)goto 1  
+	11    continue  
+	      pause 'x too large in bessjy; try asymptotic expansion'  
+	1     continue  
+	      rjl=isign*FPMIN  
+	      rjpl=h*rjl  
+	      rjl1=rjl  
+	      rjp1=rjpl  
+	      fact=xnu*xi  
+	      do 12 l=nl,1,-1  
+	        rjtemp=fact*rjl+rjpl  
+	        fact=fact-xi  
+	        rjpl=fact*rjtemp-rjl  
+	        rjl=rjtemp  
+	12    continue  
+	      if(rjl.eq.0.d0)rjl=EPS  
+	      f=rjpl/rjl  
+	      if(x.lt.XMIN) then  
+	        x2=.5d0*x  
+	        pimu=PI*xmu  
+	        if(abs(pimu).lt.EPS)then  
+	          fact=1.d0  
+	        else  
+	          fact=pimu/sin(pimu)  
+	        endif  
+	        d=-log(x2)  
+	        e=xmu*d  
+	        if(abs(e).lt.EPS)then  
+	          fact2=1.d0  
+	        else  
+	          fact2=sinh(e)/e  
+	        endif  
+	        call beschb(xmu,gam1,gam2,gampl,gammi)  
+	        ff=2.d0/PI*fact*(gam1*cosh(e)+gam2*fact2*d)  
+	        e=exp(e)  
+	        p=e/(gampl*PI)  
+	        q=1.d0/(e*PI*gammi)  
+	        pimu2=0.5d0*pimu  
+	        if(abs(pimu2).lt.EPS)then  
+	          fact3=1.d0  
+	        else  
+	          fact3=sin(pimu2)/pimu2  
+	        endif  
+	        r=PI*pimu2*fact3*fact3  
+	        c=1.d0  
+	        d=-x2*x2  
+	        sum=ff+r*q  
+	        sum1=p  
+	        do 13 i=1,MAXIT  
+	          ff=(i*ff+p+q)/(i*i-xmu2)  
+	          c=c*d/i  
+	          p=p/(i-xmu)  
+	          q=q/(i+xmu)  
+	          del=c*(ff+r*q)  
+	          sum=sum+del  
+	          del1=c*p-i*del  
+	          sum1=sum1+del1  
+	          if(abs(del).lt.(1.d0+abs(sum))*EPS)goto 2  
+	13      continue  
+	        pause 'bessy series failed to converge'  
+	2       continue  
+	        rymu=-sum  
+	        ry1=-sum1*xi2  
+	        rymup=xmu*xi*rymu-ry1  
+	        rjmu=w/(rymup-f*rymu)  
+	      else  
+	        a=.25d0-xmu2  
+	        p=-.5d0*xi  
+	        q=1.d0  
+	        br=2.d0*x  
+	        bi=2.d0  
+	        fact=a*xi/(p*p+q*q)  
+	        cr=br+q*fact  
+	        ci=bi+p*fact  
+	        den=br*br+bi*bi  
+	        dr=br/den  
+	        di=-bi/den  
+	        dlr=cr*dr-ci*di  
+	        dli=cr*di+ci*dr  
+	        temp=p*dlr-q*dli  
+	        q=p*dli+q*dlr  
+	        p=temp  
+	        do 14 i=2,MAXIT  
+	          a=a+2*(i-1)  
+	          bi=bi+2.d0  
+	          dr=a*dr+br  
+	          di=a*di+bi  
+	          if(abs(dr)+abs(di).lt.FPMIN)dr=FPMIN  
+	          fact=a/(cr*cr+ci*ci)  
+	          cr=br+cr*fact  
+	          ci=bi-ci*fact  
+	          if(abs(cr)+abs(ci).lt.FPMIN)cr=FPMIN  
+	          den=dr*dr+di*di  
+	          dr=dr/den  
+	          di=-di/den  
+	          dlr=cr*dr-ci*di  
+	          dli=cr*di+ci*dr  
+	          temp=p*dlr-q*dli  
+	          q=p*dli+q*dlr  
+	          p=temp  
+	          if(abs(dlr-1.d0)+abs(dli).lt.EPS)goto 3  
+	14      continue  
+	        pause 'cf2 failed in bessjy'  
+	3       continue  
+	        gam=(p-f)/q  
+	        rjmu=sqrt(w/((p-f)*gam+q))  
+	        rjmu=sign(rjmu,rjl)  
+	        rymu=rjmu*gam  
+	        rymup=rymu*(p+q/gam)  
+	        ry1=xmu*xi*rymu-rymup  
+	      endif  
+	      fact=rjmu/rjl  
+	      rj=rjl1*fact  
+	      rjp=rjp1*fact  
+	      do 15 i=1,nl  
+	        rytemp=(xmu+i)*xi2*ry1-rymu  
+	        rymu=ry1  
+	        ry1=rytemp  
+	15    continue 
+	      ry=rymu  
+	      ryp=xnu*xi*rymu-ry1  
+	      return  
+	      END SUBROUTINE
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount  xairy.f airy.f bessik.f beschb.f chebev.f bessjy.f 
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/xairy.f to top_dir
+Adding /home/ian/airy.f to top_dir
+Adding /home/ian/bessik.f to top_dir
+Adding /home/ian/beschb.f to top_dir
+Adding /home/ian/chebev.f to top_dir
+Adding /home/ian/bessjy.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+375     top_dir         fortran=375
+
+
+Totals grouped by language (dominant language first):
+fortran:        375 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 375
+Development Effort Estimate, Person-Years (Person-Months) = 0.07 (0.86)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.20 (2.36)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.36
+Total Estimated Cost to Develop                           = $ 9,647
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
+
