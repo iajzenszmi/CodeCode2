@@ -1,0 +1,51 @@
+(13:51 ian@ian-Aspire-One-753 ~) > ./alvinpurple
+ How many times do you want me to output Alvin Purple
+5
+ Alvin Purple
+ Alvin Purple
+ Alvin Purple
+ Alvin Purple
+ Alvin Purple
+(13:52 ian@ian-Aspire-One-753 ~) > cat alvinpurple.f
+              integer n, i
+        print *,"How many times do you want me to output Alvin Purple"
+              read *,n
+              do i = 1,n
+              print *,"Alvin Purple"
+              end do
+              end program
+(13:52 ian@ian-Aspire-One-753 ~) > sloccount alvinpurple.f
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/alvinpurple.f to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+7       top_dir         fortran=7
+
+
+Totals grouped by language (dominant language first):
+fortran:          7 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 7
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.01)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.04 (0.48)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.03
+Total Estimated Cost to Develop                           = $ 148
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+(13:53 ian@ian-Aspire-One-753 ~) > 
+
