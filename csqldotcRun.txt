@@ -1,0 +1,127 @@
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ls sql*
+sql3run  sqlc.c  sqlite3.h  sqlite3.h.gch
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ gcc sqlc.c sqlite3.h -lsqlite3 -o sqlrun
+sqlc.c: In function ‘main’:
+sqlc.c:44:29: warning: passing argument 3 of ‘sqlite3_bind_int’ makes integer from pointer without a cast [-Wint-conversion]
+   44 |   sqlite3_bind_int(stmt, 1, &id);
+      |                             ^~~
+      |                             |
+      |                             int *
+In file included from sqlc.c:4:
+sqlite3.h:3038:53: note: expected ‘int’ but argument is of type ‘int *’
+ 3038 | SQLITE_API int sqlite3_bind_int(sqlite3_stmt*, int, int);
+      |                                                     ^~~
+sqlc.c:46:29: warning: passing argument 3 of ‘sqlite3_bind_int’ makes integer from pointer without a cast [-Wint-conversion]
+   46 |   sqlite3_bind_int(stmt, 3, &age);
+      |                             ^~~~
+      |                             |
+      |                             int *
+In file included from sqlc.c:4:
+sqlite3.h:3038:53: note: expected ‘int’ but argument is of type ‘int *’
+ 3038 | SQLITE_API int sqlite3_bind_int(sqlite3_stmt*, int, int);
+      |                                                     ^~~
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ ./sqlrun
+ID: 257
+Name: (null)
+Age: 2
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ cat sqlc.c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "sqlite3.h"
+
+int main(int argc, char *argv[]) {
+  // Open the database connection.
+  sqlite3 *db;
+  int rc = sqlite3_open("mydatabase2.db", &db);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Error opening database: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Create a table.
+  char *sql = "CREATE TABLE mytable (id INTEGER PRIMARY KEY, name TEXT, age INTEGER);";
+  rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Error creating table: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Insert a row into the table.
+  sql = "INSERT INTO mytable (name, age) VALUES ('John Doe', 30);";
+  rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Error inserting row: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Select a row from the table.
+  sql = "SELECT * FROM mytable;";
+  sqlite3_stmt *stmt;
+  rc = sqlite3_prepare(db, sql, -1, &stmt, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Error preparing statement: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Bind the results of the query to variables.
+  int id;
+  char *name;
+  int age;
+  sqlite3_bind_int(stmt, 1, &id);
+  sqlite3_bind_text(stmt, 2, name, -1, SQLITE_TRANSIENT);
+  sqlite3_bind_int(stmt, 3, &age);
+
+  // Execute the query.
+  rc = sqlite3_step(stmt);
+  if (rc != SQLITE_ROW) {
+    fprintf(stderr, "Error executing query: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Print the results of the query.
+  printf("ID: %d\n", id);
+  printf("Name: %s\n", name);
+  printf("Age: %d\n", age);
+
+  // Close the database connection.
+  sqlite3_finalize(stmt);
+  sqlite3_close(db);
+
+  return 0;
+}
+
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ sloccount sqlc.c
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/sqlc.c to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+47      top_dir         ansic=47
+
+
+Totals grouped by language (dominant language first):
+ansic:           47 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 47
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.10)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.09 (1.03)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.09
+Total Estimated Cost to Develop                           = $ 1,090
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-HP-Convertible-x360-11-ab1XX:~$ 
