@@ -1,0 +1,59 @@
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ gfortran src/matmul.f90 -o matmul
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ ./matmul
+ Enter the elements of matrix A:
+1
+0
+0
+1
+ Enter the elements of matrix B:
+1
+0
+0
+1
+ The product of the matrices is:
+   1.00000000    
+   0.00000000    
+   0.00000000    
+   1.00000000    
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ cat matmul.f90
+cat: matmul.f90: No such file or directory
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral$ cat src/matmul.f90
+program matrix_multiplication
+implicit none
+
+integer :: i, j, k
+real :: a(2, 2), b(2, 2), c(2, 2)
+
+! Read the matrices from the user
+print *, "Enter the elements of matrix A:"
+do i = 1, 2
+  do j = 1, 2
+    read *, a(i, j)
+  end do
+end do
+
+print *, "Enter the elements of matrix B:"
+do i = 1, 2
+  do j = 1, 2
+    read *, b(i, j)
+  end do
+end do
+
+! Multiply the matrices
+do i = 1, 2
+  do j = 1, 2
+    do k = 1, 2
+      c(i, j) = c(i, j) + a(i, k) * b(k, j)
+    end do
+  end do
+end do
+
+! Print the result
+print *, "The product of the matrices is:"
+do i = 1, 2
+  do j = 1, 2
+    print *, c(i, j)
+  end do
+end do
+
+end program matrix_multiplication
