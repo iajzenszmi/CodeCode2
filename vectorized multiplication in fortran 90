@@ -1,0 +1,138 @@
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/optimize-integral/src$ cd ~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult$ make clean
+rm -f matvec src/driver.o src/matvec.o src/*.optrpt
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult$ make
+ifort -O2 -qopt-report-phase=vec -qopt-report=2 -c src/driver.f90 -o src/driver.o
+make: ifort: No such file or directory
+make: *** [Makefile:24: src/driver.o] Error 127
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult$ cd /opt/intel/oneapi
+ian@ian-Latitude-3190-2-in-1:/opt/intel/oneapi$ source setvars.sh
+ 
+:: initializing oneAPI environment ...
+   bash: BASH_VERSION = 5.1.16(1)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: compiler -- latest
+:: debugger -- latest
+:: dpcpp-ct -- latest
+:: mpi -- latest
+:: oneAPI environment initialized ::
+ 
+ian@ian-Latitude-3190-2-in-1:/opt/intel/oneapi$ cd ~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult$ make
+ifort -O2 -qopt-report-phase=vec -qopt-report=2 -c src/driver.f90 -o src/driver.o
+ifort: remark #10397: optimization reports are generated in *.optrpt files in the output location
+ifort -O2 -qopt-report-phase=vec -qopt-report=2 -c src/matvec.f90 -o src/matvec.o
+ifort: remark #10397: optimization reports are generated in *.optrpt files in the output location
+ifort -V src/driver.o src/matvec.o -o matvec
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.9.0 Build 20230302_000000
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.
+
+GNU ld (GNU Binutils for Ubuntu) 2.38
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult$ ./matvec
+time taken    4.235  sum=  195849.2812500E+00
+
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult$ cd src
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult/src$ ls
+driver.f90  driver.o  driver.optrpt  matvec.f90  matvec.o  matvec.optrpt
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult/src$ cat driver.f90
+! ==============================================================
+! Copyright © 2020 Intel Corporation
+!
+! SPDX-License-Identifier: MIT
+! =============================================================
+!
+! Part of the vec_samples tutorial. For information, please read
+! Tutorial: Auto-vectorization in the Getting Started Tutorials document
+!
+
+
+program driver
+  implicit none
+  
+  integer, parameter           :: ROW=101
+  integer, parameter           :: COL=101
+
+! Using ROWBUF=3 makes each column of 'a' be aligned at 16-byte intervals by
+! adding three elements of padding to each column.
+
+!DIR$ IF DEFINED(ALIGNED)
+  integer, parameter           :: ROWBUF=3
+!DIR$ ELSE
+  integer, parameter           :: ROWBUF=0
+!DIR$ END IF
+
+  integer, parameter           :: TOTROW = ROW + ROWBUF
+  integer, parameter           :: REPEATNTIMES = 1000000
+
+  integer                      :: i, j
+  integer                      :: size1=TOTROW, size2=COL
+  real, dimension(TOTROW,COL)  :: a
+  real, dimension(COL)         :: b
+  real, dimension(TOTROW)      :: c
+  real                         :: sum
+  real(8)                      :: cptim1, cptim2
+
+!DIR$ IF DEFINED(ALIGNED)
+!  aligning the start of each array is unimportant in this simple example.
+!  preserving the same alignment for all rows of the matrix is much more important.
+!DIR$ attributes align : 32 :: a,b,c
+!DIR$ ENDIF
+
+!   initialize the matrix and vector
+
+    a = reshape( (/((mod(i*j+1,10), i=0,size1-1), j=0,size2-1)/), &
+&                (/size1, size2/) )
+    b          = (/(mod(j+3,10), j=0,size2-1)/)
+
+    if(ROWBUF.gt.0) a(ROW+1:TOTROW,:) = 0.
+			     
+!  initialize timing
+      call cpu_time(cptim1)
+       
+!  just do it
+      do i=1,REPEATNTIMES
+        call matvec(size1, size2, a, b, c)
+!  this line so that each iteration is different, so that 
+!  the compiler can't optimize away every iteration except one.
+        b(1) = b(1) + 0.000001
+      enddo
+
+!  print cpu time taken	and a simple checksum
+!  (use a different timer for threaded programs)
+   call cpu_time(cptim2)
+   print '(''time taken '',f8.3,''  sum='',6pe20.12/)', &
+&        (cptim2 - cptim1), sum(c)
+ 
+   end program driver
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult/src$ cat matvec.f90
+! ==============================================================
+! Copyright © 2020 Intel Corporation
+!
+! SPDX-License-Identifier: MIT
+! =============================================================
+!
+! Part of the vec_samples tutorial. For information, please read
+! Tutorial: Auto-vectorization in the Getting Started Tutorials document
+!
+
+subroutine matvec(size1,size2,a,b,c)
+  implicit none
+  integer,                      intent(in)  :: size1,size2
+  real, dimension(size1,size2), intent(in)  :: a
+  real, dimension(size2),       intent(in)  :: b
+  real, dimension(size1),       intent(out) :: c
+  integer                                   :: i,j,k
+
+  c=0.
+  do j=1,size2
+
+!DIR$ IF DEFINED(ALIGNED)
+!DIR$ vector aligned
+!DIR$ END IF
+     do i=1,size1
+        c(i) = c(i) + a(i,j) * b(j)
+     enddo
+  enddo
+
+end subroutine matvec
+ian@ian-Latitude-3190-2-in-1:~/oneapi/oneAPI-samples-master/DirectProgramming/Fortran/DenseLinearAlgebra/vectorize-vecmatmult/src$ 
