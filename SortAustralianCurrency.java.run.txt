@@ -1,0 +1,63 @@
+ian@ian-Latitude-3190-2-in-1:~$ java SortAustralianCurrency.java
+Sorted Australian denomination currency:
+100
+50
+20
+10
+5
+2
+1
+ian@ian-Latitude-3190-2-in-1:~$ cat SortAustralianCurrency.java
+import java.util.*;
+
+public class SortAustralianCurrency {
+
+    public static void main(String[] args) {
+
+        // Create a list of Australian denomination currency
+        List<Integer> australianCurrencyList = Arrays.asList(100, 50, 20, 10, 5, 2, 1);
+
+        // Sort the list by value
+        Collections.sort(australianCurrencyList, Collections.reverseOrder());
+
+        // Print the sorted list
+        System.out.println("Sorted Australian denomination currency:");
+        for (int currency : australianCurrencyList) {
+            System.out.println(currency);
+        }
+    }
+}
+ian@ian-Latitude-3190-2-in-1:~$ sloccount SortAustralianCurrency.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/SortAustralianCurrency.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+11      top_dir         java=11
+
+
+Totals grouped by language (dominant language first):
+java:            11 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 11
+Development Effort Estimate, Person-Years (Person-Months) = 0.00 (0.02)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.05 (0.58)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.04
+Total Estimated Cost to Develop                           = $ 237
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+ian@ian-Latitude-3190-2-in-1:~$ 
