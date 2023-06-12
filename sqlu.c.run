@@ -1,0 +1,113 @@
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc #include <stdio.h>
+#include <stdlib.h>
+#include <sqlite3.h>
+
+int main(int argc, char **argv) {
+  // Initialize SQLite3
+  sqlite3 *db;
+  int rc = sqlite3_open("test.db", &db);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Create a table
+  char *sql = "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)";
+  rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Can't create table: %s\n", sqlite3_errmsg(db));
+    exit(1);
+     ^C
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ls *.c
+csql.c  hello.c  sql3.c  sqlu.c
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc sqlu.c -lsqlite3
+sqlu.c: In function ‘main’:
+sqlu.c:43:5: warning: implicit declaration of function ‘strcpy’ [-Wimplicit-function-declaration]
+   43 |     strcpy(name, (char *)sqlite3_column_text(stmt, 1));
+      |     ^~~~~~
+sqlu.c:4:1: note: include ‘<string.h>’ or provide a declaration of ‘strcpy’
+    3 | #include <sqlite3.h>
+  +++ |+#include <string.h>
+    4 | 
+sqlu.c:43:5: warning: incompatible implicit declaration of built-in function ‘strcpy’ [-Wbuiltin-declaration-mismatch]
+   43 |     strcpy(name, (char *)sqlite3_column_text(stmt, 1));
+      |     ^~~~~~
+sqlu.c:43:5: note: include ‘<string.h>’ or provide a declaration of ‘strcpy’
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ nano sqlu.c
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc sqlu.c -lsqlite3
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./a.out
+ID: 1, Name: John Doe
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc sqlu.c -lsqlite3 -o sqlu
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./sqlu
+Can't create table: table users already exists
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ rm *.db -r
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc sqlu.c -lsqlite3 -o sqlu
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./sqlu
+ID: 1, Name: John Doe
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc sqlu.c -lsqlite3 -o sqlu
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./sqlu
+Can't create table: table users already exists
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ rm *.db -r
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./sqlu
+ID: 1, Name: John Doe
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ cat sqlu.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sqlite3.h>
+#include <string.h>
+
+int main(int argc, char **argv) {
+  // Initialize SQLite3
+  sqlite3 *db;
+  int rc = sqlite3_open("test.db", &db);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Create a table
+  char *sql = "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)";
+  rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Can't create table: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Insert a row
+  sql = "INSERT INTO users (name) VALUES ('John Doe')";
+  rc = sqlite3_exec(db, sql, NULL, NULL, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Can't insert row: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  // Select a row
+  sql = "SELECT * FROM users WHERE name = 'John Doe'";
+  sqlite3_stmt *stmt;
+  rc = sqlite3_prepare_v2(db, sql, -1, &stmt, NULL);
+  if (rc != SQLITE_OK) {
+    fprintf(stderr, "Can't prepare statement: %s\n", sqlite3_errmsg(db));
+    exit(1);
+  }
+
+  int id;
+  char name[100];
+  while (sqlite3_step(stmt) == SQLITE_ROW) {
+    id = sqlite3_column_int(stmt, 0);
+    strcpy(name, (char *)sqlite3_column_text(stmt, 1));
+    printf("ID: %d, Name: %s\n", id, name);
+  }
+
+  // Close the database
+  sqlite3_finalize(stmt);
+  sqlite3_close(db);
+
+  return 0;
+}
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ gcc sqlu.c -lsqlite3 -o sqlu
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./sqlu
+Can't create table: table users already exists
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ rm *.db -r
+ian@ian-Latitude-3190-2-in-1:~/Downloads$ ./sqlu
+ID: 1, Name: John Doe
+ian@ian-Latitude-3190-2-in-1:~/Downloads$
