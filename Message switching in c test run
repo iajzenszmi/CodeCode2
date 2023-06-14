@@ -1,0 +1,107 @@
+ian@ian-Latitude-3190-2-in-1:~$ ls *.c
+msg1.c  msgswtch2.c  msgswtch.c  sqlc.c  sqlt.c
+ian@ian-Latitude-3190-2-in-1:~$ cat msgswtch2.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct message {
+  char *text;
+  int location;
+};
+
+struct location {
+  char *name;
+  int id;
+};
+
+int main() {
+  // Create a list of locations.
+  struct location locations[] = {
+    { "New York City", 1 },
+    { "Los Angeles", 2 },
+    { "Chicago", 3 },
+    { "San Francisco", 4 },
+    { "Dallas", 5 },
+  };
+
+  // Create a buffer to store messages.
+  char buffer[1024];
+
+  // Initialize the number of messages to zero.
+  int num_messages = 0;
+
+  // Loop forever, reading messages from standard input.
+  while (1) {
+    // Read a message from standard input.
+    fgets(buffer, 1024, stdin);
+
+    // If the message is empty, break out of the loop.
+    if (buffer[0] == '\n') {
+      break;
+    }
+
+    // Create a new message structure.
+    struct message *message = malloc(sizeof(struct message));
+
+    // Set the message text.
+    message->text = buffer;
+
+    // Find the location of the message.
+    int location = -1;
+//    for (int i = 0; i < sizeof(locations) / sizeof(locations[0]); i++) {
+    for (int i = 0; i < sizeof(locations[i]) / sizeof(locations[i]); i++) {
+
+      if (strstr(message->text, locations[i].name) != NULL) {
+        location = locations[i].id;
+        break;
+      }
+    }
+
+    // If the location was not found, print an error message.
+    if (location == -1) {
+      printf("Error: Could not find location for message: %s\n", message->text);
+      free(message);
+      continue;
+    }
+
+    // Set the message location.
+    message->location = location;
+
+    // Print the message and its location.
+    printf("Message: %s\nLocation: %s\n", message->text, locations[location].name);
+
+    // Free the message structure.
+    free(message);
+
+    // Increment the number of messages.
+    num_messages++;
+  }
+
+  // Print the number of messages processed.
+  printf("Processed %d messages.\n", num_messages);
+
+  return 0;
+}
+ian@ian-Latitude-3190-2-in-1:~$ gcc msgswtch2.c -o msgsw2
+ian@ian-Latitude-3190-2-in-1:~$ ./msgsw2 <test.txt
+Message: Message: I'm in New York City!
+
+Location: Los Angeles
+Message: Location: New York City
+
+Location: Los Angeles
+Processed 2 messages.
+ian@ian-Latitude-3190-2-in-1:~$ cat test.txt
+Message: I'm in New York City!
+Location: New York City
+
+Message: I'm going to Los Angeles next week.
+Location: Los Angeles
+
+Message: I'm from Chicago.
+Location: Chicago
+
+Message: I've never been to San Francisco.
+Location: San Francisco
+ian@ian-Latitude-3190-2-in-1:~$
