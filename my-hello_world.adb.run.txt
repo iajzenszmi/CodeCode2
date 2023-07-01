@@ -1,0 +1,20 @@
+ian@ian-Latitude-3190-2-in-1:~/my_hello_world/src$ ~/Downloads/bin/alr run
+ⓘ Building my_hello_world/my_hello_world.gpr...
+Compile
+   [Ada]          my_hello_world.adb
+Bind
+   [gprbind]      my_hello_world.bexch
+   [Ada]          my_hello_world.ali
+Link
+   [link]         my_hello_world.adb
+Build finished successfully in 0.70 seconds.
+Hello, World!
+
+ian@ian-Latitude-3190-2-in-1:~/my_hello_world/src$ cat my_hello_world.adb
+with Ada.Text_IO;
+
+procedure My_Hello_World is
+begin
+   Ada.Text_IO.Put_Line ("Hello, World!");
+end My_Hello_World;
+ian@ian-Latitude-3190-2-in-1:~/my_hello_world/src$ 
