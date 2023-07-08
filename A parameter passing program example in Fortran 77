@@ -1,0 +1,20 @@
+ian@ian-Latitude-3190-2-in-1:~$ gfortran subtest.f -o subtest
+ian@ian-Latitude-3190-2-in-1:~$ ./subtest
+ count =            1
+ian@ian-Latitude-3190-2-in-1:~$ cat subtest.f
+           program subtest
+                   ! A parameter passing example program 
+                   ! in Fortran 77,
+                   ! by Ian Martin
+                   ! Ajzenszmidt, Melbourne, Australia
+                   !
+                   integer count 
+                   count = 1
+                   call printcount(count)
+                   end program
+                   subroutine printcount(icount)
+                           ! called subroutine
+                           integer icount
+                           print *, "count = ", icount
+                           end subroutine
+ian@ian-Latitude-3190-2-in-1:~$ 
