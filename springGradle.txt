@@ -1,0 +1,63 @@
+Starting a Gradle Daemon, 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
+
+> Task :cafe-si:compileJava
+/home/ian/spring-integration-samples/spring-integration-samples-main/applications/cafe/cafe-si/src/main/java/org/springframework/integration/samples/cafe/Delivery.java:33: warning: [serial] non-transient instance field of a serializable class declared with a non-serializable type
+        private List<Drink> deliveredDrinks;
+                            ^
+/home/ian/spring-integration-samples/spring-integration-samples-main/applications/cafe/cafe-si/src/main/java/org/springframework/integration/samples/cafe/Order.java:33: warning: [serial] non-transient instance field of a serializable class declared with a non-serializable type
+        private List<OrderItem> orderItems = new ArrayList<OrderItem>();
+                                ^
+2 warnings
+
+> Task :advanced-testing-examples:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :cafe-dsl:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :dynamic-tcp-client:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :file-split-ftp:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :jpa:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :si4demo:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :tcp-async-bi-directional:compileTestJava
+/home/ian/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.10/889aa214b6607763ddeb6bd391d682cd71681b36/spring-core-6.0.10.jar(/org/springframework/lang/Nullable.class): warning: Cannot find annotation method 'when()' in type 'Nonnull': class file for javax.annotation.Nonnull not found
+warning: unknown enum constant When.MAYBE
+  reason: class file for javax.annotation.meta.When not found
+2 warnings
+
+> Task :stomp-chat:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :tcp-async-bi-directional:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :web-sockets:test
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+See https://docs.gradle.org/8.1.1/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 7m 29s
+400 actionable tasks: 400 executed
+ian@ian-Latitude-3190-2-in-1:~/spring-integration-samples/spring-integration-samples-main$ 
+
+
+
+
+
+
+
+
+
+
