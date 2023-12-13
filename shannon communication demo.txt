@@ -1,0 +1,96 @@
+userland@localhost:~$ java ShannonCommunicationDemo.javaOriginal Message: Hello World
+Encoded Message: 0100100001100101011011000110110001101111001000000101011101101111011100100110110001100100
+Noisy Message: 0100100001100101111011000110110001111111001000000101001101101111011100110110110001100100
+Decoded Message: He?l Sosld
+userland@localhost:~$ cat ShannonCommunicationDemo.java
+
+                import java.util.Random;
+
+public class ShannonCommunicationDemo {
+
+    public static void main(String[] args) {
+        // Information Source
+        String originalMessage = "Hello World";
+
+        // Transmitter (Simple binary encoding)
+        String encodedMessage = encodeMessage(originalMessage);
+
+        // Channel and Noise
+        String noisyMessage = introduceNoise(encodedMessage, 0.1); // 10% noise
+
+        // Receiver (Decoding and error correction)
+        String decodedMessage = decodeMessage(noisyMessage);
+
+        // Destination
+        System.out.println("Original Message: " + originalMessage);
+        System.out.println("Encoded Message: " + encodedMessage);
+        System.out.println("Noisy Message: " + noisyMessage);
+        System.out.println("Decoded Message: " + decodedMessage);
+    }
+
+    private static String encodeMessage(String message) {
+        StringBuilder encoded = new StringBuilder();
+        for (char character : message.toCharArray()) {
+            encoded.append(String.format("%8s", Integer.toBinaryString(character)).replaceAll(" ", "0"));
+        }
+        return encoded.toString();
+    }
+
+    private static String introduceNoise(String message, double noiseProbability) {
+        StringBuilder noisy = new StringBuilder();
+        Random random = new Random();
+        for (char bit : message.toCharArray()) {
+            // Introduce noise based on probability
+            if (random.nextDouble() < noiseProbability) {
+                noisy.append(bit == '0' ? '1' : '0'); // Flip the bit
+            } else {
+                noisy.append(bit);
+            }
+        }
+        return noisy.toString();
+    }
+
+    private static String decodeMessage(String message) {
+        StringBuilder decoded = new StringBuilder();
+        for (int i = 0; i < message.length(); i += 8) {
+            String byteString = message.substring(i, i + 8);
+            decoded.append((char) Integer.parseInt(byteString, 2));
+        }
+        return decoded.toString();
+    }
+}
+
+userland@localhost:~$ sloccount ShannonCommunicationDemo.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/userland/ShannonCommunicationDemo.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC    Directory       SLOC-by-Language (Sorted)
+40      top_dir         java=40
+
+
+Totals grouped by language (dominant language first):
+java:            40 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 40
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.08)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.08 (0.97)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.08
+Total Estimated Cost to Develop                           = $ 920
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+userland@localhost:~$
