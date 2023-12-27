@@ -1,0 +1,1054 @@
+Julia programming language test NonlinearEigenproblems
+(base) ian@ian-Latitude-E7440:~/julia1/julia-1.9.4/bin$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.9.3 (2023-08-24)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 
+
+(@v1.9) pkg> test NonlinearEigenproblems > nle.txt
+ERROR: Unable to parse `>` as a package.
+
+(@v1.9) pkg> test NonlinearEigenproblems 
+     Testing NonlinearEigenproblems
+      Status `/tmp/jl_RVQIcX/Project.toml`
+  [ec485272] ArnoldiMethod v0.2.0
+  [6e4b80f9] BenchmarkTools v1.4.0
+  [7a1cc6ca] FFTW v1.7.2
+  [42fd0dbc] IterativeSolvers v0.9.3
+  [7a12625a] LinearMaps v3.11.1
+  [067cfa3b] NonlinearEigenproblems v1.1.1
+  [276daf66] SpecialFunctions v2.3.1
+  [de0858da] Printf `@stdlib/Printf`
+  [8dfed614] Test `@stdlib/Test`
+      Status `/tmp/jl_RVQIcX/Manifest.toml`
+  [621f4979] AbstractFFTs v1.5.0
+  [ec485272] ArnoldiMethod v0.2.0
+  [6e4b80f9] BenchmarkTools v1.4.0
+⌃ [ffbed154] DocStringExtensions v0.8.6
+  [7a1cc6ca] FFTW v1.7.2
+⌃ [92d709cd] IrrationalConstants v0.1.1
+  [42fd0dbc] IterativeSolvers v0.9.3
+  [692b3bcd] JLLWrappers v1.5.0
+  [682c06a0] JSON v0.21.4
+  [7a12625a] LinearMaps v3.11.1
+  [2ab3a3ac] LogExpFunctions v0.3.26
+  [067cfa3b] NonlinearEigenproblems v1.1.1
+  [69de0a69] Parsers v2.8.1
+  [aea7be01] PrecompileTools v1.2.0
+  [21216c6a] Preferences v1.4.1
+  [3cdcf5f2] RecipesBase v1.3.4
+  [189a3867] Reexport v1.2.2
+  [276daf66] SpecialFunctions v2.3.1
+  [90137ffa] StaticArrays v1.8.1
+  [1e83bf80] StaticArraysCore v1.4.2
+  [f5851436] FFTW_jll v3.3.10+0
+  [1d5cc7b8] IntelOpenMP_jll v2024.0.2+0
+  [856f044c] MKL_jll v2024.0.0+0
+  [efe28fd5] OpenSpecFun_jll v0.5.5+0
+  [0dad84c5] ArgTools v1.1.1 `@stdlib/ArgTools`
+  [56f22d72] Artifacts `@stdlib/Artifacts`
+  [2a0f44e3] Base64 `@stdlib/Base64`
+  [ade2ca70] Dates `@stdlib/Dates`
+  [8ba89e20] Distributed `@stdlib/Distributed`
+  [f43a241f] Downloads v1.6.0 `@stdlib/Downloads`
+  [7b1f6079] FileWatching `@stdlib/FileWatching`
+  [b77e0a4c] InteractiveUtils `@stdlib/InteractiveUtils`
+  [4af54fe1] LazyArtifacts `@stdlib/LazyArtifacts`
+  [b27032c2] LibCURL v0.6.3 `@stdlib/LibCURL`
+  [76f85450] LibGit2 `@stdlib/LibGit2`
+  [8f399da3] Libdl `@stdlib/Libdl`
+  [37e2e46d] LinearAlgebra `@stdlib/LinearAlgebra`
+  [56ddb016] Logging `@stdlib/Logging`
+  [d6f4376e] Markdown `@stdlib/Markdown`
+  [a63ad114] Mmap `@stdlib/Mmap`
+  [ca575930] NetworkOptions v1.2.0 `@stdlib/NetworkOptions`
+  [44cfe95a] Pkg v1.9.2 `@stdlib/Pkg`
+  [de0858da] Printf `@stdlib/Printf`
+  [9abbd945] Profile `@stdlib/Profile`
+  [3fa0cd96] REPL `@stdlib/REPL`
+  [9a3f8284] Random `@stdlib/Random`
+  [ea8e919c] SHA v0.7.0 `@stdlib/SHA`
+  [9e88b42a] Serialization `@stdlib/Serialization`
+  [6462fe0b] Sockets `@stdlib/Sockets`
+  [2f01184e] SparseArrays `@stdlib/SparseArrays`
+  [10745b16] Statistics v1.9.0 `@stdlib/Statistics`
+  [4607b0f0] SuiteSparse `@stdlib/SuiteSparse`
+  [fa267f1f] TOML v1.0.3 `@stdlib/TOML`
+  [a4e569a6] Tar v1.10.0 `@stdlib/Tar`
+  [8dfed614] Test `@stdlib/Test`
+  [cf7118a7] UUIDs `@stdlib/UUIDs`
+  [4ec0a83e] Unicode `@stdlib/Unicode`
+  [e66e0078] CompilerSupportLibraries_jll v1.0.5+0 `@stdlib/CompilerSupportLibraries_jll`
+  [deac9b47] LibCURL_jll v7.84.0+0 `@stdlib/LibCURL_jll`
+  [29816b5a] LibSSH2_jll v1.10.2+0 `@stdlib/LibSSH2_jll`
+  [c8ffd9c3] MbedTLS_jll v2.28.2+0 `@stdlib/MbedTLS_jll`
+  [14a3606d] MozillaCACerts_jll v2022.10.11 `@stdlib/MozillaCACerts_jll`
+  [4536629a] OpenBLAS_jll v0.3.21+4 `@stdlib/OpenBLAS_jll`
+  [05823500] OpenLibm_jll v0.8.1+0 `@stdlib/OpenLibm_jll`
+  [bea87d4a] SuiteSparse_jll v5.10.1+6 `@stdlib/SuiteSparse_jll`
+  [83775a58] Zlib_jll v1.2.13+0 `@stdlib/Zlib_jll`
+  [8e850b90] libblastrampoline_jll v5.8.0+0 `@stdlib/libblastrampoline_jll`
+  [8e850ede] nghttp2_jll v1.48.0+0 `@stdlib/nghttp2_jll`
+  [3f19e933] p7zip_jll v17.4.0+0 `@stdlib/p7zip_jll`
+        Info Packages marked with ⌃ have new versions available and may be upgradable.
+     Testing Running tests...
+  Activating project at `~/.julia/packages/NonlinearEigenproblems/HkMZG/test`
+┌ Warning: The active manifest file is an older format with no julia version entry. Dependencies may have been resolved with a different julia version.
+└ @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/Manifest.toml:0
+Running test AAAeigs (1 / 52)
+ 68.559225 seconds (75.20 M allocations: 4.779 GiB, 3.51% gc time, 99.66% compilation time)
+Running test beyn (2 / 52)
+[ Info: 1: -0.15955391823299284 - 6.27321487163247e-17im
+[ Info: 1: -0.15955391823299314 + 5.0370570185142685e-17im
+[ Info: 2: 0.7031384367113991 - 0.7784592589534742im
+[ Info: 3: 0.7031384367113995 + 0.778459258953474im
+  5.964409 seconds (5.66 M allocations: 360.968 MiB, 3.34% gc time, 98.73% compilation time)
+Running test bigfloats (3 / 52)
+[ Info: Test NEP-test with BigFloat
+[ Info: Bigfloat precomputation
+ 14.437587 seconds (13.87 M allocations: 922.359 MiB, 3.68% gc time, 99.68% compilation time)
+Running test blocknewton (4 / 52)
+  8.308346 seconds (5.28 M allocations: 337.765 MiB, 2.99% gc time, 99.70% compilation time)
+Running test cd_player_native (5 / 52)
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = 0.0762441530565305 + 0.0im (norm = 1.187e-11)
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = 0.07624415305653048 + 0.0im (norm = 1.744e-11)
+  7.191566 seconds (11.02 M allocations: 794.705 MiB, 7.28% gc time, 99.07% compilation time)
+Running test chebpep (6 / 52)
+ 29.283273 seconds (27.35 M allocations: 1.692 GiB, 4.79% gc time, 99.76% compilation time)
+Running test compan (7 / 52)
+[ Info: Solving same problem with resinv
+ 19.614209 seconds (16.07 M allocations: 1.144 GiB, 3.41% gc time, 90.52% compilation time)
+Running test compute_rf (8 / 52)
+  1.543972 seconds (1.16 M allocations: 77.388 MiB, 3.36% gc time, 99.18% compilation time)
+Running test compute_types (9 / 52)
+[ Info: Testing compute functions for NEP:typename(PEP) (Float64)
+[ Info: Testing compute functions for NEP:typename(PEP) (BigFloat)
+[ Info: Testing compute functions for NEP:typename(PEP) (ComplexF32)
+[ Info: Testing compute functions for NEP:typename(DEP) (Float64)
+[ Info: Testing compute functions for NEP:typename(DEP) sparse (Float64)
+[ Info: Testing compute functions for NEP:typename(DEP) (BigFloat)
+[ Info: Testing compute functions for NEP:typename(DEP) (Complex{BigFloat})
+[ Info: Testing compute functions for NEP:typename(SPMF_NEP) #1 (Float64)
+[ Info: Testing compute functions for NEP:typename(SPMF_NEP) #2 (ComplexF64)
+[ Info: Testing compute functions for NEP:typename(SPMF_NEP) #3 (BigFloat)
+[ Info: Testing compute functions for NEP:typename(SPMF_NEP) #4 (ComplexF64)
+[ Info: Testing compute functions for NEP:typename(SPMFSumNEP) (ComplexF64)
+ 50.355815 seconds (32.69 M allocations: 2.134 GiB, 2.51% gc time, 99.55% compilation time)
+Running test contour_block_SS (10 / 52)
+  2.408651 seconds (3.21 M allocations: 208.191 MiB, 6.42% gc time, 97.29% compilation time)
+Running test core (11 / 52)
+  6.202861 seconds (5.69 M allocations: 382.997 MiB, 3.52% gc time, 98.87% compilation time)
+Running test cork (12 / 52)
+  1.744632 seconds (1.58 M allocations: 94.804 MiB, 4.54% gc time, 98.07% compilation time)
+Running test deflation (13 / 52)
+[ Info: Computing eigenvalue k=1
+[ Info: Computing eigenvalue k=2
+[ Info: Computing eigenvalue k=3
+ 33.659523 seconds (32.14 M allocations: 2.932 GiB, 4.83% gc time, 90.45% compilation time)
+Running test dep_distributed (14 / 52)
+[ Info: ComplexF64[2.7261462498326745 + 5.041088428408005e-18im, 4.4939370563006875 + 1.906834132574581e-16im, -0.4002363880496427 + 0.9706330982378013im, -0.40023638804964 - 0.9706330982377965im, -1.9556435911777097 - 3.36455057468888im]
+  4.840387 seconds (6.74 M allocations: 508.264 MiB, 6.60% gc time, 93.96% compilation time)
+Running test fiber_native (15 / 52)
+ 12.853392 seconds (9.44 M allocations: 639.765 MiB, 4.31% gc time, 99.39% compilation time)
+Running test gallery (16 / 52)
+┌ Warning: Module NonlinearEigenproblems with build ID fafbfcfd-89ba-4a77-0000-10465145ea69 is missing from the cache.
+│ This may mean NonlinearEigenproblems [067cfa3b-fa88-53b2-a873-5b23b3a16e31] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:1793
+┌ Error: Error during loading of extension LinearMapsChainRulesCoreExt of LinearMaps, use `Base.retry_load_extensions()` to retry.
+│   exception =
+│    1-element ExceptionStack:
+│    ArgumentError: Package LinearMapsChainRulesCoreExt [80cc3b07-7966-5fa1-b050-64b4b3e87554] is required but does not seem to be installed:
+│     - Run `Pkg.instantiate()` to install all recorded dependencies.
+│    
+│    Stacktrace:
+│      [1] _require(pkg::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1774
+│      [2] _require_prelocked(uuidkey::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1660
+│      [3] _require_prelocked(uuidkey::Base.PkgId)
+│        @ Base ./loading.jl:1658
+│      [4] run_extension_callbacks(extid::Base.ExtensionId)
+│        @ Base ./loading.jl:1255
+│      [5] run_extension_callbacks(pkgid::Base.PkgId)
+│        @ Base ./loading.jl:1290
+│      [6] run_package_callbacks(modkey::Base.PkgId)
+│        @ Base ./loading.jl:1124
+│      [7] _tryrequire_from_serialized(modkey::Base.PkgId, path::String, ocachepath::String, sourcepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1398
+│      [8] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1494
+│      [9] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1783
+│     [10] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [11] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [12] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [13] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [14] include
+│        @ ./Base.jl:457 [inlined]
+│     [15] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1840
+│     [16] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [17] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [18] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [19] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [20] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:478 [inlined]
+│     [21] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [22] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [23] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [24] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [25] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:10
+│     [26] include
+│        @ ./client.jl:478 [inlined]
+│     [27] macro expansion
+│        @ ./timing.jl:273 [inlined]
+│     [28] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:29 [inlined]
+│     [29] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [30] run_all_tests(test_name_regex::String)
+│        @ Main ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:20
+│     [31] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/runtests.jl:95
+│     [32] include(fname::String)
+│        @ Base.MainInclude ./client.jl:478
+│     [33] top-level scope
+│        @ none:6
+│     [34] eval
+│        @ ./boot.jl:370 [inlined]
+│     [35] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:280
+│     [36] _start()
+│        @ Base ./client.jl:522
+└ @ Base loading.jl:1261
+┌ Error: Error during loading of extension StaticArraysChainRulesCoreExt of StaticArrays, use `Base.retry_load_extensions()` to retry.
+│   exception =
+│    1-element ExceptionStack:
+│    ArgumentError: Package StaticArraysChainRulesCoreExt [cbf6619a-af44-5bf5-931a-f7c73a88debd] is required but does not seem to be installed:
+│     - Run `Pkg.instantiate()` to install all recorded dependencies.
+│    
+│    Stacktrace:
+│      [1] _require(pkg::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1774
+│      [2] _require_prelocked(uuidkey::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1660
+│      [3] _require_prelocked(uuidkey::Base.PkgId)
+│        @ Base ./loading.jl:1658
+│      [4] run_extension_callbacks(extid::Base.ExtensionId)
+│        @ Base ./loading.jl:1255
+│      [5] run_extension_callbacks(pkgid::Base.PkgId)
+│        @ Base ./loading.jl:1290
+│      [6] run_package_callbacks(modkey::Base.PkgId)
+│        @ Base ./loading.jl:1124
+│      [7] _tryrequire_from_serialized(modkey::Base.PkgId, path::String, ocachepath::String, sourcepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1398
+│      [8] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1494
+│      [9] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1783
+│     [10] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [11] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [12] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [13] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [14] include
+│        @ ./Base.jl:457 [inlined]
+│     [15] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1840
+│     [16] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [17] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [18] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [19] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [20] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:478 [inlined]
+│     [21] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [22] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [23] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [24] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [25] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:10
+│     [26] include
+│        @ ./client.jl:478 [inlined]
+│     [27] macro expansion
+│        @ ./timing.jl:273 [inlined]
+│     [28] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:29 [inlined]
+│     [29] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [30] run_all_tests(test_name_regex::String)
+│        @ Main ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:20
+│     [31] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/runtests.jl:95
+│     [32] include(fname::String)
+│        @ Base.MainInclude ./client.jl:478
+│     [33] top-level scope
+│        @ none:6
+│     [34] eval
+│        @ ./boot.jl:370 [inlined]
+│     [35] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:280
+│     [36] _start()
+│        @ Base ./client.jl:522
+└ @ Base loading.jl:1261
+┌ Error: Error during loading of extension LogExpFunctionsChainRulesCoreExt of LogExpFunctions, use `Base.retry_load_extensions()` to retry.
+│   exception =
+│    1-element ExceptionStack:
+│    ArgumentError: Package LogExpFunctionsChainRulesCoreExt [1bf5f11d-9a0a-5d25-85d0-d1d9a28a239c] is required but does not seem to be installed:
+│     - Run `Pkg.instantiate()` to install all recorded dependencies.
+│    
+│    Stacktrace:
+│      [1] _require(pkg::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1774
+│      [2] _require_prelocked(uuidkey::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1660
+│      [3] _require_prelocked(uuidkey::Base.PkgId)
+│        @ Base ./loading.jl:1658
+│      [4] run_extension_callbacks(extid::Base.ExtensionId)
+│        @ Base ./loading.jl:1255
+│      [5] run_extension_callbacks(pkgid::Base.PkgId)
+│        @ Base ./loading.jl:1290
+│      [6] run_package_callbacks(modkey::Base.PkgId)
+│        @ Base ./loading.jl:1124
+│      [7] _tryrequire_from_serialized(modkey::Base.PkgId, path::String, ocachepath::String, sourcepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1398
+│      [8] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1494
+│      [9] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1783
+│     [10] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [11] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [12] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [13] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [14] include
+│        @ ./Base.jl:457 [inlined]
+│     [15] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1840
+│     [16] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [17] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [18] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [19] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [20] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:478 [inlined]
+│     [21] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [22] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [23] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [24] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [25] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:10
+│     [26] include
+│        @ ./client.jl:478 [inlined]
+│     [27] macro expansion
+│        @ ./timing.jl:273 [inlined]
+│     [28] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:29 [inlined]
+│     [29] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [30] run_all_tests(test_name_regex::String)
+│        @ Main ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:20
+│     [31] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/runtests.jl:95
+│     [32] include(fname::String)
+│        @ Base.MainInclude ./client.jl:478
+│     [33] top-level scope
+│        @ none:6
+│     [34] eval
+│        @ ./boot.jl:370 [inlined]
+│     [35] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:280
+│     [36] _start()
+│        @ Base ./client.jl:522
+└ @ Base loading.jl:1261
+┌ Error: Error during loading of extension SpecialFunctionsChainRulesCoreExt of SpecialFunctions, use `Base.retry_load_extensions()` to retry.
+│   exception =
+│    1-element ExceptionStack:
+│    ArgumentError: Package SpecialFunctionsChainRulesCoreExt [9eb7bdd4-e44c-55fc-b9cc-1a32cb715188] is required but does not seem to be installed:
+│     - Run `Pkg.instantiate()` to install all recorded dependencies.
+│    
+│    Stacktrace:
+│      [1] _require(pkg::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1774
+│      [2] _require_prelocked(uuidkey::Base.PkgId, env::Nothing)
+│        @ Base ./loading.jl:1660
+│      [3] _require_prelocked(uuidkey::Base.PkgId)
+│        @ Base ./loading.jl:1658
+│      [4] run_extension_callbacks(extid::Base.ExtensionId)
+│        @ Base ./loading.jl:1255
+│      [5] run_extension_callbacks(pkgid::Base.PkgId)
+│        @ Base ./loading.jl:1290
+│      [6] run_package_callbacks(modkey::Base.PkgId)
+│        @ Base ./loading.jl:1124
+│      [7] _tryrequire_from_serialized(modkey::Base.PkgId, path::String, ocachepath::String, sourcepath::String, depmods::Vector{Any})
+│        @ Base ./loading.jl:1398
+│      [8] _require_search_from_serialized(pkg::Base.PkgId, sourcepath::String, build_id::UInt128)
+│        @ Base ./loading.jl:1494
+│      [9] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1783
+│     [10] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [11] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [12] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [13] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [14] include
+│        @ ./Base.jl:457 [inlined]
+│     [15] _require(pkg::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1840
+│     [16] _require_prelocked(uuidkey::Base.PkgId, env::String)
+│        @ Base ./loading.jl:1660
+│     [17] macro expansion
+│        @ ./loading.jl:1648 [inlined]
+│     [18] macro expansion
+│        @ ./lock.jl:267 [inlined]
+│     [19] require(into::Module, mod::Symbol)
+│        @ Base ./loading.jl:1611
+│     [20] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:478 [inlined]
+│     [21] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [22] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [23] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:12 [inlined]
+│     [24] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [25] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/gallery.jl:10
+│     [26] include
+│        @ ./client.jl:478 [inlined]
+│     [27] macro expansion
+│        @ ./timing.jl:273 [inlined]
+│     [28] macro expansion
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:29 [inlined]
+│     [29] macro expansion
+│        @ /snap/julia/86/share/julia/stdlib/v1.9/Test/src/Test.jl:1498 [inlined]
+│     [30] run_all_tests(test_name_regex::String)
+│        @ Main ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/run_all_tests.jl:20
+│     [31] top-level scope
+│        @ ~/.julia/packages/NonlinearEigenproblems/HkMZG/test/runtests.jl:95
+│     [32] include(fname::String)
+│        @ Base.MainInclude ./client.jl:478
+│     [33] top-level scope
+│        @ none:6
+│     [34] eval
+│        @ ./boot.jl:370 [inlined]
+│     [35] exec_options(opts::Base.JLOptions)
+│        @ Base ./client.jl:280
+│     [36] _start()
+│        @ Base ./client.jl:522
+└ @ Base loading.jl:1261
+[ Info: Testing dep0
+[ Info: Testing dep0_sparse
+[ Info: Testing dep0_tridiag
+[ Info: pep0
+[ Info: pep0_sym
+[ Info: Testing pep0_sparse
+[ Info: Testing pdde_stability
+[ Info: Testing dep_symm_double
+[ Info: Testing dep_double
+[ Info: real_quadratic
+[ Info: qdep0
+[ Info: qdep1
+[ Info: Testing sine
+[ Info: Testing dep_symm_double
+[ Info: Testing qep_fixed_eig
+[ Info: Testing neuron0
+[ Info: Testing schrodinger_movebc
+[ Info: Testing beam
+[ Info: Testing hadeler
+[ Info: Testing loaded_string
+[ Info: testing bem_fichera
+[ Info: non-existing example
+ 23.562015 seconds (18.42 M allocations: 1.257 GiB, 4.79% gc time, 89.22% compilation time)
+Running test gun_native (17 / 52)
+  2.297833 seconds (3.48 M allocations: 371.258 MiB, 7.35% gc time, 54.55% compilation time)
+Running test iar (18 / 52)
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = 1.2699713558173722 + 6.414926767205505e-18im (norm = 3.818e-16)
+[ Info: λ[2] = 0.7031384367113984 - 0.7784592589534737im (norm = 1.166e-15)
+[ Info: λ[3] = 0.7031384367113971 + 0.7784592589534756im (norm = 2.899e-15)
+[ Info: λ[4] = -0.15955391823299658 - 2.424304657525999e-16im (norm = 7.901e-15)
+[ Info: λ[5] = -0.5032087003825458 + 1.1969823800738484im (norm = 1.303e-14)
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = 1.269971355817373 - 3.041068066877765e-19im (norm = 1.328e-15)
+[ Info: λ[2] = 0.7031384367113982 - 0.7784592589534748im (norm = 2.599e-15)
+[ Info: λ[3] = 0.7031384367113964 + 0.7784592589534753im (norm = 3.45e-15)
+[ Info: λ[4] = -0.1595539182329917 + 2.6900672839393304e-16im (norm = 3.704e-15)
+[ Info: λ[5] = -0.5032087003825461 + 1.1969823800738442im (norm = 1.007e-14)
+[ Info: Found 6 lambdas:
+[ Info: λ[1] = 1.2699713558173724 + 9.622390150808264e-18im (norm = 5.428e-16)
+[ Info: λ[2] = 0.7031384367113986 - 0.7784592589534726im (norm = 2.445e-15)
+[ Info: λ[3] = 0.7031384367113965 + 0.778459258953475im (norm = 3.102e-15)
+[ Info: λ[4] = -0.15955391823299148 + 1.3933786503586273e-16im (norm = 4.25e-15)
+[ Info: λ[5] = -0.5032087003825454 + 1.196982380073851im (norm = 1.33e-14)
+[ Info: λ[6] = -0.5032087003825503 - 1.1969823800738542im (norm = 2.453e-14)
+ 15.724042 seconds (28.72 M allocations: 1.903 GiB, 10.31% gc time, 98.38% compilation time)
+Running test iar_chebyshev (19 / 52)
+[ Info: Found 10 lambdas:
+[ Info: λ[1] = -0.09712795241565739 - 5.553397156041813e-19im (norm = 8.807e-16)
+[ Info: λ[2] = 0.30886599775839096 - 1.6657517575095854e-18im (norm = 9.52e-16)
+[ Info: λ[3] = -0.45584765486526474 + 1.6884551234089458im (norm = 1.04e-14)
+[ Info: λ[4] = -0.8832708076886653 + 5.3250505752875785im (norm = 2.486e-14)
+[ Info: λ[5] = -0.45584765486526396 - 1.6884551234089513im (norm = 1.705e-14)
+[ Info: λ[6] = -0.8832708076886651 - 5.325050575287568im (norm = 7.05e-14)
+[ Info: λ[7] = -1.2959976918942895 + 5.057547857816918im (norm = 2.663e-13)
+[ Info: λ[8] = -1.2959976918942855 - 5.0575478578169175im (norm = 7.643e-13)
+[ Info: λ[9] = -1.344528229411193 - 9.298500972317637im (norm = 2.001e-11)
+[ Info: λ[10] = -1.3445282294111798 + 9.298500972317616im (norm = 2.01e-11)
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = -0.15955391823299248 - 7.065862568239725e-19im (norm = 2.753e-15)
+[ Info: λ[2] = 0.7031384367113982 + 0.7784592589534728im (norm = 5.083e-15)
+[ Info: λ[3] = 0.7031384367113964 - 0.7784592589534728im (norm = 7.539e-15)
+[ Info: λ[4] = 1.2699713558173789 + 1.5534765663092034e-15im (norm = 1.068e-14)
+[ Info: λ[5] = -0.5032087003825196 + 1.1969823800738548im (norm = 5.939e-14)
+[ Info: Found 8 lambdas:
+[ Info: λ[1] = -0.15955391823299284 + 3.886224412531866e-18im (norm = 2.689e-15)
+[ Info: λ[2] = -0.5032087003825446 - 1.1969823800738482im (norm = 4.768e-15)
+[ Info: λ[3] = 0.7031384367113971 + 0.7784592589534731im (norm = 3.1e-15)
+[ Info: λ[4] = 0.7031384367113981 - 0.778459258953472im (norm = 5.2e-15)
+[ Info: λ[5] = -0.5032087003825437 + 1.196982380073848im (norm = 9.332e-15)
+[ Info: λ[6] = 1.269971355817372 + 1.5746725004816954e-15im (norm = 8.551e-15)
+[ Info: λ[7] = -0.6320907648409821 + 2.9869597428360604im (norm = 7.48e-14)
+[ Info: λ[8] = -0.6320907648409875 - 2.986959742836065im (norm = 1.152e-13)
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = 0.04141815431027831 + 0.0im (norm = 3.799e-15)
+[ Info: λ[2] = 0.07252654737844952 - 0.16305980019905925im (norm = 1.518e-14)
+[ Info: λ[3] = 0.07252654737844953 + 0.16305980019905958im (norm = 1.542e-14)
+[ Info: λ[4] = 0.15909855444811707 - 0.13582229940546267im (norm = 1.555e-12)
+[ Info: λ[5] = 0.1590985544481176 + 0.13582229940546245im (norm = 1.555e-12)
+[ Info: Found 7 lambdas:
+[ Info: λ[1] = 0.005112715223764891 - 2.6493730583591305e-21im (norm = 4.884e-16)
+[ Info: λ[2] = -0.009808842838165447 + 8.295497903423116e-21im (norm = 6.594e-16)
+[ Info: λ[3] = 0.002157011980818025 - 6.747935906119907e-23im (norm = 7.41e-16)
+[ Info: λ[4] = -0.013556402752206428 + 1.9874016034963683e-22im (norm = 9.873e-16)
+[ Info: λ[5] = -0.011790037580987182 - 6.472616746623242e-21im (norm = 1.54e-15)
+[ Info: λ[6] = -0.017018713262712575 + 2.2653622746585448e-20im (norm = 4.345e-14)
+[ Info: λ[7] = -0.017562854953896086 - 1.5872394555820054e-20im (norm = 3.009e-13)
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = -0.25680535263949794 - 0.09133196641481862im (norm = 4.256e-14)
+[ Info: λ[2] = -0.25680535263949766 + 0.09133196641481782im (norm = 4.271e-14)
+[ Info: λ[3] = 0.2719382821175979 + 0.16563973493515646im (norm = 2.845e-12)
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = -1.0258065998058252 + 2.8118488589482365e-18im (norm = 5.652e-16)
+[ Info: λ[2] = -1.0381762870260904 + 1.6050044759845671e-18im (norm = 6.238e-16)
+[ Info: λ[3] = -1.0293499451084267 - 1.4270217726028513e-18im (norm = 5.876e-16)
+[ Info: λ[4] = -0.9610087602604697 - 1.2701062565858251e-17im (norm = 1.429e-15)
+[ Info: λ[5] = -1.0467240447556017 - 4.6180848084771036e-18im (norm = 3.035e-14)
+┌ Warning: The problem will be explicitly shifted and scaled. The shift and scaling feature is not supported in the general version of iar_chebyshev.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:100
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = -0.9840853412432524 + 5.623865003550545e-20im (norm = 5.551e-15)
+[ Info: λ[2] = -0.9638357608952209 + 0.10603322676195504im (norm = 2.401e-14)
+[ Info: λ[3] = -0.963835760895221 - 0.10603322676195502im (norm = 2.384e-14)
+[ Info: λ[4] = -1.1360049968066828 - 0.05027256177167973im (norm = 1.572e-13)
+[ Info: λ[5] = -1.1360049968066832 + 0.05027256177168018im (norm = 1.57e-13)
+[ Info: Found 10 lambdas:
+[ Info: λ[1] = 0.04139655200767559 - 1.5220487253879166e-18im (norm = 3.403e-15)
+[ Info: λ[2] = -0.21955172841592246 + 3.7901993735977776e-16im (norm = 1.064e-14)
+[ Info: λ[3] = 0.07286270232491238 - 0.16445426944541672im (norm = 1.237e-14)
+[ Info: λ[4] = 0.07286270232491189 + 0.164454269445418im (norm = 1.381e-14)
+[ Info: λ[5] = 0.15915144407343595 - 0.1406935443298487im (norm = 1.569e-14)
+[ Info: λ[6] = 0.15915144407343568 + 0.14069354432984765im (norm = 1.697e-14)
+[ Info: λ[7] = 0.21230092382621896 + 2.336027420950516e-16im (norm = 1.921e-14)
+[ Info: λ[8] = -0.21356449238397548 - 0.168749604749304im (norm = 3.893e-12)
+[ Info: λ[9] = -0.21356449238397637 + 0.16874960474930556im (norm = 3.893e-12)
+[ Info: λ[10] = -0.14422623239684793 + 0.2652208996629728im (norm = 1.191e-10)
+[ Info: Found 8 lambdas:
+[ Info: λ[1] = 1.0297245103481807 + 8.631965093104018e-16im (norm = 7.705e-14)
+[ Info: λ[2] = -0.887630700409416 + 1.4643968004942288e-17im (norm = 1.583e-13)
+[ Info: λ[3] = 0.9612607195140932 + 0.6019741678718733im (norm = 1.252e-13)
+[ Info: λ[4] = 0.9612607195140875 - 0.6019741678718727im (norm = 1.254e-13)
+[ Info: λ[5] = 0.26398776840872296 + 1.2682153037231858im (norm = 2.328e-13)
+[ Info: λ[6] = 0.26398776840872307 - 1.2682153037231905im (norm = 2.526e-13)
+[ Info: λ[7] = -1.1699400749604532 + 1.3011006470249211im (norm = 3.774e-11)
+[ Info: λ[8] = -1.1699400749604547 - 1.3011006470249227im (norm = 3.774e-11)
+[ Info: Found 8 lambdas:
+[ Info: λ[1] = 1.0297245103481802 + 7.608563215973696e-16im (norm = 7.926e-14)
+[ Info: λ[2] = -0.8876307004094164 + 1.779432118215843e-17im (norm = 1.674e-13)
+[ Info: λ[3] = 0.9612607195140892 + 0.6019741678718671im (norm = 1.26e-13)
+[ Info: λ[4] = 0.9612607195140864 - 0.6019741678718702im (norm = 1.279e-13)
+[ Info: λ[5] = 0.26398776840872323 + 1.268215303723189im (norm = 2.409e-13)
+[ Info: λ[6] = 0.26398776840872445 - 1.2682153037231894im (norm = 2.511e-13)
+[ Info: λ[7] = -1.1699400749567264 - 1.3011006470228441im (norm = 3.441e-12)
+[ Info: λ[8] = -1.1699400749567337 + 1.3011006470228517im (norm = 3.451e-12)
+[ Info: Found 10 lambdas:
+[ Info: λ[1] = 0.04139655200767545 - 0.0im (norm = 3.817e-15)
+[ Info: λ[2] = -0.21955172841592088 - 4.741055547403233e-16im (norm = 8.99e-15)
+[ Info: λ[3] = 0.07286270232491332 - 0.1644542694454162im (norm = 1.238e-14)
+[ Info: λ[4] = 0.07286270232491392 + 0.16445426944541605im (norm = 1.242e-14)
+[ Info: λ[5] = 0.15915144407343593 - 0.14069354432984935im (norm = 1.289e-14)
+[ Info: λ[6] = 0.15915144407343515 + 0.1406935443298491im (norm = 1.367e-14)
+[ Info: λ[7] = 0.212300923826217 + 7.347265306164064e-17im (norm = 1.551e-14)
+[ Info: λ[8] = -0.21356449238397665 - 0.1687496047493054im (norm = 3.892e-12)
+[ Info: λ[9] = -0.2135644923839756 + 0.16874960474930506im (norm = 3.893e-12)
+[ Info: λ[10] = -0.14422623239684793 + 0.2652208996629731im (norm = 1.191e-10)
+┌ Warning: The nep does not belong to the class of DEP, PEP or SPMF and the function compute_y0 is not provided. Check if the nep belongs to such classes and define it accordingly or provide the function compute_y0. If none of these options are possible, the method will be based on the convertsion between Chebyshev and monomial base and may be numerically unstable if many iterations are performed.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_iar_chebyshev.jl:290
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = -1.029349945108437 - 5.80168203096345e-18im (norm = 8.872e-15)
+[ Info: λ[2] = -1.0258065998058368 - 6.130314206492856e-19im (norm = 1.178e-14)
+[ Info: λ[3] = -1.038176287026081 - 3.133110933393471e-18im (norm = 2.053e-14)
+[ Info: λ[4] = -0.9610087602604853 - 3.3624395830300095e-18im (norm = 2.813e-14)
+[ Info: λ[5] = -1.0467240447555743 - 8.165714615996568e-19im (norm = 6.002e-13)
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = -0.9840853412432528 - 2.2495460014201196e-19im (norm = 4.768e-15)
+[ Info: λ[2] = -0.9638357608952213 - 0.10603322676195559im (norm = 2.358e-14)
+[ Info: λ[3] = -0.9638357608952212 + 0.1060332267619556im (norm = 2.378e-14)
+[ Info: λ[4] = -1.1360049968066324 + 0.050272561771726815im (norm = 3.722e-12)
+[ Info: λ[5] = -1.1360049968066326 - 0.05027256177172678im (norm = 3.723e-12)
+[ Info: Found 10 lambdas:
+[ Info: λ[1] = -0.8876307004093851 + 3.4839035424062426e-17im (norm = 4.343e-15)
+[ Info: λ[2] = -1.1699400749563253 - 1.3011006470227904im (norm = 1.563e-14)
+[ Info: λ[3] = -1.1699400749563253 + 1.3011006470227913im (norm = 1.677e-14)
+[ Info: λ[4] = 0.9612607195140718 - 0.6019741678718856im (norm = 7.573e-15)
+[ Info: λ[5] = 1.029724510348186 + 7.182976169169123e-16im (norm = 7.557e-15)
+[ Info: λ[6] = 0.9612607195140701 + 0.6019741678718867im (norm = 8.814e-15)
+[ Info: λ[7] = 0.26398776840874305 + 1.2682153037231352im (norm = 1.171e-14)
+[ Info: λ[8] = 0.2639877684087431 - 1.268215303723137im (norm = 1.196e-14)
+[ Info: λ[9] = -1.9483000805045216 - 1.9776212685153387im (norm = 1.566e-11)
+[ Info: λ[10] = -1.9483000805045068 + 1.9776212685153256im (norm = 1.572e-11)
+[ Info: Found 10 lambdas:
+[ Info: λ[1] = -0.8876307004093851 + 3.4839035424062426e-17im (norm = 4.343e-15)
+[ Info: λ[2] = -1.1699400749563253 - 1.3011006470227904im (norm = 1.563e-14)
+[ Info: λ[3] = -1.1699400749563253 + 1.3011006470227913im (norm = 1.677e-14)
+[ Info: λ[4] = 0.9612607195140718 - 0.6019741678718856im (norm = 7.573e-15)
+[ Info: λ[5] = 1.029724510348186 + 7.182976169169123e-16im (norm = 7.557e-15)
+[ Info: λ[6] = 0.9612607195140701 + 0.6019741678718867im (norm = 8.814e-15)
+[ Info: λ[7] = 0.26398776840874305 + 1.2682153037231352im (norm = 1.171e-14)
+[ Info: λ[8] = 0.2639877684087431 - 1.268215303723137im (norm = 1.196e-14)
+[ Info: λ[9] = -1.9483000805045216 - 1.9776212685153387im (norm = 1.566e-11)
+[ Info: λ[10] = -1.9483000805045068 + 1.9776212685153256im (norm = 1.572e-11)
+ 50.919431 seconds (78.72 M allocations: 6.306 GiB, 6.07% gc time, 90.81% compilation time)
+Running test ilan (20 / 52)
+[ Info: Found 7 lambdas:
+[ Info: λ[1] = -0.031562141581388196 + 6.594338606098336e-20im (norm = 1.341e-15)
+[ Info: λ[2] = 0.05009831240238561 + 1.5999922755177305e-19im (norm = 2.525e-15)
+[ Info: λ[3] = 0.13502453356060837 + 1.7561276181366078e-18im (norm = 2.661e-15)
+[ Info: λ[4] = 0.1769795566534958 + 4.468820012427552e-18im (norm = 3.304e-15)
+[ Info: λ[5] = -0.2377699246413385 + 5.56930680794221e-18im (norm = 4.822e-15)
+[ Info: λ[6] = 0.19787685592516993 - 4.364726484361617e-18im (norm = 5.138e-15)
+[ Info: λ[7] = -0.2669250165912856 + 1.458994859869643e-17im (norm = 8.525e-15)
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = -0.031007987305889963 - 9.677908329485997e-20im (norm = 8.102e-13)
+[ Info: λ[2] = 0.034099973858422616 + 5.2663117180343373e-20im (norm = 8.377e-13)
+[ Info: λ[3] = -0.0367653644764648 + 2.725473498638868e-19im (norm = 1.237e-12)
+ 21.815159 seconds (33.03 M allocations: 2.181 GiB, 4.96% gc time, 98.41% compilation time)
+Running test infbilanczos (21 / 52)
+┌ Warning: `lfactorial(x)` is deprecated, use `logfactorial(x)` instead.
+│   caller = _broadcast_getindex_evalf at broadcast.jl:683 [inlined]
+└ @ Core ./broadcast.jl:683
+┌ Warning: `lfactorial(x)` is deprecated, use `logfactorial(x)` instead.
+│   caller = _broadcast_getindex_evalf at broadcast.jl:683 [inlined]
+└ @ Core ./broadcast.jl:683
+┌ Warning: `lfactorial(x)` is deprecated, use `logfactorial(x)` instead.
+│   caller = _broadcast_getindex_evalf at broadcast.jl:683 [inlined]
+└ @ Core ./broadcast.jl:683
+┌ Warning: `lfactorial(x)` is deprecated, use `logfactorial(x)` instead.
+│   caller = _broadcast_getindex_evalf at broadcast.jl:683 [inlined]
+└ @ Core ./broadcast.jl:683
+┌ Warning: `lfactorial(x)` is deprecated, use `logfactorial(x)` instead.
+│   caller = _broadcast_getindex_evalf at broadcast.jl:683 [inlined]
+└ @ Core ./broadcast.jl:683
+┌ Warning: `lfactorial(x)` is deprecated, use `logfactorial(x)` instead.
+│   caller = _broadcast_getindex_evalf at broadcast.jl:683 [inlined]
+└ @ Core ./broadcast.jl:683
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = -0.10285416883823793 - 0.0im (norm = 8.802e-11)
+[ Info: λ[2] = 0.015468053955768099 + 0.11466516762821802im (norm = 9.718e-09)
+[ Info: λ[3] = 0.015468053955768099 - 0.11466516762821802im (norm = 9.718e-09)
+603.497408 seconds (11.31 M allocations: 3.775 GiB, 0.10% gc time, 0.51% compilation time)
+Running test inner_solves (22 / 52)
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = -0.5772763946242719 - 3.6997964224560825e-16im (norm = 1.752e-14)
+[ Info: λ[2] = -0.07088637246725167 - 0.7248825729652233im (norm = 2.005e-13)
+[ Info: λ[3] = -0.07088637246725109 + 0.7248825729652221im (norm = 2.005e-13)
+[ Info: Found 2 lambdas:
+[ Info: λ[1] = -0.5772763946242696 + 0.0im (norm = 2.272e-16)
+[ Info: λ[2] = -0.5772763946242696 + 0.0im (norm = 2.619e-16)
+[ Info: Found 10 lambdas:
+[ Info: λ[1] = -0.07088637246722734 + 0.7248825729651877im (norm = 2.198e-15)
+[ Info: λ[2] = -0.5772763946242703 + 7.399592844912123e-17im (norm = 2.92e-15)
+[ Info: λ[3] = -0.07088637246722616 - 0.724882572965186im (norm = 3.132e-15)
+[ Info: λ[4] = 1.4164341863110343 + 0.6047321323634447im (norm = 3.575e-15)
+[ Info: λ[5] = 1.4164341863110395 - 0.604732132363446im (norm = 6.761e-15)
+[ Info: λ[6] = -0.2309378606532436 + 2.0157630263418187im (norm = 1.069e-14)
+[ Info: λ[7] = -0.23093786065324862 - 2.015763026341819im (norm = 1.083e-14)
+[ Info: λ[8] = -1.535935107954829 - 2.232795439790626im (norm = 2.973e-14)
+[ Info: λ[9] = -1.5359351079548316 + 2.232795439790613im (norm = 4.548e-14)
+[ Info: λ[10] = -2.4744904904988694 + 4.13876173878491im (norm = 1.004e-12)
+[ Info: Found 2 lambdas:
+[ Info: λ[1] = -0.57727639462383 + 4.422507378889723e-16im (norm = 5.777e-12)
+[ Info: λ[2] = -0.07088637246285118 - 0.7248825729660648im (norm = 6.451e-12)
+ 12.282214 seconds (16.23 M allocations: 1.047 GiB, 4.22% gc time, 97.65% compilation time: 1% of which was recompilation)
+Running test interpolation (23 / 52)
+  6.557021 seconds (3.69 M allocations: 894.552 MiB, 3.56% gc time, 90.37% compilation time)
+Running test jd (24 / 52)
+[ Info: Test: Betcke-Voss
+[ Info: Testing a PEP
+[ Info:  Smallest eigenvalue found: ComplexF64[-0.060282934009998394 + 0.16939609952301943im, -0.18774609088552774 + 6.395397567789535e-13im]
+[ Info: Found 2 lambdas:
+[ Info: λ[1] = -0.060282934009998394 + 0.16939609952301943im (norm = 2.444e-14)
+[ Info: λ[2] = -0.18774609088552774 + 6.395397567789535e-13im (norm = 3.948e-12)
+[ Info: Testing SG as inner solver
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = -0.0037234422815698594 (norm = 1.084e-14)
+[ Info: Testing IAR Cheb as projected solver
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = 0.0939921117335222 + 2.92658958033963e-11im (norm = 8.83e-11)
+[ Info: Testing convergence before starting
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = 0.0939921117335222 + 2.92658958033963e-11im (norm = 8.83e-11)
+[ Info: Testing errors thrown
+[ Info: Test: Effenberger
+[ Info: Found 5 lambdas:
+[ Info: λ[1] = -0.4227775618769465 - 1.1563318216679044im (norm = 9.268e-14)
+[ Info: λ[2] = -0.29346670842095307 - 0.3312323946066738im (norm = 4.886e-14)
+[ Info: λ[3] = -0.2087169348743247 + 0.030905277996987696im (norm = 3.32e-14)
+[ Info: λ[4] = -0.04792986065128255 + 0.08004331930831607im (norm = 2.82e-14)
+[ Info: λ[5] = 0.046397880953677674 + 3.092227056473655e-15im (norm = 1.498e-13)
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = -0.2489179918515845 + 2.8354346895200564im (norm = 7.148e-15)
+[ Info: λ[2] = -0.06420123022864363 + 0.8391667735856824im (norm = 2.11e-14)
+[ Info: λ[3] = 0.0547416378109165 - 1.521246239753815e-15im (norm = 1.075e-14)
+[ Info: Testing convergence before starting
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = -0.2489179918515845 + 2.8354346895200564im (norm = 7.371e-15)
+[ Info: Testing errors thrown
+ 24.591235 seconds (34.50 M allocations: 2.898 GiB, 4.68% gc time, 95.38% compilation time: <1% of which was recompilation)
+Running test linsolver (25 / 52)
+[ Info: norm(y1,1)=0.48120826804274636
+[ Info: normy1-round(128*normy1)/128=-0.0031667319572536434 (for further digits)
+[ Info: norm(y2,1)=0.48120826804274636
+[ Info: normy2-round(128*normy2)/128=-0.0031667319572536434
+[ Info: norm(y3,1)=0.48120826804274636
+[ Info: normy3-round(128*normy3)/128=-0.0031667319572536434
+[ Info: norm(y4,1)=0.48120826804274636
+[ Info: normy4-round(128*normy4)/128=-0.0031667319572536434
+[ Info: z=M*x; norm(z)=715613.8860106305 x'*z=3.3645443950384155e7 + 42868.703847321085im
+[ Info: normz-floor(normz*10)/10=0.08601063047535717
+[ Info: norm(M\z-x)=3.810531283872775e-11
+  7.117555 seconds (5.76 M allocations: 1.350 GiB, 3.85% gc time, 51.83% compilation time)
+Running test logger (26 / 52)
+  0.210330 seconds (279.42 k allocations: 16.302 MiB, 90.93% compilation time)
+Running test mslp (27 / 52)
+[ Info: mslp noconv + double
+  0.297715 seconds (174.76 k allocations: 12.197 MiB, 92.27% compilation time)
+Running test nep_creator_helpers (28 / 52)
+  0.653347 seconds (456.13 k allocations: 29.994 MiB, 97.31% compilation time)
+Running test neptypes (29 / 52)
+  0.293733 seconds (244.37 k allocations: 16.317 MiB, 14.63% gc time, 93.93% compilation time)
+Running test newton (30 / 52)
+[ Info: Newton and AugNewton test
+[ Info: QuasiNewton  test
+[ Info: Newton QR test
+┌ Warning: `qr(A::AbstractMatrix, ::Val{true}; kwargs...)` is deprecated, use `qr(A, ColumnNorm(); kwargs...)` instead.
+│   caller = newtonqr(::Type{ComplexF64}, nep::DEP{Float64, Matrix{Float64}}; errmeasure::DefaultErrmeasure{StandardSPMFErrmeasure{Float64}}, tol::Float64, maxit::Int64, λ::Int64, v::Vector{Float64}, c::Vector{Float64}, logger::Int64) at method_newton.jl:498
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_newton.jl:498
+[ Info:   Testing formula for derivative
+[ Info: resinv + periodicdde
+[ Info: rfi
+[ Info: rfi_b
+[ Info:   Testing formula for derivative (with left and right eigvecs)
+[ Info: Implicitdet test
+ 16.465319 seconds (34.95 M allocations: 2.746 GiB, 6.66% gc time, 68.09% compilation time)
+Running test nlar (31 / 52)
+[ Info: Testing gun problem
+[ Info: Eigenvalue computed by quasi newton: 54550.13915399894 + 459.5171610314862im
+┌ Warning: Number of ritz vectors for restarting num_restart_ritz_vecs=8 larger than neigs=2. Reducing num_restart_ritz_vecs.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_nlar.jl:69
+[ Info: Testing a PEP
+[ Info:  6 smallest eigenvalues found by polyeig() according to the absolute values: ComplexF64[-0.06028293401000076 - 0.16939609952301968im, -0.06028293401000076 + 0.16939609952301968im, -0.18774609088474162 + 0.0im, 0.07133652086208966 + 0.28733846614440883im, 0.07133652086208966 - 0.2873384661444089im, 0.3172557794034961 + 0.0im]
+┌ Warning: Number of ritz vectors for restarting num_restart_ritz_vecs=8 larger than neigs=3. Reducing num_restart_ritz_vecs.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_nlar.jl:69
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = 0.9335009478415424 - 0.23196748950923796im (norm = 1.517e-11)
+[ Info: λ[2] = 1.0380899478172485 - 0.11896554657158724im (norm = 4.089e-11)
+[ Info: λ[3] = 0.776099341432652 - 0.4334577067696671im (norm = 5.229e-11)
+[ Info: Testing errors thrown
+┌ Warning: Number of ritz vectors for restarting num_restart_ritz_vecs=8 larger than neigs=3. Reducing num_restart_ritz_vecs.
+└ @ NonlinearEigenproblems.NEPSolver ~/.julia/packages/NonlinearEigenproblems/HkMZG/src/method_nlar.jl:69
+ 29.517722 seconds (22.67 M allocations: 8.374 GiB, 5.13% gc time, 17.91% compilation time)
+Running test proj (32 / 52)
+[ Info: Running Newton Raphson (pep)
+[ Info: Running Newton on projected problem with very good start value (pep)
+[ Info: Running IAR for projected problem (pep)
+[ Info: Difference of solution from projected problem (pep): 9.18537636701491e-15
+[ Info: Testing to expand and running Newton (pep)
+[ Info: Running Newton Raphson (dep)
+[ Info: Running Newton on projected problem with very good start value (dep)
+[ Info: Running IAR for projected problem (dep)
+[ Info: Difference of solution from projected problem (dep): 8.326672684688674e-17
+[ Info: Testing to expand and running Newton (dep)
+[ Info: Running Newton Raphson (sqrtm)
+[ Info: Running Newton on projected problem with very good start value (sqrtm)
+[ Info: Running IAR for projected problem (sqrtm)
+[ Info: Difference of solution from projected problem (sqrtm): 1.1137470289341538e-16
+[ Info: Testing to expand and running Newton (sqrtm)
+  3.123372 seconds (5.26 M allocations: 380.716 MiB, 7.07% gc time, 92.02% compilation time)
+Running test serialization (33 / 52)
+  0.220046 seconds (95.44 k allocations: 6.424 MiB, 96.52% compilation time)
+Running test sgiter (34 / 52)
+  0.536769 seconds (252.79 k allocations: 17.274 MiB, 97.33% compilation time)
+Running test spmf (35 / 52)
+  3.139800 seconds (2.05 M allocations: 137.053 MiB, 3.05% gc time, 96.65% compilation time: 16% of which was recompilation)
+Running test spmf_stability (36 / 52)
+  0.318948 seconds (370.87 k allocations: 23.966 MiB, 93.04% compilation time)
+Running test tiar (37 / 52)
+[ Info: Found 2 lambdas:
+[ Info: λ[1] = 1.3595315610977328 + 5.982470626071485e-17im (norm = 5.937e-15)
+[ Info: λ[2] = 1.0266830586347513 - 0.4241132585045263im (norm = 1.161e-14)
+[ Info: Found 7 lambdas:
+[ Info: λ[1] = 1.359531561097732 - 5.982470626071449e-17im (norm = 5.439e-15)
+[ Info: λ[2] = 1.0266830586347513 - 0.4241132585045275im (norm = 6.985e-15)
+[ Info: λ[3] = 1.0266830586347506 + 0.4241132585045277im (norm = 7.227e-15)
+[ Info: λ[4] = 0.8037357158693961 + 0.3156629943560122im (norm = 9.386e-15)
+[ Info: λ[5] = 0.8037357158693959 - 0.3156629943560126im (norm = 9.74e-15)
+[ Info: λ[6] = 1.109140953294783 + 0.6385177019084941im (norm = 1.213e-14)
+[ Info: λ[7] = 1.109140953294781 - 0.6385177019084919im (norm = 1.284e-14)
+ 23.603583 seconds (30.94 M allocations: 3.209 GiB, 5.84% gc time, 83.58% compilation time)
+Running test transf (38 / 52)
+  5.869951 seconds (6.12 M allocations: 964.768 MiB, 5.27% gc time, 71.56% compilation time: <1% of which was recompilation)
+Running test wep_small (39 / 52)
+[ Info: Compare SPFM and native format, and test Preconditioner
+[ Info: WEP default linsolver
+[ Info: WEP backslash linsolver
+[ Info: WEP gmres linsolver
+[ Info: WEP NEP solvers
+140.452561 seconds (42.03 M allocations: 59.182 GiB, 7.25% gc time, 15.23% compilation time)
+Running test nleigs/nleigs_basic (40 / 52)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679098 + 6.900844328283317e-16im (norm = 2.041e-14)
+[ Info: λ[2] = -0.8240844445571074 - 0.28068188700704955im (norm = 5.821e-14)
+[ Info: λ[3] = -0.8240844445571048 + 0.28068188700704466im (norm = 4.06e-14)
+[ Info: λ[4] = 1.3626667827932994 + 1.187864383492805e-15im (norm = 4.596e-14)
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = -0.8692713283895485 - 0.242762370080972im (norm = 1.758e-13)
+[ Info: λ[2] = -0.7465906326259583 + 0.44514583995526896im (norm = 4.745e-14)
+[ Info: λ[3] = 0.5312099145381687 - 1.1257444882678018im (norm = 6.494e-14)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679097 + 3.450422164141669e-15im (norm = 4.113e-14)
+[ Info: λ[2] = -0.8240844445571118 + 0.28068188700705254im (norm = 6.061e-14)
+[ Info: λ[3] = -0.8240844445570839 - 0.2806818870070479im (norm = 8.382e-14)
+[ Info: λ[4] = 1.3626667827932926 - 5.090847357826369e-16im (norm = 3.447e-14)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679098 + 6.900844328283317e-16im (norm = 2.383e-14)
+[ Info: λ[2] = -0.8240844445571074 - 0.28068188700704955im (norm = 5.676e-14)
+[ Info: λ[3] = -0.8240844445571048 + 0.28068188700704466im (norm = 4.074e-14)
+[ Info: λ[4] = 1.3626667827932994 + 1.187864383492805e-15im (norm = 4.434e-14)
+ 11.625251 seconds (9.78 M allocations: 707.950 MiB, 3.92% gc time, 94.42% compilation time)
+Running test nleigs/nleigs_gun_naive (41 / 52)
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = 22345.116783765025 + 0.6449985983929583im (norm = 1.246e-11)
+ 11.924773 seconds (4.10 M allocations: 4.348 GiB, 4.29% gc time, 22.29% compilation time)
+Running test nleigs/nleigs_gun_variant_p (42 / 52)
+[ Info: Found 18 lambdas:
+[ Info: λ[1] = 22345.116783765152 + 0.6449985984506451im (norm = 1.223e-11)
+[ Info: λ[2] = 43857.60089796074 + 20.525532396043392im (norm = 1.023e-11)
+[ Info: λ[3] = 44259.4185750646 + 3.5759869515182654im (norm = 3.765e-11)
+[ Info: λ[4] = 48142.06858696574 + 41.89161304496761im (norm = 4.15e-11)
+[ Info: λ[5] = 48788.73198727351 + 6.323940151098729im (norm = 1.923e-11)
+[ Info: λ[6] = 54550.1391540197 + 459.51716102757814im (norm = 1.275e-11)
+[ Info: λ[7] = 75402.85310756815 + 4948.348818450231im (norm = 1.907e-11)
+[ Info: λ[8] = 77240.79034964925 + 143.90139255647813im (norm = 9.317e-12)
+[ Info: λ[9] = 80991.85642218217 + 32.38707839260803im (norm = 4.808e-11)
+[ Info: λ[10] = 83158.78304072855 + 458.86690999311907im (norm = 5.723e-11)
+[ Info: λ[11] = 86832.89170082076 + 45.65737695741746im (norm = 2.913e-11)
+[ Info: λ[12] = 87004.08355002155 + 28115.999957933258im (norm = 1.055e-11)
+[ Info: λ[13] = 87407.35631748513 + 35.9815325945374im (norm = 1.159e-11)
+[ Info: λ[14] = 87627.51060654222 + 32.13069452563274im (norm = 3.254e-11)
+[ Info: λ[15] = 88394.77047069943 + 298.729364483864im (norm = 2.007e-11)
+[ Info: λ[16] = 98263.26333958942 + 186.12717547978934im (norm = 8.24e-12)
+[ Info: λ[17] = 106301.431451156 + 86.16120654708976im (norm = 2.877e-06)
+[ Info: λ[18] = 106625.99870596538 + 27.035766261437114im (norm = 5.025e-06)
+ 13.724294 seconds (6.95 M allocations: 2.045 GiB, 17.57% gc time, 43.68% compilation time)
+Running test nleigs/nleigs_gun_variant_r1 (43 / 52)
+[ Info: Found 21 lambdas:
+[ Info: λ[1] = 22345.11678376496 + 0.6449985984530272im (norm = 9.816e-12)
+[ Info: λ[2] = 43857.60089796075 + 20.525532396018985im (norm = 7.993e-12)
+[ Info: λ[3] = 44259.41857506469 + 3.5759869516611933im (norm = 2.709e-11)
+[ Info: λ[4] = 48142.06858696583 + 41.891613044949594im (norm = 1.066e-11)
+[ Info: λ[5] = 48788.7319872734 + 6.323940151180762im (norm = 1.078e-11)
+[ Info: λ[6] = 54550.13915401982 + 459.51716102745917im (norm = 1.551e-11)
+[ Info: λ[7] = 75402.8531075682 + 4948.348818450105im (norm = 1.738e-11)
+[ Info: λ[8] = 77240.79034964902 + 143.90139255653858im (norm = 7.319e-12)
+[ Info: λ[9] = 80991.85642218182 + 32.38707839265111im (norm = 2.153e-11)
+[ Info: λ[10] = 83158.78304072886 + 458.86690999336844im (norm = 3.4e-11)
+[ Info: λ[11] = 86832.89170082082 + 45.65737695753786im (norm = 1.657e-11)
+[ Info: λ[12] = 87004.08355002145 + 28115.999957933134im (norm = 9.049e-12)
+[ Info: λ[13] = 87407.35631748498 + 35.98153259453874im (norm = 8.961e-12)
+[ Info: λ[14] = 87627.51060654213 + 32.13069452564075im (norm = 1.167e-11)
+[ Info: λ[15] = 88394.77047069938 + 298.72936448375515im (norm = 2.647e-11)
+[ Info: λ[16] = 96968.27185274767 + 27532.60345926755im (norm = 3.715e-11)
+[ Info: λ[17] = 98263.26333958928 + 186.127175479813im (norm = 7.834e-12)
+[ Info: λ[18] = 106301.43146431014 + 86.16116584021529im (norm = 1.258e-11)
+[ Info: λ[19] = 106625.9987401344 + 27.035750872010674im (norm = 1.339e-11)
+[ Info: λ[20] = 109835.02748718472 + 133.73204169175585im (norm = 1.917e-11)
+[ Info: λ[21] = 109910.14585438668 + 998.04648943239im (norm = 2.287e-11)
+  7.328806 seconds (3.99 M allocations: 1.879 GiB, 6.30% gc time, 22.35% compilation time)
+Running test nleigs/nleigs_gun_variant_r2 (44 / 52)
+[ Info: Found 21 lambdas:
+[ Info: λ[1] = 22345.116783765025 + 0.6449985990702728im (norm = 3.247e-10)
+[ Info: λ[2] = 43857.60089804291 + 20.5255325088696im (norm = 1.013e-08)
+[ Info: λ[3] = 44259.41857484433 + 3.5759868383425437im (norm = 1.179e-07)
+[ Info: λ[4] = 48142.06858716263 + 41.89161316945723im (norm = 2.03e-07)
+[ Info: λ[5] = 48788.73198720462 + 6.323940130163175im (norm = 1.97e-08)
+[ Info: λ[6] = 54550.13915401623 + 459.5171610182513im (norm = 1.582e-08)
+[ Info: λ[7] = 75402.85310750475 + 4948.348818409152im (norm = 4.594e-08)
+[ Info: λ[8] = 77240.79035017097 + 143.9013926726808im (norm = 1.433e-07)
+[ Info: λ[9] = 80991.85642219383 + 32.38707817749927im (norm = 2.711e-07)
+[ Info: λ[10] = 83158.78304067992 + 458.8669098646548im (norm = 5.782e-08)
+[ Info: λ[11] = 86832.8917006828 + 45.65737696174606im (norm = 4.597e-08)
+[ Info: λ[12] = 87004.08355015749 + 28115.999958084496im (norm = 1.69e-08)
+[ Info: λ[13] = 87407.35631734188 + 35.98153238789536im (norm = 3.296e-08)
+[ Info: λ[14] = 87627.51060653331 + 32.13069455184336im (norm = 1.285e-08)
+[ Info: λ[15] = 88394.77047074362 + 298.7293645667599im (norm = 8.404e-08)
+[ Info: λ[16] = 96968.27185250563 + 27532.603459224323im (norm = 3.32e-07)
+[ Info: λ[17] = 98263.2633395849 + 186.12717546799655im (norm = 5.713e-09)
+[ Info: λ[18] = 106301.43146427519 + 86.16116594684911im (norm = 4.255e-08)
+[ Info: λ[19] = 106625.99874002446 + 27.035750926718805im (norm = 3.772e-08)
+[ Info: λ[20] = 109835.02748497778 + 133.73203898657638im (norm = 2.534e-07)
+[ Info: λ[21] = 109910.14585961444 + 998.0464859196966im (norm = 1.516e-07)
+ 19.709761 seconds (3.96 M allocations: 6.771 GiB, 5.41% gc time, 8.17% compilation time)
+Running test nleigs/nleigs_gun_variant_s (45 / 52)
+[ Info: Found 21 lambdas:
+[ Info: λ[1] = 22345.116783765014 + 0.6449985984554125im (norm = 8.856e-12)
+[ Info: λ[2] = 43857.600897960736 + 20.525532396052032im (norm = 6.971e-12)
+[ Info: λ[3] = 44259.41857506461 + 3.5759869515975176im (norm = 2.026e-11)
+[ Info: λ[4] = 48142.06858696563 + 41.891613044995076im (norm = 9.469e-12)
+[ Info: λ[5] = 48788.73198727348 + 6.323940151147825im (norm = 8.243e-12)
+[ Info: λ[6] = 54550.13915401966 + 459.517161027434im (norm = 1.419e-11)
+[ Info: λ[7] = 75402.8531075682 + 4948.3488184500875im (norm = 1.963e-11)
+[ Info: λ[8] = 77240.790349649 + 143.9013925564748im (norm = 1.188e-11)
+[ Info: λ[9] = 80991.85642218185 + 32.38707839250692im (norm = 2.136e-11)
+[ Info: λ[10] = 83158.7830407286 + 458.8669099933989im (norm = 2.229e-11)
+[ Info: λ[11] = 86832.89170082076 + 45.657376957640935im (norm = 8.974e-12)
+[ Info: λ[12] = 87004.08355002142 + 28115.99995793322im (norm = 1.338e-11)
+[ Info: λ[13] = 87407.35631748494 + 35.98153259454265im (norm = 8.885e-12)
+[ Info: λ[14] = 87627.5106065423 + 32.13069452562654im (norm = 1.808e-11)
+[ Info: λ[15] = 88394.77047069924 + 298.72936448359235im (norm = 1.967e-11)
+[ Info: λ[16] = 96968.27185274381 + 27532.603459266305im (norm = 2.56e-10)
+[ Info: λ[17] = 98263.26333958932 + 186.12717547985474im (norm = 6.476e-12)
+[ Info: λ[18] = 106301.43146432399 + 86.16116592450395im (norm = 8.522e-09)
+[ Info: λ[19] = 106625.99874012273 + 27.035750939868983im (norm = 1.119e-08)
+[ Info: λ[20] = 109835.0274843343 + 133.73206563147752im (norm = 1.712e-06)
+[ Info: λ[21] = 109910.14584548608 + 998.0464893116649im (norm = 1.106e-06)
+  6.650606 seconds (3.95 M allocations: 1.819 GiB, 6.12% gc time, 24.04% compilation time)
+Running test nleigs/nleigs_nep_types (46 / 52)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679098 + 6.900844328283317e-16im (norm = 2.309e-14)
+[ Info: λ[2] = -0.8240844445571074 - 0.28068188700704955im (norm = 5.838e-14)
+[ Info: λ[3] = -0.8240844445571048 + 0.28068188700704466im (norm = 4.027e-14)
+[ Info: λ[4] = 1.3626667827932994 + 1.187864383492805e-15im (norm = 4.576e-14)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679098 + 6.900844328283317e-16im (norm = 2.041e-14)
+[ Info: λ[2] = -0.8240844445571074 - 0.28068188700704955im (norm = 5.821e-14)
+[ Info: λ[3] = -0.8240844445571048 + 0.28068188700704466im (norm = 4.06e-14)
+[ Info: λ[4] = 1.3626667827932994 + 1.187864383492805e-15im (norm = 4.596e-14)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679098 + 6.900844328283317e-16im (norm = 2.041e-14)
+[ Info: λ[2] = -0.8240844445571074 - 0.28068188700704955im (norm = 5.821e-14)
+[ Info: λ[3] = -0.8240844445571048 + 0.28068188700704466im (norm = 4.06e-14)
+[ Info: λ[4] = 1.3626667827932994 + 1.187864383492805e-15im (norm = 4.596e-14)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.714497893679102 - 3.622943272349375e-15im (norm = 3.835e-14)
+[ Info: λ[2] = -0.8240844445570986 - 0.28068188700706387im (norm = 6.763e-14)
+[ Info: λ[3] = -0.8240844445570971 + 0.2806818870070575im (norm = 5.349e-14)
+[ Info: λ[4] = 1.362666782793297 - 3.733288062405579e-15im (norm = 1.501e-14)
+[ Info: Found 4 lambdas:
+[ Info: λ[1] = -8.71449789367911 - 8.97109762676836e-15im (norm = 1.227e-13)
+[ Info: λ[2] = -0.8240844445571112 + 0.280681887007071im (norm = 7.838e-14)
+[ Info: λ[3] = -0.8240844445571035 - 0.2806818870070713im (norm = 1.227e-13)
+[ Info: λ[4] = 1.3626667827933157 + 1.6290711545044255e-14im (norm = 7.076e-14)
+  9.975689 seconds (10.45 M allocations: 767.363 MiB, 4.40% gc time, 94.54% compilation time)
+Running test nleigs/nleigs_particle_variant_r2 (47 / 52)
+[ Info: Found 2 lambdas:
+[ Info: λ[1] = -0.14059848868206226 - 8.383631421944827e-15im (norm = 2.808e-13)
+[ Info: λ[2] = -0.13254142676344194 - 1.982133859014881e-14im (norm = 8.07e-12)
+ 12.690098 seconds (6.46 M allocations: 6.480 GiB, 13.46% gc time, 30.88% compilation time)
+Running test nleigs/nleigs_particle_variant_s (48 / 52)
+[ Info: Found 2 lambdas:
+[ Info: λ[1] = -0.1405984886820207 + 2.0382900093571664e-16im (norm = 6.5e-14)
+[ Info: λ[2] = -0.1325414267607536 + 9.397665241492547e-14im (norm = 8.409e-11)
+ 10.932138 seconds (4.47 M allocations: 7.750 GiB, 16.25% gc time, 21.38% compilation time)
+Running test nleigs/nleigs_scalar (49 / 52)
+[ Info: Found 1 lambdas:
+[ Info: λ[1] = 1.3703670769654823 - 0.0im (norm = 6.211e-11)
+[ Info: Found 3 lambdas:
+[ Info: λ[1] = 0.02780643245141973 - 2.854121730963487e-18im (norm = 7.949e-16)
+[ Info: λ[2] = 1.3703670769132967 - 2.48629228314612e-15im (norm = 3.774e-15)
+[ Info: λ[3] = 3.476954531771731 + 2.0532325508923393e-15im (norm = 1.673e-14)
+  1.632575 seconds (3.84 M allocations: 343.783 MiB, 11.35% gc time, 67.14% compilation time)
+Running test rk_helper/cached_lin_solver (50 / 52)
+  0.446605 seconds (342.10 k allocations: 22.135 MiB, 5.76% gc time, 96.22% compilation time)
+Running test rk_helper/discretizepolygon (51 / 52)
+  0.996875 seconds (718.78 k allocations: 46.469 MiB, 3.27% gc time, 93.59% compilation time)
+Running test rk_helper/inpolygon (52 / 52)
+  0.245226 seconds (171.60 k allocations: 11.456 MiB, 92.56% compilation time)
+Test Summary: | Pass  Total      Time
+All tests     | 1006   1006  22m48.6s
+     Testing NonlinearEigenproblems tests passed 
+
+(@v1.9) pkg> 
