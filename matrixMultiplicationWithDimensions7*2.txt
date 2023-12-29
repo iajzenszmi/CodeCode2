@@ -1,0 +1,93 @@
+/data/user/0/tech.ula/files/support/dbclient: Caution, skipping hostkey check for localhost
+
+Welcome to Ubuntu in UserLAnd!
+userland@localhost:~$ nano matrixx.c
+userland@localhost:~$ gcc matrixx.c -o matrixx
+userland@localhost:~$ ./matrixx
+Resultant matrix:
+95 110
+220 260
+345 410
+470 560
+595 710
+720 860
+845 1010
+userland@localhost:~$ cat matrixx.c
+#include <stdio.h>
+
+int main() {
+    int m1[7][5] = {
+        {1, 2, 3, 4, 5},
+        {6, 7, 8, 9, 10},
+        {11, 12, 13, 14, 15},
+        {16, 17, 18, 19, 20},
+        {21, 22, 23, 24, 25},
+        {26, 27, 28, 29, 30},
+        {31, 32, 33, 34, 35}
+    };
+
+    int m2[5][2] = {
+        {1, 2},
+        {3, 4},
+        {5, 6},
+        {7, 8},
+        {9, 10}
+    };
+
+    int result[7][2];  // Resultant matrix with dimensions 7x2
+
+    // Matrix multiplication
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 2; j++) {
+            result[i][j] = 0;
+            for (int k = 0; k < 5; k++) {
+                result[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
+    }
+
+    // Print the resultant matrix
+    printf("Resultant matrix:\n");
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+userland@localhost:~$ sloccount matrixx.c
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/userland/matrixx.c to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC    Directory       SLOC-by-Language (Sorted)
+36      top_dir         ansic=36
+
+
+Totals grouped by language (dominant language first):
+ansic:           36 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 36
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.07)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.08 (0.93)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.08
+Total Estimated Cost to Develop                           = $ 824
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+userland@localhost:~$
